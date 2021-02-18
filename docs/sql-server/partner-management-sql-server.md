@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 026ad974a3b743283d2d2810a2e0a4fdf8588ff2
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 0efc4dc49b04467f0caeb882e24900d7479a42cd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86923040"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338062"
 ---
 # <a name="sql-server-managing-partners"></a>Партнеры по управлению SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -21,7 +21,7 @@ ms.locfileid: "86923040"
 
 ## <a name="our-management-partners"></a>Наши партнеры по управлению
 
-| Партнер | Description | Ссылки |
+| Партнер | Описание | Ссылки |
 | --- | --- | --- | --- |
 |![idera][1] |**IDERA**<br>SQL Compliance Manager — это комплексное решение аудита, показывающее, кто и когда выполнял конкретные действия на серверах SQL Server, что позволяет обеспечить соответствие нормативным требованиям и требованиям к безопасности данных.<br><br>[Требования к системе][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Веб-сайт][idera_website]<br>[Twitter][idera_twitter]<br>[Видео][idera_youtube] | |
 

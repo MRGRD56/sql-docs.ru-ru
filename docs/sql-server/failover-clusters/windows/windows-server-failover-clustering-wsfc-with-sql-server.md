@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 79d2ea5a-edd8-4b3b-9502-96202057b01a
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 11e424ef4f32b91a7c4d65faf796335a3f7faf26
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 8e0e2e47cbcfaf9aa6719b60bbd894d103596c18
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99251227"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341632"
 ---
 # <a name="windows-server-failover-clustering-with-sql-server"></a>Отказоустойчивая кластеризация Windows Server с SQL Server
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -173,7 +173,7 @@ ms.locfileid: "99251227"
   
 ##  <a name="related-content"></a><a name="RelatedContent"></a> См. также  
   
--   [Технологии Windows Server: отказоустойчивые кластеры](https://technet.microsoft.com/library/cc732488\(v=WS.10\).aspx)  
+-   [Технологии Windows Server.  Отказоустойчивые кластеры](https://technet.microsoft.com/library/cc732488\(v=WS.10\).aspx)  
 
 -   [Обзор локальных дисковых пространств \(S2D\)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 
