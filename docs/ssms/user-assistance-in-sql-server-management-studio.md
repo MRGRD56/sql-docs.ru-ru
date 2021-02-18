@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3c33a474-e507-4712-86fe-ae40e8370319
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 26b2ecf32bb6c7a683f0321f342258b44ff4d214
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c1d8ad8f855a2888dc1a37fd985f2b1a3bfc0357
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417840"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338793"
 ---
 # <a name="user-assistance-in-sql-server-management-studio"></a>Справка и поддержка пользователей в среде SQL Server Management Studio
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "88417840"
 Справка по справке (справка обозревателя документов [!INCLUDE[msCoName](../includes/msconame_md.md)]) предоставляет пользователям сведения о средстве просмотра справки, но эти разделы находятся в коллекции, отдельной от электронной документации [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Дополнительные сведения о средстве просмотра справки см. в пункте **Использование справки** меню "Справка" электронной документации по [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] .  
   
 ## <a name="msdn-online-and-sql-server-communities"></a>Интерактивная библиотека MSDN Online и сообщества SQL Server  
-Справка в [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] также предоставляет пользователям возможности подключения к MSDN Online и тематическим сообществам по [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]в Интернете для получения сведений. Можно сделать следующее:  
+Справка в [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] также предоставляет пользователям возможности подключения к MSDN Online и тематическим сообществам по [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]в Интернете для получения сведений. Вы можете выполнить следующие действия:  
   
 -   получить доступ к сообществам [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] со страницы «Инструкции»;  
   
@@ -68,7 +68,7 @@ ms.locfileid: "88417840"
   
 #### <a name="to-enable-online-search"></a>Включение поиска «в сети»  
   
-1.  В меню **Сервис** выберите команду **Параметры**. В диалоговом окне **Параметры** при необходимости разверните узлы **Среда** и **Справка** , затем щелкните режим **В сети**.  
+1.  В меню **Сервис** выберите пункт **Параметры**. В диалоговом окне **Параметры** при необходимости разверните узлы **Среда** и **Справка** , затем щелкните режим **В сети**.  
   
 2.  В области **Проверить при загрузке содержимого справки** выберите режим работы "в сети".  
   
@@ -76,7 +76,7 @@ ms.locfileid: "88417840"
   
 4.  Если ранее в числе поставщиков поиска было выбрано **Сообщество Codezone** , то установите и снимите флажки в списке **Сообщество Codezone** .  
   
-5.  Нажмите кнопку **OK**.  
+5.  Нажмите кнопку **ОК**.  
   
 #### <a name="to-search-msdn-online-and-sql-server-focused-communities-from-the-search-page"></a>Выполнение поиска в MSDN Online и тематических сообществах SQL Server со страницы «Поиск»  
   
@@ -96,7 +96,7 @@ ms.locfileid: "88417840"
   
 #### <a name="to-configure-help-and-sql-server-books-online-to-launch-inside-the-management-studio-window"></a>Настройка запуска справки и электронной документации SQL Server в окне среды Management Studio  
   
-1.  В меню **Сервис** выберите **Параметры**, разверните **Среда**, **Справка**и щелкните **Общие**.  
+1.  В меню **Сервис** выберите **Параметры**, разверните **Среда**, **Справка** и щелкните **Общие**.  
   
 2.  В поле **Отображать справку, используя** выберите **Собственное средство просмотра справки**.  
   

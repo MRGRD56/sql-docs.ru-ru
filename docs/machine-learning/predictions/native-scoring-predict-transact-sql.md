@@ -10,12 +10,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017||=azuresqldb-current||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest'
-ms.openlocfilehash: 842daa6574dc660346733e7b74b539eba5c7f7b0
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 74fc66dd6ed235d7508f774e7397c9b4d55e80a6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471035"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352544"
 ---
 # <a name="native-scoring-using-the-predict-t-sql-function-with-sql-machine-learning"></a>Собственная оценка с использованием функции PREDICT T-SQL с помощью машинного обучения SQL
 
@@ -55,7 +55,7 @@ ms.locfileid: "97471035"
 | Платформа | Формат модели ONNX | Формат модели RevoScale |
 |-|-|-|
 | SQL Server | Нет | Да |
-| Управляемый экземпляр SQL Azure | да | да |
+| Управляемый экземпляр SQL Azure | да | Да |
 | База данных SQL Azure | Нет | Да |
 | SQL Azure для пограничных вычислений | Да | Нет |
 | Azure Synapse Analytics | Да | Нет |

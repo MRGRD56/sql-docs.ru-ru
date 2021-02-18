@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 39ceaac5-42fa-4b5d-bfb6-54403d7f0dc9
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 9101f2cf26e797cc63a909a85c3eefa3fb083b4f
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 4816bae2ba4317970dd801b07499c3653e774d4a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99251207"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340023"
 ---
 # <a name="failover-policy-for-failover-cluster-instances"></a>Политика отработки отказа для экземпляров отказоустойчивого кластера
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "99251207"
   
  Ознакомьтесь со статьей [sp_server_diagnostics (Transact-SQL)](../../../relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql.md), поскольку эта системная хранимая процедура играет важную роль в уровнях условий сбоя.  
   
-|Level|Условие|Description|  
+|Level|Условие|Описание|  
 |-----------|---------------|-----------------|  
 |0|Без автоматической отработки отказа или перезапуска|Указывает, что при любых условиях сбоя отработка отказа или перезапуск не будет выполняться автоматически. Этот уровень предназначен только для обслуживания системы.|  
 |1|Отработка отказа или перезапуск при отключении сервера|Указывает, что при возникновении одного из следующих условий будет выполнен перезапуск или отработка отказа.<br /><br /> Служба SQL Server остановлена.|  

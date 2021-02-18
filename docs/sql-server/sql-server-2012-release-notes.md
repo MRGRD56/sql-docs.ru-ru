@@ -13,12 +13,12 @@ ms.assetid: 9ccb390a-67a9-4593-85ea-2b4c41c4620f
 author: rothja
 ms.author: jroth
 monikerRange: = sql-server-2016
-ms.openlocfilehash: 06294cb2dbf588ed5f7588d05ee5aa1c5af971bc
-ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
+ms.openlocfilehash: e75c713919a53a06c7b54c31f910810f055fac9e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99076076"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100336720"
 ---
 # <a name="sql-server-2012-release-notes"></a>Заметки о выпуске SQL Server 2012
 [!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
@@ -510,7 +510,7 @@ Invalid object name 'sys.federations'. (Microsoft SQL Server, Error: 208)
 |Драйвер|Отработка отказа с использованием нескольких подсетей|Назначение приложения|Маршрутизация только для чтения|Отработка отказа в нескольких подсетях: ускоряет отработку отказа конечной точки одной подсети|Отработка отказа в нескольких подсетях: разрешение именованного экземпляра для кластеризованных экземпляров SQL|  
 |----------|--------------------------|----------------------|----------------------|------------------------------------------------------------------|---------------------------------------------------------------------------------|  
 |SQL Native Client 11.0 ODBC|Да|Да|Да|Да|Да|  
-|SQL Native Client 11.0 OLEDB|нет|Да|Да|нет|нет|  
+|SQL Native Client 11.0 OLEDB|нет|Да|Да|Нет|нет|  
 |ADO.NET с платформой .NET Framework 4.0 с улучшением подключения **\&#42;**|Да|Да|Да|Да|Да|  
 |ADO.NET с платформой .NET Framework 3.5 с пакетом обновления 1 (SP1) с улучшением подключения **\&#42;\&#42;**|Да|Да|Да|Да|Да|  
 |Драйвер Microsoft JDBC 4.0 для SQL Server|Да|Да|Да|Да|Да|  

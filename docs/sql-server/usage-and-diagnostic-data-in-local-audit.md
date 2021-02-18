@@ -14,12 +14,12 @@ ms.assetid: a0665916-7789-4f94-9086-879275802cf3
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: f927e003673cb4397250fe532d57452ddb4e6445
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6333f571ea271420b4044f7e3cf562d2f1edcc15
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97474565"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353540"
 ---
 # <a name="local-audit-for-sql-server-usage-and-diagnostic-data-collection-ceip"></a>Локальный аудит для сбора данных об использовании и данных диагностики (CEIP) SQL Server
 
@@ -108,23 +108,23 @@ Microsoft SQL Server включает в себя функции, которы�
 
 1. Перейдите по соответствующему пути CPE.
 
-   | Версия | **_Ядро СУБД_* _ — раздел реестра |
+   | Версия | ***Ядро СУБД*** — раздел реестра |
    | :------ | :----------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL_ *13**.* имя экземпляра*\\CPE |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **13**.*имя экземпляра*\\CPE |
    | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **14**.*имя экземпляра*\\CPE |
    | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSSQL **15**.*имя экземпляра*\\CPE |
    | &nbsp; | &nbsp; |
 
-   | Версия | ***Службы Analysis Services** _ — раздел реестра |
+   | Версия | ***Службы Analysis Services*** — раздел реестра |
    | :------ | :------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS_ *13**.* имя экземпляра*\\CPE |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **13**.*имя экземпляра*\\CPE |
    | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **14**.*имя экземпляра*\\CPE |
    | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\MSAS **15**.*имя экземпляра*\\CPE |  
    | &nbsp; | &nbsp; |
 
-   | Версия | ***Службы Integration Services** _ — раздел реестра |
+   | Версия | ***Службы Integration Services*** — раздел реестра |
    | :------ | :---------------------------------- |
-   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\_ *130** |
+   | 2016    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**130** |
    | 2017    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**140** |
    | 2019    | HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\**150** |
    | &nbsp; | &nbsp; |

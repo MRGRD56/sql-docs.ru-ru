@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: d0f2bb38923f52edd8f1dae3410d29c7d4babc95
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 4b5e676b5c5cd885395cad869ddff1e6db03fb6a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86923070"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100343580"
 ---
 # <a name="sql-server-development-partners"></a>Партнеры по разработке SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -21,7 +21,7 @@ ms.locfileid: "86923070"
 
 ## <a name="our-development-partners"></a>Наши партнеры по разработке
 
-| Партнер | Description | Ссылки |
+| Партнер | Описание | Ссылки |
 | --- | --- | --- |
 |![idera][1] |**IDERA**<br>Rapid SQL — это интеллектуальная интегрированная среда разработки SQL, позволяющая разработчикам и администраторам баз данных создавать высокопроизводительный код SQL на всех ключевых платформах баз данных (включая SQL Server) с помощью единого интерфейса.<br><br>[Требования к системе][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Веб-сайт][idera_website]<br>[Twitter][idera_twitter]<br>[Видео][idera_youtube] |
 |![click2cloud][2] |**Click2Cloud Inc.**<br>Click2Cloud Inc. предоставляет сообществу разработчиков гибкие возможности выбора языков программирования, платформ и служб с помощью правильного набора инструментов. С помощью набора инструментов Click2Cloud разработчики могут создавать контейнеры SQL в Linux и подключать их к приложению, обеспечивая надежную и мультитенантную архитектуру. Контейнеры можно разворачивать независимо друг от друга на любой облачной платформе для контейнеров.|[Marketplace][click2cloud_marketplace]<br>[Веб-сайт][click2cloud_website]<br>[Twitter][click2cloud_twitter]<br>[Видео][click2cloud_youtube] |

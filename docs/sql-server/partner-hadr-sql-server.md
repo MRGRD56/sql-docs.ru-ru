@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 46a9fe5630f832d5d9d2bf57f94c25b30a301083
-ms.sourcegitcommit: 36fe62a3ccf34979bfde3e192cfa778505add465
+ms.openlocfilehash: 7c6a58d336de824aaad46b9e67d4f491fe96fc37
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94521067"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100339360"
 ---
 # <a name="sql-server-high-availability-and-disaster-recovery-partners"></a>Партнеры в области высокой доступности и аварийного восстановления SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -21,7 +21,7 @@ ms.locfileid: "94521067"
 
 ## <a name="high-availability-and-disaster-recovery-partners"></a>Партнеры в области высокой доступности и аварийного восстановления
 
-| Партнер | Description | Ссылки | 
+| Партнер | Описание | Ссылки | 
 | --- | --- | --- |
 |![Azure][5] |**Azure Site Recovery**<br>Site Recovery реплицирует рабочие нагрузки, выполняемые на виртуальных машинах или физических серверах, чтобы они оставались доступными во вторичном расположении, когда первичный сайт недоступен. Вы можете выполнять репликацию и переход на другой ресурс для виртуальных машин SQL Server из локального центра обработки данных в Azure или другой локальный центр обработки данных, а также из одного центра обработки данных Azure в другой.<br><br> Выпуски Enterprise и Standard продуктов SQL Server 2008 R2–SQL Server 2016|[Веб-сайт][azure_website]<br>[Marketplace][azure_marketplace]<br>[Таблица данных][azure_datasheet]<br>[Twitter][azure_twitter]<br>[Видео][azure_youtube]|
 |![DH2i][2] |**DH2i**<br>DxEnterprise — это ПО для обеспечения смарт-доступности для Windows, Linux и Docker, которое помогает добиться почти нулевого запланированного и незапланированного простоя, позволяет реализовать огромный потенциал экономии затрат, значительно упрощает управление и обеспечивает как физическую, так и логическую консолидацию.<br><br>SQL Server 2005+, Windows Server 2008R2+, Ubuntu 16+, RHEL 7+, CentOS 7+|[Веб-сайт][dh2i_website]<br>[Таблица данных][dh2i_datasheet]<br>[Twitter][dh2i_twitter]<br>[Видео][dh2i_youtube]|

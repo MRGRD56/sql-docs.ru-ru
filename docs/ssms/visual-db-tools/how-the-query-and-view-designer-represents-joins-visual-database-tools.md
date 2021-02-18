@@ -15,12 +15,12 @@ ms.assetid: 20a99dcb-83bd-4aa6-9139-92e2e5ba4887
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.openlocfilehash: a1d8686e1502fab121e49abed19f8f01488d22b7
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: 11b6399adb28a81f5364e6073a6fb0fde757ffe7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439358"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338054"
 ---
 # <a name="how-the-query-and-view-designer-represents-joins-visual-database-tools"></a>Как конструктор запросов и представлений представляет соединения (визуальные инструменты для баз данных)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "92439358"
   
 Параметры синтаксиса для соединения таблиц включают:  
   
--   **Квалификатор JOIN для предложения FROM** .   Ключевые слова INNER и OUTER определяют тип соединения. Такой синтаксис относится к стандарту ANSI SQL-92.  
+-   **Квалификатор JOIN для предложения FROM**.   Ключевые слова INNER и OUTER определяют тип соединения. Такой синтаксис относится к стандарту ANSI SQL-92.  
   
     Например, при соединении таблиц `publishers` и `pub_info` на основе столбца `pub_id` в каждой таблице результирующая инструкция SQL может выглядеть так:  
   
@@ -72,7 +72,7 @@ ms.locfileid: "92439358"
   
     При создании внешнего соединения вместо слова INNER появляются слова LEFT OUTER или RIGHT OUTER.  
   
--   **Предложение WHERE сравнивает столбцы обеих таблиц** .   Предложение WHERE появляется тогда, когда база данных не поддерживает синтаксис JOIN (или если WHERE введено вручную). Если используется предложение WHERE для создания соединения, то названия обеих таблиц появляются в предложении FROM.  
+-   **Предложение WHERE сравнивает столбцы обеих таблиц**.   Предложение WHERE появляется тогда, когда база данных не поддерживает синтаксис JOIN (или если WHERE введено вручную). Если используется предложение WHERE для создания соединения, то названия обеих таблиц появляются в предложении FROM.  
   
     Например, следующая инструкция соединяет таблицы `publishers` и `pub_info` .  
   

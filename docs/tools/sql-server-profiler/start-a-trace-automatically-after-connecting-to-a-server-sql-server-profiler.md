@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 75200101105cc77a8b1dc7304c0333ab2727960d
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 1acad3d3f747d46edf9c0db5a31bb89904df3e97
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85734177"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353319"
 ---
 # <a name="start-a-trace-automatically-after-connecting-to-a-server-sql-server-profiler"></a>автоматически запустить трассировку после соединения с сервером (приложение SQL Server Profiler)
 
@@ -32,7 +32,7 @@ ms.locfileid: "85734177"
 2.  Установите флажок **Начать трассировку немедленно после установления соединения** .  
   
 > [!NOTE]  
->  Если установлен параметр **Начать трассировку немедленно после установления соединения**, диалоговое окно **Свойства трассировки**не отображается, а вместо этого начинается трассировка. Чтобы установить свойства трассировки, необходимо сначала снять этот флажок.  
+>  Если установлен параметр **Начать трассировку немедленно после установления соединения**, диалоговое окно **Свойства трассировки** не отображается, а вместо этого начинается трассировка. Чтобы установить свойства трассировки, необходимо сначала снять этот флажок.  
   
 ## <a name="see-also"></a>См. также:  
  [Приложение SQL Server Profiler](../../tools/sql-server-profiler/sql-server-profiler.md)  

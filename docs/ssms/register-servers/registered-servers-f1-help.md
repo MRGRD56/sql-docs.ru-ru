@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 59f76b28-ba78-4a1a-b5d5-8b581f30114d
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: abc9fccd9c81f26b872a991c05a2d653384ad123
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: 0d4b3a2e75a00e3688ec53c5e64e6ab7727375a2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92036947"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341047"
 ---
 # <a name="registered-servers-f1-help"></a>Справка F1 по зарегистрированным серверам
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "92036947"
  ## <a name="reporting-services-new-or-edit-server-registration-general-tab"></a>Службы Reporting Services: создание или редактирование регистрации сервера (вкладка "Общие") 
   В этой вкладке указываются параметры при регистрации экземпляра служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)].  
   
- Чтобы открыть эту страницу, нажмите кнопку **Службы Reporting Services** на панели инструментов **Зарегистрированные серверы** , щелкните правой кнопкой мыши любую зарегистрированную группу серверов, например **Службы Reporting Services**, выберите раздел **Создать**и выберите пункт **Регистрация сервера**.  
+ Чтобы открыть эту страницу, нажмите кнопку **Службы Reporting Services** на панели инструментов **Зарегистрированные серверы** , щелкните правой кнопкой мыши любую зарегистрированную группу серверов, например **Службы Reporting Services**, выберите раздел **Создать** и выберите пункт **Регистрация сервера**.  
   
 ### <a name="options"></a>Параметры  
  **Тип сервера**  
@@ -80,7 +80,7 @@ ms.locfileid: "92036947"
  
   В этой вкладке указываются параметры при регистрации экземпляра служб [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)].  
   
- Чтобы открыть эту страницу, на панели инструментов "Зарегистрированные серверы" в окне "Зарегистрированные серверы" нажмите кнопку **Службы Analysis Services** , щелкните правой кнопкой мыши любую группу зарегистрированных серверов, например **Службы Analysis Services**, наведите указатель на пункт **Создать**и выберите пункт **Регистрация сервера**.  
+ Чтобы открыть эту страницу, на панели инструментов "Зарегистрированные серверы" в окне "Зарегистрированные серверы" нажмите кнопку **Службы Analysis Services** , щелкните правой кнопкой мыши любую группу зарегистрированных серверов, например **Службы Analysis Services**, наведите указатель на пункт **Создать** и выберите пункт **Регистрация сервера**.  
   
 ### <a name="options"></a>Параметры  
  **Тип сервера**  

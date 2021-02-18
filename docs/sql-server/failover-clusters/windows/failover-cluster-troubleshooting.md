@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 84012320-5a7b-45b0-8feb-325bf0e21324
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 2891ecf2eb217691159c4afc1203faef8816a108
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 34fe360248235da3c9a647799a178d9c734ad027
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97642781"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350038"
 ---
 # <a name="failover-cluster-troubleshooting"></a>Диагностика отказоустойчивого кластера
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

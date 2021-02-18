@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: 9a1e746b4f418c23e22dafc6c07b211c188b8a13
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 96e420bbca08ca14af89614fa28c35e7b3f78dbb
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85726866"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100345753"
 ---
 # <a name="set-trace-display-defaults-sql-server-profiler"></a>установить параметры по умолчанию для отображения трассировки (приложение SQL Server Profiler)
 
@@ -31,7 +31,7 @@ ms.locfileid: "85726866"
   
 2.  В диалоговом окне **Общие параметры** щелкните **Выбор шрифта**.  
   
-3.  В диалоговом окне **Шрифт** выберите значения параметров **Шрифт**, **Стиль шрифта**и **Размер** для отображения трассировок в приложении [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] .  
+3.  В диалоговом окне **Шрифт** выберите значения параметров **Шрифт**, **Стиль шрифта** и **Размер** для отображения трассировок в приложении [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] .  
   
 4.  Нажмите кнопку **ОК**, чтобы применить параметры, и закройте диалоговое окно **Шрифт** .  
   

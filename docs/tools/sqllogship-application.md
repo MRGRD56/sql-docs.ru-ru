@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ae70041-f3d9-46e4-8fa8-31088572a9f8
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: af98af52bfe6416c489be821fa2d8b27092fac27
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 349b8f5bd757e623b79b043d14ce9de91c34e942
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86918370"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341978"
 ---
 # <a name="sqllogship-application"></a>Приложение sqllogship
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ sqllogship -server instance_name { -backup primary_id | -copy secondary_id | -re
   
 ## <a name="arguments"></a>Аргументы  
  **-server** _имя_экземпляра_  
- Указывает экземпляр [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] , где будет выполняться операция. Указываемый экземпляр сервера зависит от того, на каком сервере задается операция доставки журналов. Для операции **-backup**в качестве аргумента *имя_сервера* должно быть указано имя сервера-источника, заданное в конфигурации доставки журналов. Для операции **-copy** или **-restore**в качестве аргумента *имя_сервера* указывается имя сервера-получателя, заданное в конфигурации доставки журналов.  
+ Указывает экземпляр [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] , где будет выполняться операция. Указываемый экземпляр сервера зависит от того, на каком сервере задается операция доставки журналов. Для операции **-backup** в качестве аргумента *имя_сервера* должно быть указано имя сервера-источника, заданное в конфигурации доставки журналов. Для операции **-copy** или **-restore** в качестве аргумента *имя_сервера* указывается имя сервера-получателя, заданное в конфигурации доставки журналов.  
   
  **-backup** _ИД_основной_резервной_копии_  
  Выполняет операцию резервного копирования для базы данных-источника, основной идентификатор которой определяется аргументом *primary_id*. Этот идентификатор можно получить из системной таблицы [log_shipping_primary_databases](../relational-databases/system-tables/log-shipping-primary-databases-transact-sql.md) или хранимой процедурой [sp_help_log_shipping_primary_database](../relational-databases/system-stored-procedures/sp-help-log-shipping-primary-database-transact-sql.md) .  
@@ -77,7 +77,7 @@ sqllogship -server instance_name { -backup primary_id | -copy secondary_id | -re
  Приложение **sqllogship** устанавливается в каталог x:\Program Files\Microsoft SQL Server\130\Tools\Binn.  
   
 ## <a name="permissions"></a>Разрешения  
- **sqllogship** использует проверку подлинности Windows. Учетной записи Windows, от которой выполняется команда, необходимы доступ к каталогу Windows и разрешения [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . Это требование зависит от того, какой параметр задается командой **sqllogship** : **-backup**, **-copy**или **-restore** .  
+ **sqllogship** использует проверку подлинности Windows. Учетной записи Windows, от которой выполняется команда, необходимы доступ к каталогу Windows и разрешения [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . Это требование зависит от того, какой параметр задается командой **sqllogship** : **-backup**, **-copy** или **-restore** .  
   
 |Параметр|Доступ к каталогу|Разрешения|  
 |------------|----------------------|-----------------|  

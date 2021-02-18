@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/06/2017
-ms.openlocfilehash: 1a54aaca0506b1b9d25a900ea2787b9427b14209
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: d06b9769a76d7e6555e0dc671782fcd062b4574f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85774898"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349419"
 ---
 # <a name="considerations-for-replaying-traces-sql-server-profiler"></a>Вопросы воспроизведения трассировки (приложение SQL Server Profiler)
 
@@ -28,7 +28,7 @@ ms.locfileid: "85774898"
   
 -   Трассировки, содержащие операции, в которых используются идентификаторы GUID. Эти события пропускаются.  
   
--   Трассировки, содержащие операции в столбцах типов данных **text**, **ntext**и **image** и использующие программу **bcp** , инструкции BULK INSERT, READTEXT, WRITETEXT и UPDATETEXT, а также полнотекстовые операции. Эти события пропускаются.  
+-   Трассировки, содержащие операции в столбцах типов данных **text**, **ntext** и **image** и использующие программу **bcp** , инструкции BULK INSERT, READTEXT, WRITETEXT и UPDATETEXT, а также полнотекстовые операции. Эти события пропускаются.  
   
 -   Трассировки, включающие в себя привязку сеансов: системные хранимые процедуры **sp_getbindtoken** и **sp_bindsession** . Эти события пропускаются.  
   

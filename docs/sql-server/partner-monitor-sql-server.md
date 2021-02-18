@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 77795d78f755d8eec0093dcc418583d8a5086318
-ms.sourcegitcommit: 36fe62a3ccf34979bfde3e192cfa778505add465
+ms.openlocfilehash: 8a5fab228666fc3d8fdf5e539440c09407979bc6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94521201"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338815"
 ---
 # <a name="sql-server-monitoring-partners"></a>Партнеры по мониторингу SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -21,7 +21,7 @@ ms.locfileid: "94521201"
 
 ## <a name="microsoft-monitoring-partners"></a>Партнеры Майкрософт по решениям мониторинга
 
-| Партнер | Description | Ссылки |
+| Партнер | Описание | Ссылки |
 | --- | --- | --- | --- |
 |[![idera][1]][idera_website] |**IDERA**<br>SQL Diagnostic Manager — это мощное решение для диагностики и мониторинга производительности, которое заранее предупреждает администраторов о проблемах с работоспособностью, производительностью и доступностью в средах SQL Server через централизованную консоль.<br><br>[Требования к системе][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Веб-сайт][idera_website]<br>[Twitter][idera_twitter]<br>[Видео][idera_youtube] | |
 |[![Логотип quest][3]][quest_website] |**Quest**<br>Решение Spotlight on SQL Server позволяет круглосуточно обеспечивать максимальную производительность за счет непревзойденных возможностей мониторинга, диагностики и оптимизации сред SQL Server. Spotlight предоставляет доступ к сведениям, необходимым для оптимальной работы баз данных SQL Server. Воспользуйтесь интуитивно понятной функцией обзора работоспособности и производительности, возможностью автоматической выдачи предупреждений и автоматического выполнения действий, а также поддержкой мобильных устройств.|[Marketplace][quest_marketplace]<br>[Веб-сайт][quest_website]<br>[Видео][quest_video] | |

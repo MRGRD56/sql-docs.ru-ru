@@ -19,12 +19,12 @@ ms.assetid: 793495ca-cfc9-498d-8276-c44a5d09a92c
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 96f2987363fd52cc92127b6b54ffcd2a98b9ae10
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 799bc2eca98002343d8ff755782d8f3b71d2af77
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97476885"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100342640"
 ---
 # <a name="sqlcmd---use-with-scripting-variables"></a>sqlcmd — использование с переменными скрипта
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -119,11 +119,11 @@ sqlcmd -v ColumnName ="LastName" -i c:\testscript.sql
 | SQLCMDDBNAME            | -d             | R   | ""                      |
 | SQLCMDLOGINTIMEOUT      | -l             | Чтение-запись | "8" (секунд)           |
 | SQLCMDSTATTIMEOUT       | -T             | Чтение-запись | "0" = неограниченное время ожидания |
-| SQLCMDHEADERS           | -H             | Чтение-запись | 0                     |
+| SQLCMDHEADERS           | -H             | Чтение-запись | "0"                     |
 | SQLCMDCOLSEP            | -S             | Чтение-запись | " "                     |
-| SQLCMDCOLWIDTH          | -w             | Чтение-запись | 0                     |
+| SQLCMDCOLWIDTH          | -w             | Чтение-запись | "0"                     |
 | SQLCMDPACKETSIZE        | -a             | R   | "4096"                  |
-| SQLCMDERRORLEVEL        | -M             | Чтение-запись | 0                     |
+| SQLCMDERRORLEVEL        | -M             | Чтение-запись | "0"                     |
 | SQLCMDMAXVARTYPEWIDTH   | -y             | Чтение-запись | «256»                   |
 | SQLCMDMAXFIXEDTYPEWIDTH | -y             | Чтение-запись | "0" = неограниченное время ожидания         |
 | SQLCMDEDITOR            |                | Чтение-запись | "edit.com"              |

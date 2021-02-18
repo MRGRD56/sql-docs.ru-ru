@@ -1,6 +1,6 @@
 ---
-description: обозревателе объектов
-title: обозревателе объектов
+description: Обозреватель объектов
+title: Обозреватель объектов
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.technology: ssms
@@ -27,12 +27,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-ms.openlocfilehash: ea4cde409c05054614a4881b189ebef15abb5fef
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 262c1b90cb0218ded8d5e7bbfc8849793bc841dd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88497408"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346132"
 ---
 # <a name="object-explorer"></a>Обозреватель объектов
 

@@ -10,12 +10,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
-ms.openlocfilehash: 2dd02ddc0dccb0ca41d16688039fa33ad406abd8
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 103eaec3991e9c4f00f819ca2811f395bfbeb2b9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470365"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100339677"
 ---
 # <a name="python-tutorial-predict-nyc-taxi-fares-with-binary-classification"></a>Учебник по Python. Прогнозирование стоимости поездки в нью-йоркском такси с использованием двоичной классификации
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
