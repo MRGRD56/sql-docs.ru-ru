@@ -55,12 +55,12 @@ ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
 author: pmasl
 ms.author: pelopes
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8591620ce92aca8a6c272539721f20a8a64fd9ae
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: e02d3676b1b303ef6dbbae4a509ed0db0c608071
+ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237102"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100525238"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -823,7 +823,7 @@ INSERT INTO t1 VALUES (1, 0);
 Оценить состояние сжатия таблицы, индекса или секции можно с помощью хранимой процедуры [sp_estimate_data_compression_savings](../../relational-databases/system-stored-procedures/sp-estimate-data-compression-savings-transact-sql.md).
 
 ## <a name="permissions"></a>Разрешения
-Необходимо разрешение `ALTER` для таблицы или представления. Пользователь должен быть членом предопределенной роли сервера `sysadmin` или предопределенных ролей баз данных `db_ddladmin` или `db_owner`.
+Необходимо разрешение `ALTER` для таблицы или представления или членство в предопределенных ролях базы данных `db_ddladmin`.
 
 ## <a name="limitations-and-restrictions"></a>Ограничения
 В [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] и [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] невозможно создать:

@@ -443,6 +443,8 @@ items:
                 href: big-data-cluster/spark-hive-tools-vscode.md
               - name: Использование расширенного сервера журнала Spark
                 href: big-data-cluster/spark-history-server.md
+              - name: Управление библиотеками
+                href: big-data-cluster/spark-install-packages.md
           - name: Диагностика
             items:
               - name: Устранение неполадок в Kubernetes
@@ -505,9 +507,9 @@ items:
                 items:
                   - name: bdc
                     href: azdata/reference/reference-azdata-bdc.md
-                  - name: приложение bdc
+                  - name: bdc app
                     href: azdata/reference/reference-azdata-bdc-app.md
-                  - name: состояние приложения bdc
+                  - name: bdc app status
                     href: azdata/reference/reference-azdata-bdc-app-status.md
                   - name: bdc config
                     href: azdata/reference/reference-azdata-bdc-config.md
@@ -519,9 +521,11 @@ items:
                     href: azdata/reference/reference-azdata-bdc-debug.md
                   - name: bdc endpoint
                     href: azdata/reference/reference-azdata-bdc-endpoint.md
-                  - name: шлюз bdc
+                  - name: bdc gateway
                     href: azdata/reference/reference-azdata-bdc-gateway.md
-                  - name: состояние шлюза bdc
+                  - name: bdc gateway settings
+                    href: azdata/reference/reference-azdata-bdc-gateway-settings.md
+                  - name: bdc gateway status
                     href: azdata/reference/reference-azdata-bdc-gateway-status.md
                   - name: bdc hdfs
                     href: azdata/reference/reference-azdata-bdc-hdfs.md
@@ -531,7 +535,9 @@ items:
                     href: azdata/reference/reference-azdata-bdc-hdfs-key.md
                   - name: bdc hdfs mount
                     href: azdata/reference/reference-azdata-bdc-hdfs-mount.md
-                  - name: состояние bdc hdfs
+                  - name: bdc hdfs settings
+                    href: azdata/reference/reference-azdata-bdc-hdfs-settings.md
+                  - name: bdc hdfs status
                     href: azdata/reference/reference-azdata-bdc-hdfs-status.md
                   - name: bdc settings
                     href: azdata/reference/reference-azdata-bdc-settings.md
@@ -541,12 +547,16 @@ items:
                     href: azdata/reference/reference-azdata-bdc-spark-batch.md
                   - name: bdc spark session
                     href: azdata/reference/reference-azdata-bdc-spark-session.md
+                  - name: bdc spark settings
+                    href: azdata/reference/reference-azdata-bdc-spark-settings.md
                   - name: bdc spark statement
                     href: azdata/reference/reference-azdata-bdc-spark-statement.md
-                  - name: состояние bdc spark
+                  - name: bdc spark status
                     href: azdata/reference/reference-azdata-bdc-spark-status.md
                   - name: bdc sql
                     href: azdata/reference/reference-azdata-bdc-sql.md
+                  - name: bdc sql settings
+                    href: azdata/reference/reference-azdata-bdc-sql-settings.md
                   - name: bdc status
                     href: azdata/reference/reference-azdata-bdc-status.md
   - name: Непрерывность бизнес-процессов
@@ -12528,6 +12538,8 @@ items:
                 href: relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-groups-transact-sql.md
               - name: sys.dm_db_missing_index_group_stats
                 href: relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-transact-sql.md
+              - name: sys.dm_db_missing_index_group_stats_query
+                href: relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-query-transact-sql.md
           - name: Ввод-вывод
             href: relational-databases/system-dynamic-management-views/i-o-related-dynamic-management-views-and-functions-transact-sql.md
             items:

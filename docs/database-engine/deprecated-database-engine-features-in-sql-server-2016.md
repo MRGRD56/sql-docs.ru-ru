@@ -1,9 +1,9 @@
 ---
-title: Нерекомендуемые функции ядра СУБД | Документация Майкрософт
+title: Нерекомендуемые функции ядра СУБД
 titleSuffix: SQL Server 2016
 description: Узнайте о нерекомендуемых функциях ядра СУБД, которые по-прежнему доступны в SQL Server 2016 (13.x), но не должны использоваться в новых приложениях.
 ms.custom: seo-lt-2019
-ms.date: 12/13/2019
+ms.date: 02/11/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -13,20 +13,19 @@ helpviewer_keywords:
 - deprecated features [SQL Server]
 - Database Engine [SQL Server], backward compatibility
 - deprecation [SQL Server], feature list
-ms.assetid: c10eeaa5-3d3c-49b4-a4bd-5dc4fb190142
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 2e46ade314bf0218344b682c7b75762de3f10396
-ms.sourcegitcommit: 58e7069b5b2b6367e27b49c002ca854b31b1159d
+ms.openlocfilehash: 518b29507e7992b267922e09c97bf98b1657205d
+ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99552644"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100525170"
 ---
 # <a name="deprecated-database-engine-features-in-sql-server-2016"></a>Нерекомендуемые функции ядра СУБД в SQL Server 2016
 [!INCLUDE [SQL Server 2016](../includes/applies-to-version/sqlserver2016.md)]  
 
-В этом разделе описаны устаревшие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] , которые по-прежнему доступны в [!INCLUDE[sssql15-md](../includes/sssql16-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
+В этой статье описываются устаревшие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)], которые по-прежнему доступны в [!INCLUDE[sssql15-md](../includes/sssql16-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
   
 Если функция помечена как нерекомендуемая, это означает следующее:
 -  Функция находится в режиме обслуживания. Новые изменения, в том числе касающиеся совместимости с новыми функциями, вноситься не будут.
@@ -67,6 +66,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 |Уровни совместимости|sp_dbcmptlevel|ALTER DATABASE ... SET COMPATIBILITY_LEVEL. Дополнительные сведения см. в разделе [Уровень совместимости инструкции ALTER DATABASE (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-compatibility-level.md).|sp_dbcmptlevel|80|  
 |Уровни совместимости|Уровень совместимости базы данных 110 и 120|Запланируйте обновление базы данных и приложения для следующего выпуска. Однако мы будем как можно дольше поддерживать приложения, сертифицированные для работы на любом соответствующем уровне совместимости, чтобы упростить обновление. Дополнительные сведения об уровнях совместимости см. в разделе [Уровень совместимости ALTER DATABASE (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-compatibility-level.md).|Уровень совместимости базы данных 110<br /><br /> Уровень совместимости базы данных 120||  
 |XML|Создание встроенных схем XDR|Директива XMLDATA для параметра XML FOR является устаревшей. В режимах RAW и AUTO следует использовать создание XSD-схем. В режиме EXPLICT для директивы XMLDATA замены нет.|XMLDATA|181|  
+|XML|sys.sp_db_selective_xml_index|ALTER INDEX … DISABLE<BR><BR>Подробные сведения см. в статье [ALTER INDEX (Transact-SQL)](../t-sql/statements/alter-index-transact-sql.md).|[sys.sp_db_selective_xml_index](../relational-databases/system-stored-procedures/sp-db-selective-xml-index-transact-sql.md)|
 |Резервное копирование и восстановление|BACKUP { DATABASE &#124; LOG } TO TAPE<br /><br /> BACKUP { DATABASE &#124; LOG } TO *device_that_is_a_tape*|BACKUP { DATABASE &#124; LOG } TO DISK<br /><br /> BACKUP { DATABASE &#124; LOG } TO *device_that_is_a_disk*|BACKUP DATABASE или LOG TO TAPE|235|  
 |Резервное копирование и восстановление|sp_addumpdevice'**tape**'|sp_addumpdevice'**disk**'|ADDING TAPE DEVICE|236|  
 |Резервное копирование и восстановление|sp_helpdevice|sys.backup_devices|sp_helpdevice|100|  
@@ -175,4 +175,4 @@ WHERE object_name = 'SQLServer:Deprecated Features';
   
 ## <a name="see-also"></a>См. также:  
  [Нерекомендуемые функции ядра СУБД в SQL Server 2016](./discontinued-database-engine-functionality-in-sql-server.md)     
- [Нерекомендуемые функции ядра СУБД в SQL Server 2017](../database-engine/deprecated-database-engine-features-in-sql-server-2017.md)
+ [Нерекомендуемые функции ядра СУБД в SQL Server 2017](../database-engine/deprecated-database-engine-features-in-sql-server-2017.md)  

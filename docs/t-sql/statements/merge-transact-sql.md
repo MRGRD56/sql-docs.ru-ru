@@ -25,12 +25,13 @@ helpviewer_keywords:
 ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: XiaoyuMSFT
 ms.author: XiaoyuL
-ms.openlocfilehash: 6b6610293bb78ef34ae5ca8b88f762c9ab4948e9
-ms.sourcegitcommit: 0b400bb99033f4b836549cb11124a1f1630850a1
+monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||  azure-sqldw-latest
+ms.openlocfilehash: 6bb1014c22353826b6e4429726d4d28549cc274a
+ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99978866"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100489338"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 
@@ -100,7 +101,8 @@ MERGE
   
 <clause_search_condition> ::=  
     <search_condition> 
-```  
+```
+
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ```syntaxsql
@@ -117,9 +119,9 @@ MERGE
     [ WHEN NOT MATCHED BY SOURCE [ AND <clause_search_condition> ]  
         THEN <merge_matched> ] [ ...n ]
     [ OPTION ( <query_hint> [ ,...n ] ) ]
-;  -- The semi-colon is required, or the query will return syntax  error. 
+;  -- The semi-colon is required, or the query will return a syntax error. 
 ```
- 
+
 ## <a name="arguments"></a>Аргументы
 
 WITH \<common_table_expression>  
@@ -236,7 +238,9 @@ DEFAULT VALUES
 >[!NOTE]
 > В Azure Synapse Analytics команда MERGE (предварительная версия) отличается от команд SQL Server и базы данных SQL Azure следующим образом.  
 > - Обновление при использовании команды MERGE реализуется как пара операций удаления и вставки. Количество затронутых строк при таком обновлении включает удаленные и вставленные строки. 
+
 > - Во период действия предварительной версии столбцы IDENTITY не поддерживают MERGE…WHEN NOT MATCHED INSERT.  
+
 > - В следующей таблице описываются поддерживаемые таблицы с разными типами распределения:
 
 >|MERGE CLAUSE в Azure Synapse Analytics|Поддерживаемая таблица распределения TARGET| Поддерживаемая таблица распределения SOURCE|Комментировать|  
@@ -256,7 +260,6 @@ DEFAULT VALUES
 Ключевое слово MERGE полностью резервируется, если установлен уровень совместимости базы данных 100 или выше. Инструкция MERGE доступна при уровнях совместимости базы данных 90 и 100, но это ключевое слово не полностью зарезервировано при уровне совместимости 90.  
   
 Не используйте инструкцию **MERGE** при репликации, обновляемой посредством очередей. Инструкция **MERGE** и обновляемый посредством очередей триггер несовместимы. Замените инструкцию **MERGE** на инструкцию вставки или обновления.  
-
 
 ## <a name="trigger-implementation"></a>Реализация триггера
 
