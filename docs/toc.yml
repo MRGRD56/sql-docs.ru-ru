@@ -8889,6 +8889,8 @@ items:
                 href: ssms/configure-login-auditing-sql-server-management-studio.md
               - name: Включение копирования в окне поиска и замены
                 href: ssms/troubleshoot/enable-copying-find-replace-window.md
+              - name: Активация перемещения вкладок
+                href: ssms/troubleshoot/workaround-move-tabs.md
               - name: Диагностика
                 items:
                   - name: Создать полный дамп памяти
