@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: ad9a4e92-13fb-457d-996a-66ffc2d55b79
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: feb85bc9b14169c862447c8465ce47c4637b5c32
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 64b8416375cdc61c43e8799b33891096858a79f7
+ms.sourcegitcommit: 059722ff78a6061b801807416b312ae9f721ec7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195027"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636727"
 ---
 # <a name="move-user-databases"></a>Перемещение пользовательских баз данных
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -48,19 +48,19 @@ ms.locfileid: "92195027"
 ## <a name="planned-relocation-procedure"></a>Процедура запланированного перемещения  
  Для запланированного перемещения файлов журнала или данных выполните следующие действия.  
   
-1.  Выполните следующую инструкцию:  
+1.  Для каждого перемещаемого файла выполните следующую инструкцию.  
+  
+    ```  
+    ALTER DATABASE database_name MODIFY FILE ( NAME = logical_name, FILENAME = 'new_path\os_file_name' );  
+    ```  
+  
+2.  Выполните следующую инструкцию:  
   
     ```  
     ALTER DATABASE database_name SET OFFLINE;  
     ```  
   
-2.  Переместите файл или файлы в новое расположение.  
-  
-3.  Для каждого перемещенного файла выполните следующую инструкцию:  
-  
-    ```  
-    ALTER DATABASE database_name MODIFY FILE ( NAME = logical_name, FILENAME = 'new_path\os_file_name' );  
-    ```  
+3.  Переместите файл или файлы в новое расположение.  
   
 4.  Выполните следующую инструкцию:  
   
