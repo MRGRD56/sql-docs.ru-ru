@@ -1,7 +1,7 @@
 ---
-title: Счетчики производительности для MSRS 2011 в режиме интеграции с SharePoint, объекты производительности | Документы Майкрософт
-description: Узнайте о счетчиках производительности для объектов производительности веб-службы MSRS 2011 в режиме интеграции с SharePoint и службы Windows для MSRS 2011 в режиме интеграции с SharePoint.
-ms.date: 06/26/2019
+title: Счетчики производительности для MSRS 2016 в режиме интеграции с SharePoint, объекты производительности | Документация Майкрософт
+description: Узнайте о счетчиках производительности для объектов производительности веб-службы MSRS 2016 в режиме интеграции с SharePoint и службы Windows для MSRS 2016 в режиме интеграции с SharePoint.
+ms.date: 02/17/2021
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-server
@@ -17,35 +17,35 @@ ms.assetid: 70bf6980-7845-4ab5-8b2a-ebf526d811a6
 author: maggiesMSFT
 ms.author: maggies
 monikerRange: '>=sql-server-2016 <=sql-server-2016'
-ms.openlocfilehash: 95742efced8c5b5704863d2582c6ca80c5b227e7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: cfa6fbdf2a4f834accd2ec197a8933371a5a6501
+ms.sourcegitcommit: 6c93282cce1216dac327cb28848a3ab4d51b776e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97440486"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100646346"
 ---
-# <a name="performance-counters-msrs-2011-sharepoint-mode-performance-objects"></a>Счетчики производительности для MSRS 2011 в режиме интеграции с SharePoint, объекты производительности
-  В этой статье рассматриваются счетчики производительности для объектов производительности **MSRS 2011 Web Service SharePoint Mode** и **MSRS 2011 Windows Service SharePoint Mode** , которые принадлежат к числу компонентов развертывания служб [!INCLUDE[ssRSCurrent](../../includes/ssrscurrent-md.md)] в режиме SharePoint.  
+# <a name="performance-counters-msrs-2016-sharepoint-mode-performance-objects"></a>Счетчики производительности для MSRS 2016 в режиме интеграции с SharePoint, объекты производительности
+  В этой статье рассматриваются счетчики производительности для объектов производительности **MSRS 2016 Web Service SharePoint Mode** и **MSRS 2016 Windows Service SharePoint Mode**, которые относятся к развертыванию служб SQL Server 2016 Reporting Services в режиме интеграции с SharePoint.  
   
 > [!NOTE]  
 >  Эти объекты производительности служат для наблюдения за событиями на локальном сервере отчетов. При запуске сервера отчетов в масштабном развертывании счетчики относятся к текущему серверу, а не к масштабному развертыванию в целом.  
   
  Объекты производительности доступны в системном мониторе Windows (**Perfmon.exe**). Дополнительные сведения см. в документации по Windows. [Профилирование среды выполнения](/dotnet/framework/debug-trace-profile/runtime-profiling) (https://msdn.microsoft.com/library/w4bz2147.aspx).  
   
- Сведения о счетчиках производительности и серверах отчетов в собственном режиме см. в разделах [Счетчики производительности для объектов производительности веб-службы MSRS 2011 и службы Windows MSRS 2011 (собственный режим)](../../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md) и [Счетчики производительности для объектов производительности веб-службы MSRS 2011 и службы Windows MSRS 2011 в режиме интеграции с SharePoint (режим интеграции с SharePoint)](../../reporting-services/report-server/performance-counters-msrs-2011-sharepoint-mode-performance-objects.md).  
+ Сведения о счетчиках производительности и серверах отчетов в собственном режиме см. в статье [Счетчики производительности для объектов производительности веб-службы MSRS 2016 и службы Windows MSRS 2016 &#40;собственный режим&#41;](../../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md).
   
  В этом разделе:  
   
--   [Счетчики производительности веб-службы MSRS 2011 в режиме интеграции с SharePoint](#bkmk_webservice)  
+-   [Счетчики производительности веб-службы MSRS 2016 в режиме интеграции с SharePoint](#bkmk_webservice)  
   
--   [Счетчики производительности службы Windows MSRS 2011 в режиме интеграции с SharePoint](#bkmk_windowsservice)  
+-   [Счетчики производительности службы Windows MSRS 2016 в режиме интеграции с SharePoint](#bkmk_windowsservice)  
   
 -   [Использование командлетов PowerShell для возврата списков](#bkmk_powershell)  
   
-##  <a name="msrs-2011-web-service-sharepoint-mode-performance-counters"></a><a name="bkmk_webservice"></a> Счетчики производительности веб-службы MSRS 2011 в режиме интеграции с SharePoint  
- Объект производительности **MSRS 2011 Web Service SharePoint Mode** используется для наблюдения за производительностью сервера отчетов. Этот объект производительности включает коллекцию счетчиков, используемых для отслеживания работы сервера отчетов, обычно инициируемой интерактивными операциями просмотра отчетов. Если включить этот счетчик, его можно применять ко всем экземплярам служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Также можно выбирать конкретные экземпляры. Эти счетчики сбрасываются, когда платформа [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] останавливает веб-службу сервера отчетов.  
+##  <a name="msrs-2016-web-service-sharepoint-mode-performance-counters"></a><a name="bkmk_webservice"></a> Счетчики производительности веб-службы MSRS 2016 в режиме интеграции с SharePoint  
+ Объект производительности **MSRS 2016 Web Service SharePoint Mode** используется для наблюдения за производительностью сервера отчетов. Этот объект производительности включает коллекцию счетчиков, используемых для отслеживания работы сервера отчетов, обычно инициируемой интерактивными операциями просмотра отчетов. Если включить этот счетчик, его можно применять ко всем экземплярам служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Также можно выбирать конкретные экземпляры. Эти счетчики сбрасываются, когда платформа [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] останавливает веб-службу сервера отчетов.  
   
- В следующей таблице перечислены счетчики, включенные в объект производительности **MSRS 2011 Web Service SharePoint Mode** .  
+ В следующей таблице перечислены счетчики, включенные в объект производительности **MSRS 2016 Web Service SharePoint Mode**.  
   
 |Счетчик|Описание|  
 |-------------|-----------------|  
@@ -72,10 +72,10 @@ ms.locfileid: "97440486"
 |**Всего выполнено отчетов**|Общее количество успешно выполненных отчетов с момента запуска службы. Этот счетчик сбрасывается каждый раз, когда [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] останавливает веб-службу сервера отчетов.|  
 |**Всего запросов**|Общее число всех запросов, выполненных к серверу отчетов после запуска службы. Этот счетчик сбрасывается каждый раз, когда [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] останавливает веб-службу сервера отчетов.|  
   
-##  <a name="msrs-2011-windows-service-sharepoint-mode-performance-counters"></a><a name="bkmk_windowsservice"></a> Счетчики производительности службы Windows MSRS 2011 в режиме интеграции с SharePoint  
- Объект производительности **MSRS 2011 Windows Service SharePoint Mode** используется для наблюдения за службами Windows сервера отчетов. Этот объект производительности включает коллекцию счетчиков, используемых для отслеживания обработки отчетов, обычно инициируемой операциями по расписанию. Выполняемые по расписанию операции могут включать операции подписки и доставки, формирование снимков состояния выполнения отчета и создание журнал отчета. Если включить этот счетчик, его можно применять ко всем экземплярам служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Также можно выбирать конкретные экземпляры.  
+##  <a name="msrs-2016-windows-service-sharepoint-mode-performance-counters"></a><a name="bkmk_windowsservice"></a> Счетчики производительности службы Windows MSRS 2016 в режиме интеграции с SharePoint  
+ Объект производительности **MSRS 2016 Windows Service SharePoint Mode** используется для наблюдения за службами Windows сервера отчетов. Этот объект производительности включает коллекцию счетчиков, используемых для отслеживания обработки отчетов, обычно инициируемой операциями по расписанию. Выполняемые по расписанию операции могут включать операции подписки и доставки, формирование снимков состояния выполнения отчета и создание журнал отчета. Если включить этот счетчик, его можно применять ко всем экземплярам служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] . Также можно выбирать конкретные экземпляры.  
   
- В следующей таблице перечислены счетчики, включенные в объект производительности **MSRS 2011 Windows Service SharePoint mode** .  
+ В следующей таблице перечислены счетчики, включенные в объект производительности **MSRS 2016 Windows Service SharePoint mode**.  
   
 |Счетчик|Описание|  
 |-------------|-----------------|  
@@ -125,18 +125,18 @@ ms.locfileid: "97440486"
 ```  
 get-counter -listset msr*  
 Returns a list with the following information  
-CounterSetName     : MSRS 2011 Windows Service SharePoint Mode  
-CounterSetName     : MSRS 2011 Web Service SharePoint Mode  
+CounterSetName     : MSRS 2016 Windows Service SharePoint Mode  
+CounterSetName     : MSRS 2016 Web Service SharePoint Mode  
 ```  
   
- Следующий скрипт Windows PowerShell возвращает список счетчиков производительности для CounterSetName с именем "MSRS 2011 Windows Service SharePoint Mode".  
+ Приведенный ниже скрипт Windows PowerShell возвращает список счетчиков производительности для CounterSetName с именем "MSRS 2016 Windows Service SharePoint Mode".  
   
 ```  
-(get-counter -listset "MSRS 2011 Windows Service SharePoint Mode").paths  
+(get-counter -listset "MSRS 2016 Windows Service SharePoint Mode").paths  
 ```  
   
 ## <a name="see-also"></a>См. также:  
  [Наблюдение за производительностью сервера отчетов](../../reporting-services/report-server/monitoring-report-server-performance.md)   
- [Счетчики производительности для объектов производительности веб-службы MSRS 2011 и службы Windows MSRS 2011 (собственный режим)](../../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md)   
+ [Счетчики производительности для объектов производительности веб-службы MSRS 2016 и службы Windows MSRS 2016 &#40;собственный режим&#41;](../../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md)   
  [Счетчики производительности для объектов производительности ReportServer:Service и ReportServerSharePoint:Service](../../reporting-services/report-server/performance-counters-reportserver-service-performance-objects.md)  
   

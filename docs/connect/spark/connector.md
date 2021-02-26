@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rajmera3
 ms.author: raajmera
 ms.reviewer: mikeray
-ms.openlocfilehash: 15a4bdb66ea87f85337540adfec4b5e175b1c55b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2cc921b7aa1acaf99da8a632dc8e3996d648682c
+ms.sourcegitcommit: 059722ff78a6061b801807416b312ae9f721ec7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100058129"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636703"
 ---
 # <a name="apache-spark-connector-sql-server--azure-sql"></a>Соединитель Apache Spark для SQL Server и Azure SQL
 
@@ -25,7 +25,14 @@ ms.locfileid: "100058129"
 
 [Apache Spark](https://spark.apache.org/) — это единый аналитический механизм для крупномасштабной обработки данных.
 
-Вы можете получить соединитель от [Maven](https://search.maven.org/search?q=spark-mssql-connector). Чтобы импортировать соединитель, используйте координату `com.microsoft.azure:spark-mssql-connector:<latest version>`. Вы также можете создать соединитель на основе источника данных или скачать JAR-файл из раздела выпуска на GitHub. Последние сведения о соединителе см. в [репозитории GitHub для соединителя Spark SQL](https://github.com/microsoft/sql-spark-connector).
+В Maven доступны две версии соединителя: совместимая с версией 2.4.5 и совместимая с версией 3.0.0. Обе версии можно найти [здесь](https://search.maven.org/search?q=spark-mssql-connector) и импортировать с помощью приведенных ниже координат.
+
+| Соединитель | Координата Maven |
+| --------- | ------------------ |
+| Соединитель, совместимый со Spark 2.4.5 | `com.microsoft.azure:spark-mssql-connector:1.0.1` |
+| Соединитель, совместимый со Spark 3.0.0 | `com.microsoft.azure:spark-mssql-connector_2.12_3.0:1.0.0-alpha` |
+
+Вы также можете создать соединитель на основе источника данных или скачать JAR-файл из раздела выпуска на GitHub. Последние сведения о соединителе см. в [репозитории GitHub для соединителя Spark SQL](https://github.com/microsoft/sql-spark-connector).
 
 ## <a name="supported-features"></a>Поддерживаемые функции
 
@@ -37,8 +44,8 @@ ms.locfileid: "100058129"
 
 | Компонент                            | Поддерживаемые версии              |
 |--------------------------------------|---------------------------------|
-| Apache Spark                         | 2.4.5 (Spark 3.0 не поддерживается) |
-| Scala                                | 2,11                            |
+| Apache Spark                         | 2.4.5, 3.0.0 |
+| Scala                                | 2.11, 2.12                            |
 | Microsoft JDBC Driver для SQL Server | 8.2                             |
 | Microsoft SQL Server                 | SQL Server 2008 или более поздняя версия        |
 | Базы данных SQL Azure                  | Поддерживается                       |
@@ -51,7 +58,7 @@ ms.locfileid: "100058129"
 
 Кроме того, поддерживаются указанные ниже параметры
 
-| Параметр | Значение по умолчанию | Описание |
+| Параметр | По умолчанию | Описание |
 | --------- | ------------------ | ------------------------------------------ |
 | `reliabilityLevel` | `BEST_EFFORT` | `BEST_EFFORT` или `NO_DUPLICATES`. `NO_DUPLICATES` реализует надежную операцию вставки в сценариях перезапуска исполнителя |
 | `dataPoolDataSource` | `none` | `none` означает, что значение не задано и соединитель должен записывать данные в один экземпляр SQL Server. Присвойте этому параметру имя источника данных для записи в таблицу пула данных в кластере больших данных|

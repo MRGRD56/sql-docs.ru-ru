@@ -19,12 +19,12 @@ ms.assetid: f86dd29f-52dd-44a9-91ac-1eb305c1ca8d
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 148f93b43f704686b3083954cb3d7353f33a16e0
-ms.sourcegitcommit: c6cc0b669b175ae290cf5b08952010661ebd03c3
+ms.openlocfilehash: 5c074add532e55209c8fc304a98da686cec60aab
+ms.sourcegitcommit: 059722ff78a6061b801807416b312ae9f721ec7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530867"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636733"
 ---
 # <a name="create-indexed-views"></a>Создание индексированных представлений
 
@@ -159,8 +159,8 @@ ms.locfileid: "100530867"
 
 Чтобы создать представление, пользователю требуется разрешение **CREATE VIEW** в отношении базы данных и разрешение **ALTER** в отношении схемы, в которой создается представление. Если базовая таблица находится в другой схеме, для нее требуется как минимум разрешение **REFERENCES**. Если пользователь, создающий индекс, отличается от пользователей, создавших представление, для создания индекса требуется только разрешение **ALTER** для представления (охватываемое ALTER в схеме).
 
-    > [!NOTE]  
-    > Indexes can only be created on views which have the same owner as the referenced table or tables. This is also called an intact **ownership-chain** between the view and the table(s). Typically, when table and view reside within the same schema, the same schema-owner applies to all objects within the schema. But it is possible that individual objects have different explicit owners. The column **principal_id** in sys.tables contains a value if the owner is different from the schema-owner.
+> [!NOTE]  
+> Индексы могут создаваться только для представлений, имеющих того же владельца, что и таблицы, на которые выполняется ссылка. Это также называется неизменной **цепочкой владения** между представлением и таблицами. Как правило, если таблица и представление находятся в одной и той же схеме, ко всем объектам в схеме применяется один и тот же владелец. Поэтому можно создать представление и не быть владельцем представления. С другой стороны, также возможно, что отдельные объекты в схеме имеют разных явных владельцев. Если владелец отличается от владельца схемы, в столбце **principal_id** в sys.tables будет содержаться соответствующее значение.
 
 
 ## <a name="using-transact-sql"></a><a name="TsqlProcedure"></a> Использование Transact-SQL

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 38ffd9c2-18a5-43d2-b674-e425addec4e4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8e9138ff27909f9236a608fd0c66f9dca8d5addf
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b59fc811c5bdfa122b306e9522bae97faa37e451
+ms.sourcegitcommit: 059722ff78a6061b801807416b312ae9f721ec7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351454"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100636725"
 ---
 # <a name="sql-server-data-files-in-microsoft-azure"></a>Файлы данных SQL Server в Microsoft Azure
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -112,6 +112,8 @@ ON
   
 ###  <a name="limitations"></a><a name="bkmk_Limitations"></a> Ограничения  
   
+- В связи с характеристиками производительности рабочих нагрузок SQL Server файлы данных SQL Server реализуются как страничные BLOB-объекты в хранилище BLOB-объектов Azure. Другие типы хранилища BLOB-объектов, такие как блочные BLOB-объекты или [Azure Data Lake Storage](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction), не поддерживаются.
+
 - В текущем выпуске этого компонента хранение данных **FileStream** в службе хранилища Azure не поддерживается. Вы можете хранить данные **FileStream** в базе данных, которая также содержит файлы данных, хранящихся в службе хранилища Azure, но все файлы данных FileStream должны храниться в локальном хранилище.  Так как данные FileStream должны находиться в локальном хранилище, их нельзя перемещать между компьютерами с помощью службы хранилища Azure. Поэтому рекомендуется продолжать использовать [традиционные методы](../../relational-databases/blob/move-a-filestream-enabled-database.md) для перемещения данных, связанных с FileStream, между разными компьютерами.  
   
 - Сейчас этот новый модуль не поддерживает одновременный доступ нескольких экземпляров SQL Server к одним и тем же файлам базы данных в службе хранилища Azure. Если ServerA находится в сети с активным файлом базы данных, а ServerB будет случайно запущен и при этом на нем тоже есть база данных, указывающая на тот же файл данных, второй сервер не сможет запустить базу данных и вернет код ошибки **5120. Не удается открыть физический файл "%.\*ls". Ошибка операционной системы %d: "%ls"** .  
