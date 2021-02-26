@@ -4,21 +4,23 @@ titleSuffix: SQL Server big data clusters
 description: Сведения о том, как настроить развертывание кластера больших данных с помощью файлов конфигурации, встроенных в средство управления azdata.
 author: MikeRayMSFT
 ms.author: mikeray
-ms.reviewer: mihaelab
-ms.date: 06/22/2020
+ms.reviewer: rajmera3
+ms.date: 02/11/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d983b4d0d7cfb02a587675984fdc42c54bf9f0ec
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ffb41a559c6f262fe6d25a50c51b6e6553a2a7b8
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047204"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100343923"
 ---
 # <a name="configure-deployment-settings-for-cluster-resources-and-services"></a>Настройка параметров развертывания для кластерных ресурсов и служб
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
+> [!Note]
+> Кластеры больших данных с накопительным пакетом обновления 9 или более поздней версии поддерживают функцию управления конфигурацией. Она обеспечивает настройку кластера после развертывания, улучшает видимость и расширяет возможности настройки. В версиях накопительного пакета обновления 8 и более ранних этой функции нет, и настройку можно производить только во время развертывания.
 
 Начиная с предопределенного набора профилей конфигурации, встроенных в инструмент управления [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)], можно легко изменять параметры по умолчанию для достижения лучшего соответствия требованиям рабочих нагрузок BDC. Структура файлов конфигурации позволяет детально обновлять параметры для каждой службы в ресурсе.
 
@@ -28,6 +30,9 @@ ms.locfileid: "100047204"
 
 > [!TIP]
 > Дополнительные сведения о развертывании высокодоступных служб см. в статьях, посвященных настройке **высокой доступности** для критически важных компонентов, таких как [главный экземпляр SQL Server](deployment-high-availability.md) или [узел имен HDFS](deployment-high-availability-hdfs-spark.md).
+
+> [!TIP]
+> Чтобы узнать, какие параметры можно настроить, см. статью [Свойства конфигурации кластеров больших данных SQL Server](reference-config-bdc-overview.md). Для версий накопительного пакета обновления 8 и более ранних конфигурации, доступные для главного экземпляра SQL Server, см. в статье [Свойства конфигурации главного экземпляра SQL Server (до накопительного пакета обновления 9)](reference-config-master-instance.md), а свойства Apache Spark и Hadoop — в статье [Свойства конфигурации Apache Spark и Apache Hadoop (HDFS)](reference-config-spark-hadoop.md).
 
 Можно также задавать конфигурации уровня ресурсов или обновлять конфигурации для всех служб в ресурсе. Ниже приведена сводка по структуре для `bdc.json`.
 

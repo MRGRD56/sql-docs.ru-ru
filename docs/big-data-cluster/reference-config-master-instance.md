@@ -5,20 +5,22 @@ description: Справочная статья по свойствам конф�
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: rahul.ajmera
-ms.date: 08/04/2020
+ms.date: 02/11/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2f251357c818577b0ecd761c4a5ca2f030eeca58
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2d986013374e7f69111288d2d0f50b09130a2d68
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100043984"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100343509"
 ---
-# <a name="sql-server-master-instance-configuration-properties"></a>Свойства конфигурации главного экземпляра SQL Server
+# <a name="sql-server-master-instance-configuration-properties----pre-cu9-release"></a>Свойства конфигурации главного экземпляра SQL Server (до накопительного пакета обновления 9)
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
+> [!NOTE]
+> Следующие сведения относятся только к кластерам с накопительным пакетом обновления до версии 9, не поддерживающим конфигурации и требующим mssql-conf для настройки главного экземпляра SQL Server. В кластерах с накопительным пакетом обновления 9 и более поздних версий используется функция управления конфигурацией, поэтому файл mssql-conf больше не требуется. Доступные конфигурации для главного экземпляра SQL Server и других компонентов кластера больших данных см. [здесь](reference-config-bdc-overview.md).
 
 ## <a name="properties"></a>Свойства
 

@@ -1,7 +1,7 @@
 ---
 description: Настройка проверки подлинности Windows на сервере отчетов
 title: Настройка обычной проверки подлинности на сервере отчетов | Документы Майкрософт
-ms.date: 08/26/2016
+ms.date: 02/10/2021
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: security
@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 8faf2938-b71b-4e61-a172-46da2209ff55
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 8b2b130f85b556d6fdeb2e3c0c3c4a32644a80d6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: d3b875eafb10e4234df2cde35bb61bbecfebad94
+ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88492644"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100489328"
 ---
 # <a name="configure-basic-authentication-on-the-report-server"></a>Настройка проверки подлинности Windows на сервере отчетов
   По умолчанию службы Reporting Services принимают запросы, в которых задана проверка подлинности NTLM или Negotiated. Если конфигурация развертывания включает клиентские приложения или браузеры, использующие обычную проверку подлинности, то необходимо добавить обычную проверку подлинности в список поддерживаемых типов. Кроме того, если планируется использование построителя отчетов, то необходимо разрешить анонимный доступ к его файлам.  
@@ -35,15 +35,17 @@ ms.locfileid: "88492644"
   
 ### <a name="to-configure-a-report-server-to-use-basic-authentication"></a>Настройка сервера отчетов для использования обычной проверки подлинности  
   
-1.  Откройте файл конфигурации RSReportServer.config в текстовом редакторе.  
+1. Откройте файл конфигурации RSReportServer.config в текстовом редакторе.  
   
-     Файл находится в каталоге *\<drive>:* \Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\ReportServer.  
+     Сведения о том, как найти файл конфигурации, см. в разделе [Расположение файла](../report-server/rsreportserver-config-configuration-file.md#bkmk_file_location) в статье "Файл конфигурации RsReportServer.config".
   
-2.  Найдите параметр \<**Authentication**>.  
+2. Найдите параметр \<**Authentication**>.  
   
-3.  Выберите и скопируйте наиболее подходящую из следующих XML-структур. Первая XML-структура содержит заполнители для всех элементов, описанных в следующем разделе.  
-  
-    ```  
+3. Выберите и скопируйте наиболее подходящую из следующих XML-структур. Первая XML-структура содержит заполнители для всех элементов, описанных в следующем разделе.  
+
+    [!INCLUDE [ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-2016](../../includes/ssrs-appliesto-2016.md)]
+
+    ```xml
     <Authentication>  
           <AuthenticationTypes>  
                  <RSWindowsBasic>  
@@ -56,27 +58,40 @@ ms.locfileid: "88492644"
     </Authentication>  
     ```  
   
-     Если желательно использовать значения по умолчанию, то можно скопировать структуру, содержащую минимальный набор элементов.  
+    Если желательно использовать значения по умолчанию, то можно скопировать структуру, содержащую минимальный набор элементов.  
   
-    ```  
+    ```xml
           <AuthenticationTypes>  
                  <RSWindowsBasic/>  
           </AuthenticationTypes>  
     ```  
+
+    [!INCLUDE [ssrs-appliesto](../../includes/ssrs-appliesto.md)] [!INCLUDE [ssrs-appliesto-2017-and-later](../../includes/ssrs-appliesto-2017-and-later.md)] [!INCLUDE [ssrs-appliesto-pbirs](../../includes/ssrs-appliesto-pbirs.md)]
+
+    ```xml
+      <Authentication>
+          <AuthenticationTypes>
+                      <RSWindowsBasic/>
+          </AuthenticationTypes>
+          <EnableAuthPersistence>true</EnableAuthPersistence>
+      <RSWindowsExtendedProtectionLevel>Off</RSWindowsExtendedProtectionLevel>
+      <RSWindowsExtendedProtectionScenario>Any</RSWindowsExtendedProtectionScenario>
+      </Authentication>
+    ```
+
+4. Вставьте его на место существующих элементов \<**Authentication**>.  
   
-4.  Вставьте его на место существующих элементов \<**Authentication**>.  
-  
-     При использовании нескольких типов проверки подлинности добавьте только элемент **RSWindowsBasic** , но не удаляйте элементы для **RSWindowsNegotiate**, **RSWindowsNTLM**или **RSWindowsKerberos**.  
+     При использовании нескольких типов проверки подлинности добавьте только элемент **RSWindowsBasic** , но не удаляйте элементы для **RSWindowsNegotiate**, **RSWindowsNTLM** или **RSWindowsKerberos**.  
   
      Следует заметить, что **Custom** нельзя использовать с другими типами проверки подлинности.  
   
-5.  Замените пустые значения для элементов \<**Realm**> и \<**DefaultDomain**> значениями для своей среды.  
+5. Замените пустые значения для элементов \<**Realm**> и \<**DefaultDomain**> значениями для своей среды.  
   
-6.  Сохраните файл.  
+6. Сохраните файл.  
   
-7.  Если настроено масштабное развертывание, повторите вышеперечисленные шаги для остальных серверов отчетов, входящих в конфигурацию развертывания.  
+7. Если настроено масштабное развертывание, повторите вышеперечисленные шаги для остальных серверов отчетов, входящих в конфигурацию развертывания.  
   
-8.  Перезапустите сервер отчетов, чтобы очистить все открытые сеансы.  
+8. Перезапустите сервер отчетов, чтобы очистить все открытые сеансы.  
   
 ## <a name="rswindowsbasic-reference"></a>Справочник по RSWindowsBasic  
  При настройке обычной проверки подлинности можно задать следующие элементы.  

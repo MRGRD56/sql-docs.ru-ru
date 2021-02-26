@@ -1,5 +1,5 @@
 ---
-title: Учебник по R. Проектирование признаков
+title: Учебник по R. Конструирование признаков
 description: Учебник, показывающий, как создавать признаки данных с помощью функций SQL Server для аналитики в базе данных.
 ms.prod: sql
 ms.technology: machine-learning-services
@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 38920a0d7dda05b2dbd853035c4ce0c17ffd74f2
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 502600980a3cb1f80eaeca64284f0a189cfcb405
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470035"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100272985"
 ---
 # <a name="create-data-features-using-r-and-sql-server-walkthrough"></a>Создание признаков данных с помощью R и SQL Server (пошаговое руководство)
 [!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "97470035"
 
 Целью является создание нового набора данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], включающего в себя исходные столбцы и новый числовой признак — *direct_distance*.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для этого этапа требуется продолжение сеанса R из предыдущих этапов этого пошагового руководства. В нем используются строки подключения и объекты источников данных, созданные на этих этапах. Для запуска скрипта используются следующие средства и пакеты.
 
@@ -109,7 +109,7 @@ ms.locfileid: "97470035"
     print(paste("It takes CPU Time=", round(used.time[1]+used.time[2],2)," seconds, Elapsed Time=", round(used.time[3],2), " seconds to generate features.", sep=""));
     ```
 
-    + Функция rxDataStep поддерживает различные методы изменения данных на месте. Дополнительные сведения см. в следующей статье:  [Преобразование и подмножества данных в Microsft R](/r-server/r/how-to-revoscaler-data-transform)
+    + Функция rxDataStep поддерживает различные методы изменения данных на месте. Дополнительные сведения см. в статье [Преобразование данных и выделение подмножеств в Microsft R](/r-server/r/how-to-revoscaler-data-transform).
     
     Однако стоит отметить несколько моментов, касающихся rxDataStep. 
     
@@ -129,7 +129,7 @@ ms.locfileid: "97470035"
 
 Для запуска скрипта T-SQL перейдите в [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) или другой редактор запросов.
 
-1. Используйте функцию SQL с именем *fnCalculateDistance*. Функция уже должна существовать в базе данных NYCTaxi_Sample. В обозревателе объектов убедитесь, что функция существует, перейдя по этому пути: Базы данных > NYCTaxi_Sample > Программируемость > Функции > Функции с одиночным значением > dbo.fnCalculateDistance.
+1. Используйте функцию SQL с именем *fnCalculateDistance*. Функция уже должна существовать в базе данных NYCTaxi_Sample. В обозревателе объектов убедитесь в том, что функция существует, перейдя по пути "Базы данных > NYCTaxi_Sample > Программируемость > Функции > Скалярные функции > dbo.fnCalculateDistance".
 
     Если функция не существует, создайте функцию в базе данных NYCTaxi_Sample, используя SQL Server Management Studio.
 
@@ -227,7 +227,7 @@ ms.locfileid: "97470035"
     ```
 
     > [!NOTE]
-    > В некоторых случаях может появиться сообщение об ошибке следующего вида: *Разрешение EXECUTE было отклонено для объекта "fnCalculateDistance"* . В этом случае убедитесь, что используемое имя входа имеет разрешения на выполнение скриптов и создание объектов в базе данных, а не только в экземпляре.
+    > Иногда может возникать ошибка наподобие следующей: *Разрешение EXECUTE было отклонено для объекта "fnCalculateDistance"* . В этом случае убедитесь в том, что используемое имя входа имеет разрешения на выполнение скриптов и создание объектов в базе данных, а не только в экземпляре.
     > Проверьте схему для объекта fnCalculateDistance. Если объект был создан владельцем базы данных, а имя входа принадлежит роли db_datareader, то необходимо предоставить имени входа явные разрешения на запуск скрипта.
 
 ## <a name="comparing-r-functions-and-sql-functions"></a>Сравнение функций R с функциями SQL

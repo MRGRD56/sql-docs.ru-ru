@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 86a15b33-4d03-4549-8ea2-b45e4f1baad7
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 722371558fe5d6f1a9a8a363322a28e7f89243f2
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 2f87ae98424eef3f6aeadca1f11da6d9d1f2b403
+ms.sourcegitcommit: 8bdb5a51f87a6ff3b94360555973ca0cd0b6223f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99250393"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100549390"
 ---
 # <a name="always-on-failover-cluster-instances-sql-server"></a>Экземпляры отказоустойчивого кластера AlwaysOn (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -157,6 +157,6 @@ ms.locfileid: "99250393"
 |----------------------------|---------------|  
 |Описывает, как установить новый FCI [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .|[Создание отказоустойчивого кластера SQL Server (программа установки)](../../../sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup.md)|  
 |Описывает, как выполнить обновление до отказоустойчивого кластера [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] .|[Обновление экземпляра отказоустойчивого кластера SQL Server](../../../sql-server/failover-clusters/windows/upgrade-a-sql-server-failover-cluster-instance.md).|  
-|Описание основных понятий отказоустойчивых кластеров Windows, а также ссылки на связанные с ними задачи.|[!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)]: [обзор отказоустойчивых кластеров](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730692(v=ws.10))<br /><br /> [!INCLUDE[nextref_longhorn](../../../includes/nextref-longhorn-md.md)] R2: [обзор отказоустойчивых кластеров](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754482(v=ws.11))|  
+|Описание основных понятий отказоустойчивых кластеров Windows, а также ссылки на связанные с ними задачи.|[Отказоустойчивый кластер Windows Server и SQL Server](windows-server-failover-clustering-wsfc-with-sql-server.md)|
 |Описывает различия в основных понятиях между узлами в экземпляре отказоустойчивого кластера и репликами внутри группы доступности, а также содержит рекомендации по использованию экземпляра отказоустойчивого кластера для размещения реплики для группы доступности.|[Отказоустойчивая кластеризация и группы доступности (SQL Server)](../../../database-engine/availability-groups/windows/failover-clustering-and-always-on-availability-groups-sql-server.md)|  
   

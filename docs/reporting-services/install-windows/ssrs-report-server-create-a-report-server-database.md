@@ -7,13 +7,13 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.topic: conceptual
 ms.custom: seodec18
-ms.date: 9/2/2020
-ms.openlocfilehash: 70a92bf37285e9af58dcef2e7a69abfb88b37178
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 02/16/2021
+ms.openlocfilehash: 927fafb66a9551332a0d5fcbff868ad79efa5eef
+ms.sourcegitcommit: 129c084add904fd3f7e9ab35a800c3fd8b1a8927
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100067111"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100564114"
 ---
 # <a name="create-a-report-server-database-report-server-configuration-manager"></a>Создание базы данных сервера отчетов, диспетчер конфигурации сервера отчетов  
 
@@ -84,6 +84,9 @@ ms.locfileid: "100067111"
 - [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]  
   
 - [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]  
+
+> [!NOTE] 
+> SQL в Linux не поддерживается в качестве среды для размещения базы данных служб SQL Server Reporting Services.
 
 Если вы создаете базу данных сервера отчетов на удаленном компьютере, настройте подключение через учетную запись пользователя домена или учетную запись службы с сетевым доступом. Если вы используете удаленный экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], тщательно выберите правильные учетные данные для подключения сервера отчетов к этому экземпляру. Дополнительные сведения см. в разделе [Настройка соединения с базой данных сервера отчетов (диспетчер конфигурации сервера отчетов)](../../reporting-services/install-windows/configure-a-report-server-database-connection-ssrs-configuration-manager.md).  
   

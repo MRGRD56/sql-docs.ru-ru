@@ -5,16 +5,16 @@ description: Узнайте, как обновлять кластеры боль
 author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
-ms.date: 09/30/2020
+ms.date: 02/11/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2a79c82f2c3fd443d7237fc3b0a1f7c51102bceb
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 799afc246b106c4b49d6aba44f8d26a761d6c2cc
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048019"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100343962"
 ---
 # <a name="deploy-sql-server-big-data-cluster-in-active-directory-mode"></a>Развертывание кластера больших данных SQL Server в режиме Active Directory
 
@@ -54,8 +54,10 @@ export DOMAIN_SERVICE_ACCOUNT_PASSWORD=<AD principal password>
 
 - `security.activeDirectory.realm` **Необязательный параметр**: в большинстве случаев область равна доменному имени. Для случаев, когда они не совпадают, используйте этот параметр для определения имени области (например, `CONTOSO.LOCAL`). Значение, указанное для этого параметра, должно быть полным.
 
-  > [!IMPORTANT]
-  > В настоящее время BDC не поддерживает конфигурацию, в которой имя домена Active Directory отличается от имени **NETBIOS** домена Active Directory.
+- `security.activeDirectory.netbiosDomainName` **Необязательный параметр**. NetBIOS-имя домена Active Directory. В большинстве случаев это будет первая метка доменного имени Active Directory. В иных случаях используйте этот параметр, чтобы задать NetBIOS-имя домена. Значение не должно содержать точек. Обычно это имя используется для уточнения имен учетных записей пользователей в домене. Пример: CONTOSO\user, где CONTOSO — это NetBIOS-имя домена.
+
+  > [!NOTE]
+  > Поддержка конфигурации, в которой доменное имя Active Directory отличается от **NetBIOS**-имени домена Active Directory, посредством *security.activeDirectory.netbiosDomainName* появилась начиная с SQL Server 2019 с накопительным пакетом обновления 9.
 
 - `security.activeDirectory.domainDnsName`: Имя домена DNS, которое будет использоваться для кластера (например, `contoso.local`).
 

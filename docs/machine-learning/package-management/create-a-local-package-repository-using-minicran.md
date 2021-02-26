@@ -10,12 +10,12 @@ author: garyericson
 ms.author: garye
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: a0edb79e6e23f713767da060fc580ac92c3daaee
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: f93a1180f25f764330db44306457e775961bc0da
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97471175"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350689"
 ---
 # <a name="create-a-local-r-package-repository-using-minicran"></a>Создание локального репозитория пакетов R с помощью miniCRAN
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "97471175"
 
 Репозитории пакетов полезны в следующих сценариях:
 
-- **Безопасность** — Многие пользователи R привыкли произвольно скачивать и устанавливать новые пакеты R из CRAN или одного из его зеркальных сайтов. Однако в целях безопасности рабочие серверы, где работает [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)], обычно не имеют подключения к Интернету.
+- **Безопасность**. Многие пользователи R привыкли произвольно скачивать и устанавливать новые пакеты R из CRAN или одного из его зеркальных сайтов. Однако в целях безопасности рабочие серверы, где работает [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)], обычно не имеют подключения к Интернету.
 
 - **Упрощенная автономная установка**. Для установки пакета на автономном сервере необходимо также скачать все пакеты-зависимости. Использование miniCRAN упрощает получение всех зависимостей в правильном формате и позволяет избежать ошибок с зависимостями.
 

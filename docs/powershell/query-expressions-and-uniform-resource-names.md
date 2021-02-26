@@ -14,12 +14,12 @@ ms.author: maghan
 ms.reviewer: matteot, drskwier
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 839bef5d4b3aba3a9d95664c549556d6c05206e5
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+ms.openlocfilehash: ea6bb90e43c66160463cdfa0229826b3a7013762
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081903"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "100338239"
 ---
 # <a name="query-expressions-and-uniform-resource-names"></a>Выражения запросов и универсальные имена ресурсов
 
@@ -87,7 +87,7 @@ contains(\@*StringPropertyName*, '*PatternString*')
 Перечисляет все объекты, значение указанного строкового свойства которых точно такое же, как комбинация символов, указанная в '*PatternString*'.  
   
 \@*DatePropertyName*= datetime('*DateString*')  
-Перечисляет все объекты, значение указанного свойства даты которых соответствует дате, указанной в '*DateString*'. Значение*DateString* должно иметь формат гггг-мм-дд чч:ми:сс.ммм.  
+Перечисляет все объекты, значение указанного свойства даты которых соответствует дате, указанной в '*DateString*'. Значение *DateString* должно иметь формат гггг-мм-дд чч:ми:сс.ммм.  
   
 |Компонент DateString|Описание|  
 |-|-|  
@@ -126,7 +126,7 @@ Server[@Name='MYCOMPUTER']/Database[@Name='AdventureWorks2012']/Table[@Name='Sal
 ## <a name="examples"></a>Примеры  
   
 ### <a name="a-enumerating-objects-using-false"></a>A. Перечисление объектов при помощи функции false()  
- Приведенное ниже выражение запроса перечисляет все базы данных в экземпляре по умолчанию в **MyComputer** , атрибут **AutoClose**которых имеет значение false.  
+ Приведенное ниже выражение запроса перечисляет все базы данных в экземпляре по умолчанию в **MyComputer** , атрибут **AutoClose** которых имеет значение false.  
   
 ```  
 Server[@Name='MYCOMPUTER']/Database[@AutoClose=false()]  
@@ -169,5 +169,5 @@ Server[@Name='MYCOMPUTER']/Database[@Name='AdventureWorks2012"]/Table[Not(is_nul
   
 ## <a name="see-also"></a>См. также:
 
-- [Invoke-PolicyEvaluation, командлет](invoke-policyevaluation-cmdlet.md)
+- [Invoke-PolicyEvaluation, командлет](/powershell/module/sqlserver/Invoke-PolicyEvaluation)
 - [Подсистема аудита SQL Server (компонент Database Engine)](../relational-databases/security/auditing/sql-server-audit-database-engine.md)

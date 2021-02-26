@@ -1,5 +1,5 @@
 ---
-title: 'Для SQL Server 2016 и 2017: Требования к оборудованию и ПО'
+title: Требования к оборудованию и ПО для SQL Server 2016 и 2017
 description: Список требований к оборудованию, программному обеспечению и операционной системе для установки и запуска SQL Server 2016 и SQL Server 2017.
 ms.custom: seo-lt-2019
 ms.date: 02/19/2020
@@ -45,14 +45,14 @@ helpviewer_keywords:
 ms.assetid: 09bcf20b-0a40-4131-907f-b61479d5e4d8
 ms.author: chadam
 author: cawrites
-ms.openlocfilehash: 8583c629fc43656e082d32ec00b1e942d2e92b3d
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: 2fc1268ceeec1b03da9f5bd16301169504053f1c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170616"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352459"
 ---
-# <a name="sql-server-2016-and-2017-hardware-and-software-requirements"></a>SQL Server 2016 и 2017: Требования к аппаратному и программному обеспечению
+# <a name="sql-server-2016-and-2017-hardware-and-software-requirements"></a>Требования к оборудованию и программному обеспечению для SQL Server 2016 и 2017
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
 В этой статье приведены минимальные требования к оборудованию и программному обеспечению, необходимым для установки и запуска SQL Server 2016 и SQL Server 2017 в операционной системе Windows.  
@@ -68,7 +68,7 @@ ms.locfileid: "98170616"
 |Компонент|Требование|  
 |---------------|-----------------|  
 |Жесткий диск|Для[!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] требуется как минимум 6 ГБ свободного места на диске.<br/><br/> Требования к месту на диске определяются набором устанавливаемых компонентов [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] . Дополнительные сведения см. в разделе [Требования к месту на диске](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md#HardDiskSpace) далее в этой статье. Сведения о поддерживаемых типах хранилищ для файлов данных см. в разделе [Storage Types for Data Files](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server.md#StorageTypes). <br/><br/> Рекомендуется устанавливать SQL Server на компьютерах с файловой системой NTFS или ReFS. Установка в файловой системе FAT32 поддерживается, но не рекомендуется, поскольку эта система менее защищенная, чем системы NTFS или ReFS. <br/><br/>  Диски, доступные только для чтения, подключенные и сжатые диски блокируются во время установки. |  
-|Диск|Для установки с DVD-диска необходим соответствующий дисковод.  |  
+|Накопитель|Для установки с DVD-диска необходим соответствующий дисковод.  |  
 |Монитор|Для[!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] требуется монитор Super VGA с разрешением 800x600 пикселей или более высоким.|  
 |Интернет|Для поддержки функциональных средств Интернета требуется доступ к Интернету (могут применяться дополнительные тарифы).|  
 |Память \*|**Минимальные:**<br/><br/> Экспресс-выпуски: 512 МБ<br/><br/> Все другие выпуски: 1 ГБ<br/><br/> **Рекомендуется:**<br/><br/> Экспресс-выпуски: 1 ГБ<br/><br/> Все другие выпуски: Для обеспечения оптимальной производительности требуется не менее 4 ГБ с последующим увеличением по мере роста размера базы данных.|  
@@ -90,7 +90,7 @@ ms.locfileid: "98170616"
 |Компонент|Требование|  
 |---------------|-----------------|  
 |.NET Framework|Для установки [!INCLUDE[sql2016](../../includes/sssql16-md.md)] и более поздних версий требуется [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 4.6 для следующих компонентов: ядро СУБД, Master Data Services и репликация. Во время установки SQL Server автоматически устанавливается [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]. Также вы можете вручную установить [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] со страницы [Microsoft .NET Framework 4.6 (веб-установщик) для Windows](https://support.microsoft.com/kb/3045560).<br/><br/> Дополнительные сведения, рекомендации и руководство для платформы [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 4.6 см. в статье [Руководство по развертыванию .NET Framework для разработчиков](https://msdn.microsoft.com/library/ee942965\(v=vs.110\).aspx).<br/><br/>В[!INCLUDE[winblue_client_2](../../includes/winblue-client-2-md.md)]и [!INCLUDE[winblue_server_2](../../includes/winblue-server-2-md.md)] нужно установить обновление [KB2919355](https://support.microsoft.com/kb/2919355) перед установкой [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 4.6.|  
-|Сетевое программное обеспечение|Поддерживаемые операционные системы для [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] содержат встроенное сетевое программное обеспечение. Именованные экземпляры и экземпляры по умолчанию изолированной установки поддерживают следующие сетевые протоколы: общая память, именованные каналы, TCP/IP и VIA.<br/><br/> **Примечание.** Протокол VIA не поддерживается в отказоустойчивых кластерах. Клиенты или приложения, работающие на одном узле в отказоустойчивом кластере как экземпляр SQL Server, могут использовать протокол общей памяти для подключения к SQL Server с помощью адреса локального канала. Но этот тип подключения не привязан к кластеру. Подключение завершится ошибкой после отработки отказа экземпляра. Таким образом, его рекомендуется использовать только в определенных случаях.<br/><br/> **Внимание!** Протокол VIA является устаревшим. [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]<br/><br/> Дополнительные сведения о сетевых протоколах и сетевых библиотеках см. в разделе [Network Protocols and Network Libraries](../../sql-server/install/network-protocols-and-network-libraries.md).|  
+|Сетевое программное обеспечение|Поддерживаемые операционные системы для [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] содержат встроенное сетевое программное обеспечение. Именованные экземпляры и экземпляры по умолчанию изолированной установки поддерживают следующие сетевые протоколы: общая память, именованные каналы, TCP/IP и VIA.<br/><br/> **Примечание**. Протокол VIA не поддерживается на отказоустойчивых кластерах. Клиенты или приложения, работающие на одном узле в отказоустойчивом кластере как экземпляр SQL Server, могут использовать протокол общей памяти для подключения к SQL Server с помощью адреса локального канала. Но этот тип подключения не привязан к кластеру. Подключение завершится ошибкой после отработки отказа экземпляра. Таким образом, его рекомендуется использовать только в определенных случаях.<br/><br/> **Важно**. Протокол VIA является устаревшим. [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]<br/><br/> Дополнительные сведения о сетевых протоколах и сетевых библиотеках см. в разделе [Network Protocols and Network Libraries](../../sql-server/install/network-protocols-and-network-libraries.md).|  
 
 Программа установки[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] устанавливает следующие компоненты, необходимые для продукта:  
   
@@ -117,21 +117,21 @@ ms.locfileid: "98170616"
 | Windows Server 2016 Datacenter    |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2016 Standard      |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2016 Essentials    |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows Server 2012 R2 Datacenter |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows Server 2012 R2 Standard   |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows Server 2012 R2 Essentials |    Да     |    Да    |    Да   | Да |   Да   |
+| Windows Server 2012 R2 Datacenter |    Да     |    Да    |    Да   | Да |   Да   |
+| Windows Server 2012 R2 Standard   |    Да     |    Да    |    Да   | Да |   Да   |
+| Windows Server 2012 R2 Essentials |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2012 R2 Foundation |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows Server 2012 Datacenter    |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows Server 2012 Standard      |    Да     |    Да    |    Да   | Да |   Да   |
+| Windows Server 2012 Datacenter    |    Да     |    Да    |    Да   | Да |   Да   |
+| Windows Server 2012 Standard      |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2012 Essentials    |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2012 Foundation    |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows 10 IoT Корпоративная         |    нет      |    Да    |    Да   | нет  |   Да   |
+| Windows 10 IoT Корпоративная         |    нет      |    Да    |    Да   | нет  |   Да   |
 | Windows 10 Корпоративная             |    нет      |    Да    |    Да   | нет  |   Да   |
 | Windows 10 Профессиональная           |    нет      |    Да    |    Да   | нет  |   Да   |
 | Windows 10 Домашняя                   |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 8.1 Корпоративная            |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 8.1 Профессиональная                   |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 8.1 Корпоративная            |    нет      |    Да    |    Да   | нет  |   Да   |
+| Windows 8.1 Корпоративная            |    нет      |    Да    |    Да   | нет  |   Да   |
+| Windows 8.1 Профессиональная                   |    нет      |    Да    |    Да   | нет  |   Да   |
+| Windows 8.1 Корпоративная            |    нет      |    Да    |    Да   | нет  |   Да   |
 | Windows 8 Профессиональная                     |    нет      |    Да    |    Да   | нет  |   Да   |
 | Windows 8                         |    нет      |    Да    |    Да   | нет  |   Да   | 
 
@@ -160,7 +160,7 @@ ms.locfileid: "98170616"
 :::row-end:::
 :::row:::
     :::column:::
-        Windows Server 2012 R2 Standard
+        Windows Server 2012 R2 Standard
     :::column-end:::
     :::column:::
         Windows Server 2012 R2 Datacenter
@@ -168,10 +168,10 @@ ms.locfileid: "98170616"
 :::row-end:::
 :::row:::
     :::column:::
-        Windows Server 2012 Standard
+        Windows Server 2012 Standard
     :::column-end:::
     :::column:::
-        Windows Server 2012 Datacenter
+        Windows Server 2012 Datacenter
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -274,6 +274,6 @@ ms.locfileid: "98170616"
 Кроме того, вы можете создать [виртуальную машину Azure, в которой уже работает SQL Server](/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal), хотя SQL Server на виртуальной машине будет работать медленнее, чем в собственном коде, из-за издержек виртуализации.
   
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После ознакомления с требованиями к оборудованию и программному обеспечению для установки SQL Server можно приступить к [планированию установки SQL Server](../../sql-server/install/planning-a-sql-server-installation.md) или просмотреть [рекомендации по обеспечению безопасности SQL Server](../../sql-server/install/security-considerations-for-a-sql-server-installation.md).
