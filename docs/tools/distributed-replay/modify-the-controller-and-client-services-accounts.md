@@ -3,20 +3,18 @@ title: Изменение учетных записей служб клиент�
 titleSuffix: SQL Server Distributed Replay
 description: Узнайте, как изменить учетные записи контроллера и клиента распределенного воспроизведения и повторно применить списки управления доступом.
 ms.prod: sql
-ms.reviewer: ''
 ms.technology: tools-other
 ms.topic: conceptual
-ms.assetid: 44a73ddb-18ad-415c-bfbe-126ab2e3290b
 author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 22d126dae4356bd6830c801369375b8705e37b37
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 85a79a7af034f0a35f64f6d9a0cafeb2233e8418
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349524"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839299"
 ---
 # <a name="modify-the-controller-and-client-services-accounts"></a>Изменение учетных записей служб клиента и контроллера
 

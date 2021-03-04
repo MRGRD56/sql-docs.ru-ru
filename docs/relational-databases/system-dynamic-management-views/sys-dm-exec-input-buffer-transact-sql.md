@@ -21,12 +21,12 @@ ms.assetid: fb34a560-bde9-4ad9-aa96-0d4baa4fc104
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1560c1147df8373cf75fa5640ca8ee6c6ce97bdc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 0d6b6cd5081d70f22fb2be2edd3355119c987e07
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99159872"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839352"
 ---
 # <a name="sysdm_exec_input_buffer-transact-sql"></a>sys.dm_exec_input_buffer (Transact-SQL)
 
@@ -70,7 +70,7 @@ sys.dm_exec_input_buffer ( session_id , request_id )
 > [!IMPORTANT]
 > Выполнение этого динамического административного представления вне SQL Server Management Studio в базе данных SQL Azure без разрешений владельца (например, в триггере, хранимой процедуре или функции) вызывает ошибку разрешения в базе данных master.
 
-## <a name="remarks"></a>Замечания
+## <a name="remarks"></a>Комментарии
 
 Эту функцию динамического управления можно использовать в сочетании с sys.dm_exec_sessions или sys.dm_exec_requests, выполняя **перекрестное применение**.
 
@@ -87,13 +87,13 @@ GO
 
 ### <a name="b-using-cross-apply-to-additional-information"></a>Б. Использование перекрестного применения к дополнительным сведениям
 
-В следующем примере перечисляются Входные буферы для сеансов с ИДЕНТИФИКАТОРом сеанса больше 50.
+В следующем примере перечисляются Входные буферы для пользовательских сеансов.
 
 ```sql
 SELECT es.session_id, ib.event_info
 FROM sys.dm_exec_sessions AS es
 CROSS APPLY sys.dm_exec_input_buffer(es.session_id, NULL) AS ib
-WHERE es.session_id > 50;
+WHERE es.is_user_process = 1;
 GO
 ```
 

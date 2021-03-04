@@ -11,12 +11,12 @@ ms.topic: how-to
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: ee15152be634c08cb04ec6a01716604fae720471
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dc50006d17228bf3b5ec03c2a672ed113260bf3b
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100069739"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839264"
 ---
 # <a name="troubleshoot-common-issues-for-always-encrypted-with-secure-enclaves"></a>Устранение распространенных неполадок Always Encrypted с безопасными анклавами
 
@@ -28,7 +28,7 @@ ms.locfileid: "100069739"
 
 Чтобы выполнить инструкции с использованием безопасного анклава, необходимо включить Always Encrypted и указать URL-адрес аттестации для подключения к базе данных, как это описано в разделе [Необходимые условия для выполнения инструкций, использующих безопасные анклавы](always-encrypted-enclaves-query-columns.md#prerequisites-for-running-statements-using-secure-enclaves). Однако подключение завершится ошибкой, если указать URL-адрес аттестации, но база данных в [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] или целевом экземпляре [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] не поддерживает безопасные анклавы или настройка выполнена неверно.
 
-- Если вы используете [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)], убедитесь, что в базе данных используется конфигурация оборудования [серии DC](https://docs.microsoft.com/azure/azure-sql/database/service-tiers-vcore?tabs=azure-portal#dc-series). Дополнительные сведения см. в статье [Включение Intel SGX для базы данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-enable-sgx).
+- Если вы используете [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)], убедитесь, что в базе данных используется конфигурация оборудования [серии DC](/azure/azure-sql/database/service-tiers-vcore?tabs=azure-portal#dc-series). Дополнительные сведения см. в статье [Включение Intel SGX для базы данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-enable-sgx).
 - Если вы используете [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)], проверьте правильность настройки безопасного анклава для вашего экземпляра. Дополнительные сведения см. в статье [Настройка безопасного анклава в SQL Server](always-encrypted-enclaves-configure-enclave-type.md).
 
 ## <a name="attestation-errors-when-using-microsoft-azure-attestation"></a>Ошибки аттестации при использовании Аттестации Microsoft Azure
@@ -56,7 +56,7 @@ ms.locfileid: "100069739"
   - Наиболее вероятной основной причиной является неверная политика аттестации. Убедитесь, что вы используете политику, рекомендованную Майкрософт. Дополнительные сведения см. в разделе [Создание и настройка поставщика аттестации](/azure/azure-sql/database/always-encrypted-enclaves-configure-attestation#create-and-configure-an-attestation-provider).
   - Сбой проверки политики может также происходить из-за нарушения безопасности, приводящего к компрометации анклава на стороне сервера.
 - Клиентскому приложению не удается подключиться к поставщику аттестации и получить открытый ключ подписи (на шаге 5). Причины могут быть следующими.
-  - Настройка брандмауэров между приложением и поставщиком аттестации может блокировать подключения. Чтобы устранить неполадки с заблокированным подключением, проверьте, что вы можете подключиться к конечной точке OpenID поставщика аттестации. Например, используйте веб-браузер на компьютере, на котором размещено приложение, чтобы узнать, можно ли подключиться к конечной точке OpenID. Дополнительные сведения см. в разделе [Конфигурация метаданных — Get](https://docs.microsoft.com/rest/api/attestation/metadataconfiguration/get).
+  - Настройка брандмауэров между приложением и поставщиком аттестации может блокировать подключения. Чтобы устранить неполадки с заблокированным подключением, проверьте, что вы можете подключиться к конечной точке OpenID поставщика аттестации. Например, используйте веб-браузер на компьютере, на котором размещено приложение, чтобы узнать, можно ли подключиться к конечной точке OpenID. Дополнительные сведения см. в разделе [Конфигурация метаданных — Get](/rest/api/attestation/metadataconfiguration/get).
 
 ## <a name="attestation-errors-when-using-host-guardian-service"></a>Ошибки аттестации при использовании службы защиты узла
 
