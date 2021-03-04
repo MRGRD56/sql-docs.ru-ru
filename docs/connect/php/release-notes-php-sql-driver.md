@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 91cca3d2-ba99-4a6d-b0de-beb9699cb3f8
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8d53811bef7cb4c570d2aa60638474f815548a17
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 0df2acfa00507f42d3ee03a0a65ff2ae25aafbd1
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100058339"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837189"
 ---
 # <a name="release-notes-for-the-microsoft-drivers-for-php-for-sql-server"></a>Заметки о выпуске драйверов Майкрософт для PHP для SQL Server
 
@@ -68,7 +68,7 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 | Время ожидания запроса задается без использования LOCK TIMEOUT, что позволяет избежать лишнего обращения к серверу. | &nbsp; |
 | &nbsp; | &nbsp; |
 
-<sup>1</sup> В этом выпуске требуется драйвер ODBC Driver 17.4.2 или более поздней версии. В противном случае появится предупреждение о невозможности задать атрибут. При использовании более старой версии драйвера ODBC это предупреждение можно отключить. При использовании SQLSRV обратитесь к статье [Практическое руководство. Настройка обработки ошибок и предупреждений с помощью драйвера SQLSRV](https://docs.microsoft.com/sql/connect/php/how-to-configure-error-and-warning-handling-using-the-sqlsrv-driver). При использовании PDO_SQLSRV предупреждения по умолчанию скрываются, но могут записываться в журнал. Дополнительные сведения см. в статье [Ведение журнала](https://docs.microsoft.com/sql/connect/php/logging-activity).
+<sup>1</sup> В этом выпуске требуется драйвер ODBC Driver 17.4.2 или более поздней версии. В противном случае появится предупреждение о невозможности задать атрибут. При использовании более старой версии драйвера ODBC это предупреждение можно отключить. При использовании SQLSRV обратитесь к статье [Практическое руководство. Настройка обработки ошибок и предупреждений с помощью драйвера SQLSRV](./how-to-configure-error-and-warning-handling-using-the-sqlsrv-driver.md). При использовании PDO_SQLSRV предупреждения по умолчанию скрываются, но могут записываться в журнал. Дополнительные сведения см. в статье [Ведение журнала](./logging-activity.md).
 
 ## <a name="581"></a>5.8.1
 

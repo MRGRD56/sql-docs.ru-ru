@@ -13,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 83985f8cb34b9efa8485f9827dd9692a38f91a65
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: c8379a2e1c18ea5da82abda5ad25dee47679a742
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100344789"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837793"
 ---
 # <a name="best-practices-with-query-store"></a>Рекомендации по хранилищу запросов
 
@@ -441,7 +441,7 @@ WHERE is_forced_plan = 1;
 
 Хранилище запросов на вторичной активной геореплике Базы данных SQL Azure будет доступным только для чтения копии действия на первичной реплике. 
 
-Следует избегать несоответствия уровней Баз данных SQL Azure, используемых в георепликации. База данных-получатель должна иметь такой же или практически такой же объем вычислительных ресурсов, что и база данных-источник, и находиться на том же уровне службы, что и база данных-источник. Взгляните на тип ожидания HADR_THROTTLE_LOG_RATE_MISMATCHED_SLO в [sys.dm_db_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database), который указывает на регулирование скорости журнала транзакций на первичной реплике из-за задержки на вторичной реплике.
+Следует избегать несоответствия уровней Баз данных SQL Azure, используемых в георепликации. База данных-получатель должна иметь такой же или практически такой же объем вычислительных ресурсов, что и база данных-источник, и находиться на том же уровне службы, что и база данных-источник. Взгляните на тип ожидания HADR_THROTTLE_LOG_RATE_MISMATCHED_SLO в [sys.dm_db_wait_stats](../system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database.md), который указывает на регулирование скорости журнала транзакций на первичной реплике из-за задержки на вторичной реплике.
 
 Дополнительные сведения об оценке и настройке размера Базы данных-получателя SQL Azure с активной георепликацией см. в разделе [Настройка базы данных-получателя](/azure/azure-sql/database/active-geo-replication-overview#configuring-secondary-database).
 

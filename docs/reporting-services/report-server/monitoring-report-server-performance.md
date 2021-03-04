@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: c1bc13d4-8297-4daf-bb19-4c1e5ba292a6
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: deae632ce9305b58b72e24e1a57507f9f4c5ee89
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: f24b3bb19150271532561d691a1ed1f4c89dfbc5
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489438"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101838094"
 ---
 # <a name="monitoring-report-server-performance"></a>Наблюдение за производительностью сервера отчетов
 
@@ -68,13 +68,13 @@ ms.locfileid: "100489438"
   
 -   **ReportServer: Service** и **reportserversharepoint: Service** — для наблюдения за связанными с HTTP событиями и управления памятью. Эти счетчики являются уникальными для служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], они отслеживают связанные с HTTP события для сервера отчетов, такие как запросы, соединения и попытки входа. Этот объект производительности также включает счетчики для отслеживания событий управления памятью.  
   
- Если на одном компьютере имеется несколько экземпляров сервера отчетов, их можно контролировать вместе или по отдельности. При добавлении счетчика необходимо выбрать включаемые в него экземпляры. Дополнительные сведения об использовании Монитора производительности (perfmon.msc) и добавлении счетчиков см. в документации по продукту [Монитор производительности [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
+ Если на одном компьютере имеется несколько экземпляров сервера отчетов, их можно контролировать вместе или по отдельности. При добавлении счетчика необходимо выбрать включаемые в него экземпляры. Дополнительные сведения об использовании Монитора производительности (perfmon.msc) и добавлении счетчиков см. в документации по продукту [Монитор производительности [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
   
 ## <a name="other-performance-counters"></a>Другие счетчики производительности  
  Пользовательские счетчики производительности [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] предоставляются только для перечисленных выше объектов производительности Reporting Services. Указанные ниже счетчики производительности .NET Framework предоставляют дополнительные возможности наблюдения за производительностью сервера отчетов.
  
  > [!NOTE]
- > Для сервера отчетов Power BI и служб SQL Server Reporting Services 2017 и более поздних версий объекты производительности Reporting Services недоступны. Для наблюдения за производительностью сервера отчетов доступны [счетчики производительности .NET Framework](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/performance-counters). 
+ > Для сервера отчетов Power BI и служб SQL Server Reporting Services 2017 и более поздних версий объекты производительности Reporting Services недоступны. Для наблюдения за производительностью сервера отчетов доступны [счетчики производительности .NET Framework](/dotnet/framework/debug-trace-profile/performance-counters). 
  
 |Объект производительности|Примечания|  
 |------------------------|-----------|  
@@ -98,4 +98,3 @@ ms.locfileid: "100489438"
  [Настройка доступной памяти для приложений сервера отчетов](../../reporting-services/report-server/configure-available-memory-for-report-server-applications.md)   
  [Сервер отчетов служб Reporting Services (основной режим)](../../reporting-services/report-server/reporting-services-report-server-native-mode.md)   
  [Инструментальные средства служб Reporting Services](../../reporting-services/tools/reporting-services-tools.md)  
-  

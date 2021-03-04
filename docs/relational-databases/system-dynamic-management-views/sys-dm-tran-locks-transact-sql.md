@@ -21,12 +21,12 @@ ms.assetid: f0d3b95a-8a00-471b-9da4-14cb8f5b045f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 00783bffefd33038d079280c50983b9dfe03393f
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 95dfd0be129d7f6116ef92fbe54d7869af45fca1
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100340060"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837973"
 ---
 # <a name="sysdm_tran_locks-transact-sql"></a>sys.dm_tran_locks (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -63,9 +63,9 @@ ms.locfileid: "100340060"
   
 ## <a name="permissions"></a>Разрешения
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
-В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
+В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
  
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  Состояние предоставленного запроса показывает, что блокировка ресурса была предоставлена запрашивающему объекту. Ожидающий запрос обозначает, что запрос еще не был предоставлен. Следующий тип ожидающих запросов возвращается столбцом **request_status**.  
   
 -   Состояние преобразованного запроса означает, что запрашивающий объект получил запрос ресурса и в настоящий момент ожидает, пока будет предоставлено обновление исходного запроса.  
@@ -98,15 +98,15 @@ ms.locfileid: "100340060"
   
 |Тип ресурса|Описание ресурса|Resource_associated_entity_id|  
 |-------------------|--------------------------|--------------------------------------|  
-|DATABASE|Представляет базу данных.|Не применяются|  
-|FILE|Представляет файл базы данных. Может быть файлом данных или журнала.|Не применяются|  
+|DATABASE|Представляет базу данных.|Неприменимо|  
+|FILE|Представляет файл базы данных. Может быть файлом данных или журнала.|Неприменимо|  
 |OBJECT|Представляет объект базы данных. Может быть таблицей данных, представлением, хранимой процедурой, расширенной хранимой процедурой или любым другим объектом, имеющим идентификатор объекта.|Идентификатор объекта|  
 |PAGE|Представляет отдельную страницу в файле данных.|Идентификатор HoBt. Это значение соответствует представлению **sys.partitions.hobt_id**. Идентификатор HoBt не всегда доступен для ресурсов PAGE, поскольку в нем содержатся дополнительные данные, предоставляемые вызывающим участником, но не все вызывающие объекты способны предоставить эти данные.|  
 |KEY|Представляет строку в указателе.|Идентификатор HoBt. Это значение соответствует представлению **sys.partitions.hobt_id**.|  
-|EXTENT|Представляет экстент файла данных. Экстент — это группа из восьми последовательных страниц.|Не применяются|  
+|EXTENT|Представляет экстент файла данных. Экстент — это группа из восьми последовательных страниц.|Неприменимо|  
 |RID|Представляет физическую строку в куче.|Идентификатор HoBt. Это значение соответствует представлению **sys.partitions.hobt_id**. Идентификатор HoBt не всегда доступен для ресурсов RID, поскольку в нем содержатся дополнительные данные, предоставляемые вызывающим участником, но не все вызывающие объекты способны предоставить эти данные.|  
-|APPLICATION|Представляет определенный ресурс приложения.|Не применяются|  
-|METADATA|Представляет метаданные.|Не применяются|  
+|APPLICATION|Представляет определенный ресурс приложения.|Неприменимо|  
+|METADATA|Представляет метаданные.|Неприменимо|  
 |HOBT|Представляет кучу или сбалансированное дерево. Это основные структуры путей доступа.|Идентификатор HoBt. Это значение соответствует представлению **sys.partitions.hobt_id**.|  
 |ALLOCATION_UNIT|Представляет набор связанных страниц, таких как секция индекса. Каждая единица распределения покрывает отдельную цепочку карты распределения индекса (IAM).|Идентификатор единицы распределения. Это значение соответствует представлению **sys.allocation_units.allocation_unit_id**.|  
   
@@ -200,7 +200,7 @@ ms.locfileid: "100340060"
   
 |Ресурс|Формат|Описание|  
 |--------------|------------|-----------------|  
-|DATABASE|Не применяются|Идентификатор базы данных уже доступен в столбце **resource_database_id**.|  
+|DATABASE|Неприменимо|Идентификатор базы данных уже доступен в столбце **resource_database_id**.|  
 |FILE|<file_id>|Идентификатор файла, представляемого данным ресурсом.|  
 |OBJECT|<object_id>|Идентификатор объекта, представляемого данным ресурсом. Это может быть любой объект из списка **sys.objects**, а не только таблица.|  
 |PAGE|<file_id>:<page_in_file>|Представляет файл и идентификатор страницы, представляемые данным ресурсом.|  
@@ -208,8 +208,8 @@ ms.locfileid: "100340060"
 |EXTENT|<file_id>:<page_in_files>|Представляет файл и идентификатор экстента, представляемые данным ресурсом. Идентификатор экстента совпадает с идентификатором первой страницы этого экстента.|  
 |RID|<file_id>:<page_in_file>:<row_on_page>|Представляет идентификатор страницы и идентификатор строки, представленной данным ресурсом. Обратите внимание на то, что, если идентификатор связанного объекта имеет значение 99, этот ресурс представляет одну из восьми областей памяти смешанных страниц первой IAM-страницы в цепочке IAM.|  
 |APPLICATION|\<DbPrincipalId>: \<upto 32 characters> :(<hash_value>)|Представляет идентификатор участника базы данных, используемого для определения области действия ресурса блокировки этого приложения. Также включает до 32 символов из строки ресурса, соответствующего ресурсу блокировок для этого приложения. В некоторых случаях из полной строки, больше не являющейся доступной, могут отображаться только 2 символа. Это происходит только во время восстановления базы данных для блокировок приложений, которые вызываются заново как часть процесса восстановления. Это хэш-значение представляет собой хэш-код полной строки ресурса, соответствующего ресурсу блокировки данного приложения.|  
-|HOBT|Не применяются|Идентификатор HoBt, включенный в качестве столбца **resource_associated_entity_id**.|  
-|ALLOCATION_UNIT|Не применяются|Идентификатор единицы распределения, включенный в качестве столбца **resource_associated_entity_id**.|  
+|HOBT|Неприменимо|Идентификатор HoBt, включенный в качестве столбца **resource_associated_entity_id**.|  
+|ALLOCATION_UNIT|Неприменимо|Идентификатор единицы распределения, включенный в качестве столбца **resource_associated_entity_id**.|  
 |METADATA.ASSEMBLY|assembly_id = A|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |METADATA.ASSEMBLY_CLR_NAME|$qname_id = Q|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |METADATA.ASSEMBLY_TOKEN|assembly_id = A, $token_id|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
@@ -389,4 +389,4 @@ GO
 [sys.dm_tran_database_transactions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)      
 [Динамические административные представления и функции (Transact-SQL)](../../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)     
 [Динамические административные представления и функции, связанные с транзакциями &#40;языке Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/transaction-related-dynamic-management-views-and-functions-transact-sql.md)      
-[SQL Server, объект Locks](../../relational-databases/performance-monitor/sql-server-locks-object.md)      
+[SQL Server, объект Locks](../../relational-databases/performance-monitor/sql-server-locks-object.md)

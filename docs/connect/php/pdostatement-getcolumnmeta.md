@@ -11,12 +11,12 @@ ms.topic: reference
 ms.assetid: c92a21cc-8e53-43d0-a4bf-542c77c100c9
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8767da09f84be9c557238643e16c925756e0bede
-ms.sourcegitcommit: c52a6aeb6fa6d7c3a86b3e84449361f4a0949ad0
+ms.openlocfilehash: bbfddcbf39dbbba3b63c6853ea7700e6a27a4614
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99623784"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837223"
 ---
 # <a name="pdostatementgetcolumnmeta"></a>PDOStatement::getColumnMeta
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -133,7 +133,7 @@ for ($i = 0; $i < $numCol; $i++) {
 
 ## <a name="sensitivity-rank-using-a-predefined-set-of-values"></a>Ранг конфиденциальности на основе предопределенного набора значений
 
-Начиная с версии 5.9.0 в драйверах PHP появилась возможность извлечения ранга классификации при использовании ODBC Driver 17.4.2 или более поздней версии. Пользователь может определить ранг при использовании [ADD SENSITIVITY CLASSIFICATION](/sql/t-sql/statements/add-sensitivity-classification-transact-sql) для классификации любого столбца данных. 
+Начиная с версии 5.9.0 в драйверах PHP появилась возможность извлечения ранга классификации при использовании ODBC Driver 17.4.2 или более поздней версии. Пользователь может определить ранг при использовании [ADD SENSITIVITY CLASSIFICATION](../../t-sql/statements/add-sensitivity-classification-transact-sql.md) для классификации любого столбца данных. 
 
 Например, если пользователь назначает `NONE` и `LOW` столбцам BirthDate и SSN соответственно, представление JSON будет выглядеть следующим образом:
 
@@ -142,7 +142,7 @@ for ($i = 0; $i < $numCol; $i++) {
 {"0":{"Label":{"name":"Highly Confidential - secure privacy","id":""},"Information Type":{"name":"Credentials","id":""},"rank":10},"rank":10}
 ```
 
-Как видно из [классификации конфиденциальности](/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql), ранги имеют следующие числовые значения:
+Как видно из [классификации конфиденциальности](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md), ранги имеют следующие числовые значения:
 
 ```
 0 for NONE
@@ -192,4 +192,4 @@ array(1) {
 ## <a name="see-also"></a>См. также:  
 [Класс PDOStatement](../../connect/php/pdostatement-class.md)
 
-[PDO](https://php.net/manual/book.pdo.php)  
+[PDO](https://php.net/manual/book.pdo.php)

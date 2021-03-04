@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: c02f6942-0484-4567-a78e-fe8aa2053536
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 45b617e91f2f296aa9749f7f8f2f25b640ddf546
-ms.sourcegitcommit: c52a6aeb6fa6d7c3a86b3e84449361f4a0949ad0
+ms.openlocfilehash: 82e1ad1147867abd9308dc89517855df830a38e6
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99623774"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837157"
 ---
 # <a name="sqlsrv_field_metadata"></a>sqlsrv_field_metadata
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -240,7 +240,7 @@ foreach ($fieldmeta as $f) {
 
 ## <a name="sensitivity-rank-using-a-predefined-set-of-values"></a>Ранг конфиденциальности на основе предопределенного набора значений
 
-Начиная с версии 5.9.0 в драйверах PHP появилась возможность извлечения ранга классификации при использовании ODBC Driver 17.4.2 или более поздней версии. Пользователь может определить ранг при использовании [ADD SENSITIVITY CLASSIFICATION](/sql/t-sql/statements/add-sensitivity-classification-transact-sql) для классификации любого столбца данных. 
+Начиная с версии 5.9.0 в драйверах PHP появилась возможность извлечения ранга классификации при использовании ODBC Driver 17.4.2 или более поздней версии. Пользователь может определить ранг при использовании [ADD SENSITIVITY CLASSIFICATION](../../t-sql/statements/add-sensitivity-classification-transact-sql.md) для классификации любого столбца данных. 
 
 Например, если пользователь назначает `NONE` и `LOW` столбцам BirthDate и SSN соответственно, представление JSON будет выглядеть следующим образом:
 
@@ -249,7 +249,7 @@ foreach ($fieldmeta as $f) {
 {"0":{"Label":{"name":"Highly Confidential - secure privacy","id":""},"Information Type":{"name":"Credentials","id":""},"rank":10},"rank":10}
 ```
 
-Как видно из [классификации конфиденциальности](/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql), ранги имеют следующие числовые значения:
+Как видно из [классификации конфиденциальности](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md), ранги имеют следующие числовые значения:
 
 ```
 0 for NONE
@@ -313,4 +313,4 @@ foreach ($fieldmeta as $f) {
 
 [Константы (драйверы Майкрософт для PHP для SQL Server)](../../connect/php/constants-microsoft-drivers-for-php-for-sql-server.md)  
 
-[Информация о примерах кода в документации](../../connect/php/about-code-examples-in-the-documentation.md)  
+[Информация о примерах кода в документации](../../connect/php/about-code-examples-in-the-documentation.md)

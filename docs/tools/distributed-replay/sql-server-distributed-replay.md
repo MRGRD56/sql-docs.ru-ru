@@ -5,18 +5,17 @@ description: Функция распределенного воспроизве�
 ms.prod: sql
 ms.technology: tools-other
 ms.topic: conceptual
-ms.assetid: 58ef7016-b105-42c2-90a0-364f411849a4
 author: markingmyname
 ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: cbd95e11c4d85ec3fed28559cec0d2eb98048247
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ac77b9ead15eb4171dbcaee38235a9f934aaa172
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336017"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837796"
 ---
 # <a name="sql-server-distributed-replay"></a>Распределенное воспроизведение SQL Server
 

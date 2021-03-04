@@ -5,18 +5,18 @@ ms.custom: ''
 ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: connectivity
-ms.reviewer: ''
+ms.reviewer: v-daenge
 ms.technology: connectivity
 ms.topic: conceptual
 ms.assetid: 271c0438-8af1-45e5-b96a-4b1cabe32707
 author: reneye
 ms.author: v-reye
-ms.openlocfilehash: 3970374537cc3491a0d8d624c3eccd31db0134e7
-ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
+ms.openlocfilehash: 46e812a4234098e49a272be503e52f34d4c78733
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99076972"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837541"
 ---
 # <a name="using-always-encrypted-with-secure-enclaves-with-the-jdbc-driver"></a>Использование Always Encrypted с безопасными анклавами с драйвером JDBC
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "99076972"
 
 - **enclaveAttestationUrl:**  — определяет URL-адрес аттестации (конечная точка службы аттестации). Необходимо получить URL-адрес аттестации для имеющейся среды у администратора службы аттестации.
   - Если вы используете [!INCLUDE [ssnoversion-md](../../includes/ssnoversion-md.md)] и службу защитника узлов (HGS), см. сведения в разделе об [определении и совместном использовании URL-адреса аттестации HGS](../../relational-databases/security/encryption/always-encrypted-enclaves-host-guardian-service-deploy.md#step-6-determine-and-share-the-hgs-attestation-url).
-  - Если вы используете [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] и Аттестацию Microsoft Azure, см. сведения об [определении URL-адреса аттестации для политики аттестации](/sql/relational-databases/security/encryption/always-encrypted-enclaves?view=sql-server-ver15#secure-enclave-attestation).
+  - Если вы используете [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] и Аттестацию Microsoft Azure, см. сведения об [определении URL-адреса аттестации для политики аттестации](../../relational-databases/security/encryption/always-encrypted-enclaves.md?view=sql-server-ver15#secure-enclave-attestation).
 
 Чтобы включить Always Encrypted с безопасными анклавами из [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)], пользователям необходимо включить параметр **columnEncryptionSetting** и правильно задать **оба** приведенных выше свойства строки подключения.
 
@@ -91,4 +91,4 @@ try (Connection c = DriverManager.getConnection(URL);Statement s = c.createState
 Для этой функции требуется алгоритм подписи RSASSA-PSA. Он был добавлен в JDK 11, но не был портирован в JDK 8. Пользователи, которые хотят использовать эту функцию с версией [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] для JDK 8, должны либо загрузить собственный поставщик, поддерживающий алгоритм подписи RSASSA-PSA, либо включить дополнительную зависимость BouncyCastleProvider. Эта зависимость будет удалена позже, если алгоритм подписи будет портирован в JDK 8 или жизненный цикл поддержки JDK 8 завершится.
 
 ## <a name="see-also"></a>См. также раздел
-[Использование функции Always Encrypted с JDBC Driver](../../connect/jdbc/using-always-encrypted-with-the-jdbc-driver.md)  
+[Использование функции Always Encrypted с JDBC Driver](../../connect/jdbc/using-always-encrypted-with-the-jdbc-driver.md)

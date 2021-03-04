@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: bc92b0af972236b588369869afc5b023735ae699
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 130d2a9f2d92a77ab2d2e033f8e5f4fb9f88ef9f
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237133"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837673"
 ---
 # <a name="run-transact-sql-statements-using-secure-enclaves"></a>Выполнение инструкций Transact-SQL с помощью безопасных анклавов
 
@@ -67,7 +67,7 @@ ms.locfileid: "99237133"
 - Необходимо получить URL-адрес аттестации для имеющейся среды у администратора службы аттестации.
 
   - Если вы используете [!INCLUDE [ssnoversion-md](../../../includes/ssnoversion-md.md)] и службу защитника узлов (HGS), см. сведения в разделе об [определении и совместном использовании URL-адреса аттестации HGS](always-encrypted-enclaves-host-guardian-service-deploy.md#step-6-determine-and-share-the-hgs-attestation-url).
-  - Если вы используете [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] и Аттестацию Microsoft Azure, см. сведения об [определении URL-адреса аттестации для политики аттестации](/sql/relational-databases/security/encryption/always-encrypted-enclaves?view=sql-server-ver15#secure-enclave-attestation).
+  - Если вы используете [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] и Аттестацию Microsoft Azure, см. сведения об [определении URL-адреса аттестации для политики аттестации](./always-encrypted-enclaves.md?view=sql-server-ver15#secure-enclave-attestation).
 
 - Если подключение к базе данных осуществляется с помощью приложения, необходимо использовать драйвер клиента, который поддерживает Always Encrypted с безопасными анклавами. Приложение должно подключаться к базе данных с включенной функцией Always Encrypted для подключения к базе данных и использовать правильно настроенные протокол аттестации и URL-адрес аттестации. Подробные сведения см. в статье [Разработка приложений с помощью Always Encrypted с безопасными анклавами](always-encrypted-enclaves-client-development.md).
 - Если вы используете SQL Server Management Studio (SSMS) или Azure SQL Data Studio, при подключении к базе данных необходимо включить Always Encrypted и настроить протокол аттестации и URL-адрес аттестации. Дополнительные сведения см. в следующих разделах.
@@ -206,7 +206,7 @@ GO
 ## <a name="see-also"></a>См. также раздел
 
 - [Устранение распространенных неполадок Always Encrypted с безопасными анклавами](always-encrypted-enclaves-troubleshooting.md)
-- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в SQL Server](../tutorial-getting-started-with-always-encrypted-enclaves.md)
-- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-getting-started)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в SQL Server](../tutorial-getting-started-with-always-encrypted-enclaves.md)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-getting-started)
 - [Настройка шифрования столбцов на месте с помощью Always Encrypted с безопасными анклавами](always-encrypted-enclaves-configure-encryption.md)
 - [Создание и использование индексов в столбцах с помощью Always Encrypted с безопасными анклавами](always-encrypted-enclaves-create-use-indexes.md)

@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: e84635c1f32396e033841c546dafc1796624d5ab
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: cbec7eb15ed8acad746e3fcb2013ee8100bcdd26
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237085"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837709"
 ---
 # <a name="always-encrypted-with-secure-enclaves"></a>Always Encrypted с безопасными анклавами.
 
@@ -46,7 +46,7 @@ Always Encrypted использует безопасные анклавы, ка�
 
 В [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] Always Encrypted с безопасными анклавами использует безопасные анклавы памяти [безопасности на основе виртуализации (VBS)](https://www.microsoft.com/security/blog/2018/06/05/virtualization-based-security-vbs-memory-enclaves-data-protection-through-isolation/) (это также называется виртуальным безопасным режимом или анклавами VSM) в Windows.
 
-В [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] Always Encrypted с безопасными анклавами использует анклавы [Intel Software Guard Extensions (Intel SGX)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/). Intel SGX — это аппаратная технология доверенной среды выполнения, поддерживаемая базами данных, которые используют конфигурацию оборудования [серии DC](https://docs.microsoft.com/azure/azure-sql/database/service-tiers-vcore?tabs=azure-portal#dc-series).
+В [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] Always Encrypted с безопасными анклавами использует анклавы [Intel Software Guard Extensions (Intel SGX)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/). Intel SGX — это аппаратная технология доверенной среды выполнения, поддерживаемая базами данных, которые используют конфигурацию оборудования [серии DC](/azure/azure-sql/database/service-tiers-vcore?tabs=azure-portal#dc-series).
 
 ## <a name="secure-enclave-attestation"></a>Аттестация безопасного анклава
 
@@ -56,7 +56,7 @@ Always Encrypted использует безопасные анклавы, ка�
 
 Процесс аттестации для безопасных анклавов VBS в [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] — это [аттестация среды выполнения System Guard в Защитнике Windows](https://www.microsoft.com/security/blog/2018/06/05/virtualization-based-security-vbs-memory-enclaves-data-protection-through-isolation/), для которой требуется служба защиты узла (HGS) в качестве службы аттестации. 
 
-Для аттестации анклавов Intel SGX в [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] требуется служба [Аттестация Microsoft Azure](https://docs.microsoft.com/azure/attestation/overview).
+Для аттестации анклавов Intel SGX в [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] требуется служба [Аттестация Microsoft Azure](/azure/attestation/overview).
 
 > [!NOTE]
 > [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] не поддерживает службу "Аттестация Microsoft Azure". "Служба защиты узла" — это единственное решение аттестации, поддерживаемое для анклавов VBS в [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)].
@@ -167,7 +167,7 @@ Always Encrypted использует безопасные анклавы, ка�
   - Если база данных содержит индексы по столбцам с поддержкой анклава и использованием случайного шифрования, не забудьте включить [ускорение восстановления базы данных (ADR)](../../backup-restore/restore-and-recovery-overview-sql-server.md#adr) для этой базы данных перед созданием ее резервной копии. ADR обеспечит мгновенную доступность базы данных и всех ее индексов сразу после восстановления базы данных. Дополнительные сведения см. в разделе [Восстановление базы данных](#database-recovery).
   
 - **База данных SQL Azure**
-  - При настройке [активной георепликации](https://docs.microsoft.com/azure/azure-sql/database/active-geo-replication-overview) убедитесь, что база данных-получатель поддерживает безопасные анклавы, если их поддерживает база данных-источник.
+  - При настройке [активной георепликации](/azure/azure-sql/database/active-geo-replication-overview) убедитесь, что база данных-получатель поддерживает безопасные анклавы, если их поддерживает база данных-источник.
 
 В SQL Server и Базе данных SQL Azure при миграции базы данных с помощью BACPAC-файла необходимо убедиться, что вы удалили все индексы для столбцов с поддержкой анклава и использованием случайного шифрования, прежде чем создавать BACPAC-файл.
 
@@ -196,8 +196,8 @@ Always Encrypted с безопасными анклавами устраняет
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в SQL Server](../tutorial-getting-started-with-always-encrypted-enclaves.md)
-- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-getting-started)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в SQL Server](../tutorial-getting-started-with-always-encrypted-enclaves.md)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-getting-started)
 - [Настройка и использование Always Encrypted с безопасными анклавами](configure-always-encrypted-enclaves.md)
 
 ## <a name="see-also"></a>См. также раздел

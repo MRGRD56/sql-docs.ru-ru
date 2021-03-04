@@ -11,12 +11,12 @@ ms.topic: reference
 ms.assetid: 9d5481d5-13bc-4388-b3aa-78676c0fc709
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 46b57275d92f4eb6acb64c276e3b34ea67efb429
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 62ad5c26342ce03d3098d5a835776d193df4b88c
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99202028"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837236"
 ---
 # <a name="pdoerrorinfo"></a>PDO::errorInfo
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -130,14 +130,14 @@ pdo_sqlsrv.report_additional_errors = 0
 
 ## <a name="warnings-and-errors"></a>Предупреждения и ошибки
 
-Начиная с версии 5.9.0 предупреждения ODBC больше не будут регистрироваться как ошибки. То есть [коды ошибок](https://docs.microsoft.com/sql/odbc/reference/appendixes/appendix-a-odbc-error-codes) с префиксом 01 регистрируются как предупреждения. Иными словами, если вы хотите регистрировать только ошибки, измените файл php.ini следующим образом:
+Начиная с версии 5.9.0 предупреждения ODBC больше не будут регистрироваться как ошибки. То есть [коды ошибок](../../odbc/reference/appendixes/appendix-a-odbc-error-codes.md) с префиксом 01 регистрируются как предупреждения. Иными словами, если вы хотите регистрировать только ошибки, измените файл php.ini следующим образом:
 
 ```
 [pdo_sqlsrv]  
 pdo_sqlsrv.log_severity = 1
 ```
 
-В этом случае в файле журнала не будет сообщений с предупреждениями. Ознакомьтесь с тем, как [ведется журнал](https://docs.microsoft.com/sql/connect/php/logging-activity#logging-activity-using-the-pdo_sqlsrv-driver) для пользователей pdo_sqlsrv.
+В этом случае в файле журнала не будет сообщений с предупреждениями. Ознакомьтесь с тем, как [ведется журнал](./logging-activity.md#logging-activity-using-the-pdo_sqlsrv-driver) для пользователей pdo_sqlsrv.
 
 ## <a name="see-also"></a>См. также:  
 [Класс PDO](../../connect/php/pdo-class.md)
