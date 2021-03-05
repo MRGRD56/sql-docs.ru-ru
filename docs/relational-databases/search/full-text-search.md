@@ -1,7 +1,7 @@
 ---
 description: Компонент Full-text Search
 title: Полнотекстовый поиск | Документация Майкрософт
-ms.date: 04/10/2018
+ms.date: 12/29/2020
 ms.prod: sql
 ms.prod_service: search, sql-database
 ms.technology: search
@@ -13,15 +13,15 @@ author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 54b05c64727697c263c55572da9707c95c516a11
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d54ee59b6c3c94968ade02196945a8cd626a19f0
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348600"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186078"
 ---
 # <a name="full-text-search"></a>Компонент Full-text Search
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
 
 Полнотекстовый поиск в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)] позволяет пользователям и приложениям выполнять полнотекстовые запросы к символьным данным в таблицах [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .
   
@@ -254,4 +254,4 @@ ms.locfileid: "100348600"
   
  Средства разбиения по словам (и парадигматические модули), а также фильтры выполняются в процессе управляющей программы фильтрации (fdhost.exe).  
 
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+

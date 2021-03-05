@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 94461734e21a8164357c2d53cf579efd26437993
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 2509ee07decbfcc9ca97b247b78191fead413c6b
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161826"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186465"
 ---
 # <a name="drop-workload-classifier-transact-sql"></a>Классификатор DROP WORKLOAD (Transact-SQL)
 
@@ -35,12 +35,11 @@ ms.locfileid: "99161826"
   
 ![Значок ссылки на раздел](../../database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md).  
   
-## <a name="syntax"></a>Синтаксис  
+## <a name="syntax"></a>Синтаксис
 
 ```syntaxsql
 DROP WORKLOAD CLASSIFIER classifier_name;
 ```
-[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
 
 [!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
 

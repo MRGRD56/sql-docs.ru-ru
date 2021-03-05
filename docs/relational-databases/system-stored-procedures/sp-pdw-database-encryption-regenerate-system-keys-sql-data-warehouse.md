@@ -1,5 +1,6 @@
 ---
-title: sp_pdw_database_encryption_regenerate_system_keys (Azure синапсе Analytics) | Документация Майкрософт
+title: sp_pdw_database_encryption_regenerate_system_keys (Azure синапсе Analytics)
+description: Используйте **sp_pdw_database_encryption_regenerate_system_keys** для смены сертификата и ключа шифрования базы данных для внутренних баз данных, которые шифруются при включении TDE на устройстве.
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
@@ -12,18 +13,18 @@ author: ronortloff
 ms.author: rortloff
 ms.reviewer: ''
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: 3d7a4efb9a629938b6cfc7d48c990351bc2a5cbc
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2c6474944be4ef9911f30ed49947e1a0e959a456
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100271781"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186401"
 ---
 # <a name="sp_pdw_database_encryption_regenerate_system_keys-azure-synapse-analytics"></a>sp_pdw_database_encryption_regenerate_system_keys (Azure синапсе Analytics)
 
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
-  Используйте **sp_pdw_database_encryption_regenerate_system_keys** для смены сертификата и ключа шифрования базы данных для внутренних баз данных, которые шифруются при включении TDE на устройстве. в том числе и `tempdb`. Это будет успешным, только если включен TDE.  
+Используйте **sp_pdw_database_encryption_regenerate_system_keys** для смены сертификата и ключа шифрования базы данных для внутренних баз данных, которые шифруются при включении TDE на устройстве. в том числе и `tempdb`. Это будет успешным, только если включен TDE.  
   
 ## <a name="syntax"></a>Синтаксис  
   
@@ -38,7 +39,7 @@ sp_pdw_database_encryption_regenerate_system_keys  ;
 ## <a name="return-code-values"></a>Значения кода возврата  
  **0** (успешное завершение) или **1** (сбой)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  Процедура не имеет параметров.  
   
  Эта процедура должна использоваться, если трафик на устройстве имеет низкий уровень.  
