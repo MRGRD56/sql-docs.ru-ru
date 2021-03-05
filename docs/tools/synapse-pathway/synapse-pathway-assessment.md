@@ -4,24 +4,24 @@ description: Преобразование кода хранилища данны
 author: anshul82-ms
 ms.author: anrampal
 ms.prod: sql
-ms.technology: Azure Synapse Pathway
+ms.technology: tools-other
 ms.topic: tutorial
 ms.date: 03/02/2021
 monikerRange: =azure-sqldw-latest
 ms.custom: template-tutorial
-ms.openlocfilehash: b76fecf9a8a7eafc84a1b9eebd746287dddf3af9
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 74f98ad652a58f70cd75ef60556bf0464fd5d7c7
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873180"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186367"
 ---
 # <a name="tutorial-to-perform-your-first-code-translation-with-azure-synapse-pathway-preview"></a>Руководство по выполнению первого преобразования кода с помощью предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
 
 Предварительная версия Azure Synapse Pathway предоставляет поддержку для преобразования схем, таблиц, представлений, функций и т. д. из **Netezza**, **Snowflake** и **Microsoft SQL Server** в совместимый с T-SQL код, который автоматизирует миграцию на Azure Synapse Analytics.
 
-Дополнительные сведения см. в статье [Обзор предварительной версии Azure Synapse Pathway](azure-synapse-pathway-overview).
+Дополнительные сведения см. в статье [Обзор предварительной версии Azure Synapse Pathway](azure-synapse-pathway-overview.md).
 
 В этом руководстве описано следующее:
 
@@ -45,17 +45,17 @@ ms.locfileid: "101873180"
     > В качестве источника входных данных можно указать только файлы с расширением SQL. Если пользователь указывает сценарии DDL и DML в TXT-файле, средство не будет выполнять преобразование.
 
 1. При преобразовании кода Netezza в Azure Synapse Analytics в раскрывающемся списке "Тип преобразования" выберите IBM Netezza.
-  ![Входные данные оценки Azure Synapse.](./media/perform-assessment/assessment-input.png)
+  ![Входные данные оценки Azure Synapse.](./media/synapse-pathway-assessment/assessment-input.png)
 
 1. Чтобы выбрать выходной каталог, нажмите кнопку "Обзор", чтобы указать расположение, в котором будут создаваться выходные данные.
- ![Выходной каталог Azure Synapse.](./media/perform-assessment/output-directory.png)
+ ![Выходной каталог Azure Synapse.](./media/synapse-pathway-assessment/output-directory.png)
 
 1. Нажмите **Преобразовать**, чтобы начать преобразование
 
 ## <a name="view-results"></a>Просмотр результатов
 
 1. Длительность оценки зависит от количества добавленных баз данных и размера схемы каждой базы данных. Результаты по каждой базе данных будут отображены, как только они станут доступны.
- ![Отчет об оценке Azure Synapse.](./media/perform-assessment/assessment-report.png)
+ ![Отчет об оценке Azure Synapse.](./media/synapse-pathway-assessment/assessment-report-rendering.png)
 
 1. Нажав "Просмотреть результаты", вы перейдете к выходному каталогу, указанному на предыдущем шаге, и увидите файлы преобразованного сценария на основе структуры входного каталога.
 

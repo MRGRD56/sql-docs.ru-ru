@@ -6,17 +6,17 @@ ms.author: anrampal
 ms.topic: overview
 ms.date: 03/02/2021
 ms.prod: sql
-ms.technology: Azure Synapse Pathway
+ms.technology: tools-other
 monikerRange: =azure-sqldw-latest
 ms.custom: template-overview
-ms.openlocfilehash: 345346d2161800810ba3d07667b831107f70b215
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 8352fb6a70c54ede61d544a147f970237404c9f5
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873141"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186343"
 ---
-# <a name="azure-synapse-pathway-preview"></a>Предварительная версия Azure Synapse Pathway
+# <a name="azure-synapse-pathway-preview-faq"></a>Часто задаваемые вопросы о предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
 
 В этом руководстве вы найдете наиболее часто задаваемые вопросы о предварительной версии Azure Synapse Pathway.
@@ -58,7 +58,9 @@ A. Так как вы можете запускать Synapse Pathway в лок
 
 A. Сейчас Azure Synapse Pathway предоставляется в **предварительной версии**.   Поддержка Synapse Pathway доступна через канал поддержки Майкрософт. Запрос можно создать либо на портале Azure, либо на стандартных порталах (обычно на портале локальной службы поддержки).
 
-> [!NOTE] Как и любые другие службы Azure, все предварительные версии служб дают право на поддержку, но без соглашения об уровне обслуживания.
+
+> [!NOTE] 
+> Как и любые другие службы Azure, все предварительные версии служб дают право на поддержку, но без соглашения об уровне обслуживания.
 
 <!-- ### Troubleshooting and optimization
 

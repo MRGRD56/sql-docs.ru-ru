@@ -1,21 +1,22 @@
 ---
 title: Обзор предварительной версии Azure Synapse Pathway
 description: Azure Synapse Pathway — это средство для миграции хранилища данных на Azure Synapse Analytics.
+author: anshul82-ms
 ms.author: anrampal
 ms.topic: overview
 ms.date: 03/02/2021
 ms.prod: sql
-ms.technology: Azure Synapse Pathway
+ms.technology: tools-other
 monikerRange: =azure-sqldw-latest
 ms.custom: template-overview
-ms.openlocfilehash: d7289d2bfe099dad7bbc91ccd5060797f7aad997
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 5e3844f6e63fafca5137a646ff4c02edbc7105b8
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873216"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102185929"
 ---
-# <a name="azure-synapse-pathway-preview"></a>Предварительная версия Azure Synapse Pathway
+# <a name="azure-synapse-pathway-preview-overview"></a>Обзор предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
 
 Когда клиенты рассматривают возможность модернизации своих систем хранения данных, одним из важнейших препятствий, с которым они сталкиваются, является преобразование кода SQL. Существующий код написан и оптимизирован для текущей системы, но его нужно оптимизировать для новой системы, на которую осуществляется миграция.
@@ -32,7 +33,7 @@ ms.locfileid: "101873216"
 
 **Azure Synapse Pathway** помогает выполнить обновление до современной платформы хранения данных, автоматизируя преобразование кода существующего хранилища данных. Это бесплатное, интуитивно понятное и простое в использовании средство, которое автоматизирует преобразование кода, обеспечивая более быструю миграцию на Azure Synapse Analytics.
 
- ![Обзор Azure Synapse Pathway.](./media/pathway-overview/synapse-pathway-overview.png) 
+ ![Обзор Azure Synapse Pathway.](./media/azure-synapse-pathway-overview/pathway-overview.png) 
 
 Synapse Pathway преобразует инструкции языка описания данных (DDL) и языка обработки данных (DML) в совместимый с T-SQL язык, который также совместим с Azure Synapse SQL.
 
@@ -47,7 +48,7 @@ Synapse Pathway преобразует инструкции языка опис�
 ## <a name="supported-sources"></a>Поддерживаемые источники
 
 Azure Synapse Pathway поддерживает преобразование кода базы данных, схем и таблиц для следующих источников:
-- **IBM Netezza** 
+- **IBM Netezza**
 - **Microsoft SQL Server**
 - **Snowflake**
 
@@ -59,5 +60,3 @@ Azure Synapse Pathway поддерживает преобразование ко
 
 - [Выполните первое преобразование с помощью Azure Synapse Pathway](synapse-pathway-assessment.md)
 - Блог с анонсом. [Анонс Azure Synapse Pathway: ускорение миграции хранилища данных — сообщество Microsoft Tech](https://techcommunity.microsoft.com/t5/azure-synapse-analytics/announcing-azure-synapse-pathway-turbocharge-your-data-warehouse/ba-p/2176630)
-
-

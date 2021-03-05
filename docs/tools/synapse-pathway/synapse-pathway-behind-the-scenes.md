@@ -2,19 +2,19 @@
 title: 'Предварительная версия Azure Synapse Pathway: сопутствующие ресурсы.'
 description: Технические подробности того, как Azure Synapse Pathway преобразует код.
 author: anshul82-ms
-ms.author: anrampal.
+ms.author: anrampal
 ms.prod: sql
-ms.technology: Azure Synapse Pathway
+ms.technology: tools-other
 ms.topic: conceptual
 ms.date: 03/02/2021
 monikerRange: =azure-sqldw-latest
 ms.custom: template-concept
-ms.openlocfilehash: dbd362e53b5bfcd916c53e90d6f66c8fb44f0374
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 9f23aa23ef40ee7df5ad601b73ad526df7bcf0da
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873147"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186310"
 ---
 # <a name="azure-synapse-pathway-preview-behind-the-scenes"></a>Предварительная версия Azure Synapse Pathway: сопутствующие ресурсы
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "101873147"
 
 Каждый из этапов сохраняет и дополняет данные об источнике, включая метаданные, относящиеся к источнику, чтобы обеспечить наивысшее качество преобразования.
 
- ![Azure Synapse Pathway.](./media/technical-deep-dive/behind-the-scene.png)
+ ![Azure Synapse Pathway.](./media/synapse-pathway-behind-the-scenes/behind-the-scene.png)
 
 ## <a name="stage-1--lexing-and-parsing"></a>Этап 1. Лексический и синтаксический анализ
 
@@ -49,7 +49,7 @@ Azure Synapse SQL определяет абсолютную функцию сл�
 ABS ( numeric_expression )  
 ```
 
-В этом простом случае Synapse Pathway понимает, что преобразование в Synapse SQL из типа числа с плавающей точкой в числовой тип является неявным [преобразованием](../../t-sql/functions/cast-and-convert-transact-sql?view=azure-sqldw-latest#implicit-conversions) и не требует дальнейшего приведения типов. Простое и эффективное преобразование кода.
+В этом простом случае Synapse Pathway понимает, что преобразование в Synapse SQL из типа числа с плавающей точкой в числовой тип является неявным [преобразованием](../../t-sql/functions/cast-and-convert-transact-sql.md?view=azure-sqldw-latest&preserve-view=true#implicit-conversions) и не требует дальнейшего приведения типов. Простое и эффективное преобразование кода.
 
 Хранение этих метаданных об исходных инструкциях и фрагментах помогает понять структурные различия между платформами, например преобразования в логике отказа для предикатов условий поиска в предложении WHERE.
 
