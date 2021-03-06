@@ -15,19 +15,20 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c88a289e21e7cd70980763474e82b7dd6cbd49c2
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 300d88b66c2105235ab04ff616d9fcf81b24e944
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489521"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247331"
 ---
 # <a name="perform-a-sql-server-migration-assessment-with-data-migration-assistant"></a>Выполнение оценки переноса SQL Server с использованием Помощника по миграции данных
 
 Следующие пошаговые инструкции помогут вам выполнить первую оценку перехода на локальные SQL Server, SQL Server, выполняющихся на виртуальной машине Azure, или базы данных SQL Azure с помощью Помощник по миграции данных.
 
-   > [!NOTE]
-   > В Помощник по миграции данных версии 5.0 появилась поддержка анализа подключения к базе данных и внедренных запросов SQL в коде приложения. Дополнительные сведения см. в записи блога [использование помощник по миграции данных для оценки уровня доступа к данным приложения](https://techcommunity.microsoft.com/t5/Microsoft-Data-Migration/Using-Data-Migration-Assistant-to-assess-an-application-s-data/ba-p/990430).
+В Помощник по миграции данных версии 5.0 появилась поддержка анализа подключения к базе данных и внедренных запросов SQL в коде приложения. Дополнительные сведения см. в записи блога [использование помощник по миграции данных для оценки уровня доступа к данным приложения](https://techcommunity.microsoft.com/t5/Microsoft-Data-Migration/Using-Data-Migration-Assistant-to-assess-an-application-s-data/ba-p/990430).
+
+[!INCLUDE [online-offline](../includes/azure-migrate-to-assess-sql-data-estate.md)]
 
 ## <a name="create-an-assessment"></a>Создание оценки
 
@@ -119,7 +120,7 @@ ms.locfileid: "97489521"
 
 ## <a name="view-results"></a>Просмотр результатов
 
-Длительность оценки зависит от количества добавленных баз данных и размера схемы каждой базы данных. Результаты отображаются для каждой базы данных, как только они станут доступны.
+Длительность оценки зависит от количества добавленных баз данных и размера схемы каждой базы данных. Результаты по каждой базе данных будут отображены, как только они станут доступны.
 
 1. Выберите базу данных, которая завершила оценку, а затем переключайтесь между **проблемами совместимости** и **рекомендациями по функциям** с помощью переключателя.
 

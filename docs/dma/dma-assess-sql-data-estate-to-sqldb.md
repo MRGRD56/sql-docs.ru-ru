@@ -15,18 +15,20 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4c59fb5228ef46a693e343716d1e58e56c042a53
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1094f10eedc819123cd446c0933ec14df511ac75
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100061559"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247349"
 ---
 # <a name="assess-the-readiness-of-a-sql-server-data-estate-migrating-to-azure-sql-database-using-the-data-migration-assistant"></a>Оценка готовности SQL Serverного пространства данных для переноса в базу данных SQL Azure с помощью Помощник по миграции данных
 
-Миграция сотен экземпляров SQL Server и тысяч баз данных в базу данных SQL Azure, предлагаемая нашей платформой как услуга (PaaS), является значительной задачей. Чтобы максимально упростить процесс, необходимо быть уверенным в том, что относительная готовность к миграции. Определение низкого уровня фруктов, включая серверы и базы данных, полностью готовые или требующие минимальных усилий для подготовки к миграции, упрощает и ускоряет работу.
+Миграция сотен экземпляров SQL Server и тысяч баз данных в базу данных SQL Azure или Azure SQL Управляемый экземпляр, предлагаемая платформа как услуга (PaaS), является значительной задачей. Чтобы максимально упростить процесс, необходимо быть уверенным в том, что относительная готовность к миграции. Определение низкого уровня фруктов, включая серверы и базы данных, полностью готовые или требующие минимальных усилий для подготовки к миграции, упрощает и ускоряет работу.
 
 В этой статье приводятся пошаговые инструкции по использованию [Помощник по миграции данных](./dma-overview.md) для суммирования результатов готовности и их последующей поверхности в центре [миграции Azure](https://portal.azure.com/?feature.customPortal=false#blade/Microsoft_Azure_Migrate/AmhResourceMenuBlade/overview) .
+
+[!INCLUDE [online-offline](../includes/azure-migrate-to-assess-sql-data-estate.md)]
 
 >
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Migration-Assistant/player?WT.mc_id=dataexposed-c9-niner]
@@ -101,7 +103,7 @@ ms.locfileid: "100061559"
 
     Если вы обновляете локальный экземпляр SQL Server до более поздней версии SQL Server или для SQL Server, размещенного на виртуальной машине Azure, задайте для параметра Тип исходного и целевого сервера значение **SQL Server**. Задайте тип целевого сервера **Azure sql управляемый экземпляр** для оценки готовности целевой базы данных SQL Azure (PaaS).
 
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
    ![Интерфейс Помощник по миграции данных службы "миграция Azure"](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-dma-interface.png)
 

@@ -14,16 +14,18 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c2804bbc185a3aa17d7f50d85b9ef6c2cc84d002
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: c82b5cf03b5db429903dd90fdf8a5fa5d6ec3772
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100044651"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247504"
 ---
 # <a name="assess-an-enterprise-and-consolidate-assessment-reports-with-dma"></a>Оценка предприятия и объединение оценки с помощью DMA
 
 Следующие пошаговые инструкции помогут вам использовать Помощник по миграции данных для успешной масштабируемой оценки обновления локальной SQL Server или SQL Server, выполняющихся на виртуальных машинах Azure, или для миграции в базу данных SQL Azure.
+
+[!INCLUDE [online-offline](../includes/azure-migrate-to-assess-sql-data-estate.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -123,7 +125,7 @@ ms.locfileid: "100044651"
 
 Параметры, связанные с функцией Дмадатаколлектор, описаны в следующей таблице.
 
-|Параметр  |Описание |
+|Параметр  |Описание: |
 |---------|---------|
 |**жетсерверлистфром** | Ваш инвентарный список. Возможными значениями являются **SQLServer** и **CSV**.<br/>Дополнительные сведения см. в разделе [Создание инвентаризации серверов SQL Server](#create-inventory). |
 |**ксвпас** | Путь к файлу инвентаризации CSV.  Используется, только если для **жетсерверлистфром** задано значение  **CSV**. |
@@ -147,7 +149,7 @@ ms.locfileid: "100044651"
 
 Параметры, связанные с функцией Дмапроцессор, описаны в следующей таблице.
 
-|Параметр  |Описание |
+|Параметр  |Описание: |
 |---------|---------|
 |**процессто** | Расположение, в котором будет обрабатываться JSON файл. Возможными значениями являются **SQLServer** и **AzureSQLDatabase**. |
 |**serverName** | SQL Server экземпляр, в который будут обработаны данные.  Если для параметра **процессто** задано значение **AzureSQLDatabase** , включите только имя SQL Server (не включайте. Database.Windows.NET). При использовании базы данных SQL Azure вам будет предложено два имени входа. Первый — это учетные данные клиента Azure, а вторая — имя входа администратора для SQL Server Azure. |
