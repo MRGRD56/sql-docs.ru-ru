@@ -135,7 +135,7 @@ QUIT
 * [Автономная установка](../linux/sql-server-linux-setup.md#offline). Узнайте, как вручную загрузить пакеты для установки в автономном режиме
 
 > [!TIP]
-> Ответы на часто задаваемые вопросы об SQL Server на Linux см. в [этой статье](../linux/sql-server-linux-faq.md).
+> Ответы на часто задаваемые вопросы об SQL Server на Linux см. в [этой статье](../linux/sql-server-linux-faq.yml).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
