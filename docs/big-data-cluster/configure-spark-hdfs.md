@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2fa2b5a3e9b7f996866ae1fca16c32ff1e1ba39e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3c018c3882f5a74bb55a3b4cb5fc23881b0daec8
+ms.sourcegitcommit: 765262cdc6352a5325148afc22fa4f1499fe1aa3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100039163"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514861"
 ---
 # <a name="configure-apache-spark-and-apache-hadoop-in-big-data-clusters"></a>Настройка Apache Spark и Apache Hadoop в Кластерах больших данных
 
@@ -31,7 +31,7 @@ ms.locfileid: "100039163"
 
 Например, все конфигурации в службе `hdfs` относятся к категории `hdfs`. Обратите внимание, что все конфигурации Hadoop (core-site), HDFS и Zookeeper относятся к категории `hdfs`; все конфигурации Livy, Spark, Yarn и Hive Metastore относятся к категории `spark`. 
 
-В разделе [Поддерживаемые конфигурации](reference-config-spark-hadoop.md#supported-configurations) перечислены свойства Apache Spark и Hadoop, которые можно настроить при развертывании кластера больших данных SQL Server.
+В разделе [Поддерживаемые конфигурации](reference-config-spark-hadoop.md) перечислены свойства Apache Spark и Hadoop, которые можно настроить при развертывании кластера больших данных SQL Server.
 
 В следующих разделах перечислены свойства, которые **невозможно** изменить в кластере.
 
