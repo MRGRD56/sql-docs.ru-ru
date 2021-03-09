@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a842f6ed226fe6b298dc9063f5d6c64f287fc82e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3f54ca9be0a75912c716f12b56c8b3848b151358
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340167"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247536"
 ---
 # <a name="row-level-security"></a>Безопасность на уровне строк
 
@@ -159,7 +159,7 @@ ms.locfileid: "100340167"
   
 - **Filestream.** Безопасность на уровне строк не совместима с компонентом Filestream.  
   
-- **PolyBase.** Безопасность на уровне строк поддерживается для внешних таблиц Polybase только при использовании Azure Synapse.
+- **PolyBase:** безопасность на уровне строк поддерживается для внешних таблиц в Azure Synapse и SQL Server 2019 с накопительным обновлением 1 (CU1) или более поздней версии. 
 
 - **Таблицы, оптимизированные для памяти.** Встроенная функция с табличным значением, которая используется в качестве предиката безопасности для таблицы, оптимизированной для памяти, должна быть определена с помощью параметра `WITH NATIVE_COMPILATION`. Этот параметр позволяет блокировать функции языка, не поддерживаемые в оптимизированных для памяти таблицах, и выдавать соответствующую ошибку во время создания. Дополнительные сведения см. в разделе **Безопасность на уровне строк в таблицах, оптимизированных для памяти** статьи [Вводные сведения о таблицах, оптимизированных для памяти](../../relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables.md).  
   

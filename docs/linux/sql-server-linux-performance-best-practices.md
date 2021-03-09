@@ -8,12 +8,12 @@ ms.date: 01/19/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 652db6f752f8bf46ad2b7d4779063c79359e3a33
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 42638520dd0d7391a10217dc7f7fdd2ce708189f
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350941"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247496"
 ---
 # <a name="performance-best-practices-and-configuration-guidelines-for-sql-server-on-linux"></a>Рекомендации по производительности и конфигурации для SQL Server на Linux
 
@@ -51,7 +51,7 @@ mdadm --create --verbose /dev/md2 --level=raid0 --chunk=64K --raid-devices=2 /de
 
 #### <a name="disk-partitioning-and-configuration-recommendations"></a>Рекомендации по разбиению дисков на разделы и их настройке
 
-Для SQL Server рекомендуется использовать конфигурации RAID. Размер полосы (sunit) и ширина полосы развернутой файловой системы должны соответствовать геометрии RAID. Ниже приведен пример для тома журнала в файловой системе XFS. 
+Для SQL Server рекомендуется использовать конфигурации RAID. Размер полосы (sunit) и ширина полосы развернутой файловой системы должны соответствовать геометрии RAID. Ниже приведен пример для тома журнала в файловой системе XFS.
 
 ```bash
 # Creating a log volume, using 6 devices, in RAID 10 configuration with 64KB stripes
@@ -71,8 +71,9 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
 Для него используется массив RAID-10 с шестью дисками и размером полосы 64 КБ. Вы можете видеть следующее.
-   1. Значение sunit=16 * bsize=4096 равно 64 КБ, что соответствует размеру полосы. 
-   2. Значение swidth = 48 blks, деленное на sunit, равно 3, что соответствует количеству дисков в массиве за вычетом дисков четности. 
+
+- Значение sunit=16 * bsize=4096 равно 64 КБ, что соответствует размеру полосы.
+- Значение swidth = 48 blks, деленное на sunit, равно 3, что соответствует количеству дисков в массиве за вычетом дисков четности.
 
 #### <a name="file-system-configuration-recommendation"></a>Рекомендации по конфигурации файловой системы
 
@@ -216,7 +217,7 @@ tuned-adm list
 | Параметр | Значение | Дополнительные сведения |
 |---|---|---|
 | disk `readahead` | 4096 | См. описание команды `blockdev` |
-| Параметры sysctl | kernel.sched_min_granularity_ns = 10000000<br/>kernel.sched_wakeup_granularity_ns = 15000000<br/>vm.dirty_ratio = 40<br/>vm.dirty_background_ratio = 10<br/>vm.swappiness = 1 | См. описание команды **sysctl** |
+| Параметры sysctl | kernel.sched_min_granularity_ns = 15000000<br/>kernel.sched_wakeup_granularity_ns = 2000000<br/>vm.dirty_ratio = 80<br/>vm.dirty_background_ratio = 3<br/>vm.swappiness = 1 | См. описание команды **sysctl** |
 
 **Описание.**
 
@@ -274,117 +275,117 @@ tuned-adm profile mssql
 
 #### <a name="network-setting-recommendations"></a>Рекомендации по настройке сети
 
-Как и в случае с хранилищем и ЦП, существуют рекомендации в отношении сети. Они приведены ниже для справки. Указанные ниже параметры доступны не для всех сетевых карт. За указаниями обратитесь к поставщику конкретной сетевой карты. Протестируйте эти настройки в среде разработки перед их применением в рабочей среде. Параметры сопровождаются примерами, а используемые команды относятся к конкретному типу и поставщику сетевой карты. 
+Как и в случае с хранилищем и ЦП, существуют рекомендации в отношении сети. Они приведены ниже для справки. Указанные ниже параметры доступны не для всех сетевых карт. За указаниями обратитесь к поставщику конкретной сетевой карты. Протестируйте эти настройки в среде разработки перед их применением в рабочей среде. Параметры сопровождаются примерами, а используемые команды относятся к конкретному типу и поставщику сетевой карты.
 
 1. Настройка размера буфера для сетевого порта. В приведенном ниже примере сетевая карта называется eth0. Это сетевая карта Intel. Для таких сетевых карт рекомендуется размер буфера 4 КБ (4096). Проверьте предварительно установленные максимальные значения и выполните настройку с помощью приведенных ниже примеров команд.
 
- ```bash
-         #To check the pre-set maximums please run the command, example NIC name used here is:"eth0"
-         ethtool -g eth0
-         #command to set both the rx(recieve) and tx (transmit) buffer size to 4 KB. 
-         ethtool -G eth0 rx 4096 tx 4096
-         #command to check the value is properly configured is:
-         ethtool -g eth0
-  ```
+   ```bash
+            #To check the pre-set maximums please run the command, example NIC name used here is:"eth0"
+            ethtool -g eth0
+            #command to set both the rx(recieve) and tx (transmit) buffer size to 4 KB. 
+            ethtool -G eth0 rx 4096 tx 4096
+            #command to check the value is properly configured is:
+            ethtool -g eth0
+   ```
 
 2. Включение jumbo-кадров. Перед включением jumbo-кадров убедитесь в том, что они поддерживаются всеми сетевыми коммутаторами, маршрутизаторами и другими важными компонентами на пути передачи пакетов между клиентами и сервером SQL Server. Только в этом случае включение jumbo-кадров может повысить производительность. После включения jumbo-кадров подключитесь к SQL Server и измените размер сетевого пакета на 8060 с помощью `sp_configure`, как показано ниже.
 
-```bash
-         #command to set jumbo frame to 9014 for a Intel NIC named eth0 is
-         ifconfig eth0 mtu 9014
-         #verify the setting using the command:
-         ip addr | grep 9014
-```
+   ```bash
+            #command to set jumbo frame to 9014 for a Intel NIC named eth0 is
+            ifconfig eth0 mtu 9014
+            #verify the setting using the command:
+            ip addr | grep 9014
+   ```
 
-```sql
-         sp_configure 'network packet size' , '8060'
-         go
-         reconfigure with override
-         go
-```
+   ```sql
+            sp_configure 'network packet size' , '8060'
+            go
+            reconfigure with override
+            go
+   ```
 
 3. По умолчанию рекомендуется задать порт для объединения запросов на прерывание RX/TX. В результате доставка прерываний будет корректироваться в направлении оптимизации задержки при низкой скорости передачи пакетов или повышения пропускной способности при высокой скорости их передачи. Имейте в виду, что этот параметр может быть доступен не во всех сетевых инфраструктурах. Необходимо убедиться в том, что он поддерживается. В приведенном ниже примере сетевая карта называется eth0. Это сетевая карта Intel.
 
-```bash
-         #command to set the port for adaptive RX/TX IRQ coalescing
-         echtool -C eth0 adaptive-rx on
-         echtool -C eth0 adaptive-tx on
-         #confirm the setting using the command:
-         ethtool -c eth0
-```
+   ```bash
+            #command to set the port for adaptive RX/TX IRQ coalescing
+            echtool -C eth0 adaptive-rx on
+            echtool -C eth0 adaptive-tx on
+            #confirm the setting using the command:
+            ethtool -c eth0
+   ```
 
-> [!NOTE]
-> Для предсказуемого поведения в высокопроизводительных средах, таких как среды для тестирования производительности, отключите адаптивное объединение запросов на прерывание RX/TX, а затем задайте его вручную. Для заданий значений воспользуйтесь примерами команд для отключения объединения запросов на прерывание RX/TX.
+   > [!NOTE]
+   > Для предсказуемого поведения в высокопроизводительных средах, таких как среды для тестирования производительности, отключите адаптивное объединение запросов на прерывание RX/TX, а затем задайте его вручную. Для заданий значений воспользуйтесь примерами команд для отключения объединения запросов на прерывание RX/TX.
 
-```bash
-         #commands to disable adaptive RX/TX IRQ coalescing
-         echtool -C eth0 adaptive-rx off
-         echtool -C eth0 adaptive-tx off
-         #confirm the setting using the command:
-         ethtool -c eth0
-         #Let us set the rx-usecs parameter which specify how many microseconds after at least 1 packet is received before generating an interrupt, and the [irq] parameters are the corresponding delays in updating the #status when the interrupt is disabled. For Intel bases NICs below are good values to start with:
-         ethtool -C eth0 rx-usecs 100 tx-frames-irq 512
-         #confirm the setting using the command:
-         ethtool -c eth0
-```
+   ```bash
+            #commands to disable adaptive RX/TX IRQ coalescing
+            echtool -C eth0 adaptive-rx off
+            echtool -C eth0 adaptive-tx off
+            #confirm the setting using the command:
+            ethtool -c eth0
+            #Let us set the rx-usecs parameter which specify how many microseconds after at least 1 packet is received before generating an interrupt, and the [irq] parameters are the corresponding delays in updating the #status when the interrupt is disabled. For Intel bases NICs below are good values to start with:
+            ethtool -C eth0 rx-usecs 100 tx-frames-irq 512
+            #confirm the setting using the command:
+            ethtool -c eth0
+   ```
 
 4. Кроме того, рекомендуется включить RSS (масштабирование на стороне приема) и по умолчанию объединить очереди RSS на стороне приема и передачи. В некоторых случаях обращений в службу поддержки Майкрософт отключение RSS также приводило к повышению производительности. Протестируйте этот параметр в тестовой среде перед его применением в рабочих средах. Ниже приведен пример команды для сетевых карт Intel.
 
-```bash
-         #command to get pre-set maximums
-         ethtool -l eth0 
-         #note the pre-set "Combined" maximum value. let's consider for this example, it is 8.
-         #command to combine the queues with the value reported in the pre-set "Combined" maximum value:
-         ethtool -L eth0 combined 8
-         #you can verify the setting using the command below
-         ethtool -l eth0
-```
+   ```bash
+            #command to get pre-set maximums
+            ethtool -l eth0 
+            #note the pre-set "Combined" maximum value. let's consider for this example, it is 8.
+            #command to combine the queues with the value reported in the pre-set "Combined" maximum value:
+            ethtool -L eth0 combined 8
+            #you can verify the setting using the command below
+            ethtool -l eth0
+   ```
 
 5. Сходство запросов на прерывание для портов сетевой карты Чтобы добиться ожидаемой производительности путем настройки сходства запросов на прерывание, можно воспользоваться рядом важных параметров, в том числе относящихся к серверной топологии в Linux и стеку драйверов сетевой карты, а также параметрами по умолчанию и параметром irqbalance. Оптимизация параметров сходства запросов на прерывание для портов сетевой карты выполняется с учетом топологии сервера, предусматривает отключение параметра irqbalance и использование параметров конкретного поставщика сетевой карты. Ниже приведен пример для сетевой инфраструктуры Mellanox. Обратите внимание, что команды зависят от среды. За дополнительными инструкциями обратитесь к поставщику сетевой карты.
 
-```bash
-         #disable irqbalance or get a snapshot of the IRQ settings and force the daemon to exit
-         systemctl disable irqbalance.service
-         #or
-         irqbalance --oneshot
+   ```bash
+            #disable irqbalance or get a snapshot of the IRQ settings and force the daemon to exit
+            systemctl disable irqbalance.service
+            #or
+            irqbalance --oneshot
 
-         #download the Mellanox mlnx_tuning_scripts tarball, https://www.mellanox.com/sites/default/files/downloads/tools/mlnx_tuning_scripts.tar.gz and extract it
-         tar -xvf mlnx_tuning_scripts.tar.gz
-         # be sure, common_irq_affinity.sh is executable. if not, 
-         # chmod +x common_irq_affinity.sh       
+            #download the Mellanox mlnx_tuning_scripts tarball, https://www.mellanox.com/sites/default/files/downloads/tools/mlnx_tuning_scripts.tar.gz and extract it
+            tar -xvf mlnx_tuning_scripts.tar.gz
+            # be sure, common_irq_affinity.sh is executable. if not, 
+            # chmod +x common_irq_affinity.sh       
 
-         #display IRQ affinity for Mellanox NIC port; e.g eth0
-         ./show_irq_affinity.sh eth0
+            #display IRQ affinity for Mellanox NIC port; e.g eth0
+            ./show_irq_affinity.sh eth0
 
-         #optimize for best throughput performance
-         ./mlnx_tune -p HIGH_THROUGHPUT
+            #optimize for best throughput performance
+            ./mlnx_tune -p HIGH_THROUGHPUT
 
-         #set hardware affinity to the NUMA node hosting physically the NIC and its port
-         ./set_irq_affinity_bynode.sh `\cat /sys/class/net/eth0/device/numa_node` eth0
+            #set hardware affinity to the NUMA node hosting physically the NIC and its port
+            ./set_irq_affinity_bynode.sh `\cat /sys/class/net/eth0/device/numa_node` eth0
 
-         #verify IRQ affinity
-         ./show_irq_affinity.sh eth0
+            #verify IRQ affinity
+            ./show_irq_affinity.sh eth0
 
-         #add IRQ coalescing optimizations
-         ethtool -C eth0 adaptive-rx off
-         ethtool -C eth0 adaptive-tx off
-         ethtool -C eth0  rx-usecs 750 tx-frames-irq 2048
+            #add IRQ coalescing optimizations
+            ethtool -C eth0 adaptive-rx off
+            ethtool -C eth0 adaptive-tx off
+            ethtool -C eth0  rx-usecs 750 tx-frames-irq 2048
 
-         #verify the settings
-         ethtool -c eth0
-```
+            #verify the settings
+            ethtool -c eth0
+   ```
 
 6. После внесения указанных выше изменений проверьте скорость работы сетевой карты с помощью следующей команды:
 
-```bash
-         ethtool eth0 | grep -i Speed
-```
+   ```bash
+            ethtool eth0 | grep -i Speed
+   ```
 
 #### <a name="additional-advanced-kernelos-configuration"></a>Дополнительная настройка ядра и ОС
 
-1. Для обеспечения максимальной производительности ввода-вывода хранилища в Linux рекомендуется использовать планирование на основе нескольких очередей для блочных устройств. Это позволяет эффективно масштабировать производительность на блочном уровне при использовании быстрых твердотельных накопителей (SSD) и многоядерных систем. Чтобы узнать, включена ли эта функция по умолчанию в вашем дистрибутиве Linux, обратитесь к документации. В большинстве случаев включить ее можно с помощью параметра **scsi_mod.use_blk_mq=y** при загрузке ядра, хотя в документации к дистрибутиву Linux могут быть дополнительные указания. Это согласуется с основным ядром Linux.
+- Для обеспечения максимальной производительности ввода-вывода хранилища в Linux рекомендуется использовать планирование на основе нескольких очередей для блочных устройств. Это позволяет эффективно масштабировать производительность на блочном уровне при использовании быстрых твердотельных накопителей (SSD) и многоядерных систем. Чтобы узнать, включена ли эта функция по умолчанию в вашем дистрибутиве Linux, обратитесь к документации. В большинстве случаев включить ее можно с помощью параметра **scsi_mod.use_blk_mq=y** при загрузке ядра, хотя в документации к дистрибутиву Linux могут быть дополнительные указания. Это согласуется с основным ядром Linux.
 
-1. Так как для развертываний SQL Server часто используется многомаршрутная подсистема ввода-вывода, многомаршрутный целевой объект модуля отображения устройств (DM) необходимо также настроить для использования инфраструктуры `blk-mq`. Для этого следует включить параметр загрузки ядра **dm_mod.use_blk_mq=y**. Значение по умолчанию — `n` (отключено). Когда базовые устройства SCSI используют `blk-mq`, этот параметр сокращает затраты на блокировку на уровне DM. Дополнительные рекомендации по настройке см. в документации по используемому дистрибутиву Linux.
+- Так как для развертываний SQL Server часто используется многомаршрутная подсистема ввода-вывода, многомаршрутный целевой объект модуля отображения устройств (DM) необходимо также настроить для использования инфраструктуры `blk-mq`. Для этого следует включить параметр загрузки ядра **dm_mod.use_blk_mq=y**. Значение по умолчанию — `n` (отключено). Когда базовые устройства SCSI используют `blk-mq`, этот параметр сокращает затраты на блокировку на уровне DM. Дополнительные рекомендации по настройке см. в документации по используемому дистрибутиву Linux.
 
 #### <a name="configure-swapfile"></a>Настройка файла подкачки
 

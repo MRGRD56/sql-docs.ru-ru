@@ -6146,7 +6146,7 @@ items:
             href: dma/dma-assess-ssis.md
           - name: Сохранение и загрузка оценок
             href: dma/dma-save-load-assessments.md
-          - name: Определение нужного номера SKU базы данных SQL Azure
+          - name: "Определение целевого SKU для Azure\_SQL"
             href: dma/dma-sku-recommend-sql-db.md
           - name: Обновление SQL Server до более поздней версии
             href: dma/dma-migrateonpremsql.md
@@ -7213,7 +7213,7 @@ items:
                   - name: Подключение Kerberos
                     href: relational-databases/polybase/polybase-troubleshoot-connectivity.md
                   - name: PolyBase часто задаваемые вопросы
-                    href: relational-databases/polybase/polybase-faq.md
+                    href: relational-databases/polybase/polybase-faq.yml
                   - name: Ошибки в PolyBase и возможные решения
                     href: relational-databases/polybase/polybase-errors-and-possible-solutions.md
           - name: Справочник
@@ -10037,7 +10037,7 @@ items:
               - name: "SQL Server\_2017"
                 href: linux/sql-server-linux-editions-and-components-2017.md
           - name: ВОПРОСЫ И ОТВЕТЫ
-            href: linux/sql-server-linux-faq.md
+            href: linux/sql-server-linux-faq.yml
       - name: Краткие руководства
         items:
           - name: "Установка и подключение\_— Red\_Hat"
@@ -11513,7 +11513,7 @@ items:
         href: relational-databases/system-catalog-views/catalog-views-transact-sql.md
         items:
           - name: Часто задаваемые вопросы о запросах к системному каталогу сервера SQL Server
-            href: relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md
+            href: relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.yml
           - name: Схемы — sys.schemas
             href: relational-databases/system-catalog-views/schemas-catalog-views-sys-schemas.md
           - name: Сообщения (для ошибок) — sys.messages

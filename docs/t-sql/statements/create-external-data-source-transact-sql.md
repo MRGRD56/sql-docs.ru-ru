@@ -2,7 +2,7 @@
 description: CREATE EXTERNAL DATA SOURCE (Transact-SQL)
 title: CREATE EXTERNAL DATA SOURCE (Transact-SQL) | Документы Майкрософт
 ms.custom: ''
-ms.date: 02/26/2020
+ms.date: 03/05/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 807994f4a6e1f3c7b426c3a7c47ecdf7c152ea3b
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 4f503a3382f0ae4ec8ea7fb8f43e91254551e73c
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100070695"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247366"
 ---
 # <a name="create-external-data-source-transact-sql"></a>CREATE EXTERNAL DATA SOURCE (Transact-SQL)
 
@@ -71,7 +71,7 @@ ms.locfileid: "100070695"
 CREATE EXTERNAL DATA SOURCE <data_source_name>
 WITH
   ( [ LOCATION = '<prefix>://<path>[:<port>]' ]
-    [ [ , ] CONNECTION_OPTIONS = '<name_value_pairs>']
+    [ [ , ] CONNECTION_OPTIONS = '<key_value_pairs>'[,...]]
     [ [ , ] CREDENTIAL = <credential_name> ]
     [ [ , ] PUSHDOWN = { ON | OFF } ]
     [ [ , ] TYPE = { HADOOP | BLOB_STORAGE } ]
@@ -127,9 +127,14 @@ WITH
 Указывает дополнительные параметры при подключении через `ODBC` к внешнему источнику данных. Чтобы использовать несколько параметров подключения, укажите их через точку с запятой.
 
 
-Имя драйвера необходимо, но существуют и другие параметры, такие как `APP='<your_application_name>'` или `ApplicationIntent= ReadOnly|ReadWrite`, которые полезно задать, так как они могут помочь в устранении неполадок.
+Применяется как к универсальным `ODBC`-соединениям, так и ко встроенным соединителям `ODBC` для SQL Server, Oracle, Teradata, MongoDB и Cosmos DB.
 
-См. в документации по продукту `ODBC` список разрешенных [CONNECTION_OPTIONS][connection_options]
+`key_value_pair` — это ключевое слово и значение для конкретного параметра соединения. Доступные ключевые слова и значения зависят от типа внешнего источника данных. Имя драйвера является обязательным, но существуют и другие параметры, например `APP='<your_application_name>'` или `ApplicationIntent= ReadOnly|ReadWrite`, которые могут помочь в устранении неполадок.
+
+Дополнительные сведения см. в следующих источниках:
+
+- [Использование ключевых слов в строке подключения][connection_options]
+- [Ключевые слова в строке подключения драйвера ODBC][connection_option_keyword]
 
 ### <a name="pushdown--on--off"></a>PUSHDOWN = *ON | OFF*
 
@@ -316,7 +321,9 @@ WITH
 
 ### <a name="f-create-external-data-source-to-reference-a-sql-server-named-instance-via-polybase-connectivity-sql-server-2019"></a>Е. Создание внешнего источника данных для ссылки на именованный экземпляр SQL Server через соединение Polybase ([!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)])
 
-Чтобы создать внешний источник данных, ссылающийся на именованный экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], можно использовать CONNECTION_OPTIONS для указания имени экземпляра. В приведенном ниже примере `WINSQL2019` — это имя узла, а `SQL2019` — имя экземпляра.
+Чтобы создать внешний источник данных, ссылающийся на именованный экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], используйте `CONNECTION_OPTIONS` для указания имени экземпляра. 
+
+В приведенном ниже примере `WINSQL2019` — это имя узла, а `SQL2019` — имя экземпляра. `'Server=%s\SQL2019'` — пара "ключ-значение".
 
 ```sql
 CREATE EXTERNAL DATA SOURCE SQLServerInstance2
@@ -1154,6 +1161,7 @@ WITH
 [mongodb_pb]: ../../relational-databases/polybase/polybase-configure-mongodb.md
 [connectivity_pb]:https://docs.microsoft.com/sql/database-engine/configure-windows/polybase-connectivity-configuration-transact-sql
 [connection_options]: ../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md
+[connection_option_keyword]: ../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md#odbc-driver-connection-string-keywords
 [hint_pb]: ../../relational-databases/polybase/polybase-pushdown-computation.md#force-pushdown
 <!-- Elastic Query Docs -->
 [intro_eq]: /azure/azure-sql/database/elastic-query-overview

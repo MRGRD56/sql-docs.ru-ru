@@ -1,5 +1,5 @@
 ---
-title: Подключение с использованием ODBC
+title: Подключение из Linux или macOS
 description: Узнайте, как создать подключение к базе данных из Linux или macOS с помощью Microsoft ODBC Driver for SQL Server.
 ms.custom: ''
 ms.date: 09/10/2020
@@ -9,20 +9,19 @@ ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: conceptual
 helpviewer_keywords:
-- data source names
-- connection string keywords
-- DSNs
+- connect to linux
+- configure odbc.ini
 ms.assetid: f95cdbce-e7c2-4e56-a9f7-8fa3a920a125
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 8bc808e2e25a1f421712f6146fd13e8f6adafac3
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: d1bdbcbb34be9cbfa075ead7e1cd03ec813a5d9d
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727455"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247302"
 ---
-# <a name="connecting-to-sql-server"></a>Подключение к SQL Server
+# <a name="connecting-from-linux-or-macos"></a>Подключение из Linux или macOS
 
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
 
@@ -66,7 +65,7 @@ Server = tcp:localhost,1433
 Кроме того, можно добавить сведения о DSN в файл шаблона и выполнить следующую команду, чтобы добавить его в `~/.odbc.ini`:
  - **odbcinst -i -s -f** _файл_шаблона_  
 
-Полную документацию по INI-файлам и `odbcinst` см. в [документации по unixODBC](http://www.unixodbc.org/odbcinst.html). Сведения о записях в файле `odbc.ini`, характерных для ODBC Driver for SQL Server и поддерживаемых в Linux и macOS, см. в статье [Ключевые слова и атрибуты строки подключения и имени DSN](../dsn-connection-string-attribute.md).
+Полную документацию по INI-файлам и `odbcinst` см. в [документации unixODBC](http://www.unixodbc.org/odbcinst.html). Сведения о записях в файле `odbc.ini`, характерных для ODBC Driver for SQL Server и поддерживаемых в Linux и macOS, см. в статье [Ключевые слова и атрибуты строки подключения и имени DSN](../dsn-connection-string-attribute.md).
 
 Можно проверить, что драйвер работает, используя `isql` для проверки подключения или следующую команду:
  - **bcp master.INFORMATION_SCHEMA.TABLES out OutFile.dat -S <server> -U <name> -P <password>**  
@@ -79,7 +78,7 @@ Server = tcp:localhost,1433
 
 См. сведения о [шифровании подключений в SQL Server](/previous-versions/sql/sql-server-2008-r2/ms189067(v=sql.105)) и [использовании шифрования без проверки](../../../relational-databases/native-client/features/using-encryption-without-validation.md).
 
-Независимо от параметров для **Encrypt** и **TrustServerCertificate**учетные данные входа на сервер (имя пользователя и пароль) всегда шифруются. Следующая таблица показывает эффект от параметров **Encrypt** и **TrustServerCertificate** .  
+Независимо от параметров для **Encrypt** и **TrustServerCertificate** учетные данные входа на сервер (имя пользователя и пароль) всегда шифруются. Следующая таблица показывает эффект от параметров **Encrypt** и **TrustServerCertificate** .  
 
 ||**TrustServerCertificate=no**|**TrustServerCertificate=yes**|  
 |-|-------------------------------------|------------------------------------|  

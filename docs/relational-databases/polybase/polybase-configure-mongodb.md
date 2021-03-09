@@ -1,7 +1,7 @@
 ---
 title: 'Доступ к внешним данным: MongoDB — PolyBase'
 description: В этой статье описывается использование PolyBase в экземпляре SQL Server для запроса внешних данных в MongoDB. Создание внешних таблиц для ссылки на внешние данные.
-ms.date: 12/13/2019
+ms.date: 03/05/2021
 ms.metadata: seo-lt-2019
 ms.prod: sql
 ms.technology: polybase
@@ -10,12 +10,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mikeray
 monikerRange: '>= sql-server-linux-ver15 || >= sql-server-ver15'
-ms.openlocfilehash: 306feebece733cf382f486dc686117016800f4d1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a9d975bf5a65ec8ece1aa2f3b1e957007046f4c8
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351797"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247515"
 ---
 # <a name="configure-polybase-to-access-external-data-in-mongodb"></a>Настройка PolyBase для доступа к внешним данным в MongoDB
 
@@ -42,29 +42,32 @@ ms.locfileid: "100351797"
 
 1. Создайте учетные данные в области базы данных для доступа к источнику MongoDB.
 
-    ```sql
-    /*  specify credentials to external data source
-    *  IDENTITY: user name for external source. 
-    *  SECRET: password for external source.
-    */
-    CREATE DATABASE SCOPED CREDENTIAL credential_name WITH IDENTITY = 'username', Secret = 'password';
-    ```
-    
-   > [!IMPORTANT] 
-   > Соединитель ODBC MongoDB для PolyBase поддерживает только обычную проверку подлинности, но не проверку подлинности Kerberos.    
-    
-1. Создайте внешний источник данных с помощью инструкции [CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md).
+   Следующий скрипт создает учетные данные в области базы данных. Перед запуском скрипта обновите его для своей среды:
+
+    - Замените `<credential_name>` именем учетных данных.
+    - Замените `<username>` именем пользователя для внешнего источника.
+    - Замените `<password>` соответствующим паролем. 
 
     ```sql
-    /*  LOCATION: Location string should be of format '<type>://<server>[:<port>]'.
-    *  PUSHDOWN: specify whether computation should be pushed down to the source. ON by default.
-    *CONNECTION_OPTIONS: Specify driver location
-    *  CREDENTIAL: the database scoped credential, created above.
-    */
+    CREATE DATABASE SCOPED CREDENTIAL <credential_name> WITH IDENTITY = '<username>', Secret = '<password>';
+    ```
+
+   > [!IMPORTANT]
+   > Соединитель ODBC MongoDB для PolyBase поддерживает только обычную проверку подлинности, но не проверку подлинности Kerberos.
+
+1. Создайте внешний источник данных.
+
+    Следующий скрипт создает внешний источник данных. Для справки см. раздел [CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md). Перед запуском скрипта обновите его для своей среды:
+
+    - Обновите расположение. Задайте `<server>` и `<port>` для своей среды.
+    - Замените `<credential_name>` именем учетных данных, созданных на предыдущем шаге.
+    - При необходимости можно указать `PUSHDOWN = ON` или `PUSHDOWN = OFF`, если вы хотите указать вычисление pushdown для внешнего источника.
+
+    ```sql
     CREATE EXTERNAL DATA SOURCE external_data_source_name
-    WITH (LOCATION = 'mongodb://<server>[:<port>]',
+    WITH (LOCATION = '<mongodb://<server>[:<port>]>',
     -- PUSHDOWN = ON | OFF,
-    CREDENTIAL = credential_name);
+    CREDENTIAL = <credential_name>);
     ```
 
 1. **Необязательно**. Создайте статистику внешней таблицы.
@@ -75,12 +78,17 @@ ms.locfileid: "100351797"
     CREATE STATISTICS statistics_name ON customer (C_CUSTKEY) WITH FULLSCAN; 
     ```
 
->[!IMPORTANT] 
->После создания внешнего источника данных можно использовать команду [CREATE EXTERNAL TABLE](../../t-sql/statements/create-external-table-transact-sql.md), чтобы создать таблицу с поддержкой запросов по этому источнику.
+>[!IMPORTANT]
+>После создания внешнего источника данных можно использовать команду [CREATE EXTERNAL TABLE](../../t-sql/statements/create-external-table-transact-sql.md), чтобы создать поддерживающую запросы таблицу для этого источника.
 >
 >Пример см. в разделе [Создание внешней таблицы для MongoDB](../../t-sql/statements/create-external-table-transact-sql.md#k-create-an-external-table-for-mongodb).
 
+## <a name="mongodb-connection-options"></a>Параметры подключения MongoDB
+
+Сведения о параметрах подключения MongoDB см. в документации по MongoDB в разделе [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-options) (Формат URI строки подключения).
+
 ## <a name="flattening"></a>Преобразование в плоскую структуру
+
 Преобразование в плоскую структуру доступно для вложенных и повторяющихся данных из коллекций документов MongoDB. Пользователь должен включить функцию `create an external table` и явным образом указать реляционную схему для коллекций документов MongoDB, которые могут содержать вложенные и повторяющиеся данные. Вложенные или повторяющиеся типы данных JSON будут преобразованы в плоскую структуру следующим образом.
 
 * Объект: коллекция неупорядоченных ключей и значений, заключенная в фигурные скобки (вложенные данные)
@@ -111,10 +119,10 @@ ms.locfileid: "100351797"
 
 Адрес объекта будет преобразован в плоскую структуру, как показано ниже:
 
-* вложенное поле restaurant.address.building преобразуется в restaurant.address_building;
-* вложенное поле restaurant.address.coord преобразуется в restaurant.address_coord;
-* вложенное поле restaurant.address.street преобразуется в restaurant.address_street;
-* вложенное поле restaurant.address.zipcode преобразуется в restaurant.address_zipcode.
+- Вложенное поле `restaurant.address.building` меняется на `restaurant.address_building`.
+- Вложенное поле `restaurant.address.coord` меняется на `restaurant.address_coord`.
+- Вложенное поле `restaurant.address.street` меняется на `restaurant.address_street`.
+- Вложенное поле `restaurant.address.zipcode` меняется на `restaurant.address_zipcode`.
 
 Массив оценок будет преобразован в плоскую структуру, как показано ниже:
 
@@ -128,7 +136,28 @@ ms.locfileid: "100351797"
 
 ## <a name="cosmos-db-connection"></a>Подключение Cosmos DB
 
-Используя API Mongo в Cosmos DB и соединитель Mongo DB PolyBase, вы можете создать внешнюю таблицу **экземпляра Cosmos DB**. Для этого выполните те же действия, что указаны выше. Учетные данные в области базы данных, а также адрес сервера, порт и строка расположения должны соответствовать серверу Cosmos DB. 
+Используя API-интерфейс Mongo для Cosmos DB и соединитель PolyBase для MongoDB, вы можете создать внешнюю таблицу **экземпляра Cosmos DB**. Для этого выполните те же действия, что указаны выше. Учетные данные в области базы данных, а также адрес сервера, порт и строка расположения должны соответствовать серверу Cosmos DB.
+
+## <a name="examples"></a>Примеры
+
+В следующем примере создается внешний источник данных со следующими параметрами:
+
+| Параметр | Значение|
+|---|---|
+| Имя | `external_data_source_name`|
+| Служба | `mongodb0.example.com`|
+| Экземпляр | `27017`|
+| Набор реплик | `myRepl`|
+| TLS | `true`|
+| Вычисления pushdown | `On`|
+
+```sql
+CREATE EXTERNAL DATA SOURCE external_data_source_name
+    WITH (LOCATION = 'mongodb://mongodb0.example.com:27017',
+    CONNECTION_OPTION = 'replicaSet=myRepl','tls=true',
+    PUSHDOWN = ON ,
+    CREDENTIAL = credential_name);
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
