@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 1253448c-2ec9-4900-ae9f-461d6b51b2ea
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 4a4aa951ac82857f16b4866ed581c883ffcda7bb
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 51c5e31a97a52e94a8a6d164c6d43425451494b1
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99203452"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102463972"
 ---
 # <a name="syscolumn_store_segments-transact-sql"></a>sys.column_store_segments (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "99203452"
 |**null_value**|**bigint**|Значение, используемое для представления значений NULL.|  
 |**on_disk_size**|**bigint**|Размер сегмента в байтах.|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Комментарии  
 Тип кодировки сегмента columnstore выбирается [!INCLUDE[ssde_md](../../includes/ssde_md.md)] с целью достижения минимальных затрат на хранение путем анализа данных сегмента. Если данные в основном отличаются, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] используется кодировка на основе значений. Если данные в основном не отличаются, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] используется кодировка на основе хэша. Вариант кодировки, основанной на строках и значениях, связан с типом сохраняемых данных, будь то символьные данные или двоичные данные. Все кодировки по возможности используют преимущества битовой упаковки и длины выполнения.
  
 ## <a name="permissions"></a>Разрешения  
@@ -76,10 +76,10 @@ GROUP BY i.name, p.object_id, p.index_id, i.type_desc ;
 GO  
 ```  
 
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Представления каталога объектов (Transact-SQL)](../../relational-databases/system-catalog-views/object-catalog-views-transact-sql.md)   
  [Представления каталога (Transact-SQL)](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
- [Запросы к системному каталогу SQL Server вопросы и ответы](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
+ [Запросы к системному каталогу SQL Server вопросы и ответы](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.yml)   
  [sys.columns (Transact-SQL)](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)   
  [sys.all_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-all-columns-transact-sql.md)   
  [sys.computed_columns &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-computed-columns-transact-sql.md)   

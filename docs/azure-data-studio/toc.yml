@@ -155,7 +155,7 @@
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ
-      href: faq.md
+      href: faq.yml
     - name: Устранение неполадок
       href: troubleshooting.md
     - name: "Репозиторий GitHub Azure\_Data\_Studio\_>"

@@ -10,12 +10,12 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: v-makouz
 ms.author: v-daenge
-ms.openlocfilehash: 8843bf303f20a7d8aa0baac5be3d9da4e7c54e01
-ms.sourcegitcommit: fb1430aedbb91b55b92f07934e9b9bdfbbd2b0c5
+ms.openlocfilehash: 6d602db9c189b6e7fce8b767b60204253ccb7f67
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82886371"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464400"
 ---
 # <a name="programming-guidelines"></a>Указания по программированию
 
@@ -148,7 +148,7 @@ ms.locfileid: "82886371"
 3.  При использовании драйвера с очень многопоточными приложениями проверка обработки unixODBC может стать узким местом производительности. Вы можете получить большую производительность в таких сценариях, выполнив компиляцию unixODBC с параметром `--enable-fastvalidate`. Однако следует помнить, что это может привести к аварийному завершению работы приложений, которые передают в ODBC API некорректные дескрипторы, вместо того, чтобы возвращать ошибки `SQL_INVALID_HANDLE`.
 
 ## <a name="see-also"></a>См. также:  
-[Часто задаваемые вопросы](frequently-asked-questions-faq-for-odbc-linux.md)
+[Часто задаваемые вопросы](frequently-asked-questions-faq-for-odbc-linux.yml)
 
 [Известные проблемы в данной версии драйвера](known-issues-in-this-version-of-the-driver.md)
 

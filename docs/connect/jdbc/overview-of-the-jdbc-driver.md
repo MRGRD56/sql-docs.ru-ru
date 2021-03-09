@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 939a8773-2583-49a4-bf00-6b892fbe39dc
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 5455169782503939330c32829a89bf0701aac25a
-ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
+ms.openlocfilehash: 531dca0f328f5f587d2da545bcae182f228bdee5
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943707"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464760"
 ---
 # <a name="overview-of-the-jdbc-driver"></a>Общие сведения о JDBC Driver
 
@@ -44,7 +44,7 @@ ms.locfileid: "87943707"
 |[Развертывание JDBC Driver](../../connect/jdbc/deploying-the-jdbc-driver.md)|Инструкции по повторному распространению и развертыванию драйвера Microsoft JDBC в операционных системах Windows и Unix.|  
 |[Поиск дополнительных сведений о JDBC Driver](../../connect/jdbc/finding-additional-jdbc-driver-information.md)|Информация о том, где найти дополнительные сведения о драйвере Microsoft JDBC, включая ссылки на внешние источники.|  
 |[Матрица поддержки Microsoft JDBC Driver для SQL Server](../../connect/jdbc/microsoft-jdbc-driver-for-sql-server-support-matrix.md)|Матрица и политика жизненного цикла поддержки для драйвера Microsoft JDBC Driver for SQL Server.|  
-|[Вопросы и ответы о JDBC Driver](../../connect/jdbc/frequently-asked-questions-faq-for-jdbc-driver.md)|Часто задаваемые вопросы о драйвере Microsoft JDBC.|  
+|[Вопросы и ответы о JDBC Driver](../../connect/jdbc/frequently-asked-questions-faq-for-jdbc-driver.yml)|Часто задаваемые вопросы о драйвере Microsoft JDBC.|  
 |[Зависимости компонентов Microsoft JDBC Driver для SQL Server](../../connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server.md)|Зависимости компонентов Microsoft JDBC Driver для SQL Server.|
 | &nbsp; | &nbsp; |
 

@@ -7,12 +7,12 @@ ms.date: 03/12/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: d6978bfa68d3a9b922e46454481618e448e91b96
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 8cc766248f4dd2776a0367b2c0ac6e12f385433e
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346201"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464669"
 ---
 # <a name="whats-new-for-sql-server-2019-on-linux"></a>Новые возможности SQL Server 2019 на Linux
 
@@ -35,8 +35,8 @@ ms.locfileid: "100346201"
 | Новые функции или обновления | Сведения |
 |:-----|:-----|
 |Поддержка репликации. |[Репликация SQL Server в Linux](sql-server-linux-replication.md)
-|Поддержка координатора распределенных транзакций Майкрософт (MSDTC). |[Настройка MSDTC на платформе Linux](sql-server-linux-configure-msdtc.md) |
-|Поддержка OpenLDAP для сторонних поставщиков Active Directory. |[Руководство. Использование проверки подлинности Azure Active Directory с SQL Server на Linux](sql-server-linux-active-directory-authentication.md) |
+|Поддержка координатора распределенных транзакций Майкрософт (MSDTC). |[Настройка MSDTC в Linux](sql-server-linux-configure-msdtc.md) |
+|Поддержка OpenLDAP для сторонних поставщиков Active Directory. |[Руководство по Использование проверки подлинности Active Directory с SQL Server на Linux](sql-server-linux-active-directory-authentication.md) |
 |Поддержка машинного обучения в Linux. |[Настройка машинного обучения в Linux](sql-server-linux-setup-machine-learning.md) |
 |Улучшения `tempdb` | По умолчанию новая установка SQL Server на Linux создает несколько файлов данных `tempdb` на основе числа логических ядер (до 8 файлов данных). Это не применимо к обновлениям основной или дополнительной версии на месте. Размер каждого файла `tempdb` составляет 8 МБ с возможностью автоматического увеличения до 64 МБ. Это поведение аналогично поведению установки SQL Server по умолчанию в Windows. |
 | PolyBase на компьютерах под управлением Linux | [Установка PolyBase](../relational-databases/polybase/polybase-linux-setup.md) в Linux для соединителей вне Hadoop.<br/><br/>[Сопоставление типов PolyBase](../relational-databases/polybase/polybase-type-mapping.md). |
@@ -54,6 +54,6 @@ ms.locfileid: "100346201"
 - [Запуск в Docker](quickstart-install-connect-docker.md?view=sql-server-linux-ver15&preserve-view=true)
 - [Подготовка виртуальной машины SQL в Azure](/azure/virtual-machines/linux/sql/provision-sql-server-linux-virtual-machine?toc=/sql/toc/toc.json)
 
-Ответы на часто задаваемые вопросы об SQL Server на Linux см. в [этой статье](sql-server-linux-faq.md). Дополнительные сведения об улучшениях, появившихся в SQL Server 2019, см. в разделе [Новые возможности SQL Server 2019](../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15&preserve-view=true).
+Ответы на часто задаваемые вопросы об SQL Server на Linux см. в [этой статье](sql-server-linux-faq.yml). Дополнительные сведения об улучшениях, появившихся в SQL Server 2019, см. в разделе [Новые возможности SQL Server 2019](../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15&preserve-view=true).
 
 [!INCLUDE[get-help-options](../includes/paragraph-content/get-help-options.md)]

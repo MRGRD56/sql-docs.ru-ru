@@ -23,12 +23,12 @@ author: bluefooted
 ms.author: pamela
 ms.reviewer: wiassaf
 manager: amitban
-ms.openlocfilehash: e24a8532aa721f4103e6cbff4b34b15bf607640c
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 2e48f40003412a2db5340a32e5408f649bf5bb18
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839064"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102465010"
 ---
 # <a name="sysdm_os_spinlock_stats-transact-sql"></a>sys.dm_os_spinlock_stats (Transact-SQL)
 
@@ -104,7 +104,7 @@ GO
 |CLR_HOSTTASK|Только для внутреннего использования.|
 |CLR_SPIN_LOCK|Только для внутреннего использования.|
 |CMED_DATABASE|Только для внутреннего использования.|
-|CMED_HASH_SET|Только для внутреннего использования.|
+|CMED_HASH_SET|Только для внутреннего использования.<br><br>**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ( [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] через [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] CU1)<br><br> **Примечание.** это имя взаимоблокировки изменяется на LOCK_RW_CMED_HASH_SET после применения [SQL Server 2016 Cu2](https://support.microsoft.com/topic/kb3195888-fix-high-cpu-usage-causes-performance-issues-in-sql-server-2016-and-2017-9514b80d-938f-e179-3131-74e6c757c4d5).|
 |колумндатасетсессионлист|Только для внутреннего использования.|
 |COLUMNSTORE_HASHTABLE|Только для внутреннего использования.|
 |COLUMNSTOREBUILDSTATE_LIST|Только для внутреннего использования.|
@@ -124,7 +124,7 @@ GO
 |DBSEEDING_OPERATION|Только для внутреннего использования.|
 |DBT_HASH|Только для внутреннего использования.|
 |DBT_IO_LIST|Только для внутреннего использования.|
-|DBTABLE|Управляет доступом к структуре данных в памяти для каждой базы данных в SQL Server, содержащей свойства этой базы данных. Дополнительные сведения см. в [этой статье](https://techcommunity.microsoft.com/t5/SQL-Server/Improving-Concurrency-Scalability-of-SQL-Server-workload-by/ba-p/384789). |
+|DBTABLE|Управляет доступом к структуре данных в памяти для каждой базы данных в [!INCLUDE[ssde_md](../../includes/ssde_md.md)] , содержащей свойства этой базы данных. Дополнительные сведения см. в [этой статье](https://techcommunity.microsoft.com/t5/SQL-Server/Improving-Concurrency-Scalability-of-SQL-Server-workload-by/ba-p/384789). |
 |DEFERRED_WF_EXT_DROP|Только для внутреннего использования.|
 |DEK_INSTANCE|Только для внутреннего использования.|
 |DELAYED_PARTITIONED_STACK|Только для внутреннего использования.|
@@ -134,7 +134,7 @@ GO
 |DIGEST_CACHE|Только для внутреннего использования.|
 |динпбуф|Только для внутреннего использования.|
 |директлогконсумер|Только для внутреннего использования.|
-|DP_LIST|Управляет доступом к списку «грязных» страниц для базы данных с включенной косвенной контрольной точкой. Примените исправления из [статьи 4497928](https://support.microsoft.com/kb/4497928), в [статье 4040276](https://support.microsoft.com/kb/4040276) или используйте [флаг трассировки 3468](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md). Дополнительные сведения см. в [этой статье](https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/ba-p/385510).|
+|DP_LIST|Управляет доступом к списку «грязных» страниц для базы данных с включенной косвенной контрольной точкой. Примените исправления из [статьи 4497928](https://support.microsoft.com/kb/4497928), в [статье 4040276](https://support.microsoft.com/kb/4040276)или используйте [флаг трассировки 3468](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md). Дополнительные сведения см. в [этой статье](https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/ba-p/385510).|
 |DROP|Только для внутреннего использования.|
 |DROP_TEMPO|Только для внутреннего использования.|
 |DROPPED_ALLOC_UNIT|Только для внутреннего использования.|
@@ -191,18 +191,18 @@ GO
 |LANG_RES_LOAD|Только для внутреннего использования.|
 |LIVE_TARGET_TVF|Только для внутреннего использования.|
 |LOCK_FREE_LIST|Только для внутреннего использования.|
-|LOCK_HASH|Защищает доступ к хэш-таблице диспетчера блокировок, в которой хранятся сведения о блокировках, удерживаемых в базе данных. Дополнительные сведения см. в [этой статье](https://support.microsoft.com/kb/2926217).|
+|LOCK_HASH|Защищает доступ к хэш-таблице диспетчера блокировок, в которой хранятся сведения о блокировках, удерживаемых в базе данных. Дополнительные сведения см. в [этой статье](https://support.microsoft.com/kb/2926217) и [руководстве по блокировке транзакций и управлении версиями строк](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#Lock_Engine).|
 |LOCK_NOTIFICATION|Только для внутреннего использования.|
 |LOCK_RESOURCE_ID|Только для внутреннего использования.|
 |LOCK_RW_ABTX_HASH_SET|Только для внутреннего использования.|
 |LOCK_RW_AGDB_HEALTH_DIAG|Только для внутреннего использования.|
-|LOCK_RW_CMED_HASH_SET|Только для внутреннего использования.|
+|LOCK_RW_CMED_HASH_SET|Только для внутреннего использования.<br><br>**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (Начиная с [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] CU2), [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] и [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]|
 |LOCK_RW_DPT_TABLE|Только для внутреннего использования.|
 |LOCK_RW_IN_ROW_TRACKER|Только для внутреннего использования.|
 |LOCK_RW_LOGIN_RATE_STATS|Только для внутреннего использования.|
 |LOCK_RW_PVS_PAGE_TRACKER|Только для внутреннего использования.|
 |LOCK_RW_RBIO_REQ|Только для внутреннего использования.|
-|LOCK_RW_SECURITY_CACHE|Только для внутреннего использования.|
+|LOCK_RW_SECURITY_CACHE|Защищает записи кэша, связанные с маркерами безопасности и проверками доступа. <br><br>**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (Начиная с [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] CU2), [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] и [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]<br><br> Если записи в хранилище кэша TokenAndPermUserStore постоянно увеличиваются, вы можете заметить большие обороты для этого взаимоблокировки. Оцените использование [флагов трассировки](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 4610 и 4618 для ограничения записей. Дополнительные сведения см. в разделе [доступ к параметрам конфигурации сервера для проверки кэша](../../database-engine/configure-windows/access-check-cache-server-configuration-options.md), этой [статье](https://support.microsoft.com/topic/queries-take-a-longer-time-to-finish-running-when-the-size-of-the-tokenandpermuserstore-cache-grows-in-sql-server-2005-ad1622e7-3bb5-7902-19a0-5d0e6271033d)и в этом [блоге](https://techcommunity.microsoft.com/t5/sql-server-support/query-performance-issues-associated-with-a-large-sized-security/ba-p/315494).|
 |LOCK_RW_TEST|Только для внутреннего использования.|
 |LOCK_RW_WPR_BUCKET|Только для внутреннего использования.|
 |LOCK_SORT_STREAM|Только для внутреннего использования.|
@@ -233,7 +233,7 @@ GO
 |MEM_MGR|Только для внутреннего использования.|
 |MGR_CACHE|Только для внутреннего использования.|
 |MIGRATION_BUF_LIST|Только для внутреннего использования.|
-|ПРИНАДЛЕЖАЩ|Защищает записи кэша, связанные с маркерами безопасности и проверками доступа. Используется для версий ниже [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] . Если записи в хранилище кэша TokenAndPermUserStore постоянно увеличиваются, вы можете заметить большие обороты для этого взаимоблокировки. Оцените использование [флагов трассировки](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 4610 и 4618 для ограничения записей. Дополнительные ссылки: [блог](https://techcommunity.microsoft.com/t5/sql-server-support/query-performance-issues-associated-with-a-large-sized-security/ba-p/315494), [статья](https://support.microsoft.com/topic/queries-take-a-longer-time-to-finish-running-when-the-size-of-the-tokenandpermuserstore-cache-grows-in-sql-server-2005-ad1622e7-3bb5-7902-19a0-5d0e6271033d) и [Документация](../../database-engine/configure-windows/access-check-cache-server-configuration-options.md).|
+|ПРИНАДЛЕЖАЩ|Защищает записи кэша, связанные с маркерами безопасности и проверками доступа. <br><br>**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (До [!INCLUDE[sssql11-md](../../includes/sssql11-md.md)] )<br><br>Если записи в хранилище кэша TokenAndPermUserStore постоянно увеличиваются, вы можете заметить большие обороты для этого взаимоблокировки. Оцените использование [флагов трассировки](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 4610 и 4618 для ограничения записей. Дополнительные сведения см. в разделе [доступ к параметрам конфигурации сервера для проверки кэша](../../database-engine/configure-windows/access-check-cache-server-configuration-options.md), этой [статье](https://support.microsoft.com/topic/queries-take-a-longer-time-to-finish-running-when-the-size-of-the-tokenandpermuserstore-cache-grows-in-sql-server-2005-ad1622e7-3bb5-7902-19a0-5d0e6271033d)и в этом [блоге](https://techcommunity.microsoft.com/t5/sql-server-support/query-performance-issues-associated-with-a-large-sized-security/ba-p/315494).|
 |NETCONN_ADDRESS|Только для внутреннего использования.|
 |ONDEMAND_TASK|Только для внутреннего использования.|
 |ONE_PROC_SIM_NODE_CONTEXT|Только для внутреннего использования.|
@@ -294,7 +294,7 @@ GO
 |SBS_TRANSPORT|Только для внутреннего использования.|
 |SBS_UCS_DISPATCH|Только для внутреннего использования.|
 |Безопасность|Только для внутреннего использования.|
-|SECURITY_CACHE|Защищает записи кэша, связанные с маркерами безопасности и проверками доступа. Используется для [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] и более поздних версий. Если записи в хранилище кэша TokenAndPermUserStore постоянно увеличиваются, вы можете заметить большие обороты для этого взаимоблокировки. Оцените использование [флагов трассировки](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 4610 и 4618 для ограничения записей. Дополнительные ссылки: [блог](https://techcommunity.microsoft.com/t5/sql-server-support/query-performance-issues-associated-with-a-large-sized-security/ba-p/315494), [статья](https://support.microsoft.com/topic/queries-take-a-longer-time-to-finish-running-when-the-size-of-the-tokenandpermuserstore-cache-grows-in-sql-server-2005-ad1622e7-3bb5-7902-19a0-5d0e6271033d) и [Документация](../../database-engine/configure-windows/access-check-cache-server-configuration-options.md). Обратите внимание на изменение имени спина взаимоблокировок после применения [обновлений для sql 2017 и sql 2016](https://support.microsoft.com/topic/kb3195888-fix-high-cpu-usage-causes-performance-issues-in-sql-server-2016-and-2017-9514b80d-938f-e179-3131-74e6c757c4d5).|
+|SECURITY_CACHE|Защищает записи кэша, связанные с маркерами безопасности и проверками доступа. <br><br>**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ( [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] через [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] CU1)<br><br> Если записи в хранилище кэша TokenAndPermUserStore постоянно увеличиваются, вы можете заметить большие обороты для этого взаимоблокировки. Оцените использование [флагов трассировки](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) 4610 и 4618 для ограничения записей. Дополнительные сведения см. в разделе [доступ к параметрам конфигурации сервера для проверки кэша](../../database-engine/configure-windows/access-check-cache-server-configuration-options.md), этой [статье](https://support.microsoft.com/topic/queries-take-a-longer-time-to-finish-running-when-the-size-of-the-tokenandpermuserstore-cache-grows-in-sql-server-2005-ad1622e7-3bb5-7902-19a0-5d0e6271033d)и в этом [блоге](https://techcommunity.microsoft.com/t5/sql-server-support/query-performance-issues-associated-with-a-large-sized-security/ba-p/315494).<br><br>**Примечание.** это имя взаимоблокировки изменяется на LOCK_RW_SECURITY_CACHE после применения [SQL Server 2016 Cu2](https://support.microsoft.com/topic/kb3195888-fix-high-cpu-usage-causes-performance-issues-in-sql-server-2016-and-2017-9514b80d-938f-e179-3131-74e6c757c4d5).|
 |SECURITY_FEDAUTH_AAD_BECWSCONNS|Только для внутреннего использования.|
 |SEMANTIC_TICACHE|Только для внутреннего использования.|
 |SEQUENCED_OBJECT|Только для внутреннего использования.|
@@ -312,7 +312,7 @@ GO
 |SOS_ACTIVEDESCRIPTOR|Только для внутреннего использования.|
 |SOS_BLOCKALLOCPARTIALLIST|Только для внутреннего использования.|
 |SOS_BLOCKDESCRIPTORBUCKET|Только для внутреннего использования.|
-|SOS_CACHESTORE|Синхронизирует доступ к различным кэшам в памяти в SQL Server таких как кэш планов или кэш временных таблиц. Интенсивное состязание за этот тип спин-блокировки может означать множество различных моментов в зависимости от конкретного кэша, который находится в состязании. Обратитесь [!INCLUDE[msCoName](../../includes/msconame-md.md)] в службу поддержки пользователей за помощью по устранению неполадок этого типа взаимоблокировки. |
+|SOS_CACHESTORE|Синхронизирует доступ к различным кэшам в памяти в [!INCLUDE[ssde_md](../../includes/ssde_md.md)] , таким как кэш планов или кэш временных таблиц. Интенсивное состязание за этот тип спин-блокировки может означать множество различных моментов в зависимости от конкретного кэша, который находится в состязании. Обратитесь [!INCLUDE[msCoName](../../includes/msconame-md.md)] в службу поддержки пользователей за помощью по устранению неполадок этого типа взаимоблокировки. |
 |SOS_CACHESTORE_CLOCK|Только для внутреннего использования.|
 |SOS_CLOCKALG_INTERNODE_SYNC|Только для внутреннего использования.|
 |SOS_DEBUG_HOOK|Только для внутреннего использования.|
@@ -407,9 +407,7 @@ GO
 |XVB_CSN|Только для внутреннего использования.|
 |XVB_LIST|Только для внутреннего использования.|
  
-
-  
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  
  [DBCC SQLPERF (Transact-SQL)](../../t-sql/database-console-commands/dbcc-sqlperf-transact-sql.md)   
  

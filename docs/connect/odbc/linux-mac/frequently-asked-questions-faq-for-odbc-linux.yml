@@ -1,0 +1,32 @@
+### YamlMime:FAQ
+metadata:
+  title: Часто задаваемые вопросы об ODBC в Linux и macOS
+  description: Найдите ответы на часто задаваемые вопросы о Microsoft ODBC Driver for SQL Server на Linux и macOS.
+  ms.custom: ''
+  ms.date: 05/06/2020
+  ms.prod: sql
+  ms.prod_service: connectivity
+  ms.reviewer: ''
+  ms.technology: connectivity
+  ms.topic: conceptual
+  ms.assetid: 65bfd6d2-c83d-4528-a5e1-a85b125a4f4a
+  author: David-Engel
+  ms.author: v-daenge
+  ms.openlocfilehash: f47d819c58b6a255fd0cf0ddbfb2fdbc93450eaf
+  ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/08/2021
+  ms.locfileid: "102465624"
+title: Часто задаваемые вопросы об ODBC в Linux и macOS
+summary: "[!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]\n\nНиже приведены ответы на вопросы о драйвере ODBC для [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] в Linux и macOS.\n  \n"
+sections:
+- name: Не учитывается
+  questions:
+  - question: Часто задаваемые вопросы
+    answer: "**Как работают с драйвером существующие приложения ODBC в Linux и macOS?**  \nВы должны быть в состоянии компилировать и запускать приложения ODBC, которые компилировались и запускались в Linux или macOS с использованием других драйверов. \n  \n**Какие функции [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] поддерживает эта версия драйвера?**\n\nДрайвер ODBC для Linux и macOS поддерживает все функции сервера в [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)], за исключением LocalDB. Дополнительные сведения о поддерживаемых функциях [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] см. в статье [Programming Guidelines](../../../connect/odbc/linux-mac/programming-guidelines.md).  \n  \n**Поддерживает ли драйвер проверку подлинности Kerberos?**  \nДа. При наличии существующей установки среды Kerberos вы сможете подключиться к серверам, используя имя DSN `Trusted_Connection=Yes` или строку подключения. Дополнительные сведения см. в статье [Использование встроенной проверки подлинности](../../../connect/odbc/linux-mac/using-integrated-authentication.md).  \n  \n**Какую кодировку Юникода должно использовать приложение?**  \nUTF-8 для данных SQL_CHAR и UTF-16 для данных SQL_WCHAR. В зависимости от языкового стандарта и версии драйвера, могут поддерживаться данные и в некоторых других кодировках, кроме UTF-8. Более подробную информацию см. в статье [Указания по программированию](../../../connect/odbc/linux-mac/programming-guidelines.md).\n\n**Существуют ли примеры ODBC, которые я могу скачать и запустить с помощью драйвера, чтобы поэкспериментировать с ним или оценить его?**\n\nПример см. в статье [Использование существующих примеров MSDN C++ ODBC для драйвера ODBC в Linux](/archive/blogs/sqlblog/use-existing-msdn-c-odbc-samples-for-microsoft-linux-odbc-driver) . Это также применимо к драйверу ODBC для macOS.\n\n**Имеет ли драйвер ODBC для Linux открытый исходный код?**\n\nНет, драйвер ODBC для Linux не является продуктом с открытым исходным кодом.  \n"
+  - question: 'См. также:'
+    answer: >-
+      - [Установка Microsoft ODBC Driver for SQL Server в Linux](../../../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md)
+
+      - [Установка Microsoft ODBC Driver for SQL Server в macOS](../../../connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos.md)
