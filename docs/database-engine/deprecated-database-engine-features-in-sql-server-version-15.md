@@ -15,12 +15,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: b6a8b2edf94d74720836e02589ec8e1270f38dac
-ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
+ms.openlocfilehash: 4e322ff478e9ccdc031882e7c3b5b18fd8506e42
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100525175"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186476"
 ---
 # <a name="deprecated-database-engine-features-in-sql-server-2019-15x"></a>Нерекомендуемые функции ядра СУБД в SQL Server 2019 (15.x)
 
@@ -37,7 +37,7 @@ ms.locfileid: "100525175"
 
 - Функция находится в режиме обслуживания. Новые изменения, в том числе касающиеся совместимости с новыми функциями, вноситься не будут.
 - Мы стараемся не удалять нерекомендуемые функции из новых выпусков, чтобы упростить обновление. Однако иногда мы можем окончательно удалять функции из [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], если они препятствуют дальнейшим инновациям.
-- Нерекомендуемые функции нежелательно использовать при разработке новых приложений.      
+- Для новых задач разработки не используйте нерекомендуемые функции. Для существующих приложений, которые в настоящее время используют эти функции, запланируйте изменение как можно скорее.     
 
 Наблюдать за использованием устаревших функций можно с помощью счетчика производительности объекта устаревших функций [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] или расширенных событий `deprecation_announcement` и `deprecation_final_support`. Дополнительные сведения см. в разделе [Использование объектов SQL Server](../relational-databases/performance-monitor/use-sql-server-objects.md).  
 

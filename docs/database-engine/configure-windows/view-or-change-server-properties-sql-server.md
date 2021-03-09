@@ -1,10 +1,8 @@
 ---
-title: Просмотр или изменение свойств сервера (SQL Server) | Документы Майкрософт
+title: Просмотр или изменение свойств сервера (SQL Server)
 description: Узнайте, как использовать SQL Server Management Studio, Transact-SQL или диспетчер SQL Server Configuration Manager для просмотра или изменения свойств экземпляра SQL Server.
-ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
-ms.reviewer: ''
 ms.technology: configuration
 ms.topic: conceptual
 f1_keywords:
@@ -18,13 +16,15 @@ helpviewer_keywords:
 ms.assetid: 55f3ac04-5626-4ad2-96bd-a1f1b079659d
 author: markingmyname
 ms.author: maghan
+ms.reviewer: ''
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: f6bf2a5d86faba024d58ae6b6f9c539e8bd17003
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 03/14/2017
+ms.openlocfilehash: 80d52c19e5fde8116f7f6fed638e1120064038d3
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350340"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186072"
 ---
 # <a name="view-or-change-server-properties-sql-server"></a>Просмотр или изменение свойств сервера (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -94,15 +94,15 @@ ms.locfileid: "100350340"
   
 1.  Установите соединение с компонентом [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  На панели «Стандартная» нажмите **Создать запрос**.  
+2.  На стандартной панели выберите пункт **Создать запрос**.  
   
-3.  Скопируйте следующий пример в окно запроса и нажмите кнопку **Выполнить**. В этом примере запрашивается представление каталога [sys.configurations](../../relational-databases/system-catalog-views/sys-configurations-transact-sql.md) , чтобы вернуть сведения о каждом параметре конфигурации для текущего сервера. В примере возвращается имя (`name`) и описание (`description`) параметра, а также указывается, является ли параметр дополнительным (`is_advanced`).  
+3.  Скопируйте приведенный ниже пример в окно запроса и нажмите кнопку **Выполнить**. В этом примере запрашивается представление каталога [sys.configurations](../../relational-databases/system-catalog-views/sys-configurations-transact-sql.md) , чтобы вернуть сведения о каждом параметре конфигурации для текущего сервера. В примере возвращается имя (`name`), описание (`description`) и значение (`value`) параметра, а также указывается, является ли параметр дополнительным (`is_advanced`).  
   
     ```wmimof  
     USE AdventureWorks2012;   
     GO  
-    SELECT name, description, is_advanced  
-    FROM sys.configurations ;   
+    SELECT name, description, value, is_advanced  
+    FROM sys.configurations;   
     GO  
   
     ```  
@@ -111,9 +111,9 @@ ms.locfileid: "100350340"
   
 1.  Установите соединение с компонентом [!INCLUDE[ssDE](../../includes/ssde-md.md)].  
   
-2.  На панели «Стандартная» нажмите **Создать запрос**.  
+2.  На стандартной панели выберите пункт **Создать запрос**.  
   
-3.  Скопируйте следующий пример в окно запроса и нажмите кнопку **Выполнить**. В этом примере показано, как изменить свойство сервера с помощью процедуры [sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) . В примере значение параметра `fill factor` меняется на `100`. Чтобы изменение вступило в силу, необходимо перезапустить сервер.  
+3.  Скопируйте приведенный ниже пример в окно запроса и нажмите кнопку **Выполнить**. В этом примере показано, как изменить свойство сервера с помощью процедуры [sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) . В примере значение параметра `fill factor` меняется на `100`. Чтобы изменение вступило в силу, необходимо перезапустить сервер.  
   
 ```sql  
 Use AdventureWorks2012;  
@@ -137,7 +137,7 @@ GO
   
 1.  В меню **Пуск** последовательно выберите пункты **Все программы**, [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)], **Средства настройки** и щелкните **Диспетчер конфигурации SQL Server**.  
   
-2.  В **диспетчере конфигурации SQL Server** выберите **Службы SQL Server**.  
+2.  В **диспетчере конфигурации SQL Server** выберите **Службы SQL Server**.  
   
 3.  В области сведений щелкните правой кнопкой мыши **SQL Server (\<**_instancename_**>)** и выберите пункт **Свойства**.  
   

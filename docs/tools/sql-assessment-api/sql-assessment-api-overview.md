@@ -8,13 +8,13 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 1/25/2021
-ms.openlocfilehash: 19328956cab5d7c5e449e48d99bbfda1b999ca6f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 3/3/2021
+ms.openlocfilehash: 7e55abe0d02a9f9deffffdaa7639d911faad1fa3
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100067122"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102185751"
 ---
 # <a name="sql-assessment-api"></a>API Оценки SQL
 
@@ -24,9 +24,13 @@ ms.locfileid: "100067122"
 
 API можно использовать для оценки:
  
-* Управляемого экземпляра Базы данных SQL Azure и SQL Server версии 2012 и выше;
+* SQL Server на Виртуальных машинах Microsoft Azure
 
-* SQL в системах на базе Linux;
+* Управляемый экземпляр базы данных SQL Azure
+
+* SQL Server 2012 и более поздних версий
+
+* SQL в системах на базе Linux
 
 API также используется расширением Оценки SQL Server для Azure Data Studio (ADS).
 

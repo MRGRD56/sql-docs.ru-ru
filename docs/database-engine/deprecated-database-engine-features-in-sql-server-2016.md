@@ -15,12 +15,12 @@ helpviewer_keywords:
 - deprecation [SQL Server], feature list
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 518b29507e7992b267922e09c97bf98b1657205d
-ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
+ms.openlocfilehash: e4227e17c9b8f3319e771d7de9d93fefddbaa487
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100525170"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186161"
 ---
 # <a name="deprecated-database-engine-features-in-sql-server-2016"></a>Нерекомендуемые функции ядра СУБД в SQL Server 2016
 [!INCLUDE [SQL Server 2016](../includes/applies-to-version/sqlserver2016.md)]  
@@ -28,9 +28,9 @@ ms.locfileid: "100525170"
 В этой статье описываются устаревшие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)], которые по-прежнему доступны в [!INCLUDE[sssql15-md](../includes/sssql16-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
   
 Если функция помечена как нерекомендуемая, это означает следующее:
--  Функция находится в режиме обслуживания. Новые изменения, в том числе касающиеся совместимости с новыми функциями, вноситься не будут.
--  Мы стараемся не удалять нерекомендуемые функции из новых выпусков, чтобы упростить обновление. Однако иногда мы можем окончательно удалять функции из [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], если они препятствуют дальнейшим инновациям.
--  Нерекомендуемые функции нежелательно использовать при разработке новых приложений.      
+- Функция находится в режиме обслуживания. Новые изменения, в том числе касающиеся совместимости с новыми функциями, вноситься не будут.
+- Мы стараемся не удалять нерекомендуемые функции из новых выпусков, чтобы упростить обновление. Однако иногда мы можем окончательно удалять функции из [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], если они препятствуют дальнейшим инновациям.
+- Для новых задач разработки не используйте нерекомендуемые функции. Для существующих приложений, которые в настоящее время используют эти функции, запланируйте изменение как можно скорее.     
 
 Сведения о [!INCLUDE[sssql17-md](../includes/sssql17-md.md)] см. в разделе [Нерекомендуемые функции ядра СУБД в SQL Server 2017](../database-engine/deprecated-database-engine-features-in-sql-server-2017.md).
 
@@ -44,7 +44,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 ```  
   
 ## <a name="features-deprecated-in-the-next-version-of-sql-server"></a>Функции, не рекомендуемые в следующей версии SQL Server
- Следующие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] не будут поддерживаться в следующей версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Не используйте их при работе над новыми приложениями и как можно скорее измените приложения, в которых они в настоящее время используются. **Название функции** отображается в событиях трассировки в столбце ObjectName, а в счетчиках производительности и `sys.dm_os_performance_counters` — как имя экземпляра. Значению **Идентификатор функции** в событиях трассировки соответствует ObjectId.  
+ Следующие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] не будут поддерживаться в будущей версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Не используйте их при работе над новыми приложениями и как можно скорее измените приложения, в которых они в настоящее время используются. **Название функции** отображается в событиях трассировки в столбце ObjectName, а в счетчиках производительности и `sys.dm_os_performance_counters` — как имя экземпляра. Значению **Идентификатор функции** в событиях трассировки соответствует ObjectId.  
   
 |Категория|Устаревшая функция|Замена|Имя функции|Идентификатор функции|  
 |--------------|------------------------|-----------------|------------------|----------------|  
@@ -130,7 +130,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 |Безопасность|Алгоритмы шифрования RC4 и DESX|Используйте другой алгоритм, например AES.|Алгоритм DESX|238|  
 |Параметры SET|SET FMTONLY|[sys.dm_exec_describe_first_result_set (Transact-SQL)](../relational-databases/system-dynamic-management-views/sys-dm-exec-describe-first-result-set-transact-sql.md), [sys.dm_exec_describe_first_result_set_for_object (Transact-SQL)](../relational-databases/system-dynamic-management-views/sys-dm-exec-describe-first-result-set-for-object-transact-sql.md), [sp_describe_first_result_set (Transact-SQL)](../relational-databases/system-stored-procedures/sp-describe-first-result-set-transact-sql.md) и [sp_describe_undeclared_parameters (Transact-SQL)](../relational-databases/system-stored-procedures/sp-describe-undeclared-parameters-transact-sql.md).|SET FMTONLY|250|  
 |Параметры конфигурации сервера|Параметр c2 audit<br /><br /> default trace enabled, параметр|[Параметр конфигурации сервера common criteria compliance enabled](../database-engine/configure-windows/common-criteria-compliance-enabled-server-configuration-option.md)<br /><br /> [Расширенные события](../relational-databases/extended-events/extended-events.md)|sp_configure 'c2 audit mode'<br /><br /> sp_configure 'default trace enabled'|252<br /><br /> 253|  
-|Классы модели объектов SMO|**Microsoft.SQLServer. Класс Management.Smo.Information**<br /><br /> **Microsoft.SQLServer. Класс Management.Smo.Settings**<br /><br /> **Microsoft.SQLServer.Management. Класс Smo.DatabaseOptions**<br /><br /> **Microsoft.SqlServer.Management.Smo. Свойство DatabaseDdlTrigger.NotForReplication**|**Microsoft.SqlServer.  Класс Management.Smo.Server**<br /><br /> **Microsoft.SqlServer.  Класс Management.Smo.Server**<br /><br /> **Microsoft.SqlServer. Класс Management.Smo.Database**<br /><br /> None|None|None|  
+|Классы модели объектов SMO|**Microsoft.SQLServer. Класс Management.Smo.Information**<br /><br /> **Microsoft.SQLServer. Класс Management.Smo.Settings**<br /><br /> **Microsoft.SQLServer.Management. Класс Smo.DatabaseOptions**<br /><br /> **Microsoft.SqlServer.Management.Smo. Свойство DatabaseDdlTrigger.NotForReplication**|**Microsoft.SqlServer.  Класс Management.Smo.Server**<br /><br /> **Microsoft.SqlServer.  Класс Management.Smo.Server**<br /><br /> **Microsoft.SqlServer. Класс Management.Smo.Database**<br /><br /> None|Нет|None|  
 |Агент SQL Server|уведомление **net send** .<br /><br /> Уведомление по пейджеру|Уведомление по электронной почте<br /><br /> Уведомление по электронной почте |None|None|  
 |[!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)]|Интеграция обозревателя решений в среду [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)]||None|None|  
 |Системные хранимые процедуры|sp_db_increased_partitions|Нет. Теперь поддержка увеличенных секций доступна по умолчанию.|sp_db_increased_partitions|253|  

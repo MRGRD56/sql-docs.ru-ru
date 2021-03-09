@@ -3,7 +3,7 @@ title: Нерекомендуемые функции ядра СУБД в SQL Se
 titleSuffix: SQL Server 2019
 description: Узнайте о нерекомендуемых функциях ядра СУБД, которые по-прежнему доступны в SQL Server 2017 (14.x), но не должны использоваться в новых приложениях.
 ms.custom: seo-lt-2019
-ms.date: 12/13/2019
+ms.date: 03/03/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -17,24 +17,23 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
-ms.openlocfilehash: e14f354812c99b9ed3e8be86734e3cb8e07db751
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: e3b27292b817d0ec0bf22afcc1e8eaab61864e82
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489478"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186462"
 ---
 # <a name="deprecated-database-engine-features-in-sql-server-2017"></a>Нерекомендуемые функции ядра СУБД в SQL Server 2017
 
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
 
-  В этом разделе описаны устаревшие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] , которые по-прежнему доступны в [!INCLUDE[sssql17-md](../includes/sssql17-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
+  В этой статье описываются устаревшие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)], которые по-прежнему доступны в [!INCLUDE[sssql17-md](../includes/sssql17-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
   
 Если функция помечена как нерекомендуемая, это означает следующее:
-
 - Функция находится в режиме обслуживания. Новые изменения, в том числе касающиеся совместимости с новыми функциями, вноситься не будут.
 - Мы стараемся не удалять нерекомендуемые функции из новых выпусков, чтобы упростить обновление. Однако иногда мы можем окончательно удалять функции из [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)], если они препятствуют дальнейшим инновациям.
-- Нерекомендуемые функции нежелательно использовать при разработке новых приложений.      
+- Для новых задач разработки не используйте нерекомендуемые функции. Для существующих приложений, которые в настоящее время используют эти функции, запланируйте изменение как можно скорее.     
 
 Наблюдать за использованием устаревших функций можно с помощью объекта производительности и событий трассировки Deprecated Features, доступных в [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] . Дополнительные сведения см. в разделе [Использование объектов SQL Server](../relational-databases/performance-monitor/use-sql-server-objects.md).  
 
@@ -49,8 +48,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 > Этот список идентичен списку [!INCLUDE[sssql15-md](../includes/sssql16-md.md)]. Для [!INCLUDE[sssql17-md](../includes/sssql17-md.md)] не объявлено о новых нерекомендуемых или неподдерживаемых функциях ядра СУБД.
 
 ## <a name="features-deprecated-in-the-next-version-of-sql-server"></a>Функции, не рекомендуемые в следующей версии SQL Server
-
-Перечисленные ниже функции ядра СУБД SQL Server будут объявлены нерекомендуемыми в следующей версии SQL Server. Не используйте их при работе над новыми приложениями и как можно скорее измените приложения, в которых они в настоящее время используются. **Название функции** отображается в событиях трассировки в столбце ObjectName, а в счетчиках производительности и `sys.dm_os_performance_counters` — как имя экземпляра. Значению **Идентификатор функции** в событиях трассировки соответствует ObjectId.
+Следующие функции компонента [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] не будут поддерживаться в будущей версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Не используйте их при работе над новыми приложениями и как можно скорее измените приложения, в которых они в настоящее время используются. **Название функции** отображается в событиях трассировки в столбце ObjectName, а в счетчиках производительности и `sys.dm_os_performance_counters` — как имя экземпляра. Значению **Идентификатор функции** в событиях трассировки соответствует ObjectId.
 
 ### <a name="back-up-and-restore"></a>Резервное копирование и восстановление
 
@@ -62,7 +60,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 
 | Устаревшая функция | Замена | Имя функции | Идентификатор функции |
 |--------------------|-------------|--------------|------------|
-Обновление с версии 100 (SQL Server 2008 и SQL Server 2008 R2). | Когда [поддержка](/lifecycle/products/?products=sql-server) версии SQL Server завершается, соответствующий уровень совместимости базы данных помечается как нерекомендуемый. Однако мы будем как можно дольше поддерживать приложения, сертифицированные для работы на любом соответствующем уровне совместимости, чтобы упростить обновление. Дополнительные сведения об уровнях совместимости см. в разделе [Уровень совместимости ALTER DATABASE (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-compatibility-level.md). | Уровень совместимости базы данных 100 | 108 |
+Обновление с версии 100 ([!INCLUDE[ssKatmai](../includes/ssKatmai-md.md)] и [!INCLUDE[ssKilimanjaro](../includes/ssKilimanjaro-md.md)]). | Когда [поддержка](/lifecycle/products/?products=sql-server) версии [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] завершается, соответствующий уровень совместимости базы данных помечается как нерекомендуемый. Однако мы будем как можно дольше поддерживать приложения, сертифицированные для работы на любом соответствующем уровне совместимости, чтобы упростить обновление. Дополнительные сведения об уровнях совместимости см. в разделе [Уровень совместимости ALTER DATABASE (Transact-SQL)](../t-sql/statements/alter-database-transact-sql-compatibility-level.md). | Уровень совместимости базы данных 100 | 108 |
 
 ### <a name="database-objects"></a>Объекты базы данных
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 874c3175b830cbcdb5805c5bdb06a747015ff889
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 67e14f965889cbbeecf2a9800d49b70622b88502
+ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100273015"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102186391"
 ---
 # <a name="sqlrutils-r-package-in-sql-server-machine-learning-services"></a>sqlrutils (пакет R в Службах машинного обучения SQL Server)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "100273015"
   
 ## <a name="full-reference-documentation"></a>Полная справочная документация
 
-Пакет **sqlrutils** распространяется в нескольких продуктах Майкрософт, но его использование не зависит от того, получили ли вы его в SQL Server или в другом продукте. Благодаря сходству функций [документация по отдельным функциям sqlrutils](/machine-learning-server/r-reference/revoscaler/revoscaler) опубликована только в одном разделе в [справочнике по R](/machine-learning-server/r-reference/introducing-r-server-r-package-reference) для Microsoft Machine Learning Server. Если для конкретных продуктов функции будут действовать иначе, выявленные расхождения будут приведены на странице справки по функциям.
+Пакет **sqlrutils** распространяется в нескольких продуктах Майкрософт, но его использование не зависит от того, получили ли вы его в SQL Server или в другом продукте. Благодаря сходству функций документация по отдельным функциям sqlrutils опубликована только в одном разделе в [справочнике по пакетам sqlrutils](/machine-learning-server/r-reference/sqlrutils/sqlrutils) для Microsoft Machine Learning Server. Если для конкретных продуктов функции будут действовать иначе, выявленные расхождения будут приведены на странице справки по функциям.
 
 ## <a name="functions-list"></a>Список функций
 
@@ -106,4 +106,4 @@ ms.locfileid: "100273015"
 
 ## <a name="see-also"></a>См. также раздел
 
-[Создание хранимой процедуры с помощью sqlrutils](how-to-create-a-stored-procedure-using-sqlrutils.md)
+[Создание хранимой процедуры с помощью sqlrutils](/machine-learning-server/r-reference/sqlrutils/how-to-create-a-stored-procedure-from-r)
