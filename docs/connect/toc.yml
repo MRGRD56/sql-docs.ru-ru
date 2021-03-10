@@ -272,7 +272,7 @@
                   href: ado-net/sql/tutorial-always-encrypted-enclaves-develop-net-apps.md
                 - name: Использование Azure Key Vault с Always Encrypted
                   href: ado-net/sql/azure-key-vault-example.md
-                - name: Использование Azure Key Vault с Always Encrypted с безопасными анклавами
+                - name: "Использование Azure Key\_Vault с Always\_Encrypted с безопасными анклавами"
                   href: ado-net/sql/azure-key-vault-enclave-example.md
             - name: Обнаружение и классификация данных в SqlClient
               href: ../connect/ado-net/sql/data-classification.md
@@ -313,7 +313,7 @@
         - name: Поиск дополнительных сведений
           href: ../connect/jdbc/finding-additional-jdbc-driver-information.md
         - name: Часто задаваемые вопросы
-          href: ../connect/jdbc/frequently-asked-questions-faq-for-jdbc-driver.md
+          href: ../connect/jdbc/frequently-asked-questions-faq-for-jdbc-driver.yml
         - name: Зависимости компонентов
           href: ../connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server.md
     - name: Справочник по API
@@ -2941,7 +2941,7 @@
         - name: Известные проблемы
           href: ../connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver.md
         - name: Часто задаваемые вопросы
-          href: ../connect/odbc/linux-mac/frequently-asked-questions-faq-for-odbc-linux.md
+          href: ../connect/odbc/linux-mac/frequently-asked-questions-faq-for-odbc-linux.yml
     - name: Windows
       items:
         - name: Драйвер Microsoft ODBC для SQL Server в Windows
@@ -5735,7 +5735,7 @@
           href: ../connect/php/logging-activity.md
         - name: Использование функции Always Encrypted с драйверами PHP для SQL Server
           href: ../connect/php/using-always-encrypted-php-drivers.md
-        - name: Always Encrypted с безопасными анклавами и драйверами PHP для SQL Server
+        - name: "Always\_Encrypted с безопасными анклавами и драйверами\_PHP для SQL\_Server"
           href: ../connect/php/always-encrypted-secure-enclaves.md
         - name: Несистемные параметры языкового стандарта
           href: ../connect/php/non-system-locale-settings.md
