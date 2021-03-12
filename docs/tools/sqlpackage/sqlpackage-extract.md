@@ -9,13 +9,13 @@ ms.assetid: 198198e2-7cf4-4a21-bda4-51b36cb4284b
 author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan; sstein
-ms.date: 12/11/2020
-ms.openlocfilehash: 1303473c79558629ee0009f9c07bf8d28ffbd704
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 3/10/2021
+ms.openlocfilehash: 84405eb4d5ac63f287f2696dcef0a1e3ddc09cc4
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100060979"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622662"
 ---
 # <a name="sqlpackage-extract-parameters-and-properties"></a>Параметры и свойства извлечения SqlPackage
 Действие извлечения SqlPackage.exe создает схему подключенной базы данных в DACPAC-файле. По умолчанию данные в DACPAC-файл не включаются. Чтобы включить данные, используйте [действие экспорта](sqlpackage-export.md) или свойства извлечения *ExtractAllTableData*/*TableData*. 
@@ -59,6 +59,10 @@ SqlPackage {parameters}{properties}{SQLCMD Variables}
 
 |Свойство|Значение|Описание|
 |---|---|---|
+|**/p:**|AzureStorageBlobEndpoint=(STRING)|Конечная точка Хранилища BLOB-объектов Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#extract).|
+|**/p:**|AzureStorageContainer=(STRING)|Контейнер Хранилища BLOB-объектов Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#extract).|
+|**/p:**|AzureStorageKey=(STRING)|Ключ учетной записи хранения Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#extract).|
+|**/p:**|AzureStorageRootPath=(STRING)|Корневой путь хранилища в контейнере. Без этого свойства путь по умолчанию имеет значение `servername/databasename/timestamp/`. См. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#extract).|
 |**/p:**|CommandTimeout=(INT32 '60')|Задает время ожидания команды в секундах при выполнении запросов к SQL Server.|
 |**/p:**|DacApplicationDescription=(STRING)|Определяет описание приложения для сохранения в метаданных DACPAC.|
 |**/p:**|DacApplicationName=(STRING)|Определяет имя приложения для сохранения в метаданных DACPAC. Значением по умолчанию является имя базы данных.|

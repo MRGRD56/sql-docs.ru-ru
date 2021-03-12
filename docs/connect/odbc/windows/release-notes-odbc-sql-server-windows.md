@@ -12,12 +12,12 @@ ms.reviewer: v-daenge
 author: v-chojas
 ms.author: v-chojas
 manager: kenvh
-ms.openlocfilehash: 2c7ea508a6f0f79a000de1ae42f5e7eb3de09f5a
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 172ed1eea6bc616fe4e61162167e45bd1369cf79
+ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464772"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102770497"
 ---
 # <a name="release-notes-for-microsoft-odbc-driver-for-sql-server-on-windows"></a>Заметки о выпуске Microsoft ODBC Driver for SQL Server для Windows
 
@@ -43,6 +43,25 @@ Thank you.
 GeneMi (and CraigG).  2019/03/30.
 -->
 
+## <a name="1772"></a>17.7.2
+
+![скачать](../../../ssms/media/download-icon.png) [Скачать установщик x64](https://go.microsoft.com/fwlink/?linkid=2156851)  
+![скачать](../../../ssms/media/download-icon.png) [Скачать установщик x86](https://go.microsoft.com/fwlink/?linkid=2156749)  
+
+Номер версии: 17.7.2.1  
+Дата выпуска: 10 марта 2021 г.  
+
+Если необходимо загрузить установщик на языке, отличном от обнаруженного, можно использовать эти прямые ссылки.  
+Для драйвера x64: [Китайский (упрощенное письмо)](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x804) | [Китайский (традиционное письмо)](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x404) | [Английский (США)](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x409) | [Французский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x40c) | [Немецкий](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x407) | [Итальянский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x410) | [Японский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x411) | [Корейский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x412) | [Португальский (Бразилия)](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x416) | [Русский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x419) | [Испанский](https://go.microsoft.com/fwlink/?linkid=2156851&clcid=0x40a)  
+Для драйвера x86: [Китайский (упрощенное письмо)](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x804) | [Китайский (традиционное письмо)](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x404) | [Английский (США)](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x409) | [Французский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x40c) | [Немецкий](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x407) | [Итальянский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x410) | [Японский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x411) | [Корейский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x412) | [Португальский (Бразилия)](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x416) | [Русский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x419) | [Испанский](https://go.microsoft.com/fwlink/?linkid=2156749&clcid=0x40a)  
+
+| Добавленная возможность | Сведения |
+| :------- | :------ |
+| Исправления ошибок. | [Исправления ошибок](../bug-fixes.md). |
+| &nbsp; | &nbsp; |
+
+## <a name="previous-releases"></a>Предыдущие выпуски
+
 ## <a name="177"></a>17,7
 
 ![скачать](../../../ssms/media/download-icon.png) [Скачать установщик x64](https://go.microsoft.com/fwlink/?linkid=2153471)  
@@ -62,8 +81,6 @@ GeneMi (and CraigG).  2019/03/30.
 | Возможность вставки в зашифрованные столбцы money и smallmoney | Подробные сведения см. в статье [Использование Always Encrypted](../using-always-encrypted-with-the-odbc-driver.md). |
 | Исправления ошибок. | [Исправления ошибок](../bug-fixes.md). |
 | &nbsp; | &nbsp; |
-
-## <a name="previous-releases"></a>Предыдущие выпуски
 
 ## <a name="176"></a>17.6
 

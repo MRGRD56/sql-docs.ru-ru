@@ -14,16 +14,22 @@ ms.assetid: f78b81ed-5214-43ec-a600-9bfe51c5745a
 author: v-chojas
 ms.author: v-jizho2
 manager: kenvh
-ms.openlocfilehash: 6f1072f51349952be373a69a04ac556b38e3f25f
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 1816f1a8255041d6211931ffc41963acc460e15d
+ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837492"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102770481"
 ---
 # <a name="list-of-bugs-fixed"></a>Список исправленных ошибок
 
 На этой странице содержится список ошибок, исправленных в каждом выпуске, начиная с [!INCLUDE[msCoName](../../includes/msconame_md.md)] ODBC Driver 17 for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
+
+### <a name="bug-fixes-in-the-msconame-odbc-driver-1772-for-ssnoversion"></a>Исправления ошибок в [!INCLUDE[msCoName](../../includes/msconame_md.md)] ODBC Driver 17.7.2 for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]
+
+- Устранение проблемы с ошибками "404 Не найдено" при использовании проверки подлинности Управляемого удостоверения службы
+- Исправление для периодических ошибок "Шифрование не поддерживается" при высоких многопотоковых нагрузках
+- Исправление для периодического сбоя при высоких многопотоковых нагрузках
 
 ### <a name="bug-fixes-in-the-msconame-odbc-driver-177-for-ssnoversion"></a>Исправления ошибок в [!INCLUDE[msCoName](../../includes/msconame_md.md)] ODBC Driver 17.7 for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]
 

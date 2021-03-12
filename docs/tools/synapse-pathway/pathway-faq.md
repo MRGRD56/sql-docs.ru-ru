@@ -9,12 +9,12 @@ ms.prod: sql
 ms.technology: tools-other
 monikerRange: =azure-sqldw-latest
 ms.custom: template-overview
-ms.openlocfilehash: 8352fb6a70c54ede61d544a147f970237404c9f5
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: e97425f682a3f6b9f2f4e955d8476d40d6cf4312
+ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186343"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102770526"
 ---
 # <a name="azure-synapse-pathway-preview-faq"></a>Часто задаваемые вопросы о предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
@@ -44,8 +44,15 @@ A. В эту предварительную версию Synapse Pathway в к�
 
 ### <a name="q-what-is-included-as-part-of-the-code-conversion"></a>У. Что входит в преобразование кода?
 
-A. Synapse Pathway поддерживает преобразование кода таблиц, схем, представлений и хранимых процедур.
+A. Предварительная версия Synapse Pathway поддерживает преобразование кода таблиц, схем и представлений.
 
+| Исходная платформа| Поддерживаемые типы инструкций | 
+|:-------------------:|:------------------|
+| IBM Netezza  | Create/Alter/Drop Database<br /> Create/Alter/Drop  Schema <br /> Create/Alter/Drop Table |
+|Microsoft SQL Server  | Create/Alter/Drop Database<br /> Create/Alter/Drop  Schema <br /> Create/Alter/Drop Table | 
+| Snowflake |  Create/Alter/Drop Database<br /> Create/Alter/Drop  Schema <br /> Create/Alter/Drop Table |                       
+
+  
 ### <a name="q-can-it-also-scan-my-environment-and-provide-an-assessment-report-of-all-the-objects-that-need-to-be-convertedtranslated"></a>У. Может ли это средство также проверить мою среду и предоставить отчет об оценке всех объектов, которые необходимо преобразовать?
 
 A. В этой предварительной версии Synapse Pathway необходимо предоставить ссылку на сценарии DDL/DML, которые необходимо преобразовать. Synapse Pathway не будет проверять текущую среду для обнаружения объектов, которые необходимо преобразовать.

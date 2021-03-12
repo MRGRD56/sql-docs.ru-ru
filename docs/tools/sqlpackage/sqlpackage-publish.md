@@ -9,13 +9,13 @@ ms.assetid: 198198e2-7cf4-4a21-bda4-51b36cb4284b
 author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan; sstein
-ms.date: 12/11/2020
-ms.openlocfilehash: 84fdd99b00de38b88b1a21963c4565e5c3b27ea7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 3/10/2021
+ms.openlocfilehash: 364849c03150839ce38c4764c788bb8b813b9d53
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100081455"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622610"
 ---
 # <a name="sqlpackage-publish-parameters-properties-and-sqlcmd-variables"></a>Параметры публикации, свойства и переменные SQLCMD программы SqlPackage
 Операция публикации SqlPackage.exe заключается в добавочном обновлении схемы целевой базы данных в соответствии со структурой базы данных-источника. Публикация пакета развертывания, содержащего пользовательские данные для всех или для некоторых таблиц, помимо схемы будет приводить к обновлению этих табличных данных. Развертывание данных приводит к перезаписи схемы и данных в существующих таблицах целевой базы данных. Развертывание данных не будет изменять существующие схему или данные в целевой базе данных для таблиц, не включенных в пакет развертывания.  
@@ -81,6 +81,11 @@ SqlPackage {parameters}{properties}{SQLCMD Variables}
 |**/p:**|AllowDropBlockingAssemblies=(BOOLEAN)|Это свойство используется развертыванием SQLCLR для удаления блокирующих сборок как часть плана развертывания. По умолчанию все блокирующие сборки/ссылки на сборки блокируют обновление сборки, если ссылка на сборку должна быть удалена.|
 |**/p:**|AllowIncompatiblePlatform=(BOOLEAN)|Указывает, пытаться ли выполнить это действие, несмотря на несовместимость платформ SQL Server.|
 |**/p:**|AllowUnsafeRowLevelSecurityDataMovement=(BOOLEAN)|Если свойство имеет значение true, блокировка перемещения данных в таблице с безопасностью на уровне строк отключается. Значение по умолчанию — false.|
+|**/p:**|AzureSharedAccessSignatureToken=(STRING)|Маркер подписанного URL-адреса (SAS) Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#publish).|
+|**/p:**|AzureStorageBlobEndpoint=(STRING)|Конечная точка Хранилища BLOB-объектов Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#publish).|
+|**/p:**|AzureStorageContainer=(STRING)|Контейнер Хранилища BLOB-объектов Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#publish).|
+|**/p:**|AzureStorageKey=(STRING)|Ключ учетной записи хранения Azure, см. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#publish).|
+|**/p:**|AzureStorageRootPath=(STRING)|Корневой путь хранилища в контейнере. Без этого свойства путь по умолчанию имеет значение `servername/databasename/timestamp/`. См. раздел [SqlPackage для Azure Synapse Analytics](sqlpackage-for-azure-synapse-analytics.md#publish).|
 |**/p:**|BackupDatabaseBeforeChanges=(BOOLEAN)|Создает резервную копию базы данных перед развертыванием любых изменений.|
 |**/p:**|BlockOnPossibleDataLoss=(BOOLEAN 'True')| Указывает, что операция будет прервана на этапе проверки схемы, если изменения схемы могут привести в итоге к потере данных, в том числе из-за снижения точности данных или изменения типа данных, требующего операции приведения. Значение по умолчанию (`True`) приводит к завершению операции независимо от того, содержит ли данные целевая база данных.  Выполнение со значением `False` для BlockOnPossibleDataLoss также может завершиться ошибкой во время выполнения плана развертывания, если в целевом объекте есть данные, которые невозможно преобразовать в новый тип столбца. |
 |**/p:**|BlockWhenDriftDetected=(BOOLEAN 'True')|Указывает, следует ли блокировать обновление базы данных, схема которой больше не соответствует регистрации или регистрация которой удалена.|

@@ -38,12 +38,12 @@ ms.assetid: aecc2f73-2ab5-4db9-b1e6-2f9e3c601fb9
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 60f460c06c89d1d9b01ed5f19f705cec745dce09
-ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
+ms.openlocfilehash: 81073d458d69e28ee145c1bb1dd38f3474800b35
+ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102247359"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102770542"
 ---
 # <a name="create-materialized-view-as-select-transact-sql"></a>CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)  
 
@@ -145,13 +145,23 @@ APPROX_COUNT_DISTINCT не поддерживается в CREATE MATERIALIZED V
 
 Материализованное представление можно удалить с помощью инструкции DROP VIEW.  Отключить или перестроить материализованное представление можно с помощью инструкции ALTER MATERIALIZED VIEW.   
 
+Материализованное представление — это автоматический механизм оптимизации запросов.  Пользователям не требуется запрашивать материализованное представление напрямую.  При отправке пользовательского запроса подсистема проверяет разрешения пользователя на объекты запроса и завершает запрос без выполнения, если у пользователя нет доступа к таблицам или обычным представлениям в запросе.  Если разрешение пользователя подтверждено, оптимизатор автоматически использует для выполнения запроса соответствующее материализованное представление в целях повышения производительности.  Пользователи получают одинаковые данные независимо от того, обрабатываются ли запросы путем обращения к базовым таблицам или материализованному представлению.  
+
 План EXPLAIN и графический предполагаемый план выполнения в SQL Server Management Studio предоставляют сведения о том, учитывает ли оптимизатор запросов материализованное представление во время выполнения запроса. и графический предполагаемый план выполнения в SQL Server Management Studio предоставляют сведения о том, учитывает ли оптимизатор запросов материализованное представление во время выполнения запроса.
 
 Чтобы узнать, поддерживает ли инструкция SQL новое материализованное представление, выполните команду `EXPLAIN` со свойством `WITH_RECOMMENDATIONS`.  Дополнительные сведения см. в статье [EXPLAIN (Transact-SQL)](../queries/explain-transact-sql.md?view=azure-sqldw-latest&preserve-view=true).
 
-## <a name="permissions"></a>Разрешения
+## <a name="ownership"></a>владельца;
+- Материализованное представление невозможно создать, если владельцы базовых таблиц и создаваемого материализованного представления различаются.
+- Материализованное представление и его базовые таблицы могут находиться в разных схемах. При создании материализованного представления владелец его схемы автоматически становится владельцем материализованного представления, и такое владение представлением невозможно изменить.     
 
-Для выполнения этой инструкции требуется 1) разрешение REFERENCES и CREATE VIEW или 2) разрешение CONTROL в отношении схемы, в которой создается представление. 
+## <a name="permissions"></a>Разрешения
+Для создания материализованного представления пользователю, кроме соблюдения требований к владению объектами, нужны следующие разрешения. 
+1) Разрешение CREATE VIEW в базе данных
+2) Разрешение SELECT на базовые таблицы материализованного представления
+3) Разрешение REFERENCES на схему, содержащую базовые таблицы
+4) Разрешение ALTER на схему, содержащую материализованное представление 
+
 
 ## <a name="example"></a>Пример
 A. В этом примере показано, как оптимизатор Synapse SQL автоматически использует материализованные представления при выполнении запроса для лучшей производительности, даже если в запросе используются функции, которые не поддерживаются в CREATE MATERIALIZED VIEW, такие как COUNT(выражение DISTINCT). Запрос, который раньше выполнялся несколько секунд, теперь выполняется за долю секунды без каких-либо изменений в пользовательском запросе.   
@@ -196,60 +206,49 @@ select DATEDIFF(ms,@timerstart,@timerend);
 
 ```
 
-Б. В этом примере User_B создает материализованное представление на основе таблиц T1 и T2.  Представление и обе таблицы принадлежат другому пользователю — User_A.
-
+Б. В этом примере пользователь User2 создает материализованное представление в таблицах, принадлежащих пользователю User1.  Материализованное представление принадлежит пользователю User1.
 ```sql
-
--- Create the users 
-CREATE USER User_A WITHOUT LOGIN ;  
-CREATE USER User_B WITHOUT LOGIN ;  
+/****************************************************************
+Setup:
+SchemaX owner = DBO
+SchemaX.T1 owner = User1
+SchemaX.T2 owner = User1
+SchemaY owner = User1
+*****************************************************************/
+CREATE USER User1 WITHOUT LOGIN ;
+CREATE USER User2 WITHOUT LOGIN ;
+CREATE SCHEMA SchemaX;  
+CREATE SCHEMA SchemaY AUTHORIZATION User1;
 GO
-CREATE SCHEMA User_A authorization User_A;
+CREATE TABLE [SchemaX].[T1] (   [vendorID] [varchar](255) Not NULL, [totalAmount] [float] Not NULL, [puYear] [int] NULL );
+CREATE TABLE [SchemaX].[T2] (   [vendorID] [varchar](255) Not NULL, [totalAmount] [float] Not NULL, [puYear] [int] NULL);
 GO
+ALTER AUTHORIZATION ON OBJECT::SchemaX.[T1] TO User1;
+ALTER AUTHORIZATION ON OBJECT::SchemaX.[T2] TO User1;
 
--- User_A creates two tables
-
-GRANT CREATE TABLE to User_A;
+/*****************************************************************************
+For user2 to create a MV in SchemaY on SchemaX.T1 and SchemaX.T2, user2 needs:
+1. CREATE VIEW permission in the database
+2. REFERENCES permission on the schema1
+3. SELECT permission on base table T1, T2  
+4. ALTER permission on SchemaY
+******************************************************************************/
+GRANT CREATE VIEW to User2;
+GRANT REFERENCES ON SCHEMA::SchemaX to User2;  
+GRANT SELECT ON OBJECT::SchemaX.T1 to User2; 
+GRANT SELECT ON OBJECT::SchemaX.T2 to User2;
+GRANT ALTER ON SCHEMA::SchemaY to User2; 
 GO
-EXECUTE AS USER = 'User_A';  
-SELECT USER_NAME();  
-Go
-CREATE TABLE [User_A].[T1]
-(
-    [vendorID] [varchar](255) Not NULL,
-    [totalAmount] [float] Not NULL,
-    [puYear] [int] NULL
-)
+EXECUTE AS USER = 'User2';  
 GO
-CREATE TABLE [User_A].[T2]
-(
-    [vendorID] [varchar](255) Not NULL,
-    [totalAmount] [float] Not NULL,
-    [puYear] [int] NULL
-)
-GO
-REVERT;
-
--- Grant User_B the required permissions to create a materialized view for User_A on T1 and T2 owned by User_A
-GRANT CREATE VIEW to User_B;
-GRANT Control ON SCHEMA::User_A to User_B;
-GRANT REFERENCES ON OBJECT::User_A.T1 to User_B;
-GRANT REFERENCES ON OBJECT::User_A.T2 to User_B;
-
--- User_B creates a materialized view.  Both the view and the base tables are owned by User_A.
-EXECUTE AS USER = 'User_B';  
-SELECT USER_NAME(); 
-GO
-
-CREATE materialized VIEW [User_A].MV_CreatedBy_UserB with(distribution=round_robin) 
+CREATE materialized VIEW [SchemaY].MV_by_User2 with(distribution=round_robin) 
 as 
         select A.vendorID, sum(A.totalamount) as S, Count_Big(*) as T 
-        from [User_A].[T1] A
-        inner join [User_A].[T2] B
-        on A.vendorID = B.vendorID
-        group by A.vendorID ;
+        from [SchemaX].[T1] A
+        inner join [SchemaX].[T2] B on A.vendorID = B.vendorID group by A.vendorID ;
 GO
 revert;
+GO
 ```
 
 ## <a name="see-also"></a>См. также раздел

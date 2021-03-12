@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/02/2021
 monikerRange: =azure-sqldw-latest
 ms.custom: template-tutorial
-ms.openlocfilehash: 74f98ad652a58f70cd75ef60556bf0464fd5d7c7
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 3e5e8536c135244288d022879764d021c53e67ca
+ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186367"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102770516"
 ---
 # <a name="tutorial-to-perform-your-first-code-translation-with-azure-synapse-pathway-preview"></a>Руководство по выполнению первого преобразования кода с помощью предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
@@ -62,6 +62,18 @@ ms.locfileid: "102186367"
 1. Он включает структуру проекта, которую можно легко зафиксировать в репозитории GitHub.
   
 1. Файл результатов, в котором будет содержаться список ошибок и предупреждений, будет отправлен в тот же выходной каталог.
+
+## <a name="run-the-translation-using-command-line"></a>Запуск преобразования с использованием командной строки
+1. При установке программа AspCmd.exe будет доступна в папке C:\Program Files (x86)\Azure Synapse Pathway (Preview)
+1. Запустите командную строку и перейдите к расположению файла. 
+1. Введите aspcmd.exe --help для получения списка команд
+
+  ![Команды в справке по командной строке оценки Azure Synapse.](./media/synapse-pathway-assessment/command-line-help.png)
+
+
+4. Вы можете начать выполнение преобразований с помощью командной строки.
+
+ ![Оценка Azure Synapse с использованием командной строки.](./media/synapse-pathway-assessment/command-line-assessment.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

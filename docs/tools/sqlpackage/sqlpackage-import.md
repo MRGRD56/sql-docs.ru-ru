@@ -9,13 +9,13 @@ ms.assetid: 198198e2-7cf4-4a21-bda4-51b36cb4284b
 author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan; sstein
-ms.date: 12/11/2020
-ms.openlocfilehash: cecc6de89a9e8f82a64942acb08af7ddee48c5be
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 3/10/2021
+ms.openlocfilehash: 94ddccc0789f01f3d7d6ac6675ec9c54405972a1
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100081465"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622630"
 ---
 # <a name="sqlpackage-import-parameters-and-properties"></a>Параметры и свойства импорта SqlPackage
 Действие импорта SqlPackage.exe импортирует схему и данные таблицы из BACPAC-файла пакета BACPAC в новую или пустую базу данных в SQL Server или в базе данных SQL Azure. Во время операции импорта в существующую базу данных в целевой базе данных не могут находиться никакие определяемые пользователем объекты схемы.  
@@ -60,10 +60,12 @@ SqlPackage {parameters}{properties}{SQLCMD Variables}
 |**/p:**|DatabaseLockTimeout=(INT32 '60')| Позволяет задать превышение времени ожидания блокировки в секундах для базы данных при выполнении запросов к SQL Server. Для ожидания без ограничений используйте значение "-1".|
 |**/p:**|DatabaseMaximumSize=(INT32)|Определяет максимальный размер в ГБ для базы данных SQL Azure.|
 |**/p:**|DatabaseServiceObjective=(STRING)|Определяет уровень производительности для базы данных SQL Azure, например "P0" или "S1".|
+|**/p:**|DisableIndexesForDataPhase=(BOOLEAN TRUE)|Отключение индексов перед импортом данных в SQL Server.|
 |**/p:**|ImportContributorArguments=(STRING)|Указывает аргументы для участников развертывания. Это должен быть список значений, разделенных точками с запятой.|
 |**/p:**|ImportContributors=(STRING)|Указывает участников развертывания, которые должны выполняться при импорте пакета BACPAC. Это должен быть список идентификаторов или полных имен участников сборки, разделенных точками с запятой.|
 |**/p:**|ImportContributorPaths=(STRING)|Указывает пути для загрузки дополнительных участников развертывания. Это должен быть список значений, разделенных точками с запятой. |
 |**/p:**|LongRunningCommandTimeout=(INT32)| Позволяет задать время ожидания в секундах для длительной команды при выполнении запросов к SQL Server. Для ожидания без ограничений используйте значение "0".|
+|**/p:**|RebuildIndexesOfflineForDataPhase=(BOOLEAN FALSE)|Перестройка индексов в автономном режиме после импорта данных в SQL Server.|
 |**/p:**|Storage=({File&#124;Memory})|Указывает, как сохраняются элементы при построении модели базы данных. Для обеспечения высокой производительности по умолчанию используется значение InMemory. Для больших баз данных требуется хранилище с использованием файлов.|
   
 

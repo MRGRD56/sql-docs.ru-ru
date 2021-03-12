@@ -25,12 +25,12 @@ ms.assetid: 32a48e36-0aa4-4260-9fe9-cae9197d16c5
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3b41bf1941bb12bf7560563d0b00fad7b88a75f8
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 8ba376927810521381a3c1a838e7438cdd7acdac
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99208848"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622895"
 ---
 # <a name="switchoffset-transact-sql"></a>SWITCHOFFSET (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -44,20 +44,20 @@ ms.locfileid: "99208848"
 ## <a name="syntax"></a>Синтаксис  
   
 ```syntaxsql
-SWITCHOFFSET ( DATETIMEOFFSET, time_zone )   
+SWITCHOFFSET ( datetimeoffset_expression, timezoneoffset_expression )   
 ```  
   
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>Аргументы
- *DATETIMEOFFSET*  
+ *datetimeoffset_expression*  
  Выражение, которое можно привести к значению типа **datetimeoffset(n)**.  
   
- *time_zone*  
- Символьная строка в формате [+|-]TZH:TZM или целочисленное значение со знаком (или минуты), представляющие смещение часового пояса. Предполагается, что оно настроено и учитывает переход на летнее время.  
+ *timezoneoffset_expression*  
+ Выражение в формате [+|-]TZH:TZM или целочисленное значение со знаком (в минутах), представляющее смещение часового пояса. Предполагается, что оно настроено и учитывает переход на летнее время.  
   
 ## <a name="return-type"></a>Тип возвращаемых данных  
- Значение **datetimeoffset** с точностью в долях секунд, заданной в аргументе *DATETIMEOFFSET*.  
+ Значение **datetimeoffset** с точностью в долях секунд, заданной в аргументе *datetimeoffset_expression*.  
   
 ## <a name="remarks"></a>Комментарии  
  SWITCHOFFSET используется для выбора значения **datetimeoffset** в смещении часового пояса, отличающегося от первоначально сохраненного смещения часового пояса. SWITCHOFFSET не обновляет хранимое значение *time_zone*.  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7f5b73fc-e699-49ac-a22d-f4adcfae62b1
 author: jaszymas
 ms.author: jaszymas
-ms.openlocfilehash: fa78eb8ef2da01514e161c58b05146b1699c93f7
-ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
+ms.openlocfilehash: 7bbd8aee97ccd31649661032c76729ad89b7fe5a
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98151270"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622760"
 ---
 # <a name="sql-server-connector-maintenance--troubleshooting"></a>Соединитель SQL Server, приложение
 
@@ -176,6 +176,12 @@ ms.locfileid: "98151270"
 
 **Как подключиться к Azure Key Vault через прокси-сервер HTTP(S)?**
 Соединитель использует параметры конфигурации прокси-сервера Internet Explorer. Эти параметры можно изменять в разделе [Групповая политика](/archive/blogs/askie/how-to-configure-proxy-settings-for-ie10-and-ie11-as-iem-is-not-available) или через реестр, но важно отметить, что они не действуют на уровне системы и направлены на учетную запись службы, на которой выполняется экземпляр [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Если администратор базы данных просматривает или редактирует параметры в Internet Explorer, это повлияет только на учетную запись администратора базы данных, а не на подсистему [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Интерактивное ведение журнала с использованием учетной записи службы не рекомендуется и блокируется во многих безопасных средах. Чтобы изменения настроенных параметров прокси-сервера вступили в силу, может потребоваться перезапуск экземпляра [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], когда соединитель впервые пытается подключиться к хранилищу ключей.
+
+**Какие размеры ключей в Azure Key Vault поддерживает соединитель SQL Server?**
+Последняя сборка соединителя SQL Server поддерживает ключи Azure Key Vault размером 2048 и 3072.
+  
+ > [!NOTE] 
+ > Представление "sys.asymmetric_keys" указывает размер ключа как 2048, даже если используется размер ключа 3072. Это известный недочет в данном представлении, и команда разработчиков SQL Server устранит его в будущем выпуске.
 
 **Какие минимальные уровни разрешений необходимы для каждого этапа конфигурации в [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]?**  
  Хотя все действия по настройке можно выполнить от имени члена предопределенной роли сервера sysadmin, [!INCLUDE[msCoName](../../../includes/msconame-md.md)] рекомендует минимизировать используемые разрешения. В приведенном ниже списке указаны минимальные уровни разрешений для каждого действия.  

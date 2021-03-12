@@ -12,12 +12,12 @@ ms.assetid: 074c012b-cf14-4230-bf0d-55e23d24f9c8
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a5568667a9618046556b5bc586ae241093603c35
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 286a5590fea6ccd96351f8d9ad558cb92a7317af
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237322"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622787"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-with-powershell"></a>Настройка шифрования столбцов с помощью Always Encrypted с PowerShell
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -64,7 +64,7 @@ ms.locfileid: "99237322"
 
 Задача  |Статья  |Доступ к ключам с открытым текстом или хранилищу ключей  |Доступ к базе данных   
 ---|---|---|---
-Шаг 1. Запуск среды PowerShell и импорт модуля SqlServer. | [Импорт модуля SqlServer](../../../relational-databases/security/encryption/configure-always-encrypted-using-powershell.md#importsqlservermodule) | нет | Нет
+Шаг 1. Запуск среды PowerShell и импорт модуля SqlServer. | [Импорт модуля SqlServer](../../../relational-databases/security/encryption/configure-always-encrypted-using-powershell.md#importsqlservermodule) | Нет | Нет
 Шаг 2. Соединение с сервером и базой данных | [Подключение к базе данных](../../../relational-databases/security/encryption/configure-always-encrypted-using-powershell.md#connectingtodatabase) | Нет | Да
 Шаг 3. Проверка подлинности в Azure, если главный ключ столбца (для смены, защищающий ключ шифрования) хранится в хранилище ключей Azure | [Add-SqlAzureAuthenticationContext](/powershell/sqlserver/sqlserver/vlatest/add-sqlazureauthenticationcontext) | Да | Нет
 Шаг 4. Создание массива объектов SqlColumnEncryptionSettings — по одному для каждого столбца базы данных, который требуется зашифровать, повторно зашифровать или расшифровать. SqlColumnMasterKeySettings — это объект, который существует в памяти (PowerShell). Он определяет целевую схему шифрования столбца. | [New-SqlColumnEncryptionSettings](/powershell/sqlserver/sqlserver/vlatest/new-sqlcolumnencryptionsettings) | нет | Нет

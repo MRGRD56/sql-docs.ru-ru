@@ -7,13 +7,13 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-server
 ms.topic: conceptual
-ms.date: 12/11/2019
-ms.openlocfilehash: 9e7a7b0dce01b21fcb746fdfdcbd5adfa7c7483d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 03/09/2021
+ms.openlocfilehash: 8d56f26c6661587cb13ff2962221a4a41c7da2ba
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100067210"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622680"
 ---
 # <a name="configure-a-report-server-on-a-network-load-balancing-cluster"></a>настроить сервер отчетов в кластере с балансированием сетевой нагрузки
 
@@ -55,7 +55,7 @@ ms.locfileid: "100067210"
   
  Чтобы избежать этой проблемы, можно создать произвольный ключ для проверки состояния представления, а затем вручную настроить каждый узел сервера отчетов на его использование. Можно использовать любую случайно сформированную шестнадцатеричную последовательность. Алгоритм проверки (такой как SHA1) определяет длину шестнадцатеричной последовательности.  
 
-::: moniker range="=sql-server-2016"
+**[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)]** [!INCLUDE[ssrs-appliesto-2016](../../includes/ssrs-appliesto-2016.md)]
 
 1. Создайте ключ проверки и ключ дешифрования с помощью функции автоформирования, доступной в [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]. В результате будет сформирована одна запись <`machineKey`>, которую можно добавить в файл Web.config для каждого экземпляра сервера отчетов, входящего в конфигурацию масштабного развертывания.  
   
@@ -65,17 +65,16 @@ ms.locfileid: "100067210"
     <machineKey ValidationKey="123455555" DecryptionKey="678999999" Validation="SHA1" Decryption="AES"/>  
     ```  
   
-2. Откройте файл конфигурации Web.config для сервера отчетов и вставьте в раздел <`system.web`> полученный элемент <`machineKey`>. Файл Web.config для диспетчера отчетов по умолчанию находится в папке \Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\Reportserver\Web.  
+2. Откройте файл конфигурации Web.config для сервера отчетов и вставьте в раздел <`system.web`> полученный элемент <`machineKey`>. Файл Web.config по умолчанию находится в папке \Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\Reportserver\Web.config.  
   
 3. Сохраните файл.  
   
 4. Повторите предыдущий шаг для каждого сервера отчетов в конфигурации масштабного развертывания.  
   
-5. Убедитесь, что все файлы Web.Config в папках \Reporting Services\Reportserver содержат идентичные элементы <`machineKey`> в разделе <`system.web`>.  
+5. Убедитесь, что все файлы Web.Config для всех серверов отчетов в развертывании с горизонтальным увеличением масштаба содержат идентичные элементы <`machineKey`> в разделе <`system.web`>.  
 
-::: moniker-end
+**[!INCLUDE[ssrs-appliesto](../../includes/ssrs-appliesto.md)]** [!INCLUDE[ssrs-appliesto-2017-and-later](../../includes/ssrs-appliesto-2017-and-later.md)] [!INCLUDE[ssrs-appliesto-pbirsi](../../includes/ssrs-appliesto-pbirs.md)]
 
-::: moniker range=">=sql-server-2017"
 
 1. Создайте ключ проверки и ключ дешифрования с помощью функции автоформирования, доступной в [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]. В результате этого будет сформирован один элемент \<**MachineKey**>, который можно добавить в файл RSReportServer.config для каждого экземпляра сервера отчетов, входящего в конфигурацию развертывания с горизонтальным увеличением масштаба.
 
@@ -85,13 +84,13 @@ ms.locfileid: "100067210"
     <MachineKey ValidationKey="123455555" DecryptionKey="678999999" Validation="SHA1" Decryption="AES"/>
     ```
 
-2. Сохраните файл.
+2. Откройте файл RSReportServer.config для сервера отчетов и вставьте в раздел <`Configuration`> полученный элемент \<**MachineKey**>. По умолчанию файл RSReportServer.config находится в папке \Program Files\Microsoft SQL Server Reporting Services\SSRS\ReportServer\RSReportServer.config для Reporting Services и в папке \Program Files\Microsoft Power BI Report Server\PBIRS\ReportServer\RSReportServer.config для Сервера отчетов Power BI.  
 
-3. Повторите предыдущий шаг для каждого сервера отчетов в конфигурации масштабного развертывания.  
+3. Сохраните файл.
 
-4. Убедитесь в том, что все файлы RSReportServer.config в папках \Reporting Services\Report Server содержат идентичные элементы \<**MachineKey**>.
+4. Повторите предыдущий шаг для каждого сервера отчетов в конфигурации масштабного развертывания.  
 
-::: moniker-end
+5. Убедитесь, что все файлы RSReportServer.config для всех серверов отчетов в развертывании с горизонтальным увеличением масштаба содержат идентичные элементы \<**MachineKey**> в разделе <`Configuration`>.
 
 ## <a name="how-to-configure-hostname-and-urlroot"></a><a name="SpecifyingVirtualServerName"></a> Как настроить свойства HostName и UrlRoot
 
