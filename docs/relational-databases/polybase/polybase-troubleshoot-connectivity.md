@@ -11,12 +11,12 @@ ms.date: 10/02/2019
 ms.prod: sql
 ms.prod_service: polybase, sql-data-warehouse, pdw
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: 0734f0a8163486ab46ef8143966a24adee35194d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: c1957724f028283c2e3aa6377604726f0c307add
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100079425"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101838054"
 ---
 # <a name="troubleshoot-polybase-kerberos-connectivity"></a>Устранение неполадок с подключением PolyBase к Kerberos
 
@@ -207,7 +207,7 @@ PolyBase пытается получить доступ к HDFS и не мож
 | javax.security.auth.login.LoginException<br> Сбой контрольной суммы |Субъект-служба администрирования существует, но отправлен неправильный пароль. |
 | Имя собственной конфигурации: C:\Windows\krb5.ini<br>Загружено из собственной конфигурации | Это сообщение указывает, что модуль Java krb5LoginModule обнаружил на вашем компьютере настроенные конфигурации клиента. Проверьте параметры настроенного клиента, так как они могут быть причиной проблемы. |
 | javax.security.auth.login.LoginException<br>java.lang.IllegalArgumentException<br>Недопустимое имя субъекта admin_user@CONTOSO.COM: org.apache.hadoop.security.authentication.util.KerberosName$NoMatchingRule: нет примененных правил к admin_user@CONTOSO.COM | Добавьте свойство hadoop.security.auth_to_local в файл core-site.xml с необходимыми правилами для Hadoop-кластера. |
-| java.net.ConnectException<br>Попытка доступа к внешней файловой системе с универсальным кодом ресурса hdfs://10.193.27.230:8020<br>Сбой вызова с IAAS16981207/10.107.0.245 на 10.193.27.230:8020 с исключением подключения | Аутентификация в центре распространения ключей прошла успешно, но не удалось получить доступ к узлу имен Hadoop. Проверьте IP-адрес и порт узла имен. На Hadoop не должен работать брандмауэр. |
+| java.net.ConnectException<br>Попытка доступа к внешней файловой системе с универсальным кодом ресурса hdfs://10.193.27.230:8020<br>Сбой вызова с IAAS16981207/10.107.0.245 на 10.193.27.230:8020 с исключением подключения |    Аутентификация в центре распространения ключей прошла успешно, но не удалось получить доступ к узлу имен Hadoop. Проверьте IP-адрес и порт узла имен. На Hadoop не должен работать брандмауэр. |
 | java.io.FileNotFoundException<br>Файл не существует: /test/data.csv |    Аутентификация прошла успешно, но указанного расположения не существует. Проверьте путь или попробуйте сначала использовать корневую папку ("/"). |
 
 ## <a name="debugging-tips"></a>Советы по отладке
@@ -256,4 +256,5 @@ PolyBase пытается получить доступ к HDFS и не мож
 [Integrating PolyBase with Cloudera using Active Directory Authentication](/archive/blogs/microsoftrservertigerteam/integrating-polybase-with-cloudera-using-active-directory-authentication) (Интеграция PolyBase и Cloudera с помощью аутентификации Active Directory)  
 [Руководство Cloudera по настройке Kerberos для CDH](https://www.cloudera.com/documentation/enterprise/5-6-x/topics/cm_sg_principal_keytab.html)  
 [Руководство Hortonworks по настройке Kerberos для HDP](https://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_Ambari_Security_Guide/content/ch_configuring_amb_hdp_for_kerberos.html)  
-[Устранение неполадок c PolyBase](polybase-troubleshooting.md)
+[Устранение неполадок c PolyBase](polybase-troubleshooting.md)   
+[Ошибки в PolyBase и возможные решения](polybase-errors-and-possible-solutions.md)   

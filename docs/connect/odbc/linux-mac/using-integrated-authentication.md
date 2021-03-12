@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 9499ffdf-e0ee-4d3c-8bca-605371eb52d9
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 4f53290d9b9a1ecd161ef02161f29c172297a93f
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 4e918602b3793d95d6192a832f110500454ee8a5
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727426"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837379"
 ---
 # <a name="using-integrated-authentication"></a>Использование встроенной проверки подлинности
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
@@ -107,7 +107,7 @@ Driver='ODBC Driver 17 for SQL Server';Server=your_server;Trusted_Connection=yes
   
 ## <a name="authenticating-a-linux-or-macos-computer-with-active-directory"></a>Проверка подлинности компьютера Linux или macOS с помощью Active Directory
 
-Чтобы настроить Kerberos, введите данные в файле `krb5.conf`. `krb5.conf` находится в папке `/etc/`, но можно сослаться на другой файл, используя такой синтаксис: `export KRB5_CONFIG=/home/dbapp/etc/krb5.conf`. Ниже представлен пример файла `krb5.conf`.  
+<a name="configure-kerberos"></a>Чтобы настроить Kerberos, введите данные в файле `krb5.conf`. `krb5.conf` находится в папке `/etc/`, но можно сослаться на другой файл, используя такой синтаксис: `export KRB5_CONFIG=/home/dbapp/etc/krb5.conf`. Ниже представлен пример файла `krb5.conf`.  
   
 ```  
 [libdefaults]  

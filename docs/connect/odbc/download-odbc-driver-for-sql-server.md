@@ -10,18 +10,21 @@ ms.topic: conceptual
 ms.assetid: 53b09784-bb9d-4fd4-99d3-0492b3308ac4
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 29f67c57bb6609d037d6e7077a91e5c7229e93fb
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 778d8f2f53ba56436047eee53d17dd827c58f3eb
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99195316"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837591"
 ---
 # <a name="download-odbc-driver-for-sql-server"></a>Скачивание драйвера ODBC Driver for SQL Server
 
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 Microsoft ODBC Driver for SQL Server — это отдельная библиотека динамической компоновки (DLL), которая содержит поддержку времени выполнения для приложений, использующих API машинного кода для подключения к SQL Server. Используйте Microsoft ODBC Driver 17 for SQL Server для создания новых и расширения существующих приложений, которым необходимо использовать новые возможности SQL Server.
+
+> [!Important]
+> Если вы используете проверку подлинности на основе управляемого удостоверения Azure Active Directory (`authentication=ActiveDirectoryMSI`) с Microsoft ODBC Driver for SQL Server, не выполняйте обновление до версии 17.7. В версии 17.7 присутствует проблема, из-за которой при использовании такого режима проверки подлинности возникает ошибка.
 
 ## <a name="download-for-windows"></a>Скачать для Windows
 

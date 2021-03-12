@@ -2,7 +2,7 @@
 description: CREATE QUEUE (Transact-SQL)
 title: CREATE QUEUE (Transact-SQL) | Документы Майкрософт
 ms.custom: ''
-ms.date: 09/25/2019
+ms.date: 03/06/2021
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: fce80faf-2bdc-475d-8ca1-31438ed41fb0
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 42b5b42ee88c6d562f1ebf8c03f92a1bd4be54f4
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 12bedec8dcd525767bc54eb3b1af221a17c658fa
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99188536"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464955"
 ---
 # <a name="create-queue-transact-sql"></a>CREATE QUEUE (Transact-SQL)
 
@@ -147,7 +147,7 @@ ON *filegroup |* [**DEFAULT**] — указывает файловую груп�
 |message_type_id|**int**|Идентификатор объекта [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для типа сообщения, описывающий сообщение.|
 |validation|**nchar(2)**|Проверка, используемая для сообщения:<br /><br /> E = пустая<br /><br /> N = нет<br /><br /> X = XML|
 |message_body|**varbinary(max)**|Содержимое сообщения.|
-|message_id|**uniqueidentifier**|Уникальный идентификатор для сообщения.|
+|message_enqueue_time|**datetime**|Время постановки сообщения в очередь.|
 
 ## <a name="permissions"></a>Разрешения
 

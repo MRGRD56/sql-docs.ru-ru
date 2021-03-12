@@ -6,33 +6,33 @@ author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
 ms.metadata: seo-lt-2019
-ms.date: 10/01/2020
+ms.date: 02/25/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 83e9d79f0316646d6ee25233e604e6751167b5f2
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 7c26dc7e193d3dd5ad688af4d4dc79e2dd3eeea7
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100039524"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101835971"
 ---
 # <a name="check-out-cluster-logs--with-kibana-dashboard"></a>Извлечение журналов кластера с помощью панели мониторинга Kibana
 
-В этой статье описывается мониторинг приложений в кластерах больших данных SQL Server.
+В этой статье описывается мониторинг приложений в [!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)].
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Кластер больших данных SQL Server 2019](deployment-guidance.md)
+- [[!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)]](deployment-guidance.md)
 - [Служебная программа командной строки azdata](../azdata/install/deploy-install-azdata.md)
 
 ## <a name="capabilities"></a>Возможности
 
-В SQL Server 2019 можно создать, удалить, описать, инициализировать, перечислить, запустить и обновить приложение. В следующей таблице описаны команды развертывания приложения, которые можно использовать с **azdata**.
+В [!INCLUDE[sssql19-md](../includes/sssql19-md.md)] можно создать, удалить, описать, инициализировать, перечислить, запустить и обновить приложение. В следующей таблице описаны команды развертывания приложения, которые можно использовать с **azdata**.
 
 |Get-Help |Описание |
 |:---|:---|
-|`azdata bdc endpoint list` | Список конечных точек для кластера больших данных. |
+|`azdata bdc endpoint list` | Выводит список конечных точек для [!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)]. |
 
 
 Следующий пример можно использовать для вывода конечной точки **панели мониторинга Kibana**:
@@ -51,8 +51,10 @@ azdata bdc endpoint list --endpoint-name logsui
 ![Панель мониторинга Kibana](./media/view-cluster-status/kibana-dashboard.png)
 
 > [!NOTE]
-> Браузер Microsoft Edge (старой версии) несовместим с Kibana. Чтобы эта панель мониторинга отображалась корректно, необходимо использовать браузер на базе Chromium. При загрузке панелей мониторинга в неподдерживаемом браузере вы увидите пустую страницу. Поддерживаемые браузеры для Kibana см. здесь.
+> Браузер Microsoft Edge старой версии несовместим с Kibana. Чтобы эта панель мониторинга отображалась корректно, необходимо использовать браузер Edge на базе Chromium. При загрузке панелей мониторинга в неподдерживаемом браузере вы увидите пустую страницу (см. [поддерживаемые Kibana браузеры](https://www.elastic.co/support/matrix#matrix_browsers)).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] см. в статье [Что такое [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]?](big-data-cluster-overview.md).
+
+

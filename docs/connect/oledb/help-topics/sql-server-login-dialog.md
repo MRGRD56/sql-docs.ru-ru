@@ -5,17 +5,17 @@ ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
-ms.reviewer: ''
+ms.reviewer: v-daenge
 ms.technology: connectivity
 ms.topic: conceptual
 ms.author: v-beaziz
 author: bazizi
-ms.openlocfilehash: 647551a314829ef196914e964cbd08237ef085d7
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 9b5b0e7040bb2797729c9f759ea5a676a5fbc287
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99195297"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837478"
 ---
 # <a name="sql-server-login-dialog-box"></a>Диалоговое окно входа SQL Server
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "99195297"
 |Параметр|Описание|
 |---   |---        |
 |Сервер|Имя экземпляра SQL Server в сети. Выберите имя сервера/экземпляра из списка либо введите его в поле **Server** (Сервер). Также на клиентском компьютере можно создать серверный псевдоним с помощью средства **Диспетчер конфигурации SQL Server** и ввести это имя в поле **Server** (Сервер). <br/><br/>При использовании того же компьютера, на котором установлен SQL Server, можно ввести "(локальный)". Затем вы сможете подключиться к локальному экземпляру SQL Server. Это возможно даже в том случае, если запущена несетевая версия SQL Server.<br/><br/>Дополнительные сведения об именах серверов для разных типов сетей см. в статье [Руководство по установке SQL Server](../../../database-engine/install-windows/install-sql-server.md)|
-|Режим проверки подлинности|Вы можете выбрать из раскрывающегося списка следующие параметры проверки подлинности:<br/><ul><li>`Windows Authentication:` проверка подлинности в SQL Server с использованием учетных данных пользователя Windows, вошедшего в систему.</li><li>`SQL Server Authentication:` проверка подлинности с помощью имени для входа и пароля.</li><li>`Active Directory - Integrated:` встроенная проверка подлинности с помощью идентификатора Azure Active Directory. Этот режим можно также использовать для проверки подлинности Windows в SQL Server.</li><li>`Active Directory - Password:` проверка подлинности по идентификатору и паролю пользователя с использованием идентификатора Azure Active Directory.</li><li>`Active Directory - Universal with MFA support:` встроенная проверка подлинности с использованием идентификатора Azure Active Directory. Этот режим поддерживает Многофакторную идентификацию Microsoft Azure (MFA).</li><li>`Active Directory - Service Principal:` проверка подлинности с использованием субъекта-службы Azure Active Directory. В качестве **имени пользователя** нужно указать идентификатор приложения (клиента). В качестве **пароля** нужно указать секрет приложения (клиента).</li></ul>|
+|Режим проверки подлинности|Вы можете выбрать из раскрывающегося списка следующие параметры проверки подлинности:<br/><ul><li>`Windows Authentication:` проверка подлинности в SQL Server с использованием учетных данных пользователя Windows, вошедшего в систему.</li><li>`SQL Server Authentication:` проверка подлинности с помощью имени для входа и пароля.</li><li>`Active Directory - Integrated:` встроенная проверка подлинности с помощью идентификатора Azure Active Directory. Этот режим можно также использовать для проверки подлинности Windows в SQL Server.</li><li>`Active Directory - Password:` проверка подлинности по идентификатору и паролю пользователя с использованием идентификатора Azure Active Directory.</li><li>`Active Directory - Universal with MFA support:` встроенная проверка подлинности с использованием идентификатора Azure Active Directory. Этот режим поддерживает многофакторную проверку подлинности Azure Active Directory (MFA).</li><li>`Active Directory - Service Principal:` проверка подлинности с использованием субъекта-службы Azure Active Directory. В качестве **имени пользователя** нужно указать идентификатор приложения (клиента). В качестве **пароля** нужно указать секрет приложения (клиента).</li></ul>|
 |Имя участника-службы сервера|Если используется доверительное соединение, можно указать имя участника-службы для соединения с основным сервером.|
 |Идентификатор входа|Указывает имя для входа, которое будет использоваться при соединении. Текстовое поле для имени пользователя доступно только в том случае, если для параметра `Authentication Mode` задано значение `SQL Server Authentication`, `Active Directory - Password`, `Active Directory - Universal with MFA support` или `Active Directory - Service Principal`.|
 |Пароль|Указывает пароль, используемый для соединения. Текстовое поле для пароля доступно только в том случае, если для параметра `Authentication Mode` задано значение `SQL Server Authentication`, `Active Directory - Password` или `Active Directory - Service Principal`.|

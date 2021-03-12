@@ -6,17 +6,17 @@ ms.date: 12/13/2017
 ms.prod: sql
 ms.technology: integration-services
 ms.topic: conceptual
-author: haoqian
+author: HaoQian-MS
 ms.author: haoqian
 ms.reviewer: maghan
 f1_keywords:
 - sql13.ssis.ssms.ispackageexecuteinscaleout.f1
-ms.openlocfilehash: 13f9a386b6ab60280edf2d8b494721dd233b042a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 25f550f711364760de9cc07608b46532cfa34219
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347409"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839027"
 ---
 # <a name="run-packages-in-integration-services-ssis-scale-out"></a>Выполнение пакетов в развертывании SQL Server Integration Services (SSIS) с горизонтальным увеличением масштаба
 
@@ -125,6 +125,9 @@ GO
 
 ## <a name="run-package-in-sql-server-agent-job"></a><a name="sql_agent"></a> Выполнение пакета в рамках задания агента SQL Server
 Пакет служб SSIS может выполняться как один из этапов задания агента SQL Server. Чтобы выполнить пакет в развертывании с горизонтальным увеличением масштаба, задайте **Горизонтальное увеличение масштаба** в качестве режима выполнения по умолчанию. После того, как настроен режим выполнения по умолчанию **Горизонтальное увеличение масштаба**, пакеты в заданиях агента SQL Server будут выполняться в режиме горизонтального увеличения масштаба.
+
+> [!NOTE]
+> Вы не можете остановить выполнение пакета в режиме горизонтального увеличения масштаба, отменив задание агента SQL Server. Для остановки горизонтального увеличения масштаба рекомендуется использовать хранимую процедуру catalog.stop_operation или область **Активные операции**. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 -   [Устранение неполадок горизонтального увеличения масштаба](troubleshooting-scale-out.md)

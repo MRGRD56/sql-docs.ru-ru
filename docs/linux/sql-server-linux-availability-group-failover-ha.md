@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: ''
-ms.openlocfilehash: 52fbeee33dd992f4916f33a1545b59265a8b47f9
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 863278eacebc4b405a4a44e72c4318e950d0cc1d
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345651"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837683"
 ---
 # <a name="always-on-availability-group-failover-on-linux"></a>Отработка отказа для группы доступности Always On на Linux
 
@@ -50,17 +50,18 @@ ms.locfileid: "100345651"
 - **Пример для RHEL/Ubuntu**
 
    ```bash
-   sudo pcs resource move ag_cluster-master nodeName2 --master
+   sudo pcs resource move ag_cluster-master nodeName2 --master --lifetime=30S
    ```
 
 - **Пример для SLES**
 
    ```bash
-   crm resource migrate ag_cluster nodeName2
+   crm resource migrate ag_cluster nodeName2 --lifetime=30S
    ```
 
 >[!IMPORTANT]
->После выполнения отработки отказа ресурса вручную вам необходимо удалить ограничение расположения, которое добавляется автоматически.
+>При использовании параметра --lifetime ограничение расположения, созданное для перемещения ресурса, является временным и действует в течение 30 секунд в предыдущем примере.
+>Обратите внимание, что временное ограничение не удаляется автоматически и может отображаться в списке ограничений, но в качестве ограничения с истекшим сроком действия. Ограничения с истекшим сроком действия не влияют на режим отработки отказа кластера pacemaker. Если при перемещении ресурса параметр --lifetime не используется, следует удалить ограничение расположения, которое автоматически добавляется, как указано ниже.
 
 #### <a name="step-2-remove-the-location-constraint"></a><a name="removeLocConstraint"> </a> Шаг 2. Удаление ограничения расположения
 

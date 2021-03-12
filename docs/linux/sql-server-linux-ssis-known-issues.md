@@ -8,12 +8,12 @@ ms.date: 06/06/2018
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 0c95b3a843cbec0e703efea846b9c80f99b9dc41
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ce07fb02a81b4e44375d80f643713b9a0b62d80d
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346235"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839006"
 ---
 # <a name="limitations-and-known-issues-for-ssis-on-linux"></a>Ограничения и известные проблемы для служб SSIS в Linux
 
@@ -29,7 +29,7 @@ ms.locfileid: "100346235"
   - Проверка подлинности Windows
   - Сторонние компоненты
   - Система отслеживания измененных данных (CDC)
-  - Развертывание SSIS с горизонтальным увеличением масштаба
+  - SSIS Scale Out
   - Пакет дополнительных компонентов Azure для SSIS
   - Поддержка Hadoop и HDFS
   - Соединитель Microsoft Connector для SAP BW
@@ -57,7 +57,7 @@ ms.locfileid: "100346235"
 |------------|---|
 | Задача «Выполнение процесса» | Поддерживает только внутрипроцессный режим. |
 | Задача «Файловая система» | Действия *Перемещение каталога* и *Установка атрибутов файла* не поддерживаются. |
-| задача «Скрипт» | Поддерживает только стандартные API .NET Framework. |
+| задача «Скрипт»  | Поддерживает только стандартные API .NET Framework. |
 | Задача «Отправка почты» | Поддерживает только режим анонимного пользователя. |
 | Задача "Передача базы данных" | Пути в формате UNC не поддерживаются. |
 | | |
@@ -94,7 +94,7 @@ ms.locfileid: "100346235"
 | Компонент | Ограничения |
 |------------|---|
 | Источник и назначение ADO.NET | Поддерживают только поставщик данных SQLClient. |
-| Источник и назначение неструктурированного файла | Поддерживают только пути к файлам в стиле Windows, к которым по умолчанию применяется правило сопоставления путей. Например, `D:\home\ssis\travel.csv` становится `/home/ssis/travel.csv`. |
+| Источник и назначение неструктурированного файла | 1. Поддерживают только пути к файлам в стиле Windows, к которым по умолчанию применяется правило сопоставления путей. Например, `D:\home\ssis\travel.csv` становится `/home/ssis/travel.csv`. 2. Общая папка Azure, подключенная к Red Hat 7, не поддерживается. |
 | Источник OData | Поддерживает только обычную проверку подлинности. |
 | Источник и назначение ODBC | Поддерживает 64-разрядные драйверы ODBC для Юникода в Linux. Зависит от диспетчера драйверов UnixODBC в Linux. |
 | Источник и назначение OLE DB | Поддерживают только SQL Server Native Client 11.0 и поставщик OLE DB Майкрософт для SQL Server. |
@@ -118,7 +118,7 @@ ms.locfileid: "100346235"
 - Merge Join
 - Многоадресная рассылка
 - Сведение
-- Количество строк
+- Число строк
 - Медленно изменяющееся измерение
 - Сортировка
 - Уточняющий запрос термина
@@ -146,4 +146,4 @@ ms.locfileid: "100346235"
 -   [Извлечение, преобразование и загрузка данных в Linux с помощью служб SSIS](sql-server-linux-migrate-ssis.md)
 -   [Установка служб SQL Server Integration Services (SSIS) в Linux](sql-server-linux-setup-ssis.md)
 -   [Настройка SQL Server Integration Services в Linux с помощью ssis-conf](sql-server-linux-configure-ssis.md)
--   [Планирование выполнения пакетов SQL Server Integration Services в Linux с помощью cron](sql-server-linux-schedule-ssis-packages.md)
+-   [Планирование выполнения пакетов SQL Server Integration Services в Linux с помощью cron](sql-server-linux-schedule-ssis-packages.md)

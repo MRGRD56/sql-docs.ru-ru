@@ -24,12 +24,12 @@ ms.assetid: 613b8271-7f7d-4378-b7a2-5a7698551dbd
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017||=azure-sqldw-latest
-ms.openlocfilehash: b9dd4dc3d830a93ee2b3f99b7b285832e5bb402e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 56bf90c0d3022ca15030faadeef731aa1e5bc982
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340932"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464903"
 ---
 # <a name="execute-as-transact-sql"></a>EXECUTE AS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -189,7 +189,7 @@ GO
 ```  
   
 ### <a name="b-using-the-with-cookie-clause"></a>Б. Использование предложения WITH COOKIE  
- В следующем примере устанавливается контекст выполнения сеанса для определенного пользователя и указывается предложение WITH NO REVERT COOKIE = @*varbinary_variable*. Инструкция `REVERT` обязана указать значение, передаваемое переменной `@cookie` в `EXECUTE AS` инструкции, для успешного возвращения контекста обратно вызывающему. Чтобы запустить этот образец, должно существовать имя входа `login1` и пользователь `user1`, созданные в примере А.  
+ В приведенном ниже примере устанавливается контекст выполнения сеанса для определенного пользователя и указывается предложение WITH COOKIE INTO @*varbinary_variable*. Инструкция `REVERT` обязана указать значение, передаваемое переменной `@cookie` в `EXECUTE AS` инструкции, для успешного возвращения контекста обратно вызывающему. Чтобы запустить этот образец, должно существовать имя входа `login1` и пользователь `user1`, созданные в примере А.  
   
 
 ```sql 

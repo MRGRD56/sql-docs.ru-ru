@@ -8,27 +8,29 @@ helpviewer_keywords:
 - feature adding [SQL Server]
 - " SQL Server, features"
 - adding features to  SQL Server
-ms.assetid: 97931fdc-d943-48dd-81b9-ae8b8d2c6dad
 author: cawrites
 ms.author: chadam
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 09/07/2019
+ms.date: 02/05/2021
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 2f756136657d20a694cbaa2263500624eeaf8c27
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b8b520e3c5f44342970881e3e67b3dbf95ce9853
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347873"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837587"
 ---
 # <a name="add-features-to-an-instance-of-sql-server-setup"></a>Добавление компонентов в экземпляр SQL Server (программа установки)
 
 [!INCLUDE [ SQL Server - Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
-В этой статье приведена пошаговая процедура добавления компонентов в экземпляр [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Некоторые компоненты и службы SQL Server принадлежат определенному экземпляру SQL Server. Такие компоненты называются привязанными к экземпляру. Они имеют ту же версию, что и экземпляр, которому они принадлежат, и используются только для этого экземпляра. К экземпляру SQL Server можно добавить привязанные к нему компоненты и общие компоненты, если они еще не установлены. Сведения о компонентах, поддерживаемых различными выпусками SQL Server, см. в разделах [Выпуски и поддерживаемые функции SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) и [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md).
+В этой статье приведена пошаговая процедура добавления компонентов в экземпляр [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Некоторые компоненты и службы SQL Server принадлежат определенному экземпляру SQL Server. Такие компоненты называются привязанными к экземпляру. Они имеют ту же версию, что и экземпляр, которому они принадлежат, и используются только для этого экземпляра. К экземпляру SQL Server можно добавить связанные компоненты и общие компоненты, если они еще не установлены. Сведения о компонентах, поддерживаемых различными выпусками SQL Server, см. в описании выпусков и поддерживаемых функций [SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) и [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md).
 
 Сведения о добавлении компонентов к экземпляру SQL Server из командной строки см. в разделе [Установка SQL Server из командной строки](./install-sql-server-from-the-command-prompt.md).
+
+> [!CAUTION]
+> При добавлении компонентов к существующей установке SQL Server будут установлены компоненты на уровне версии установочного носителя, который может относиться к другим компонентам SQL Server. Это может привести к непредвиденному поведению или ошибкам. Всегда следуйте инструкциям по установке SQL Server, переведя новый компонент на тот же уровень версии. При необходимости установите пакеты обновления (SP), накопительные обновления (CU) и (или) выпуски для общего распространения (GDR). Сведения о том, как определить версию компонентов, добавляемых в установку SQL Server, см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](https://docs.microsoft.com/troubleshoot/sql/general/determine-version-edition-update-level).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,7 +40,7 @@ ms.locfileid: "100347873"
 > Для локальных установок необходимо запускать программу установки с правами администратора. Если SQL Server устанавливается из удаленной общей папки, необходимо использовать учетную запись домена, предоставляющую разрешения на чтение в этой удаленной общей папке.  
   
 > [!NOTE]
-> При добавлении компонентов к экземпляру [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] к ним добавляются существующие настройки отчета об использовании. Для изменения этих параметров используйте **службу отчетов об ошибках и использовании SQL Server** из меню **Средства настройки**.
+> При добавлении компонентов к экземпляру [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] к ним добавляются существующие настройки отчета об использовании. Для изменения этих параметров используйте средство **Отчеты об ошибках и использовании SQL Server** в меню **Средства настройки**.
 
 ## <a name="procedures"></a>Процедуры
 
@@ -156,3 +158,4 @@ ms.locfileid: "100347873"
 - [Исправление неудавшейся установки SQL Server 2016](../../database-engine/install-windows/repair-a-failed-sql-server-installation.md)
 - [Обновление SQL Server с помощью мастера установки (программа установки)](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)
 - [Установка SQL Server из командной строки](./install-sql-server-from-the-command-prompt.md)
+- [Последние обновления для SQL Server](latest-updates-for-microsoft-sql-server.md)

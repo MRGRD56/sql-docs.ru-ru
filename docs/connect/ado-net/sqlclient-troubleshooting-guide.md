@@ -1,7 +1,7 @@
 ---
 title: Руководство по устранению неполадок с SqlClient
 description: Страница с описанием способов решения распространенных проблем.
-ms.date: 11/27/2020
+ms.date: 03/03/2021
 dev_langs:
 - csharp
 - vb
@@ -13,12 +13,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-jizho2
-ms.openlocfilehash: 6cad6278eb6ac7b170ee108c1a3510db956ecb22
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: 725d1522f98e721f581a7d4b7614181fd2632962
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96468093"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464807"
 ---
 # <a name="sqlclient-troubleshooting-guide"></a>Руководство по устранению неполадок с SqlClient
 
@@ -143,7 +143,7 @@ at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception
 
   Эта ошибка обычно происходит в клиентских средах, таких как контейнеры образов Docker, клиенты Unix или клиенты Windows, где TLS 1.2 является минимальной поддерживаемой версией протокола TLS.
 
-  **Рекомендуемое решение.** Установите последние обновления для поддерживаемых версий SQL Server<sup>1</sup> и убедитесь, что на сервере включен протокол TLS 1.2.
+  **Рекомендуемое решение.** Установите последние обновления для поддерживаемых версий SQL Server <sup>1</sup> и убедитесь, что на сервере включен протокол TLS 1.2.
 
   _<sup>1</sup> Список поддерживаемых версий SQL Server с разными версиями Microsoft.Data.SqlClient см. в статье [Жизненный цикл поддержки драйвера SqlClient](sqlclient-driver-support-lifecycle.md)._
 
@@ -171,6 +171,12 @@ at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception
 - Сертификаты TLS/SSL не подписаны с помощью SHA-256 или более поздней версии.
 
   **Рекомендуемое решение.** Создайте новый сертификат TLS/SSL для сервера, хэш которого подписывается по меньшей мере с помощью алгоритма хэширования SHA-256.
+
+- Строго ограниченный список комплектов шифров TLS для .NET 5 и более поздних версий в Linux
+
+  В .NET 5 представлено критическое изменение для клиентов Linux, которое заключается в использовании строго ограниченного списка разрешенных комплектов шифров по умолчанию. Если необходимо расширить список комплектов шифров по умолчанию для работы с устаревшими клиентами (или для взаимодействия с устаревшими серверами), укажите значение `CipherSuitePolicy` или измените файл конфигурации _OpenSSL_.
+  
+  Дополнительные сведения о рекомендуемых действиях см. в статье [Комплекты шифров TLS по умолчанию для .NET в Linux](/dotnet/core/compatibility/cryptography/5.0/default-cipher-suites-for-tls-on-linux).
 
 ### <a name="connection-pool-exhaustion-errors"></a>Проблема, вызванная тем, что пул подключений исчерпан
 

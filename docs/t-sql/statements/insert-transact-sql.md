@@ -33,12 +33,12 @@ ms.assetid: 1054c76e-0fd5-4131-8c07-a6c5d024af50
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b5a6fd7131b63741a82c120e1e0b222405865a9d
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 505cda4f226945cd8788e777b8ac1ea35a3aa47e
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237180"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837734"
 ---
 # <a name="insert-transact-sql"></a>Инструкция INSERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -210,7 +210,10 @@ INSERT INTO { database_name.schema_name.table_name | schema_name.table_name | ta
  Если значения в списке идут в порядке, отличном от порядка следования столбцов в таблице, или не для каждого столбца таблицы определено значение, то необходимо использовать аргумент *column_list* для явного указания столбца, в котором хранится каждое входное значение.  
   
  Можно использовать конструктор строк [!INCLUDE[tsql](../../includes/tsql-md.md)] (также называемый конструктором табличных значений), позволяющий указать несколько строк в одной инструкции INSERT. Этот конструктор строк состоит из одного предложения VALUES со списками из нескольких значений, заключенными в круглые скобки и разделенными запятыми. Дополнительные сведения см. в разделе [Конструктор табличных значений (Transact-SQL)](../../t-sql/queries/table-value-constructor-transact-sql.md).  
-  
+
+> [!NOTE]  
+> В Azure Synapse Analytics вставляемые значения могут быть только константными литералами или ссылками на переменные. Чтобы вставить нелитеральное значение, задайте переменной неконстантное значение и вставьте переменную.
+
  DEFAULT  
  Указывает компоненту [!INCLUDE[ssDE](../../includes/ssde-md.md)] необходимость принудительно загружать значения по умолчанию, определенные для столбца. Если для столбца не задано значение по умолчанию и он может содержать значение NULL, вставляется значение NULL. В столбцы с типом данных **timestamp** вставляется следующее значение метки времени. Значение DEFAULT недопустимо для столбца идентификаторов.  
   

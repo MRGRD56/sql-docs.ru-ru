@@ -2,7 +2,7 @@
 title: Соединение с помощью bcp
 description: Узнайте, как использовать служебную программу bcp с Microsoft ODBC Driver for SQL Server в Linux и macOS.
 ms.custom: ''
-ms.date: 01/19/2017
+ms.date: 02/24/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 3eca5717-e50f-40db-be16-a1cebbdfee70
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: b66ebab16bc26beec9ef9cd8699f53e75d36d478
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: f8bff2d5d9892d709885d0888e36ca042aa72242
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727446"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837400"
 ---
 # <a name="connecting-with-bcp"></a>Соединение с помощью bcp
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
@@ -74,7 +74,14 @@ bcp AdventureWorks2008R2.Person.Address out test.dat -Usa -Pxxxx -Sxxx.xxx.xxx.x
   
 - -F *first_row*  
 Указывает номер первой строки для экспорта из таблицы или импорта из файла данных.  
-  
+
+- \- G  
+Клиент использует этот переключатель при подключении к базе данных SQL Azure или Azure Synapse Analytics, чтобы указать, что проверка подлинности пользователя выполняется с помощью Azure Active Directory. Для использования параметра -G требуется bcp версии не ниже 17.6. Чтобы определить версию, выполните команду bcp -v.
+
+> [!IMPORTANT]
+> Параметр `-G` применяется только для Базы данных SQL Azure и Azure Synapse Analytics.
+> Интерактивная проверка подлинности AAD в Linux и macOS в настоящее время не поддерживается. Для встроенной проверки подлинности AAD требуется [драйвер Microsoft ODBC 17 for SQL Server](../download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также [правильно настроенная среда Kerberos](using-integrated-authentication.md#configure-kerberos).
+
 - -k  
 Указывает, что пустые столбцы во время данной операции должны сохранить значение NULL вместо любых вставляемых значений столбцов по умолчанию.  
   

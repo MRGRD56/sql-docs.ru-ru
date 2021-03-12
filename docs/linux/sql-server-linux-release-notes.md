@@ -3,17 +3,17 @@ title: Заметки о выпуске для SQL Server 2017 на Linux
 description: Эта статья содержит заметки о выпуске и поддерживаемые функции для SQL Server 2017 на Linux. Приведены заметки о выпуске для последнего и нескольких предыдущих выпусков.
 author: VanMSFT
 ms.author: vanto
-ms.date: 09/10/2020
+ms.date: 02/24/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 1314744f-fcaf-46db-800e-2918fa7e1b6c
-ms.openlocfilehash: fe088ed697e4150b2272f3a390b4002714ab4dc4
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1494c406ca4889e64e2016c36d48d5c7d54ee84a
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338278"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837943"
 ---
 # <a name="release-notes-for-sql-server-2017-on-linux"></a>Заметки о выпуске для SQL Server 2017 на Linux
 
@@ -46,6 +46,7 @@ ms.locfileid: "100338278"
 
 | Release               | Версия       | Дата выпуска |
 |-----------------------|---------------|--------------|
+| [CU23](#CU23)         | 14.0.3381.3  | 24.02.2020   |
 | [CU22-GDR](#CU22)         | 14.0.3370.1  | 12.01.2021 |
 | [CU22](#CU22)         | 14.0.3356.20  | 10.09.2020   |
 | [CU21](#CU21)         | 14.0.3335.7   | 01.07.2020   |
@@ -84,6 +85,27 @@ ms.locfileid: "100338278"
 - [Установка пакета полнотекстового поиска](sql-server-linux-setup-full-text-search.md)
 - [Установка служб SQL Server Integration Services](sql-server-linux-setup-ssis.md)
 - [Включение агента SQL Server](sql-server-linux-setup-sql-agent.md)
+
+## <a name="cu23-february-2021"></a><a id="CU23"></a> CU23 (февраль 2021 г.)
+
+Это выпуск накопительного пакета обновления 23 (CU23) для [!INCLUDE[ssSQL17](../includes/sssql17-md.md)]. Версия [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] для этого выпуска — 14.0.3381.3. Сведения об исправлениях и улучшениях в этом выпуске см. по адресу <https://support.microsoft.com/help/5000685>.
+
+### <a name="package-details"></a>Сведения о пакете
+
+Для ручной или автономной установки пакета можно скачать пакеты RPM и Debian, используя сведения из следующей таблицы.
+
+> [!NOTE]
+> Начиная с SQL Server 2017 с накопительным пакетом обновления 20 (CU20), поддерживается **Ubuntu 18.04** и **RHEL 8**.
+>
+> Ссылки для установки автономного пакета для Ubuntu указывают на пакеты Ubuntu 18.04, за исключением пакета служб SSIS (который недоступен для Ubuntu 18.04). Если вы ищете пакеты Ubuntu 16.04, см. путь скачивания <https://packages.microsoft.com/ubuntu/16.04/mssql-server-2017/pool/main/m/>.
+>
+> Ссылки для установки автономного пакета для Red Hat указывают на пакеты RHEL 8, за исключением пакета служб SSIS (который недоступен для RHEL 8). Если вы ищете пакеты RHEL 7, см. путь скачивания <https://packages.microsoft.com/rhel/7/mssql-server-2017/>.
+
+| Пакет | Версия пакета | Файлы для загрузки |
+|-----|-----|-----|
+| Пакет Red Hat RPM | 14.0.3381.3-2 | [Пакет RPM подсистемы](https://packages.microsoft.com/rhel/8/mssql-server-2017/mssql-server-14.0.3381.3-2.x86_64.rpm)</br>[Пакет RPM высокой доступности](https://packages.microsoft.com/rhel/8/mssql-server-2017/mssql-server-ha-14.0.3381.3-2.x86_64.rpm)</br>[Пакет RPM полнотекстового поиска](https://packages.microsoft.com/rhel/8/mssql-server-2017/mssql-server-fts-14.0.3381.3-2.x86_64.rpm)</br>[Пакет SSIS](https://packages.microsoft.com/rhel/7/mssql-server-2017/mssql-server-is-14.0.1000.169-1.x86_64.rpm) | 
+| Пакет SLES RPM | 14.0.3381.3-2 | [Пакет RPM подсистемы mssql-server](https://packages.microsoft.com/sles/12/mssql-server-2017/mssql-server-14.0.3381.3-2.x86_64.rpm)</br>[Пакет RPM высокой доступности](https://packages.microsoft.com/sles/12/mssql-server-2017/mssql-server-ha-14.0.3381.3-2.x86_64.rpm)</br>[Пакет RPM полнотекстового поиска](https://packages.microsoft.com/sles/12/mssql-server-2017/mssql-server-fts-14.0.3381.3-2.x86_64.rpm) | 
+| Пакет Debian Ubuntu 18.04 | 14.0.3381.3-2 | [Пакет подсистемы Debian](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2017/pool/main/m/mssql-server/mssql-server_14.0.3381.3-2_amd64.deb)</br>[Пакет Debian высокой доступности](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2017/pool/main/m/mssql-server-ha/mssql-server-ha_14.0.3381.3-2_amd64.deb)</br>[Пакет Debian полнотекстового поиска](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2017/pool/main/m/mssql-server-fts/mssql-server-fts_14.0.3381.3-2_amd64.deb)<br/>[Пакет SSIS](https://packages.microsoft.com/ubuntu/16.04/mssql-server-2017/pool/main/m/mssql-server-is/mssql-server-is_14.0.1000.169-1_amd64.deb) |
 
 ## <a name="cu22-gdr-january-2021"></a><a id="CU22-GDR"></a> CU22-GDR (январь 2021 г.)
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ''
 ms.topic: tutorial
 author: karinazhou
 ms.author: v-jizho2
-ms.openlocfilehash: 735d0b552843a95ea388b91e2ed1da3fcfec2790
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: b2dd15961615ef4bff9c7e5e99f91844956b1895
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837021"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464930"
 ---
 # <a name="tutorial-develop-a-net-application-using-always-encrypted-with-secure-enclaves"></a>Руководство по Разработка приложения .NET с помощью Always Encrypted с безопасными анклавами
 
@@ -67,7 +67,7 @@ ms.locfileid: "101837021"
 
 Приложение подключится к базе данных **ContosoHR** из статьи [Руководство. Начало работы с Always Encrypted с безопасными анклавами с использованием SSMS](../../../relational-databases/security/tutorial-getting-started-with-always-encrypted-enclaves.md) или [Руководство. Начало работы с Always Encrypted с безопасными анклавами в Базе данных SQL Azure](/azure/azure-sql/database/always-encrypted-enclaves-getting-started) и выполнит запрос, содержащий предикат `LIKE` в столбце **SSN**, а также проведет сравнение диапазонов в столбце **Salary**.
 
-1. Замените содержимое файла Program.cs (созданного в Visual Studio) на приведенный ниже код. 
+1. Замените содержимое файла Program.cs (созданного в Visual Studio) на приведенный ниже код.
 
     ```cs
     using System;
@@ -140,4 +140,4 @@ ms.locfileid: "101837021"
 
 - [Использование Always Encrypted с поставщиком данных Microsoft .NET для SQL Server](sqlclient-support-always-encrypted.md)
 - [Example demonstrating use of Azure Key Vault provider with Always Encrypted](azure-key-vault-example.md) (Пример использования поставщика Azure Key Vault с поддержкой Always Encrypted)
-- [Example demonstrating use of Azure Key Vault provider with Always Encrypted enabled with Secure Enclaves](azure-key-vault-enclave-example.md) (Пример использования поставщика Azure Key Vault с поддержкой Always Encrypted с безопасными анклавами)
+- [Пример использования поставщика Azure Key Vault с поддержкой Always Encrypted с безопасными анклавами](azure-key-vault-enclave-example.md)

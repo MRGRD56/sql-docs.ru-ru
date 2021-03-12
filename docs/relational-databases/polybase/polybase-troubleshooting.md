@@ -1,26 +1,28 @@
 ---
-title: Мониторинг PolyBase и устранение неполадок | Документация Майкрософт
+title: Мониторинг PolyBase и устранение неполадок
 description: Чтобы устранить неполадки с PolyBase, используйте эти представления и динамические административные представления. Просмотр плана запроса PolyBase, мониторинг узлов в группе PolyBase и настройка высокой доступности узла имени Hadoop.
-ms.date: 04/23/2019
+ms.date: 02/17/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
+dev_langs:
+- TSQL
+- XML
 f1_keywords:
 - PolyBase, monitoring
 - PolyBase, performance monitoring
 helpviewer_keywords:
 - PolyBase, troubleshooting
-ms.assetid: f119e819-c3ae-4e0b-a955-3948388a9cfe
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-linux-ver15 || >= sql-server-2016'
-ms.openlocfilehash: 5945f88320f01f6ce431bea79483528bf8dbeb64
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5306f392623bebdb08d17b704e12b06c5ce9e8fa
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351756"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101835327"
 ---
 # <a name="monitor-and-troubleshoot-polybase"></a>Мониторинг PolyBase и устранение неполадок
 
@@ -171,7 +173,7 @@ ms.locfileid: "100351756"
    ORDER BY total_elapsed_time DESC;  
    ```  
 
-## <a name="to-view-the--polybase-query-plan-to-be-changed"></a>Просмотр плана запроса PolyBase (для изменения) 
+## <a name="to-view-the-polybase-query-plan-to-be-changed"></a>Просмотр плана запроса PolyBase (для изменения) 
 
 1. В SSMS включите параметр **Включить действительный план выполнения** (CTRL+M) и выполните запрос.
 
@@ -244,7 +246,7 @@ ms.locfileid: "100351756"
 
 ## <a name="to-monitor-nodes-in-a-polybase-group"></a>Мониторинг узлов в группе PolyBase  
 
-После настройки нескольких компьютеров в рамках группы горизонтального увеличения масштаба PolyBase можно отслеживать состояние компьютеров. Дополнительные сведения о создании группы горизонтального увеличения масштаба см. в разделе [Группы горизонтального увеличения масштаба PolyBase](../../relational-databases/polybase/polybase-scale-out-groups.md).
+После настройки нескольких компьютеров в рамках масштабируемой группы PolyBase можно отслеживать состояние компьютеров. Дополнительные сведения о создании масштабируемой группы см. в разделе [Масштабируемые группы PolyBase](../../relational-databases/polybase/polybase-scale-out-groups.md).
 
 1. Подключитесь к SQL Server на головном узле группы.
 
@@ -258,10 +260,35 @@ ms.locfileid: "100351756"
 
 Решение проблемы: использование DNS-имени для перенаправления соединений на активный узел имени. Для этого необходимо, чтобы для взаимодействия с узлом внешний источник данных использовал DNS-имя. При возникновении отработки отказа следует изменить IP-адрес, связанный с DNS-именем, используемым в определении внешнего источника данных. В результате все новые соединения будут перенаправляться на соответствующий узел имени. В случае отработки существующие подключения завершатся ошибкой. Чтобы автоматизировать этот процесс, периодический сигнал может проверить связь с активным узлом имени. Если периодический сигнал завершается ошибкой, можно предположить, что возникла отработка отказа, и автоматически переключиться на IP-адреса дополнительных серверов.
 
+## <a name="log-file-locations"></a>Расположение файлов журнала
+
+На серверах Windows журналы расположены в каталоге установки, по умолчанию в C:\Program Files\Microsoft SQL Server\MSSQLnn.InstanceName\MSSQL\Log\Polybase\.
+
+На серверах Linux журналы по умолчанию расположены в папке var/opt/mssql/log/polybase.
+
+Файлы журналов перемещения данных PolyBase:  
+- <INSTANCENAME>_<SERVERNAME>_Dms_errors.log 
+- <INSTANCENAME>_<SERVERNAME>_Dms_movement.log 
+
+Файлы журналов службы ядра PolyBase:  
+- <INSTANCENAME>_<SERVERNAME>_DWEngine_errors.log 
+- <INSTANCENAME>_<SERVERNAME>_DWEngine_movement.log 
+- <INSTANCENAME>_<SERVERNAME>_DWEngine_server.log 
+
+Файлы журналов Java для PolyBase (в Windows):
+- <SERVERNAME> Dms polybase.log
+- <SERVERNAME>_DWEngine_polybase.log
+ 
+Файлы журналов Java для PolyBase (в Linux):
+- /var/opt/mssql-extensibility/hdfs_bridge/log/hdfs_bridge_pdw.log
+- /var/opt/mssql-extensibility/hdfs_bridge/log/hdfs_bridge_dms.log
+
+
 ## <a name="error-messages-and-possible-solutions"></a>Сообщения об ошибках и возможные решения
 
-Сведения об устранении ошибок с внешними таблицами см. в блоге Муршеда Замана (Murshed Zaman) [https://blogs.msdn.microsoft.com/sqlcat/2016/06/21/polybase-setup-errors-and-possible-solutions/](/archive/blogs/sqlcat/polybase-setup-errors-and-possible-solutions "Ошибки настройки PolyBase и возможные решения").
+Распространенные сценарии устранения неполадок см. в статье [Ошибки в PolyBase и возможные решения](polybase-errors-and-possible-solutions.md).
 
 ## <a name="see-also"></a>См. также раздел
 
-[Устранение неполадок с подключением PolyBase к Kerberos](polybase-troubleshoot-connectivity.md)
+[Устранение неполадок с подключением PolyBase к Kerberos](polybase-troubleshoot-connectivity.md)   
+[Ошибки в PolyBase и возможные решения](polybase-errors-and-possible-solutions.md)   

@@ -9,12 +9,12 @@ ms.date: 02/11/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 1f3e1e0ed29121f0fb0ffcac54885ca80de3e63c
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: c4cb10ac3ba1e0fd8b437e7f0509dc16cc72d854
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489308"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837071"
 ---
 # <a name="sql-server-2019-big-data-clusters-release-notes"></a>Заметки о выпуске Кластеров больших данных SQL Server 2019
 
@@ -98,7 +98,7 @@ ms.locfileid: "100489308"
    Для кластеров, использующих `mssql-conf` для конфигураций главного экземпляра SQL Server, требуются дополнительные действия после обновления до накопительного пакета обновления 9. Следуйте инструкциям [здесь](bdc-upgrade-configuration.md).
 
 - Улучшенный интерфейс [!INCLUDE[azdata](../includes/azure-data-cli-azdata.md)] для шифрования неактивных данных.
-- Возможность динамически устанавливать пакеты Python Spark с помощью виртуальных сред.
+- Возможность динамически [устанавливать пакеты Python Spark](spark-install-packages.md) с помощью виртуальных сред.
 - Обновленные версии для большинства компонентов ПО с открытым кодом (Grafana, Kibana, FluentBit и т. д.), обеспечивающие наличие последних улучшений и исправлений в образах кластеров больших данных. См. [справочник по ПО с открытым кодом](reference-open-source-software.md).
 - Прочие улучшения и исправления ошибок.
 
@@ -145,7 +145,7 @@ ms.locfileid: "100489308"
 - [Развертывание кластеров больших данных в частном кластере службы Azure Kubernetes (AKS)](private-deploy.md)
 - [Ограничения для исходящего трафика Кластеров больших данных (BDC) в частном кластере Службы Azure Kubernetes (AKS)](private-restrict-egress-traffic.md)
 - [Развертывание кластера больших данных SQL Server с высокой доступностью](deployment-high-availability.md)
-- [Настройка кластера больших данных SQL Server](configure-cluster.md)
+- [Настройка кластера больших данных SQL Server](./configure-bdc-overview.md)
 - [Настройка Apache Spark и Apache Hadoop в Кластерах больших данных](configure-spark-hdfs.md)
 - [Свойства конфигурации главного экземпляра SQL Server](reference-config-master-instance.md)
 - [Свойства конфигурации Apache Spark и Apache Hadoop (HDFS)](reference-config-spark-hadoop.md)

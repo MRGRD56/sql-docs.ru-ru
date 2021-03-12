@@ -2,7 +2,7 @@
 title: Системные требования драйверов Майкрософт для PHP
 description: Драйверы Майкрософт для PHP для SQL Server поддерживают широкий спектр версий PHP, операционных систем и версий SQL Server.
 ms.custom: ''
-ms.date: 01/29/2021
+ms.date: 03/09/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.technology: connectivity
@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 5db4b75f-c605-4785-9560-399a533c0fc9
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 06824f62740653eddeee6d3484e7eb8914404110
-ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
+ms.openlocfilehash: b52bb4597b76ca831b94899e040a814b11b2a903
+ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99076446"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622670"
 ---
 # <a name="system-requirements-for-the-microsoft-drivers-for-php-for-sql-server"></a>Системные требования драйверов Майкрософт для PHP для SQL Server
 
@@ -51,7 +51,7 @@ ms.locfileid: "99076446"
 |Драйвер ODBC 17+ |Да|Да|Да|Да|Да|   |   |   |
 |Драйвер ODBC 13.1|Да|Да|Да|Да|Да|Да|Да|   |
 |Драйвер ODBC 13  |   |   |   |   |   |   |Да|   |
-|Драйвер ODBC 11  |Да|Да|Да|Да|Да|Да|Да|Да|
+|Драйвер ODBC 11  |   |Да|Да|Да|Да|Да|Да|Да|
 
 Если вы используете драйвер SQLSRV, [sqlsrv_client_info](sqlsrv-client-info.md) возвращает сведения о том, какая версия [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Microsoft ODBC Driver for SQL Server применяется [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)]. Если вы используете драйвер PDO_SQLSRV, можно применить [PDO::getAttribute](pdo-getattribute.md) для определения версии.
 

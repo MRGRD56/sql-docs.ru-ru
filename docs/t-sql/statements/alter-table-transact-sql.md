@@ -61,12 +61,12 @@ ms.assetid: f1745145-182d-4301-a334-18f799d361d1
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 14c663264dc05f403f12e9cad390cd0ef52f17c1
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 465ab4089b18cb38852152e298d56a844ec706ac
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100348502"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101838818"
 ---
 # <a name="alter-table-transact-sql"></a>ALTER TABLE (Transact-SQL)
 
@@ -714,7 +714,7 @@ OFF
 > [!NOTE]
 > Операции с индексами в сети доступны не во всех выпусках [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Дополнительные сведения см. в разделах [Выпуски и поддерживаемые функции SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md) и [Выпуски и поддерживаемые функции SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md).
 
-MOVE TO { _partition\_scheme\_name_ **(** _column\_name_ [ 1 **,** ...*n*] **)**  | *filegroup* |  **"** default **"** }  
+MOVE TO { _partition\_scheme\_name_ **(** _column\_name_ [ ,...*n* ] **)**  | *filegroup* |  **"** default **"** }  
 **Применимо к**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] и выше) и [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].
 
 Указывает местоположение для перемещения строк данных, находящихся в настоящее время на конечном уровне кластеризованного индекса. Таблица перемещается на новое место. Этот параметр применяется только ограничениям, образующим кластеризованный индекс.

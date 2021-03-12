@@ -26,14 +26,14 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
-ms.date: 09/11/2020
+ms.date: 02/24/2021
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: be528466cb44e5c72413b0494dfe5416dd29783e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1b7d902064ef7a083b706af08730e91319be312f
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338589"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101836848"
 ---
 # <a name="sqlcmd-utility"></a>Служебная программа sqlcmd
 
@@ -179,8 +179,8 @@ sqlcmd
 Клиент использует этот переключатель при подключении к базе данных SQL или Azure Synapse Analytics, чтобы указать, что проверка подлинности пользователя выполняется с помощью Azure Active Directory. Этот параметр задает переменную скрипта SQLCMDUSEAAD = true программы **sqlcmd** . Для использования параметра -G требуется версия **sqlcmd** не ниже [13.1](https://go.microsoft.com/fwlink/?LinkID=825643). Чтобы определить версию, выполните `sqlcmd -?`. Дополнительные сведения см. в статье [Подключение к базе данных SQL или Azure Synapse Analytics с использованием проверки подлинности Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview). Параметр -A не поддерживается вместе с параметром -G.
 
 > [!IMPORTANT]
-> Параметр `-G` применяется только для Базы данных SQL Azure и хранилища данных Azure.
-> Интерактивная проверка подлинности AAD в Linux и macOS в настоящее время не поддерживается. Для интегрированной проверки подлинности AAD требуется [драйвер Microsoft ODBC 17 для SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также правильно настроенная среда Kerberos.
+> Параметр `-G` применяется только для Базы данных SQL Azure и Azure Synapse Analytics.
+> Интерактивная проверка подлинности AAD в Linux и macOS в настоящее время не поддерживается. Для встроенной проверки подлинности AAD требуется [драйвер Microsoft ODBC 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также [правильно настроенная среда Kerberos](../connect/odbc/linux-mac/using-integrated-authentication#configure-kerberos).
 
 - **Имя пользователя и пароль Azure Active Directory** 
 
@@ -199,7 +199,7 @@ sqlcmd
 - **Встроенная проверка подлинности Azure Active Directory**
 
    Чтобы использовать встроенную проверку подлинности Azure Active Directory, укажите параметр **-G** без имени пользователя или пароля.
-   *Интегрированная проверка подлинности AAD в настоящее время не поддерживается в Linux или macOS*.
+   *Для встроенной проверки подлинности AAD требуется драйвер [Microsoft ODBC 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также [правильно настроенная среда Kerberos](../connect/odbc/linux-mac/using-integrated-authentication.md#configure-kerberos)* .
 
     ```cmd
     Sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G

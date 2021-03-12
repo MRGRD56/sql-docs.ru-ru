@@ -5,16 +5,16 @@ description: Узнайте, как обновлять кластеры боль
 author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
-ms.date: 02/11/2021
+ms.date: 02/19/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 799afc246b106c4b49d6aba44f8d26a761d6c2cc
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 9417444a1c9d28181529ace79b6dcff6162b7f2d
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100343962"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837039"
 ---
 # <a name="deploy-sql-server-big-data-cluster-in-active-directory-mode"></a>Развертывание кластера больших данных SQL Server в режиме Active Directory
 
@@ -27,6 +27,21 @@ ms.locfileid: "100343962"
 Используя профиль `kubeadm-prod` (или `openshift-prod`, начиная с выхода накопительного пакета обновления 5 — CU5), вы автоматически получите заполнители для сведений о безопасности и конечных точках, которые требуются для интеграции с AD.
 
 Кроме того, необходимо предоставить учетные данные, которые [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] будет использовать для создания необходимых объектов в AD. Эти учетные данные предоставляются в качестве переменных среды
+
+### <a name="traffic-and-ports"></a>Трафик и порты
+
+Убедитесь, что все брандмауэры и сторонние приложения разрешают порты, требуемые для обмена данными с Active Directory. 
+
+![Схема трафика между кластером больших данных и Active Directory. Контроллер, служба поддержки безопасности и другие службы кластеров обмениваются данными с контроллерами доменов по протоколу LDAP и Kerberos. Служба DNS-прокси BDC обменивается данными с DNS-серверами через DNS.](media/big-data-cluster-overview/big-data-cluster-active-directory-dns-traffic-ports.png)
+
+Запросы выполняются с использованием этих протоколов между службами кластеров Kubernetes и доменом Active Directory, поэтому должны быть разрешены входящие и исходящие подключения в любом брандмауэре или стороннем приложении, прослушивающем требуемые порты для TCP и UDP. Стандартные номера портов, которые Active Directory использует:
+
+| Служба | Порт |
+|:---|:---|
+| DNS | 53 |
+| LDAP <BR> LDAPS | 389<BR> 636 |
+| Kerberos | 88 |
+| Порт глобального каталога <BR>через LDAP<BR>через LDAPS |<BR> 3268 <BR> 3269 |
 
 ## <a name="set-security-environment-variables"></a>Задание переменных среды безопасности
 
@@ -52,14 +67,14 @@ export DOMAIN_SERVICE_ACCOUNT_PASSWORD=<AD principal password>
   > [!IMPORTANT]
   > Когда несколько контроллеров домена обслуживают домен, используйте основной контроллер домена (PDC) в качестве первой записи в списке `domainControllerFullyQualifiedDns` в конфигурации безопасности. Чтобы получить имя основного контроллера домена, введите `netdom query fsmo` в командной строке и нажмите клавишу **ВВОД**.
 
-- `security.activeDirectory.realm` **Необязательный параметр**: в большинстве случаев область равна доменному имени. Для случаев, когда они не совпадают, используйте этот параметр для определения имени области (например, `CONTOSO.LOCAL`). Значение, указанное для этого параметра, должно быть полным.
+- `security.activeDirectory.realm` **Необязательный параметр**: в большинстве случаев область равна доменному имени. В случаях, когда они не совпадают, используйте этот параметр для определения имени области (например, `CONTOSO.LOCAL`). Значение, указанное для этого параметра, должно быть полным.
 
-- `security.activeDirectory.netbiosDomainName` **Необязательный параметр**. NetBIOS-имя домена Active Directory. В большинстве случаев это будет первая метка доменного имени Active Directory. В иных случаях используйте этот параметр, чтобы задать NetBIOS-имя домена. Значение не должно содержать точек. Обычно это имя используется для уточнения имен учетных записей пользователей в домене. Пример: CONTOSO\user, где CONTOSO — это NetBIOS-имя домена.
+- `security.activeDirectory.netbiosDomainName` **Необязательный параметр**. NetBIOS-имя домена Active Directory. В большинстве случаев это будет первая метка доменного имени AD. В иных случаях используйте этот параметр, чтобы задать NetBIOS-имя домена. Значение не должно содержать точек. Обычно это имя используется для уточнения имен учетных записей пользователей в домене. Например, CONTOSO\user, где CONTOSO — это доменное имя в формате NetBIOS.
 
   > [!NOTE]
   > Поддержка конфигурации, в которой доменное имя Active Directory отличается от **NetBIOS**-имени домена Active Directory, посредством *security.activeDirectory.netbiosDomainName* появилась начиная с SQL Server 2019 с накопительным пакетом обновления 9.
 
-- `security.activeDirectory.domainDnsName`: Имя домена DNS, которое будет использоваться для кластера (например, `contoso.local`).
+- `contoso.local`: имя домена DNS, которое будет использоваться для кластера (например, `security.activeDirectory.domainDnsName`).
 
 - `security.activeDirectory.clusterAdmins`: этот параметр принимает одну группу AD. Область действия группы AD должна быть универсальной или глобальной. Члены этой группы будут иметь роль кластера `bdcAdmin`, которая предоставит им разрешения администратора в кластере. Это означает, что у них есть [разрешения `sysadmin` в SQL Server](../relational-databases/security/authentication-access/server-level-roles.md#fixed-server-level-roles), [разрешения `superuser` в HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#The_Super-User) и разрешения администратора при подключении к конечной точке контроллера.
 
@@ -70,7 +85,7 @@ export DOMAIN_SERVICE_ACCOUNT_PASSWORD=<AD principal password>
 
 Группы Active Directory в этом списке сопоставлены с ролью кластера больших данных `bdcUser`, и им необходимо предоставить доступ к SQL Server (см. раздел [разрешения SQL Server](../relational-databases/security/permissions-hierarchy-database-engine.md)) или HDFS (см. [руководство по разрешениям HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#:~:text=Permission%20Checks%20%20%20%20Operation%20%20,%20%20N%2FA%20%2029%20more%20rows%20)). При подключении к конечной точке контроллера эти пользователи могут получить только список конечных точек, доступных в кластере, с помощью команды `azdata bdc endpoint list`.
 
-Дополнительные сведения об обновлении групп AD для этих параметров см. в разделе [Управление доступом к кластеру больших данных в режиме Active Directory](manage-user-access.md).
+Дополнительные сведения об обновлении групп AD для этих параметров см. в разделе [Управление доступом к кластеру больших данных в режиме AD](manage-user-access.md).
 
   >[!TIP]
   >Чтобы включить средства просмотра HDFS при подключении к узлу SQL Server Master в Azure Data Studio, пользователю с ролью bdcUser должны быть предоставлены разрешения VIEW SERVER STATE, так как Azure Data Studio использует DMV `sys.dm_cluster_endpoints`, чтобы получить необходимую конечную точку шлюза Knox для подключения к HDFS.
@@ -223,7 +238,7 @@ azdata bdc config replace -c custom-prod-kubeadm/control.json -j "$.security.act
 
 На данный момент у вас должны быть заданы все необходимые параметры для развертывания BDC с интеграцией с Active Directory.
 
-Теперь можно развернуть кластер BDC, интегрированный с Active Directory, с помощью команды [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] и профиля развертывания kubeadm-prod. Полную документацию по развертыванию [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] см. в разделе [Развертывание кластеров больших данных SQL Server в Kubernetes](deployment-guidance.md).
+Теперь можно развернуть кластер BDC, интегрированный с Active Directory, с помощью команды [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] и профиля развертывания kubeadm-prod. Полную документацию по развертыванию [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] см. в статье [Развертывание кластеров больших данных SQL Server в Kubernetes](deployment-guidance.md).
 
 ## <a name="verify-reverse-dns-entry-for-domain-controller"></a>Проверка обратной DNS-записи для контроллера домена
 

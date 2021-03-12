@@ -2,7 +2,7 @@
 title: Соединение с помощью sqlcmd
 description: Узнайте, как использовать служебную программу sqlcmd с Microsoft ODBC Driver for SQL Server в Linux и macOS.
 ms.custom: ''
-ms.date: 06/22/2020
+ms.date: 02/24/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 61a2ec0d-1bcb-4231-bea0-cff866c21463
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 5d69f1a19e0494b7426eebbac7d8732794f90be8
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: 216f78615ca049d3e97134cb14831d9a5e6afd32
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987912"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837366"
 ---
 # <a name="connecting-with-sqlcmd"></a>Соединение с помощью sqlcmd
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
@@ -56,6 +56,12 @@ sqlcmd -Sxxx.xxx.xxx.xxx -Uxxx -Pxxx
 
 - -f codepage | i:codepage[,o:codepage] | o:codepage[,i:codepage] — задает входные и выходные кодовые страницы. Номер кодовой страницы — это числовое значение, которое определяет установленную кодовую страницу Linux.
 Доступно с 17.5.1.1.
+
+- -G — клиент использует этот параметр при подключении к Базе данных SQL или Azure Synapse Analytics, чтобы указать, что проверка подлинности пользователя выполняется с помощью Azure Active Directory. Этот параметр задает переменную скрипта SQLCMDUSEAAD = true программы sqlcmd . Для использования параметра -G требуется sqlcmd версии не ниже 17.6. Чтобы определить версию, выполните команду sqlcmd -?.
+
+> [!IMPORTANT]
+> Параметр `-G` применяется только для Базы данных SQL Azure и Azure Synapse Analytics.
+> Интерактивная проверка подлинности AAD в Linux и macOS в настоящее время не поддерживается. Для встроенной проверки подлинности AAD требуется [драйвер Microsoft ODBC 17 for SQL Server](../download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также [правильно настроенная среда Kerberos](using-integrated-authentication.md#configure-kerberos).
 
 - -h *число_строк* — задать число строк, печатаемое между заголовками столбцов.  
   
@@ -123,6 +129,10 @@ sqlcmd -Sxxx.xxx.xxx.xxx -Uxxx -Pxxx
 - -y *изменяемая_ширина_отображения* — задать переменную скрипта `sqlcmd` `SQLCMDMAXFIXEDTYPEWIDTH`.
   
 - -Y *variable_length_type_display_width* — задать переменную скрипта `sqlcmd` `SQLCMDMAXVARTYPEWIDTH`.
+
+- -z *password* — изменить пароль.  
+  
+- -Z *password* — изменить пароль и выйти.  
 
 
 ## <a name="available-commands"></a>Доступные команды
@@ -195,10 +205,6 @@ sqlcmd -Sxxx.xxx.xxx.xxx -Uxxx -Pxxx
     sqlcmd -S<...> -P<..> -U<..> -I c.sql  
 ```
 
-- -z *password* — изменить пароль.  
-  
-- -Z *password* — изменить пароль и выйти.  
-
 ## <a name="unavailable-commands"></a>Недоступные команды
 
 В текущем выпуске следующие команды недоступны:  
@@ -221,7 +227,7 @@ sqlcmd -Sxxx.xxx.xxx.xxx -Uxxx -Pxxx
 
 В имени DSN только запись DRIVER является обязательной, но, чтобы подключиться к удаленному серверу, `sqlcmd` или `bcp` требуется значение в элементе SERVER. Если элемент SERVER пуст или отсутствует в DSN, `sqlcmd` и `bcp` попытаются подключиться к экземпляру по умолчанию в локальной системе.
 
-При использовании bcp в системах Windows [!INCLUDE [sssql17-md](../../../includes/sssql17-md.md)] и более ранних версий требуется драйвер SQL Native Client 11 (sqlncli11.dll), а для [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)] и более поздних версий требуется драйвер Microsoft ODBC Driver 17 для драйвера SQL Server (msodbcsql17.dll).  
+При использовании bcp в системах Windows [!INCLUDE [sssql17-md](../../../includes/sssql17-md.md)] и более ранних версий требуется драйвер SQL Native Client 11 (sqlncli11.dll), а для [!INCLUDE [sssql19-md](../../../includes/sssql19-md.md)] и более поздних версий требуется драйвер Microsoft ODBC Driver 17 для драйвера SQL Server (msodbcsql17.dll).  
 
 Если указать один и тот же параметр и в имени DSN, и в командной строке `sqlcmd` или `bcp`, значение в командной строке имеет приоритет перед значением DSN. Например, если имя DSN содержит запись DATABASE, а командная строка `sqlcmd` включает параметр **-d**, используется значение, передаваемое в **-d**. Если в имени DSN указано **Trusted_Connection=yes**, используется проверка подлинности Kerberos, а имя пользователя ( **–U**) и пароль ( **–P**), если они заданы, игнорируются.
 

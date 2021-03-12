@@ -2,7 +2,7 @@
 description: Требования к системе для JDBC Driver
 title: Требования к системе для JDBC Driver | Документация Майкрософт
 ms.custom: ''
-ms.date: 01/29/2021
+ms.date: 02/26/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 447792bb-f39b-49b4-9fd0-1ef4154c74ab
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 2052f4db6b90851a09b0aa7f56a2f4a9220be506
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 50820ee0f7da0f58872d255c8a918dff35234553
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99187665"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837552"
 ---
 # <a name="system-requirements-for-the-jdbc-driver"></a>Требования к системе для JDBC Driver
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "99187665"
 
 **Microsoft JDBC Driver 9.2 для SQL Server:**  
 
-  Драйвер JDBC Driver 9.2 содержит три библиотеки классов JAR в каждом пакете установки: **mssql-jdbc-9.2.0.jre8.jar**, **mssql-jdbc-9.2.0.jre11.jar** и **mssql-jdbc-9.2.0.jre15.jar**.
+  Драйвер JDBC Driver 9.2 содержит три библиотеки классов JAR в каждом пакете установки: **mssql-jdbc-9.2.1.jre8.jar**, **mssql-jdbc-9.2.1.jre11.jar** и **mssql-jdbc-9.2.1.jre15.jar**.
 
   Драйвер JDBC Driver 9.2 рассчитан на совместимость и корректную работу со всеми основными виртуальными машинами Java, но протестирован только в OpenJDK 1.8, OpenJDK 11.0, OpenJDK 15.0, Azul Zulu JRE 1.8, Azul Zulu JRE 11.0 и Azul Zulu JRE 15.0.
   
@@ -60,9 +60,9 @@ ms.locfileid: "99187665"
   
   |JAR|Соответствие версии JDBC|Рекомендуемая версия Java|Описание|  
 |---------|-----------------------------|----------------------|-----------------|   
-|mssql-jdbc-9.2.0.jre8.jar|4.2|8|Требуется среда выполнения Java (JRE) версии 1.8. При использовании JRE 1.7 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
-|mssql-jdbc-9.2.0.jre11.jar|4.3|11|Требуется среда выполнения Java (JRE) 11.0. В случае использования JRE 10.0 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
-|mssql-jdbc-9.2.0.jre15.jar|4.3|15|Требуется среда выполнения Java (JRE) версии 15.0. При использовании JRE 14.0 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
+|mssql-jdbc-9.2.1.jre8.jar|4.2|8|Требуется среда выполнения Java (JRE) версии 1.8. При использовании JRE 1.7 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
+|mssql-jdbc-9.2.1.jre11.jar|4.3|11|Требуется среда выполнения Java (JRE) 11.0. В случае использования JRE 10.0 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
+|mssql-jdbc-9.2.1.jre15.jar|4.3|15|Требуется среда выполнения Java (JRE) версии 15.0. При использовании JRE 14.0 или более ранней версии возникает исключение.<br /><br /> К новым функциям в версии 9.2 относятся: поддержка JDK 15, поддержка интерактивной проверки подлинности Azure Active Directory, поддержка проверки подлинности субъекта-службы Azure Active Directory и поддержка useBulkCopyForBatchInsert для серверов, отличных от Azure Synapse Analytics. |
 
 
   Драйвер JDBC Driver 9.2 также доступен в Maven Central Repository и может быть добавлен в проект Maven путем включения в POM.XML следующего кода:  
@@ -71,7 +71,7 @@ ms.locfileid: "99187665"
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
-    <version>9.2.0.jre11</version>
+    <version>9.2.1.jre11</version>
 </dependency>
 ```
 

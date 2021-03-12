@@ -10,13 +10,13 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: karinazhou
 ms.author: v-jizho2
-ms.reviewer: ''
-ms.openlocfilehash: 0f8aaffc1f87b33a5c685b55d724fe96c44258af
-ms.sourcegitcommit: ece151df14dc2610d96cd0d40b370a4653796d74
+ms.reviewer: v-daenge
+ms.openlocfilehash: c57c2d10854ed902a6230eafc3a912cd0508c989
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96297951"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101836017"
 ---
 # <a name="using-azure-active-directory-authentication-with-sqlclient"></a>Использование проверки подлинности Azure Active Directory для SqlClient
 
@@ -26,7 +26,7 @@ ms.locfileid: "96297951"
 
 В этой статье показано, как подключаться к источникам данных Azure SQL с помощью проверки подлинности Azure Active Directory (AAD) из приложения .NET с помощью SqlClient.
 
-Проверка подлинности AAD использует удостоверения AAD для доступа к источникам данных Azure SQL, таким как База данных SQL Azure, Управляемый экземпляр Azure SQL и Azure Synapse Analytics. Пространство имен **Microsoft.Data.SqlClient** позволяет клиентским приложениям указывать учетные данные AAD в разных режимах проверки подлинности при подключении к Базе данных SQL Azure. 
+Проверка подлинности AAD использует удостоверения AAD для доступа к источникам данных Azure SQL, таким как База данных SQL Azure, Управляемый экземпляр Azure SQL и Azure Synapse Analytics. Пространство имен **Microsoft.Data.SqlClient** позволяет клиентским приложениям указывать учетные данные AAD в разных режимах проверки подлинности при подключении к Базе данных SQL Azure.
 
 Указывая свойство подключения `Authentication` в строке подключения, клиент может выбрать предпочтительный режим проверки подлинности AAD с учетом указанного значения:
 
@@ -39,7 +39,6 @@ ms.locfileid: "96297951"
 - Дополнительные режимы проверки подлинности добавлены в **Microsoft.Data.SqlClient** версии 2.1.0, в том числе `Active Directory Device Code Flow` и `Active Directory Managed Identity` (или `Active Directory MSI`). Эти новые режимы позволяют приложению получить маркер доступа для подключения к серверу. 
 
 Если вам недостаточно сведений о проверке подлинности Azure AD, которые представлены в следующих разделах, см. статью [Использование проверки подлинности Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview).
-
 
 ## <a name="setting-azure-active-directory-authentication"></a>Настройка проверки подлинности Azure Active Directory
 
@@ -54,8 +53,7 @@ ms.locfileid: "96297951"
 | Потока кода устройства Active Directory | Проверка подлинности по удостоверению Azure AD в режиме потока кода устройства. | .NET Framework 4.6 и выше, .NET Core 2.1 и выше, .NET Standard 2.0 и выше | 2.1.0 и выше |
 | Управляемое удостоверение Active Directory, <br>Active Directory MSI | Проверка подлинности по удостоверению Azure AD с использованием управляемого удостоверения, назначаемого системой или пользователем. | .NET Framework 4.6 и выше, .NET Core 2.1 и выше, .NET Standard 2.0 и выше | 2.1.0 и выше |
 
-<sup>1</sup> В версиях **Microsoft.Data.SqlClient** ниже 2.0.0, проверка подлинности `Active Directory Integrated` и `Active Directory Interactive` поддерживается только для .NET Framework 4.6 и выше. 
-
+<sup>1</sup> В версиях **Microsoft.Data.SqlClient** ниже 2.0.0 режимы проверки подлинности `Active Directory Integrated` и `Active Directory Interactive` поддерживаются только для .NET Framework 4.6 и выше.
 
 ## <a name="using-active-directory-password-authentication"></a>Использование проверки подлинности по паролю Active Directory
 
@@ -63,7 +61,7 @@ ms.locfileid: "96297951"
 
 ```c#
 // Use your own server, database, user ID, and password.
-string ConnectionString = @"Server=demo.database.windows.net; Authentication=Active Directory Password; Database=testdb; User Id=user@domain.com; Password=**_";
+string ConnectionString = @"Server=demo.database.windows.net; Authentication=Active Directory Password; Database=testdb; User Id=user@domain.com; Password=***";
 
 using (SqlConnection conn = new SqlConnection(ConnectionString)) {
     conn.Open();
@@ -100,7 +98,7 @@ using (SqlConnection conn = new SqlConnection(ConnectionString2)) {
 
 Проверка подлинности `Active Directory Interactive` поддерживает технологию многофакторной проверки подлинности для подключения к источникам данных Azure SQL. Если в строке подключения указан этот режим проверки подлинности, отобразится экран проверки подлинности Azure, где пользователю будет предложено ввести допустимые учетные данные. Вы не сможете указать пароль в строке подключения. 
 
-В этом режиме нельзя задать свойство `Credential` для SqlConnection. При использовании _ *Microsoft.Data.SqlClient** версии 2.0.0 и выше в интерактивном режиме можно указывать имя пользователя в строке подключения. 
+В этом режиме нельзя задать свойство `Credential` для SqlConnection. При использовании **Microsoft.Data.SqlClient** версии 2.0.0 и выше в интерактивном режиме можно указывать имя пользователя в строке подключения. 
 
 Следующий пример демонстрирует применение проверки подлинности `Active Directory Interactive`.
 
@@ -161,9 +159,9 @@ using (SqlConnection conn = new SqlConnection(ConnectionString)) {
 
 ## <a name="using-active-directory-managed-identity-authentication"></a>Использование проверки подлинности Active Directory с управляемым удостоверением
 
-*Управляемые удостоверения* для ресурсов Azure — это новое название Управляемого удостоверения службы (MSI). Когда клиентское приложение использует ресурс Azure для обращения к службе Azure, которая поддерживает проверку подлинности Azure AD, вы можете использовать для проверки подлинности управляемые удостоверения, предоставив удостоверение для ресурса Azure в Azure AD. Предоставленное удостоверение можно использовать для получения маркеров доступа. При этом управлять учетными данными и секретами не нужно. 
+*Управляемые удостоверения* для ресурсов Azure — это новое название службы "Управляемое удостоверение службы" (MSI). Когда клиентское приложение использует ресурс Azure для обращения к службе Azure, которая поддерживает проверку подлинности Azure AD, вы можете использовать для проверки подлинности управляемые удостоверения, предоставив удостоверение для ресурса Azure в Azure AD. Предоставленное удостоверение можно использовать для получения маркеров доступа. При таком способе проверки подлинности управлять учетными данными и секретами не нужно.
 
-Существует два типа управляемых удостоверений. 
+Существует два типа управляемых удостоверений.
 
 - _Назначаемое системой управляемое удостоверение_ создается в экземпляре службы в Azure AD. Оно привязано к жизненному циклу этого экземпляра службы. 
 - _Назначаемое пользователем управляемое удостоверение_ создается как изолированный ресурс Azure. Его можно назначить одному или нескольким экземплярам службы Azure. 

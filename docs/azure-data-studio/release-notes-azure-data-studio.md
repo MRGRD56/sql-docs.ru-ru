@@ -8,17 +8,30 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 2/10/2021
-ms.openlocfilehash: 17cc8ef3252ad39c344de7a7c51a9af80c1f6030
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.date: 2/18/2021
+ms.openlocfilehash: c666ae644200c1b2beefb7f73c8a819294831985
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100343407"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101836031"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Заметки о выпуске для Azure Data Studio
 
 **[Скачайте и установите последний выпуск.](./download-azure-data-studio.md)**
+
+## <a name="february-2021"></a>Февраль 2021 года
+
+18 февраля 2021 г. &nbsp; / &nbsp; версия: 1.26.0
+
+&nbsp;
+
+| Change | Сведения |
+| ------ | ------- |
+| Исправления ошибок | Полный список исправлений см. на странице [ошибок и проблем в GitHub](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22February+2021+Release%22+is%3Aclosed). |
+| Обновление расширений | [Dacpac](extensions/sql-server-dacpac-extension.md) <br/> [Kusto (KQL)](extensions/kusto-extension.md) </br> [Машинное обучение](extensions/machine-learning-extension.md) </br> [Profiler](extensions/sql-server-profiler-extension.md) </br> [SchemaCompare](extensions/schema-compare-extension.md) </br> [SQLDatabaseProjects](extensions/sql-database-project-extension.md) |
+| Новые функции Azure Arc | Поддерживается несколько контроллеров данных. <br/> Добавлены новые параметры диалогового окна подключения, такие как возможность указать файл kube config. <br/> Улучшена панель мониторинга Postgres. |
+| Новые функции Notebook | Уменьшено время запуска сервера Jupyter в Windows на 50 %. <br/> Добавлена поддержка редактирования книг Jupyter с помощью контекстного меню. <br/> Поддерживается параметризация записной книжки по URI и [добавлена документация по параметризации записной книжки](https://docs.microsoft.com/sql/azure-data-studio/notebooks/notebooks-parameterization). |
 
 ## <a name="december-2020-hotfix"></a>Декабрь 2020 г. (исправление)
 

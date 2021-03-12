@@ -10,39 +10,42 @@ ms.topic: conceptual
 ms.reviewer: ''
 ms.author: v-daenge
 author: David-Engel
-ms.openlocfilehash: f407cae7fe7d53a7522e64f0bb26961ebeb4276f
-ms.sourcegitcommit: 8ffc23126609b1cbe2f6820f9a823c5850205372
+ms.openlocfilehash: c49d81783f82c41cd95e25b137807b006e5b2ad1
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81632094"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464711"
 ---
-# <a name="using-always-encrypted-with-secure-enclaves-with-the-php-drivers-for-sql-server"></a>Использование функции Always Encrypted с безопасными анклавами и драйверами PHP для SQL Server
+# <a name="using-always-encrypted-with-secure-enclaves-with-the-php-drivers-for-sql-server"></a>Использование функции Always Encrypted с безопасными анклавами и драйверами PHP для SQL Server
+
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
 
 ## <a name="applicable-to"></a>Применимо к
- -   драйверам Майкрософт версии 5.8.0 для PHP для SQL Server
- 
+
+- драйверам Майкрософт версии 5.8.0 для PHP для SQL Server
+
 ## <a name="introduction"></a>Введение
 
-[Always Encrypted с безопасными анклавами](../../relational-databases/security/encryption/always-encrypted-enclaves.md) является второй итерацией функции Always Encrypted для SQL Server. Always Encrypted с безопасными анклавами позволяет выполнять сложные вычисления с зашифрованными данными путем создания безопасного анклава — области памяти на сервере, в которой зашифрованные данные в базе данных расшифровываются для выполнения вычислений. Поддерживаемые операции включают в себя сравнение и сопоставление шаблонов с использованием предложения `LIKE`.
+[Always Encrypted с безопасными анклавами](../../relational-databases/security/encryption/always-encrypted-enclaves.md) является второй итерацией функции Always Encrypted для SQL Server. Always Encrypted с безопасными анклавами позволяет выполнять сложные вычисления с зашифрованными данными путем создания безопасного анклава — области памяти на сервере, в которой зашифрованные данные в базе данных расшифровываются для выполнения вычислений. Поддерживаемые операции включают в себя сравнение и сопоставление шаблонов с использованием предложения `LIKE`.
 
 ## <a name="enabling-always-encrypted-with-secure-enclaves"></a>Включение Always Encrypted с безопасными анклавами
 
-Поддержка Always Encrypted с безопасными анклавами доступна в драйверах PHP для SQL Server, начиная с версии 5.8.0. Для Always Encrypted с безопасными анклавами требуется SQL Server 2019 или более поздней версии и версия драйвера ODBC 17.4+. Дополнительные сведения об общих требованиях к использованию Always Encrypted с драйверами PHP для SQL Server доступны [здесь](using-always-encrypted-php-drivers.md).
+Поддержка Always Encrypted с безопасными анклавами доступна в драйверах PHP для SQL Server начиная с версии 5.8.0. Для Always Encrypted с безопасными анклавами требуется SQL Server 2019 или более поздней версии и версия драйвера ODBC 17.4 и выше Дополнительные сведения об общих требованиях к использованию Always Encrypted с драйверами PHP для SQL Server доступны [здесь](using-always-encrypted-php-drivers.md).
 
-Always Encrypted с безопасными анклавами обеспечивает безопасность зашифрованных данных путем подтверждения анклава, то есть проверки анклава по отношению ко внешней службе аттестации. Чтобы использовать безопасные анклавы, ключевое слово `ColumnEncryption` должно обозначать тип аттестации и протокол вместе со связанными данными аттестации, разделенными запятыми. Версия 17.4 драйвера ODBC поддерживает только безопасность на основе виртуализации (VBS) и протокол службы защиты узла (HGS) для типа и протокола анклава. Связанные данные аттестации — это URL-адрес сервера аттестации. Таким образом, в строку подключения будет добавлено следующее:
+Always Encrypted с безопасными анклавами обеспечивает безопасность зашифрованных данных путем подтверждения анклава, то есть проверки анклава по отношению ко внешней службе аттестации. Чтобы использовать безопасные анклавы, ключевое слово `ColumnEncryption` должно обозначать тип аттестации и протокол вместе со связанными данными аттестации, разделенными запятыми. Версия 17.4 драйвера ODBC поддерживает только безопасность на основе виртуализации (VBS) и протокол службы защиты узла (HGS) для типа и протокола анклава. Связанные данные аттестации — это URL-адрес сервера аттестации. Таким образом, в строку подключения будет добавлен следующий параметр:
 
 ```
 ColumnEncryption=VBS-HGS,http://attestationserver.mydomain/Attestation
 ```
+
 Если протокол неверен, драйвер не сможет его распознать, произойдет сбой подключения и будет возвращена ошибка. Если неверен только URL-адрес аттестации, подключение будет установлено, а при попытке вычисления с поддержкой анклава возникнет ошибка. В противном случае поведение будет идентично исходному поведению функции Always Encrypted. Если для параметра `ColumnEncryption` выбрать значение `enabled`, будут реализованы обычные функции Always Encrypted, но при попытке выполнения операции с поддержкой анклава вернется ошибка.
 
 Подробные сведения о настройке среды для поддержки функции Always Encrypted с безопасными анклавами, включая настройку службы защиты узла и создание необходимых ключей шифрования, можно найти [здесь](../../relational-databases/security/encryption/configure-always-encrypted-enclaves.md).
 
 ## <a name="examples"></a>Примеры
 
-Следующие примеры, один для SQLSRV и один для PDO_SQLSRV, создают таблицу с несколькими типами данных с открытым текстом, затем шифруют ее и выполняют сравнение и сопоставление шаблонов. Следует отметить следующее.
+Следующие примеры, один для SQLSRV и один для PDO_SQLSRV, создают таблицу с несколькими типами данных с открытым текстом, затем шифруют ее и выполняют сравнение и сопоставление шаблонов. Обратите внимание на следующие сведения:
 
 - При шифровании таблицы с использованием `ALTER TABLE` можно зашифровать только один столбец для каждого вызова `ALTER TABLE`, поэтому для шифрования нескольких столбцов требуется несколько вызовов.
 - При передаче порогового значения сравнения в качестве параметра для типов char и nchar ширина столбца должна быть указана в соответствующем параметре `SQLSRV_SQLTYPE_*` или будет возвращена ошибка `HY104`, `Invalid precision value`.
@@ -50,9 +53,10 @@ ColumnEncryption=VBS-HGS,http://attestationserver.mydomain/Attestation
 - При передаче строки сопоставления шаблонов в качестве параметра для совпадающих типов char и nchar константа `SQLSRV_SQLTYPE_*`, переданная в `sqlsrv_query` или `sqlsrv_prepare`, должна указывать длину строки для сопоставления, а не размер столбца, так как типы char и nchar добавляют пробелы в конце строки. Например, при сопоставлении строки `%abc%` со столбцом типа char(10) укажите `SQLSRV_SQLTYPE_CHAR(5)`. Если вместо этого указать `SQLSRV_SQLTYPE_CHAR(10)`, запрос будет сопоставлять `%abc%     ` (с добавленными пятью пробелами), а все данные в столбце, содержащие менее пяти пробелов, не будут совпадать (поэтому `abcdef` не будет соответствовать `%abc%`, так как в нем есть четыре пробела). Чтобы получить количество символов в строках Юникода, используйте функции `mb_strlen` или `iconv_strlen`.
 - Интерфейс PDO не позволяет указывать длину параметра. Вместо этого укажите длину 0 или `null` в `PDOStatement::bindParam`. Если для длины явно задано другое число, параметр рассматривается как выходной параметр.
 - Сопоставление шаблонов в Always Encrypted не работает с нестроковыми типами.
-- Для ясности проверка ошибок исключена. 
+- Для ясности проверка ошибок исключена.
 
-Ниже приведены общие данные для обоих примеров.
+В обоих примерах используются следующие общие данные:
+
 ```php
 <?php
 // Data for testing - integer, datetime2, char, nchar, varchar, and nvarchar
@@ -101,7 +105,9 @@ $encryptQuery = " ALTER TABLE $myTable
                   ALTER DATABASE SCOPED CONFIGURATION CLEAR PROCEDURE_CACHE;";
 ?>
 ```
+
 ### <a name="sqlsrv"></a>SQLSRV
+
 ```php
 <?php
 // Specify Azure Key Vault credentials using the KeyStoreAuthentication, KeyStorePrincipalId, and KeyStoreSecret keywords
@@ -235,6 +241,7 @@ function getResults($stmt)
 ```
 
 ### <a name="pdo_sqlsrv"></a>PDO_SQLSRV
+
 ```php
 <?php
 // Specify Azure Key Vault credentials using the KeyStoreAuthentication, KeyStorePrincipalId, and KeyStoreSecret keywords
@@ -361,7 +368,9 @@ function getResults($stmt)
 }
 ?>
 ```
+
 Выходные данные:
+
 ```
 Test comparisons:
 1
@@ -390,9 +399,10 @@ zyxwv
 㬚㔈♠既
 㛜ꆶ㕸㔈♠既ꁺꖁ㓫ޘ갧ᛄ
 ```
-## <a name="see-also"></a>См. также:  
+
+## <a name="see-also"></a>См. также:
+
 [Руководство по программированию для драйвера SQL PHP](programming-guide-for-php-sql-driver.md)  
 [Справочник по API для драйвера SQLSRV](sqlsrv-driver-api-reference.md)  
 [Справочник по API драйвера PDO_SQLSRV](pdo-sqlsrv-driver-reference.md)  
 [Использование функции Always Encrypted с драйверами PHP для SQL Server](using-always-encrypted-php-drivers.md)
-  

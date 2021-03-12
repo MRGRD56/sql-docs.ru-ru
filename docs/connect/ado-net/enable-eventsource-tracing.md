@@ -10,13 +10,13 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: johnnypham
 ms.author: v-jopha
-ms.reviewer: ''
-ms.openlocfilehash: 1bcf11727a5ccd640846788b936ff5fefe9c63a3
-ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
+ms.reviewer: v-daenge
+ms.openlocfilehash: c13942dc5633deec4759ebd4c8a5661654c0952b
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98595678"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837091"
 ---
 # <a name="enable-event-tracing-in-sqlclient"></a>Включение трассировки событий в SqlClient
 
@@ -50,6 +50,7 @@ Microsoft.Data.SqlClient.EventSource
 |||
 
 ## <a name="example"></a>Пример
+
 В следующем примере включается трассировка событий для операции с данными в образце базы данных **AdventureWorks** и отображаются события в окне консоли.
 
 [!code-csharp [SqlClientEventSource#1](~/../sqlclient/doc/samples/SqlClientEventSource.cs#1)]
@@ -112,7 +113,7 @@ class Program
    ```
    xperf -start trace -f myTrace.etl -on *Microsoft.Data.SqlClient.EventSource
    ```
-   
+
 2. Запустите собственный пример трассировки SNI и подключитесь к SQL Server.
 
 3. Остановите трассировку с помощью следующей командной строки.
@@ -120,8 +121,8 @@ class Program
    ```
    xperf -stop trace
    ```
-   
-4. С помощью PerfView откройте файл myTrace.etl, указанный на шаге 1. Журнал трассировки SNI можно найти с помощью имен событий `Microsoft.Data.SqlClient.EventSource/SNIScope` и `Microsoft.Data.SqlClient.EventSource/SNITrace`. 
+
+4. С помощью PerfView откройте файл myTrace.etl, указанный на шаге 1. Журнал трассировки SNI можно найти с помощью имен событий `Microsoft.Data.SqlClient.EventSource/SNIScope` и `Microsoft.Data.SqlClient.EventSource/SNITrace`.
 
    ![Использование PerfView для просмотра файла трассировки SNI](media/view-event-trace-native-sni.png)
 
@@ -133,20 +134,20 @@ class Program
 2. Настройте имя файла трассировки, путь вывода и имя поставщика.
 
    ![Настройка PerfView перед началом сбора журналов](media/collect-event-trace-native-sni.png)
-   
+
 3. Запустите коллекцию.
 
 4. Запустите собственный пример трассировки SNI и подключитесь к SQL Server.
 
 5. Остановите сбор в PerfView. Создание файла PerfViewData.etl с конфигурацией, настроенной на шаге 2, займет некоторое время.
 
-6. Откройте ETL-файл в PerfView. Журнал трассировки SNI можно найти с помощью имен событий `Microsoft.Data.SqlClient.EventSource/SNIScope` и `Microsoft.Data.SqlClient.EventSource/SNITrace`. 
-
+6. Откройте файл `etl` в PerfView. Журнал трассировки SNI можно найти с помощью имен событий `Microsoft.Data.SqlClient.EventSource/SNIScope` и `Microsoft.Data.SqlClient.EventSource/SNITrace`.
 
 ## <a name="external-resources"></a>Внешние ресурсы  
+
 Для получения дополнительных сведений см. следующие ресурсы.  
   
 |Ресурс|Описание|  
 |--------------|-----------------|  
-|[EventSource](/dotnet/api/system.diagnostics.tracing.eventsource)|Предоставляет возможность создания событий ETW.| 
+|[EventSource](/dotnet/api/system.diagnostics.tracing.eventsource)|Используется для создания событий ETW.|
 |[Класс EventListener](/dotnet/api/system.diagnostics.tracing.eventlistener)|Предоставляет методы для включения и отключения событий из источников событий.|

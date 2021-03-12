@@ -27,14 +27,14 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: v-daenge
 ms.custom: seo-lt-2019
-ms.date: 09/11/2020
+ms.date: 02/24/2021
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: 87aa8b901c24839aa23b75a318b7a47e3d52f40e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: c74a2f03c36449bc597d699edb008206c76d7448
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349977"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101839056"
 ---
 # <a name="bcp-utility"></a>Программа bcp
 
@@ -219,8 +219,8 @@ bcp [<a href="#db_name">database_name.</a>] <a href="#schema">schema</a>.{<a hre
  Клиент использует этот переключатель при подключении к базе данных SQL Azure или Azure Synapse Analytics, чтобы указать, что проверка подлинности пользователя выполняется с помощью Azure Active Directory. Для использования аргумента -G требуется [версия 14.0.3008.27 или выше](https://go.microsoft.com/fwlink/?LinkID=825643). Чтобы определить версию, выполните команду bcp -v. Дополнительные сведения см. в статье [Использование проверки подлинности Azure Active Directory для базы данных SQL или Azure Synapse Analytics](/azure/sql-database/sql-database-aad-authentication). 
 
 > [!IMPORTANT]
-> Параметр **-G** применяется только для базы данных SQL Azure и хранилища данных Azure.
-> Встроенная и интерактивная проверка подлинности AAD в настоящее время не поддерживается в Linux и macOS.
+> Параметр **-G** применяется только для Базы данных SQL Azure и Azure Synapse Analytics.
+> Интерактивная проверка подлинности AAD в Linux и macOS в настоящее время не поддерживается. Для встроенной проверки подлинности AAD требуется [драйвер Microsoft ODBC 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) версии 17.6.1 или более поздней, а также [правильно настроенная среда Kerberos](../connect/odbc/linux-mac/using-integrated-authentication.md#configure-kerberos).
 
 > [!TIP]
 > Чтобы проверить, поддерживает ли ваша версия программы bcp проверку подлинности Azure Active Directory (AAD), введите **bcp --** (bcp\<space>\<dash>\<dash>) и убедитесь, что в списке доступных аргументов отображается -G.

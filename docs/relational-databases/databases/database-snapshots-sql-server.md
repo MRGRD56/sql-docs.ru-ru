@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 00179314-f23e-47cb-a35c-da6f180f86d3
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: fdf81fde342a3c7f0e250d467e7b486d753a8588
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: c6ed1f27444b86ba79fd6c3178bc0029624b05d2
+ms.sourcegitcommit: ece104654ac14e10d32e59f45916fa944665f4df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85630822"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102474898"
 ---
 # <a name="database-snapshots-sql-server"></a>Моментальные снимки базы данных (SQL Server)
 
@@ -137,7 +137,7 @@ ms.locfileid: "85630822"
   
 -   База данных-источник не может быть настроена в качестве масштабируемой общей базы данных.  
 
--   База данных-источник не должна содержать файловую группу MEMORY_OPTIMIZED_DATA.  Дополнительные сведения см. в разделе [Неподдерживаемые функции SQL Server для выполняющейся в памяти OLTP](../../relational-databases/in-memory-oltp/unsupported-sql-server-features-for-in-memory-oltp.md).
+-   До выпуска SQL Server 2019 база данных-источник не могла содержать файловую группу MEMORY_OPTIMIZED_DATA. Поддержка моментальных снимков базы данных в памяти была добавлена в SQL Server 2019.
   
 > [!NOTE]  
 >  Все модели восстановления поддерживают моментальные снимки базы данных.  
@@ -167,7 +167,7 @@ ms.locfileid: "85630822"
   
 -   Моментальные снимки доступны только для чтения. Так как они доступны только для чтения, они не могут быть обновлены. Таким образом, моментальные снимки базы данных не будут работоспособны после обновления.  
   
--   Создание моментальных снимков баз данных **model**, **master**и **tempdb** запрещено.  
+-   Создание моментальных снимков баз данных **model**, **master** и **tempdb** запрещено.  
   
 -   Нельзя изменять любые из характеристик файлов моментального снимка базы данных.  
   

@@ -2,7 +2,7 @@
 description: MERGE (Transact-SQL)
 title: MERGE (Transact-SQL) | Документы Майкрософт
 ms.custom: ''
-ms.date: 08/20/2019
+ms.date: 02/27/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse
 ms.reviewer: ''
@@ -26,12 +26,12 @@ ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: XiaoyuMSFT
 ms.author: XiaoyuL
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||  azure-sqldw-latest
-ms.openlocfilehash: 6bb1014c22353826b6e4429726d4d28549cc274a
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: c7b388649cf7ca535d5d81eb2d05cf4f0a27d373
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489338"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101838969"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 
@@ -238,16 +238,84 @@ DEFAULT VALUES
 >[!NOTE]
 > В Azure Synapse Analytics команда MERGE (предварительная версия) отличается от команд SQL Server и базы данных SQL Azure следующим образом.  
 > - Обновление при использовании команды MERGE реализуется как пара операций удаления и вставки. Количество затронутых строк при таком обновлении включает удаленные и вставленные строки. 
-
 > - Во период действия предварительной версии столбцы IDENTITY не поддерживают MERGE…WHEN NOT MATCHED INSERT.  
-
 > - В следующей таблице описываются поддерживаемые таблицы с разными типами распределения:
-
+>
 >|MERGE CLAUSE в Azure Synapse Analytics|Поддерживаемая таблица распределения TARGET| Поддерживаемая таблица распределения SOURCE|Комментировать|  
 >|-----------------|---------------|-----------------|-----------|  
 >|**WHEN MATCHED**| Все типы распределения |Все типы распределения||  
 >|**NOT MATCHED BY TARGET**|HASH |Все типы распределения|Используйте UPDATE/DELETE FROM…JOIN для синхронизации двух таблиц. |
 >|**NOT MATCHED BY SOURCE**|Все типы распределения|Все типы распределения|||  
+
+>[!IMPORTANT]
+> Команда MERGE в Azure Synapse Analytics доступна в предварительной версии. В определенных условиях при ее выполнении целевая таблица может оказаться в несогласованном состоянии со строками в неправильном распределении, что в некоторых случаях может привести к неправильным ответам на запросы в дальнейшем. Эта проблема может возникнуть при выполнении следующих двух условий:
+>
+> - Инструкция MERGE T-SQL была выполнена для хэш-распределенной целевой таблицы в базе данных SQL Azure Synapse.
+> - Целевая таблица, для которой выполнялась команда, имеет вторичные индексы или ограничения UNIQUE.
+>
+> Пока не появится исправление, старайтесь не использовать команду MERGE для хэш-распределенных целевых таблиц, имеющих вторичные индексы или ограничения UNIQUE.  Поддержка команды MERGE также может быть временно отключена в базах данных с хэш-распределенными таблицами, имеющими ограничения UNIQUE или вторичные индексы.      
+>
+> Важное напоминание: функции в предварительной версии предназначены только для тестирования и не должны использоваться в рабочих экземплярах или для рабочих данных. Кроме того, сохраните копию тестовых данных, если эти данные важны.
+> 
+> Чтобы проверить, какие хэш-распределенные таблицы в базе данных не могут работать с этой командой из-за вызываемой ею проблемы, выполните следующую инструкцию.
+>```sql
+> select a.name, c.distribution_policy_desc, b.type from sys.tables a join sys.indexes b
+> on a.object_id = b.object_id
+> join
+> sys.pdw_table_distribution_properties c
+> on a.object_id = c.object_id
+> where b.type = 2 and c.distribution_policy_desc = 'HASH'
+> ```
+> 
+> Чтобы проверить, затрагивает ли хэш-распределенную целевую таблицу эта проблема с MERGE, выполните следующие действия для проверки того, попадают ли строки в неправильное распределение.  Если вы получили результат "no need for repair" (исправление не требуется), значит проблема не влияет на таблицу.  
+>
+>```sql
+> if object_id('[check_table_1]', 'U') is not null
+> drop table [check_table_1]
+> go
+> if object_id('[check_table_2]', 'U') is not null
+> drop table [check_table_2]
+> go
+>
+> create table [check_table_1] with(distribution = round_robin) as
+> select <DISTRIBUTION_COLUMN> as x from <MERGE_TARGET_TABLE> group by <DISTRIBUTION_COLUMN>;
+> go
+>
+> create table [check_table_2] with(distribution = hash(x)) as
+> select x from [check_table_1];
+>go
+>
+> if not exists(select top 1 * from (select <DISTRIBUTION_COLUMN> as x from <MERGE_TARGET_TABLE> except select x from 
+> [check_table_2]) as tmp)
+> select 'no need for repair' as result
+> else select 'needs repair' as result
+> go
+>
+> if object_id('[check_table_1]', 'U') is not null
+> drop table [check_table_1]
+> go
+> if object_id('[check_table_2]', 'U') is not null
+> drop table [check_table_2]
+> go
+>```
+>Для восстановления затронутых проблемой таблиц выполните эти инструкции, чтобы скопировать все строки из старой таблицы в новую.
+>```sql
+> if object_id('[repair_table_temp]', 'U') is not null
+> drop table [repair_table_temp];
+> go
+> if object_id('[repair_table]', 'U') is not null
+> drop table [repair_table];
+> go
+> create table [repair_table_temp] with(distribution = round_robin) as select * from <MERGE_TARGET_TABLE>;
+> go
+>
+> -- [repair_table] will hold the repaired table generated from <MERGE_TARGET_TABLE>
+> create table [repair_table] with(distribution = hash(<DISTRIBUTION_COLUMN>)) as select * from [repair_table_temp];
+> go
+>if object_id('[repair_table_temp]', 'U') is not null
+> drop table [repair_table_temp];
+> go
+> ```   
 
 Должно быть указано по крайней мере одно из трех предложений MATCHED, но они могут быть указаны в любом порядке. В одном предложении MATCHED переменная не может быть обновлена больше одного раза.  
   

@@ -2,7 +2,7 @@
 title: Использование JDBC Driver | Документация Майкрософт
 description: В этом разделе приводятся краткие указания по установлению простого соединения с базой данных SQL Server с использованием драйвера Microsoft JDBC Driver for SQL Server.
 ms.custom: ''
-ms.date: 01/29/2021
+ms.date: 02/26/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 6faaf05b-8b70-4ed2-9b44-eee5897f1cd0
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 6b3550536a3512315d511efc831adc27b35ec974
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: e74135523d2ba4cbde27e588eee999b3450def37
+ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99195259"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101837522"
 ---
 # <a name="using-the-jdbc-driver"></a>Использование JDBC Driver
 
@@ -28,7 +28,7 @@ ms.locfileid: "99195259"
 
 Microsoft JDBC Driver обеспечивает различные Jar-файлы, которые можно использовать в соответствии с предпочитаемыми параметрами среды выполнения Java (JRE), как указано ниже.
 
-Microsoft JDBC Driver 9.2 для SQL Server содержит следующие файлы библиотеки классов: **mssql-jdbc-9.2.0.jre8.jar**, **mssql-jdbc-9.2.0.jre11.jar** и **mssql-jdbc-9.2.0.jre15.jar**.
+Microsoft JDBC Driver 9.2 для SQL Server содержит следующие файлы библиотеки классов: **mssql-jdbc-9.2.1.jre8.jar**, **mssql-jdbc-9.2.1.jre11.jar** и **mssql-jdbc-9.2.1.jre15.jar**.
 
 Microsoft JDBC Driver 8.4 для SQL Server содержит следующие файлы библиотеки классов: **mssql-jdbc-8.4.1.jre8.jar**, **mssql-jdbc-8.4.1.jre11.jar** и **mssql-jdbc-8.4.1.jre14.jar**.
 
@@ -70,31 +70,31 @@ JAR-файлы Microsoft JDBC Driver не являются частью Java SDK
 
 Если используется JDBC Driver 8.4, настройте путь к классу, чтобы включить следующие файлы: **mssql-jdbc-8.4.1.jre8.jar**, **mssql-jdbc-8.4.1.jre11.jar** или **mssql-jdbc-8.4.1.jre14.jar**.
 
-Если используется JDBC Driver 9.2, настройте путь к классу, чтобы включить следующие файлы: **mssql-jdbc-9.2.0.jre8.jar**, **mssql-jdbc-9.2.0.jre11.jar** или **mssql-jdbc-9.2.0.jre15.jar**.
+Если используется JDBC Driver 9.2, настройте путь к классу, чтобы включить следующие файлы: **mssql-jdbc-9.2.1.jre8.jar**, **mssql-jdbc-9.2.1.jre11.jar** или **mssql-jdbc-9.2.1.jre15.jar**.
 
 Если в пути к классу отсутствует запись для правильного Jar-файла, приложение выдает общее исключение `Class not found`.  
 
 ### <a name="for-microsoft-jdbc-driver-92"></a>Для Microsoft JDBC Driver 9.2
 
-Файлы **mssql-jdbc-9.2.0.jre8.jar**, **mssql-jdbc-9.2.0.jre11.jar** или **mssql-jdbc-9.2.0.jre15.jar** установлены в следующих расположениях:
+Файлы **mssql-jdbc-9.2.1.jre8.jar**, **mssql-jdbc-9.2.1.jre11.jar** или **mssql-jdbc-9.2.1.jre15.jar** установлены в следующих расположениях:
 
 ```bash
-\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.0.jre8.jar
+\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.1.jre8.jar
 
-\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.0.jre11.jar
+\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.1.jre11.jar
 
-\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.0.jre15.jar
+\<installation directory>\sqljdbc_<version>\<language>\mssql-jdbc-9.2.1.jre15.jar
 ```
 
 В следующем фрагменте кода дан пример инструкции CLASSPATH, используемой для приложения Windows:
 
-`CLASSPATH =.;C:\Program Files\Microsoft JDBC Driver 9.2 for SQL Server\sqljdbc_9.2\enu\mssql-jdbc-9.2.0.jre11.jar`
+`CLASSPATH =.;C:\Program Files\Microsoft JDBC Driver 9.2 for SQL Server\sqljdbc_9.2\enu\mssql-jdbc-9.2.1.jre11.jar`
 
 В следующем фрагменте кода дан пример инструкции CLASSPATH, используемой для приложения Unix/Linux:
 
-`CLASSPATH =.:/home/usr1/mssqlserverjdbc/Driver/sqljdbc_9.2/enu/mssql-jdbc-9.2.0.jre11.jar`
+`CLASSPATH =.:/home/usr1/mssqlserverjdbc/Driver/sqljdbc_9.2/enu/mssql-jdbc-9.2.1.jre11.jar`
 
-Убедитесь в том, что в инструкции CLASSPATH содержится только один драйвер [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)], то есть **mssql-jdbc-9.2.0.jre8.jar**, **mssql-jdbc-9.2.0.jre11.jar** или **mssql-jdbc-9.2.0.jre15.jar**.
+Убедитесь в том, что в инструкции CLASSPATH содержится только один драйвер [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)], то есть **mssql-jdbc-9.2.1.jre8.jar**, **mssql-jdbc-9.2.1.jre11.jar** или **mssql-jdbc-9.2.1.jre15.jar**.
 
 
 ### <a name="for-microsoft-jdbc-driver-84"></a>Для Microsoft JDBC Driver 8.4
@@ -287,7 +287,7 @@ JAR-файлы Microsoft JDBC Driver не являются частью Java SDK
   
 ### <a name="enterprise-java-beans"></a>Enterprise Java Beans  
 
-Компоненты Enterprise Java Beans (EJB) выполняются в контейнере EJB. Контейнеры EJB предоставляются различными поставщиками. Java-приложения работают в браузере, но загружаются с веб-сервера. Скопируйте sqljdbc.jar, sqljdbc4.jar или sqljdbc41.jar в корень веб-сервера и укажите имя JAR-файла в параметре "archive" HTML-тега "applet", например: `<applet ... archive=mssql-jdbc-**_.jar>`.  
+Компоненты Enterprise Java Beans (EJB) выполняются в контейнере EJB. Контейнеры EJB предоставляются различными поставщиками. Java-приложения работают в браузере, но загружаются с веб-сервера. Скопируйте sqljdbc.jar, sqljdbc4.jar или sqljdbc41.jar в корень веб-сервера и укажите имя JAR-файла в параметре "archive" HTML-тега "applet", например: `<applet ... archive=mssql-jdbc-***.jar>`.  
   
 ## <a name="making-a-simple-connection-to-a-database"></a>Установление простого подключения к базе данных
 
@@ -299,7 +299,7 @@ JAR-файлы Microsoft JDBC Driver не являются частью Java SDK
 
 ```java
 String connectionUrl = "jdbc:sqlserver://localhost:1433;" +  
-   "databaseName=AdventureWorks;user=MyUserName;password=_****;";  
+   "databaseName=AdventureWorks;user=MyUserName;password=*****;";  
 Connection con = DriverManager.getConnection(connectionUrl);  
 ```
 

@@ -18,12 +18,12 @@ ms.author: vanto
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 06/10/2020
-ms.openlocfilehash: 95bfeb321f43fb860bbbeecb32ac18ec221e5067
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 86513345502531da670b870b5ecf70de9270f18f
+ms.sourcegitcommit: ece104654ac14e10d32e59f45916fa944665f4df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99194689"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102474908"
 ---
 # <a name="add-signature-transact-sql"></a>ADD SIGNATURE (Transact-SQL)
 
@@ -83,7 +83,7 @@ ADD [ COUNTER ] SIGNATURE TO module_class::module_name
 > [!CAUTION]
 > Подписывание модуля следует использовать только для предоставления разрешений, но не для их запрещения или отмены.  
   
- Триггеры языка описания данных (DDL) и встроенные функции с табличным значением нельзя подписывать.  
+ Триггеры языка описания данных (DDL) и встроенные функции с табличным значением подписывать нельзя.  
   
  Сведения о подписях содержатся в представлении каталога sys.crypt_properties.  
   
@@ -93,15 +93,15 @@ ADD [ COUNTER ] SIGNATURE TO module_class::module_name
 ## <a name="countersignatures"></a>Скрепляющая подпись  
  Во время выполнения модуля с обычной подписью эта подпись временно добавляется в токен SQL, но, если этот модуль выполняет другой модуль или выполнение модуля прерывается, подпись теряется. Скрепляющая подпись — это особая форма подписи. Сама по себе скрепляющая подпись не предоставляет никаких разрешений, но позволяет сохранить подписи, поставленные тем же самым сертификатом или асимметричным ключом, на все время вызова объекта, на котором стоит скрепляющая подпись.  
   
- Предположим, что Алиса вызывает процедуру ProcSelectT1ForAlice, которая вызывает процедуру procSelectT1, выбирающую данные из таблицы T1. У Алисы есть разрешение EXECUTE на процедуры ProcSelectT1ForAlice и procSelectT1, но нет разрешения SELECT на таблицу T1 и во всей этой цепочке нет никаких цепочек владения. Алиса не имеет доступа к таблице T1 — ни прямого, ни с помощью процедур ProcSelectT1ForAlice и procSelectT1. Поскольку мы хотим, чтобы Алиса всегда использовала для обращения к таблице процедуру ProcSelectT1ForAlice, мы не хотим предоставлять ей разрешение на выполнение процедуры procSelectT1. Что делать в этом случае?  
+ Предположим, что Алиса вызывает процедуру ProcForAlice, которая вызывает ProcSelectT1, выбирающую данные из таблицы T1. У Алисы есть разрешение EXECUTE на процедуры ProcForAlice и ProcSelectT1, но нет разрешения SELECT на таблицу T1, и во всей этой цепочке нет никаких цепочек владения. Алиса не имеет доступа к таблице T1 — ни прямого, ни с помощью процедур ProcForAlice и ProcSelectT1. Поскольку мы хотим, чтобы Алиса всегда использовала для обращения к таблице процедуру ProcForAlice, мы не хотим предоставлять ей разрешение на выполнение процедуры ProcSelectT1. Что делать в этом случае?  
   
--   Если подписать процедуру procSelectT1 так, чтобы процедура procSelectT1 имела доступ к таблице T1, Алиса сможет прямо вызывать процедуру procSelectT1 и ей не нужно будет вызывать процедуру ProcSelectT1ForAlice.  
+-   Если подписать процедуру ProcSelectT1 так, чтобы она имела доступ к таблице T1, Алиса сможет напрямую вызывать процедуру ProcSelectT1 и ей не нужно будет вызывать процедуру ProcForAlice.  
   
--   Можно не давать Алисе разрешения EXECUTE на процедуру procSelectT1, но в этом случае Алиса не сможет вызывать процедуру procSelectT1 через процедуру ProcSelectT1ForAlice.
+-   Можно не давать Алисе разрешения EXECUTE на процедуру ProcSelectT1, но в этом случае Алиса не сможет вызывать процедуру ProcSelectT1 через процедуру ProcForAlice.
   
--   Подписание процедуры ProcSelectT1ForAlice также не будет работать само по себе, так как подпись будет потеряна при вызове процедуры procSelectT1.  
+-   Подписание процедуры ProcForAlice также не будет работать само по себе, так как подпись будет потеряна при вызове процедуры ProcSelectT1.  
   
-Однако скрепляющая подпись на procSelectT1, сделанная тем же сертификатом, который поставил подпись на процедуре ProcSelectT1ForAlice, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] сохранит подпись по всей цепочке вызова и обеспечит доступ к T1. Если Алиса захочет прямо обратиться к процедуре procSelectT1, она не сможет это сделать, так как скрепляющая подпись не предоставляет никаких прав. В приведенном ниже примере В показан код [!INCLUDE[tsql](../../includes/tsql-md.md)] для этого примера.  
+Однако при добавлении подписи другой стороны к ProcSelectT1 с помощью того же сертификата, который использовался для подписывания процедуры ProcForAlice, подпись [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] будет сохранена по всей цепочке вызова и обеспечит доступ к таблице T1. Если Алиса захочет напрямую вызвать процедуру ProcSelectT1, она не сможет получить доступ к таблице T1, так как подпись другой стороны не предоставляет никаких прав. В приведенном ниже примере В показан код [!INCLUDE[tsql](../../includes/tsql-md.md)] для этого примера.  
   
 ## <a name="permissions"></a>Разрешения  
 
@@ -211,42 +211,42 @@ BEGIN
     SELECT * FROM T1;  
 END;  
 GO  
-GRANT EXECUTE ON procSelectT1 to public;  
+GRANT EXECUTE ON ProcSelectT1 to public;  
   
 -- Create special procedure for accessing T1  
-CREATE PROCEDURE  procSelectT1ForAlice AS  
+CREATE PROCEDURE  ProcForAlice AS  
 BEGIN  
    IF USER_ID() <> USER_ID('Alice')  
     BEGIN  
         PRINT 'Only Alice can use this.';  
         RETURN  
     END  
-   EXEC procSelectT1;  
+   EXEC ProcSelectT1;  
 END;  
 GO;  
-GRANT EXECUTE ON procSelectT1ForAlice TO PUBLIC;  
+GRANT EXECUTE ON ProcForAlice TO PUBLIC;  
   
 -- Verify procedure works for a sysadmin user  
-EXEC procSelectT1ForAlice;  
+EXEC ProcForAlice;  
   
 -- Alice still can't use the procedure yet  
 EXECUTE AS LOGIN = 'Alice';  
-    EXEC procSelectT1ForAlice;  
+    EXEC ProcForAlice;  
 REVERT;  
   
 -- Sign procedure to grant it SELECT permission  
-ADD SIGNATURE TO procSelectT1ForAlice BY CERTIFICATE csSelectT   
+ADD SIGNATURE TO ProcForAlice BY CERTIFICATE csSelectT   
 WITH PASSWORD = 'SimplePwd01';  
   
--- Counter sign proc_select_t, to make this work  
-ADD COUNTER SIGNATURE TO procSelectT1 BY CERTIFICATE csSelectT   
+-- Counter sign ProcSelectT1, to make this work  
+ADD COUNTER SIGNATURE TO ProcSelectT1 BY CERTIFICATE csSelectT   
 WITH PASSWORD = 'SimplePwd01';  
   
 -- Now the proc works.   
--- Note that calling procSelectT1 directly still doesn't work  
+-- Note that calling ProcSelectT1 directly still doesn't work  
 EXECUTE AS LOGIN = 'Alice';  
-    EXEC procSelectT1ForAlice;  
-    EXEC procSelectT1;  
+    EXEC ProcForAlice;  
+    EXEC ProcSelectT1;  
 REVERT;  
   
 -- Cleanup  

@@ -2,7 +2,7 @@
 title: Руководство по установке SQL Server
 description: Указатель содержимого, которое поможет установить SQL Server и связанные компоненты с помощью мастера установки, командной строки или sysprep.
 ms.custom: ''
-ms.date: 11/14/2019
+ms.date: 03/05/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: install
@@ -15,12 +15,12 @@ ms.assetid: 0300e777-d56b-4d10-9c33-c9ebd2489ee5
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 8f123235f263abd05878e7be422c13fcf84825e8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 4e433c16ba070d59c963589c8bceec371238ca38
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353091"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464278"
 ---
 # <a name="sql-server-installation-guide"></a>Руководство по установке SQL Server
 
@@ -58,11 +58,11 @@ ms.locfileid: "100353091"
 Место, откуда можно скачать [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], зависит от выпуска.
 
 * **Выпуски Enterprise, Standard и Express SQL Server** предназначены для использования в рабочей среде. Чтобы получить установочный носитель с выпуском Enterprise или Standard, обратитесь к своему поставщику программного обеспечения. Сведения о приобретении и каталог партнеров Майкрософт можно найти на [странице лицензирования Майкрософт](https://www.microsoft.com/licensing/product-licensing/sql-server).
-* [Бесплатная версия — последняя](https://www.microsoft.com/sql-server/sql-server-downloads)
-* [Бесплатная версия — другие](https://www.microsoft.com/evalcenter/evaluate-sql-server)
+* Если у вас есть соглашение о корпоративном лицензировании, например [Соглашение Enterprise](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise), можно скачать программное обеспечение с сайта [Volume Licensing Service Center (VLSC)](https://www.microsoft.com/licensing/servicecenter/default.aspx).
+* [Бесплатная версия — последняя](https://www.microsoft.com/sql-server/sql-server-downloads).
+* [Бесплатная версия — другие](https://www.microsoft.com/evalcenter/evaluate-sql-server).
 
-
-Другие компоненты SQL Server можно найти здесь: 
+Другие компоненты SQL Server можно найти здесь:
 
 * [Все накопительные пакеты обновления](https://sqlserverbuilds.blogspot.com/)
 * [Службы SQL Server Reporting Services](https://www.microsoft.com/download/details.aspx?id=100122). 
