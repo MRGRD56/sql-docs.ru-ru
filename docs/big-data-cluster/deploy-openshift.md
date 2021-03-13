@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 92cca7d688f954fc8e832f4bc0e68f105c024202
-ms.sourcegitcommit: ece104654ac14e10d32e59f45916fa944665f4df
+ms.openlocfilehash: d78e229bcbf2a088d42431abdf02bec3f9e51eab
+ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102474888"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103231502"
 ---
 # <a name="deploy-big-data-clusters-2019-on-openshift-on-premises-and-azure-red-hat-openshift"></a>Развертывание [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] в локальной среде OpenShift и Azure Red Hat OpenShift
 
@@ -73,7 +73,7 @@ ms.locfileid: "102474888"
 4. Назначьте настраиваемое ограничение контекста безопасности учетным записям службы для пользователей в пространстве имен, где развернут кластер больших данных:
 
    ```console
-  oc create rolebinding bdc-rbac --clusterrole=system:scc:bdc-scc --group=system:serviceaccounts:<namespace>
+   oc create rolebinding bdc-rbac --clusterrole=system:scc:bdc-scc --group=system:serviceaccounts:<namespace>
    ```
 
 5. Назначьте соответствующее разрешение для пользователя, развертывающего кластер больших данных. Выполните одно из следующих действий. 
