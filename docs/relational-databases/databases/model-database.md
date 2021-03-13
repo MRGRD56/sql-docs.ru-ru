@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e4f739b-fd27-4dce-8be6-3d808040d8d7
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 01d5e44a93776560b5e89c0dc03a36b780f7ab8d
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: 9ef6744fa152bfb5c66cc82ba71de62bc5bfb1a9
+ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97637960"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103421976"
 ---
 # <a name="model-database"></a>База данных model
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -68,7 +68,7 @@ ms.locfileid: "97637960"
 |CONCAT_NULL_YIELDS_NULL|OFF|Да|  
 |CURSOR_CLOSE_ON_COMMIT|OFF|Да|  
 |CURSOR_DEFAULT|GLOBAL|Да|  
-|Параметры доступности базы данных|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|нет<br /><br /> Да<br /><br /> Да|  
+|Параметры доступности базы данных|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|Нет<br /><br /> Да<br /><br /> Да|  
 |DATE_CORRELATION_OPTIMIZATION|OFF|Да|  
 |DB_CHAINING|OFF|нет|  
 |ENCRYPTION|OFF|нет|  
@@ -90,37 +90,23 @@ ms.locfileid: "97637960"
 ## <a name="restrictions"></a>Ограничения  
  Следующие операции не могут быть выполнены в базе данных **model** .  
   
--   добавление файлов или файловых групп;  
-  
--   Изменение параметров сортировки. Параметрами сортировки по умолчанию являются параметры сортировки сервера.  
-  
--   Изменение владельца базы данных. Владельцем **model** является **sa**.  
-  
--   Удаление базы данных.  
-  
--   Удаление пользователя **guest** из базы данных.  
-  
--   Включение системы отслеживания измененных данных.  
-  
--   Участие в зеркальном отображении базы данных.  
-  
--   Удаление первичной файловой группы, первичного файла данных или файла журнала.  
-  
--   Переименование базы данных или первичной файловой группы.  
-  
--   Перевод базы данных в режим «вне сети» (OFFLINE).  
-  
--   Перевод первичной файловой группы в режим READ_ONLY.  
-  
--   Создание процедур, представлений или триггеров с помощью параметра WITH ENCRYPTION. Ключ шифрования привязывается к базе данных, в которой был создан объект. Зашифрованные объекты, созданные в базе данных **model** могут быть использованы только в базе данных **model**.  
+- добавление файлов или файловых групп;  
+- Изменение параметров сортировки. Параметрами сортировки по умолчанию являются параметры сортировки сервера.  
+- Изменение владельца базы данных. Владельцем **model** является **sa**.  
+- Удаление базы данных.  
+- Удаление пользователя **guest** из базы данных.  
+- Включение системы отслеживания измененных данных.  
+- Участие в зеркальном отображении базы данных.  
+- Удаление первичной файловой группы, первичного файла данных или файла журнала.  
+- Переименование базы данных или первичной файловой группы.  
+- Перевод базы данных в режим «вне сети» (OFFLINE).  
+- Перевод первичной файловой группы в режим READ_ONLY.  
+- Создание процедур, представлений или триггеров с помощью параметра WITH ENCRYPTION. Ключ шифрования привязывается к базе данных, в которой был создан объект. Зашифрованные объекты, созданные в базе данных **model** могут быть использованы только в базе данных **model**.  
   
 ## <a name="related-content"></a>См. также  
- [Системные базы данных](../../relational-databases/databases/system-databases.md)  
-  
- [sys.databases (Transact-SQL)](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)  
-  
- [sys.master_files (Transact-SQL)](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)  
-  
- [Перемещение файлов базы данных](../../relational-databases/databases/move-database-files.md)  
+- [Системные базы данных](../../relational-databases/databases/system-databases.md)  
+- [sys.databases (Transact-SQL)](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)  
+- [sys.master_files (Transact-SQL)](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)  
+- [Перемещение файлов базы данных](../../relational-databases/databases/move-database-files.md)  
   
   

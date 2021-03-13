@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 5032cb2d-65a0-40dd-b569-4dcecdd58ceb
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 02632ce64dbd7b10571e559daf8fde4475a4e37b
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 80ada8fcce7fe1480dca5e22d4a5b8be3e73b617
+ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88471221"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103421996"
 ---
 # <a name="msdb-database"></a>База данных msdb
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "88471221"
 |CONCAT_NULL_YIELDS_NULL|OFF|Да|  
 |CURSOR_CLOSE_ON_COMMIT|OFF|Да|  
 |CURSOR_DEFAULT|GLOBAL|Да|  
-|Параметры доступности базы данных|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|нет<br /><br /> Да<br /><br /> Да|  
+|Параметры доступности базы данных|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|Нет<br /><br /> Да<br /><br /> Да|  
 |DATE_CORRELATION_OPTIMIZATION|OFF|Да|  
 |DB_CHAINING|ON|Да|  
 |ENCRYPTION|OFF|нет|  
@@ -86,34 +86,21 @@ ms.locfileid: "88471221"
  С базой данных **msdb** нельзя выполнить следующие действия.  
   
 -   Изменение параметров сортировки. Параметрами сортировки по умолчанию являются параметры сортировки сервера.  
-  
 -   Удаление базы данных.  
-  
 -   Удаление пользователя **guest** из базы данных.  
-  
 -   Включение системы отслеживания измененных данных.  
-  
 -   Участие в зеркальном отображении базы данных.  
-  
 -   Удаление первичной файловой группы, первичного файла данных или файла журнала.  
-  
 -   Переименование базы данных или первичной файловой группы.  
-  
 -   Перевод базы данных в режим «вне сети» (OFFLINE).  
-  
 -   Перевод первичной файловой группы в режим READ_ONLY.  
   
 ## <a name="related-content"></a>См. также  
- [Системные базы данных](../../relational-databases/databases/system-databases.md)  
-  
- [sys.databases (Transact-SQL)](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)  
-  
- [sys.master_files (Transact-SQL)](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)  
-  
- [Перемещение файлов базы данных](../../relational-databases/databases/move-database-files.md)  
-  
- [Database Mail](../../relational-databases/database-mail/database-mail.md)  
-  
- [SQL Server Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md)  
+- [Системные базы данных](../../relational-databases/databases/system-databases.md)  
+- [sys.databases (Transact-SQL)](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)  
+- [sys.master_files (Transact-SQL)](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)  
+- [Перемещение файлов базы данных](../../relational-databases/databases/move-database-files.md)  
+- [Database Mail](../../relational-databases/database-mail/database-mail.md)  
+- [SQL Server Service Broker](../../database-engine/configure-windows/sql-server-service-broker.md)  
   
   

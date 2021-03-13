@@ -1,8 +1,8 @@
 ---
 description: sys.dm_xtp_transaction_stats (Transact-SQL)
-title: sys.dm_xtp_transaction_stats (Transact-SQL) | Документация Майкрософт
+title: sys.dm_xtp_transaction_stats (Transact-SQL)
 ms.custom: ''
-ms.date: 08/09/2016
+ms.date: 03/12/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
@@ -16,15 +16,14 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_xtp_transaction_stats dynamic management view
-ms.assetid: 9389f48d-0de5-47bd-9821-4db8f04504e4
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: e5216c988f93d2186bc36964b086f82e1995c176
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 37a98ee4a73e7bcc0ce06cef44d3a142e7fba772
+ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99126421"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103421868"
 ---
 # <a name="sysdm_xtp_transaction_stats-transact-sql"></a>sys.dm_xtp_transaction_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +37,7 @@ ms.locfileid: "99126421"
 |total_count|**bigint**|Общее число транзакций, которые были запущены в компоненте In-Memory OLTP.|  
 |read_only_count|**bigint**|Число транзакций в режиме только для чтения.|  
 |total_aborts|**bigint**|Общее число транзакций, которые были прерваны пользователем или системой.|  
-|user_aborts|**bigint**|Количество прерываний, инициированных системой. Эти прерывания могут быть вызваны конфликтами операции записи, ошибками проверки и зависимости.|  
+|system_aborts|**bigint**|Количество прерываний, инициированных системой. Эти прерывания могут быть вызваны конфликтами операции записи, ошибками проверки и зависимости.|  
 |validation_failures|**bigint**|Количество раз, когда транзакция была прервана вследствие ошибки проверки.|  
 |dependencies_taken|**bigint**|Только для внутреннего использования.|  
 |dependencies_failed|**bigint**|Количество раз, когда транзакция была прервана, поскольку транзакция, от которой она зависела, была прервана.|  
