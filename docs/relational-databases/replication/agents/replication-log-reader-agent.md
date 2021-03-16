@@ -17,12 +17,12 @@ ms.assetid: 5487b645-d99b-454c-8bd2-aff470709a0e
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016
-ms.openlocfilehash: f5e716be586d7fb152a3c229cc016e349d57c99b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 58e9ed82d9518d423001342fa288e2c7aba1f5bf
+ms.sourcegitcommit: 98acedd435aecfda1b3c4c23d3f0c3c1a12682a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97467355"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532346"
 ---
 # <a name="replication-log-reader-agent"></a>Агент чтения журнала репликации
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -142,7 +142,8 @@ logread [-?]
   
  При отсутствии реплицируемой транзакции на источнике агент передает распространителю сообщение об отсутствии транзакции. Данный параметр определяет период ожидания агента до передачи следующего сообщения об отсутствии транзакции. Агенты всегда передают сообщение об отсутствии транзакции, если на источнике после ранее обработанных реплицируемых транзакций не обнаруживается доступных транзакций. Значение по умолчанию — 60 секунд.  
  
- **-MultiSubnetFailover** [**0**\|**1**] Определяет, включено ли свойство MultiSubnetFailover. Если приложение подключается к группе доступности Always On в разных подсетях и вы задали параметру MultiSubnetFailover значение 1 (true), операции определения активного сервера и подключения к нему ускорятся.
+ **-MultiSubnetFailover** [**0**\|**1**] Определяет, включено ли свойство MultiSubnetFailover. Если приложение подключается к группе доступности Always On в разных подсетях и вы задали параметру MultiSubnetFailover значение 1 (true), операции определения активного сервера и подключения к нему ускорятся.   
+   **Применимо к**: [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE [sssql19-md](../../../includes/sssql19-md.md)]).  
   
  **-Output** _путь_и_имя_выходного_файла_  
  Путь к выходному файлу агента. Если имя файла не указано, данные выводятся на консоль. Если указанный файл существует, то выходные данные добавляются в конец файла.  

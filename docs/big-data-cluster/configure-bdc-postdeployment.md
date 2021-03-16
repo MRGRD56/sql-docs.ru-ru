@@ -9,12 +9,12 @@ ms.date: 02/11/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 478ecc9888bbd3c8f51ee96c6c796856472f93d5
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 06b01a8fba30178cf8c8eb5842750de4baff1c82
+ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100343909"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489475"
 ---
 # <a name="how-to-configure-bdc-settings-post-deployment"></a>Настройка параметров кластера больших данных после развертывания
 
@@ -45,14 +45,14 @@ azdata bdc spark settings show
 Измените число ядер по умолчанию на 2 и размер памяти по умолчанию на 7424m для службы Spark.
 
 ```bash
-azdata bdc spark settings set spark-defaults-conf.spark.driver.cores=2, spark-defaults-conf.spark.driver.memory=7424m
+azdata bdc spark settings set --settings spark-defaults-conf.spark.driver.cores=2,spark-defaults-conf.spark.driver.memory=7424m
 ```
 
 ### <a name="change-the-default-number-of-cores-and-memory-for-the-spark-executors-in-the-storage-pool"></a>Изменение числа ядер и размера памяти по умолчанию для исполнителей Spark в пуле носителей
 Измените число ядер исполнителей по умолчанию на 4 для пула носителей.
 
 ```bash
-azdata bdc spark settings set spark-defaults-conf.spark.executor.cores=4 --resource=storage-0
+azdata bdc spark settings set --settings spark-defaults-conf.spark.executor.cores=4 --resource=storage-0
 ```
 
 ### <a name="view-the-pending-settings-changes-staged-in-the-bdc"></a>Просмотр ожидающих изменений параметров, подготовленных в кластере больших данных

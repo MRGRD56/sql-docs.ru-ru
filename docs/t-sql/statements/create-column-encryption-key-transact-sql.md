@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 517fe745-d79b-4aae-99a7-72be45ea6acb
 author: jaszymas
 ms.author: jaszymas
-ms.openlocfilehash: ad44213480ea1a48e49c685952474b436491c65b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: bfd4616ff90642c53316f05b44a8e7be89f490cf
+ms.sourcegitcommit: a76f5270429de5ca5a164505d6c9b832aca60b3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99204932"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103202619"
 ---
 # <a name="create-column-encryption-key-transact-sql"></a>CREATE COLUMN ENCRYPTION KEY (Transact-SQL)
 
@@ -75,7 +75,7 @@ _varbinary\_literal_
 Большой двоичный объект значения ключа шифрования зашифрованных столбцов.  
   
 > [!WARNING]  
->  Никогда не передавайте значения ключа шифрования столбца в виде открытого текста в этой инструкции. Это является преимуществом этой функции.  
+>  Никогда не передавайте значения ключа шифрования столбца в виде открытого текста в этой инструкции. Такое действие негативно отразится на преимуществе этой функции.  
 
 ## <a name="remarks"></a>Комментарии
 Оператор `CREATE COLUMN ENCRYPTION KEY` должен содержать по крайней мере одно или два значения. Вы можете использовать инструкцию [ALTER COLUMN ENCRYPTION KEY (Transact-SQL)](alter-column-encryption-key-transact-sql.md), чтобы позже добавить второе значение. Для удаления значения также можно использовать инструкцию `ALTER COLUMN ENCRYPTION KEY`.  

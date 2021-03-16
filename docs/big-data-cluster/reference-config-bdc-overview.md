@@ -9,12 +9,12 @@ ms.date: 02/11/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ecaba704d9c08619f42c5cdf8d726917ccc61b9c
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: c7cfe84e9b301ee75d1a031231824e50b0de6b9c
+ms.sourcegitcommit: 765262cdc6352a5325148afc22fa4f1499fe1aa3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100343544"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102514881"
 ---
 # <a name="sql-server-big-data-clusters-configuration-properties"></a>Свойства конфигурации кластеров больших данных SQL Server
 
@@ -25,17 +25,16 @@ ms.locfileid: "100343544"
 ## <a name="bdc-cluster-scope-settings"></a>Параметры в области кластера больших данных
 В области кластера можно настроить указанные ниже параметры.
 
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.telemetry`|`customerfeedback = { true | false }` |
-|`mssql.traceflag`|`traceflag<#> = <####>` |
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| bdc.telemetry.customerFeedback                              | Определяет, участвует ли этот кластер в программе улучшения качества программного обеспечения (CEIP), в рамках которой данные об использовании и диагностике продуктов отправляются в корпорацию Майкрософт. | Логическое | Да                    |           | 
 
 ## <a name="sql-service-scope-settings"></a>Параметры в области службы SQL
 В области службы SQL можно настроить указанные ниже параметры.
 
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.language`|`lcid = <language_identifier>` |
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| mssql.language.lcid                              | Изменяет языковой стандарт SQL Server на любой поддерживаемый код языка.                                                                                                                                                                                                                                              | INT    | 1033                         |           | 
 
 ## <a name="spark-service-scope-settings"></a>Параметры в области службы Spark
 Сведения обо всех поддерживаемых и неподдерживаемых параметрах см. в [статье о конфигурации Apache Spark и Apache Hadoop](reference-config-spark-hadoop.md).
@@ -50,75 +49,73 @@ ms.locfileid: "100343544"
 Недоступно.
 
 ## <a name="master-pool-resource-scope-settings"></a>Параметры в области ресурсов главного пула
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.sqlagent`|`enabled = { true | false }` |
-|`mssql.licensing`|`pid = { Enterprise | Developer }` |
-<!-- |`mssql.collation`|`x = <language_identifier>` | -->
-
-> [!NOTE]
-> Изменение параметров сортировки по умолчанию для экземпляра SQL Server — сложная операция. Помимо изменения параметра `mssql.collation`, может потребоваться заново создать пользовательские базы данных и все объекты в них. Инструкции см. в статье [Задание или изменение параметров сортировки сервера](../relational-databases/collations/set-or-change-the-server-collation.md#changing-the-server-collation-in-sql-server).
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| mssql.licensing.pid                              | Выпуск SQL Server.                                                                                                                                                                                                                                                                                                     | строка | Разработчик                    |           | 
+| mssql.sqlagent.enabled                           | Включает агент SQL Server.                                                                                                                                                                                                                                                                                               | bool   | false                        |           | 
+| mssql.collation                                  | Изменяет параметры сортировки SQL Server на любой из поддерживаемых вариантов.                                                                                                                                                                                                                                                    | строка | SQL_Latin1_General_CP1_CI_AS | Да      | 
+| hadr.enabled                                     | Логическое значение, обозначающее поддержку групп доступности для главного пула SQL Server.                                                                                                                                                                                                                                                    | bool   | false                        | true      | 
+| hadr.leaseDurationInSeconds                      | Время истечения срока действия аренды для агента с высоким уровнем доступности.                                                                                                                                                                                                                                                                                  | INT    | 30                           |           | 
+| hadr.externalLeasePollingEnabled                 | Логическое значение, обозначающее включение API опроса внешней аренды.                                                                                                                                                                                                                                                                        | bool   | Да                         | true      | 
+| mssql.telemetry.userRequestedLocalAuditDirectory | Включает локальный аудит SQL Server и позволяет указать каталог, в котором создаются журналы локального аудита. Этот каталог должен располагаться в /var/opt/mssql/audit.                                                                                                                                                            | строка |                              |           | 
 
 ## <a name="storage-pool-resource-scope-settings"></a>Параметры в области ресурсов пула носителей
 Пул носителей состоит из компонентов SQL, Spark и HDFS.
 
 ### <a name="available-sql-configurations"></a>Доступные конфигурации SQL
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.degreeOfParallelism`| |
-|`mssql.minServerMemory`| |
-|`mssql.maxServerMemory`| |
-|`mssql.network.tlscert`| |
-|`mssql.network.tlskey`| |
-|`mssql.numberOfCpus`| |
-|`mssql.storagePoolCacheSize`| |
-|`mssql.storagePoolMaxCacheSize`| |
-|`mssql.storagePoolCacheAutogrowth`| |
-|`mssql.tempdb.autogrowthPerDataFile`| |
-|`mssql.tempdb.autogrowthPerLogFile`| |
-|`mssql.tempdb.dataFileSize`| |
-|`mssql.tempdb.dataFileMaxSize`| |
-|`mssql.tempdb.logFileMaxSize`| |
-|`mssql.tempdb.numberOfDataFiles`| |
-|`mssql.traceflag`|`traceflag<#> = <####>` |
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| mssql.degreeOfParallelism                        | Число процессоров, которые задействуются для выполнения одной инструкции для каждого выполнения параллельных планов на каждом экземпляре SQL.                                                                                                                                                                                                        | INT    | 0                            |           | 
+| mssql.maxServerMemory                            | Максимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 2147483647                   |           | 
+| mssql.minServerMemory                            | Минимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 0                            |           | 
+| mssql.numberOfCpus                    | Распределяет рабочие потоки SQL Server на каждый ЦП в заданном диапазоне. Для процессоров вне заданного диапазона не назначены потоки. Для параметра AUTO укажите значение 0. | строка | AUTO                         |           | 
+| mssql.storagePoolCacheSize                       | Размер кэша (в мегабайтах) для каждого экземпляра SQL в пуле носителей.                                                                                                                                                                                                                                             | INT    | 8                            |           | 
+| mssql.storagePoolMaxCacheSize                    | Максимальный размер кэша (в мегабайтах) для каждого экземпляра SQL в пуле носителей.                                                                                                                                                                                                                                     | INT    | 16384                        |           | 
+| mssql.storagePoolCacheAutogrowth                 | Коэффициент автоматического увеличения (в МБ) для кэша пула носителей.                                                                                                                                                                                                                                                                  | INT    | 256                          |           | 
+| mssql.tempdb.autogrowthPerDataFile               | Автоматическое увеличение (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                          | INT    | 64                           |           | 
+| mssql.tempdb.autogrowthPerLogFile                | Автоматическое увеличение (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                           | INT    | 64                           |           | 
+| mssql.tempdb.dataFileSize                        | Размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                           | INT    | 8                            |           | 
+| mssql.tempdb.dataFileMaxSize                     | Максимальный размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                   | INT    | 16777215                     |           | 
+| mssql.tempdb.logFileSize                         | Размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                            | INT    | 8                            |           | 
+| mssql.tempdb.logFileMaxSize                      | Максимальный размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                    | INT    | 2097151                      |           | 
+| mssql.tempdb.numberOfDataFiles                   | Число файлов данных для TempDB.                                                                                                                                                                                                                                                                                        | INT    | 8                            |           | 
+| mssql.traceflags                                 | Включает или отключает флаги трассировки при запуске службы SQL Server. Укажите применяемый список флагов трассировки, разделенных пробелами.                                                                                                                                                                                        | строка | 3614                         |           | 
 
 
 ### <a name="available-apache-spark-and-hadoop-configurations"></a>Доступные конфигурации Apache Spark и Hadoop
 Сведения обо всех поддерживаемых и неподдерживаемых параметрах см. в [статье о конфигурации Apache Spark и Apache Hadoop](reference-config-spark-hadoop.md).
 
 ## <a name="data-pool-resource-scope-settings"></a>Параметры в области ресурсов пула данных
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.degreeOfParallelism`| |
-|`mssql.minServerMemory`| |
-|`mssql.maxServerMemory`| |
-|`mssql.network.tlscert`| |
-|`mssql.network.tlskey`| |
-|`mssql.numberOfCpus`| |
-|`mssql.tempdb.autogrowthPerDataFile`| |
-|`mssql.tempdb.autogrowthPerLogFile`| |
-|`mssql.tempdb.dataFileSize`| |
-|`mssql.tempdb.dataFileMaxSize`| |
-|`mssql.tempdb.logFileMaxSize`| |
-|`mssql.tempdb.numberOfDataFiles`| |
-|`mssql.traceflag`|`traceflag<#> = <####>` |
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| mssql.degreeOfParallelism                        | Число процессоров, которые задействуются для выполнения одной инструкции для каждого выполнения параллельных планов на каждом экземпляре SQL.                                                                                                                                                                                                        | INT    | 0                            |           | 
+| mssql.maxServerMemory                            | Максимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 2147483647                   |           | 
+| mssql.minServerMemory                            | Минимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 0                            |           | 
+| mssql.numberOfCpus                    | Распределяет рабочие потоки SQL Server на каждый ЦП в заданном диапазоне. Для процессоров вне заданного диапазона не назначены потоки. Для параметра AUTO укажите значение 0. | строка | AUTO                         |           | 
+| mssql.tempdb.autogrowthPerDataFile               | Автоматическое увеличение (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                          | INT    | 64                           |           | 
+| mssql.tempdb.autogrowthPerLogFile                | Автоматическое увеличение (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                           | INT    | 64                           |           | 
+| mssql.tempdb.dataFileSize                        | Размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                           | INT    | 8                            |           | 
+| mssql.tempdb.dataFileMaxSize                     | Максимальный размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                   | INT    | 16777215                     |           | 
+| mssql.tempdb.logFileSize                         | Размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                            | INT    | 8                            |           | 
+| mssql.tempdb.logFileMaxSize                      | Максимальный размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                    | INT    | 2097151                      |           | 
+| mssql.tempdb.numberOfDataFiles                   | Число файлов данных для TempDB.                                                                                                                                                                                                                                                                                        | INT    | 8                            |           | 
+| mssql.traceflags                                 | Включает или отключает флаги трассировки при запуске службы SQL Server. Укажите применяемый список флагов трассировки, разделенных пробелами.                                                                                                                                                                                        | строка | 3614                         |           | 
 
 ## <a name="compute-pool-resource-scope-settings"></a>Параметры в области ресурсов вычислительного пула
-|Свойство|Параметры|
-| --- | --- |
-|`mssql.degreeOfParallelism`| |
-|`mssql.minServerMemory`| |
-|`mssql.maxServerMemory`| |
-|`mssql.network.tlscert`| |
-|`mssql.network.tlskey`| |
-|`mssql.numberOfCpus`| |
-|`mssql.tempdb.autogrowthPerDataFile`| |
-|`mssql.tempdb.autogrowthPerLogFile`| |
-|`mssql.tempdb.dataFileSize`| |
-|`mssql.tempdb.dataFileMaxSize`| |
-|`mssql.tempdb.logFileMaxSize`| |
-|`mssql.tempdb.numberOfDataFiles`| |
-|`mssql.traceflag`|`traceflag<#> = <####>` |
+| Имя параметра                                             | Описание                                                                                                                                                                                                                                                                                                             | Type   | Значение по умолчанию          | Только во время развертывания | 
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------- | --------- | 
+| mssql.degreeOfParallelism                        | Число процессоров, которые задействуются для выполнения одной инструкции для каждого выполнения параллельных планов на каждом экземпляре SQL.                                                                                                                                                                                                        | INT    | 0                            |           | 
+| mssql.maxServerMemory                            | Максимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 2147483647                   |           | 
+| mssql.minServerMemory                            | Минимальный объем памяти (в мегабайтах) для процесса SQL Server, используемого экземпляром SQL Server.                                                                                                                                                                                                                 | INT    | 0                            |           | 
+| mssql.numberOfCpus                    | Распределяет рабочие потоки SQL Server на каждый ЦП в заданном диапазоне. Для процессоров вне заданного диапазона не назначены потоки. Для параметра AUTO укажите значение 0. | строка | AUTO                         |           | 
+| mssql.tempdb.autogrowthPerDataFile               | Автоматическое увеличение (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                          | INT    | 64                           |           | 
+| mssql.tempdb.autogrowthPerLogFile                | Автоматическое увеличение (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                           | INT    | 64                           |           | 
+| mssql.tempdb.dataFileSize                        | Размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                           | INT    | 8                            |           | 
+| mssql.tempdb.dataFileMaxSize                     | Максимальный размер файла (в МБ) для каждого файла данных TempDB.                                                                                                                                                                                                                                                                   | INT    | 16777215                     |           | 
+| mssql.tempdb.logFileSize                         | Размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                            | INT    | 8                            |           | 
+| mssql.tempdb.logFileMaxSize                      | Максимальный размер файла (в МБ) для каждого файла журналов TempDB.                                                                                                                                                                                                                                                                    | INT    | 2097151                      |           | 
+| mssql.tempdb.numberOfDataFiles                   | Число файлов данных для TempDB.                                                                                                                                                                                                                                                                                        | INT    | 8                            |           | 
+| mssql.traceflags                                 | Включает или отключает флаги трассировки при запуске службы SQL Server. Укажите применяемый список флагов трассировки, разделенных пробелами.                                                                                                                                                                                        | строка | 3614                         |           | 
 
 ## <a name="spark-pool-resource-scope-settings"></a>Параметры в области ресурсов пула Spark
 Сведения обо всех поддерживаемых и неподдерживаемых параметрах см. в [статье о конфигурации Apache Spark и Apache Hadoop](reference-config-spark-hadoop.md).

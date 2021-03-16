@@ -4,16 +4,16 @@ description: Обновление `AZDATA_PASSWORD` вручную
 author: NelGson
 ms.author: negust
 ms.reviewer: mikeray
-ms.date: 03/01/2021
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 062e574772c2a44b78772da4a979c81ed3deb959
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 71fe901915b533c4af25e98c3573aaaa00b82d53
+ms.sourcegitcommit: 0bcda4ce24de716f158a3b652c9c84c8f801677a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836301"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102247383"
 ---
 # <a name="manually-update-azdata_password"></a>Ручное обновление `AZDATA_PASSWORD`
 
@@ -34,7 +34,7 @@ ms.locfileid: "101836301"
    ```
 
    b. Декодируйте секрет из кодировки Base64.
-   
+
    ```bash
    echo <password from kubectl command>  | base64 --decode && echo
    ```
@@ -95,18 +95,18 @@ ms.locfileid: "101836301"
 Выполните следующие действия, чтобы вручную обновить пароль для [Grafana](app-monitor.md).
 
 1. Вам понадобится служебная программа htpasswd. Ее можно установить на любой клиентский компьютер.
-    
-    #### <a name="for-ubuntu"></a>[Для Ubuntu:](#tab/ubuntu) 
-    ```bash
-    sudo apt install apache2-utils
-    ```
-    
-    #### <a name="for-rhel"></a>[Для RHEL:](#tab/rhel) 
-    ```bash
-    sudo yum install httpd-tools
-    ```
-    
-    ---
+  
+### <a name="for-ubuntu"></a>[Для Ubuntu](#tab/for-ubuntu)
+В Ubuntu Linux используйте следующую команду:
+```bash
+sudo apt install apache2-utils
+```
+### <a name="for-rhel"></a>[Для RHEL](#tab/for-rhel)
+В Red Hat Enterprise Linux используйте следующую команду:
+```bash
+sudo yum install httpd-tools
+```
+---
 
 2. Создайте новый пароль. 
     
@@ -154,23 +154,19 @@ ms.locfileid: "101836301"
      
     При необходимости определите имя объекта pod mgmtproxy.
     
-    #### <a name="for-windows"></a>[Для Windows](#tab/windows): 
-    На сервере Windows можно выполнить такую команду:
-    
-    ```bash 
+    ### <a name="for-windows"></a>[Для Windows](#tab/for-windows)
+     На сервере Windows можно выполнить такую команду:
+    ```bash
     kubectl get pods -n <namespace> -l app=mgmtproxy
     ```
-    
-    #### <a name="for-linux"></a>[Для Linux](#tab/linux). 
-    В Linux используйте следующую команду:
-    
+    ### <a name="for-linux"></a>[Для Linux](#tab/for-linux)
+     В Linux используйте следующую команду:
     ```bash
     kubectl get pods -n <namespace> | grep 'mgmtproxy'
     ```
-    
     ---
-    
-    Удалите объект pod mgmtproxy:
+
+     Удалите объект pod mgmtproxy:
     ```bash
     kubectl delete pod mgmtproxy-xxxxx -n mssql-clutser
     ```
@@ -178,13 +174,15 @@ ms.locfileid: "101836301"
 7. Дождитесь подключения объекта pod mgmtproxy к сети и запуска панели мониторинга Grafana.  
  
     На это может потребоваться несколько секунд. Чтобы проверить состояние объекта pod, можно использовать ту же команду `get pods`, что и на предыдущем шаге. 
-    Если вы видите, что объект pod mgmtproxy не возвращается к состоянию готовности, используйте команду kubectl для его описания:
-    
+
+    Если вы видите, что объект pod mgmtproxy не возвращается к состоянию готовности, используйте команду kubectl для его описания: 
+
     ```bash
     kubectl describe pods mgmtproxy-xxxxx  -n <namespace>
-    ```
+    ```   
     
-    Для устранения неполадок и дальнейшего сбора журналов используйте команду Azure Data CLI `[azdata bdc debug copy-logs](../azdata/reference/reference-azdata-bdc-debug.md)`.
+    Для устранения неполадок и дальнейшего сбора журналов используйте команду Azure Data CLI [azdata bdc debug copy-logs](../azdata/reference/reference-azdata-bdc-debug.md).   
+
     
 8. Теперь войдите в Grafana с помощью нового пароля. 
 
@@ -198,7 +196,7 @@ ms.locfileid: "101836301"
 
 1. Откройте URL-адрес Kibana.
     
-    URL-адрес конечной точки службы Kibana можно найти в [Azure Data Studio](manage-with-controller-dashboard#controller-dashboard) или с помощью следующей команды **azdata**:
+    URL-адрес конечной точки службы Kibana можно найти в [Azure Data Studio](manage-with-controller-dashboard.md#controller-dashboard) или с помощью следующей команды **azdata**:
     
     ```azurecli
     azdata login
@@ -230,6 +228,6 @@ ms.locfileid: "101836301"
 
 ## <a name="see-also"></a>См. также раздел
 
-* [azdata bdc (Azure Data CLI)](../../sql/azdata/reference/reference-azdata-bdc.md) 
-* [Мониторинг приложений с помощью azdata и панели мониторинга Grafana](app-monitor.md)  
-* [Извлечение журналов кластера с помощью панели мониторинга Kibana](cluster-logging-kibana.md)  
+* [azdata bdc (Azure Data CLI)](../azdata/reference/reference-azdata-bdc.md)  
+* [Мониторинг приложений с помощью azdata и панели мониторинга Grafana](app-monitor.md)   
+* [Извлечение журналов кластера с помощью панели мониторинга Kibana](cluster-logging-kibana.md)   

@@ -25,12 +25,12 @@ ms.assetid: b5fafc08-efd4-4a3b-a0b3-068981a0a685
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1e9c5827193f80ca6967a2611a288b04bf6783c0
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 66b3b48adf60f4898a72e3476aa66530728c9a24
+ms.sourcegitcommit: 98acedd435aecfda1b3c4c23d3f0c3c1a12682a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99158715"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532366"
 ---
 # <a name="todatetimeoffset-transact-sql"></a>TODATETIMEOFFSET (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -42,20 +42,21 @@ ms.locfileid: "99158715"
 ## <a name="syntax"></a>Синтаксис  
   
 ```syntaxsql
-TODATETIMEOFFSET ( expression , time_zone )  
+TODATETIMEOFFSET ( datetime_expression , timezoneoffset_expression )  
 ```  
   
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>Аргументы
- *expression*  
+ *datetime_expression*  
  [Выражение](../../t-sql/language-elements/expressions-transact-sql.md), которое разрешается в значение [datetime2](../../t-sql/data-types/datetime2-transact-sql.md).  
   
 > [!NOTE]  
 >  Выражение не может иметь тип **text**, **ntext** или **image**, так как эти типы нельзя неявно преобразовать в тип **varchar** или **nvarchar**.  
   
- *time_zone*  
- Выражение, которое представляет смещение часового пояса в минутах (если это целое число), например –120, или в часах и минутах (если это строка), например "+13:00". Диапазон охватывает значения от +14 до -14 (в часах). Выражение приводится к местному времени для указанного часового пояса time_zone.  
+ *timezoneoffset_expression*  
+ Выражение, которое представляет смещение часового пояса в минутах (если это целое число), например –120, или в часах и минутах (если это строка), например "+13:00". Диапазон охватывает значения от +14 до -14 (в часах). Выражение приводится к местному времени для указанного часового пояса timezoneoffset_expression.  
+
   
 > [!NOTE]  
 >  Если выражение является символьной строкой, оно должно иметь формат {+|-}TZH:THM.  

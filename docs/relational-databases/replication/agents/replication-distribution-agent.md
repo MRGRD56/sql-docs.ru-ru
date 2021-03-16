@@ -17,12 +17,12 @@ ms.assetid: 7b4fd480-9eaf-40dd-9a07-77301e44e2ac
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-current||>=sql-server-2016
-ms.openlocfilehash: 71782c95201c224bdd40624e23f529b01d892f22
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 729fcb2bdd1feccfb80d7b591fe96eeb38c23933
+ms.sourcegitcommit: 98acedd435aecfda1b3c4c23d3f0c3c1a12682a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97475945"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532356"
 ---
 # <a name="replication-distribution-agent"></a>Агент распространения репликации
 [!INCLUDE[sql-asdb](../../../includes/applies-to-version/sql-asdb.md)]
@@ -208,7 +208,9 @@ distrib [-?]
   
  При отсутствии реплицируемой транзакции на источнике агент передает распространителю сообщение об отсутствии транзакции. Данный параметр определяет период ожидания агента до передачи следующего сообщения об отсутствии транзакции. Агенты всегда передают сообщение об отсутствии транзакции, если на источнике после ранее обработанных реплицируемых транзакций не обнаруживается доступных транзакций. Значение по умолчанию — 60 секунд.  
 
-**-MultiSubnetFailover** Определяет, включено ли свойство MultiSubnetFailover. Если приложение подключается к группе доступности Always On в разных подсетях и вы задали параметру MultiSubnetFailover значение true, операции определения активного сервера и подключения к нему ускорятся.
+**-MultiSubnetFailover** Определяет, включено ли свойство MultiSubnetFailover. Если приложение подключается к группе доступности Always On в разных подсетях и вы задали параметру MultiSubnetFailover значение true, операции определения активного сервера и подключения к нему ускорятся.   
+  **Применимо к**: [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE [sssql19-md](../../../includes/sssql19-md.md)]).  
+
   
  **-OledbStreamThreshold** _порог_потока_oledb_  
  Указывает минимальный размер (в байтах) данных больших двоичных объектов, ниже которого их привязка будет выполняться в виде потока. Для использования этого параметра необходимо указать значение **-UseOledbStreaming**. Значение может находиться в диапазоне от 400 до 1048576, значение по умолчанию — 16384.  

@@ -1,7 +1,7 @@
 ---
 title: Жизненный цикл поддержки драйвера SqlClient
 description: Страница с информацией о жизненном цикле поддержки продукта.
-ms.date: 02/26/2021
+ms.date: 03/03/2021
 dev_langs:
 - csharp
 - vb
@@ -13,12 +13,12 @@ ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-jizho2
-ms.openlocfilehash: d0fc4a58dbd8375bd988fbee851cab68368b28d1
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 998fc5eecfa0e8840111b1ee9bf1d9e653ac5687
+ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836991"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102464736"
 ---
 # <a name="sqlclient-driver-support-lifecycle"></a>Жизненный цикл поддержки драйвера SqlClient
 
@@ -36,7 +36,7 @@ ms.locfileid: "101836991"
 
 | Версия | Дата официального выпуска | Последняя версия исправления | Дата выпуска исправления | Уровень поддержки  | Окончание поддержки |
 | -- | -- | -- | -- | -- | -- |
-| 2.1 | 19 ноября 2020 г. | 2.1.1 | 18 декабря 2020 г. | LTS | 20 ноября 2023 г. |
+| 2.1 | 19 ноября 2020 г. | 2.1.2 | 3 марта 2021 г. | LTS | 20 ноября 2023 г. |
 | 1.1 | 20 ноября 2019 г. | 1.1.3 | 15 мая 2020 г. | LTS | 21 ноября 2022 г. |
 
 ### <a name="out-of-support-releases"></a>Неподдерживаемые выпуски
@@ -46,13 +46,27 @@ ms.locfileid: "101836991"
 | 2.0 | 16 июня 2020 г. | 2.0.1 | 25 августа 2020 г. |
 | 1.0 | 26 сентября 2019 г. | 1.0.19269.1 | 20 февраля 2020 г. |
 
-### <a name="long-term-support-lts-releases"></a>Выпуски с долгосрочной поддержкой (LTS)
+
+## <a name="azure-key-vault-provider-release-cadence"></a>Частота публикации выпусков для поставщика Azure Key Vault
+
+Новые стабильные (общедоступные) выпуски `Microsoft.Data.SqlClient.AlwaysEncrypted.AzureKeyVaultProvider` публикуются по мере необходимости при добавлении новых функций. Выпуски долгосрочной поддержки (LTS) будут отбираться заинтересованными лицами и специалистами по поддержке на основе нескольких характеристик и отзывов клиентов.
+
+### <a name="actively-supported-releases"></a>Поддерживаемые выпуски
+
+| Версия | Дата официального выпуска | Последняя версия исправления | Дата выпуска исправления | Уровень поддержки  | Окончание поддержки |
+| -- | -- | -- | -- | -- | -- |
+| 2.x | 3 марта 2021 г. | 2.0.0 | 3 марта 2021 г. | LTS | 4 марта 2024 г. |
+| 1.x | 19 ноября 2019 г. | 1.2.0 | 1 декабря 2020 г. | LTS | 21 ноября 2022 г. |
+
+
+## <a name="long-term-support-lts-releases"></a>Выпуски с долгосрочной поддержкой (LTS)
 
 Выпуски долгосрочной поддержки поддерживаются в течение трех лет после первоначального выпуска.
 
-### <a name="current-releases"></a>Текущие выпуски
+## <a name="current-releases"></a>Текущие выпуски
 
 Текущие выпуски поддерживаются в течение трех месяцев после следующего текущего выпуска или выпуска долгосрочной поддержки.
+
 
 ## <a name="sql-version-compatibility-with-microsoftdatasqlclient"></a>Совместимость версий SQL с Microsoft.Data.SqlClient
 
