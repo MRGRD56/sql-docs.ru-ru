@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f03b7fdd-0e9d-4e74-958d-e8c87e027348
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: f78fdfcb8fe19856483403c4675f973c4f5c97b3
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 9c38bba31650ae495fc4ddb2a09a94d79900c121
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99198374"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575243"
 ---
 # <a name="system-requirements-linux-and-macos"></a>Требования к системе (Linux и macOS)
 
@@ -51,9 +51,9 @@ ms.locfileid: "99198374"
 |Debian Linux 10                |Да |Да |Да |Да |    |    |    |    |    |   |
 |Oracle Linux 7                 |Да |    |    |    |    |    |    |    |    |   |
 |Oracle Linux 8                 |Да |Да |Да |    |    |    |    |    |    |   |
-|RedHat Enterprise Linux 6      |Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
-|RedHat Enterprise Linux 7      |Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
-|RedHat Enterprise Linux 8      |Да |Да |Да |Да |    |    |    |    |    |   |
+|Red Hat Enterprise Linux 6     |Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
+|Red Hat Enterprise Linux 7     |Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
+|Red Hat Enterprise Linux 8     |Да |Да |Да |Да |    |    |    |    |    |   |
 |SUSE Linux Enterprise Server 11<sup>1</sup>|Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
 |SUSE Linux Enterprise Server 12|Да |Да |Да |Да |Да |Да |Да |Да |Да |Да|
 |SUSE Linux Enterprise Server 15|Да |Да |Да |Да |Да |    |    |    |    |   |

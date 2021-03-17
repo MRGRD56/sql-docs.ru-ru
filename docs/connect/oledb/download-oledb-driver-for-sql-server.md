@@ -7,16 +7,16 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 4d0f619fbdba59a902a1db379f65ebd131e5e4df
-ms.sourcegitcommit: cad737d30e5a80033f3b021cc3f0d47c00756a6b
+ms.openlocfilehash: 0e5e8a8b084c6762e732c0b866a0e4866e9d2707
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96614486"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575332"
 ---
 # <a name="download-microsoft-ole-db-driver-for-sql-server"></a>Скачать драйвер Microsoft OLE DB для SQL Server
 
-[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 Драйвер OLE DB для SQL Server — это изолированный прикладной программный интерфейс (API) для доступа к данным, используемый в OLE DB. Драйвер OLE DB для SQL Server есть в Windows и предоставляется в формате одиночной библиотеки динамической компоновки (DLL).
 
@@ -35,7 +35,7 @@ Microsoft OLE DB Driver 18.5 for SQL Server — это последняя об
 - Выпущено: 1 декабря 2020 г.
 
 > [!Note]
-> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
+> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](https://aka.ms/downloadmsoledbsqlusenglish). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
 
 ## <a name="available-languages"></a>Доступные языки
 

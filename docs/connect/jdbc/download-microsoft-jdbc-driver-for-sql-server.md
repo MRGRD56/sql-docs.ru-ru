@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 451181b8-11e6-4d01-b547-9ac5aada8238
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: a87da2ebba4c28574155be69e60313cc877970f6
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: bfb200c1b29f15489f8500ccb02d5bf066bf6937
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837121"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575226"
 ---
 # <a name="download-microsoft-jdbc-driver-for-sql-server"></a>Скачивание драйвера Microsoft JDBC Driver for SQL Server
 
@@ -36,7 +36,7 @@ Microsoft JDBC Driver for SQL Server — это драйвер JDBC типа 4
 При скачивании драйвера вы увидите несколько JAR-файлов. Имя каждого JAR-файла обозначает поддерживаемую версию Java.
 
 > [!Note]
-> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
+> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](https://aka.ms/downloadmssqljdbcenglish). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
 
 ## <a name="available-languages"></a>Доступные языки
 
