@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развертывание
+              - name: Развернуть
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md
@@ -395,7 +395,7 @@ items:
                 href: big-data-cluster/notebooks-tutorial-spark.md
               - name: Список записных книжек для определенных операций
                 href: big-data-cluster/cluster-manage-notebooks.md
-          - name: Монитор
+          - name: Azure Monitor
             items:
               - name: Выполнение мониторинга с помощью Azure Data Studio
                 href: big-data-cluster/cluster-monitor-ads.md
@@ -4920,6 +4920,8 @@ items:
     items:
       - name: Документации по миграции
         href: sql-server/migrate/index.yml
+      - name: Сравнение средств миграции
+        href: sql-server/migrate/dma-azure-migrate-compare-migration-tools.md
       - name: Службы SQL Server Integration Services (SSIS) >
         href: ./integration-services/sql-server-integration-services.md
       - name: Программа массового копирования (bcp)
@@ -4929,8 +4931,16 @@ items:
         href: /azure/dms/dms-overview
       - name: Руководства по переносу
         items:
+          - name: Из Access
+            href: sql-server/migrate/guides/access-to-sql-server.md
           - name: Из DB2
             href: sql-server/migrate/guides/db2-to-sql-server.md
+          - name: Из MySQL
+            href: sql-server/migrate/guides/mysql-to-sql-server.md
+          - name: Из Oracle
+            href: sql-server/migrate/guides/oracle-to-sql-server.md
+          - name: Из SAP ASE
+            href: sql-server/migrate/guides/sap-ase-to-sql-server.md
       - name: Службы Data Quality Services (DQS)
         items:
           - name: Обзор
