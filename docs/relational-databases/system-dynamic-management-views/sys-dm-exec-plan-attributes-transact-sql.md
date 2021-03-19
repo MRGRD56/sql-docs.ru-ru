@@ -1,8 +1,8 @@
 ---
 description: sys.dm_exec_plan_attributes (Transact-SQL)
-title: sys.dm_exec_plan_attributes (Transact-SQL) | Документация Майкрософт
+title: sys.dm_exec_plan_attributes (Transact-SQL)
 ms.custom: ''
-ms.date: 10/20/2017
+ms.date: 02/24/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
@@ -16,15 +16,14 @@ dev_langs:
 - TSQL
 helpviewer_keywords:
 - sys.dm_exec_plan_attributes dynamic management function
-ms.assetid: dacf3ab3-f214-482e-aab5-0dab9f0a3648
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: fad7df36aabbebf6ad41752c741069465adafac4
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 7ac93d0225cde8b2b24647f6de672fcfeba2f31f
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839296"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611038"
 ---
 # <a name="sysdm_exec_plan_attributes-transact-sql"></a>sys.dm_exec_plan_attributes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +34,7 @@ ms.locfileid: "101839296"
 >  Некоторые сведения, возвращаемые этой функцией, сопоставлены с представлением обратной совместимости [sys.sysкачеобжектс](../../relational-databases/system-compatibility-views/sys-syscacheobjects-transact-sql.md) .
 
 ## <a name="syntax"></a>Синтаксис  
-```  
+```syntaxsql
 sys.dm_exec_plan_attributes ( plan_handle )  
 ```  
   
@@ -53,7 +52,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
 
 В приведенной выше таблице **атрибут** может иметь следующие значения:
 
-|attribute|Тип данных|Описание|  
+|Атрибут|Тип данных|Описание|  
 |---------------|---------------|-----------------|  
 |set_options|**int**|Показывает значения параметров, с использованием которых был скомпилирован план.|  
 |objectid|**int**|Одно из основных ключевых слов, используемое для поиска объекта в кэш-памяти. Это идентификатор объекта, хранящийся в [представлении sys. Objects](../../relational-databases/system-catalog-views/sys-objects-transact-sql.md) для объектов базы данных (процедуры, представления, триггеры и т. д.). Для планов типа «Нерегламентированный» или «Подготовленный» — это внутренний хэш текста пакета.|  
@@ -63,9 +62,17 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |language_id|**smallint**|Идентификатор языка соединения, в результате которого был создан объект кэша. Дополнительные сведения см. в разделе [ языкиsys.sys&#40;Transact-SQL&#41;](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md).|  
 |date_format|**smallint**|Формат даты соединения, во время которого был создан объект кэша. Дополнительные сведения см. в разделе [SET DATEFORMAT (Transact-SQL)](../../t-sql/statements/set-dateformat-transact-sql.md).|  
 |date_first|**tinyint**|Значение первой даты. Дополнительные сведения см. в разделе [SET DATEFIRST (Transact-SQL)](../../t-sql/statements/set-datefirst-transact-sql.md).|  
+|compat_level|**tinyint**|Представляет уровень совместимости, заданный в базе данных, в контексте которой был скомпилирован план запроса. Возвращаемый уровень совместимости является уровнем совместимости текущего контекста базы данных для нерегламентированных инструкций и не влияет на указание запроса [QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_n](../../t-sql/queries/hints-transact-sql-query.md). Для инструкций, содержащихся в хранимой процедуре или функции, они соответствуют уровню совместимости базы данных, в которой создается хранимая процедура или функция.| 
 |status|**int**|Биты внутреннего состояния, являющиеся частью ключа уточняющего запроса к кэшу.|  
 |required_cursor_options|**int**|Параметры курсора, указанные пользователем, такие как тип курсора.|  
 |acceptable_cursor_options|**int**|Параметры курсора, которые [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] может неявно преобразовывать для поддержания выполнения инструкции. Например, пользователь может указать динамический курсор, но оптимизатор запросов может преобразовать этот тип курсора в статический.|  
+|merge_action_type|**smallint**|Тип плана выполнения триггеров, используемого в результате инструкции MERGE.<br /><br /> 0 указывает план без триггеров, или план триггеров, который не выполняется в результате инструкции MERGE, или план триггеров, который выполняется в результате инструкции MERGE, в которой задано только действие DELETE.<br /><br /> 1 указывает план триггеров INSERT, который выполняется в результате инструкции MERGE.<br /><br /> 2 указывает план триггеров UPDATE, который выполняется в результате инструкции MERGE.<br /><br /> 3 указывает план триггеров DELETE, который выполняется в результате инструкции MERGE, содержащей соответствующее действие INSERT или UPDATE.<br /><br /> Для вложенных триггеров, выполняемых каскадными операциями, это значение является действием инструкции MERGE, запустившей каскад.|  
+|is_replication_specific|**int**|Указывает, что сеанс, из которого был скомпилирован этот план, — это тот, который подключается к экземпляру SQL Server с помощью недокументированного свойства соединения, которое позволяет серверу определить сеанс как созданный компонентами репликации, чтобы поведение определенных функциональных аспектов сервера изменилось в соответствии с ожидаемым компонентом репликации.| 
+|optional_spid|**smallint**|Session_id соединения (SPID) попадает в ключ кэша, чтобы сократить число повторных компиляций. Это предотвращает повторные компиляции для повторного использования плана, включающего не динамически привязанные временные таблицы.|
+|optional_clr_trigger_dbid|**int**|Заполняется только в случае триггера DML CLR. Идентификатор базы данных, содержащей сущность. <BR><BR>Для любого другого типа объектов возвращает нуль. | 
+|optional_clr_trigger_objid|**int** |Заполняется только в случае триггера DML CLR. Идентификатор объекта, хранящийся в [представлении sys. Objects](../../relational-databases/system-catalog-views/sys-objects-transact-sql.md).<BR><BR>Для любого другого типа объектов возвращает нуль.| 
+|parent_plan_handle|**varbinary (64)**|Всегда имеет значение NULL.| 
+|is_azure_user_plan|**tinyint** | 1 для запросов, выполняемых в, [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] из сеанса, инициированного пользователем. <BR><BR>0 для запросов, которые были выполнены из сеанса, не инициированного конечным пользователем, но приложений, запущенных из инфраструктуры Azure, которые выдают запросы для других целей сбора данных телеметрии или выполнения административных задач. Клиентам не выставляются счета за ресурсы, используемые запросами, где is_azure_user_plan = 0.<BR><BR>**[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]** только.|
 |inuse_exec_context|**int**|Количество выполняемых в данный момент пакетов, использующих план запроса.|  
 |free_exec_context|**int**|Количество контекстов выполнения в кэш-памяти для плана запроса, которые не используются в данный момент.|  
 |hits_exec_context|**int**|Количество получений контекста выполнения из кэш-памяти планов и его повторных использований, приводящее к снижению издержек на повторную компиляцию инструкции SQL. Это значение является статистическим для всех пакетов, выполняющихся в настоящий момент.|  
@@ -77,12 +84,12 @@ sys.dm_exec_plan_attributes ( plan_handle )
 |misses_cursors|**int**|Количество случаев обнаружения отсутствия неактивного курсора в кэш-памяти.|  
 |removed_cursors|**int**|Количество курсоров, которые были удалены по причине слишком активного использования памяти для плана в кэше.|  
 |sql_handle|**varbinary**(64)|Дескриптор SQL для пакета.|  
-|merge_action_type|**smallint**|Тип плана выполнения триггеров, используемого в результате инструкции MERGE.<br /><br /> 0 указывает план без триггеров, или план триггеров, который не выполняется в результате инструкции MERGE, или план триггеров, который выполняется в результате инструкции MERGE, в которой задано только действие DELETE.<br /><br /> 1 указывает план триггеров INSERT, который выполняется в результате инструкции MERGE.<br /><br /> 2 указывает план триггеров UPDATE, который выполняется в результате инструкции MERGE.<br /><br /> 3 указывает план триггеров DELETE, который выполняется в результате инструкции MERGE, содержащей соответствующее действие INSERT или UPDATE.<br /><br /> Для вложенных триггеров, выполняемых каскадными операциями, это значение является действием инструкции MERGE, запустившей каскад.|  
-  
+
 ## <a name="permissions"></a>Разрешения  
 
-В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
-В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
+В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.
+
+В базах данных SQL Azure Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
 
 ## <a name="remarks"></a>Комментарии  
   
@@ -122,7 +129,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
   
 |Параметр|Значение|  
 |------------|-----------|  
-|None|0|  
+|Отсутствуют|0|  
 |INSENSITIVE|1|  
 |SCROLL|2|  
 |READ ONLY|4|  
@@ -148,7 +155,7 @@ sys.dm_exec_plan_attributes ( plan_handle )
 SELECT plan_handle, refcounts, usecounts, size_in_bytes, cacheobjtype, objtype   
 FROM sys.dm_exec_cached_plans;  
 GO  
-SELECT attribute, value, is_cache_key  
+SELECT attribute, [value], is_cache_key  
 FROM sys.dm_exec_plan_attributes(<plan_handle>);  
 GO  
 ```  

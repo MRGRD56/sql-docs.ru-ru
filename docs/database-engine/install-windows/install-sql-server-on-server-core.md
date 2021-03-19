@@ -11,12 +11,12 @@ ms.assetid: 1dd294cc-5b69-4d0c-9005-3e307b75678b
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 205de7d5b4f1edce2dcc31bd8a1f362c2cc674ef
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5ceba605fc11adad95a720be8122bf995ec458f1
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348379"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611083"
 ---
 # <a name="install-sql-server-on-server-core"></a>Установка SQL Server в Server Core
 
@@ -59,16 +59,16 @@ ms.locfileid: "100348379"
 |Контроллер распределенного воспроизведения|Нет||  
 |Клиент распределенного воспроизведения|Только удаленные|Установка этих компонентов на Server Core не поддерживается. Эти компоненты могут быть установлены на сервере, отличном от Server Core, и подключены к службам [!INCLUDE[ssDE](../../includes/ssde-md.md)], установленным в Server Core.|  
 |Пакет SDK для подключения клиентов SQL|Да||  
-|Microsoft Sync Framework|Да|Платформа Microsoft Sync Framework не входит в установочный пакет [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] . Вы можете скачать соответствующую версию Sync Framework в [Центре загрузки Майкрософт](https://go.microsoft.com/fwlink/?LinkId=221788) (https://go.microsoft.com/fwlink/?LinkId=221788) и установить ее на компьютер, где работает установка Server Core.|  
+|Microsoft Sync Framework|Да|Платформа Microsoft Sync Framework не входит в установочный пакет [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] . Вы можете скачать соответствующую версию Sync Framework в [Центре загрузки Майкрософт](https://go.microsoft.com/fwlink/?LinkId=221788) (https://go.microsoft.com/fwlink/?LinkId=221788) и установить ее на компьютер, где работает установка Server Core.|  
 |[!INCLUDE[ssMDSshort](../../includes/ssmdsshort-md.md)]|Нет||  
 |[!INCLUDE[ssDQSnoversion](../../includes/ssdqsnoversion-md.md)]|Нет||  
   
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии  
- В следующей таблице показана матрица поддерживаемых сценариев для установки [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] в Server Core.  
+ В следующей таблице показана матрица поддерживаемых сценариев для установки [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] в Server Core.  
   
 | Установка | Допустимый целевой объект |  
 |-|-|  
-|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , выпуски|Все 64-разрядные версии [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] |  
+|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , выпуски|Все 64-разрядные версии [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] |  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , язык|Все языки|  
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , язык в языке ОС-локали (сочетание)|ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для JPN (японский) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для GER (немецкий) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для CHS (китайский — Китай) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для ARA (арабский (SA)) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для THA (тайский) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для TRK (турецкий) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для pt-PT (португальский, Португалия) Windows<br /><br /> ENG [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для ENG (английский) Windows|  
 |Выпуск Windows|Windows Server 2019 Datacenter <br/><br/> Windows Server 2019 Standard <br /><br />  [!INCLUDE[winserver2016_datacenter_md](../../includes/winserver2016-datacenter-md.md)]<br/><br/>[!INCLUDE[winserver2016_standard_md](../../includes/winserver2016-standard-md.md)]<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Datacenter<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Standard<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Essentials<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] R2 Foundation<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Datacenter<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Standard<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Essentials<br/><br/>[!INCLUDE[win8srv](../../includes/win8srv-md.md)] Foundation|  
@@ -77,7 +77,7 @@ ms.locfileid: "100348379"
  В установках Server Core поддерживается обновление с [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] до [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] .  
   
 ## <a name="install"></a>Установка  
- [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] не поддерживает установку с помощью мастера установки в операционной системе Server Core. При установке на Server Core программа установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поддерживает полный тихий режим без вывода сообщений с использованием параметра /Q или простой режим без вывода сообщений с использованием параметра /QS. Дополнительные сведения см. в разделе [Установка SQL Server из командной строки](./install-sql-server-from-the-command-prompt.md).  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] не поддерживает установку с помощью мастера установки в операционной системе Server Core. При установке на Server Core программа установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поддерживает полный тихий режим без вывода сообщений с использованием параметра /Q или простой режим без вывода сообщений с использованием параметра /QS. Дополнительные сведения см. в разделе [Установка SQL Server из командной строки](./install-sql-server-from-the-command-prompt.md).  
   
  Независимо от метода установки, необходимо подтвердить свое согласие с условиями лицензии на использование пакета программ как физического лица или от имени организации, если на используемое программное обеспечение не распространяется отдельное соглашение [!INCLUDE[msCoName](../../includes/msconame-md.md)] , такое как соглашение о корпоративном лицензировании Майкрософт или отдельное соглашение с независимым поставщиком программного обеспечения или изготовителем оборудования (OEM).  
   
@@ -113,7 +113,7 @@ ms.locfileid: "100348379"
 
   
 ### <a name="installation-options"></a>Варианты установки  
- Программа установки поддерживает следующие варианты установки [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] в операционной системе Server Core.  
+ Программа установки поддерживает следующие варианты установки [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] в операционной системе Server Core.  
   
 1.  **Установка из командной строки**  
   
@@ -187,7 +187,7 @@ ms.locfileid: "100348379"
   
     -   Установка всех поддерживаемых компонентов  
   
-        Следующий пример показывает, как установить все поддерживаемые компоненты [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] в Server Core:  
+        Следующий пример показывает, как установить все поддерживаемые компоненты [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] в Server Core:  
   
         ```console
         ; SQL Server Configuration File  
@@ -260,7 +260,7 @@ ms.locfileid: "100348379"
          Если файл DefaultSetup.ini не существует, создайте его и скопируйте в папки \x86 и \x64 корневой папки исходного носителя [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
   
 ## <a name="configure-remote-access-of-ssnoversion-on-server-core"></a>Настройка удаленного доступа для [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] при работе в Server Core  
- Чтобы настроить удаленный доступ к экземпляру [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)], который запускается в Server Core, выполните описанные ниже действия.  
+ Чтобы настроить удаленный доступ к экземпляру [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], который запускается в Server Core, выполните описанные ниже действия.  
   
 ### <a name="enable-remote-connections-on-the-instance-of-ssnoversion"></a>Включение удаленных подключений на экземпляре [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]  
 
@@ -305,7 +305,7 @@ $Tcp
   
 ## <a name="uninstall"></a>Удаление
 
- После входа на компьютер, где работает Server Core, вы получите доступ к ограниченной среде с командной строкой администратора. Командную строку можно использовать для запуска удаления [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)]. Чтобы удалить экземпляр [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)], запустите удаление из командной строки — либо в полностью тихом режиме (параметр /Q), либо в простом тихом режиме (параметр /QS). Если указан параметр /QS, то ход выполнения будет отображаться в пользовательском интерфейсе, но не потребует ввода. Параметр /Q запускает тихий режим без пользовательского интерфейса.  
+ После входа на компьютер, где работает Server Core, вы получите доступ к ограниченной среде с командной строкой администратора. Командную строку можно использовать для запуска удаления [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Чтобы удалить экземпляр [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], запустите удаление из командной строки — либо в полностью тихом режиме (параметр /Q), либо в простом тихом режиме (параметр /QS). Если указан параметр /QS, то ход выполнения будет отображаться в пользовательском интерфейсе, но не потребует ввода. Параметр /Q запускает тихий режим без пользовательского интерфейса.  
   
  Удаление существующего экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   

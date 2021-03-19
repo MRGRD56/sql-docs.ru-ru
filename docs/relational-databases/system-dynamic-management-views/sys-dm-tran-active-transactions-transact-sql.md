@@ -21,12 +21,12 @@ ms.assetid: 154ad6ae-5455-4ed2-b014-e443abe2c6ee
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 443a0bc032b687c012327a976a91d1597c885a66
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 7fb50e96cba3ff7cf9dfc3ab98c1808f1569f051
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839135"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610909"
 ---
 # <a name="sysdm_tran_active_transactions-transact-sql"></a>sys.dm_tran_active_transactions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -56,7 +56,28 @@ ms.locfileid: "101839135"
 
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
 В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
+
+
+## <a name="examples"></a>Примеры  
   
+### <a name="a-using-sysdm_tran_active_transactions-with-other-dmvs-to-find-information-about-active-transactions"></a>A. Использование sys.dm_tran_active_transactions с другими динамическими административными представлениями для поиска сведений об активных транзакциях
+ В следующем примере показаны активные транзакции в системе и предоставляются подробные сведения о транзакции, сеансе пользователя, отправленном приложении и запросе, который его запустил, и много других.  
+  
+```sql  
+select
+  getdate() as now,
+  DATEDIFF(SECOND, transaction_begin_time, GETDATE()) as tran_elapsed_time_seconds,
+  *
+FROM
+  sys.dm_tran_active_transactions at
+  JOIN sys.dm_tran_session_transactions st ON st.transaction_id = at.transaction_id
+  INNER JOIN sys.sysprocesses sp ON st.session_id = sp.spid 
+    CROSS APPLY sys.dm_exec_sql_text(sql_handle) txt
+order by
+  tran_elapsed_time_seconds desc
+```
+
+
 ## <a name="see-also"></a>См. также:  
  [sys.dm_tran_session_transactions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-session-transactions-transact-sql.md)   
  [sys.dm_tran_database_transactions &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)   

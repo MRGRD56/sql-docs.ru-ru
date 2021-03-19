@@ -11,12 +11,12 @@ ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 7a6311f79aa87d93ee980cf4d0c8d00352b14687
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 38044ef31208fa5a84c7aa4335c48408425b45a4
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353054"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610950"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>Составление и тестирование плана обновления ядра СУБД
 
@@ -49,24 +49,21 @@ ms.locfileid: "100353054"
   
        -   Обновление системы безопасности для TLS  
 
-   >[!NOTE]
-   >Предыдущий список также применяется к [!INCLUDE[sscurrent](../../includes/sscurrent-md.md)].
-  
 -   **Сторонние компоненты**. Проверьте совместимость сторонних компонентов, таких как интегрированное резервное копирование.  
   
 -   **Целевая среда**. Целевая среда должна соответствовать требованиям к оборудованию и программному обеспечению, а также поддерживать требования исходной системы. Например, обновление может включать консолидацию нескольких экземпляров SQL Server в один новый экземпляр [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] или виртуализацию среды [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] с преобразованием в частное или общедоступное облако.  
   
--   **Выпуск**. Определите необходимый выпуск [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] и допустимые пути обновления. Дополнительные сведения см. в разделе [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md). Если обновление производится с одного выпуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] до другого, то сначала проверьте, поддерживаются ли в целевом выпуске все используемые функции.  
+-   **Выпуск**. Определите необходимый выпуск [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] и допустимые пути обновления. Дополнительные сведения см. в разделе [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md). Если обновление производится с одного выпуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] до другого, то сначала проверьте, поддерживаются ли в целевом выпуске все используемые функции.  
   
     > [!NOTE]  
-    >  При обновлении до [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] с предыдущей версии выпуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise выберите Enterprise Edition: лицензирование по числу ядер и Enterprise Edition. Эти выпуски Enterprise отличаются только режимом лицензирования. Дополнительные сведения см. в разделе [Compute Capacity Limits by Edition of SQL Server](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md).  
+    >  При обновлении до [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] с предыдущей версии выпуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise выберите Enterprise Edition: лицензирование по числу ядер и Enterprise Edition. Эти выпуски Enterprise отличаются только режимом лицензирования. Дополнительные сведения см. в разделе [Compute Capacity Limits by Edition of SQL Server](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md).  
   
--   **Обратная совместимость**. Ознакомьтесь со статьей, посвященной обратной совместимости ядра СУБД [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)], в которой описываются изменения в поведении между [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)] и версией [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], которую вы обновляете. См. раздел [SQL Server Database Engine Backward Compatibility](../discontinued-database-engine-functionality-in-sql-server.md).  
+-   **Обратная совместимость**. Ознакомьтесь со статьей, посвященной обратной совместимости ядра СУБД [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], в которой описываются изменения в поведении между [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] и версией [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], которую вы обновляете. См. раздел [SQL Server Database Engine Backward Compatibility](../discontinued-database-engine-functionality-in-sql-server.md).  
   
 -   **Помощник по миграции данных**. Запустите помощник по миграции данных, который поможет выявить проблемы, препятствующие обновлению, и критические изменения, из-за которых требуется изменить существующие сценарии или приложения.
     Помощник по миграции данных можно скачать [здесь](https://aka.ms/get-dma).  
   
--   **Средство проверки конфигурации**. Запустите средство проверки конфигурации [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)], прежде чем запланировать обновление, чтобы определить, не возникнут ли в программе установки SQL Server препятствующие обновлению проблемы. Дополнительные сведения см. в разделе [Check Parameters for the System Configuration Checker](../../database-engine/install-windows/check-parameters-for-the-system-configuration-checker.md).  
+-   **Средство проверки конфигурации**. Запустите средство проверки конфигурации [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], прежде чем запланировать обновление, чтобы определить, не возникнут ли в программе установки SQL Server препятствующие обновлению проблемы. Дополнительные сведения см. в разделе [Check Parameters for the System Configuration Checker](../../database-engine/install-windows/check-parameters-for-the-system-configuration-checker.md).  
   
 -   **Обновление таблиц, оптимизированных для памяти**. Если вы обновляете до версии SQL Server 2016 экземпляр базы данных SQL Server 2014, содержащей оптимизированные для памяти таблицы, то процессу потребуется дополнительное время на преобразование таких таблиц в новый формат на диске. Кроме того, пока выполняется эта процедура, база данных будет отключена.   Время, необходимое для этой процедуры, зависит от размера таблиц, оптимизированных для памяти, и быстродействия подсистемы ввода-вывода. Для обновления на месте и обновления путем новой установки требуется трехкратный размер операций с данными (шаг 1 не требуется для последовательного обновления, однако шаги 2 и 3 обязательны):  
   

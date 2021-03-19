@@ -9,12 +9,12 @@ ms.prod_service: sql-tools
 ms.topic: conceptual
 author: dzsquared
 ms.author: drskwier
-ms.openlocfilehash: 661230edf4deea3d62ceef7d8b400cdb951330a5
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 500d946c036041481094292720744e7896d64622
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622911"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611025"
 ---
 # <a name="sqlpackage-for-azure-synapse-analytics"></a>SqlPackage для Azure Synapse Analytics
 
@@ -43,5 +43,5 @@ ms.locfileid: "102622911"
 ## <a name="next-steps"></a>Next Steps
 - Дополнительные сведения об [Extract](sqlpackage-extract.md)
 - Дополнительные сведения о [Publish](sqlpackage-publish.md)
-- Дополнительные сведения о [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction)
-- Дополнительные сведения о [ключах учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- Дополнительные сведения о [хранилище BLOB-объектов Azure](/azure/storage/blobs/storage-blobs-introduction)
+- Дополнительные сведения о [ключах учетных записей хранения Azure](/azure/storage/common/storage-account-keys-manage)

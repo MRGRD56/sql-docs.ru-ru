@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: 9d0ce165-8719-4007-9ae8-00f85cab3a0d
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 90a24ba11ce482e8d8608e1641d64ace067ad41b
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: dda9c982f2cf26457caaeeaf595ae9c783cace3d
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98170976"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611154"
 ---
 # <a name="external-scripts-enabled-server-configuration-option"></a>Параметр конфигурации сервера external scripts enabled
-[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
+[!INCLUDE [sqlserver2016-asdbmi](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
 Параметр **external scripts enabled** позволяет включить выполнение скриптов с некоторыми удаленными расширениями языка. По умолчанию это свойство отключено. Программа установки может при необходимости присвоить этому свойству значение true при установке **служб машинного обучения**.
 
@@ -31,9 +31,9 @@ ms.locfileid: "98170976"
 
 Параметр external scripts enabled необходимо включить перед выполнением внешнего скрипта с помощью процедуры [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) . Используйте **sp_execute_external_script**, чтобы выполнять в скрипты, написанные на нескольких поддерживаемых языках, таких как R или Python. 
 
-+ При анализе служб [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]
++ При анализе служб [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]
 
-    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] включает поддержку языка R в [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)], а также набор инструментов рабочей станции R и библиотек подключений.
+    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] включает поддержку языка R в [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)], а также набор инструментов рабочей станции R и библиотек подключений.
 
     Установите компонент **службы R** в ходе установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], чтобы включить выполнение скриптов R.
 
@@ -43,7 +43,7 @@ ms.locfileid: "98170976"
 
     Установите компонент **Службы машинного обучения** в ходе установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], чтобы включить выполнение внешних скриптов R. Во время начальной настройки нужно выбрать хотя бы один язык: R, Python или оба.
     
-+ Для [!INCLUDE[ssSQL15](../../includes/sssqlv15-md.md)] и более поздних версий [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)] включает поддержку всех языков R, Python, Java и других языков от сторонних производителей.
++ Для [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] и более поздних версий [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)] включает поддержку всех языков R, Python, Java и других языков от сторонних производителей.
 
 Установите компоненты Службы машинного обучения и Расширения языка в ходе установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], чтобы включить выполнение внешних скриптов на любом поддерживаемом языке.
 

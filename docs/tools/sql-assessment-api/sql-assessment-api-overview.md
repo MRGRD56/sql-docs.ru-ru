@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 3/10/2021
-ms.openlocfilehash: 34a7ff8c9380a88bb285a6d2e51e57e652f0310d
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 998e410eba1da7dcac3071170671c192f809a89c
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622858"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611054"
 ---
 # <a name="sql-assessment-api"></a>API Оценки SQL
 
@@ -37,7 +37,7 @@ API можно использовать для оценки:
 API также используется расширением Оценки SQL Server для Azure Data Studio (ADS).
 
 >[!NOTE]
->API-интерфейс Оценки SQL обеспечивает анализ разнообразных аспектов, но не дает глубокой оценки безопасности. Чтобы с упреждением совершенствовать защиту ваших баз данных, рекомендуем воспользоваться [Оценкой уязвимостей SQL](https://docs.microsoft.com/sql/relational-databases/security/sql-vulnerability-assessment).
+>API-интерфейс Оценки SQL обеспечивает анализ разнообразных аспектов, но не дает глубокой оценки безопасности. Чтобы с упреждением совершенствовать защиту ваших баз данных, рекомендуем воспользоваться [Оценкой уязвимостей SQL](../../relational-databases/security/sql-vulnerability-assessment.md).
 
 ## <a name="rules"></a>Правила
 
@@ -168,4 +168,4 @@ API Оценки SQL является частью:
 
 * [Управляющие объекты SQL Server (SMO)](../../relational-databases/server-management-objects-smo/overview-smo.md)
 * [PowerShell](../../powershell/download-sql-server-ps-module.md)
-* [Оценка уязвимостей SQL](https://docs.microsoft.com/sql/relational-databases/security/sql-vulnerability-assessment)
+* [Оценка уязвимостей SQL](../../relational-databases/security/sql-vulnerability-assessment.md)

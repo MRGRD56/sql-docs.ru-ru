@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017'
-ms.openlocfilehash: 44993ae527e99d615a9be620e3d930aa520c8980
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: d209daa0932068b41974c7e3597980b15657b1b2
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839515"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611214"
 ---
 # <a name="install-sql-server-machine-learning-services-python-and-r-on-windows"></a>Установка служб машинного обучения SQL Server (Python и R) в Windows
 
@@ -294,7 +294,7 @@ ms.locfileid: "101839515"
  
    *Microsoft SQL Server 2019 (RTM-CU8-GDR) (KB4583459) — 15.0.4083.2 (X64)   2 ноября 2020 г. 18:35:09   (C) Корпорация Майкрософт, 2019   Developer Edition (64-разрядная версия) в Windows 10 Корпоративная 10.0 <X64> (сборка 19042: ) (гипервизор)*
 
-   Дополнительные сведения см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](https://docs.microsoft.com/troubleshoot/sql/general/determine-version-edition-update-level#machine-learning-services).
+   Дополнительные сведения см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](/troubleshoot/sql/general/determine-version-edition-update-level#machine-learning-services).
 
 1. Скачайте [накопительный пакет обновления (CU)](../../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md), установленный для ядра СУБД.
 

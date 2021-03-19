@@ -11,12 +11,12 @@ ms.assetid: 11f4ed8a-aaa9-417b-bdd5-204f551c6bb6
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 8bbb1d668efb9a8531d6a93b084a7315e99072ff
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 385c1efc0dd11813b2aeb94fa087891b1496cffd
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348316"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611005"
 ---
 # <a name="install-sql-server-with-sysprep"></a>Установка SQL Server с помощью SysPrep
 
@@ -104,7 +104,7 @@ ms.locfileid: "100348316"
   
     |Установка|Components|  
     |-|-|  
-    |[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] SysPrep|[!INCLUDE[ssDE](../../includes/ssde-md.md)]<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Репликация<br /><br /> Полнотекстовые компоненты<br /><br /> Data Quality Services<br /><br /> [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] в собственном режиме<br /><br /> [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]<br /><br /> Распространяемые компоненты<br /><br /> Общие функции|  
+    |[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] SysPrep|[!INCLUDE[ssDE](../../includes/ssde-md.md)]<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Репликация<br /><br /> Полнотекстовые компоненты<br /><br /> Data Quality Services<br /><br /> [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] в собственном режиме<br /><br /> [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]<br /><br /> Распространяемые компоненты<br /><br /> Общие функции|  
   
      После выбора имени компонента описание его группы отображается на правой панели окна. Можно установить любое сочетание компонентов (устанавливаемые компоненты отмечаются флажками). Дополнительные сведения см. в разделах [Функции, поддерживаемые выпусками SQL Server 2017](../../sql-server/editions-and-components-of-sql-server-2017.md) и [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md).
   
@@ -296,7 +296,7 @@ ms.locfileid: "100348316"
   
 9. На странице **Завершение** можно предварительно просмотреть состояние завершения операции. Чтобы выйти из мастера установки, нажмите кнопку **Закрыть** . 
   
-10. Повторяйте шаги 1–9 до тех пор, пока не будут удалены все компоненты [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] . 
+10. Повторяйте шаги 1–9 до тех пор, пока не будут удалены все компоненты [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] . 
   
 ##  <a name="modifying-or-uninstalling-a-completed-instance-of-ssnoversion"></a><a name="bk_Modifying_Uninstalling"></a> Изменение и удаление завершенного экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. 
  Процесс добавления и удаления компонентов и удаления завершенного экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] аналогичен процессу, выполняемому для установленного экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Дополнительные сведения см. в следующих статьях:  

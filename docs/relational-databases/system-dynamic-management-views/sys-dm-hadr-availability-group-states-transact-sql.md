@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: d18019dd-f8dc-4492-b035-b1a639369b65
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: ee24a962698e2a661b4859c846a748a5b8517e7d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b8973b883ebdfe205ff0e9017e746c8ac65ebf58
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354161"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610915"
 ---
 # <a name="sysdm_hadr_availability_group_states-transact-sql"></a>sys.dm_hadr_availability_group_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "100354161"
 |Имя столбца|Тип данных|Описание|  
 |-----------------|---------------|-----------------|  
 |**group_id**|**uniqueidentifier**|Уникальный идентификатор группы доступности.|  
-|**primary_replica**|**varchar(128)**|Имя экземпляра сервера, на котором размещена текущая первичная реплика.<br /><br /> NULL = не первичная реплика, или не удается связаться с отказоустойчивым кластером WSFC.|  
+|**primary_replica**|**varchar(128)**|Имя экземпляра сервера, на котором размещена текущая первичная реплика.<br /><br /> NULL = не является первичной репликой и не может связаться с отказоустойчивым кластером WSFC.|  
 |**primary_recovery_health**|**tinyint**|Указывает состояние работоспособности (восстановления) первичной реплики, одно из следующих значений:<br /><br /> 0 = выполняется<br /><br /> 1 = в сети<br /><br /> NULL<br /><br /> Во вторичных репликах столбец **primary_recovery_health** имеет значение null.|  
 |**primary_recovery_health_desc**|**nvarchar(60)**|Описание **primary_replica_health**, одно из следующих:<br /><br /> ONLINE_IN_PROGRESS<br /><br /> ONLINE<br /><br /> NULL|  
 |**secondary_recovery_health**|**tinyint**|Указывает состояние восстановления реплики вторичной реплики, одно из следующих:<br /><br /> 0 = выполняется<br /><br /> 1 = в сети<br /><br /> NULL<br /><br /> В первичной реплике **secondary_recovery_health** столбец имеет значение null.|  
@@ -51,7 +51,7 @@ ms.locfileid: "100354161"
 ### <a name="permissions"></a>Разрешения  
  необходимо разрешение VIEW SERVER STATE на сервере.  
   
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
  [Мониторинг групп доступности &#40;&#41;Transact-SQL ](../../database-engine/availability-groups/windows/monitor-availability-groups-transact-sql.md)   
  [Группы доступности AlwaysOn (SQL Server)](../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md)   
  [Динамические представления управления и функции, связанные с группами доступности AlwaysOn (Transact-SQL)](../../relational-databases/system-dynamic-management-views/always-on-availability-groups-dynamic-management-views-functions.md)  

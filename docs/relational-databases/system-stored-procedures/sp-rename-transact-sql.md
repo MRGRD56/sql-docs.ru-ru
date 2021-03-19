@@ -22,12 +22,12 @@ ms.assetid: bc3548f0-143f-404e-a2e9-0a15960fc8ed
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: a9aabbb180e01dcfec95d87861fc43dd0a1aca51
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 2e24d74b8c2d2d3e661ab5169ae800e99af42f68
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99125940"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610866"
 ---
 # <a name="sp_rename-transact-sql"></a>sp_rename (Transact-SQL)
 [!INCLUDE [sql-asdb-asa](../../includes/applies-to-version/sql-asdb-asa.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "99125940"
   Изменяет имя пользовательского объекта в текущей базе данных. Этот объект может быть таблицей, индексом, столбцом, псевдонимом типа данных или [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] определяемым пользователем типом среды CLR.  
   
 > [!NOTE]
-> В [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] sp_rename находится в **режиме предварительной версии** и может использоваться только для переименования столбца в объекте пользователя.
+> В [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] sp_rename находится в **режиме предварительной версии** и может использоваться только для переименования столбца в объекте пользователя в схеме **dbo** .
 
 > [!CAUTION]  
 >  Изменение любой части имени объекта может разрушить скрипты и хранимые процедуры. Не рекомендуется использовать эту инструкцию для переименования хранимых процедур, триггеров, определяемых пользователем функций или представлений; следует удалить объект и создать его повторно с новым именем.  
@@ -86,7 +86,7 @@ sp_rename [ @objname = ] 'object_name' , [ @newname = ] 'new_name'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или ненулевое значение (неуспешное завершение)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Комментарии  
 **Применимо к** SQL Server (все поддерживаемые версии) и база данных SQL Azure  
  Процедура sp_rename автоматически переименовывает ассоциированный индекс каждый раз при переименовании ограничения PRIMARY KEY или UNIQUE. Если переименованный индекс привязан к ограничению PRIMARY KEY, то ограничение PRIMARY KEY также автоматически переименовывается хранимой процедурой sp_rename.  
 
@@ -223,7 +223,10 @@ sp_rename 'Person.Person.ContactMail1', 'NewContact','Statistics';
 
 ## <a name="examples-sssdwfull"></a>Примеры: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]
 ### <a name="g-renaming-a-column"></a>Ж. Переименование столбца  
- В следующем примере `c1` столбец в таблице переименовывается в `table1` `col1` .  
+ В следующем примере `c1` столбец в таблице переименовывается в `table1` `col1` . 
+
+> [!NOTE]
+> Эта [!INCLUDE[ssazuresynapse](../../includes/ssazuresynapse_md.md)] функция все еще находится в предварительной версии и в настоящее время доступна только для объектов в схеме **dbo** . 
   
 ```sql  
 CREATE TABLE table1 (c1 INT, c2 INT);

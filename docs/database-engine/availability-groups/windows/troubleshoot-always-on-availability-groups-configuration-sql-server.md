@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8c222f98-7392-4faf-b7ad-5fb60ffa237e
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 7b7c6a5df1bcef7e8438c01910233c2c3a38d070
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dfc19004d430ad70abaadbb33fd337a587e68d0d
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100337934"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611204"
 ---
 # <a name="troubleshoot-always-on-availability-groups-configuration-sql-server"></a>Поиск и устранение неисправностей конфигурации групп доступности AlwaysOn (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -41,11 +41,11 @@ ms.locfileid: "100337934"
 |[Доступ к конечной точке (ошибка SQL Server 1418)](#Msg1418)|Содержит сведения об этом сообщении об ошибке [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .|  
 |[Ошибка присоединения базы данных (ошибка SQL Server 35250)](#JoinDbFails)|Обсуждаются возможные причины и способы устранения проблемы с присоединением баз данных-получателей к группе доступности, поскольку соединение с первичной репликой неактивно.|  
 |[Маршрутизация только для чтения работает неправильно](#ROR)||  
-|[Связанные задачи](#RelatedTasks)|Содержит список разбитых по задачам разделов в электронной документации по [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] , особенно важных для устранения неполадок с конфигурацией группы.|  
+|[Связанные задачи](#RelatedTasks)|Содержит список разбитых по задачам разделов в электронной документации по [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] , особенно важных для устранения неполадок с конфигурацией группы.|  
 |[См. также](#RelatedContent)|Содержит список важных ресурсов, не входящих в состав электронной документации по [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] .|  
   
 ##  <a name="always-on-availability-groups-is-not-enabled"></a><a name="IsHadrEnabled"></a> Функция групп доступности AlwaysOn не включена  
- Функция [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] должна быть включена на каждом из экземпляров [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]. Дополнительные сведения см. в разделе [Включение и отключение групп доступности AlwaysOn (SQL Server)](../../../database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server.md).  
+ Функция [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] должна быть включена на каждом из экземпляров [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]. Дополнительные сведения см. в разделе [Включение и отключение групп доступности AlwaysOn (SQL Server)](../../../database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server.md).  
   
 ##  <a name="accounts"></a><a name="Accounts"></a> Измерение счетов  
  Учетные записи, под которыми работает [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] , должны быть правильно настроены.  

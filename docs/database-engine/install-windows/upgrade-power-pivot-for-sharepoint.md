@@ -12,12 +12,12 @@ author: Minewiskan
 ms.author: owend
 monikerRange: '>=sql-server-2016'
 manager: erikre
-ms.openlocfilehash: 2f034ac2223b15a3b66883a3ce3dbc434bcf07db
-ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
+ms.openlocfilehash: 971c23cfe9b49ad052c3808deca6e6221acb38e5
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98813250"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610931"
 ---
 # <a name="upgrade-power-pivot-for-sharepoint"></a>Обновление Power Pivot для SharePoint
 
@@ -68,20 +68,20 @@ ms.locfileid: "98813250"
   
  **SQL Server:**  
   
--   Если существующая установка [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] имеет вид [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)], [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] с пакетом обновления 2 (SP2) требуется для обновления до версии [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)].  
+-   Если существующая установка [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] имеет вид [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)], [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] с пакетом обновления 2 (SP2) требуется для обновления до версии [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)].  
   
--   Если существующая установка [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] имеет вид [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] с пакетом обновления 1 (SP1) требуется для обновления до версии [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)].  
+-   Если существующая установка [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] имеет вид [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] с пакетом обновления 1 (SP1) требуется для обновления до версии [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)].  
   
  **SharePoint 2010.**  
   
--   Если существующая установка выполняет SharePoint 2010, установите пакет обновления 2 (SP2) для SharePoint 2010 перед обновлением до [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)]. Дополнительные сведения см. в разделе [Пакет обновления 2 (SP2) для Microsoft SharePoint 2010](https://www.microsoft.com/download/details.aspx?id=39672). Используйте команду PowerShell `(Get-SPfarm).BuildVersion.ToString()` , чтобы проверить версию. Для получения информации о дате выпуска по версии сборки см. раздел [Номера сборок в SharePoint 2010](https://www.toddklindt.com/blog/Lists/Posts/Post.aspx?ID=224).  
+-   Если существующая установка выполняет SharePoint 2010, установите пакет обновления 2 (SP2) для SharePoint 2010 перед обновлением до [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)]. Дополнительные сведения см. в разделе [Пакет обновления 2 (SP2) для Microsoft SharePoint 2010](https://www.microsoft.com/download/details.aspx?id=39672). Используйте команду PowerShell `(Get-SPfarm).BuildVersion.ToString()` , чтобы проверить версию. Для получения информации о дате выпуска по версии сборки см. раздел [Номера сборок в SharePoint 2010](https://www.toddklindt.com/blog/Lists/Posts/Post.aspx?ID=224).  
   
 ##  <a name="upgrade-an-existing-sharepoint-2013-farm"></a><a name="bkmk_uprgade_sharepoint2013"></a> Обновление существующей фермы SharePoint 2013  
  Для обновления [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] , развернутых в SharePoint 2013, выполните следующие действия.  
   
  ![обновление powerpivot для sharepoint 2013](../../database-engine/install-windows/media/as-powepivot-upgrade-flow-sharepoint2013.png "обновление powerpivot для sharepoint 2013")  
   
-1.  Запустите программу установки [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] на внутренних серверах, выполняющих [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] в режиме интеграции с SharePoint. Если сервер содержит несколько экземпляров [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], обновите по крайней мере экземпляр **POWERPIVOT** . В следующем списке приведена сводка шагов мастера установки, относящихся к обновлению [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] :  
+1.  Запустите программу установки [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] на внутренних серверах, выполняющих [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] в режиме интеграции с SharePoint. Если сервер содержит несколько экземпляров [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)], обновите по крайней мере экземпляр **POWERPIVOT** . В следующем списке приведена сводка шагов мастера установки, относящихся к обновлению [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] :  
   
     1.  В мастере установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] нажмите кнопку **Установка**.  
   
@@ -165,7 +165,7 @@ ms.locfileid: "98813250"
     Get-Service | where {$_.displayname -like "*powerpivot*"}  
     ```  
   
-5.  **Запустите установку [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]** на первом сервере приложений SharePoint, где выполняются службы Windows **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** , чтобы обновить экземпляр POWERPIVOT. На странице «Установка» мастера установки SQL Server выберите вариант обновления. Дополнительные сведения см. в разделе [Обновление до SQL Server 2016 с использованием мастера установки (программа установки)](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md).  
+5.  **Запустите установку [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]** на первом сервере приложений SharePoint, где выполняются службы Windows **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** , чтобы обновить экземпляр POWERPIVOT. На странице «Установка» мастера установки SQL Server выберите вариант обновления. Дополнительные сведения см. в разделе [Обновление до SQL Server 2016 с использованием мастера установки (программа установки)](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md).  
   
 6.  **Перезапустите сервер** перед запуском средства настройки. В этом случае любые обновления или необходимые компоненты, установленные программой установки SQL Server, будут полностью настроены в системе.  
   
@@ -248,7 +248,7 @@ ms.locfileid: "98813250"
 Get-PowerPivotSystemService  
 ```  
   
- Проверьте **CurrentSolutionVersion**. [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] имеет версию 13.0.\<major build>.\<minor build>  
+ Проверьте **CurrentSolutionVersion**. [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] имеет версию 13.0.\<major build>.\<minor build>  
   
 ### <a name="verify-the-version-of-the-analysis-services-windows-service"></a>Проверьте версию службы Windows Analysis Services  
  Если обновлены лишь некоторые серверы [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] в ферме SharePoint 2010, экземпляр [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] на необновленных серверах будет более старым, чем версия, ожидаемая в ферме. Чтобы использовать все серверы, потребуется обновить их до одной и той же версии. Используйте один из следующих методов для проверки службы Windows служб SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) на каждом компьютере.  
@@ -261,7 +261,7 @@ Get-PowerPivotSystemService
   
 3.  Щелкните **Сведения**.  
   
-4.  Версия файла [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] должна быть 13.00.\<major build>.\<minor build>.  
+4.  Версия файла [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] должна быть 13.00.\<major build>.\<minor build>.  
   
 5.  Проверьте, что этот номер такой же, как у версий решения и системной службы [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] .  
   

@@ -11,12 +11,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: ca5c7911444dcc5cdd87787a80ee0d9e572797ef
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6a8f7bffd47e5159c0a048a3783f3ea6647bc097
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838101"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610928"
 ---
 # <a name="install-polybase-on-windows"></a>Установка PolyBase на компьютере по управлением Windows
 
@@ -166,7 +166,7 @@ RECONFIGURE;
 PolyBase устанавливает три пользовательские базы данных: DWConfiguration, DWDiagnostics и DWQueue. Эти базы данных предназначены для PolyBase. Не изменяйте и не удаляйте их.  
 
 > [!CAUTION]
-> При добавлении PolyBase к существующей установке SQL Server будут установлены компоненты на уровне версии установочного носителя, который может относиться к другим компонентам SQL Server. Это может привести к непредвиденному поведению или ошибкам. Всегда следуйте инструкциям по установке компонента PolyBase, переведя новый компонент на тот же уровень версии. При необходимости установите пакеты обновления (SP), накопительные обновления (CU) и (или) выпуски для общего распространения (GDR). Сведения о том, как определить версию PolyBase, см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](https://docs.microsoft.com/troubleshoot/sql/general/determine-version-edition-update-level#polybase).
+> При добавлении PolyBase к существующей установке SQL Server будут установлены компоненты на уровне версии установочного носителя, который может относиться к другим компонентам SQL Server. Это может привести к непредвиденному поведению или ошибкам. Всегда следуйте инструкциям по установке компонента PolyBase, переведя новый компонент на тот же уровень версии. При необходимости установите пакеты обновления (SP), накопительные обновления (CU) и (или) выпуски для общего распространения (GDR). Сведения о том, как определить версию PolyBase, см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](/troubleshoot/sql/general/determine-version-edition-update-level#polybase).
    
 ### <a name="how-to-confirm-installation"></a><a id="confirminstall"></a> Как подтвердить установку  
 
