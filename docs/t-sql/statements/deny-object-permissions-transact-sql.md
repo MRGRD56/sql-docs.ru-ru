@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 0b8d3ddc-38c0-4241-b7bb-ee654a5081aa
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 238940e3e6519be1b4758e794cf391869f057986
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 021cea9426fd6fb1c6e14c450fa37e69ef0048a6
+ms.sourcegitcommit: 2cc2e4e17ce88ef47cda32a60a02d929e617738e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99177727"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103473212"
 ---
 # <a name="deny-object-permissions-transact-sql"></a>DENY, запрет разрешений на объект (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -76,7 +76,7 @@ PRIVILEGES
  Указывает имя столбца в таблице, представлении или функции с табличным значением, для которых запрещается разрешение. Указание круглых скобок **( )** обязательно. Для столбца можно запрещать только разрешения SELECT, REFERENCES и UPDATE. Аргумент *column* может быть указан в предложении PERMISSIONS или после имени защищаемого объекта.  
   
 > [!CAUTION]  
->  Запрет (DENY) уровня таблицы имеет меньший приоритет, чем разрешение (GRANT) уровня столбца. Такая несогласованность в иерархии разрешений сохранена в целях обратной совместимости.  
+>  Запрет (DENY) уровня таблицы имеет меньший приоритет, чем разрешение (GRANT) уровня столбца. Такая несогласованность в иерархии разрешений сохранена в целях обратной совместимости. В SQL Server такое поведение отличается, если сервер настроен для выполнения с [конфигурацией "Common Criteria Compliance Enabled"](/../../database-engine/configure-windows/common-criteria-compliance-enabled-server-configuration-option.md). Но обычно ее следует использовать с осторожностью, а не во всех случаях.
   
  ON [ OBJECT **::** ] [ *schema_name* ] **.** *object_name*  
  Указывает объект, для которого запрещается разрешение. Фраза OBJECT необязательна, если указан аргумент *schema_name*. Если же она указана, указание квалификатора области ( **::** ) обязательно. Если не указан аргумент *schema_name*, подразумевается схема по умолчанию. Если указан аргумент *schema_name*, обязательно указание квалификатора области схемы ( **.** ).  

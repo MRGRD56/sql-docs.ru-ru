@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 61766eea-c450-408d-af33-fbe7ef8c9ff2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 2a33ce838ce32c6a7d2b883c5b256f668c213745
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: af850d1c160e7df312e3aac704162a2e57066b70
+ms.sourcegitcommit: 2cc2e4e17ce88ef47cda32a60a02d929e617738e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85659821"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103473218"
 ---
 # <a name="common-criteria-compliance-enabled-server-configuration"></a>Конфигурация сервера "common criteria compliance enabled"
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "85659821"
 |Критерии|Описание|  
 |--------------|-----------------|  
 |Защита остаточных данных (RIP)|Критерий RIP требует, чтобы выделяемая память была перезаписана известным битовым шаблоном, прежде чем она будет перераспределена для другого ресурса. Соответствие стандарту RIP может повысить безопасность, однако может привести к снижению производительности. После включения параметра common criteria compliance enabled производится перезапись памяти.|  
-|Возможность просматривать статистику имени входа|После включения параметра common criteria compliance enabled включается аудит входа. Каждый раз, когда пользователь успешно входит в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], становятся доступными сведения о времени последнего успешного входа, времени последней неудачной попытки входа и о количестве попыток между последним успешным уходом и текущим входом. Чтобы увидеть статистику входа, запросите динамическое административное представление [sys.dm_exec_sessions](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql.md) .|  
+|Возможность просматривать статистику имени входа|После включения параметра common criteria compliance enabled включается аудит входа. Каждый раз, когда пользователь успешно входит в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], становятся доступными сведения о времени последнего успешного входа, времени последней неудачной попытки входа и о количестве попыток между последним успешным уходом и текущим входом для каждого сеанса. Чтобы увидеть статистику входа, запросите динамическое административное представление [sys.dm_exec_sessions](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql.md) .|  
 |Разрешение `GRANT` на столбец не переопределяет запрет `DENY` на таблицу|После включения параметра common criteria compliance enabled запрет `DENY` на уровне таблицы имеет больший приоритет, чем разрешение `GRANT` на уровне столбца. Если этот параметр выключен, разрешение `GRANT` на столбец имеет больший приоритет, чем запрет `DENY` на уровне таблицы.|  
   
  Параметр common criteria compliance enabled является дополнительным. Общие условия оцениваются и сертифицируются только для выпусков Enterprise и Datacenter. Последнее состояние сертификации общих условий см. на веб-сайте [Общие условия Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkId=616319) .  
