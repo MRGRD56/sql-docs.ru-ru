@@ -11,12 +11,12 @@ ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0a05c7af0bc8b8846e3b4ab5c1e3472249350e7b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 61e964106acc57899b334e21592e3c6a3f57192b
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344396"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575050"
 ---
 # <a name="dynamic-data-masking"></a>Динамическое маскирование данных
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -120,73 +120,93 @@ WHERE Salary > 99999 and Salary < 100001;
  В следующем примере создается таблица, в которой используется три различных типа динамического маскирования данных. В примере заполняется таблица, затем выполняется запрос выборки для отображения результатов.  
   
 ```sql
-CREATE TABLE Membership  
-  (MemberID int IDENTITY PRIMARY KEY,  
-   FirstName varchar(100) MASKED WITH (FUNCTION = 'partial(1,"XXXXXXX",0)') NULL,  
-   LastName varchar(100) NOT NULL,  
-   Phone varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,  
-   Email varchar(100) MASKED WITH (FUNCTION = 'email()') NULL);  
-  
-INSERT Membership (FirstName, LastName, Phone, Email) VALUES   
-('Roberto', 'Tamburello', '555.123.4567', 'RTamburello@contoso.com'),  
-('Janice', 'Galvin', '555.123.4568', 'JGalvin@contoso.com.co'),  
-('Zheng', 'Mu', '555.123.4569', 'ZMu@contoso.net');  
-SELECT * FROM Membership;  
+
+-- schema to contain user tables
+CREATE SCHEMA Data
+GO
+
+-- table with masked columns
+CREATE TABLE Data.Membership(
+    MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
+    FirstName       varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    LastName        varchar(100) NOT NULL,
+    Phone           varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email           varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
+    )
+
+-- inserting sample data
+INSERT INTO Data.Membership (FirstName, LastName, Phone, Email, DiscountCode)
+VALUES   
+('Roberto', 'Tamburello', '555.123.4567', 'RTamburello@contoso.com', 10),  
+('Janice', 'Galvin', '555.123.4568', 'JGalvin@contoso.com.co', 5),  
+('Shakti', 'Menon', '555.123.4570', 'SMenon@contoso.net', 50),  
+('Zheng', 'Mu', '555.123.4569', 'ZMu@contoso.net', 40);  
+
 ```  
   
- Новый пользователь создается, и ему предоставляется разрешение **SELECT** для таблицы. Запросы, выполняемые как `TestUser` , возвращают маскированные данные.  
+ Создается новый пользователь, которому предоставляется разрешение **SELECT** для схемы, содержащей таблицу. Запросы, выполняемые как `MaskingTestUser` , возвращают маскированные данные.  
   
 ```sql 
-CREATE USER TestUser WITHOUT LOGIN;  
-GRANT SELECT ON Membership TO TestUser;  
+CREATE USER MaskingTestUser WITHOUT LOGIN;  
+
+GRANT SELECT ON SCHEMA::Data TO MaskingTestUser;  
   
-EXECUTE AS USER = 'TestUser';  
-SELECT * FROM Membership;  
+  -- impersonate for testing:
+EXECUTE AS USER = 'MaskingTestUser';  
+
+SELECT * FROM Data.Membership;  
+
 REVERT;  
 ```  
   
  Результат демонстрирует маски путем изменения данных из  
   
- `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com`  
+ `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com    10`  
   
  into  
   
- `1    RXXXXXXX    Tamburello    xxxx            RXXX@XXXX.com`  
+ `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com            91`
+ 
+ где число в DiscountCode случайно для каждого результата запроса
   
 ### <a name="adding-or-editing-a-mask-on-an-existing-column"></a>Добавление или изменение маски для существующего столбца  
  Используйте инструкцию **ALTER TABLE** для добавления маски к существующему столбцу в таблице или для изменения маски для этого столбца.  
 В следующем примере функция маскирования добавляется к столбцу `LastName`:  
   
 ```sql  
-ALTER TABLE Membership  
-ALTER COLUMN LastName ADD MASKED WITH (FUNCTION = 'partial(2,"XXX",0)');  
+ALTER TABLE Data.Membership  
+ALTER COLUMN LastName ADD MASKED WITH (FUNCTION = 'partial(2,"xxxx",0)');  
 ```  
   
  В следующем примере функция маскирования для столбца `LastName` изменяется:  
 
 ```sql  
-ALTER TABLE Membership  
+ALTER TABLE Data.Membership  
 ALTER COLUMN LastName varchar(100) MASKED WITH (FUNCTION = 'default()');  
 ```  
   
 ### <a name="granting-permissions-to-view-unmasked-data"></a>Предоставление разрешений на просмотр немаскированных данных  
- Предоставление разрешения **UNMASK** позволяет `TestUser` просматривать немаскированные данные.  
+ Предоставление разрешения **UNMASK** позволяет `MaskingTestUser` просматривать немаскированные данные.  
   
 ```sql
-GRANT UNMASK TO TestUser;  
-EXECUTE AS USER = 'TestUser';  
-SELECT * FROM Membership;  
-REVERT;   
+GRANT UNMASK TO MaskingTestUser;  
+
+EXECUTE AS USER = 'MaskingTestUser';  
+
+SELECT * FROM Data.Membership;  
+
+REVERT;    
   
 -- Removing the UNMASK permission  
-REVOKE UNMASK TO TestUser;  
+REVOKE UNMASK TO MaskingTestUser;  
 ```  
   
 ### <a name="dropping-a-dynamic-data-mask"></a>Удаление маски для динамического маскирования данных  
  Следующая инструкция удаляет маску для столбца `LastName` , созданного в предыдущем примере:  
   
 ```sql  
-ALTER TABLE Membership   
+ALTER TABLE Data.Membership   
 ALTER COLUMN LastName DROP MASKED;  
 ```  
   
