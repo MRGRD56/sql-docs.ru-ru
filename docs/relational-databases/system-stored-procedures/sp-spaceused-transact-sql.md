@@ -4,7 +4,7 @@ title: sp_spaceused (Transact-SQL) | Документация Майкрософ
 ms.custom: ''
 ms.date: 08/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: c6253b48-29f5-4371-bfcd-3ef404060621
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 480b61493dc38ea91679e590f3abe63bde3a48c0
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 97a2050e9b4c4486f8dbf6e64fde08fdc0e88678
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189307"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745374"
 ---
 # <a name="sp_spaceused-transact-sql"></a>sp_spaceused (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -166,7 +166,7 @@ sp_spaceused [[ @objname = ] 'objname' ]
 |**xtp_used**|**varchar (18)**|Общий размер файлов контрольных точек с состояниями в разделе Создание, активный и целевой объект слияния, в КБ. Это место на диске, активно используемое для данных в оптимизированных для памяти таблицах. Возвращает значение NULL, если база данных не имеет memory_optimized_data файловой группы, имеющей по крайней мере один контейнер. *Этот столбец включается, только если @include_total_xtp_storage = 1*.| 
 |**xtp_pending_truncation**|**varchar (18)**|Общий размер файлов контрольных точек с WAITING_FOR_LOG_TRUNCATION состояния, в КБ. Это место на диске, используемое для файлов контрольных точек, ожидающих очистки, после усечения журнала. Возвращает значение NULL, если база данных не имеет memory_optimized_data файловой группы, имеющей по крайней мере один контейнер. Этот столбец включается только в том случае `@include_total_xtp_storage=1` , если.|
 
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  **database_size** обычно превышает сумму **зарезервированного**  +  **нераспределенного пространства** , так как она включает размер файлов журнала, но **зарезервированные** и **unallocated_space** рассматривайте только страницы данных. В некоторых случаях с помощью Azure синапсе Analytics эта инструкция может оказаться недействительной. 
   
  Страницы, используемые XML-индексами и полнотекстовыми индексами, включаются в **index_size** обоих результирующих наборов. Если задано значение *objname* , страницы для XML-индексов и полнотекстовых индексов для объекта также учитываются в общем количестве **зарезервированных** и **index_sizeных** результатов.  

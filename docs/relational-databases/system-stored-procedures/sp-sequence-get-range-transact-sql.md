@@ -4,7 +4,7 @@ title: sp_sequence_get_range (Transact-SQL) | Документация Майк�
 ms.custom: ''
 ms.date: 08/08/2015
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ ms.assetid: 8ca6b0c6-8d9c-4eee-b02f-51ddffab4492
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 31b1e4def2f2528f775dc13945ebabed1931ecec
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 23ca83a62a194bb30bbf7a9b1432e42525592f3c
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99190808"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744644"
 ---
 # <a name="sp_sequence_get_range-transact-sql"></a>sp_sequence_get_range (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -71,7 +71,7 @@ sp_sequence_get_range [ @sequence_name = ] N'<sequence>'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  sp_sequence_get_rangeis в представлении sys. на схему и можно ссылаться как на sys.sp_sequence_get_range.  
   
 ### <a name="cycling-sequences"></a>Циклические последовательности  

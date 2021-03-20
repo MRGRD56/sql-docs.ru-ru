@@ -4,7 +4,7 @@ title: Производительность запросов по индекса
 ms.custom: ''
 ms.date: 01/11/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.assetid: 83acbcc4-c51e-439e-ac48-6d4048eba189
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6501f3148ab906c8ac719407a489db6a4be1e62b
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: f2fa166f15ebe07ad476a845af35b759b0d30bde
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236707"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744284"
 ---
 # <a name="columnstore-indexes---query-performance"></a>Производительность запросов по индексам columnstore
 
@@ -101,7 +101,7 @@ ms.locfileid: "99236707"
     
 |Операторы пакетного режима|Использование|[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]|[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]|[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и [!INCLUDE[ssSDS](../../includes/sssds-md.md)]<sup>1</sup>|Комментарии|    
 |---------------------------|------------------------|---------------------|---------------------|---------------------------------------|--------------|    
-|Операции DML (вставка, удаление, обновление, объединение)||нет|нет|нет|Операции DML не являются операциями пакетного режима, так как они не выполняются параллельно. Даже включение последовательного режима пакетной обработки для DML не даст никаких значительных преимуществ.|    
+|Операции DML (вставка, удаление, обновление, объединение)||нет|Нет|нет|Операции DML не являются операциями пакетного режима, так как они не выполняются параллельно. Даже включение последовательного режима пакетной обработки для DML не даст никаких значительных преимуществ.|    
 |columnstore index scan|SCAN|Н/Д|да|да|Для индексов columnstore можно передать предикат на узел SCAN.|    
 |columnstore Index Scan (nonclustered)|SCAN|да|да|да|да|    
 |index seek||Н/Д|Н/Д|нет|Операции поиска выполняются с помощью некластеризованного индекса в виде сбалансированного дерева в режиме строк.|    
@@ -109,9 +109,9 @@ ms.locfileid: "99236707"
 |объединение|UNION и UNION ALL|нет|да|да||    
 |фильтр|Применение предикатов|да|да|да||    
 |hash match|Статистические функции на основе хэша, внешнее хэш-соединение, правое хэш-соединение, левое хэш-соединение, правое внутреннее соединение, левое внутреннее соединение|да|да|да|Ограничения для статистической обработки: отсутствуют функции min и max для строк. Доступны следующие статистические функции: sum, count, avg, min, max.<br />Ограничения для соединения: отсутствуют соединения несоответствующих типов в нецелочисленных типах.|    
-|merge join||нет|нет|нет||    
+|merge join||нет|Нет|нет||    
 |многопоточные запросы||да|да|да||    
-|вложенные циклы||нет|нет|нет||    
+|вложенные циклы||нет|Нет|нет||    
 |однопоточные запросы, выполняемые с MAXDOP 1||нет|Нет|да||    
 |однопоточные запросы с планом последовательных запросов||нет|Нет|да||    
 |sort|Упорядочение по предложению в SCAN с индексом columnstore.|нет|Нет|да||    
