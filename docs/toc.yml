@@ -395,7 +395,7 @@ items:
                 href: big-data-cluster/notebooks-tutorial-spark.md
               - name: Список записных книжек для определенных операций
                 href: big-data-cluster/cluster-manage-notebooks.md
-          - name: Azure Monitor
+          - name: Монитор
             items:
               - name: Выполнение мониторинга с помощью Azure Data Studio
                 href: big-data-cluster/cluster-monitor-ads.md
@@ -4750,8 +4750,6 @@ items:
                 href: database-engine/configure-windows/optimize-for-ad-hoc-workloads-server-configuration-option.md
               - name: Время ожидания PH
                 href: database-engine/configure-windows/ph-timeout-server-configuration-option.md
-              - name: precompute rank
-                href: database-engine/configure-windows/precompute-rank-server-configuration-option.md
               - name: Настройка параметра priority boost
                 href: database-engine/configure-windows/configure-the-priority-boost-server-configuration-option.md
               - name: Настройка параметра query governor cost limit
