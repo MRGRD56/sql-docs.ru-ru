@@ -4,7 +4,7 @@ description: Узнайте, как создать учетные данные �
 ms.custom: ''
 ms.date: 08/01/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -24,12 +24,12 @@ ms.assetid: fb163e47-1546-4682-abaa-8c9494e9ddc7
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bc69ec8ee89cf994c61450804887b8c60388291f
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 25abb0069aa14105f27c581614917a11a83ea127
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99250929"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755904"
 ---
 # <a name="create-a-login"></a>Создание имени входа
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

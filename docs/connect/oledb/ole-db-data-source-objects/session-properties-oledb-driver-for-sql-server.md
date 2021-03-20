@@ -4,7 +4,7 @@ description: Узнайте, как OLE DB Driver for SQL Server интерпр
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - OLE DB Driver for SQL Server, sessions
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c6e3eba687afbf9b981d19a40a52d259bb43daa7
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 326b0d09fbcf071d981db56440956393eda93e73
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862045"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755634"
 ---
 # <a name="session-properties---ole-db-driver-for-sql-server"></a>Свойства сеанса — драйвер OLE DB для SQL Server
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

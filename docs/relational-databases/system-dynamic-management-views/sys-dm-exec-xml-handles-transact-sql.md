@@ -4,7 +4,7 @@ title: sys.dm_exec_xml_handles (Transact-SQL) | Документация Май�
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: a873ce0f-6955-417a-96a1-b2ef11a83633
 author: pmasl
 ms.author: pelopes
 monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3e8529f7626ffa25d86cbb73c704198082e32bcf
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 5a0169418710234983772a8623efdd0d9ff337cf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99208062"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750224"
 ---
 # <a name="sysdm_exec_xml_handles-transact-sql"></a>sys.dm_exec_xml_handles (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-xxx-md.md)]
@@ -63,7 +63,7 @@ dm_exec_xml_handles (session_id | 0 )
 |**row_count**|**bigint**|Число строк, возвращенных всеми предыдущими вызовами инструкции OPENXML для данного дескриптора документа.|  
 |**dormant_duration_ms**|**bigint**|Число миллисекунд, прошедших с момента последнего вызова инструкции OPENXML. Если функция OPENXML не была вызвана, функция возвращает миллисекунды с момента вызова **sp_xml_preparedocumen** t.|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  Время существования **sql_handles** , используемое для получения текста SQL, который выполнил вызов **sp_xml_preparedocument** в динамическом режиме кэшированный план, используемый для выполнения запроса. Если текст запроса в кэше недоступен, извлечь данные с помощью сведений, возвращаемых этой функцией, невозможно. Это может произойти при выполнении множества больших пакетов.  
   
 ## <a name="permissions"></a>Разрешения  

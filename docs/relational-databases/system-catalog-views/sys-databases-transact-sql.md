@@ -4,7 +4,7 @@ title: sys. databases (Transact-SQL) | Документация Майкросо
 ms.custom: ''
 ms.date: 06/08/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 46c288c1-3410-4d68-a027-3bbf33239289
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 86f0ce3ae5b77678a096ca0b394d8deeb44177dd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e3b9701423440c97c1728223dd6d4df68b164459
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339468"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750054"
 ---
 # <a name="sysdatabases-transact-sql"></a>sys.databases (Transact-SQL)
 
@@ -175,7 +175,7 @@ SELECT a.name, a.is_temporal_history_retention_enabled
 FROM sys.databases AS a;
 ```  
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [ALTER DATABASE (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql.md)
 - [sys.database_mirroring_witnesses (Transact-SQL)](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)

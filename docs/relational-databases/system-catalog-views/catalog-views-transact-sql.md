@@ -4,7 +4,7 @@ title: Представления каталога (Transact-SQL) | Докуме
 ms.custom: ''
 ms.date: 05/02/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -24,12 +24,12 @@ ms.assetid: 13bccc2f-ed3c-4b58-abd0-ca8bf34a66b8
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2612f36b574cd9d79d4bf394b26318e7ebb1cf31
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 11a9a831d5bb4671b4fc7dcd1449b2209567b558
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464947"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755664"
 ---
 # <a name="system-catalog-views-transact-sql"></a>Системные представления каталога (Transact-SQL)
 
@@ -117,7 +117,7 @@ ms.locfileid: "102464947"
     :::column-end:::
 :::row-end:::
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - [Представления информационной схемы &#40;&#41;Transact-SQL ](../../relational-databases/system-information-schema-views/system-information-schema-views-transact-sql.md)
 - [Системные таблицы (Transact-SQL)](../../relational-databases/system-tables/system-tables-transact-sql.md)
