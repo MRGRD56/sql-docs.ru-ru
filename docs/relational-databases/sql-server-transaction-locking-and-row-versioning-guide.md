@@ -4,7 +4,7 @@ title: Руководство по блокировке и управлению 
 ms.custom: seo-dt-2019
 ms.date: 03/10/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: ''
 ms.topic: conceptual
@@ -20,12 +20,12 @@ ms.assetid: 44fadbee-b5fe-40c0-af8a-11a1eecf6cb7
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 47545adc6e3e620cd74585d477bdd028f1e8625f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 23647aad9cbd2e4dbad4437d88a9e44d7a4810e0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352490"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739634"
 ---
 # <a name="transaction-locking-and-row-versioning-guide"></a>Руководство по блокировке и управлению версиями строк транзакций
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -388,7 +388,7 @@ GO
 |---------------------|----------------|------------------------|-------------|  
 |**Чтение не подтверждено**|Да|Да|Да|  
 |**Чтение подтверждено**|Нет|Да|Да|  
-|**Повторяющееся чтение**|Нет|нет|Да|  
+|**Повторяющееся чтение**|Нет|Нет|Да|  
 |**Моментальный снимок**|Нет|Нет|Нет|  
 |**Сериализуемый**|Нет|Нет|Нет|  
   
@@ -527,7 +527,7 @@ GO
 |**Блокировка с намерением совмещаемого доступа (IS)**|Да|Да|Да|Да|Да|Нет|  
 |**Общий доступ (S)**|Да|Да|Да|Нет|Нет|Нет|  
 |**Обновление (U)**|Да|Да|Нет|Нет|Нет|Нет|  
-|**Монопольная блокировка намерения (IX)**|Да|Нет|нет|Да|Нет|Нет|  
+|**Монопольная блокировка намерения (IX)**|Да|Нет|Нет|Да|Нет|Нет|  
 |**Общий доступ с монопольной блокировкой намерения (SIX)**|Да|Нет|Нет|Нет|Нет|Нет|  
 |**Монопольная (Х)**|Нет|Нет|Нет|Нет|Нет|Нет|  
   
@@ -567,12 +567,12 @@ GO
 ||Полученный ранее режим|||||||  
 |------|---------------------------|------|------|------|------|------|------|  
 |**Запрашиваемый режим**|**S**|**U**|**X**|**RangeS-S**|**RangeS-U**|**RangeI-N**|**RangeX-X**|  
-|**Общий доступ (S)**|Да|Да|нет|Да|Да|Да|Нет|  
-|**Обновление (U)**|Да|Нет|нет|Да|нет|Да|Нет|  
-|**Монопольная (Х)**|Нет|Нет|Нет|Нет|нет|Да|Нет|  
-|**RangeS-S**|Да|Да|нет|Да|Да|Нет|Нет|  
+|**Общий доступ (S)**|Да|Да|Нет|Да|Да|Да|Нет|  
+|**Обновление (U)**|Да|Нет|Нет|Да|Нет|Да|Нет|  
+|**Монопольная (Х)**|Нет|Нет|Нет|Нет|Нет|Да|Нет|  
+|**RangeS-S**|Да|Да|Нет|Да|Да|Нет|Нет|  
 |**RangeS-U**|Да|Нет|Нет|Да|Нет|Нет|Нет|  
-|**RangeI-N**|Да|Да|Да|Нет|нет|Да|Нет|  
+|**RangeI-N**|Да|Да|Да|Нет|Нет|Да|Нет|  
 |**RangeX-X**|Нет|Нет|Нет|Нет|Нет|Нет|Нет|  
   
 ### <a name="conversion-locks"></a><a name="lock_conversion"></a> Блокировки преобразования  

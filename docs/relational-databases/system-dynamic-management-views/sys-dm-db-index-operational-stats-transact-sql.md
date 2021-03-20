@@ -4,7 +4,7 @@ title: sys.dm_db_index_operational_stats (Transact-SQL)
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
-ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
+ms.prod_service: synapse-analytics, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a5438e8732c20018f6aba5845d41a1878026d291
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a4fd888929933fbd9951fedda9553ce320a31827
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99197762"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739534"
 ---
 # <a name="sysdm_db_index_operational_stats-transact-sql"></a>sys.dm_db_index_operational_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -54,7 +54,7 @@ sys.dm_db_index_operational_stats (
 
 *database_id* | NULL | 0 | ПАРАМЕТРЫ
 
-  Идентификатор базы данных. *database_id* имеет **smallint**. Допустимыми входными значениями являются идентификатор базы данных, NULL, 0 или DEFAULT. Значение по умолчанию — 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
+  Идентификатор базы данных. *database_id* имеет **smallint**. Допустимыми входными значениями являются идентификатор базы данных, NULL, 0 или DEFAULT. Значение по умолчанию равно 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
     
  Укажите значение NULL, чтобы вернуть сведения для всех баз данных в экземпляре [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Если для *database_id* указано значение null, необходимо также указать значение null для *object_id*, *index_id* и *partition_number*.    
     
@@ -64,7 +64,7 @@ sys.dm_db_index_operational_stats (
 
  Идентификатор объекта таблицы или представления, которые содержат индекс. *object_id* имеет **тип int**.    
     
- Допустимыми входными значениями являются идентификатор таблицы, NULL, 0 или DEFAULT. Значение по умолчанию — 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
+ Допустимыми входными значениями являются идентификатор таблицы, NULL, 0 или DEFAULT. Значение по умолчанию равно 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
     
  Укажите значение NULL, чтобы вернуть кэшированные данные для всех таблиц и представлений в указанной базе данных. Если для *object_id* указано значение null, необходимо также указать значение null для *index_id* и *partition_number*.    
 
@@ -76,7 +76,7 @@ sys.dm_db_index_operational_stats (
 
 *partition_number* | NULL | 0 | ПАРАМЕТРЫ
 
- Номер секции в объекте. *partition_number* имеет **тип int**. Допустимыми входными значениями являются *partion_number* индекса, КУЧИ, null, 0 или Default. Значение по умолчанию — 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
+ Номер секции в объекте. *partition_number* имеет **тип int**. Допустимыми входными значениями являются *partion_number* индекса, КУЧИ, null, 0 или Default. Значение по умолчанию равно 0. В данном контексте значения NULL, 0 и DEFAULT эквивалентны.    
     
  Укажите NULL, чтобы возвратить кэшированные данные для всех секций индекса или кучи.    
     
@@ -132,7 +132,7 @@ sys.dm_db_index_operational_stats (
 |**page_compression_attempt_count**|**bigint**|Количество страниц, которые были оценены как пригодные для сжатия на уровне страницы для конкретных секций таблицы, индекса или индексированного представления. Включает несжатые страницы, поскольку это не привело бы к значительной экономии. Всегда 0 для индекса columnstore.|    
 |**page_compression_success_count**|**bigint**|Количество страниц данных, которые были сжаты с помощью сжатия PAGE для конкретной секции таблицы, индекса или индексированного представления. Всегда 0 для индекса columnstore.|    
     
-## <a name="remarks"></a>Замечания    
+## <a name="remarks"></a>Remarks    
  Этот объект динамического управления не принимает Коррелированные параметры от `CROSS APPLY` и `OUTER APPLY` .    
     
  Для отслеживания продолжительности ожидания пользователями считывания из таблицы, индекса или секции и записи в таблицу, индекс или секцию, а также для определения таблиц или индексов, в которых наблюдается значительная интенсивность операций ввода-вывода или присутствуют перегруженные участки, можно использовать представление **sys.dm_db_index_operational_stats**.    
