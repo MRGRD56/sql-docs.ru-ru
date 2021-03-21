@@ -4,7 +4,7 @@ title: sys.foreign_keys (Transact-SQL) | Документация Майкрос
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: e960df1a-13fc-43ee-ba91-34c1b719ac2c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7d5558942a0afc83fa71ac0087c816902bf1498a
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: cbdacfd88d1e807461bd168a4df41ddbed4f49b0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102465186"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745244"
 ---
 # <a name="sysforeign_keys-transact-sql"></a>sys.foreign_keys (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "102465186"
 ## <a name="permissions"></a>Разрешения  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] Дополнительные сведения см. в разделе [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  
   
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
  [Представления каталога (Transact-SQL)](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [Представления каталога объектов (Transact-SQL)](../../relational-databases/system-catalog-views/object-catalog-views-transact-sql.md)   
  [Часто задаваемые вопросы о запросах к системному каталогу сервера SQL Server](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.yml)  

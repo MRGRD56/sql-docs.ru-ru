@@ -4,7 +4,7 @@ description: Узнайте, как безопасность на уровне �
 ms.custom: ''
 ms.date: 09/01/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7376b50196b543b162cae6d0800980990651ee45
-ms.sourcegitcommit: 765262cdc6352a5325148afc22fa4f1499fe1aa3
+ms.openlocfilehash: cce49516f92db523dfd25f8ea651ab217ef13619
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102514911"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739944"
 ---
 # <a name="row-level-security"></a>Безопасность на уровне строк
 

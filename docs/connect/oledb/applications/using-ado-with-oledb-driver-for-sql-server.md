@@ -4,7 +4,7 @@ description: Узнайте, как использовать ADO с драйве
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - MSOLEDBSQL, ADO
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 38446b1bd20ac251bcb25a57e9dee0c4debdb6ab
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: c40b9c2541c724f448dd636d5f7217da223a6f92
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860652"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742814"
 ---
 # <a name="using-ado-with-ole-db-driver-for-sql-server"></a>Использование объектов ADO с драйвером OLE DB для SQL Server
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

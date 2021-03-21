@@ -4,7 +4,7 @@ description: В этих статьях описывается, как OLE DB D
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - OLE DB, date/time improvements
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cd0f564a68f0b296008907f8620cd870c0e5ca7d
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 490b8875547560a2fa5d2e8792fc80a1c9dabbff
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862029"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104742344"
 ---
 # <a name="date-and-time-improvements-ole-db"></a>Улучшения функций даты и времени (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "88862029"
  Предоставляет сведения о типах OLE DB (OLE DB Driver for SQL Server), которые поддерживают типы данных даты и времени [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)].  
   
  [Метаданные (OLE DB)](../../oledb/ole-db-date-time/metadata-parameter-and-rowset.md)  
- Содержит сведения о структуре DBBINDING, **ICommandWithParameters::GetParameterInfo**, **ICommandWithParameters::SetParameterInfo**, **IColumnsRowset::GetColumnsRowset** и I**ColumnsInfo::GetColumnInfo**. Также предоставляет сведения об обновлениях наборов строк схем OLE DB.  
+ Содержит сведения о структуре DBBINDING, **ICommandWithParameters::GetParameterInfo**, **ICommandWithParameters::SetParameterInfo**, **IColumnsRowset::GetColumnsRowset** и I **ColumnsInfo::GetColumnInfo**. Также предоставляет сведения об обновлениях наборов строк схем OLE DB.  
   
  [Привязки и преобразования &#40;OLE DB&#41;](../../oledb/ole-db-date-time/conversions-ole-db.md)  
  Описывает правила преобразования существующих и новых типов данных между сервером и клиентом.  

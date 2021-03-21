@@ -4,7 +4,7 @@ title: sys.dm_tran_top_version_generators (Transact-SQL) | Документац�
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: cec7809b-ba8a-4df9-b5bb-d4f651ff1a86
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f64b44560b472bde136775fef0cdbd9a238611b3
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 0f05f5666cffbac5156be75f6ffc26f3eb86e6ce
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837842"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753754"
 ---
 # <a name="sysdm_tran_top_version_generators-transact-sql"></a>sys.dm_tran_top_version_generators (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -57,7 +57,7 @@ sys.dm_tran_top_version_generators
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
 В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
 
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  Поскольку **sys.dm_tran_top_version_generators** может потребоваться чтение большого количества страниц при сканировании всего хранилища версий, запуск **sys.dm_tran_top_version_generators** может повлиять на производительность системы.  
   
 ## <a name="examples"></a>Примеры  

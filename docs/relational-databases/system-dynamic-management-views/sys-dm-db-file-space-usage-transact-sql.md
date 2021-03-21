@@ -4,7 +4,7 @@ title: sys.dm_db_file_space_usage (Transact-SQL) | Документация Ма
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 148a5276-a8d5-49d2-8146-3c63d24c2144
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 855573b289bca455d8acdfbb60220c4e5f95a60b
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 82b97774a3f515bcfc8364418b6a187160942223
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837754"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748954"
 ---
 # <a name="sysdm_db_file_space_usage-transact-sql"></a>sys.dm_db_file_space_usage (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "101837754"
 |pdw_node_id|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Идентификатор узла, на котором находится данное распределение.|  
 |distribution_id|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Уникальный числовой идентификатор, связанный с распределением.|  
   
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  Счетчики страниц всегда находятся на уровне экстента. Поэтому значения счетчиков страниц всегда будут кратными восьми. Экстенты, содержащие страницы глобальной карты распределения (GAM) и общей глобальной карты распределения (SGAM), являются размещенными однородными экстентами. Они не включаются в вышеописанные счетчики страниц. Дополнительные сведения о страницах и экстентах см. в разделе [рекомендации по архитектуре страниц и экстентов](../../relational-databases/pages-and-extents-architecture-guide.md). 
   
  Содержимое текущего хранилища версий находится в [sys.dm_tran_version_store](../../relational-databases/system-dynamic-management-views/sys-dm-tran-version-store-transact-sql.md). Страницы хранилища версий отслеживаются на уровне файла вместо уровня сеанса и уровня задачи, потому что они являются глобальными ресурсами. Сеанс может создавать версии, но версии не могут быть удалены, когда сеанс заканчивается. При очистке хранилища версий необходимо рассмотреть наиболее долго выполняющуюся транзакцию, которой нужен доступ к определенной версии. Чтобы обнаружить самую длительную транзакцию, связанную с очисткой хранилища версий, просмотрите столбец elapsed_time_seconds в [sys.dm_tran_active_snapshot_database_transactions](../../relational-databases/system-dynamic-management-views/sys-dm-tran-active-snapshot-database-transactions-transact-sql.md).  
@@ -85,7 +85,7 @@ ms.locfileid: "101837754"
   
 ## <a name="relationship-cardinalities"></a>Количество элементов связей  
   
-|От|Кому|Relationship|  
+|Исходный тип|Кому|Связь|  
 |----------|--------|------------------|  
 |sys.dm_db_file_space_usage.database_id, file_id|sys.dm_io_virtual_file_stats.database_id, file_id|"Одна к одной"|  
   

@@ -4,7 +4,7 @@ description: OLE DB Driver for SQL Server поддерживает пользо
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - ISSCommandWithParameters interface
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 32f1d88d7fad962e1a8aac7b82f8e672fa8e5942
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 575d81916ee080a649ff27aa49dc32e802c739bd
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860622"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751104"
 ---
 # <a name="using-user-defined-types"></a>Использование определяемых пользователем типов данных
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -152,7 +152,7 @@ ms.locfileid: "88860622"
 #### <a name="the-dbpropset_sqlservercolumn-property-set"></a>Набор свойств DBPROPSET_SQLSERVERCOLUMN  
  Для поддержки создания таблиц с помощью интерфейса **ITableDefinition** драйвер OLE DB для SQL Server добавляет к набору свойств DBPROPSET_SQLSERVERCOLUMN три новых столбца.  
   
-|Имя|Description|Тип|Description|  
+|Имя|Описание|Тип|Description|  
 |----------|-----------------|----------|-----------------|  
 |SSPROP_COL_UDT_CATALOGNAME|UDT_CATALOGNAME|VT_BSTR|Для столбцов типа DBTYPE_UDT это свойство содержит строку, указывающую имя каталога, в котором определен определяемый пользователем тип.|  
 |SSPROP_COL_UDT_SCHEMANAME|UDT_SCHEMANAME|VT_BSTR|Для столбцов типа DBTYPE_UDT это свойство содержит строку, указывающую имя схемы, в которой определен определяемый пользователем тип.|  

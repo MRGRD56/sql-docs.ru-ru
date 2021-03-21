@@ -4,7 +4,7 @@ description: В этой статье описывается, как проис�
 ms.custom: ''
 ms.date: 03/19/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.technology: table-view-index
 ms.topic: conceptual
 f1_keywords:
@@ -31,12 +31,12 @@ ms.assetid: a28c684a-c4e9-4b24-a7ae-e248808b31e9
 author: pmasl
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 340160c64a64479fe8d194887c838dab3bb7468c
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: d322c728d9118cca544584e22e0e7f83f2154776
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "100353674"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755144"
 ---
 # <a name="resolve-index-fragmentation-by-reorganizing-or-rebuilding-indexes"></a>Разрешение фрагментации индекса путем реорганизации или перестроения индекса
 

@@ -3,7 +3,7 @@ description: sp_special_columns_100 (Azure синапсе Analytics)
 title: sp_special_columns_100 (Azure синапсе Analytics)
 ms.custom: ''
 ms.date: 03/14/2017
-ms.prod_service: sql-data-warehouse, pdw
+ms.prod_service: synapse-analytics, pdw
 ms.service: sql-data-warehouse
 ms.subservice: design
 ms.reviewer: ''
@@ -14,12 +14,12 @@ ms.assetid: 5774fadc-77cc-46f8-8f9f-a0f9efe95e21
 author: ronortloff
 ms.author: rortloff
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
-ms.openlocfilehash: 26aef826cfe6b35d6428240296b31dbc8a99474c
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 45385004023168f40ea47ce9dfe88d14ba4e9fb3
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189265"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104745004"
 ---
 # <a name="sp_special_columns_100-azure-synapse-analytics"></a>sp_special_columns_100 (Azure синапсе Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -85,7 +85,7 @@ sp_special_columns_100 [ @table_name = ] 'table_name'
 |SCALE|**smallint**|Масштаб столбца в источнике данных. Для тех типов данных, для которых масштаб не применим, возвращается значение NULL.|  
 |PSEUDO_COLUMN|**smallint**|Указывает, является ли столбец псевдостолбцом. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] всегда возвращает 1:<br /><br /> 0 = SQL_PC_UNKNOWN<br /><br /> 1 = SQL_PC_NOT_PSEUDO<br /><br /> 2 = SQL_PC_PSEUDO|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  В ODBC sp_special_columns эквивалентно SQLSpecialColumns. Возвращенные результаты сортируются по столбцу SCOPE.  
   
 ## <a name="permissions"></a>Разрешения  
