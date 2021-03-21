@@ -3,7 +3,7 @@ title: Форматирование файлов для импорта и экс
 description: При массовом импорте данных в таблицу SQL Server или массовом экспорте из таблицы файл форматирования может хранить сведения о формате полей для файла данных относительно таблицы.
 ms.date: 09/25/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: data-movement
 ms.topic: conceptual
@@ -16,12 +16,12 @@ author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 35650bcd31127dcf3eaad46be4c958bc8f94547e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: bfd6056469ee1a61696ffe0f51178a3e1a065419
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351380"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749674"
 ---
 # <a name="format-files-to-import-or-export-data-sql-server"></a>Форматирование файлов для импорта и экспорта данных (SQL Server)
 

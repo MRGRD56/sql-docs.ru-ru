@@ -4,7 +4,7 @@ description: Узнайте, как OLE DB Driver for SQL Server предст�
 ms.custom: ''
 ms.date: 02/21/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - OLE DB, data types
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cbe23a1e1edce96997968bf40075b2fc3b13db49
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 466e379b2ce809f72fb39c4d7594a85ce85ebad5
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861600"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749164"
 ---
 # <a name="data-type-mapping-in-rowsets-and-parameters"></a>Сопоставление типов данных в наборах строк и параметрах
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

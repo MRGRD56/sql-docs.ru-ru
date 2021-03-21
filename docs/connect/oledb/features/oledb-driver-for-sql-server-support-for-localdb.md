@@ -4,18 +4,18 @@ description: Узнайте, как подключиться к упрощенн
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: bcb768c0beea3ce836586bc718e1b7757da7ce72
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 8b398b1e9646be862db309197272bfb4c5e4f9be
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727321"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751164"
 ---
 # <a name="ole-db-driver-for-sql-server-support-for-localdb"></a>Поддержка драйвера OLE DB для SQL Server в LocalDB
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "91727321"
   
 -   Использовать программу **sqllocaldb.exe i** для поиска имени экземпляра по умолчанию.  
   
--   Использовать ключевое слово строки подключения **AttachDBFilename** для указания файла базы данных, который сервер должен присоединить. Если при использовании **AttachDBFilename**не указано имя базы данных в ключевом слове строки подключения **Database** , то база данных будет удалена из экземпляра LocalDB при закрытии приложения.  
+-   Использовать ключевое слово строки подключения **AttachDBFilename** для указания файла базы данных, который сервер должен присоединить. Если при использовании **AttachDBFilename** не указано имя базы данных в ключевом слове строки подключения **Database** , то база данных будет удалена из экземпляра LocalDB при закрытии приложения.  
   
 -   Чтобы указать экземпляр LocalDB в строке подключения, выполните следующие действия.  
   

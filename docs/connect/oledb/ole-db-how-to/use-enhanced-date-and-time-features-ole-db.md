@@ -4,25 +4,25 @@ description: Узнайте, как использовать функции да
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 2e3b0f8be8bccfe9c6ecb74252a12d2bc80619e4
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 5166c757497e6a851a4bc21206b293a21edb70ec
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727075"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749734"
 ---
 # <a name="use-enhanced-date-and-time-features-ole-db"></a>Использование улучшенных функций даты и времени (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 [!INCLUDE[Driver_OLEDB_Download](../../../includes/driver_oledb_download.md)]
 
-  В этом образце показывается, как использовать функции даты-времени, представленные в [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)]. В образце используются четыре новых типа даты и времени (**date**, **time**, **datetime2**и **datetimeoffset**) для выполнения команд с параметрами и получения результирующих наборов строк.  
+  В этом образце показывается, как использовать функции даты-времени, представленные в [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)]. В образце используются четыре новых типа даты и времени (**date**, **time**, **datetime2** и **datetimeoffset**) для выполнения команд с параметрами и получения результирующих наборов строк.  
   
  Образцу требуется образец базы данных AdventureWorks, который можно загрузить с домашней страницы [Образцы кода и проекты сообщества Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkID=85384) (возможно, на английском языке).  
   
