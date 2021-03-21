@@ -3,7 +3,7 @@ title: Отображение сведений о месте на диске, з
 description: Узнайте, как на SQL Server отображать информацию об объеме данных и журнала в резервном наборе данных с помощью SQL Server Management Studio или Transact-SQL.
 ms.date: 08/01/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: supportability
 ms.topic: conceptual
@@ -21,12 +21,12 @@ author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 648e33d685e7c97a7e900fd752402ed135fb9ecb
-ms.sourcegitcommit: c821c2bdc383a84e45bbdc95ff6fbabf4f54901c
+ms.openlocfilehash: 5c554ed600ce2317291cc01652bba07ad3d54d90
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560944"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748192"
 ---
 # <a name="display-data-and-log-space-information-for-a-database"></a>Отображение данных и сведений о пространстве журнала для базы данных
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

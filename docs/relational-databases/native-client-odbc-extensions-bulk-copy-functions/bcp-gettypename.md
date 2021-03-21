@@ -4,7 +4,7 @@ title: bcp_gettypename | Документация Майкрософт
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 65f036d1-f60e-4b8a-97b3-76fccf0dfed4
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3872736a1748dbd06e251a65d358522e7b92a630
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b8ac4f8233301f8c6b96f78a83fc5517a75eb888
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97483376"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749554"
 ---
 # <a name="bcp_gettypename"></a>bcp_gettypename
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -50,12 +50,12 @@ RETCODE bcp_gettypename (
 ## <a name="returns"></a>Возвращаемое значение  
  Строка, содержащая имя типа SQL, соответствующего типу BCP. Если указывается недопустимый тип BCP, возвращается пустая строка.  
   
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  Токены типа BCP определены в файле заголовка sqlncli.h и библиотеке sqlncli11.lib.  
   
  В следующей таблице указаны возможные типы BCP, независимо от того, являются ли они типами max или нет, а также ожидаемые выходные данные.  
   
-|Имя типа BCP|MaxType|Вывод|  
+|Имя типа BCP|MaxType|Выходные данные|  
 |-------------------|-------------|------------|  
 |**SQLDECIMAL**|Можно использовать|**decimal**|  
 |**SQLNUMERIC**|Можно использовать|**numeric**|  
@@ -83,7 +83,7 @@ RETCODE bcp_gettypename (
 |**SQLFLTN**|Можно использовать|**float-null**|  
 |**склаопсум**|Можно использовать|**Sum**|  
 |**склаопавг**|Можно использовать|**Avg**|  
-|**склаопкнт**|Можно использовать|**Count**|  
+|**склаопкнт**|Можно использовать|**Количество**|  
 |**склаопмин**|Можно использовать|**Min**|  
 |**склаопмакс**|Можно использовать|**Max**|  
 |**SQLDATETIM4**|Можно использовать|**smalldatetime**|  
@@ -92,7 +92,7 @@ RETCODE bcp_gettypename (
 |**SQLUNIQUEID**|Можно использовать|**uniqueidentifier**|  
 |**SQLNCHAR**|Нет|**Nchar**|  
 |**SQLNVARCHAR**|Нет|**Nvarchar**|  
-|**SQLNTEXT**|Можно использовать|**Ntext**|  
+|**SQLNTEXT**|Можно использовать|**Типы**|  
 |**SQLVARIANT**|Можно использовать|**sql_variant**|  
 |**SQLINT8**|Можно использовать|**Bigint**|  
 |**SQLCHARACTER**|Да|**varchar(max)**|  

@@ -4,7 +4,7 @@ description: Узнайте, как объект-получатель OLE DB Dr
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - OLE DB, data types
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: fecca9ed46ea35fe45868b8c618b3514f0b04abd
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: e111f1760415a3511686dce17d8dec5784c9a991
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860128"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755564"
 ---
 # <a name="data-type-mapping-in-itabledefinition"></a>Сопоставление типов данных в интерфейсе ITableDefinition
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

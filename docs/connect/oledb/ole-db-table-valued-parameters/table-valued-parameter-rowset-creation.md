@@ -4,7 +4,7 @@ description: Сведения о наборе строк возвращающе�
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - table-valued parameters, rowset creation
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 9705f8c17aa6d4f12f19d1233c4e0a6b47f2b230
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: bbde1d2007e18cefba01a43522cbaf5f07a6cee1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861615"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750794"
 ---
 # <a name="table-valued-parameter-rowset-creation"></a>Создание набора строк возвращающего табличное значение параметра
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -4,7 +4,7 @@ title: sys. Credentials (Transact-SQL) | Документация Майкрос
 ms.custom: ''
 ms.date: 04/06/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: ea48cf80-904a-4273-a950-6d35b1b0a1b6
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d1b850ea878f4018886b8a546653ae7a270b60fe
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d7a8c2a91ee749856cd503349e04984741cff95e
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99211304"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749234"
 ---
 # <a name="syscredentials-transact-sql"></a>sys.credentials (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-asdw-pdw-md](../../includes/tsql-appliesto-ss2008-asdbmi-asdw-pdw-md.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "99211304"
 |target_type|**nvarchar (100)**|Тип учетных данных. Возвращает значение NULL для традиционных учетных данных и значение CRYPTOGRAPHIC PROVIDER для учетных данных, сопоставленных с поставщиком служб шифрования. Дополнительные сведения о поставщиках управления внешними ключами см. в разделе [Расширенное управление ключами &#40;расширенный ](../../relational-databases/security/encryption/extensible-key-management-ekm.md)доступ к&#41;.|  
 |target_id|**int**|Идентификатор объекта, с которым сопоставлены учетные данные. Возвращает значение 0 для традиционных учетных данных и значение, отличное от 0, для учетных данных, сопоставленных с поставщиком служб шифрования. Дополнительные сведения о поставщиках управления внешними ключами см. в разделе [Расширенное управление ключами &#40;расширенный ](../../relational-databases/security/encryption/extensible-key-management-ekm.md)доступ к&#41;.|  
 
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
 Учетные данные уровня базы данных см. в разделе [sys.database_scoped_credentials](../../relational-databases/system-catalog-views/sys-database-scoped-credentials-transact-sql.md).
   
 ## <a name="permissions"></a>Разрешения  

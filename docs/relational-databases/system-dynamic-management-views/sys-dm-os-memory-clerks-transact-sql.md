@@ -4,7 +4,7 @@ title: sys.dm_os_memory_clerks (Transact-SQL)
 ms.custom: ''
 ms.date: 02/18/2021
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -20,12 +20,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0cd75d2eb6e613f36cecee8e79e3c8d6c99eed8d
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: 9d02513db2bedda6e0ce6291bb0e0c3c308f6540
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575348"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750984"
 ---
 # <a name="sysdm_os_memory_clerks-transact-sql"></a>sys.dm_os_memory_clerks (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "103575348"
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
 В [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] основных целях служб, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] целей службы `VIEW DATABASE STATE` необходимо разрешение в базе данных.   
   
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
  Диспетчер памяти [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] имеет трехуровневую иерархию. В нижней части иерархии располагаются узлы памяти. Средний уровень содержит клерки, кэш и пулы памяти. Верхний уровень содержит объекты памяти. Эти объекты используются для выделения памяти в экземпляре [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
   
@@ -189,7 +189,7 @@ ms.locfileid: "103575348"
 |USERSTORE_SXC     |    Это хранилище пользователя используется для выделений для хранения всех параметров [RPC](https://docs.microsoft.com/openspecs/windows_protocols/ms-tds/619c43b6-9495-4a58-9e49-a4950db245b3) .     |
 |USERSTORE_TOKENPERM     |    TokenAndPermUserStore — это единое хранилище пользователей SOS, которое отслеживает записи безопасности для контекста безопасности, имени входа, пользователя, разрешения и аудита. Для хранения этих объектов выделяется несколько хэш-таблиц.    |
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
 
  [SQL Server динамические административные представления, связанные с операционной системой &#40;&#41;Transact-SQL ](../../relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql.md)   
  [sys.dm_os_sys_info (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)   
