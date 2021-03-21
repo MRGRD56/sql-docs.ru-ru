@@ -4,7 +4,7 @@ description: Сведения о предварительных требован
 ms.custom: ''
 ms.date: 03/18/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - MSOLEDBSQL, system requirements
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c86f62f98e81ce3c4fdd86e1e79e8f73e1422851
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+ms.openlocfilehash: aa46b5a4db292b5ac4ee5df71aa18abeb74c5559
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96127976"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104744874"
 ---
 # <a name="system-requirements-for-ole-db-driver-for-sql-server"></a>Требования к системе для драйвера OLE DB для SQL Server
 
@@ -42,7 +42,7 @@ ms.locfileid: "96127976"
 
 ## <a name="azure-active-directory-authentication-requirements"></a>Требования для проверки подлинности Azure Active Directory  
 
-При использовании методов проверки подлинности Active Directory с драйвером OLE DB для SQL Server ***до** _ версии 18.3 должна быть установлена [Библиотека проверки подлинности Active Directory для SQL Server](https://go.microsoft.com/fwlink/?LinkID=513072). (Версия 18.3 включает зависимость как часть пакета установщика.) Для других методов проверки подлинности или операций OLE DB ADAL не требуется. Дополнительные сведения см. в разделе: [Использование Azure Active Directory](features/using-azure-active-directory.md)
+При использовании методов проверки подлинности Active Directory с драйвером OLE DB для SQL Server ***до*** версии 18.3 должна быть установлена [Библиотека проверки подлинности Active Directory для SQL Server](https://go.microsoft.com/fwlink/?LinkID=513072). (Версия 18.3 включает зависимость как часть пакета установщика.) Для других методов проверки подлинности или операций OLE DB ADAL не требуется. Дополнительные сведения см. в разделе: [Использование Azure Active Directory](features/using-azure-active-directory.md)
 
 ## <a name="sql-server-requirements"></a>требования SQL Server  
 
@@ -56,7 +56,7 @@ ms.locfileid: "96127976"
 
 Для обновлений.  
 
-_ Англоязычные версии OLE DB Driver for SQL Server можно обновить до локализованной версии OLE DB Driver for SQL Server.  
+* Англоязычные версии OLE DB Driver for SQL Server можно обновить до локализованной версии OLE DB Driver for SQL Server.  
 * Локализованные версии OLE DB Driver for SQL Server можно обновить до локализованных версий OLE DB Driver for SQL Server одного и того же языка.  
 * Локализированная версия OLE DB Driver for SQL Server можно обновить до англоязычной версии OLE DB Driver for SQL Server.  
 * Локализованные версии OLE DB Driver for SQL Server не могут быть обновлены до локализованного OLE DB Driver for SQL Server версий другого локализованного языка.  

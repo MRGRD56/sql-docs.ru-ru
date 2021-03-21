@@ -4,7 +4,7 @@ description: Сведения о поддержке интерфейсом ISequ
 ms.custom: ''
 ms.date: 05/25/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - large data, OLE objects
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 50c19527b536da0a61d8aa6c7c76ec34010ea268
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 80c1c1eff66c19b009dcfdd9164129734f6c4362
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861414"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749184"
 ---
 # <a name="blobs-and-ole-objects"></a>Большие двоичные объекты и объекты OLE
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

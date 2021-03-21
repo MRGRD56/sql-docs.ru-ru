@@ -4,7 +4,7 @@ title: Большие определяемые пользователем тип
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,12 +14,12 @@ ms.assetid: 4bf12058-0534-42ca-a5ba-b1c23b24d90f
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 95552d965ab09f34c134ad82dd7d84966ee65fd6
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: d4d7c3b854f49a426dc5e788e1fc1ab44eb28b35
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97467605"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753234"
 ---
 # <a name="large-clr-user-defined-types-in-sql-server-native-client-ole-db"></a>Большие типы User-Defined CLR в SQL Server Native Client (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -128,7 +128,7 @@ ms.locfileid: "97467605"
 |DBTYPE_STR|Поддерживается (2), (5)|Недоступно|Поддерживается (3), (5)|Недоступно|  
 |DBTYPE_IUNKNOWN|Поддерживается (6)|Недоступно|Поддерживается (6)|Недоступно|  
 |DBTYPE_VARIANT (VT_UI1 &#124; VT_ARRAY)|Поддерживается (5)|Недоступно|Поддерживается (3), (5)|Недоступно|  
-|DBTYPE_VARIANT (VT_BSTR)|Поддерживается (2), (5)|Недоступно|Недоступно|Недоступно|  
+|DBTYPE_VARIANT (VT_BSTR)|Поддерживается (2), (5)|Недоступно|Н/Д|Недоступно|  
   
 ### <a name="key-to-symbols"></a>Расшифровка символов  
   
