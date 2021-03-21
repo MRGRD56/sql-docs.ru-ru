@@ -4,18 +4,18 @@ description: Сведения о свойствах OLE DB Driver for SQL Serve
 ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 43e0972f3dde7be226ccac2bd4039dd7403ade03
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 259ecea7a9890ae44a9a32477f4712137175f04d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96504748"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754174"
 ---
 # <a name="service-principal-names-spns-in-client-connections-ole-db-in-sql-server-native-client"></a>Имена субъектов-служб (SPN) в клиентских соединениях (OLE DB) в SQL Server Native Client
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "96504748"
 ## <a name="provider-initialization-string-keywords"></a>Ключевые слова строки инициализации поставщика  
  Следующие ключевые слова строки инициализации поставщика поддерживают имена участников-служб в приложениях OLE DB. В следующей таблице значения в столбце ключевых слов используются строкой поставщика в методе IDBInitialize::Initialize. Значения в столбце описания используются в строках инициализации при соединении с помощью объектов данных ActiveX или метода IDataInitialize::GetDataSource.  
   
-|Ключевое слово|Description|Значение|  
+|Ключевое слово|Описание|Значение|  
 |-------------|-----------------|-----------|  
 |ServerSPN|Имя участника-службы сервера|Имя участника-службы для сервера. Значением по умолчанию является пустая строка, и в этом случае OLE DB Driver for SQL Server использует имя участника-службы по умолчанию, создаваемое поставщиком.|  
 |FailoverPartnerSPN|Имя участника-службы партнера по обеспечению отработки отказа|Имя участника-службы для партнера по обеспечению отработки отказа. Значением по умолчанию является пустая строка, и в этом случае OLE DB Driver for SQL Server использует имя участника-службы по умолчанию, создаваемое поставщиком.|  

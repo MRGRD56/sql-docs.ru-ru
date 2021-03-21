@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 11/05/2019
 ms.prod: sql
 ms.technology: system-objects
-ms.prod_service: sql-data-warehouse
+ms.prod_service: synapse-analytics
 ms.reviewer: jrasnick
 ms.topic: reference
 dev_langs:
@@ -13,12 +13,12 @@ dev_langs:
 author: ronortloff
 ms.author: rortloff
 monikerRange: =azure-sqldw-latest
-ms.openlocfilehash: 6b081619b6aaa98efe4b3312acb3a44034a71c20
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 0a8f145be38259f5f3a600cb7a270ccf193b4672
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99190146"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747754"
 ---
 # <a name="sysworkload_management_workload_groups-transact-sql"></a>sys.workload_management_workload_groups (Transact-SQL)
 
@@ -45,6 +45,6 @@ modify_time|**datetime**|Время последнего изменения гр
 
 Необходимо разрешение VIEW SERVER STATE.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Список всех представлений каталога для Azure синапсе Analytics и параллельного хранилища данных см. в статье [представления каталога Azure синапсе Analytics и Parallel Data Warehouse](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md). Сведения о создании группы рабочей нагрузки см. в разделе [Создание группы рабочей нагрузки](../../t-sql/statements/create-workload-group-transact-sql.md). Дополнительные сведения о классификации рабочей нагрузки см. в разделе [изоляция рабочей нагрузки](/azure/sql-data-warehouse/sql-data-warehouse-workload-isolation) .

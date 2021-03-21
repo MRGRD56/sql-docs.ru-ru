@@ -4,18 +4,18 @@ description: Из этого примера вы узнаете, как реал
 ms.custom: ''
 ms.date: 09/30/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: e7ba7469d01b75397f706df403041ec68c1ed5f9
-ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
+ms.openlocfilehash: 3613746d14764192ad366af906654561320e7730
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96506382"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739044"
 ---
 # <a name="integrated-kerberos-authentication-ole-db"></a>Интеграция проверки подлинности Kerberos (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

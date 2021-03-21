@@ -4,7 +4,7 @@ description: Используйте эти статьи, чтобы понять
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - OLE DB, processing results
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 2a1178d795d90009cf1305aad3fd3d3d9c4495a8
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 66d5e60f7a8e3c4f27bbf22290054f889c454322
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88860276"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104741264"
 ---
 # <a name="processing-results-how-to-topics-ole-db"></a>Инструкции по обработке результатов (OLE DB)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
