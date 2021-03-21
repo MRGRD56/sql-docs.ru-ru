@@ -4,7 +4,7 @@ description: Сведения о процессе очистки фантомн�
 ms.custom: ''
 ms.date: 05/02/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: supportability
 ms.topic: conceptual
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - ghost clean up process
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: e228afb793e69ab7b9d36fae31e838f6d1bca15a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 05113205c693de928321880f1586996f81b76a66
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100059229"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750364"
 ---
 # <a name="ghost-cleanup-process-guide"></a>Руководство по процессу очистки фантомных записей
 
