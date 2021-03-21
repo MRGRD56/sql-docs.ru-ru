@@ -4,7 +4,7 @@ title: Drop SQL Server индекс (поставщик собственного
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: add3ba14-10b1-4723-b7c0-3e83689e9fdd
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: a53dcc5d6d5821f7f5501c38a196b270ad6108ae
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 26c14af7fd452b93df93ef5c59b777b4057e3279
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88498966"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748644"
 ---
 # <a name="dropping-a-sql-server-native-client-index"></a>Удаление SQL Server Native Client индекса
 

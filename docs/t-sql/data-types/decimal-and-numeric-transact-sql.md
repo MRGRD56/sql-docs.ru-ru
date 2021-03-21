@@ -3,7 +3,7 @@ title: decimal и numeric (Transact-SQL) | Документы Майкросо�
 description: Справочник по Transact-SQL для типов данных decimal и numeric. Decimal и numeric — это синонимы, обозначающие типы числовых данных с фиксированными точностью и масштабом (количество знаков после запятой).
 ms.date: 09/10/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 9d862a90-e6b7-4692-8605-92358dccccdf
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4aee37a054da84a247b34ee272b877e28d2bb023
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a0ff8f34468e4186700d6942cbbfcbf5d6f2b09b
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99161272"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747724"
 ---
 # <a name="decimal-and-numeric-transact-sql"></a>decimal и numeric (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

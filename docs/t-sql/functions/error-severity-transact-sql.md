@@ -4,7 +4,7 @@ title: ERROR_SEVERITY (Transact-SQL) | Документы Майкрософт
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 50228f2f-6949-4d2e-8e43-fad11bf973ab
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 937b3737d31aed7dbc34f210e5a64e043527fde3
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 29996ce593222d1155f2ab299ca95c59a5cf0a71
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99158819"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104747514"
 ---
 # <a name="error_severity-transact-sql"></a>ERROR_SEVERITY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -53,7 +53,7 @@ ERROR_SEVERITY ( )
 
 Функция `ERROR_SEVERITY` возвращает значение NULL в случае вызова вне блока CATCH.  
   
-## <a name="remarks"></a>Примечания  
+## <a name="remarks"></a>Remarks  
 Функцию `ERROR_SEVERITY` можно вызывать в любом месте области действия блока CATCH.  
   
 Функция `ERROR_SEVERITY` возвращает значение серьезности ошибки независимо от количества ее выполнений или от места ее вызова в области действия блока `CATCH`. В этом ее отличие от таких функций, как @@ERROR, которые возвращают номер ошибки только в той инструкции, которая непосредственно следует за инструкцией, вызвавшей ошибку.  

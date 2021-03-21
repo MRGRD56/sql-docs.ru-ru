@@ -4,7 +4,7 @@ title: sys.dm_db_task_space_usage (Transact-SQL) | Документация Ма
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: fb0c87e5-43b9-466a-a8df-11b3851dc6d0
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: aeb2e4656c6097fe55d64518343abfac68f92b35
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: eb2a8b8ac5d92812b580d1c1497d56888e138ec0
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836709"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755514"
 ---
 # <a name="sysdm_db_task_space_usage-transact-sql"></a>sys.dm_db_task_space_usage (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -56,7 +56,7 @@ ms.locfileid: "101836709"
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
 В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
 
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  IAM-страницы не включены ни в один из счетчиков страниц, сведения о котором приводятся в данном представлении.  
   
  Счетчики страниц сбрасываются в ноль (0) в начале запроса. Их значения суммируются на уровне сеанса при завершении запроса. Дополнительные сведения см. в разделе [sys.dm_db_session_space_usage (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-session-space-usage-transact-sql.md).  
@@ -92,7 +92,7 @@ ms.locfileid: "101836709"
   
 ## <a name="relationship-cardinalities"></a>Количество элементов связей  
   
-|От|Кому|Relationship|  
+|Исходный тип|Кому|Связь|  
 |----------|--------|------------------|  
 |dm_db_task_space_usage.request_id|dm_exec_requests.request_id|"Одна к одной"|  
 |dm_db_task_space_usage.session_id|dm_exec_requests.session_id|"Одна к одной"|  

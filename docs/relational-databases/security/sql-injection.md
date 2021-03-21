@@ -4,7 +4,7 @@ description: Узнайте, как работают атаки путем вн�
 ms.custom: ''
 ms.date: 03/16/2017
 ms.prod: sql
-ms.prod_service: security, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -14,12 +14,12 @@ ms.assetid: eb507065-ac58-4f18-8601-e5b7f44213ab
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 074033472f37787c0bcf1da6f261a5f835f0cbec
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 2678b0eda377060e45a30cf47d4fa7e780e4a595
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838988"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739834"
 ---
 # <a name="sql-injection"></a>внедрение кода SQL;
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

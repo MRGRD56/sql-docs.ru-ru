@@ -4,7 +4,7 @@ title: 'Метод ISSAsynchStatus:: Abort (поставщик собствен�
 ms.custom: ''
 ms.date: 03/07/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.assetid: 2a4bd312-839a-45a8-a299-fc8609be9a2a
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 39453e5f06b2702b171d639cc6989dd1d9aaf3b4
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7184fd2b95ac436622634029a80111a3c8616e91
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97469395"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104739424"
 ---
 # <a name="issasynchstatusabort-native-client-ole-db-provider"></a>Метод ISSAsynchStatus:: Abort (поставщик собственного клиента OLE DB)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

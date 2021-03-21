@@ -4,7 +4,7 @@ title: sys.dm_exec_background_job_queue_stats (Transact-SQL) | Документ�
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 27f62ab5-46c4-417e-814d-8d6437034d1c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 720e74932ae0f7f084c54915d92fede476d9b490
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: e87afb7a2f10663e651e985b4a9ad9f491e2850d
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837271"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753814"
 ---
 # <a name="sysdm_exec_background_job_queue_stats-transact-sql"></a>sys.dm_exec_background_job_queue_stats (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "101837271"
 |**elapsed_max_ms**|**int**|Время с момента начала выполнения самого длинного запроса (в миллисекундах).|  
 |**pdw_node_id**|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Идентификатор узла, на котором находится данное распределение.|  
   
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  Это представление возвращает сведения только для заданий асинхронного обновления статистики. Дополнительные сведения о асинхронном обновлении статистики см. в разделе [Statistics](../../relational-databases/statistics/statistics.md).  
   
 ## <a name="permissions"></a>Разрешения
