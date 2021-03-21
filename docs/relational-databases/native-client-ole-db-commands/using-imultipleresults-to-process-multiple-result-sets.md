@@ -4,7 +4,7 @@ title: IMultipleResults, несколько результирующих наб�
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -17,12 +17,12 @@ ms.assetid: 754d3f30-7d94-4b67-8dac-baf2699ce9c6
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f1c41f0ccec1487f2783ed18b1aac0270318d43d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c3d3d02a04d0fbe6f83d67c1da22022b3c070d32
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97469495"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104749004"
 ---
 # <a name="using-imultipleresults-to-process-multiple-result-sets-in-sql-server-native-client"></a>Использование IMultipleResults для обработки нескольких результирующих наборов в SQL Server Native Client
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

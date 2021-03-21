@@ -4,7 +4,7 @@ title: sp_droprolemember (Transact-SQL) | Документация Майкро�
 ms.custom: ''
 ms.date: 03/20/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: c2f19ab1-e742-4d56-ba8e-8ffd40cf4925
 ms.author: vanto
 author: VanMSFT
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d6a44c56c53502613f665da3e96d7e8abb38d5aa
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 98eff289464aa2bf6968ce8440f2f07c08f2ea31
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99158142"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104740824"
 ---
 # <a name="sp_droprolemember-transact-sql"></a>sp_droprolemember (Transact-SQL)
 
@@ -63,7 +63,7 @@ sp_droprolemember 'role' ,
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  sp_droprolemember исключает члена из роли базы данных, удаляя строку из таблицы sysmembers. При удалении члена из роли он теряет все разрешения, которые имел как член этой роли.  
   
  Для удаления пользователя из предопределенной роли сервера пользуйтесь хранимой процедурой sp_dropsrvrolemember. Пользователи не могут быть удалены из роли public, а dbo не может быть удален из какой-либо роли.  

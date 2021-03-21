@@ -4,7 +4,7 @@ description: Узнайте об изменениях в OLE DB в драйве
 ms.custom: ''
 ms.date: 06/12/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - large CLR user-defined types [OLE DB]
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c1099b71aa4e600efff3951b9b35f3bdb9ea5d4b
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: a56a451f1066a7e0fcafb47e79a75693d466fcbf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861837"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754224"
 ---
 # <a name="large-clr-user-defined-types-ole-db"></a>Большие определяемые пользователем типы данных CLR (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -128,7 +128,7 @@ ms.locfileid: "88861837"
 |DBTYPE_STR|Поддерживается (2), (5)|Недоступно|Поддерживается (3), (5)|Недоступно|  
 |DBTYPE_IUNKNOWN|Поддерживается (6)|Недоступно|Поддерживается (6)|Недоступно|  
 |DBTYPE_VARIANT (VT_UI1 &#124; VT_ARRAY)|Поддерживается (5)|Недоступно|Поддерживается (3), (5)|Недоступно|  
-|DBTYPE_VARIANT (VT_BSTR)|Поддерживается (2), (5)|Недоступно|Недоступно|Недоступно|  
+|DBTYPE_VARIANT (VT_BSTR)|Поддерживается (2), (5)|Недоступно|Н/Д|Недоступно|  
   
 ### <a name="key-to-symbols"></a>Расшифровка символов  
   
