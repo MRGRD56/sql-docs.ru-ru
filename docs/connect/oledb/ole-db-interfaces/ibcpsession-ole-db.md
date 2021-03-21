@@ -4,7 +4,7 @@ description: Узнайте, как OLE DB Driver for SQL Server использ
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - IBCPSession interface
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 7ff67f06b977600506a0add9eb74a716c42e70ed
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 00fba128d830247b57e6171ceff9567c8a44f0cb
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99186837"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755154"
 ---
 # <a name="ibcpsession-ole-db"></a>Интерфейс IBCPSession (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

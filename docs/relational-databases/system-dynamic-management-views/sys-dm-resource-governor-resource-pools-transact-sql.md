@@ -4,7 +4,7 @@ title: sys.dm_resource_governor_resource_pools (Transact-SQL) | Документ
 ms.custom: ''
 ms.date: 04/24/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 9bfc926e-d8bc-40f8-9229-ab1f8a1e69c5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 81b2333e94a00c00c6743a51029d2b0e70cd9840
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 1088356349cd94e96a5952667b4e9436a4fa4ddf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99135222"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750654"
 ---
 # <a name="sysdm_resource_governor_resource_pools-transact-sql"></a>sys.dm_resource_governor_resource_pools (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -79,7 +79,7 @@ ms.locfileid: "99135222"
 |io_issue_delay_total_ms|**bigint**|**Область применения**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] и более поздних версий.<br /><br /> Общее время (в миллисекундах) между запланированной проблемой и фактической проблемой ввода-вывода. Допускает значение NULL. NULL, если пул ресурсов не управляется в аспекте операций ввода-вывода. Иными словами, параметры MIN_IOPS_PER_VOLUME и MAX_IOPS_PER_VOLUME пула ресурсов имеют значение 0.|  
 |pdw_node_id|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Идентификатор узла, на котором находится данное распределение.|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  Между группами рабочей нагрузки регулятора ресурсов и пулами ресурсов регулятора ресурсов существует связь «многие к одному». В результате многие статистики пула ресурсов являются производными от статистик группы рабочей нагрузки.  
   
  Данное динамическое административное представление отображает конфигурацию, хранимую в памяти. Чтобы просмотреть метаданные сохраненной конфигурации, используйте представление каталога sys.resource_governor_resource_pools.  

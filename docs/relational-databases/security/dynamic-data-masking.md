@@ -3,7 +3,7 @@ title: Динамическое маскирование данных | Доку
 description: Сведения о динамическом маскировании данных, которое ограничивает возможность раскрытия конфиденциальных данных, маскируя их для обычных пользователей Это может значительно упростить обеспечение безопасности в SQL Server.
 ms.date: 05/02/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9169f451bdbbc0c8e28eac19543ab7ca6092fb16
-ms.sourcegitcommit: e2d25f265556af92afcc0acde662929e654bf841
+ms.openlocfilehash: 03ef32905fd9fcd79c296279095e089691625a86
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103490100"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104751264"
 ---
 # <a name="dynamic-data-masking"></a>Динамическое маскирование данных
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -127,11 +127,11 @@ GO
 
 -- table with masked columns
 CREATE TABLE Data.Membership(
-    MemberID            int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
-    FirstName           varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
-    LastName            varchar(100) NOT NULL,
-    Phone               varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
-    Email               varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
+    FirstName       varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    LastName        varchar(100) NOT NULL,
+    Phone           varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email           varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
     DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
     )
 
@@ -162,11 +162,11 @@ REVERT;
   
  Результат демонстрирует маски путем изменения данных из  
   
- `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com`    10  
+ `1    Roberto     Tamburello    555.123.4567    RTamburello@contoso.com    10`  
   
  into  
   
- `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com`            91
+ `1    Rxxxxxo    Tamburello    xxxx            RXXX@XXXX.com            91`
  
  где число в DiscountCode случайно для каждого результата запроса
   

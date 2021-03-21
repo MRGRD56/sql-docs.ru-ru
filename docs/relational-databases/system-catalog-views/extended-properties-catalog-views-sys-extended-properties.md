@@ -4,7 +4,7 @@ title: sys.extended_properties (Transact-SQL) | Документация Май�
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 439b7299-dce3-4d26-b1c7-61be5e0df82a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f127b6ee96f95c0f51b4ce41a101348d7fce5c42
-ms.sourcegitcommit: be74dc0966930f28b03d0429aed22b1f0a296d3b
+ms.openlocfilehash: a431e14f32e84ac2e511d0b16c8efaf13698019f
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103421956"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755004"
 ---
 # <a name="extended-properties-catalog-views---sysextended_properties"></a>Представления каталога расширенных свойств — sys.extended_properties
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "103421956"
 |major_id|**int**|Идентификатор элемента, для которого определено расширенное свойство, интерпретируемый в соответствии с его классом. Для большинства элементов этот идентификатор отражает сущность, которую представляет класс. Большинство нестандартных идентификаторов интерпретируются следующим образом:<br /><br /> Если столбец class равен 0, то столбец major_id всегда равен 0.<br /><br /> Если столбец class равен 1, 2 или 7, то столбец major_id равен столбцу object_id.|  
 |minor_id|**int**|Вторичный идентификатор элемента, для которого определено расширенное свойство, интерпретируемый в соответствии с его классом. Для большинства элементов содержит 0. В противном случае интерпретируется следующим образом:<br /><br /> Если столбец class = 1, то столбец minor_id равен столбцу column_id для столбцов и 0 для объектов.<br /><br /> Если столбец class = 2, то столбец minor_id равен столбцу parameter_id.<br /><br /> Если столбец class = 7, то столбец minor_id равен столбцу index_id.|  
 |name|**sysname**|Имя свойства, уникальное в пределах столбцов class, major_id и minor_id.|  
-|Значение|**sql_variant**|Значение расширенного свойства.|  
+|value|**sql_variant**|Значение расширенного свойства.|  
   
 ## <a name="permissions"></a>Разрешения  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] Дополнительные сведения см. в разделе [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md).  

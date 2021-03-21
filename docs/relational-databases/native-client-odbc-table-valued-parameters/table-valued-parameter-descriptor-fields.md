@@ -4,7 +4,7 @@ title: Table-Valued поля дескриптора параметра | Док�
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: native-client
 ms.topic: reference
@@ -14,19 +14,19 @@ ms.assetid: 4e009eff-c156-4d63-abcf-082ddd304de2
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 391c6bafc42a7504643f09ba5cef2d17e1e734ec
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6c45999c04377bb88f48e7f97a85b46020673eaf
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97478045"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104755054"
 ---
 # <a name="table-valued-parameter-descriptor-fields"></a>Поля дескрипторов возвращающего табличное значение параметра
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Поддержка возвращающих табличное значение параметров включает новые поля в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]-дескрипторах параметра ODBC-приложения и дескрипторах параметра реализации.  
   
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
   
 |Имя|Расположение|Тип|Описание|  
 |----------|--------------|----------|-----------------|  

@@ -4,7 +4,7 @@ title: sys.fn_get_audit_file (Transact-SQL) | Документация Майк�
 ms.custom: ''
 ms.date: 02/19/2020
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -22,12 +22,12 @@ ms.assetid: d6a78d14-bb1f-4987-b7b6-579ddd4167f5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 013586570ce43b8270ae2613c05ced8bc9bdc48b
-ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
+ms.openlocfilehash: 1b45da9fa22e2c342258d8ee8ad665fd4f33cc30
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100525218"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104750624"
 ---
 # <a name="sysfn_get_audit_file-transact-sql"></a>sys.fn_get_audit_file (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]    
@@ -94,7 +94,7 @@ fn_get_audit_file ( file_pattern,
 | audit_schema_version | **int** | Всегда 1 |  
 | class_type | **varchar(2)** | Тип доступной для аудита сущности, для которой проводится аудит. Не допускает значение NULL. |  
 | client_ip | **nvarchar(128)** | Область **применения**: база данных SQL Azure + SQL Server (начиная с 2017)<br /><br />  Исходный IP-адрес клиентского приложения |  
-| connection_id | Идентификатор GUID | Область **применения**: база данных SQL Azure и SQL управляемый экземпляр<br /><br /> Идентификатор соединения на сервере |
+| connection_id | Код GUID | Область **применения**: база данных SQL Azure и SQL управляемый экземпляр<br /><br /> Идентификатор соединения на сервере |
 | data_sensitivity_information | nvarchar(4000) | Область **применения**: только база данных SQL Azure<br /><br /> Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](/azure/sql-database/sql-database-data-discovery-and-classification) |
 | database_name | **sysname** | Контекст базы данных, в котором выполнялось действие. Допускает значение NULL. Возвращает значение NULL для аудита, происходящих на уровне сервера. |  
 | database_principal_id | **int** |Идентификатор контекста пользователя базы данных, в котором выполнено действие. Не допускает значение NULL. Поддерживает 0, если это неприменимо. Например, операция сервера.|

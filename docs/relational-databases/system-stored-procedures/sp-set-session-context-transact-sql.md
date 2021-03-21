@@ -4,7 +4,7 @@ title: sp_set_session_context (Transact-SQL) | Документация Майк
 ms.custom: ''
 ms.date: 05/14/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse
+ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -19,12 +19,12 @@ ms.assetid: 7a3a3b2a-1408-4767-a376-c690e3c1fc5b
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4ad470228567b26a618800ec004a2a45c5f5440e
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: ff9f50aa953b0a7388156a9793d3ab1cbe819dc7
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99209289"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104754634"
 ---
 # <a name="sp_set_session_context-transact-sql"></a>sp_set_session_context (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -55,7 +55,7 @@ sp_set_session_context [ @key= ] N'key', [ @value= ] 'value'
 ## <a name="permissions"></a>Разрешения  
  Любой пользователь может задать контекст сеанса для своего сеанса.  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  Как и в случае с другими хранимыми процедурами, в качестве параметров могут передаваться только литералы и переменные (не выражения и вызовы функций).  
   
  Общий размер контекста сеанса ограничен 1 МБ. Если задать значение, которое приводит к превышению этого ограничения, выполнение инструкции завершится ошибкой. Вы можете наблюдать за общим использованием памяти в [sys.dm_os_memory_objects &#40;&#41;Transact-SQL ](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md).  

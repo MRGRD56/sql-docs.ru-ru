@@ -4,7 +4,7 @@ title: sys.dm_tran_active_snapshot_database_transactions (Transact-SQL) | Док
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: system-objects
 ms.topic: reference
@@ -21,12 +21,12 @@ ms.assetid: 55b83f9c-da10-4e65-9846-f4ef3c0c0f36
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c70cab7ea44fc1cadd226605a3b74f38d52ce7f7
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: f766ed71d42f761e03b1b63c74aad638f022c177
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839145"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104756474"
 ---
 # <a name="sysdm_tran_active_snapshot_database_transactions-transact-sql"></a>sys.dm_tran_active_snapshot_database_transactions (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -77,7 +77,7 @@ sys.dm_tran_active_snapshot_database_transactions
 В [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] необходимо `VIEW SERVER STATE` разрешение.   
 В базах данных SQL Basic, S0 и S1, а также для баз данных в эластичных пулах требуется учетная запись [администратора сервера](/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database) или учетная запись [администратора Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview#administrator-structure) . Для всех остальных целей службы базы данных SQL `VIEW DATABASE STATE` разрешение требуется в базе данных.   
 
-## <a name="remarks"></a>Комментарии  
+## <a name="remarks"></a>Remarks  
  **sys.dm_tran_active_snapshot_database_transactions** сообщает транзакции, которым назначен последовательный номер транзакции (XSN). Порядковый номер XSN назначается при первом доступе транзакции к хранилищу версий. В следующих примерах показано, как в базе данных, для которой включена изоляция моментальных снимков или READ COMMITTED с использованием управления версиями строк, транзакции назначается номер XSN.  
   
 -   Если транзакция выполняется на упорядочиваемом уровне изоляции, номер XSN назначается при первом выполнении транзакцией какой-либо инструкции, например операции UPDATE, в ходе которой создается версия строки.  

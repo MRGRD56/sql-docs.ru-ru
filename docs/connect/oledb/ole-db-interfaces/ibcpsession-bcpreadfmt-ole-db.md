@@ -4,7 +4,7 @@ description: Метод BCPReadFmt OLE DB Driver for SQL Server считыва
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - BCPReadFmt method
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c795ba5954db328a12772c511310d453cde5dde1
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: e1df1ffe0e03b81ab3865d328a84424c64b611e1
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99191861"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748514"
 ---
 # <a name="ibcpsessionbcpreadfmt-ole-db"></a>Метод IBCPSession::BCPReadFmt (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -64,6 +64,6 @@ HRESULT BCPReadFmt(
  Непредвиденный вызов метода. Например, перед вызовом этого метода не был вызван метод [IBCPSession::BCPInit](../../oledb/ole-db-interfaces/ibcpsession-bcpinit-ole-db.md).  
   
 ## <a name="see-also"></a>См. также:  
- [IBCPSession &#40;OLE DB&#41;](../../oledb/ole-db-interfaces/ibcpsession-ole-db.md)   
+ [IBCPSession (OLE DB)](../../oledb/ole-db-interfaces/ibcpsession-ole-db.md)   
  [Выполнение операций массового копирования](../../oledb/features/performing-bulk-copy-operations.md)  
   
