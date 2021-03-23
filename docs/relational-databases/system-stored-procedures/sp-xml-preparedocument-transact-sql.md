@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 95f41cff-c52a-4182-8ac6-bf49369d214c
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 8fc47f280e0c6f32e41cd7a0f7db34ff22ac98f1
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 29377edf5fa911c47b4e3a34fa1be58046c3e915
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99201791"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890786"
 ---
 # <a name="sp_xml_preparedocument-transact-sql"></a>sp_xml_preparedocument (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "99201791"
  **sp_xml_preparedocument** возвращает маркер, который можно использовать для доступа к только что созданному внутреннему ПРЕДСТАВЛЕНИЮ XML-документа. Этот маркер действителен в течение сеанса или до тех пор, пока этот маркер не станет недействительным, выполнив **sp_xml_removedocument**.  
   
 > [!NOTE]  
->  Проанализированный документ хранится во внутреннем кэше [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Средство синтаксического анализа MSXML использует одну восьмую всей памяти, доступной [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Чтобы избежать нехватки памяти, запустите **sp_xml_removedocument** , чтобы освободить память.  
+>  Проанализированный документ хранится во внутреннем кэше [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Средство синтаксического анализа MSXML может использовать одну восьмую общей памяти, доступной для [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Чтобы избежать нехватки памяти, запустите **sp_xml_removedocument** , чтобы освободить память, как только документ больше не требуется. Во многих случаях метод nodes () может быть лучшим вариантом и помогает избежать чрезмерного использования памяти.
   
 > [!NOTE]  
 >  Для обеспечения обратной совместимости **sp_xml_preparedocument** СВОРАЧИВАЕТ символы CR (13)) и LF (char (10)) в атрибутах, даже если эти символы являются сущностями.  
@@ -159,5 +159,6 @@ EXEC sp_xml_preparedocument @hdoc OUTPUT, @doc, '<ROOT xmlns:xyz="urn:MyNamespac
  <br>[OPENXML (Transact-SQL)](../../t-sql/functions/openxml-transact-sql.md)
  <br>[sys.dm_exec_xml_handles (Transact-SQL)](../system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql.md)
  <br>[sp_xml_removedocument (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-xml-removedocument-transact-sql.md)
+ <br>[nodes (метод) (тип данных xml)](../../t-sql/xml/nodes-method-xml-data-type.md)
   
   
