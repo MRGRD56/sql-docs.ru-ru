@@ -210,10 +210,6 @@ items:
             href: ../machine-learning/tutorials/demo-data-iris-in-sql.md
           - name: Набор данных о работе такси в Нью-Йорке
             href: ../machine-learning/tutorials/demo-data-nyctaxi-in-sql.md
-  - name: Примеры >>
-    href: 'https://github.com/Microsoft/sql-server-samples'
-  - name: Решения
-    href: ../machine-learning/tutorials/data-science-scenarios-and-solution-templates.md
   - name: Основные понятия
     items:
       - name: Платформа расширяемости

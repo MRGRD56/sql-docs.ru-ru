@@ -5,12 +5,12 @@ ms.date: 02/08/2021
 ms.topic: include
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 1303df98c60212c13a233d1e386c60109308e981
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a79f648631ade25b94c5f0af37bd493127d92eac
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072921"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104879595"
 ---
 ## <a name="custom-installation-of-python"></a>Настраиваемая установка Python
 
@@ -33,7 +33,7 @@ ms.locfileid: "100072921"
 
     ```
     [Service]
-    Environment="PYTHONHOME=/path/to/installation/of/python3.7"
+    Environment="PYTHONHOME=<path to the python3.7 lib>"
     ```
 
 1. Сохраните файл и закройте редактор.
@@ -49,7 +49,7 @@ ms.locfileid: "100072921"
 1. В открывшийся файл добавьте путь к **libpython3.7m.so.1.0** из настраиваемой установки Python.
 
     ```
-    /path/to/installation/of/python3.7/lib
+    <path to the python3.7 lib>
     ```
 
 1. Сохраните новый файл и закройте редактор.
@@ -58,7 +58,7 @@ ms.locfileid: "100072921"
 
     ```bash
     sudo ldconfig
-    ldd /path/to/installation/of/python3.7/lib/libpython3.7m.so.1.0
+    ldd <path to the python3.7 lib>/libpython3.7m.so.1.0
     ```
 
 ### <a name="grant-access-to-python-folder"></a>Предоставление доступа к папке Python
@@ -66,7 +66,7 @@ ms.locfileid: "100072921"
 Присвойте параметру `datadirectories` в разделе "Расширяемость" файла `/var/opt/mssql/mssql.conf` значение настраиваемой установки Python.
 
 ```bash
-sudo /opt/mssql/bin/mssql-conf set extensibility.datadirectories /path/to/installation/of/python3.7
+sudo /opt/mssql/bin/mssql-conf set extensibility.datadirectories <path to python3.7>
 ```
 
 ### <a name="restart-mssql-launchpadd"></a>Перезапуск службы mssql-launchpadd
