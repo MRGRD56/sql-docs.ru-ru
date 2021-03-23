@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.assetid: 53b09784-bb9d-4fd4-99d3-0492b3308ac4
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: b0f215b387cb772220fb56e504e1a5a8c19daa7d
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: c74f1d0d42b339a51254e582023d15a69d9891af
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770552"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575311"
 ---
 # <a name="download-odbc-driver-for-sql-server"></a>Скачивание драйвера ODBC Driver for SQL Server
 
-[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 Microsoft ODBC Driver for SQL Server — это отдельная библиотека динамической компоновки (DLL), которая содержит поддержку времени выполнения для приложений, использующих API машинного кода для подключения к SQL Server. Используйте Microsoft ODBC Driver 17 for SQL Server для создания новых и расширения существующих приложений, которым необходимо использовать новые возможности SQL Server.
 
@@ -38,7 +38,7 @@ Microsoft ODBC Driver for SQL Server — это отдельная библио
 - Дата выпуска: 10 марта 2021 г.
 
 > [!Note]
-> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
+> Если вы открываете локализованную версию этой страницы и хотите просмотреть актуальные материалы, посетите эту страницу на [версии сайта на языке US-English](https://aka.ms/downloadmsodbcsqlenglish). С версии сайта US-English вы можете скачать SSMS на других [языках из числа доступных](#available-languages).
 
 ## <a name="available-languages"></a>Доступные языки
 
@@ -85,11 +85,11 @@ Microsoft ODBC Driver for SQL Server можно скачать и установ
 - [DEB-пакеты для Debian 8](https://packages.microsoft.com/debian/8/prod/pool/main/m/msodbcsql17/)
 - [DEB-пакеты для Debian 8 (msodbcsql 13.x)](https://packages.microsoft.com/debian/8/prod/pool/main/m/msodbcsql/)
 
-### <a name="redhat"></a>RedHat
+### <a name="red-hat"></a>Red Hat
 
-- [RPM-пакеты для RedHat 8](https://packages.microsoft.com/rhel/8/prod/)
-- [RPM-пакеты для RedHat 7](https://packages.microsoft.com/rhel/7/prod/)
-- [RPM-пакеты для RedHat 6](https://packages.microsoft.com/rhel/6/prod/)
+- [RPM-пакеты для Red Hat 8](https://packages.microsoft.com/rhel/8/prod/)
+- [RPM-пакеты для Red Hat 7](https://packages.microsoft.com/rhel/7/prod/)
+- [RPM-пакеты для Red Hat 6](https://packages.microsoft.com/rhel/6/prod/)
 
 ### <a name="suse"></a>Suse
 

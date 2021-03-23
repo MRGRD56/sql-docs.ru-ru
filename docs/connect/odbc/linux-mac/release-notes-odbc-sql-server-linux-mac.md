@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: v-chojas
 ms.author: v-chojas
 manager: kenvh
-ms.openlocfilehash: 655e35042c8b9cfd4d99f88fe8caea98ffbc7978
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: 3dbd2571eb468f0fcc5806a80b81828d803f2244
+ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770532"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575250"
 ---
 # <a name="release-notes-for-the-microsoft-odbc-driver-for-sql-server-on-linux-and-macos"></a>Заметки о выпуске Microsoft ODBC Driver for SQL Server в Linux и macOS
 
@@ -180,7 +180,7 @@ GeneMi.  2019/04/03.
 
 **Поддерживаются новые дистрибутивы**: OS X 10.11 и macOS 10.12 поддерживаются в первой версии драйвера ODBC для macOS. Кроме того, теперь поддерживается Ubuntu 16.10 наравне с Red Hat 6 и 7 и SUSE 12. Для каждой платформы есть соответствующий пакет (RPM или DEB), упрощающий установку и настройку. Дополнительные сведения см. в инструкциях по установке драйвера ODBC для [Linux](../../../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md) и [macOS](../../../connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos.md).
 
-**Изменения поддержки диспетчера драйверов 2.3.1 unixODBC** Драйвер ODBC больше не зависит от пользовательских пакетов для диспетчера драйверов unixODBC (исключением является RedHat 6). Вместо этого используется диспетчер пакетов дистрибутива для разрешения зависимости UnixODBC из репозиториев дистрибутива.
+**Изменения в поддержке диспетчера пакетов unixODBC 2.3.1**: драйвер ODBC больше не зависит от пользовательских пакетов для диспетчера драйверов unixODBC (исключением является Red Hat 6). Вместо этого используется диспетчер пакетов дистрибутива для разрешения зависимости UnixODBC из репозиториев дистрибутива.
 
 **Поддержка API-интерфейса BCP**. Драйвер ODBC в Linux и macOS теперь поддерживает использование [функций API BCP (**bcp_init** и других)](../../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md).
 
