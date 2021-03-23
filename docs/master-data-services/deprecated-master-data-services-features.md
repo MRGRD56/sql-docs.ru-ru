@@ -12,18 +12,18 @@ ms.assetid: d8506bda-66dd-45a4-bfc9-3a10fa665acc
 author: lrtoyou1223
 ms.author: lle
 manager: erikre
-ms.openlocfilehash: d8cded1c88278ca67426eaf40df7bdd87474312c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3f7e92285692ed4227e0ed15d9d1ad5f3674c7f8
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350180"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833819"
 ---
 # <a name="deprecated-master-data-services-features"></a>Устаревшие функции Master Data Services
 
 [!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-  В этом разделе описаны устаревшие функции компонента [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] , которые по-прежнему доступны в [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]. Эти функции будут удалены в следующем выпуске [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]. Не следует использовать устаревшие функции в новых приложениях.  
+  В этом разделе описываются устаревшие функции служб [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] . Ожидается, что эти функции будут удалены в следующем выпуске. Не следует использовать устаревшие функции в новых приложениях.  
   
 ## <a name="explicit-hierarchies-collections-and-related-components"></a>Явные иерархии, коллекции и связанные компоненты  
  Явные иерархии, коллекции и связанные компоненты являются устаревшими. Элементы, которые раньше моделировались как типы консолидированных элементов (родительские элементы явной иерархии) и типы элементов коллекции, будут моделироваться в производных иерархиях как конечные элементы. Ниже приведены новые возможности, которые поддерживают использование производных иерархий вместо явных иерархий.  

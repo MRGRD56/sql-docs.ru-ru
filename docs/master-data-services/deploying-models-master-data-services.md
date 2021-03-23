@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 30085c08-034f-4efe-80fe-408f9091ff5c
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 263de1026f5d63c240259852ca4acce1ed8f77d0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ec1216cdc50f13279be057558dfd6e10800e9b47
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350190"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833807"
 ---
 # <a name="deploying-models-master-data-services"></a>Развертывание моделей (службы Master Data Services)
 
@@ -28,7 +28,7 @@ ms.locfileid: "100350190"
   В службах [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]пакет представляет собой XML-файл, содержащий развертываемую структуру модели и (необязательно) данные этой модели. Пакеты модели используется для перемещения копий моделей из одной среды служб MDS в другую, либо для создания новых моделей в существующей среде MDS.  
   
 > [!IMPORTANT]  
->  [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**Средство MDSModelDeploy** обратно совместимо с пакетами, созданными в [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] или более поздней версии.  
+> [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] и более поздние версии **средства MDSModelDeploy** обратно совместимы с пакетами, созданными в [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] или более поздней версии.  
   
 ## <a name="tools-for-deploying-models"></a>Инструменты для развертывания моделей  
  Для работы с пакетами модели можно использовать одно из трех средств, в зависимости от задач, которые требуется выполнить.  

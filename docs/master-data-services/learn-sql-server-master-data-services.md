@@ -13,12 +13,12 @@ keywords:
 ms.assetid: 87516551-a3b6-4b29-928b-ddd25672a98c
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 1583f0dc977bffe12be3680ce2e1181a0e838e1b
-ms.sourcegitcommit: 6be9a0ff0717f412ece7f8ede07ef01f66ea2061
+ms.openlocfilehash: 2854a3f5eb819d3bbc96db960132a2b7c2401035
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85813290"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833927"
 ---
 # <a name="learn-sql-server-master-data-services"></a>Изучение служб SQL Server Master Data Services
 
@@ -27,16 +27,17 @@ ms.locfileid: "85813290"
   
   
 ## <a name="training"></a>Обучение  
-* Чтобы изучить новые функции и возможности, появившиеся в [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] , попробуйте выполнить [лабораторную работу с самостоятельным семинаром](https://www.microsoft.com/handsonlabs/selfpacedlabs) (требуется выполнить вход с использованием учетная запись Майкрософт).  
+
+* Чтобы изучить новые функции и возможности, воспользуйтесь [лабораторией для самостоятельного обучения](https://www.microsoft.com/handsonlabs/selfpacedlabs) (требуется вход с учетная запись Майкрософт).  
 * Чтобы разработать [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] решение для хранения главных списков географических данных и управления ими с помощью надстройки для Excel и [!INCLUDE[ssMDSmdm_md](../includes/ssmdsmdm-md.md)] , Попробуйте испытать [лабораторную работу самостоятельно](https://www.microsoft.com/handsonlabs/selfpacedlabs). Вы создадите сущности и иерархии, а также воспользуетесь [!INCLUDE[ssIS_md](../includes/ssis-md.md)] для заполнения таблицы измерения.  
   
-## <a name="videos"></a>Видео  
-* Узнать о новых возможностях в выпуске [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] продукта [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)][**можно из этого видеоролика**](https://www.youtube.com/watch?v=cKA72FpOVxI).  
+## <a name="videos"></a>Видеоролики  
+* Чтобы узнать о новых возможностях [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] , [**Просмотрите это видео**](https://www.youtube.com/watch?v=cKA72FpOVxI).  
   
 ## <a name="samples"></a>Примеры  
 * Чтобы получить дополнительные сведения о структуризации данных в [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] с помощью моделей, сущностей и иерархий, воспользуйтесь образцами моделей, которые входят в установку [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]. Инструкции по развертыванию образцов см. в разделе [Развертывание образцов моделей и данных](../master-data-services/master-data-services-installation-and-configuration.md#deploySample).   
   
-    Сведения об обновлениях примеров моделей в [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] см. в разделе [Примеры SQL Server: пакеты развертывания моделей](../master-data-services/sql-server-samples-model-deployment-packages-mds.md).  
+    Сведения об обновлениях образцов моделей см. в разделе [SQL Server Samples: пакеты развертывания модели](../master-data-services/sql-server-samples-model-deployment-packages-mds.md).  
   
 * Демонстрацию настройки взаимодействия пользователей с [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]можно получить с помощью образцов консольных приложений MDS C#, которые входят в состав образцов для SQL Server. Скачать образцы для SQL Server в виде ZIP-файла можно из этого [репозитория GitHub](https://github.com/Microsoft/sql-server-samples).  
   

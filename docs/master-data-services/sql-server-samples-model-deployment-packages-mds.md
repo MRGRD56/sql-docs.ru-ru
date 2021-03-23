@@ -14,12 +14,12 @@ keywords:
 ms.assetid: 9b31b7b6-319b-4840-b67d-eb383e7762b1
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 70375fd359e56081267f2478a582281d96c253eb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 3dbb973b72d2df5a3a23ea40684ad7da47c19777
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88342380"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833741"
 ---
 # <a name="sql-server-examples-model-deployment-packages-mds"></a>Примеры SQL Server: пакеты развертывания моделей (MDS)
 
@@ -30,9 +30,9 @@ ms.locfileid: "88342380"
  Инструкции по развертыванию образцов пакетов моделей см. в разделе [Развертывание образцов моделей и данных](../master-data-services/master-data-services-installation-and-configuration.md#deploySample). Вы можете развернуть эти образцы пакетов моделей с помощью [средства MDSModelDeploy](../master-data-services/deploy-a-model-deployment-package-by-using-mdsmodeldeploy.md).  
   
 > [!IMPORTANT]
->  **Обновления примеров в [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]**  
+>  **Обновления примеров в [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]**  
 > 
->  Образцы пакетов были обновлены для поддержки перечисленных ниже новых возможностей.  
+>  Образцы пакетов поддерживают следующие возможности.  
 > 
 >  -   Отображение связей "многие ко многим".  
 > 

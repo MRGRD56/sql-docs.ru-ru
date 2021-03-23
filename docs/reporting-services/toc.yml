@@ -439,6 +439,8 @@
       items:
         - name: Задание параметров по умолчанию для построителя отчетов
           href: ../reporting-services/report-builder/set-default-options-for-report-builder.md
+        - name: настроить доступ к построителю отчетов
+          href: ../reporting-services/report-server/configure-report-builder-access.md
     - name: Представление конструктора отчетов
       href: ../reporting-services/report-builder/report-design-view-report-builder.md
       items:

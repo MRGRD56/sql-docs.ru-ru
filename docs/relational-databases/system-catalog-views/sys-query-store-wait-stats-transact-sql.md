@@ -1,8 +1,8 @@
 ---
 description: sys.query_store_wait_stats (Transact-SQL)
-title: sys.query_store_wait_stats (Transact-SQL) | Документация Майкрософт
+title: sys.query_store_wait_stats (Transact-SQL)
 ms.custom: ''
-ms.date: 11/19/2019
+ms.date: 03/22/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -16,16 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - query_store_wait_stats catalog view
 - sys.query_store_wait_stats catalog view
-ms.assetid: ccf7a57c-314b-450c-bd34-70749a02784a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2517cd093bd840c8cf4cea34073acb8e03a98c8a
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: f8b5e578c5192114db39d4b3e4c24a75cf9a07a2
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99171821"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833900"
 ---
 # <a name="sysquery_store_wait_stats-transact-sql"></a>sys.query_store_wait_stats (Transact-SQL)
 
@@ -62,8 +61,8 @@ ms.locfileid: "99171821"
 |**4**|**Кратковременная блокировка**|LATCH_%|
 |**5**|**Кратковременная блокировка буфера**|PAGELATCH_%|
 |**6**|**Операции ввода-вывода буфера**|PAGEIOLATCH_%|
-|**7**|**Компиляция** _|RESOURCE_SEMAPHORE_QUERY_COMPILE|
-|_ *8**|**SQL CLR**|CLR%, SQLCLR%|
+|**7**|**Компиляции***|RESOURCE_SEMAPHORE_QUERY_COMPILE|
+|**8**|**SQL CLR**|CLR%, SQLCLR%|
 |**9**|**Зеркальное отображение**|ДБМИРРОР%|
 |**10**|**Транзакция**|ТРАНЗАКЦИИ%, DTC%, TRAN_MARKLATCH_%, MSQL_XACT_%, TRANSACTION_MUTEX|
 |**11**|**Выключен**|SLEEP_%, LAZYWRITER_SLEEP, SQLTRACE_BUFFER_FLUSH, SQLTRACE_INCREMENTAL_FLUSH_SLEEP, SQLTRACE_WAIT_ENTRIES, FT_IFTS_SCHEDULER_IDLE_WAIT, XE_DISPATCHER_WAIT, REQUEST_FOR_DEADLOCK_SEARCH, LOGMGR_QUEUE, ONDEMAND_TASK_QUEUE, CHECKPOINT_QUEUE, XE_TIMER_EVENT|
@@ -80,7 +79,7 @@ ms.locfileid: "99171821"
 |**22**|**Репликация**|SE_REPL_%, REPL_%, HADR_% **(но не HADR_THROTTLE_LOG_RATE_GOVERNOR)**, PWAIT_HADR_%, REPLICA_WRITES, FCB_REPLICA_WRITE, FCB_REPLICA_READ, PWAIT_HADRSIM|
 |**23**|**Регулятор частоты ведения журнала**|LOG_RATE_GOVERNOR, POOL_LOG_RATE_GOVERNOR, HADR_THROTTLE_LOG_RATE_GOVERNOR, INSTANCE_LOG_RATE_GOVERNOR|
 
-Категория ожидания **компиляции** в настоящее время не поддерживается.
+\* Хранилище запросов отслеживает статистику ожидания только во время *выполнения* запроса, а не во время *компиляции* запроса. Это позволяет хранилищу запросов контролировать статистику времени ожидания компиляции.
 
 ## <a name="permissions"></a>Разрешения
 

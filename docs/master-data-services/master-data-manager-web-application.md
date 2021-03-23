@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 8eac727c-2304-4612-bc1f-14539295b4b3
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 99e82901a8d3dac593e60896fc663f03e8ec431a
-ms.sourcegitcommit: 6be9a0ff0717f412ece7f8ede07ef01f66ea2061
+ms.openlocfilehash: 88ec07718e0945b3dfad4b8b974bd25965cc317e
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85812953"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833940"
 ---
 # <a name="master-data-manager-web-application"></a>Веб-приложение диспетчера основных данных
 
@@ -25,7 +25,7 @@ ms.locfileid: "85812953"
   Веб-приложение [!INCLUDE[ssMDSmdm](../includes/ssmdsmdm-md.md)] используется администраторами для выполнения административных задач. К примеру, только администраторы могут создавать модели, бизнес-правила или версии данных. Дополнительные сведения об администраторах см. в разделе [Администраторы (службы Master Data Services)](../master-data-services/administrators-master-data-services.md).  
   
 > [!IMPORTANT]
->  [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] работает только в Internet Explorer (IE) 9 или более поздней версии. Internet Explorer 8 и более ранние версии, а также Microsoft Edge и Chrome не поддерживаются.  
+> [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] работает только в Internet Explorer (IE) 9 или более поздней версии. Internet Explorer 8 и более ранние версии, а также Microsoft Edge и Chrome не поддерживаются.  
 > 
 > **Не удается создать веб-сайт MDS?**
 > >Инструкции по решению этой проблемы см. в этой статье службы поддержки Майкрософт.

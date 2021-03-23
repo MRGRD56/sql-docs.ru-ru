@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: ad530f60-d480-4457-ba7a-93a10c8a1695
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 7c5a436e6958d89f26ec0836b82850bd914d6c41
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: e57616613c37c568a72b20369acf3d3fd54521ed
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237140"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833883"
 ---
 # <a name="what39s-new-in-master-data-services-mds"></a>Новые возможности служб Master Data Services (MDS)
 
 [!INCLUDE [SQL Server - Windows only ASDBMI  ](../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-  В этом разделе перечислены изменения и обновления в версии [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)][!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)]. 
+  В этом разделе перечислены изменения и обновления в последнем выпуске [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] [!INCLUDE[ssMDSshort](../includes/ssmdsshort-md.md)] . 
   
  Общие сведения об упорядочении данных в [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]см. в статье [Общие сведения о службах Master Data Services (MDS)](../master-data-services/master-data-services-overview-mds.md). 
   
@@ -32,7 +32,7 @@ ms.locfileid: "99237140"
   
 -   Чтобы скачать [!INCLUDE[sssql15-md](../includes/sssql16-md.md)], перейдите на сайт  **[Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** .  
   
--   Есть учетная запись Azure?  Тогда перейдите **[сюда](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2019-ws2019?tab=Overview)** , чтобы запустить виртуальную машину с уже установленным [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)] .  
+-   Есть учетная запись Azure?  Затем перейдите **[сюда](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftsqlserver.sql2019-ws2019?tab=Overview)** , чтобы запустить виртуальную машину с [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)] уже установленным.  
   
 ##  <a name="improved-performance"></a>Повышенная производительность  
   

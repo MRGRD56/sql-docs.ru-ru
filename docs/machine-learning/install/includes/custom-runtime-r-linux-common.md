@@ -1,21 +1,23 @@
 ---
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/08/2021
+ms.date: 02/18/2021
 ms.topic: include
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 07bd68eaee05893174813ed43dc5358104016e4b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b62528c2ef43f2d5cbf860ad50bb94b2d81dc732
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072774"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833750"
 ---
 ## <a name="custom-installation-of-r"></a>Выборочная установка R
 
+::: zone pivot="platform-linux-ubuntu"
 > [!NOTE]
 > Если вы установили R в расположение по умолчанию **/usr/lib/R**, этот раздел можно пропустить и сразу перейти к разделу [Установка пакета Rcpp](#install-rcpp-package-linux).
+::: zone-end
 
 ### <a name="update-the-environment-variables"></a>Обновление переменных среды
 
@@ -31,7 +33,7 @@ ms.locfileid: "100072774"
 
     ```text
     [Service]
-    Environment="R_HOME=/path/to/installation/of/R"
+    Environment="R_HOME=<path to R>"
     ```
 
 1. Сохраните и закройте файл.
@@ -47,7 +49,7 @@ ms.locfileid: "100072774"
 1. В открывшийся файл добавьте путь к **libR.so** из настраиваемой установки R.
 
     ```
-    /path/to/installation/of/R/lib
+    <path to the R lib>
     ```
 
 1. Сохраните новый файл и закройте редактор.
@@ -56,7 +58,7 @@ ms.locfileid: "100072774"
 
     ```bash
     sudo ldconfig
-    ldd /path/to/installation/of/R/lib/libR.so
+    ldd <path to the R lib>/libR.so
     ```
 
 ### <a name="grant-access-to-the-custom-r-installation-folder"></a>Предоставление доступа к настраиваемой папке установки R
@@ -64,7 +66,7 @@ ms.locfileid: "100072774"
 Присвойте параметру `datadirectories` в разделе "Расширяемость" файла `/var/opt/mssql/mssql.conf` значение настраиваемой установки R.
 
 ```bash
-sudo /opt/mssql/bin/mssql-conf set extensibility.datadirectories /path/to/installation/of/R
+sudo /opt/mssql/bin/mssql-conf set extensibility.datadirectories <path to R>
 ```
 
 ### <a name="restart-mssql-launchpadd-service"></a>Перезапуск службы mssql-launchpadd
@@ -107,7 +109,7 @@ sudo systemctl restart mssql-launchpadd
 
     ```sql
     CREATE EXTERNAL LANGUAGE [myR]
-    FROM (CONTENT = N'/path/to/R-lang-extension-linux-release.zip', FILE_NAME = 'libRExtension.so.1.0');
+    FROM (CONTENT = N'/path/to/R-lang-extension-linux-release.zip', FILE_NAME = 'libRExtension.so.1.1');
     GO
     ```
 
