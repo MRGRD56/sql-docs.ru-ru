@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: 3c030e51-db82-4b43-b1e5-8547ddd3de87
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 0ddd5b76d37f170ed195c6b08f6debcb0f032e77
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 3a8068945e91b56537a16ddf87cebfc9aa27fb3c
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756185"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890653"
 ---
 # <a name="database-properties-files-page"></a>Свойства базы данных (страница «Файлы»)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "85756185"
  Задайте владельца базы данных путем выбора из списка.  
   
  **Использовать полнотекстовое индексирование**  
- Этот флажок установлен и недоступен, так как полнотекстовое индексирование в [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]включено всегда. Дополнительные сведения см. в разделе [Полнотекстовый поиск](../../relational-databases/search/full-text-search.md).  
+ Этот флажок установлен и недоступен, так как полнотекстовое индексирование в [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]включено всегда. Дополнительные сведения см. в разделе [Полнотекстовый поиск](../../relational-databases/search/full-text-search.md).  
   
  **Файлы базы данных**  
  Добавьте, просмотрите, измените или удалите файлы базы данных для соответствующей базы. Файлы базы данных имеют следующие свойства.  
@@ -41,7 +41,7 @@ ms.locfileid: "85756185"
  Введите или измените имя файла.  
   
  **Тип файла**  
- Выберите тип файла из списка. Тип файла может иметь значение **Данные**, **Журнал**или **Данные FILESTREAM**. Нельзя изменить тип существующего файла.  
+ Выберите тип файла из списка. Тип файла может иметь значение **Данные**, **Журнал** или **Данные FILESTREAM**. Нельзя изменить тип существующего файла.  
   
  Если производится добавление файлов (контейнеров) в файловую группу, оптимизированную для памяти, используйте тип **Данные Filestream** .  
   

@@ -34,12 +34,12 @@ helpviewer_keywords:
 - extended stored procedures [SQL Server], metadata
 - credentials [SQL Server], metadata
 - copying databases
-ms.openlocfilehash: 3dc93671874de47f45bd26ae12fa9ded44c9a4fd
-ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
+ms.openlocfilehash: 8502271ba3b04e66fd6fcc0b2723e0c8e4533f96
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "88412850"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890687"
 ---
 # <a name="manage-metadata-when-making-a-database-available-on-another-server"></a>Управление метаданными при предоставлении доступа к базе данных на другом сервере
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -194,7 +194,7 @@ ms.locfileid: "88412850"
   
  Кроме того, если на исходном и целевом экземплярах сервера установлены разные версии [средств разбиения по словам и парадигматических модулей](../../relational-databases/search/configure-and-manage-word-breakers-and-stemmers-for-search.md) или [фильтров полнотекстового поиска](../../relational-databases/search/configure-and-manage-filters-for-search.md) , то функциональность полнотекстового индекса и запросов также может отличаться. Кроме того, [тезаурус](../../relational-databases/search/configure-and-manage-thesaurus-files-for-full-text-search.md) хранится в файлах конкретного экземпляра. Нужно либо переместить копию этих файлов в соответствующее место на целевом экземпляре сервера, либо повторно создать их.  
   
-> **ПРИМЕЧАНИЕ.** Когда базу данных [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] с файлами полнотекстовых каталогов присоединяют к экземпляру сервера [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] , то присоединение файлов каталогов выполняется из их предыдущего расположения вместе с другими файлами баз данных, как и в [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]. Дополнительные сведения см. в разделе [Обновление полнотекстового поиска](../../relational-databases/search/upgrade-full-text-search.md).  
+> **ПРИМЕЧАНИЕ.** Когда базу данных [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] с файлами полнотекстовых каталогов присоединяют к экземпляру сервера [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] , то присоединение файлов каталогов выполняется из их предыдущего расположения вместе с другими файлами баз данных, как и в [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]. Дополнительные сведения см. в разделе [Обновление полнотекстового поиска](../../relational-databases/search/upgrade-full-text-search.md).  
   
  Дополнительные сведения см. также в следующих разделах:  
   
