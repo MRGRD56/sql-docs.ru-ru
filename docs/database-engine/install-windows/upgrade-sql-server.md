@@ -13,17 +13,17 @@ ms.assetid: 5064e35b-b70d-4a0b-a9e9-fff04162f9d2
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 5019205027168dc2ebd1e429087924c59f7a17d0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 417ff500b69535dbddcefae40c2895aea88a473c
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353830"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611224"
 ---
 # <a name="upgrade-sql-server"></a>Обновление SQL Server
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
  
- Экземпляры [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)], [!INCLUDE[ss2016](../../includes/sssql16-md.md)] и [!INCLUDE[ss2017](../../includes/sssql17-md.md)] можно обновить до [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] напрямую. Для [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] и [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] необходимо выполнить либо параллельное обновление, либо миграцию, чтобы перейти на SQL Server 2019, так как между поддерживаемыми основными операционными системами нет перекрытия. Перед запуском программы установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] для обновления до [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]просмотрите следующие статьи, относящиеся к процессу обновления, и связанные заметки о выпуске.  
+ Экземпляры [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)], [!INCLUDE[ss2016](../../includes/sssql16-md.md)] и [!INCLUDE[sssql17](../../includes/sssql17-md.md)] можно обновить до [!INCLUDE[sssql19](../../includes/sssql19-md.md)] напрямую. Для [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] и [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] необходимо выполнить параллельное обновление или миграцию, чтобы перейти на [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)], так как между поддерживаемыми основными операционными системами нет перекрытия. Перед запуском программы установки для обновления просмотрите следующие статьи, относящиеся к процессу обновления, и связанные заметки о выпуске.  
   
    - Сведения об обновлении [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]см. в статье [Вы выполняете обновление с версии SQL Server 2005?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)  
    - [Заметки о выпуске для SQL Server 2016](../../sql-server/sql-server-2016-release-notes.md) 

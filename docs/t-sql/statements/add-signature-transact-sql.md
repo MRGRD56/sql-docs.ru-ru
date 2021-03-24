@@ -17,13 +17,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 06/10/2020
-ms.openlocfilehash: 86513345502531da670b870b5ecf70de9270f18f
-ms.sourcegitcommit: ece104654ac14e10d32e59f45916fa944665f4df
+ms.date: 03/16/2021
+ms.openlocfilehash: c33f34611db384dfcafabefeb2e9c1eee1b135f5
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102474908"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611233"
 ---
 # <a name="add-signature-transact-sql"></a>ADD SIGNATURE (Transact-SQL)
 
@@ -102,7 +102,9 @@ ADD [ COUNTER ] SIGNATURE TO module_class::module_name
 -   Подписание процедуры ProcForAlice также не будет работать само по себе, так как подпись будет потеряна при вызове процедуры ProcSelectT1.  
   
 Однако при добавлении подписи другой стороны к ProcSelectT1 с помощью того же сертификата, который использовался для подписывания процедуры ProcForAlice, подпись [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] будет сохранена по всей цепочке вызова и обеспечит доступ к таблице T1. Если Алиса захочет напрямую вызвать процедуру ProcSelectT1, она не сможет получить доступ к таблице T1, так как подпись другой стороны не предоставляет никаких прав. В приведенном ниже примере В показан код [!INCLUDE[tsql](../../includes/tsql-md.md)] для этого примера.  
-  
+
+:::image type="content" source="media/signing-and-countersignature.png" alt-text="Пример подписи":::
+
 ## <a name="permissions"></a>Разрешения  
 
 Требует разрешения ALTER на объект и разрешение CONTROL на сертификат или асимметричный ключ. Если соответствующий закрытый ключ защищен паролем, то у пользователя также должен быть этот пароль.  

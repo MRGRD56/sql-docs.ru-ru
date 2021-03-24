@@ -19,12 +19,12 @@ ms.assetid: 19aefa9a-fbc2-4b22-92cf-67b8bb01671c
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1ccca2b8dc74759e1b4a1dc4d2e9485bf2fbcca7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 7fcefb597fe97e90bfda78fe934c83646414c23f
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97480195"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611184"
 ---
 # <a name="hierarchical-data-sql-server"></a>Иерархические данные (SQL Server)
 

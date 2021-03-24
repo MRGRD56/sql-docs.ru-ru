@@ -2,7 +2,7 @@
 title: SQL Server Service Broker | Документы Майкрософт
 description: Ознакомьтесь с Service Broker. Узнайте, каким образом этот компонент предоставляет встроенную поддержку для обмена сообщениями в ядре СУБД SQL Server и Управляемом экземпляре SQL Azure.
 ms.custom: ''
-ms.date: 09/07/2018
+ms.date: 03/17/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -24,12 +24,12 @@ ms.assetid: 8b8b3b57-fd46-44de-9a4e-e3a8e3999c1e
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: cf37305f773f4b417ed3cac1bc5a31ad8d910505
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 287e3c0abfc083607b96598da5e83cd5ab0b58dd
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465705"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611174"
 ---
 # <a name="service-broker"></a>Компонент Service Broker
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -101,15 +101,25 @@ FROM ExpenseQueue;
  Сведения об основных понятиях компонента [, а также задачах разработки и управления см. в](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) ранее опубликованной документации [!INCLUDE[ssSB](../../includes/sssb-md.md)] . Эта документация не повторяется в документации по [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] из-за малого числа изменений в компоненте [!INCLUDE[ssSB](../../includes/sssb-md.md)] в [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
   
 ## <a name="whats-new-in-service-broker"></a>Новые возможности (компонент Service Broker)  
- В [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]не были внесены значимые изменения.  В [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]появились следующие изменения.  
 
 ### <a name="service-broker-and-azure-sql-managed-instance"></a>Service Broker и Управляемый экземпляр SQL Azure
 
-- Service Broker не поддерживается в нескольких экземплярах. 
- - `sys.routes` — предварительные требование: выберите адрес из sys.routes. Адрес должен иметь значение LOCAL для каждого маршрута. См. статью о [sys.routes](../../relational-databases/system-catalog-views/sys-routes-transact-sql.md).
- - `CREATE ROUTE`. `CREATE ROUTE` можно использовать только с локальным (`LOCAL`) адресом `ADDRESS`. См. статью о [CREATE ROUTE](../../t-sql/statements/create-route-transact-sql.md).
- - `ALTER ROUTE` — нельзя использовать `ALTER ROUTE` с параметром `ADDRESS`, значение которого отличается от `LOCAL`. См. статью об [ALTER ROUTE](../../t-sql/statements/alter-route-transact-sql.md).  
-  
+Обмен сообщениями через Service Broker поддерживается только между управляемыми экземплярами SQL Azure:
+
+- `CREATE ROUTE`: нельзя использовать CREATE ROUTE с аргументом ADDRESS, для которого значение отличается от LOCAL или указано DNS-имя другого управляемого экземпляра SQL. Должен быть указан порт 4022. См. статью о [CREATE ROUTE](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE`: нельзя использовать ALTER ROUTE с аргументом ADDRESS, для которого значение отличается от LOCAL или указано DNS-имя другого управляемого экземпляра SQL. Должен быть указан порт 4022. См. статью об [ALTER ROUTE](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).
+
+Защита транспорта поддерживается, а защита обмена данными — нет:
+
+- Тип `CREATE REMOTE SERVICE BINDING` не поддерживается.
+
+Компонент Service Broker включен по умолчанию и его нельзя отключить. Следующие параметры ALTER DATABASE не поддерживаются:
+
+- `ENABLE_BROKER`
+- `DISABLE_BROKER`
+
+В [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] не были внесены значимые изменения.  В [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]появились следующие изменения. 
+
 ### <a name="messages-can-be-sent-to-multiple-target-services-multicast"></a>Сообщения могут отправляться в несколько целевых служб (многоадресная рассылка)  
  Синтаксис инструкции [SEND (Transact-SQL)](../../t-sql/statements/send-transact-sql.md) расширен для включения многоадресной рассылки благодаря поддержке нескольких дескрипторов диалога.  
   

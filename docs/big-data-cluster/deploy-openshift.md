@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d78e229bcbf2a088d42431abdf02bec3f9e51eab
-ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
+ms.openlocfilehash: 918dd8e746984d9bdc6a619cc2692bdfbab158a0
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103231502"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610828"
 ---
 # <a name="deploy-big-data-clusters-2019-on-openshift-on-premises-and-azure-red-hat-openshift"></a>Развертывание [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] в локальной среде OpenShift и Azure Red Hat OpenShift
 
@@ -70,10 +70,11 @@ ms.locfileid: "103231502"
    oc new-project <namespaceName>
    ```
 
-4. Назначьте настраиваемое ограничение контекста безопасности учетным записям службы для пользователей в пространстве имен, где развернут кластер больших данных:
+4. Привяжите настраиваемое ограничение контекста безопасности к учетным записям службы в пространстве имен, где развернут кластер больших данных:
 
    ```console
-   oc create rolebinding bdc-rbac --clusterrole=system:scc:bdc-scc --group=system:serviceaccounts:<namespace>
+   oc create clusterrole bdc-role --verb=use --resource=scc --resource-name=bdc-scc -n <namespaceName>
+   oc create rolebinding bdc-rbac --clusterrole=bdc-role --group=system:serviceaccounts:mssql-bdc
    ```
 
 5. Назначьте соответствующее разрешение для пользователя, развертывающего кластер больших данных. Выполните одно из следующих действий. 
@@ -83,7 +84,7 @@ ms.locfileid: "103231502"
    - Если пользователь, развертывающий кластер больших данных, является администратором пространства имен, назначьте ему локальную роль администратора кластера для созданного пространства имен. Это предпочтительный вариант, когда пользователь, развертывающий кластер больших данных и управляющий им, должен иметь разрешения администратора на уровне пространства имен.
 
    ```console
-   oc adm policy add-role-to-user cluster-admin <deployingUser> -n <namespaceName>
+   oc create rolebinding bdc-user-rbac --clusterrole=cluster-admin --user=<userName> -n <namespaceName>
    ```
 
    После этого пользователь, развертывающий кластер больших данных, должен войти в консоль OpenShift:

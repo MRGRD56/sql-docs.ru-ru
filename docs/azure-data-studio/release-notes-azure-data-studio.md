@@ -8,17 +8,29 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 2/18/2021
-ms.openlocfilehash: c666ae644200c1b2beefb7f73c8a819294831985
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.date: 3/17/2021
+ms.openlocfilehash: 4cc6431ec73a002c015b8aac0dfe19b726cb354f
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836031"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610703"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Заметки о выпуске для Azure Data Studio
 
 **[Скачайте и установите последний выпуск.](./download-azure-data-studio.md)**
+
+## <a name="march-2021"></a>Март 2021 г.
+
+17 марта 2021 г. &nbsp; / &nbsp;, версия: 1.27.0
+
+&nbsp;
+
+| Change | Сведения |
+| ------ | ------- |
+| Исправления ошибок | Полный список исправлений см. на странице [ошибок и проблем в GitHub](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%22March+2021+Release%22). |
+| Обновление расширений | [Dacpac](extensions/sql-server-dacpac-extension.md) </br> [SQLDatabaseProjects](extensions/sql-database-project-extension.md) |
+| Новые функции Notebook | Добавлено диалоговое окно для создания книг |
 
 ## <a name="february-2021"></a>Февраль 2021 года
 
@@ -31,7 +43,7 @@ ms.locfileid: "101836031"
 | Исправления ошибок | Полный список исправлений см. на странице [ошибок и проблем в GitHub](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22February+2021+Release%22+is%3Aclosed). |
 | Обновление расширений | [Dacpac](extensions/sql-server-dacpac-extension.md) <br/> [Kusto (KQL)](extensions/kusto-extension.md) </br> [Машинное обучение](extensions/machine-learning-extension.md) </br> [Profiler](extensions/sql-server-profiler-extension.md) </br> [SchemaCompare](extensions/schema-compare-extension.md) </br> [SQLDatabaseProjects](extensions/sql-database-project-extension.md) |
 | Новые функции Azure Arc | Поддерживается несколько контроллеров данных. <br/> Добавлены новые параметры диалогового окна подключения, такие как возможность указать файл kube config. <br/> Улучшена панель мониторинга Postgres. |
-| Новые функции Notebook | Уменьшено время запуска сервера Jupyter в Windows на 50 %. <br/> Добавлена поддержка редактирования книг Jupyter с помощью контекстного меню. <br/> Поддерживается параметризация записной книжки по URI и [добавлена документация по параметризации записной книжки](https://docs.microsoft.com/sql/azure-data-studio/notebooks/notebooks-parameterization). |
+| Новые функции Notebook | Уменьшено время запуска сервера Jupyter в Windows на 50 %. <br/> Добавлена поддержка редактирования книг Jupyter с помощью контекстного меню. <br/> Поддерживается параметризация записной книжки по URI и [добавлена документация по параметризации записной книжки](./notebooks/notebooks-parameterization.md). |
 
 ## <a name="december-2020-hotfix"></a>Декабрь 2020 г. (исправление)
 

@@ -11,12 +11,12 @@ ms.assetid: e1792eeb-2874-4653-b20e-3063f4eb4e5d
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: e5eeb7446542613eac7e1d3a78144f3ca165a47b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ff653258a42883d2942170f9b26d04f288fcb7f3
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336367"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611112"
 ---
 # <a name="considerations-for-installing-sql-server-using-sysprep"></a>Вопросы по установке SQL Server с помощью SysPrep
 
@@ -61,9 +61,9 @@ ms.locfileid: "100336367"
     - Нельзя указать идентификатор продукта для подготавливаемого экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express Edition.  
   
 ## <a name="supported-ssnoversion-installations"></a>Поддерживаемые установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]  
-В [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] SysPrep поддерживаются все функции [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], включая средства.  
+SysPrep в [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] поддерживает функции, включая средства.  
   
-Можно подготовить несколько экземпляров для параллельной установки [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] или более ранних версий. Компоненты данных экземпляров должны поддерживать SysPrep.  
+Можно подготовить несколько экземпляров для параллельной установки [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] или более ранних версий. Компоненты данных экземпляров должны поддерживать SysPrep.  
   
 Собственный клиент [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] устанавливается и создается автоматически при завершении шага подготовки образа.  
   

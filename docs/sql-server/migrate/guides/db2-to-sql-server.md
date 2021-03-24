@@ -1,24 +1,20 @@
 ---
-title: Руководство по миграции. SQL Server DB2
+title: Руководство по миграции из DB2 в SQL Server
 description: 'Из этого руководства вы узнаете, как перенести базы данных DB2 в Microsoft SQL Server с использованием Помощника по миграции SQL Server для DB2 (SSMA для DB2). '
 ms.custom: ''
 ms.date: 03/19/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: migration-guide
-ms.topic: conceptual
-helpviewer_keywords:
-- processors [SQL Server], supported
-- number of processors supported
-- maximum number of processors supported
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 390ef29255ecda2876fe3e4abb35d1c23b1e1cba
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: b39ee82cd9904d616d0ab3c002392af5268f1e62
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575292"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611194"
 ---
 # <a name="migration-guide-db2-to-sql-server"></a>Руководство по миграции. SQL Server DB2
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +28,7 @@ ms.locfileid: "103575292"
 
 Чтобы перенести базу данных DB2 в SQL Server, необходимо:
 
-- проверить, что исходная среда поддерживается;
+- проверить, поддерживается ли исходная среда;
 - [Помощник по миграции SQL Server (SSMA) для DB2](https://www.microsoft.com/download/details.aspx?id=54254).
 
 

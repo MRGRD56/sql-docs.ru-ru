@@ -85,12 +85,12 @@ ms.reviewer: ''
 ms.custom: ''
 ms.date: 01/07/2020
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: fa6e0857fb374d24dfe5ebe73ea8397c6d2f318b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 559bb922735dd6cd56a417bc09964f47297ab0ca
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348397"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611075"
 ---
 # <a name="install-sql-server-from-the-command-prompt"></a>Установка SQL Server из командной строки
 
@@ -380,7 +380,7 @@ setup.exe /q /ACTION=CompleteImage /INSTANCENAME=MYNEWINST /INSTANCEID=<MYINST> 
   
 |Компонент [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|Параметр|Описание|  
 |-----------------------------------------|---------------|-----------------|  
-|Управление программой установки [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|/ACTION<br /><br /> **Обязательно**|Необходим для указания на рабочий процесс операций установки. Поддерживаемые значения:<br /><br /> **Обновление**<br /><br /> **EditionUpgrade**<br /><br /> <br /><br /> Значение **EditionUpgrade** используется для обновления существующего выпуска [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] на другой выпуск. Дополнительные сведения о поддерживаемой версии и обновлении выпуском см. в разделе [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md).|  
+|Управление программой установки [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|/ACTION<br /><br /> **Обязательно**|Необходим для указания на рабочий процесс операций установки. Поддерживаемые значения:<br /><br /> **Обновление**<br /><br /> **EditionUpgrade**<br /><br /> <br /><br /> Значение **EditionUpgrade** используется для обновления существующего выпуска [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] на другой выпуск. Дополнительные сведения о поддерживаемой версии и обновлении выпуском см. в разделе [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md).|  
 |Управление программой установки [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|/IACCEPTSQLSERVERLICENSETERMS<br /><br /> **Требуется только в том случае, если для автоматической установки указан параметр /Q или /QS.**|Требуется для подтверждения принятия условий лицензии.|  
 |Управление программой установки [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|/ENU<br /><br /> **Необязательно**|Этот параметр используется для установки англоязычной версии SQL Server в локализованной операционной системе, если на установочном носителе доступны языковые пакеты для английского языка и языка операционной системы.|  
 |Управление программой установки [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]|/*UpdateEnabled*<br /><br /> **Необязательно**|Задает, должна ли программа установки SQL Server обнаруживать и включать обновления продукта. Допустимые значения — True и False либо 1 и 0. По умолчанию программа установки SQL Server будет включать найденные обновления.|  
@@ -868,7 +868,7 @@ setup.exe /q /ACTION=RemoveNode /INSTANCENAME="<Insert Instance Name>" [/INDICAT
 ||SDK|Устанавливает пакет средств разработки программного обеспечения.|  
 ||LocalDB**|Устанавливает LocalDB, режим выполнения [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)] , предназначенный для разработчиков программ.|  
 
-Для *[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] (SSMS) теперь доступен изолированный установщик, отдельный от установщика [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Дополнительные сведения см. в статье [Установка среды SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md).
+Для *[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] (SSMS) теперь доступен изолированный установщик, отдельный от установщика [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Дополнительные сведения см. в статье [Установка среды SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md).
 
 ### <a name="feature-parameter-examples"></a>Примеры параметров компонентов
   
@@ -893,7 +893,7 @@ setup.exe /q /ACTION=RemoveNode /INSTANCENAME="<Insert Instance Name>" [/INDICAT
 |AllFeatures_WithDefaults|Устанавливает все компоненты, доступные в текущем выпуске.<br /><br /> Добавляет текущего пользователя в предопределенную роль сервера **sysadmin** SQL Server.<br /><br /> Если в [!INCLUDE[firstref_longhorn](../../includes/firstref-longhorn-md.md)] и следующих версиях операционная система не является контроллером домена, то по умолчанию в компоненте [!INCLUDE[ssDE](../../includes/ssde-md.md)]и службах [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] используется учетная запись NTAUTHORITY\NETWORK SERVICE, а в службах [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] — учетная запись NTAUTHORITY\NETWORK SERVICE.<br /><br /> В выпусках [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)]эта роль по умолчанию включена. Для всех остальных выпусков данная роль не включена, но может быть определена через пользовательский интерфейс или с помощью параметров командной строки.|Для выпусков [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)]устанавливает только те функции, которые доступны в выпуске. Для прочих выпусков устанавливает все компоненты [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].<br /><br /> Параметр **AllFeatures_WithDefaults** может сочетаться с другими параметрами, которые переопределяют настройки параметра **AllFeatures_WithDefaults**. Например, сочетание параметра **AllFeatures_WithDefaults** с параметром **/Features=RS** переопределит команду для установки всех компонентов и установит лишь службы [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)], но будет соблюдать параметр **AllFeatures_WithDefaults** , определяющий использование учетной записи службы по умолчанию для служб [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)].<br /><br /> При использовании параметра **AllFeatures_WithDefaults** с параметром **/ADDCURRENTUSERASSQLADMIN=FALSE** диалоговое окно провизионирования настройки не заполняется автоматически в соответствии с текущим пользователем. Добавьте параметры **/AGTSVCACCOUNT** и **/AGTSVCPASSWORD** , чтобы определить учетную запись службы и пароль для агента SQL Server.|
 
 ## <a name="controlling-failover-behavior-using-the-failoverclusterrollownership-parameter"></a><a name="RollOwnership"></a> Управление способом отработки отказа с помощью параметра /FAILOVERCLUSTERROLLOWNERSHIP  
-Чтобы обновить отказоустойчивый кластер [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] до версии [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)], необходимо поочередно запустить программу установки на каждом узле отказоустойчивого кластера, начиная с пассивных узлов. Программа установки определяет момент перехода на другой ресурс в зависимости от общего числа узлов в экземпляре отказоустойчивого кластера и от количества уже обновленных узлов. Если была обновлена половина узлов или более, программа установки по умолчанию вызовет отработку отказа на обновленный узел.
+Чтобы обновить отказоустойчивый кластер [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)], необходимо поочередно запустить программу установки на каждом узле отказоустойчивого кластера, начиная с пассивных узлов. Программа установки определяет момент перехода на другой ресурс в зависимости от общего числа узлов в экземпляре отказоустойчивого кластера и от количества уже обновленных узлов. Если была обновлена половина узлов или более, программа установки по умолчанию вызовет отработку отказа на обновленный узел.
 
 Чтобы управлять отработкой отказа узлов кластера во время обновления, запустите операцию обновления из командной строки и воспользуйтесь параметром /FAILOVERCLUSTERROLLOWNERSHIP для управления способом отработки отказа до того, как операция обновления переключит узел в режим «вне сети». Используйте этот параметр следующим образом:
 

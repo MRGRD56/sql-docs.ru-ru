@@ -6,16 +6,16 @@ ms.reviewer: ''
 ms.technology: migration-guide
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: fb297b72e1eeb3d614a00a9ef574f0097f9d0f75
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: a549b0e28da092bc1320f621c29307772fc5d69b
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103603346"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611030"
 ---
 # <a name="migration-guide-sap-ase-to-sql-server"></a>Руководство по миграции из SAP ASE в SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "103603346"
 
 Чтобы перенести базу данных SAP ASE в SQL Server, необходимо:
 
-- проверить, что исходная среда поддерживается; 
+- проверить, поддерживается ли исходная среда; 
 - установить [Помощник по миграции SQL Server для SAP Adaptive Server Enterprise (прежнее название — SAP Sybase ASE)](https://www.microsoft.com/download/details.aspx?id=54256). 
 
 ## <a name="pre-migration"></a>Подготовка к миграции

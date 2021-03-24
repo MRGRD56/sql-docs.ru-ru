@@ -6,154 +6,183 @@ metadata:
   title: Руководства по переносу баз данных Azure | Документация Майкрософт
   description: Пошаговое руководство по модернизации ресурсов данных.
   ms.topic: hub-page
-  ms.openlocfilehash: 86398df9a3f1c2deeec590589d31fc183bd2970e
-  ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+  ms.openlocfilehash: c08abfbcb0e43a00319190153d169083b2da9395
+  ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/13/2021
-  ms.locfileid: "100336495"
+  ms.lasthandoff: 03/19/2021
+  ms.locfileid: "104610603"
 conceptualContent:
   items:
   - title: SQL Server —
     links:
-    - text: SQL Server (более новой версии)
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: architecture
+    - text: SQL Server (обновление)
+      url: /sql/database-engine/install-windows/upgrade-sql-server
+      itemType: how-to-guide
     - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: concept
+      url: /azure/azure-sql/migration-guides/database/sql-server-to-sql-database-overview
+      itemType: how-to-guide
     - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: deploy
+      url: /azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-overview
+      itemType: how-to-guide
     - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: download
+      url: /azure/azure-sql/migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide
+      itemType: how-to-guide
+    - text: Azure Synapse Analytics
+      url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
+      itemType: how-to-guide
   - title: Oracle —
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: get-started
+      url: /sql/sql-server/migrate/guides/oracle-to-sql-server
+      itemType: how-to-guide
     - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
+      url: /azure/azure-sql/migration-guides/database/oracle-to-sql-database-guide
       itemType: how-to-guide
     - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: video
+      url: /azure/azure-sql/migration-guides/managed-instance/oracle-to-managed-instance-guide
+      itemType: how-to-guide
     - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: whats-new
+      url: /azure/azure-sql/migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide
+      itemType: how-to-guide
+    - text: База данных Azure для PostgreSQL
+      url: /azure/postgresql/howto-migrate-from-oracle
+      itemType: how-to-guide
+    - text: Azure Synapse Analytics
+      url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
+      itemType: how-to-guide
   - title: DB2 —
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /sql/sql-server/migrate/guides/db2-to-sql-server
+      itemType: how-to-guide
     - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/database/db2-to-sql-database-guide
+      itemType: how-to-guide
     - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/managed-instance/db2-to-managed-instance-guide
+      itemType: how-to-guide
     - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: MySQL —
-    links:
-    - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-    - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: PostgreSQL —
-    links:
-    - text: База данных Azure для PostgreSQL
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: MongoDB —
-    links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: Cassandra —
-    links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
-  - title: MariaDB —
-    links:
-    - text: База данных Azure для MariaDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/virtual-machines/db2-to-sql-on-azure-vm-guide
+      itemType: how-to-guide
   - title: Access —
     links:
     - text: SQL Server
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+      url: /sql/sql-server/migrate/guides/access-to-sql-server
+      itemType: how-to-guide
     - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
+      url: /azure/azure-sql/migration-guides/database/access-to-sql-database-guide
+      itemType: how-to-guide
+  - title: MySQL —
+    links:
+    - text: SQL Server
+      url: /sql/sql-server/migrate/guides/mysql-to-sql-server
+      itemType: how-to-guide
+    - text: База данных SQL Azure
+      url: /azure/azure-sql/migration-guides/database/mysql-to-sql-database-guide
+      itemType: how-to-guide
+    - text: База данных Azure для MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
   - title: SAP ASE —
     links:
-    - text: SQL Server (более новой версии)
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+    - text: SQL Server
+      url: /sql/sql-server/migrate/guides/sap-ase-to-sql-server
+      itemType: how-to-guide
     - text: База данных SQL Azure
-      url: ssms/tutorials/connect-query-sql-server.md
-      itemType: quickstart
-    - text: Управляемый экземпляр SQL Azure
-      url: t-sql/tutorial-writing-transact-sql-statements.md
-      itemType: quickstart
-    - text: SQL Server на виртуальных машинах Azure
-      url: linux/quickstart-install-connect-docker.md
-      itemType: quickstart
-  - title: Хранилище таблиц Microsoft Azure —
+      url: /azure/azure-sql/migration-guides/database/sap-ase-to-sql-database
+      itemType: how-to-guide
+  - title: Открытый исходный код
     links:
-    - text: Azure CosmosDB
-      url: azure-data-studio/quickstart-sql-server.md
-      itemType: quickstart
+    - text: Из MariaDB в Базу данных Azure для MariaDB
+      url: /azure/mariadb/howto-migrate-dump-restore
+      itemType: how-to-guide
+    - text: Из MySQL в Базу данных Azure для MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
+    - text: Из PostgreSQL в Базу данных Azure для PostgreSQL
+      url: /azure/postgresql/howto-migrate-using-dump-and-restore
+      itemType: how-to-guide
+  - title: NoSQL
+    links:
+    - text: Из MongoDB в Azure Cosmos DB
+      url: /azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+      itemType: how-to-guide
+    - text: Из Cassandra в Azure Cosmos DB
+      url: /azure/cosmos-db/cassandra-import-data
+      itemType: how-to-guide
+    - text: Из Хранилища таблиц Microsoft Azure в Azure Cosmos DB
+      url: /azure/cosmos-db/table-import
+      itemType: how-to-guide
+  - title: Ресурсы
+    links:
+    - text: Ресурсы партнеров для миграции
+      url: https://www.microsoft.com/azure/partners/advspec?filters=windows-server-and-sql-server-migration-to-azure
+      itemType: reference
+    - text: Облачная экономика
+      url: https://azure.microsoft.com/en-gb/overview/cloud-economics
+      itemType: reference
+    - text: Калькулятор совокупной стоимости владения
+      url: https://azure.microsoft.com/pricing/tco/calculator/
+      itemType: reference
+    - text: Преимущество гибридного использования Azure
+      url: https://azure.microsoft.com/pricing/hybrid-benefit/
+      itemType: reference
+    - text: Обзор видов архитектуры Azure
+      url: https://docs.microsoft.com/azure/architecture/browse/?azure_categories=migration
+      itemType: reference
+    - text: Microsoft Cloud Adoption Framework для Azure
+      url: https://azure.microsoft.com/cloud-adoption-framework/#cloud-adoption-journey
+      itemType: reference
+    - text: Обзор историй успеха клиентов
+      url: https://customers.microsoft.com/en-us/search?sq=&ff=&p=0&so=story_publish_date%20desc
+      itemType: reference
 tools:
-  title: Языки и инструменты
+  title: Средства миграции
   items:
   - title: Служба "Миграция Azure"
-    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
-    url: /azure/developer/python/
-  - title: Azure Database Migration Service
-    imageSrc: ./media/index/net-logo.svg
-    url: /dotnet/azure/
-  - title: Помощник по переносу баз данных (DMA)
-    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
-    url: /azure/developer/javascript/
-  - title: Помощник по миграции SQL Server
-    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
-    url: /azure/developer/java/
+    imageSrc: media/index/azure-migrate-symbol.svg
+    url: /azure/migrate/
+  - title: Azure Database Migration Service (DMS)
+    imageSrc: media/index/migration-service-symbol.svg
+    url: /azure/dms/
+  - title: Помощник по миграции данных (DMA)
+    imageSrc: media/index/database-migration-assistant-symbol.svg
+    url: /sql/dma/dma-overview
+  - title: Помощник по миграции SQL Server (SSMA)
+    imageSrc: media/index/sql-server-migration-assistant-symbol.svg
+    url: /sql/ssma/sql-server-migration-assistant
+  - title: Azure Synapse Pathway
+    imageSrc: media/index/azure-synapse-pathway-symbol.svg
+    url: /sql/tools/synapse-pathway/azure-synapse-pathway-overview
 additionalContent:
   sections:
-  - title: Конкретные случаи
+  - title: Недавние примеры реальных клиентов
     items:
-    - title: Capita
-      summary: Выделенное облако для правительственных учреждений США и их партнеров.
-      url: azure-government/index.yml
-    - title: Willis Towers Watson
-      summary: Выделенное облако, которое соответствует правилам обработки данных в Германии.
-      url: germany/index.yml
-    - title: Innovative Systems
-      summary: Выделенное облако, расположенное в Китае и управляемое 21Vianet.
-      url: /azure/china/
-    - title: Geekwire
-      summary: Выделенное облако, расположенное в Китае и управляемое 21Vianet.
-      url: /azure/china/
-    - title: Vipps
-      summary: Выделенное облако, расположенное в Китае и управляемое 21Vianet.
-      url: /azure/china/
+    - title: Ferguson (США)
+      summary: Крупнейший поставщик санитарно-технического оборудования в США использует Управляемый экземпляр SQL Azure для применения служб Azure в локальной среде.
+      url: https://customers.microsoft.com/story/844232-ferguson-enterprises-retailers-azure-arc
+    - title: ClearSale (Бразилия)
+      summary: ClearSale закладывает основу для роста и внедрения инноваций путем перехода в Azure, в Базу данных SQL Azure ценовой категории "Гипермасштабирование".
+      url: https://customers.microsoft.com/story/773410-clearsale-partner-professional-services-azure
+    - title: Willis Towers Watson (Соединенное Королевство)
+      summary: Willis Towers Watson удалось обеспечить гибкую масштабируемость в облаке, перейдя на Базу данных SQL Azure.
+      url: https://customers.microsoft.com/story/willis-towers-watson-partner-professional-services-azure
+    - title: Paychex (США)
+      summary: Paychex использует эластичные пулы Базы данных SQL Azure для адаптации к стремительному росту.
+      url: https://customers.microsoft.com/story/paychex-azure-sql-database-us
+    - title: Innovative Systems (США)
+      summary: Компания Innovative Systems объединяет свои базы данных, расположенные далеко друг от друга, в облаке путем миграции с помощью Azure Database Migration Service.
+      url: https://customers.microsoft.com/story/innovative-systems-partner-professional-services-azure-sql-database
+    - title: Capita Group (Соединенное Королевство)
+      summary: Capita Reading Cloud переносит 10 000 баз данных в Azure и обеспечивает новый уровень масштабируемости.
+      url: https://customers.microsoft.com/story/724217-capita-uk-professional-services-azure-sql-database
+    - title: Intershop (США)
+      summary: Intershop, лидер в электронной коммерции, переходит с Oracle на SQL Server и Базу данных SQL Azure, повышает производительность продуктов и выходит на новые рынки.
+      url: https://customers.microsoft.com/story/intershop-partner-professional-services-azure-sql-database
+    - title: Minecraft Realms (США)
+      summary: Minecraft Realms переходит с AWS на Azure с минимальным простоем для базы пользователей.
+      url: https://developer.microsoft.com/games/blog/migrating-minecraft-realms-from-aws-to-azure/
+    - title: CCC Marketing (Япония)
+      summary: CCC Marketing удалось перенести инфраструктуру для аналитики данных из Oracle в Microsoft Azure.
+      url: https://customers.microsoft.com/story/843276-ccc-marketing-professional-services-azure-en-japan

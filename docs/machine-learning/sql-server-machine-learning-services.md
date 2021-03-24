@@ -4,27 +4,31 @@ titleSuffix: ''
 description: Службы машинного обучения — это компонент SQL Server, который дает возможность выполнять скрипты Python и R с реляционными данными. Вы можете использовать платформы и пакеты с открытым исходным кодом и пакеты Майкрософт Python и R для прогнозной аналитики и машинного обучения. Скрипты выполняются в базе данных без перемещения данных за пределы SQL Server или по сети. В этой статье объясняются основы Служб машинного обучения SQL Server и описывается, как приступить к работе с ними.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 11/10/2020
+ms.date: 03/17/2021
 ms.topic: overview
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
-ms.openlocfilehash: 23206301c399449042380976e985ec3981933caa
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
+ms.openlocfilehash: 730dfb2421732f2a7e51cd5d99425c84953501d1
+ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340308"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104610524"
 ---
 # <a name="what-is-sql-server-machine-learning-services-with-python-and-r"></a>Что такое службы машинного обучения SQL Server с Python и R?
-[!INCLUDE [SQL Server 2017 SQL MI](../includes/applies-to-version/sqlserver2017-asdbmi.md)]
+[!INCLUDE [SQL Server 2017 SQL](../includes/applies-to-version/sqlserver2017.md)]
 
 Службы машинного обучения — это компонент SQL Server, который дает возможность выполнять скрипты Python и R с реляционными данными. Вы можете использовать платформы и пакеты с открытым кодом и [пакеты Microsoft Python и R](#packages) для прогнозной аналитики и машинного обучения. Скрипты выполняются в базе данных без перемещения данных за пределы SQL Server или по сети. В этой статье объясняются основы Служб машинного обучения SQL Server и описывается, как приступить к работе с ними.
 
-Сведения о применении машинного обучения на других платформах SQL доступны в [документации по машинному обучению SQL](index.yml).
-
+::: moniker range="=sql-server-2017"
+> [!NOTE]
+> Службы машинного обучения также доступны в [Управляемом экземпляре SQL Azure](/azure/azure-sql/managed-instance/machine-learning-services-overview). Сведения о применении машинного обучения на других платформах SQL доступны в [документации по машинному обучению SQL](index.yml).
+::: moniker-end
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 > [!NOTE]
+> Службы машинного обучения также доступны в [Управляемом экземпляре SQL Azure](/azure/azure-sql/managed-instance/machine-learning-services-overview). Сведения о применении машинного обучения на других платформах SQL доступны в [документации по машинному обучению SQL](index.yml).
+>
 > Сведения о запуске Java в SQL Server см. в [документации по расширению языка Java](../language-extensions/java-overview.md).
 ::: moniker-end
 
@@ -55,13 +59,6 @@ ms.locfileid: "100340308"
    + [Учебники по использованию R для машинного обучения SQL](tutorials/r-tutorials.md)
 ::: moniker-end
 
-::: moniker range="=azuresqldb-mi-current"
-+ Создайте свой первый сценарий Python или R.
-
-   + [Учебники по использованию Python для машинного обучения SQL](tutorials/python-tutorials.md)
-   + [Учебники по использованию R для машинного обучения SQL](tutorials/r-tutorials.md)
-::: moniker-end
-
 ::: moniker range="=sql-server-2017"
 1. [Установка служб машинного обучения SQL Server в Windows](install/sql-machine-learning-services-windows-install.md).
 
@@ -79,10 +76,11 @@ ms.locfileid: "100340308"
 
 Ниже перечислены версии Python и R, включенные в Службы машинного обучения.
 
-| Версия SQL Server | Версия Python | Версия R |
-|-|-|-|
-| SQL Server 2017 | 3.5.2 | 3.3.3 |
-| SQL Server 2019 | 3.7.3 | 3.5.2 |
+| Версия SQL Server | Накопительное обновление | Версия среды выполнения Python | Версии среды выполнения R |
+|-|-|-|-|
+| SQL Server 2019 | RTM и более поздние версии | 3.7.1 | 3.5.2 |
+| SQL Server 2017 | CU22 и более поздние версии | 3.5.2 и 3.7.2 | 3.3.3 и 3.5.2 |
+| SQL Server 2017 | RTM — CU21 | 3.5.2 | 3.3.3 |
 
 Сведения о версии R в SQL Server 2016 см. в [разделе о версии R в статье с описанием служб R Services](r/sql-server-r-services.md?view=sql-server-2016&preserve-view=true#version).
 
