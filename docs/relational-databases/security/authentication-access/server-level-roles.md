@@ -24,12 +24,12 @@ ms.assetid: 7adf2ad7-015d-4cbe-9e29-abaefd779008
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2e7e36e4e229cea43c1a144d2bd0424657d2b164
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6b7c7e5b915e6c7ad138154e1615decead642699
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100067618"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103731"
 ---
 # <a name="server-level-roles"></a>Роли уровня сервера
 [!INCLUDE[appliesto-ss-xxxx-xxxx-pdw-md](../../../includes/appliesto-ss-xxxx-xxxx-pdw-md.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "100067618"
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] предоставляет девять предопределенных ролей сервера. Разрешения, назначенные предопределенным ролям сервера (кроме роли **public**), не могут быть изменены. Начиная с [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)], можно создавать пользовательские роли сервера и добавлять разрешения на уровне сервера таким пользовательским ролям.  
   
- В роли уровня сервера можно добавлять субъекты уровня сервера (имена входа [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)], учетные записи Windows и группы Windows). Каждый член предопределенной роли сервера может добавлять другие имена входа к той же роли. Члены пользовательских ролей сервера не могут добавлять других участников на уровне сервера в роль.  
+ В роли уровня сервера можно добавлять субъекты уровня сервера (имена входа, учетные записи Windows и группы Windows[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ). Каждый член предопределенной роли сервера может добавлять другие имена входа к той же роли. Члены пользовательских ролей сервера не могут добавлять других участников на уровне сервера в роль.  
 > [!NOTE]
 >  Разрешения уровня сервера недоступны в Базе данных SQL или Azure Synapse Analytics. Дополнительные сведения о базе данных SQL см. в статье [Предоставление доступа к базе данных и управление им](/azure/sql-database/sql-database-manage-logins).
   
