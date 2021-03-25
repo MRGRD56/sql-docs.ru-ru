@@ -24,12 +24,12 @@ ms.assetid: 8b8b3b57-fd46-44de-9a4e-e3a8e3999c1e
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: 287e3c0abfc083607b96598da5e83cd5ab0b58dd
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 0eab287319fdfa263cbf5cba44546ab3b792bdad
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611174"
+ms.locfileid: "104673921"
 ---
 # <a name="service-broker"></a>Компонент Service Broker
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -86,7 +86,7 @@ FROM ExpenseQueue;
   После обработки всех сообщений из очереди необходимо закрыть диалог с помощью инструкции Transact-SQL [END CONVERSATION](../../t-sql/statements/end-conversation-transact-sql.md).
 
 ## <a name="where-is-the-documentation-for-service-broker"></a>Где найти документацию по компоненту Service Broker?  
- Справочная документация по компоненту [!INCLUDE[ssSB](../../includes/sssb-md.md)] входит в документацию по [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] . В эту справочную документацию входят следующие разделы:  
+ Справочная документация по компоненту [!INCLUDE[ssSB](../../includes/sssb-md.md)] входит в документацию по [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] . В эту справочную документацию входят следующие разделы:  
   
 -   См. информацию об инструкциях CREATE, ALTER и DROP в разделе [Инструкции на языке описания данных (DDL) (Transact-SQL)](../../t-sql/statements/statements.md)  
   
@@ -98,7 +98,7 @@ FROM ExpenseQueue;
   
 -   [Программа ssbdiagnose (компонент Service Broker)](../../tools/ssbdiagnose/ssbdiagnose-utility-service-broker.md)  
   
- Сведения об основных понятиях компонента [, а также задачах разработки и управления см. в](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) ранее опубликованной документации [!INCLUDE[ssSB](../../includes/sssb-md.md)] . Эта документация не повторяется в документации по [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] из-за малого числа изменений в компоненте [!INCLUDE[ssSB](../../includes/sssb-md.md)] в [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)].  
+ Сведения об основных понятиях компонента [, а также задачах разработки и управления см. в](/previous-versions/sql/sql-server-2008-r2/bb522893(v=sql.105)) ранее опубликованной документации [!INCLUDE[ssSB](../../includes/sssb-md.md)] . Данная документация не воспроизводится в документации [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] из-за небольшого числа изменений [!INCLUDE[ssSB](../../includes/sssb-md.md)] в недавних версиях [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)].  
   
 ## <a name="whats-new-in-service-broker"></a>Новые возможности (компонент Service Broker)  
 

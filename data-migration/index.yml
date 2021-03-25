@@ -4,14 +4,14 @@ summary: 'Пошаговое руководство по модернизаци�
 brand: sql
 metadata:
   title: Руководства по переносу баз данных Azure | Документация Майкрософт
-  description: Пошаговое руководство по модернизации ресурсов данных.
+  description: 'Пошаговое руководство по модернизации ресурсов данных путем миграции на SQL Server, Базу данных SQL Azure, Управляемый экземпляр SQL Azure, Базу данных Azure, Azure Cosmos DB, SQL Server на виртуальных машинах Azure и Azure Synapse Analytics. '
   ms.topic: hub-page
-  ms.openlocfilehash: c08abfbcb0e43a00319190153d169083b2da9395
-  ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+  ms.openlocfilehash: a25b5f0891cd2743ed8366d28ec03599e9483df1
+  ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 03/19/2021
-  ms.locfileid: "104610603"
+  ms.locfileid: "104673218"
 conceptualContent:
   items:
   - title: SQL Server —
@@ -33,6 +33,9 @@ conceptualContent:
       itemType: how-to-guide
   - title: Oracle —
     links:
+    - text: База данных Azure для PostgreSQL
+      url: /azure/postgresql/howto-migrate-from-oracle
+      itemType: how-to-guide
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/oracle-to-sql-server
       itemType: how-to-guide
@@ -44,9 +47,6 @@ conceptualContent:
       itemType: how-to-guide
     - text: SQL Server на виртуальных машинах Azure
       url: /azure/azure-sql/migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide
-      itemType: how-to-guide
-    - text: База данных Azure для PostgreSQL
-      url: /azure/postgresql/howto-migrate-from-oracle
       itemType: how-to-guide
     - text: Azure Synapse Analytics
       url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
@@ -75,14 +75,14 @@ conceptualContent:
       itemType: how-to-guide
   - title: MySQL —
     links:
+    - text: База данных Azure для MySQL
+      url: /azure/mysql/concepts-migrate-import-export
+      itemType: how-to-guide
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/mysql-to-sql-server
       itemType: how-to-guide
     - text: База данных SQL Azure
       url: /azure/azure-sql/migration-guides/database/mysql-to-sql-database-guide
-      itemType: how-to-guide
-    - text: База данных Azure для MySQL
-      url: /azure/mysql/concepts-migrate-import-export
       itemType: how-to-guide
   - title: SAP ASE —
     links:
@@ -94,33 +94,36 @@ conceptualContent:
       itemType: how-to-guide
   - title: Открытый исходный код
     links:
-    - text: Из MariaDB в Базу данных Azure для MariaDB
-      url: /azure/mariadb/howto-migrate-dump-restore
+    - text: Из PostgreSQL в Базу данных Azure для PostgreSQL
+      url: /azure/postgresql/howto-migrate-using-dump-and-restore
       itemType: how-to-guide
     - text: Из MySQL в Базу данных Azure для MySQL
       url: /azure/mysql/concepts-migrate-import-export
       itemType: how-to-guide
-    - text: Из PostgreSQL в Базу данных Azure для PostgreSQL
-      url: /azure/postgresql/howto-migrate-using-dump-and-restore
+    - text: Из MariaDB в Базу данных Azure для MariaDB
+      url: /azure/mariadb/howto-migrate-dump-restore
       itemType: how-to-guide
   - title: NoSQL
     links:
     - text: Из MongoDB в Azure Cosmos DB
-      url: /azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
-      itemType: how-to-guide
-    - text: Из Cassandra в Azure Cosmos DB
-      url: /azure/cosmos-db/cassandra-import-data
+      url: /azure/dms/tutorial-mongodb-cosmos-db-online?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
       itemType: how-to-guide
     - text: Из Хранилища таблиц Microsoft Azure в Azure Cosmos DB
       url: /azure/cosmos-db/table-import
       itemType: how-to-guide
+    - text: Из Cassandra в Azure Cosmos DB
+      url: /azure/cosmos-db/cassandra-import-data
+      itemType: how-to-guide
   - title: Ресурсы
     links:
+    - text: Центр миграции Azure
+      url: https://azure.microsoft.com/migration/
+      itemType: reference
     - text: Ресурсы партнеров для миграции
       url: https://www.microsoft.com/azure/partners/advspec?filters=windows-server-and-sql-server-migration-to-azure
       itemType: reference
     - text: Облачная экономика
-      url: https://azure.microsoft.com/en-gb/overview/cloud-economics
+      url: https://azure.microsoft.com/overview/cloud-economics
       itemType: reference
     - text: Калькулятор совокупной стоимости владения
       url: https://azure.microsoft.com/pricing/tco/calculator/
@@ -138,7 +141,7 @@ conceptualContent:
       url: https://customers.microsoft.com/en-us/search?sq=&ff=&p=0&so=story_publish_date%20desc
       itemType: reference
 tools:
-  title: Средства миграции
+  title: Средства миграцииСредства миграции
   items:
   - title: Служба "Миграция Azure"
     imageSrc: media/index/azure-migrate-symbol.svg
