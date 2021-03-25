@@ -13,13 +13,13 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
-ms.date: 02/09/2017
-ms.openlocfilehash: 73dcdd57b018f980291eceefa1be37d1b51df13a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.date: 03/22/2021
+ms.openlocfilehash: d869aaf652cf3c5d9baa389ab26303ba46049b71
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100018444"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890721"
 ---
 # <a name="how-to-compare-and-synchronize-the-data-of-two-databases"></a>Руководство. сравнить и синхронизировать данные из двух баз данных
 
@@ -78,12 +78,12 @@ ms.locfileid: "100018444"
 2.  Введите в окне команд следующую команду:  
   
     ```  
-    Sql.NewDataComparison /SrcServerName sServerName /SrcDatabaseName sDatabaseName /SrcUserName sUserName /SrcPassword sPassword /SrcDisplayName sDisplayName /TargetServerName tServerName /TargetDatabaseName tDatabaseName /TargeUserName tUserName /TargetPassword tPassword /TargetDisplayName tDisplayName  
+    Tools.NewDataComparison /SrcServerName sServerName /SrcDatabaseName sDatabaseName /SrcUserName sUserName /SrcPassword sPassword /SrcDisplayName sDisplayName /TargetServerName tServerName /TargetDatabaseName tDatabaseName /TargeUserName tUserName /TargetPassword tPassword /TargetDisplayName tDisplayName  
     ```  
   
     Замените заполнители (*sServerName*, *sDatabaseName*, *sUserName*, *sPassword*, *sDisplayName*, *tServerName*, *tDatabaseName*, *tUserName*, *tPassword* и *tDisplayName*) значениями для ваших базы данных-источника и целевой базы данных.  
   
-    Если база данных-источник и целевая база данных не указаны, откроется диалоговое окно **Новое сравнение данных**. Дополнительные сведения о параметрах для команды Sql.NewDataComparison см. в [справочнике по командам автоматизации функций для работы с базами данных в Visual Studio](/previous-versions/visualstudio/visual-studio-2010/dd470565(v=vs.100)).  
+    Если база данных-источник и целевая база данных не указаны, откроется диалоговое окно **Новое сравнение данных**. Дополнительные сведения о параметрах для команды Tools.NewDataComparison см. в [справочнике по командам автоматизации для функций баз данных в Visual Studio Team System](/previous-versions/visualstudio/visual-studio-2010/dd470565(v=vs.100)).  
   
     Сравнение данных в указанных базах данных, исходной и целевой, выполнено. Результаты отображаются в сеансе «Сравнение данных». Дополнительные сведения о просмотре результатов и синхронизации данных см. в разделах [Просмотр различий данных](#ViewDifferences) и [Синхронизация данных базы данных](#Synchronize).  
   

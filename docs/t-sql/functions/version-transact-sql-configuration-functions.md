@@ -22,12 +22,12 @@ ms.assetid: 385ba80e-7c28-41a5-9cdb-5648f3785983
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2cd2d33373af43341ddba761ee864a232b8a55bf
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 9e1534a67dc7d0009e0ab8ad624ac3dbc3322a23
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104754544"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890736"
 ---
 # <a name="x40x40version---transact-sql-configuration-functions"></a>&#x40;&#x40;Version — функции настройки Transact SQL
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,15 @@ ms.locfileid: "104754544"
   Возвращает сведения о системе и построении текущей установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
  ![Значок ссылки на раздел](../../database-engine/configure-windows/media/topic-link.gif "Значок ссылки на раздел") [Синтаксические обозначения в Transact-SQL](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
-  
+
+> [!NOTE]  
+> Нам известно о проблеме, когда @@VERSION сообщает неверную версию продукта для **Базы данных SQL Azure**.
+> 
+> Версия ядра базы данных SQL Server, выполняющаяся в базе данных SQL Azure, всегда выше локальной версии SQL Server и содержит последние исправления безопасности. Это означает, что уровень исправления всегда совпадает с локальной версией SQL Server или выше ее, и что последние функции, доступные в SQL Server, также доступны в базе данных SQL Azure.
+>
+> Чтобы определить выпуск ядра базы данных программным способом, используйте SELECT SERVERPROPERTY('EngineEdition'). Этот запрос вернет значение 5 для Базы данных SQL Azure и значение 8 для Управляемого экземпляра SQL Azure.
+>
+> После решения этой проблемы документация будет обновлена.
 ## <a name="syntax"></a>Синтаксис  
   
 ```syntaxsql
@@ -75,14 +83,6 @@ ms.locfileid: "104754544"
 -   Дата сборки  
   
 -   Заявление об авторских правах  
-
-> [!NOTE]  
-> Нам известно о проблеме, когда @@VERSION сообщает о неправильной версии продукта для базы данных SQL Azure. Версия ядра базы данных SQL Server, выполняющаяся в базе данных SQL Azure, всегда выше локальной версии SQL Server и содержит последние исправления безопасности. Это означает, что уровень исправления всегда совпадает с локальной версией SQL Server или выше ее, и что последние функции, доступные в SQL Server, также доступны в базе данных SQL Azure.
->
-> Чтобы определить выпуск ядра базы данных программным способом, используйте SELECT SERVERPROPERTY('EngineEdition'). Этот запрос вернет значение 5 для Базы данных SQL Azure и значение 8 для Управляемого экземпляра SQL Azure.
->
-> После решения этой проблемы документация будет обновлена.
-
   
 ## <a name="examples"></a>Примеры  
   

@@ -16,17 +16,17 @@ helpviewer_keywords:
 ms.assetid: b4efb0ae-cfe6-4d81-a4b4-6e4916885caa
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: c1987fae42f804e861c1f15e55deb60e273e0d3b
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 9912ecd1d8f258a343adf9db4e61d4e264e5273d
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194407"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890760"
 ---
 # <a name="attach-a-database"></a>Присоединение базы данных
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-В этом разделе описывается присоединение базы данных в [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] с помощью среды [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] или [!INCLUDE[tsql](../../includes/tsql-md.md)]. Эту функцию можно использовать для копирования, перемещения или обновления базы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
+В этом разделе описывается присоединение базы данных в [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] с помощью среды [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] или [!INCLUDE[tsql](../../includes/tsql-md.md)]. Эту функцию можно использовать для копирования, перемещения или обновления базы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 ##  <a name="prerequisites"></a><a name="Prerequisites"></a> Предварительные требования  
   
@@ -144,9 +144,12 @@ ms.locfileid: "92194407"
     > Кроме того, можно вызвать хранимую процедуру [sp_attach_db](../../relational-databases/system-stored-procedures/sp-attach-db-transact-sql.md) или [sp_attach_single_file_db](../../relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql.md) . Но эти расширенные хранимые процедуры в будущих версиях [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]будут удалены. Избегайте использования этого компонента в новых разработках и запланируйте изменение существующих приложений, в которых он применяется. Вместо этого рекомендуется использовать `CREATE DATABASE ... FOR ATTACH` .  
   
 ##  <a name="follow-up-after-upgrading-a-sql-server-database"></a><a name="FollowUp"></a> Дальнейшие действия. После обновления базы данных SQL Server  
+
 После обновления базы данных при помощи описанного метода присоединения, эта база данных сразу становится доступной, после чего обновляется автоматически. Если база данных содержит полнотекстовые индексы, то в процессе обновления будет произведен их импорт, сброс или перестроение в зависимости от установленного значения свойства сервера **Режим обновления полнотекстового каталога** . Если при обновлении выбран режим **Импортировать** или **Перестроить**, то полнотекстовые индексы во время обновления будут недоступны. В зависимости от объема индексируемых данных процесс импорта может занять несколько часов, а перестроение — в несколько (до десяти) раз больше. Обратите внимание, что если при обновлении выбран режим **Импортировать**, а полнотекстовый каталог недоступен, то связанные с ним полнотекстовые индексы будут перестроены.  
   
-Если уровень совместимости пользовательской базы данных до обновления был 100 или выше, после обновления он останется таким же. Если уровень совместимости до обновления был 90, в обновленной базе данных он устанавливается в 100, что является минимально поддерживаемым уровнем совместимости в [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]. Дополнительные сведения см. в разделе [Уровень совместимости инструкции ALTER DATABASE (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md).  
+После обновления уровень совместимости базы данных останется неизменным, если только он не является в новой версии неподдерживаемым. В последнем случае обновленный уровень совместимости базы данных устанавливается как самый низкий из поддерживаемых.
+
+Например, если подключить к экземпляру [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] базу данных, имеющую уровень совместимости 90, то после обновления он будет изменен на 100, что является наименьшим поддерживаемым уровнем для [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)]. Дополнительные сведения см. в разделе [Уровень совместимости инструкции ALTER DATABASE (Transact-SQL)](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md).  
   
 > [!NOTE]
 > Для подключения базы данных из экземпляра под управлением [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] или более ранней версии, в которой включена система отслеживания измененных данных (CDC), потребуется также выполнить следующую команду, чтобы обновить метаданные системы отслеживания измененных данных (CDC).
