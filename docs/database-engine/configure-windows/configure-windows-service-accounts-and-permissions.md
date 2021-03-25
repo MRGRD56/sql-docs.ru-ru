@@ -51,12 +51,12 @@ helpviewer_keywords:
 ms.assetid: 309b9dac-0b3a-4617-85ef-c4519ce9d014
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e68604e7805342c9c1d0302c0f99d88d8d9fbf07
-ms.sourcegitcommit: 76c5e10704e3624b538b653cf0352e606b6346d3
+ms.openlocfilehash: 525f08bada39e02a3dfc4f834f5106be18571e36
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98924730"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673978"
 ---
 # <a name="configure-windows-service-accounts-and-permissions"></a>Настройка учетных записей службы Windows и разрешений
 
@@ -249,7 +249,7 @@ ms.locfileid: "98924730"
 
 ### <a name="service-configuration-and-access-control"></a><a name="Serv_SID"></a> Настройка служб и управление доступом
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] позволяет обеспечить изоляцию и всестороннюю защиту идентификатора безопасности каждой службы. Идентификатор безопасности службы создается на основе имени службы и является уникальным для этой службы. Например, именем идентификатора безопасности службы для именованного экземпляра службы [!INCLUDE[ssDE](../../includes/ssde-md.md)] может быть **NT Service\MSSQL$** _\<InstanceName>_ . Изоляция служб обеспечивает доступ к конкретным объектам без необходимости использования учетной записи с высоким уровнем привилегий или ослабления защиты этих объектов. Используя запись управления доступом, содержащую удостоверение безопасности службы, служба [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] может ограничить доступ к своим ресурсам.
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] позволяет обеспечить изоляцию и всестороннюю защиту идентификатора безопасности каждой службы. Идентификатор безопасности службы создается на основе имени службы и является уникальным для этой службы. Например, именем идентификатора безопасности службы для именованного экземпляра службы [!INCLUDE[ssDE](../../includes/ssde-md.md)] может быть **NT Service\MSSQL$** _\<InstanceName>_ . Изоляция служб обеспечивает доступ к конкретным объектам без необходимости использования учетной записи с высоким уровнем привилегий или ослабления защиты этих объектов. Используя запись управления доступом, содержащую удостоверение безопасности службы, служба [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] может ограничить доступ к своим ресурсам.
 
 > [!NOTE]
 > В Windows 7 и [!INCLUDE[nextref_longhorn](../../includes/nextref-longhorn-md.md)] R2 (и более поздних версиях) удостоверением безопасности службы может быть виртуальная учетная запись, используемая этой службой.
@@ -529,8 +529,8 @@ ms.locfileid: "98924730"
 
 В этом разделе описаны изменения, внесенные во время обновления предыдущей версии [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
 
-- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] требуется [!INCLUDE[nextref_longhorn](../../includes/nextref-longhorn-md.md)] R2 с пакетом обновления 1 (SP1), Windows Server 2012, Windows 8.0 и Windows Server 2012 R2 или Windows 8.1. Для предыдущих версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , работающих в более низкой версии операционной системы, необходимо обновить операционную систему, прежде чем обновлять службы [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
-- Во время обновления [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] до [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]программа установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] настроит [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] следующим образом.
+- Для [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] требуется поддерживаемая [операционная система](../../sql-server/install/hardware-and-software-requirements-for-installing-sql-server-ver15.md#operating-system-support). Для предыдущих версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , работающих в более низкой версии операционной системы, необходимо обновить операционную систему, прежде чем обновлять службы [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
+- Во время обновления [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] до [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] программа установки настраивает экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] следующим образом.
 
   - Компонент [!INCLUDE[ssDE](../../includes/ssde-md.md)] запускается в контексте безопасности удостоверения безопасности службы. Удостоверению безопасности службы предоставляется доступ к папкам с файлами экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (например, DATA), а также к разделам реестра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .
   - Удостоверение безопасности службы компонента [!INCLUDE[ssDE](../../includes/ssde-md.md)] предоставляется компоненту [!INCLUDE[ssDE](../../includes/ssde-md.md)] в качестве члена предопределенной роли сервера **sysadmin** .

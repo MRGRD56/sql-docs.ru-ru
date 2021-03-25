@@ -1,6 +1,6 @@
 ---
-description: Мастер источников данных, экран 1 (ODBC Driver for SQL Server)
-title: Мастер источников данных, экран 1 (драйвер ODBC для SQL Server) | Документация Майкрософт
+description: Сведения об определении имени и описания в мастере источников данных для создания подключения ODBC к SQL Server.
+title: Мастер источников данных, экран 1 (ODBC Driver for SQL Server)
 ms.custom: ''
 ms.date: 09/27/2017
 ms.prod: sql
@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.assetid: 76326eeb-1144-4b9f-85db-50524c655d30
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 78009925b5d62e8a314d0a3fdc27c29acaee5c5d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c7b60adb82915d8fb73138d194a125f478c0a039
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88462228"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673948"
 ---
 # <a name="data-source-wizard-screen-1"></a>Экран 1 мастера источников данных
 
-Укажите имя и описание источника данных, а также имя сервера на котором запущен SQL Server, к которому будет подключаться источник данных. 
-    
+Укажите имя и описание источника данных, а также имя сервера на котором запущен SQL Server, к которому будет подключаться источник данных.
+
 ## <a name="options"></a>Параметры
 
 ### <a name="name"></a>name
@@ -40,7 +40,7 @@ ms.locfileid: "88462228"
 
 Можете ввести "(local)" в поле сервера, если вы используете тот же компьютер, что и SQL Server. Затем пользователь сможет подключиться к локальному экземпляру SQL Server, даже если запущена не сетевая версия SQL Server. На одном компьютере можно запустить несколько экземпляров SQL Server. Если необходимо указать именованный экземпляр SQL Server, имя сервера указывается как _ServerName_\\_InstanceName_.
 
-Дополнительные сведения об именах серверов для разных типов сетей см. в документации по установке SQL Server в электронной документации на SQL Server.
+Дополнительные сведения об именах серверов для разных типов сетей см. в статье [Вход в систему SQL Server](../../../database-engine/configure-windows/logging-in-to-sql-server.md#format-for-specifying-the-name-of-sql-server).
 
 ### <a name="finish"></a>Готово
 
@@ -48,8 +48,8 @@ ms.locfileid: "88462228"
 
 ### <a name="next"></a>Следующая
 
-Переход к следующему экрану в мастере, щелкнув ссылку **Далее**.
+Чтобы перейти к следующему экрану мастера, щелкните **Далее**.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-[Экран 2 мастера источников данных](../../../connect/odbc/windows/dsn-wizard-2.md)
+[Экран 2 мастера источников данных](dsn-wizard-2.md)

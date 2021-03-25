@@ -36,12 +36,12 @@ ms.assetid: d686cdf0-d11d-4dba-9ec8-de1a5f189f25
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-linux-2017  || >= sql-server-2016'
-ms.openlocfilehash: 2b735e98bd49e06057008a714a868cec6c9f5282
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e1c5f8b15d40ff26cf1a164e806f7fa735b28319
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347881"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673521"
 ---
 # <a name="discontinued-database-engine-functionality-in-sql-server"></a>Нерекомендуемые функции ядра СУБД в SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -72,6 +72,8 @@ ms.locfileid: "100347881"
 - Параметры запуска **-h** и **-g**. Дополнительные сведения см. в разделе [Параметры запуска службы Database Engine](/previous-versions/sql/2014/database-engine/configure-windows/database-engine-service-startup-options?view=sql-server-2014&preserve-view=true).
 
 - Использование шифрования по протоколу SSL прекращено. Используйте вместо него протокол TLS. Дополнительные сведения см. в статье [Включение шифрования соединений в компоненте Database Engine](../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md).
+
+- Параметр конфигурации SQL Server `precompute rank` не поддерживается, начиная с SQL Server 2008. Статья была удалена из документации.
 
 ## <a name="previous-versions"></a>Предыдущие версии
 

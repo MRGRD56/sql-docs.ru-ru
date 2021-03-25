@@ -2,7 +2,7 @@
 title: Резервное копирование в SQL Server по URL-адресу | Документация Майкрософт
 description: В данном разделе представлены основные понятия, требования и компоненты, необходимые SQL Server для использования хранилища больших двоичных объектов Microsoft Azure в качестве места назначения резервного копирования.
 ms.custom: ''
-ms.date: 03/25/2019
+ms.date: 03/19/2021
 ms.prod: sql
 ms.prod_service: backup-restore
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 11be89e9-ff2a-4a94-ab5d-27d8edf9167d
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: e2652320875d3bf22f5a7557dc7c1deba9a93376
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9dfb774bf9176c315cb5f77a8567503d12dba4e5
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349043"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673906"
 ---
 # <a name="sql-server-backup-to-url"></a>Резервное копирование SQL Server по URL-адресу
 
@@ -97,6 +97,9 @@ ms.locfileid: "100349043"
   
     > [!IMPORTANT]  
     >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] требует, чтобы либо имя учетной записи Azure и значение ключа доступа для проверки подлинности, либо подписанный URL-адрес и маркер доступа хранились в учетных данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Эти сведения используются для проверки подлинности учетной записи Azure при резервном копировании или восстановлении.  
+
+    > [!WARNING]
+    > Служба хранилища Azure поддерживает [отключение](https://docs.microsoft.com/azure/storage/common/shared-key-authorization-prevent) авторизации с общим ключом для учетной записи хранения. Если авторизация с общим ключом отключена, операция SQL Server "Резервное копирование по URL-адресу" не будет работать.
   
 - Учетная запись пользователя, применяемая для выдачи команды BACKUP или RESTORE, должна находиться в роли базы данных **db_backup operator** с разрешениями **Alter any credential** .   
 

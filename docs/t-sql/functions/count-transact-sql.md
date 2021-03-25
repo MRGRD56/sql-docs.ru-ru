@@ -4,7 +4,7 @@ title: COUNT (Transact-SQL) | Документы Майкрософт
 ms.custom: ''
 ms.date: 07/24/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -24,12 +24,12 @@ ms.assetid: 28d39da6-bc2e-46c7-858c-b1721c938830
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ad8aa2f0f24dda5f2c67c813df08291fe6bca432
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: d061173f0898345c9ebdef3b9208be3dddfccc53
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99184175"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104748034"
 ---
 # <a name="count-transact-sql"></a>Функция COUNT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -79,7 +79,7 @@ OVER **(** [ *partition_by_clause* ] [ *order_by_clause* ] [ *ROW_or_RANGE_claus
   
 Для возвращаемых значений, которые превышают значение 2^31-1, функция `COUNT` возвращает ошибку. В таких случаях используйте вместо нее функцию `COUNT_BIG`.
   
-`COUNT` — это детерминированная функция, если она используется ***без** _ предложений OVER и ORDER BY. Она не детерминирована при использовании _*_с_*_ предложениями OVER и ORDER BY. Дополнительные сведения см. в статье [Детерминированные и недетерминированные функции](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md).
+`COUNT` — это детерминированная функция, если она используется ***без** _ предложений OVER и ORDER BY. Она не детерминирована при использовании _ *_с_** предложениями OVER и ORDER BY. Дополнительные сведения см. в статье [Детерминированные и недетерминированные функции](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md).
   
 ## <a name="examples"></a>Примеры  
   
@@ -101,7 +101,7 @@ GO
 (1 row(s) affected)
 ```
   
-### <a name="b-using-count_"></a>Б. Использование функции COUNT(\_)  
+### <a name="b-using-count"></a>Б. Использование функции COUNT(\*)  
 В этом примере функция возвращает общее количество сотрудников [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)].
   
 ```sql

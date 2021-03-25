@@ -1,6 +1,6 @@
 ---
-description: Основные сведения о блокировке строк
-title: Сведения о блокировке строк | Документация Майкрософт
+description: Сведения об использовании блокировки строк для управления одновременным доступом нескольких пользователей из разных подключений.
+title: Основные сведения о блокировке строк
 ms.custom: ''
 ms.date: 12/08/2020
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 63c76a2f-f2b9-461f-8904-acbda0169ac3
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: e5305f3feaa80d0a83dd1e7bfd97088492608ae5
-ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
+ms.openlocfilehash: 589700b7d3f4a08958e306f59e87249263f86675
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96901064"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673148"
 ---
 # <a name="understanding-row-locking"></a>Основные сведения о блокировке строк
 
@@ -30,8 +30,8 @@ ms.locfileid: "96901064"
 Блокировка обеспечивает целостность транзакций и согласованность базы данных. Блокировка не позволяет пользователям считывать данные, которые изменяются другими пользователями, а также исключает одновременное изменение одних и тех же данных несколькими пользователями. Если блокировка не применяется, то данные в базе данных могут утратить логическую верность, и запросы к этим данным могут давать непредвиденные результаты.
 
 > [!NOTE]  
-> Дополнительные сведения о блокировке строк в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] см. в разделе ["Блокировки в компоненте [!INCLUDE[ssDE](../../includes/ssde_md.md)]"](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#Lock_Engine) электронной документации по [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
+> Дополнительные сведения о блокировке строк в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] см. в разделе [Блокировка в [!INCLUDE[ssDE](../../includes/ssde_md.md)]](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#Lock_Engine).
 
 ## <a name="see-also"></a>См. также раздел
 
-[Управление результирующими наборами с помощью JDBC Driver](../../connect/jdbc/managing-result-sets-with-the-jdbc-driver.md)
+[Управление результирующими наборами с помощью JDBC Driver](managing-result-sets-with-the-jdbc-driver.md)

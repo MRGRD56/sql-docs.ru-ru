@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: a3df6c30-1f25-45dc-b5a9-bd0e41921293
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 36c5f8a3178d82f899b7128434af4467d4f6f846
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 0117b075a821a7e18732675ed432aafab5fafc60
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729841"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104734721"
 ---
 # <a name="type-directive-in-for-xml-queries"></a>Директива TYPE в запросах FOR XML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поддерживает [XML (Transact-SQL)](../../t-sql/xml/xml-transact-sql.md), что позволяет с помощью директивы TYPE запросить получение результата запроса FOR XML в виде типа данных **xml**. Это позволяет обрабатывать результат запроса FOR XML на сервере. Например, к нему можно применить инструкции на языке XQuery, присвоить его результат переменной типа **xml** или написать [вложенные запросы FOR XML](../../relational-databases/xml/use-nested-for-xml-queries.md).  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поддерживает тип данных [XML (Transact-SQL)](../../t-sql/xml/xml-transact-sql.md), что позволяет с помощью директивы TYPE запросить получение результата запроса FOR XML в виде типа данных **xml**. Это позволяет обрабатывать результат запроса FOR XML на сервере. Например, к нему можно применить инструкции на языке XQuery, присвоить его результат переменной типа **xml** или написать [вложенные запросы FOR XML](../../relational-databases/xml/use-nested-for-xml-queries.md).  
   
 > [!NOTE]  
 >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] возвращает клиенту тип данных XML экземпляра, представляющий собой результат различных серверных конструкций, таких как запросы FOR XML, использующие директиву TYPE или тип данных **xml** для получения значений XML-данных экземпляра из столбцов таблицы и выходных параметров SQL. В коде клиентского приложения поставщик ADO.NET запрашивает эти XML-данные для отправки с сервера в двоичной кодировке. Однако при использовании предложения FOR XML без директивы TYPE XML-данные возвращаются как данные строкового типа. В любом случае поставщик клиента всегда будет иметь возможность обрабатывать XML-данные в любом из форматов. Обратите внимание на то, что предложение FOR XML верхнего уровня без директивы TYPE не может быть использовано с курсорами.  

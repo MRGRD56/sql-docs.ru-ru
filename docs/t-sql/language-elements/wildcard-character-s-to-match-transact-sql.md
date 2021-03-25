@@ -5,7 +5,7 @@ titleSuffix: SQL Server (Transact-SQL)
 ms.custom: seo-lt-2019
 ms.date: 12/06/2016
 ms.prod: sql
-ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
+ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: reference
@@ -23,12 +23,12 @@ ms.assetid: 57817576-0bf1-49ed-b05d-fac27e8fed7a
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2c69fbf1900de88da7faf08e477eb4775187b964
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 7530d9c705a63054a36fdb73ed50994bee8937ec
+ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339798"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104753404"
 ---
 # <a name="--wildcard---characters-to-match-transact-sql"></a>\[ \] (подстановочный знак — символы для сопоставления) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -98,7 +98,7 @@ object_id     object_name                         name  column_id
 1591676718    JunkTable                           _xyz  1
 ```
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [LIKE (Transact-SQL)](../../t-sql/language-elements/like-transact-sql.md)   
  [PATINDEX (Transact-SQL)](../../t-sql/functions/patindex-transact-sql.md)   
   [% (символ-шаблон для сопоставления) (Transact-SQL)](../../t-sql/language-elements/percent-character-wildcard-character-s-to-match-transact-sql.md)   

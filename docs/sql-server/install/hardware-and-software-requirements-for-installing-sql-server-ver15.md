@@ -45,21 +45,21 @@ helpviewer_keywords:
 ms.assetid: 09bcf20b-0a40-4131-907f-b61479d5e4d8
 ms.author: chadam
 author: cawrites
-ms.openlocfilehash: 52c29a7de29a324d7bda2fba4cb52073cf62d752
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b7def7a7f58d3fe2124545171c5858a012e4642b
+ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352433"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104673990"
 ---
 # <a name="sql-server-2019-hardware-and-software-requirements"></a>SQL Server 2019: Требования к аппаратному и программному обеспечению
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
 
-В этой статье приведены минимальные требования к оборудованию и программному обеспечению, необходимым для установки и запуска SQL Server 2019 в операционной системе Windows.
+В этой статье приведены минимальные требования к оборудованию и программному обеспечению, необходимым для установки и запуска [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] в операционной системе Windows.
 
-Чтобы ознакомиться с требованиями к оборудованию и программному обеспечению для других версий SQL Server, см. следующие статьи:
-- [SQL Server 2016 и 2017](hardware-and-software-requirements-for-installing-sql-server.md)
-- [SQL Server в Linux](../../linux/sql-server-linux-setup.md#system)
+Чтобы ознакомиться с требованиями к оборудованию и программному обеспечению для других версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], см. следующие статьи:
+- [[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2016 и 2017](hardware-and-software-requirements-for-installing-sql-server.md)
+- [[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] в Linux](../../linux/sql-server-linux-setup.md#system)
 - [Кластер больших данных](../../big-data-cluster/deployment-guidance.md)
 
 ##  <a name="hardware-requirements"></a><a name="pmosr"></a> Требования к оборудованию  
@@ -100,12 +100,12 @@ ms.locfileid: "100352433"
 > Для компонента PolyBase существуют дополнительные аппаратные и программные требования. Дополнительные сведения см. в разделе [Приступая к работе с PolyBase](../../relational-databases/polybase/polybase-guide.md).  
   
 
-##  <a name="operating-system-support"></a><a name="TOP_Principal"></a> Поддержка операционных систем 
+## <a name="operating-system-support"></a>Поддержка операционных систем
 
-В следующей таблице показано, какие версии SQL Server 2019 совместимы с различными версиями Windows:  
+В следующей таблице показано, какие выпуски [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] совместимы с различными версиями Windows.  
   
 
-| Выпуск SQL Server:               | Enterprise | Разработчик | Standard | Интернет | Express |  
+| Выпуск [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]               | Enterprise | Разработчик | Standard | Интернет | Express |  
 | :------------------------         | :--------- | :-------- | :------- | :-- | :------ | 
 | Windows Server 2019 Datacenter    |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2019 Standard      |    Да     |    Да    |    Да   | Да |   Да   |
@@ -113,15 +113,15 @@ ms.locfileid: "100352433"
 | Windows Server 2016 Datacenter    |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2016 Standard      |    Да     |    Да    |    Да   | Да |   Да   |
 | Windows Server 2016 Essentials    |    Да     |    Да    |    Да   | Да |   Да   |
-| Windows 10 IoT Корпоративная         |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 10 Корпоративная             |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 10 Профессиональная           |    нет      |    Да    |    Да   | нет  |   Да   |
-| Windows 10 Домашняя                   |    нет      |    Да    |    Да   | нет  |   Да   |
+| Windows 10 IoT Корпоративная         |    нет      |    Да    |    Да   | Нет  |   Да   |
+| Windows 10 Корпоративная             |    нет      |    Да    |    Да   | Нет  |   Да   |
+| Windows 10 Профессиональная           |    нет      |    Да    |    Да   | Нет  |   Да   |
+| Windows 10 Домашняя                   |    нет      |    Да    |    Да   | Нет  |   Да   |
 | &nbsp; | &nbsp; |
 
 ### <a name="server-core-support"></a>Поддержка Server Core
 
-Установка SQL Server 2019 в режиме основных серверных компонентов поддерживается в следующих выпусках Windows Server:
+Установка [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] в режиме основных серверных компонентов поддерживается в следующих выпусках Windows Server:
 
 :::row:::
     :::column:::
@@ -138,11 +138,11 @@ ms.locfileid: "100352433"
     :::column-end:::
 :::row-end:::
 
-Дополнительные сведения об установке SQL Server на Server Core см. в разделе [Установка SQL Server на Server Core](../../database-engine/install-windows/install-sql-server-on-server-core.md). 
+Дополнительные сведения об установке [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] в Server Core см. в статье [Установка [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] в Server Core](../../database-engine/install-windows/install-sql-server-on-server-core.md). 
 
 
 ##  <a name="cross-language-support"></a><a name="CrossLanguageSupport"></a> Поддержка версий на разных языках  
- Дополнительные сведения о поддержке версий на разных языках и рекомендации по установке локализованных версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] см. в разделе [Версии SQL Server на местных языках](../../sql-server/install/local-language-versions-in-sql-server.md).  
+ Дополнительные сведения о поддержке версий на разных языках и рекомендации по установке локализованных версий [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] см. в статье [Версии [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на местных языках](../../sql-server/install/local-language-versions-in-sql-server.md).  
   
 ##  <a name="disk-space-requirements"></a><a name="HardDiskSpace"></a> Требования к месту на диске  
  Во время установки [!INCLUDE[ssCurrent](../../includes/ssnoversion-md.md)]установщик Windows создает временные файлы на системном диске. Прежде чем запускать программу для установки или обновления версии до [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], проверьте, что на системном диске доступно не менее 6,0 ГБ свободного места для устанавливаемых файлов. Это требование должно быть выполнено даже в том случае, если компоненты [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] устанавливаются на диск, отличный от предложенного по умолчанию.  
@@ -173,13 +173,13 @@ ms.locfileid: "100352433"
  Для файлов данных поддерживаются следующие типы хранилищ.  
   
 - Локальный диск 
-    - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] сейчас поддерживает диски со стандартным размером сектора в 512 байт и 4 КБ.  Использование жестких дисков с размером сектора размером более 4 КБ могут привести к ошибкам при попытке сохранить файлы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на них.  См. в разделе [Ограничения размера сектора жесткого диска в SQL Server](https://support.microsoft.com/kb/926930) дополнительные сведения о поддерживаемых размерах сектора жесткого диска в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. 
+    - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] сейчас поддерживает диски со стандартным размером сектора в 512 байт и 4 КБ.  Использование жестких дисков с размером сектора размером более 4 КБ могут привести к ошибкам при попытке сохранить файлы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на них.  Дополнительные сведения о поддерживаемых размерах сектора жесткого диска в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] см. в статье [Ограничения размера сектора жесткого диска в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](https://support.microsoft.com/kb/926930). 
     - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] поддерживает локальные диски только для установки файлов tempdb. Проверьте правильность пути, указанного для файлов tempdb и файлов журнала на всех узлах кластера. Если во время отработки отказа каталоги tempdb недоступны на целевом узле отработки отказа, то при переводе ресурсов [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] в режим «в сети» произойдет ошибка.
 - Общее хранилище  
 - [Локальные дисковые пространства \(S2D\)](/windows-server/storage/storage-spaces/storage-spaces-direct-overview)  
 - Общая папка SMB  
     - Хранилище SMB не поддерживается для файлов данных автономных или кластерных установок служб [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] . Используйте вместо него непосредственно подключенное хранилище, сеть хранения данных или S2D. 
-    - Хранилище SMB может размещаться на файловом сервере Windows или на устройстве с хранилищем SMB сторонних разработчиков. Если используется файловый сервер Windows, он должен иметь версию 2008 или последующую. Дополнительные сведения об установке [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] с общей папкой SMB в качестве хранилища см. в разделе [Установка SQL Server с общей папкой SMB в качестве хранилища](../../database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option.md).  
+    - Хранилище SMB может размещаться на файловом сервере Windows или на устройстве с хранилищем SMB сторонних разработчиков. Если используется файловый сервер Windows, он должен иметь версию 2008 или последующую. Дополнительные сведения об установке [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] с общей папкой SMB в качестве хранилища см. в статье [Установка [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] с общей папкой SMB в качестве хранилища](../../database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option.md).  
   
   
   
@@ -197,12 +197,12 @@ ms.locfileid: "100352433"
 
 Соответствующий установочный носитель можно получить из следующих расположений: 
   
-- [Центр оценки SQL Server](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019)
+- [Центр оценки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019)
 - [Последние накопительные пакеты обновления](../../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
 
-Кроме того, вы можете создать [виртуальную машину Azure, в которой уже работает SQL Server](/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal), хотя SQL Server на виртуальной машине будет работать медленнее, чем в собственном коде, из-за издержек виртуализации.
+Кроме того, можно создать [виртуальную машину Azure, на которой уже работает [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](/azure/virtual-machines/windows/sql/quickstart-sql-vm-create-portal), хотя [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на виртуальной машине будет работать медленнее, чем в собственном коде, из-за издержек виртуализации.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-После ознакомления с требованиями к оборудованию и программному обеспечению для установки SQL Server можно приступить к [планированию установки SQL Server](../../sql-server/install/planning-a-sql-server-installation.md) или просмотреть [рекомендации по обеспечению безопасности SQL Server](../../sql-server/install/security-considerations-for-a-sql-server-installation.md).
+После ознакомления с требованиями к оборудованию и программному обеспечению для установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] можно приступить к [планированию установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](../../sql-server/install/planning-a-sql-server-installation.md) или [просмотреть рекомендации по обеспечению безопасности [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]](../../sql-server/install/security-considerations-for-a-sql-server-installation.md).
