@@ -1,22 +1,19 @@
 ---
 title: Установка и настройка
 description: Узнайте, как установить Master Data Services на компьютере под Windows Server 2012 R2, настроить базу данных и веб-сайт MDS и развернуть образцы моделей и данных.
-ms.custom: ''
-ms.date: 07/01/2020
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: mds
-ms.reviewer: ''
 ms.technology: master-data-services
 ms.topic: quickstart
-ms.assetid: f6cd850f-b01b-491f-972c-f966b9fe4190
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 1d12236bbfd3af474e883c23b975d357e0fd27a8
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.openlocfilehash: 80e4952dbc6af15a4a54a5f56e3b9080f07dbb9d
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833878"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551664"
 ---
 # <a name="master-data-services-installation-and-configuration"></a>Установка и настройка Master Data Services
 
@@ -30,7 +27,7 @@ ms.locfileid: "104833878"
 
 Общие сведения об упорядочении данных в [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]см. в разделе [Общие сведения о службах Master Data Services (MDS)](../master-data-services/master-data-services-overview-mds.md).     
   
- Дополнительные сведения о новых возможностях см. [в разделе новые возможности Master Data Services &#40;MDS&#41;](../master-data-services/what-s-new-in-master-data-services-mds.md).  
+Дополнительные сведения о новых возможностях см. [в разделе новые возможности Master Data Services &#40;MDS&#41;](../master-data-services/what-s-new-in-master-data-services-mds.md).  
  
 Ссылки на видео и другие обучающие ресурсы, которые помогут ознакомиться с [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)], см. в разделе [Изучение служб Master Data Services](../master-data-services/learn-sql-server-master-data-services.md). 
   
@@ -44,7 +41,8 @@ ms.locfileid: "104833878"
 
 ## <a name="internet-explorer-and-silverlight"></a>Internet Explorer и Silverlight
 - При установке [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] на компьютер под управлением ОС Windows Server 2012 может понадобиться настроить улучшенную безопасность в Internet Explorer, чтобы разрешить использование скриптов на сайте веб-приложения. Без этого просмотр сайта на серверном компьютере работать не будет.
-- Для работы в веб-приложении на клиентском компьютере необходимо установить Silverlight 5. Если требуемая версия Silverlight отсутствует, то при переходе к той части веб-приложения, которая использует Silverlight, программа предложит установить Silverlight. Вы можете установить Silverlight 5 **[с этой веб-страницы](https://www.microsoft.com/silverlight/)**.
+- Перед тем как [!INCLUDE[sqlv15](../includes/sssql19-md.md)] работать в веб-приложении, необходимо установить Silverlight 5 на клиентском компьютере. Если требуемая версия Silverlight отсутствует, то при переходе к той части веб-приложения, которая использует Silverlight, программа предложит установить Silverlight. Вы можете установить Silverlight 5 **[с этой веб-страницы](https://www.microsoft.com/silverlight/)**.
+- Начиная с [!INCLUDE[sqlv15](../includes/sssql19-md.md)] , элементы управления HTML заменяют все бывшие компоненты Silverlight, поэтому зависимость Silverlight удалена. Другие браузеры, включая Chrome и ребра, теперь работают для доступа к веб-приложению Master Data Services.
 
 ## <a name="ssmdsshort_md-on-an-azure-virtual-machine"></a>[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] на виртуальной машине Azure
 По умолчанию при запуске [!INCLUDE[ssnoversion_md](../includes/ssnoversion-md.md)] уже установленной виртуальной машины Azure [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] также устанавливается. 
@@ -74,7 +72,7 @@ ms.locfileid: "104833878"
   
      ![Значок диспетчер сервера на панели задач Windows Server 2012](../master-data-services/media/mds-windowsservertaskbar-servermanagericon.png "Значок диспетчер сервера на панели задач Windows Server 2012")  
   
-5.  В **диспетчере серверов** в меню **Управление** выберите пункт **Добавить роли и компоненты** .  
+5.  В **диспетчере серверов** в меню **Управление** выберите **Добавить роли и компоненты**.
    
      ![В оснастке «Управление сервером» команда меню «Добавить роли и компоненты»](../master-data-services/media/mds-servermanagerdashboard-addrolesfeaturesmenu.png "В оснастке «Управление сервером» команда меню «Добавить роли и компоненты»")  
   
@@ -90,7 +88,7 @@ ms.locfileid: "104833878"
    
 9. На странице **Компоненты** выберите следующие компоненты и нажмите кнопку **Далее**. Они требуются для [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] в [!INCLUDE[winblue_server_2_md](../includes/winblue-server-2-md.md)].
   
-    |Компоненты|Компоненты|  
+    |Функции|Функции|  
     |--------------|--------------|  
     |![mds_AddRolesFeaturesWizard_FeaturesPage](../master-data-services/media/mds-addrolesfeatureswizard-featurespage.png)|![mds_AddRolesFeaturesWizard_FeaturesPage_WindowsProcActive](../master-data-services/media/mds-addrolesfeatureswizard-featurespage-windowsprocactive.png)|  
 
@@ -123,6 +121,7 @@ ms.locfileid: "104833878"
 > 
 > **Требование браузера**
 > >Веб-приложение [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] работает только в Internet Explorer (IE) 9 или более поздней версии. Internet Explorer 8 и более ранние версии, а также Microsoft Edge и Chrome не поддерживаются.    
+> Начиная с [!INCLUDE[sqlv15](../includes/sssql19-md.md)] , элементы управления HTML заменяют все бывшие компоненты Silverlight, поэтому зависимость Silverlight удалена. Другие браузеры, включая Chrome и ребр, теперь работают для веб-приложения Master Data Services.
   
 1.  Запустите [!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]и щелкните **Настройка базы данных** в области слева.  
   
@@ -132,7 +131,7 @@ ms.locfileid: "104833878"
 
     >  [!INCLUDE[sqlv15](../includes/sssql19-md.md)] добавляет поддержку Управляемый экземпляр SQL Server. Установите значение **SQL Server экземпляра** на узел управляемого экземпляра. Например, `xxxxxx.xxxxxx.database.windows.net`.
 
-4. Выберите **тип проверки подлинности** и нажмите кнопку **проверить подключение** , чтобы убедиться, что можно подключиться к базе данных, используя учетные данные для выбранного типа проверки подлинности. Щелкните **Далее**.
+4. Выберите **тип проверки подлинности** и нажмите кнопку **проверить подключение** , чтобы убедиться, что можно подключиться к базе данных, используя учетные данные для выбранного типа проверки подлинности. Нажмите кнопку **Далее**.
 
     >Для для [!INCLUDE[sqlv15](../includes/sssql19-md.md)] подключения к управляемому экземпляру используйте один из следующих типов проверки подлинности:
     >
@@ -146,7 +145,7 @@ ms.locfileid: "104833878"
 
     ![mds_2016ConfigManager_CreateDatabaseWizard_ServerPage](../master-data-services/media/mds-2016configmanager-createdatabasewizard-serverpage.png)  
   
-4.  Введите имя в поле **Имя базы данных** . Если необходимо выбрать параметры сортировки Windows, снимите флажок **Параметры сортировки SQL Server по умолчанию** и укажите один или несколько доступных параметров, например **С учетом регистра**. Щелкните **Далее**.
+4.  Введите имя в поле **Имя базы данных** . Если необходимо выбрать параметры сортировки Windows, снимите флажок **Параметры сортировки SQL Server по умолчанию** и укажите один или несколько доступных параметров, например **С учетом регистра**. Нажмите кнопку **Далее**.
 
     ![mds_2016ConfigManager_CreateDatabaseWizard_DatabasePage](../master-data-services/media/mds-2016configmanager-createdatabasewizard-databasepage.png)  
   
@@ -207,7 +206,7 @@ ms.locfileid: "104833878"
      ![mds_2016ConfigManager_WebConfig_Completed](../master-data-services/media/mds-2016configmanager-webconfig-completed.png)  
  
      
-15. Щелкните **Применить**. Появится сообщение о **завершении настройки**. Нажмите кнопку **ОК** в окне сообщения, чтобы запустить веб-приложение. Адрес веб-сайта — HTTPS://*Server Name* / *Web Application*/. 
+15. Нажмите кнопку **Применить**. Появится сообщение о **завершении настройки**. Нажмите кнопку **ОК** в окне сообщения, чтобы запустить веб-приложение. Адрес веб-сайта — HTTPS://*Server Name* / *Web Application*/. 
 
 
 ![mds_2016ConfigurationComplete_MessageBox](../master-data-services/media/mds-2016configurationcomplete-messagebox.png) 

@@ -1,8 +1,8 @@
 ---
-title: Автоматическая настройка | Документация Майкрософт
+title: Автоматическая настройка
 description: Сведения об автоматической настройке в SQL Server и базе данных SQL Azure
 ms.custom: fasttrack-edit
-ms.date: 09/28/2020
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -14,29 +14,28 @@ helpviewer_keywords:
 - aprc
 - automatic plan regression correction
 - last known good plan
-ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9c01a9e02576d666c39df13dc6e7e01f6d622a7d
-ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
+ms.openlocfilehash: 6ea61597a7f9874b7438392167380c5f01b11527
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98169876"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551670"
 ---
 # <a name="automatic-tuning"></a>Автоматическая настройка
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
 Функция автоматической настройки базы данных предоставляет сведения о возможных проблемах с обработкой запросов и рекомендуемые решения. Она также может автоматически исправлять выявленные проблемы.
 
-Автоматическая настройка, введенная в [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] , уведомляет вас при обнаружении потенциальных проблем с производительностью и позволяет применять корректирующие действия или позволяет [!INCLUDE[ssde_md](../../includes/ssde_md.md)] автоматически устранять проблемы с производительностью. Автоматическая настройка [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] позволяет выявление и устранение проблем с производительностью, вызванных **регрессией выбора плана выполнения запроса**. Автоматическая настройка [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] также создает необходимые индексы и удаляет неиспользуемые индексы. Дополнительные сведения о планах выполнения запросов см. в разделе [планы выполнения](../../relational-databases/performance/execution-plans.md).
+Автоматическая настройка, введенная в [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] , уведомляет вас при обнаружении потенциальных проблем с производительностью и позволяет применять корректирующие действия или позволяет [!INCLUDE[ssde_md](../../includes/ssde_md.md)] автоматически устранять проблемы с производительностью. Автоматическая настройка [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] позволяет выявление и устранение проблем с производительностью, вызванных **регрессией выбора плана выполнения запроса**. Автоматическая настройка [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] также создает необходимые индексы и удаляет неиспользуемые индексы. Дополнительные сведения о планах выполнения запросов см. в разделе [планы выполнения](../../relational-databases/performance/execution-plans.md).
 
 Выполняет [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] мониторинг запросов, выполняемых в базе данных, и автоматически повышает производительность рабочей нагрузки. [!INCLUDE[ssde_md](../../includes/ssde_md.md)]Содержит встроенный механизм аналитики, который может автоматически настраивать и улучшать производительность запросов, динамически адаптируя базу данных к рабочей нагрузке. Доступны две функции автоматической настройки:
 
--   **Автоматическое исправление плана** определяет проблемные планы выполнения запросов, такие как [чувствительность к параметрам или проблемы с сканированием параметров](../../relational-databases/query-processing-architecture-guide.md#ParamSniffing) , и устраняет проблемы производительности, связанные с планом выполнения запроса, вызывая Последний известный хороший план до регрессии. **Область применения**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)]) и [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].
+-    **Автоматическое исправление плана** определяет проблемные планы выполнения запросов, такие как [чувствительность к параметрам или проблемы с сканированием параметров](../../relational-databases/query-processing-architecture-guide.md#ParamSniffing) , и устраняет проблемы производительности, связанные с планом выполнения запроса, вызывая Последний известный хороший план до регрессии. **Область применения**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)]) и [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].
 
--   **Автоматическое управление индексами** определяет индексы, которые должны быть добавлены в базу данных, и индексы, которые следует удалить. **Область применения**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+-    **Автоматическое управление индексами** определяет индексы, которые должны быть добавлены в базу данных, и индексы, которые следует удалить. **Область применения**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 ## <a name="why-automatic-tuning"></a>Почему автоматическая настройка
 
@@ -63,7 +62,7 @@ ms.locfileid: "98169876"
 
  ![Регрессия выбора плана выполнения запроса](media/plan-choice-regression.png "Регрессия выбора плана выполнения запроса") 
 
-При обнаружении регрессии выбора плана следует найти предыдущий хороший план и принудительно использовать его вместо текущего. Это можно сделать с помощью `sp_query_store_force_plan` процедуры. [!INCLUDE[ssde_md](../../includes/ssde_md.md)]В [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] содержит сведения о регрессионных планах и рекомендованных корректирующих действиях. Кроме того, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] позволяет полностью автоматизировать этот процесс и позволить [!INCLUDE[ssde_md](../../includes/ssde_md.md)] устранить все проблемы, связанные с изменением плана.
+При обнаружении регрессии выбора плана следует найти предыдущий хороший план и принудительно использовать его вместо текущего. Это можно сделать с помощью `sp_query_store_force_plan` процедуры. [!INCLUDE[ssde_md](../../includes/ssde_md.md)]В [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] содержит сведения о регрессионных планах и рекомендованных корректирующих действиях. Кроме того, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] позволяет полностью автоматизировать этот процесс и позволить [!INCLUDE[ssde_md](../../includes/ssde_md.md)] устранить все проблемы, связанные с изменением плана.
 
 > [!IMPORTANT]
 > Автоматическое исправление плана должно использоваться в области обновления уровня совместимости базы данных после того, как будет записан базовый план, чтобы автоматически устранить риски обновления рабочей нагрузки. Дополнительные сведения об этом варианте использования см. в статье [обеспечение стабильной производительности во время обновления до более новой SQL Server](../../relational-databases/performance/query-store-usage-scenarios.md#CEUpgrade). 
@@ -99,7 +98,7 @@ SET AUTOMATIC_TUNING ( FORCE_LAST_GOOD_PLAN = ON );
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] предоставляет все необходимые представления и процедуры, необходимые для отслеживания производительности и устранения проблем в хранилище запросов.
 
-В [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] среде можно найти регрессию выбора плана с помощью системных представлений хранилища запросов. Начиная с [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] , программа [!INCLUDE[ssde_md](../../includes/ssde_md.md)] обнаруживает и отображает возможные регрессии выбора планов и рекомендуемые действия, которые должны применяться в [sys.dm_db_tuning_recommendations &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) динамического административного представления. Динамическое административное представление отображает сведения о проблеме, важность проблемы и подробные сведения, такие как идентифицированный запрос, идентификатор регрессионного плана, идентификатор плана, который использовался в качестве базового для сравнения, и [!INCLUDE[tsql_md](../../includes/tsql-md.md)] инструкцию, которая может быть выполнена для устранения проблемы.
+В [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] среде можно найти регрессию выбора плана с помощью системных представлений хранилища запросов. Начиная с [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] , программа [!INCLUDE[ssde_md](../../includes/ssde_md.md)] обнаруживает и отображает возможные регрессии выбора планов и рекомендуемые действия, которые должны применяться в [sys.dm_db_tuning_recommendations &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) динамического административного представления. Динамическое административное представление отображает сведения о проблеме, важность проблемы и подробные сведения, такие как идентифицированный запрос, идентификатор регрессионного плана, идентификатор плана, который использовался в качестве базового для сравнения, и [!INCLUDE[tsql_md](../../includes/tsql-md.md)] инструкцию, которая может быть выполнена для устранения проблемы.
 
 | type | description; | DATETIME | score | подробности | ... |
 | --- | --- | --- | --- | --- | --- |
@@ -147,7 +146,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 Несмотря на то, что [!INCLUDE[ssde_md](../../includes/ssde_md.md)] предоставляет все сведения, необходимые для обнаружения регрессий по выбору планов, непрерывный мониторинг и устранение проблем с производительностью могут стать утомительным процессом. Автоматическая настройка значительно упрощает этот процесс.
 
 > [!NOTE]
-> Данные в `sys.dm_db_tuning_recommendations` динамическом административном наборе данных не сохраняются между перезапусками [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] экземпляра.
+> Данные в `sys.dm_db_tuning_recommendations` динамическом административном наборе данных не сохраняются после перезапуска ядра СУБД. Используйте `sqlserver_start_time` столбец в [sys.dm_os_sys_info](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md) , чтобы найти время последнего запуска ядра СУБД.   
 
 ## <a name="automatic-index-management"></a>Автоматическое управление индексами
 
@@ -182,7 +181,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 
 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] упрощает этот процесс. [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] анализирует рабочую нагрузку, определяет запросы, которые могут выполняться быстрее с новым индексом, и определяет неиспользуемые или дублирующиеся индексы. Дополнительные сведения об идентификации индексов, которые необходимо изменить, см. в статье [Использование помощника по базам данных SQL на портале Azure](/azure/sql-database/sql-database-advisor-portal).
 
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также раздел  
  [ALTER DATABASE SET AUTOMATIC_TUNING &#40;&#41;Transact-SQL ](../../t-sql/statements/alter-database-transact-sql-set-options.md)   
  [sys.database_automatic_tuning_options &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-automatic-tuning-options-transact-sql.md)  
  [sys.dm_db_tuning_recommendations &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md)   
@@ -190,9 +189,10 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
  [sp_query_store_force_plan &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-query-store-force-plan-transact-sql.md)     
  [sp_query_store_unforce_plan &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-query-store-unforce-plan-transact-sql.md)           
  [sys.database_query_store_options &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
+ [sys.dm_os_sys_info &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)    
  [Функции JSON](../json/json-data-sql-server.md)    
  [Планы выполнения](../../relational-databases/performance/execution-plans.md)    
  [Наблюдение и настройка производительности](../../relational-databases/performance/monitor-and-tune-for-performance.md)     
  [Средства контроля и настройки производительности](../../relational-databases/performance/performance-monitoring-and-tuning-tools.md)     
  [Мониторинг производительности с использованием хранилища запросов](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md)  
- [Помощник по настройке запросов](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)
+ [Помощник по настройке запросов](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)    

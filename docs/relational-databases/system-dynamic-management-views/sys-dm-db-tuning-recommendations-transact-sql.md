@@ -1,8 +1,8 @@
 ---
-title: sys.dm_db_tuning_recommendations (Transact-SQL) | Документация Майкрософт
+title: sys.dm_db_tuning_recommendations (Transact-SQL)
 description: Узнайте, как найти потенциальные проблемы с производительностью и Рекомендуемые исправления в SQL Server и базе данных SQL Azure.
 ms.custom: ''
-ms.date: 07/20/2017
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -18,16 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - database tuning recommendations feature [SQL Server], sys.dm_db_tuning_recommendations dynamic management view
 - sys.dm_db_tuning_recommendations dynamic management view
-ms.assetid: ced484ae-7c17-4613-a3f9-6d8aba65a110
 author: jovanpop-msft
 ms.author: jovanpop
 monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 401636f25e34c3c76faed1cc73fc54b9e2b911bf
-ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
+ms.openlocfilehash: 44c4b9bbc975074d1852f0e7a0f074e3c3acc979
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100489348"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551672"
 ---
 # <a name="sysdm_db_tuning_recommendations-transact-sql"></a>\_рекомендации по настройке sys.DM DB \_ \_ (Transact-SQL)
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
@@ -57,10 +56,10 @@ ms.locfileid: "100489348"
 | **понять** | **int** | Предполагаемое значение и влияние на эту рекомендацию по шкале 0-100 (чем больше, тем выше) |
 | **Дополнительно** | **nvarchar(max)** | Документ JSON, содержащий дополнительные сведения о рекомендации. Доступны следующие поля:<br /><br />`planForceDetails`<br />-    `queryId` — \_ идентификатор запроса регрессионного запроса.<br />-    `regressedPlanId` — plan_id регрессионного плана.<br />-   `regressedPlanExecutionCount` — Число выполнений запроса с регрессионным планом до обнаружения регрессии.<br />-    `regressedPlanAbortedCount` — Число обнаруженных ошибок во время выполнения регрессивного плана.<br />-    `regressedPlanCpuTimeAverage` — Среднее время ЦП (в микросекундах), затраченное на регрессионный запрос до обнаружения регрессии.<br />-    `regressedPlanCpuTimeStddev` — Стандартное отклонение времени ЦП, потребляемого регрессионным запросом до обнаружения регрессии.<br />-    `recommendedPlanId` — plan_id плана, который должен быть принудительно вынужден.<br />-   `recommendedPlanExecutionCount`— Число выполнений запроса с планом, который должен быть принудительно завершен до обнаружения регрессии.<br />-    `recommendedPlanAbortedCount` — Число обнаруженных ошибок во время выполнения плана, который должен быть принудительно выполнен.<br />-    `recommendedPlanCpuTimeAverage` Среднее время ЦП (в микросекундах), затраченное на выполнение запроса с планом, который должен быть принудительно завершен (вычислено до обнаружения регрессии).<br />-    `recommendedPlanCpuTimeStddev` Стандартное отклонение времени ЦП, потребляемого регрессионным запросом до обнаружения регрессии.<br /><br />`implementationDetails`<br />-  `method` — Метод, который должен использоваться для исправления регрессии. Значение всегда равно `TSql` .<br />-    `script` - [!INCLUDE[tsql_md](../../includes/tsql-md.md)] Скрипт, который должен быть выполнен для принудительного применения рекомендуемого плана. |
   
-## <a name="remarks"></a>Remarks  
- Информация, возвращаемая, `sys.dm_db_tuning_recommendations` обновляется, когда ядро СУБД определяет потенциальную регрессию производительности запросов и не сохраняется. Рекомендации сохраняются только до [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] перезапуска. Администраторы баз данных должны периодически создавать резервные копии рекомендаций по настройке, если они хотят обеспечить их работу после повторного использования сервера. 
+## <a name="remarks"></a>Примечания  
+ Информация, возвращаемая, `sys.dm_db_tuning_recommendations` обновляется, когда ядро СУБД определяет потенциальную регрессию производительности запросов и не сохраняется. Рекомендации сохраняются только до перезапуска ядра СУБД. Используйте `sqlserver_start_time` столбец в [sys.dm_os_sys_info](sys-dm-os-sys-info-transact-sql.md) , чтобы найти время последнего запуска ядра СУБД.  Администраторы баз данных должны периодически создавать резервные копии рекомендаций по настройке, если они хотят обеспечить их работу после повторного использования сервера.   
 
- `currentValue` поле в `state` столбце может иметь следующие значения:
+ `currentValue`Поле в `state` столбце может иметь следующие значения:
  
  | Состояние | Описание |
  |--------|-------------|
@@ -77,7 +76,7 @@ ms.locfileid: "100489348"
 | `SchemaChanged` | Срок действия рекомендации истек из-за изменения схемы ссылочной таблицы. Новая рекомендация будет создана, если в новой схеме обнаружена новая регрессия плана запроса. |
 | `StatisticsChanged`| Срок действия рекомендации истек из-за изменения статистики в связанной таблице. Новая рекомендация будет создана, если будет обнаружена новая регрессия плана запроса на основе новой статистики. |
 | `ForcingFailed` | Рекомендуемый план не может быть принудительно применен к запросу. Найдите `last_force_failure_reason` в представлении [sys.query_store_plan](../../relational-databases/system-catalog-views/sys-query-store-plan-transact-sql.md) , чтобы узнать причину сбоя. |
-| `AutomaticTuningOptionDisabled` | `FORCE_LAST_GOOD_PLAN` параметр отключен пользователем в процессе проверки. Включите `FORCE_LAST_GOOD_PLAN` параметр, используя инструкцию [ALTER database SET AUTOMATIC_TUNING &#40;инструкции TRANSACT-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md) или принудительный запуск плана вручную с помощью скрипта в `[details]` столбце. |
+| `AutomaticTuningOptionDisabled` | `FORCE_LAST_GOOD_PLAN` параметр отключен пользователем в процессе проверки. Включите `FORCE_LAST_GOOD_PLAN` параметр, используя инструкцию [ALTER database SET AUTOMATIC_TUNING &#40;инструкции TRANSACT-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md) или принудительный запуск плана вручную с помощью скрипта в `details` столбце. |
 | `UnsupportedStatementType` | Невозможно принудительно применить план к запросу. Примерами неподдерживаемых запросов являются курсоры и `INSERT BULK` операторы. |
 | `LastGoodPlanForced` | Рекомендация успешно применена. |
 | `AutomaticTuningOptionNotEnabled`| [!INCLUDE[ssde_md](../../includes/ssde_md.md)] обнаружена потенциальная регрессия производительности, но `FORCE_LAST_GOOD_PLAN` параметр не включен — см. раздел [ALTER database SET AUTOMATIC_TUNING &#40;TRANSACT-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md). Примените рекомендацию вручную или включите `FORCE_LAST_GOOD_PLAN` параметр. |
@@ -88,7 +87,7 @@ ms.locfileid: "100489348"
 | `UserForcedDifferentPlan` | Пользователь вручную принудительно затребовал другой план, используя [sp_query_store_force_plan &#40;процедуры&#41;Transact-SQL ](../../relational-databases/system-stored-procedures/sp-query-store-force-plan-transact-sql.md) . Ядро СУБД не будет применять рекомендацию, если пользователь явно решил принудительно применить некоторый план. |
 | `TempTableChanged` | Изменяется временная таблица, использованная в плане. |
 
- Статистика в столбце сведений не показывает статистику плана времени выполнения (например, текущее время ЦП). Сведения о рекомендациях выполняются во время обнаружения регрессии и описываются причины [!INCLUDE[ssde_md](../../includes/ssde_md.md)] снижения производительности. Используйте `regressedPlanId` и `recommendedPlanId` для запроса [представлений каталога хранилища запросов](../../relational-databases/performance/how-query-store-collects-data.md) , чтобы найти точную статистику плана времени выполнения.
+ Статистические `details` данные в столбце не отображают статистику плана времени выполнения (например, текущее время ЦП). Сведения о рекомендациях выполняются во время обнаружения регрессии и описываются причины [!INCLUDE[ssde_md](../../includes/ssde_md.md)] снижения производительности. Используйте `regressedPlanId` и `recommendedPlanId` для запроса [представлений каталога хранилища запросов](../../relational-databases/performance/how-query-store-collects-data.md) , чтобы найти точную статистику плана времени выполнения.
 
 ## <a name="examples-of-using-tuning-recommendations-information"></a>Примеры использования сведений о рекомендациях по настройке  
 
@@ -101,7 +100,7 @@ SELECT name, reason, score,
     details.* 
 FROM sys.dm_db_tuning_recommendations
 CROSS APPLY OPENJSON(details, '$.planForceDetails')
-    WITH (  [query_id] int '$.queryId',
+    WITH (    [query_id] int '$.queryId',
             regressed_plan_id int '$.regressedPlanId',
             last_good_plan_id int '$.recommendedPlanId') AS details
 WHERE JSON_VALUE(state, '$.currentValue') = 'Active';
@@ -180,8 +179,8 @@ INNER JOIN sys.query_store_query_text AS qsqt ON qsqt.query_text_id = qsq.query_
 Требуется `VIEW SERVER STATE` разрешение в [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] .   
 Требуется `VIEW DATABASE STATE` разрешение для базы данных в [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] .   
 
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
  [Автоматическая настройка](../../relational-databases/automatic-tuning/automatic-tuning.md)   
  [sys.database_automatic_tuning_options &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-automatic-tuning-options-transact-sql.md)   
  [sys.database_query_store_options &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
- [Поддержка JSON](../json/json-data-sql-server.md)
+ [Поддержка JSON](../json/json-data-sql-server.md) [sys.dm_os_sys_info &#40;Transact-SQL&#41;](sys-dm-os-sys-info-transact-sql.md)    

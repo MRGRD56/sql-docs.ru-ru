@@ -2,7 +2,7 @@
 description: sys.dm_db_missing_index_columns (Transact-SQL)
 title: sys.dm_db_missing_index_columns (Transact-SQL)
 ms.custom: ''
-ms.date: 06/10/2016
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -21,22 +21,21 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ec00a68faedb48e63988d91f6e612c62a705caf3
-ms.sourcegitcommit: c6cc0b669b175ae290cf5b08952010661ebd03c3
+ms.openlocfilehash: f893a961bb2ecc0f3c1d0238017bf7592699301e
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530863"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551547"
 ---
 # <a name="sysdm_db_missing_index_columns-transact-sql"></a>sys.dm_db_missing_index_columns (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  Возвращает информацию о столбцах таблицы в базе данных, для которых отсутствует индекс (исключая пространственные индексы). **sys.dm_db_missing_index_columns** является функцией динамического управления.  
+  Возвращает информацию о столбцах таблицы в базе данных, для которых отсутствует индекс (исключая пространственные индексы). `sys.dm_db_missing_index_columns` является функцией динамического управления.  
 
 ## <a name="syntax"></a>Синтаксис  
   
-```  
-  
+```syntaxsql  
 sys.dm_db_missing_index_columns(index_handle)  
 ```  
   
@@ -56,8 +55,9 @@ sys.dm_db_missing_index_columns(index_handle)
 |**column_name**|**sysname**|Имя столбца таблицы.|  
 |**column_usage**|**varchar (20)**|Способ использования столбца запросом. Возможные значения и их описания:<br /><br /> EQUALITY: столбец участвует в предикате, который выражает равенство в форме: <br />                        *таблица. столбец*  =  *constant_value*<br /><br /> Неравенство: столбец участвует в предикате, который выражает неравенство, например предикат вида: *Table. Column*  >  *constant_value*. Любой оператор сравнения, кроме «=», выражает неравенство.<br /><br /> ВКЛЮЧИТЬ: столбец не используется для вычисления предиката, но используется по другой причине, например, для охвата запроса.|  
   
-## <a name="remarks"></a>Remarks  
- Сведения, возвращаемые функцией **sys.dm_db_missing_index_columns**, обновляются при оптимизации запроса оптимизатором запросов и не сохраняются. Сведения об отсутствующих индексах хранятся только до перезапуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Администраторы базы данных должны периодически делать резервные копии сведений об отсутствующих индексах, чтобы сохранить их после перезагрузки сервера.  
+## <a name="remarks"></a>Примечания  
+ Сведения, возвращаемые, `sys.dm_db_missing_index_columns` обновляются, когда запрос оптимизирован оптимизатором запросов и не сохраняется. Сведения об отсутствующих индексах хранятся только до перезапуска ядра СУБД. Администраторы базы данных должны периодически делать резервные копии сведений об отсутствующих индексах, чтобы сохранить их после перезагрузки сервера. Используйте `sqlserver_start_time` столбец в [sys.dm_os_sys_info](sys-dm-os-sys-info-transact-sql.md) , чтобы найти время последнего запуска ядра СУБД.   
+
   
 ## <a name="transaction-consistency"></a>Согласованность транзакций  
  Если транзакция создает или удаляет таблицу, то строки, содержащие сведения отсутствующих индексов об удаленных объектах, удаляются из данного объекта DMO, сохраняя согласованность транзакций.  
@@ -89,4 +89,4 @@ GO
  [sys.dm_db_missing_index_groups &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-groups-transact-sql.md)   
  [sys.dm_db_missing_index_group_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-transact-sql.md)  
  [sys.dm_db_missing_index_group_stats_query &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-query-transact-sql.md)     
-  
+ [sys.dm_os_sys_info &#40;Transact-SQL&#41;](sys-dm-os-sys-info-transact-sql.md)  

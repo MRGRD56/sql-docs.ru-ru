@@ -6,12 +6,12 @@ metadata:
   title: Руководства по переносу баз данных Azure | Документация Майкрософт
   description: 'Пошаговое руководство по модернизации ресурсов данных путем миграции на SQL Server, Базу данных SQL Azure, Управляемый экземпляр SQL Azure, Базу данных Azure, Azure Cosmos DB, SQL Server на виртуальных машинах Azure и Azure Synapse Analytics. '
   ms.topic: hub-page
-  ms.openlocfilehash: a25b5f0891cd2743ed8366d28ec03599e9483df1
-  ms.sourcegitcommit: 00af0b6448ba58e3685530f40bc622453d3545ac
+  ms.openlocfilehash: 097d3eb4a8a90328cbc4fc86551bb292616f017c
+  ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/19/2021
-  ms.locfileid: "104673218"
+  ms.lasthandoff: 03/25/2021
+  ms.locfileid: "105103281"
 conceptualContent:
   items:
   - title: SQL Server —
@@ -51,7 +51,7 @@ conceptualContent:
     - text: Azure Synapse Analytics
       url: /azure/synapse-analytics/migration-guides/migrate-to-synapse-analytics-guide
       itemType: how-to-guide
-  - title: DB2 —
+  - title: DB2 в
     links:
     - text: SQL Server
       url: /sql/sql-server/migrate/guides/db2-to-sql-server
@@ -141,7 +141,7 @@ conceptualContent:
       url: https://customers.microsoft.com/en-us/search?sq=&ff=&p=0&so=story_publish_date%20desc
       itemType: reference
 tools:
-  title: Средства миграцииСредства миграции
+  title: Средства миграции
   items:
   - title: Служба "Миграция Azure"
     imageSrc: media/index/azure-migrate-symbol.svg

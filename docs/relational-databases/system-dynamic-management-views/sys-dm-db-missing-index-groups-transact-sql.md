@@ -2,7 +2,7 @@
 description: sys.dm_db_missing_index_groups (Transact-SQL)
 title: sys.dm_db_missing_index_groups (Transact-SQL)
 ms.custom: ''
-ms.date: 06/10/2016
+ms.date: 03/12/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -21,12 +21,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 203e3f190a76299899098cc0cc5a185947ce0428
-ms.sourcegitcommit: c6cc0b669b175ae290cf5b08952010661ebd03c3
+ms.openlocfilehash: 692b51f1085becac61f54a3b638a3365e7fa06cd
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530839"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551569"
 ---
 # <a name="sysdm_db_missing_index_groups-transact-sql"></a>sys.dm_db_missing_index_groups (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,8 +40,8 @@ ms.locfileid: "100530839"
 |**index_group_handle**|**int**|Идентифицирует группу отсутствующих индексов.|  
 |**index_handle**|**int**|Идентифицирует отсутствующий индекс, принадлежащий к группе, указанной в столбце **index_group_handle**.<br /><br /> Группа индексов содержит только один индекс.|  
   
-## <a name="remarks"></a>Remarks  
- Сведения, возвращаемые представлением **sys.dm_db_missing_index_groups**, обновляются при оптимизации запроса оптимизатором запроса и не сохраняются. Сведения об отсутствующих индексах хранятся только до перезапуска [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Администраторы базы данных должны периодически делать резервные копии сведений об отсутствующих индексах, чтобы сохранить их после перезагрузки сервера.  
+## <a name="remarks"></a>Примечания  
+ Сведения, возвращаемые, `sys.dm_db_missing_index_groups` обновляются, когда запрос оптимизирован оптимизатором запросов и не сохраняется. Сведения об отсутствующих индексах хранятся только до перезапуска ядра СУБД. Администраторы базы данных должны периодически делать резервные копии сведений об отсутствующих индексах, чтобы сохранить их после перезагрузки сервера. Используйте `sqlserver_start_time` столбец в [sys.dm_os_sys_info](sys-dm-os-sys-info-transact-sql.md) , чтобы найти время последнего запуска ядра СУБД.   
   
  Ни один из столбцов выходного результирующего набора не установлен в качестве ключа, но вместе они формируют ключ индекса.  
 
@@ -56,3 +56,4 @@ ms.locfileid: "100530839"
  [sys.dm_db_missing_index_details &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-details-transact-sql.md)   
  [sys.dm_db_missing_index_group_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-transact-sql.md)  
  [sys.dm_db_missing_index_group_stats_query &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-missing-index-group-stats-query-transact-sql.md)    
+ [sys.dm_os_sys_info &#40;Transact-SQL&#41;](sys-dm-os-sys-info-transact-sql.md)
