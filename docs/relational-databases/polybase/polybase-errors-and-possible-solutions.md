@@ -1,7 +1,7 @@
 ---
 title: Ошибки в PolyBase и возможные решения
 description: Справочник по ошибкам в PolyBase и способам их устранения.
-ms.date: 02/17/2021
+ms.date: 03/22/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
@@ -17,12 +17,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 monikerRange: '>= sql-server-linux-ver15 || >= sql-server-2016'
-ms.openlocfilehash: 463b54aefd36e74318331c90cf2c944734f8a5cc
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 46f56288382c1b1928e6ad3081a8eea41e23bb5f
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101873332"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833831"
 ---
 # <a name="polybase-errors-and-possible-solutions"></a>Ошибки в PolyBase и возможные решения
 
@@ -37,6 +37,11 @@ ms.locfileid: "101873332"
 
 ## <a name="error-messages-and-possible-solutions"></a>Сообщения об ошибках и возможные решения
 
+### <a name="error-100001failed-to-generate-query-plan"></a>Error: "100001;Failed to generate query plan"
+
+Ошибка "Не удалось создать план запроса" может возникать, если ядро СУБД SQL Server было исправлен с применением по крайней мере накопительного пакета обновления 8 (15.0.4073), но компонент PolyBase не был обновлен до той же сборки. Это может произойти при добавлении компонента PolyBase в существующий экземпляр SQL Server. Дополнительные сведения см. в разделе, посвященном [ошибке PolyBase 100001 (не удалось создать план запроса)](https://techcommunity.microsoft.com/t5/sql-server-support/polybase-error-100001-failed-to-generate-query-plan/ba-p/2174693).
+
+Всегда следуйте инструкциям по установке компонента PolyBase, переведя новый компонент на тот же уровень версии. При необходимости установите пакеты обновления (SP), накопительные обновления (CU) и (или) выпуски для общего распространения (GDR). Сведения о том, как определить версию PolyBase, см. в статье [Определение уровня версий, выпусков и обновлений SQL Server и компонентов](/troubleshoot/sql/general/determine-version-edition-update-level#polybase).
 
 ### <a name="service-account-change"></a>Изменение учетной записи службы
 

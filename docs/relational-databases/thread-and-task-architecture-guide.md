@@ -23,12 +23,12 @@ ms.assetid: 925b42e0-c5ea-4829-8ece-a53c6cddad3b
 author: pmasl
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3eb9fd5897029fedb0e53378ecbe5f6c12f635ef
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: ec3a20e10fd625b588c4bae79f73265a8c292324
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99237659"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793123"
 ---
 # <a name="thread-and-task-architecture-guide"></a>руководство по архитектуре потоков и задач
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -70,7 +70,7 @@ ms.locfileid: "99237659"
 
 > [!NOTE]
 > Рассмотрим следующий сценарий.   
-> -  Рабочая роль 1 — это длительно выполняемая задача, например запрос на чтение с упреждающим чтением таблиц, основанных на памяти. Рабочая роль 1 находит необходимые страницы данных в буферном пуле, поэтому она не должна ждать операций ввода-вывода и может использовать полный квант времени до приостановки.   
+> -  Рабочая роль 1 — это длительно выполняемая задача, например запрос на чтение с упреждающим чтением таблиц на основе дисков. Рабочая роль 1 находит необходимые страницы данных в буферном пуле, поэтому она не должна ждать операций ввода-вывода и может использовать полный квант времени до приостановки.   
 > -  Рабочая роль 2 выполняет более кратковременные задачи на уровне долей миллисекунд и поэтому должна ожидать исчерпания своего полного кванта времени.     
 >
 > В этом сценарии и до [!INCLUDE[ssSQL14](../includes/sssql14-md.md)]рабочей роли 1 разрешено монопольно использовать планировщик за счет большего общего времени квантов.   

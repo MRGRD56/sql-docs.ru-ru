@@ -22,12 +22,12 @@ ms.assetid: 8a7aaaf2-62e3-46c0-8e44-fa22290dd86b
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 45380ece89d919f3f064415486cee209bf99fced
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: caef51295d4d38f1021f28f575bd96195cdbab63
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750634"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833862"
 ---
 # <a name="replace-transact-sql"></a>REPLACE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ REPLACE ( string_expression , string_pattern , string_replacement )
  Строковое [выражение](../../t-sql/language-elements/expressions-transact-sql.md), в котором выполняется поиск. *string_expression* может быть символьного или двоичного типа данных.  
   
  *string\_pattern*  
- Подстрока для поиска. *string_pattern* может быть символьного или двоичного типа данных. *string_pattern* не может быть пустой строкой ('') и не может превышать максимальное число байтов, которое может уместиться на странице.  
+ Подстрока для поиска. *string_pattern* может быть символьного или двоичного типа данных. *string_pattern* не может превышать максимальное число байт, которое может уместиться на странице. Если *string_pattern* является пустой строкой (''), *string_expression* возвращается без изменений. 
   
  *string\_replacement*  
  Строка замещения. Аргумент *string_replacement* может содержать символьные или двоичные данные.  

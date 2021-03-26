@@ -5,18 +5,18 @@ author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: vanto
 ms.custom: contperf-fy21q1
-ms.date: 09/07/2020
+ms.date: 03/22/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 2fa5cc3b5fe8ecc5a2b3ed87444474f1de54b022
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9d3fa1989b44bcdf53b8f80dedc1aa3bba5bfedb
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100273075"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833931"
 ---
 # <a name="configure-and-customize-sql-server-docker-containers"></a>Настройка контейнеров Docker на SQL Server
 
@@ -44,6 +44,9 @@ ms.locfileid: "100273075"
 ### <a name="mount-a-host-directory-as-data-volume"></a>Подключение каталога узла в качестве тома данных
 
 Первый способ состоит в подключении каталога на вашем узле в качестве тома данных для контейнера. Для этого используйте команду `docker run` с флагом `-v <host directory>:/var/opt/mssql`. Такой подход позволяет восстанавливать данные в перерывах между выполнениями контейнера.
+
+> [!NOTE]
+> В отличие от контейнеров SQL Server 2017 контейнеры SQL Server 2019 автоматически запускаются как некорневые. Дополнительные сведения о том, SQL Server контейнеры не являются корневыми, см. в статье [Защита контейнеров Docker в SQL Server](sql-server-linux-docker-container-security.md).
 
 <!--SQL Server 2017 on Linux -->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"

@@ -1,16 +1,16 @@
 ---
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/08/2021
+ms.date: 03/16/2021
 ms.topic: include
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: a10c54f61151835692f2bc05de440062fe2f3cfb
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 70bf06deb43e861209e12b6481f3fd414cb9361f
+ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100072795"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104833776"
 ---
 ## <a name="install-language-extensions"></a>Установка расширений языка
 
@@ -31,7 +31,25 @@ sudo zypper install mssql-server-extensibility
     Если вы хотите использовать другую среду выполнения R, то перед продолжением установки новой версии необходимо удалить `microsoft-r-open-mro`.
 
     ```bash
-    sudo zypper remove microsoft-r-open-mro-3.5.2
+    sudo zypper remove microsoft-r-open-mro-3.4.4
     ```
 
-1. Установите [R (версии 3.3 или более поздней)](https://www.r-project.org/) для SUSE Linux Enterprise Server (SLES). По умолчанию R устанавливается в папку **/usr/lib/R**. Этот путь — ваш **R_HOME**. Если вы установили R в другом месте, зафиксируйте этот путь в качестве **R_HOME**.
+1. Установите [R (версии 3.3 или более поздней)](https://www.r-project.org/) для SUSE Linux Enterprise Server (SLES). По умолчанию R устанавливается в папку **/usr/lib64/R**. Этот путь — ваш **R_HOME**. Если вы установили R в другом месте, зафиксируйте этот путь в качестве **R_HOME**.
+
+    Чтобы установить R, сделайте следующее:
+
+    ```bash
+    sudo zypper ar -f http://download.opensuse.org/repositories/devel:/languages:/R:/patched/openSUSE_12.3/ R-patched
+    sudo zypper --gpg-auto-import-keys ref
+    sudo zypper install R-core-libs R-core R-core-doc R-patched
+    ```
+
+    Предупреждения для **R-tcltk-3.6.1** можно игнорировать, если этот пакет не требуется.
+
+## <a name="install-gcc-c"></a>Установка gcc-c++
+
+Установите **gcc-c++** на SUSE Linux Enterprise Server (SLES). Он используется для **Rcpp** (устанавливается позже).
+
+```bash
+sudo zypper install gcc-c++
+```

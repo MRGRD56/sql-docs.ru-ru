@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развертывание
+              - name: Развернуть
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md
@@ -395,7 +395,7 @@ items:
                 href: big-data-cluster/notebooks-tutorial-spark.md
               - name: Список записных книжек для определенных операций
                 href: big-data-cluster/cluster-manage-notebooks.md
-          - name: Azure Monitor
+          - name: Монитор
             items:
               - name: Выполнение мониторинга с помощью Azure Data Studio
                 href: big-data-cluster/cluster-monitor-ads.md
@@ -463,6 +463,8 @@ items:
                 href: big-data-cluster/troubleshoot-hdfs-restore-admin.md
               - name: Использование записных книжек для устранения неполадок с кластером
                 href: big-data-cluster/cluster-troubleshooter-notebooks.md
+              - name: Вопросы и ответы по кластерам больших данных
+                href: big-data-cluster/big-data-cluster-faq.yml
       - name: Справочник
         items:
           - name: Развертывание
@@ -7353,7 +7355,9 @@ items:
         items:
           - name: Начало работы
             items:
-              - name: Трассировка
+              - name: Установка и настройка Master Data Services
+                href: master-data-services/master-data-services-installation-and-configuration.md
+              - name: Трассировка веб-приложения Master Data Services
                 href: master-data-services/tracing-master-data-services.md
               - name: Операции веб-службы по категориям
                 href: master-data-services/develop/categorized-web-service-operations-master-data-services.md

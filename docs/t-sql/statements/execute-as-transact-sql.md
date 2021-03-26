@@ -24,12 +24,12 @@ ms.assetid: 613b8271-7f7d-4378-b7a2-5a7698551dbd
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017||=azure-sqldw-latest
-ms.openlocfilehash: eaeafb5eb8e64686429cb0c7b8ccac9c1b7785c2
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 7d100893b14a135e0e08a1bfa6c40996a7a256e5
+ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104740164"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104793078"
 ---
 # <a name="execute-as-transact-sql"></a>EXECUTE AS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -63,7 +63,7 @@ ms.locfileid: "104740164"
  Указывает, что контекст выполнения олицетворения — это имя входа. Область олицетворения — это уровень сервера.  
   
 > [!NOTE]  
->  Этот параметр недоступен в автономной базе данных, Базе данных SQL или в [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)].  
+>  Этот параметр недоступен в автономной базе данных, [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] или [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)].  
   
  Пользователь  
  Определяет контекст для олицетворения пользователя в текущей базе данных. Область олицетворения ограничена текущей базой данных. При переключении контекста на пользователя базы данных разрешения уровня сервера этого пользователя не наследуются.  
