@@ -11,12 +11,12 @@ ms.assetid: 0edeaa08-9c5d-4e3a-bc15-b9a1f0c8a9dc
 author: nahk-ivanov
 ms.author: alexiva
 manager: alexiva
-ms.openlocfilehash: 16c4de0bdf08be3bfdbc8644ae61d300284a0c25
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dc144017c6bf45a21721fe647dbf5affa486f8ef
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100080779"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105632923"
 ---
 # <a name="mapping-oracle-schemas-to-sql-server-schemas-oracletosql"></a>Сопоставление схем Oracle со схемами SQL Server (OracleToSQL)
 В Oracle каждая база данных имеет одну или несколько схем. По умолчанию SSMA переносит все объекты в схеме Oracle в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] базу данных с именем для схемы. Однако можно настроить сопоставление между схемами и [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] базами данных Oracle.  
@@ -24,7 +24,7 @@ ms.locfileid: "100080779"
 ## <a name="oracle-and-sql-server-schemas"></a>Схемы Oracle и SQL Server  
 База данных Oracle содержит схемы. Экземпляр служб [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] содержит несколько баз данных, каждый из которых может иметь несколько схем.  
   
-Концепция Oracle схемы сопоставляется с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] концепцией базы данных и одной из ее схем. Например, Oracle может иметь схему с именем **HR**. Экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] может иметь базу данных с именем **HR**, а в этой базе данных — схемы. Одной из схем является схема **dbo** (или владелец базы данных). По умолчанию схема Oracle для схемы **HR** будет сопоставлена с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] базой данных и схемой **HR. dbo**. SSMA ссылается на [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] сочетание базы данных и схемы в качестве схемы.  
+Концепция Oracle схемы сопоставляется с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] концепцией базы данных и одной из ее схем. Например, Oracle может иметь схему с именем **HR**. Экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] может иметь базу данных с именем **сампледатабасе**, а в этой базе данных — несколько схем. По умолчанию схема Oracle **HR** будет сопоставлена с [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] базой данных и схемой **SampleDatabase.HR**. SSMA ссылается на [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] сочетание базы данных и схемы в качестве схемы.  
   
 Можно изменить сопоставление между Oracle и [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] схемами.  
   
