@@ -11,18 +11,18 @@ ms.assetid: 8b7810b2-637e-46a3-9fe1-d055898ba639
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: 5f7bbccc12c8d3f522703421542ba6188e826ea1
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 611ce5f3bd9a7243ee19089deb8a755956eb156c
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610972"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103831"
 ---
 # <a name="install-sql-server-with-smb-fileshare-storage"></a>Установка SQL Server с общей папкой SMB в качестве хранилища
 
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
 
-Начиная с выпуска [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]системные базы данных (Master, Model, MSDB и TempDB) и пользовательские базы данных компонента [!INCLUDE[ssDE](../../includes/ssde-md.md)] можно установить, используя файловый сервер SMB в качестве хранилища. Это относится как к изолированному варианту установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , так и к установке кластеров отработки отказа [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
+Начиная с выпуска [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)], системные базы данных (Master, Model, MSDB и tempdb) и пользовательские базы данных компонента [!INCLUDE[ssDE](../../includes/ssde-md.md)] можно установить, используя файловый сервер SMB в качестве хранилища. Это относится как к изолированному варианту установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , так и к установке кластеров отработки отказа [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] .  
   
 > [!NOTE]  
 >  Файловый поток в настоящее время не поддерживается в общей папке SMB.  
@@ -105,11 +105,11 @@ ms.locfileid: "104610972"
     >   
     >  Виртуальные учетные записи не могут проходить проверку подлинности в удаленном расположении. Все виртуальные учетные записи используют разрешение локальной учетной записи. Укажите учетную запись компьютера в формате \<*domain_name*>\\<*имя_компьютера*>\*$*.  
   
--   Учетная запись, которая использовалась для установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], при установке кластера должна иметь разрешение «Полный доступ» к общей папке SMB, используемой в качестве каталога данных, или к любым другим папкам данных (каталог пользовательской базы данных, каталог журналов пользовательской базы данных, папка TempDB, каталог журналов TempDB, папка резервного копирования).  
+-   Учетная запись, которая использовалась для установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], при установке кластера должна иметь разрешения FULL CONTROL к общей папке SMB, используемой в качестве каталога данных, или к любым другим папкам данных (каталог пользовательской базы данных, каталог журналов пользовательской базы данных, папка tempdb, каталог журналов tempdb, папка резервного копирования).  
   
 -   Учетная запись, используемая для установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , должна обладать правами SeSecurityPrivilege на файловом сервере SMB. Для предоставления этого права используйте консоль локальной политики безопасности на файловом сервере, чтобы добавить учетную запись установки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] в политику управления журналом аудита и безопасности. Этот параметр находится в разделе «Назначение прав пользователя» в узле «Локальные политики» консоли «Локальная политика безопасности».  
   
-## <a name="known-issues"></a>Известные проблемы  
+## <a name="known-issues-and-limitations"></a>Известные проблемы и ограничения 
   
 -   После отсоединения базы данных [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] , которая находится в хранилище, подключенном к сети, при попытке повторного присоединения базы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] возможны проблемы с разрешением доступа к базе данных. Дополнительные сведения см. в статье [Ошибка 5120](../../relational-databases/errors-events/mssqlserver-5120-database-engine-error.md).
   
@@ -123,7 +123,11 @@ ms.locfileid: "104610972"
         ALTER SERVER CONFIGURATION  
         SET DIAGNOSTICS LOG PATH = 'C:\logs';  
         ```  
-  
+
+-   Если вы размещаете файлы данных [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] в файловых ресурсах SMB, все операции ввода-вывода по файлам будут проходить через сетевой интерфейс на сервере или виртуальной машине. Убедитесь, что пропускной способности сети хватает для поддержки операций ввода-вывода, необходимых для рабочей нагрузки.
+
+-   Недоступность общей папки, в которой размещаются файлы данных [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)], из-за проблем с сетевым подключением или другой ошибки может привести к задержкам операций ввода-вывода или сбоям в [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]. Для критически важных рабочих нагрузок убедитесь, что для сети и общей папки предусмотрена избыточность, и что файловый ресурс поддерживает прозрачную отработку отказа SMB 3.0, также известную как [постоянная доступность](https://techcommunity.microsoft.com/t5/storage-at-microsoft/smb-transparent-failover-8211-making-file-shares-continuously/ba-p/425693).
+
 ## <a name="see-also"></a>См. также раздел  
  [Планирование установки SQL Server](../../sql-server/install/planning-a-sql-server-installation.md)   
  [Настройка учетных записей службы Windows и разрешений](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)  

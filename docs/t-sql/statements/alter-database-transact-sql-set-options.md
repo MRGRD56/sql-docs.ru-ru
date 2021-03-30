@@ -2,7 +2,7 @@
 title: Параметры ALTER DATABASE SET (Transact-SQL) | Документы Майкрософт
 description: Сведения о том, как задать параметры базы данных, например автоматическую настройку, шифрование, хранилище запросов в SQL Server и базе данных SQL Azure.
 ms.custom: ''
-ms.date: 09/04/2020
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -31,12 +31,12 @@ ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: 37ea2f4896d68f4ae5a47b14025d54a344febdc0
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ffc1d15b32bb24d01dfb9a6e0797959561d1b4dc
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100016343"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551501"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>Параметры ALTER DATABASE SET (Transact-SQL)
 
@@ -1249,10 +1249,10 @@ NO_WAIT
 |\<delayed_durability_option>|Да|Да|
 |\<external_access_option>|Да|Нет|
 |\<cursor_option>|Да|Нет|
-|\<auto_option>|Да|нет|
+|\<auto_option>|Да|Нет|
 |\<sql_option>|Да|Нет|
 |\<recovery_option>|Да|Нет|
-|\<target_recovery_time_option>|нет|Да|
+|\<target_recovery_time_option>|Нет|Да|
 |\<database_mirroring_option>|Нет|Нет|
 |ALLOW_SNAPSHOT_ISOLATION|Нет|Нет|
 |READ_COMMITTED_SNAPSHOT|Нет|Да|
@@ -2024,6 +2024,9 @@ OFF
 
 > [!WARNING]
 > Если таблица была создана с использованием аргумента `DURABILITY = SCHEMA_ONLY`, а впоследствии значение **READ_COMMITTED_SNAPSHOT** было изменено с помощью инструкции `ALTER DATABASE`, данные в таблице будут потеряны.
+
+> [!TIP]
+> В [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] команда `ALTER DATABASE`, задающая для базы данных параметр READ_COMMITTED_SNAPSHOT со значением ON или OFF, должна выполняться в базе данных `master`.
 
 MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT { ON | **OFF** }     
 ON     

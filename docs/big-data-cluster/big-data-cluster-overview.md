@@ -9,12 +9,12 @@ ms.date: 01/07/2020
 ms.topic: overview
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: c1109745a2fda000732c0645094dd5a157089717
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5e3b94698712f8359c51f925b70e148917610360
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047927"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551285"
 ---
 # <a name="what-are-big-data-clusters-2019"></a>Что такое [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]?
 
@@ -35,7 +35,9 @@ ms.locfileid: "100047927"
 - Виртуализация данных с помощью [Polybase](../relational-databases/polybase/polybase-guide.md). Теперь вы можете запрашивать данные из внешних источников SQL Server, Oracle, Teradata, MongoDB и источников данных ODBC с внешними таблицами.
 - Обеспечение высокой доступности для основного экземпляра SQL Server и всех баз данных с использованием технологии групп доступности Always On.
 
-Дополнительные сведения о новых возможностях и известных проблемах в последнем выпуске см. в [заметках о выпуске](release-notes-big-data-cluster.md).
+Дополнительные сведения о новых возможностях и известных проблемах в последнем выпуске см. в [заметках о выпуске](release-notes-big-data-cluster.md).   
+
+Также см. [Вопросы и ответы по кластерам больших данных](big-data-cluster-faq.yml).
 
 ## <a name="scenarios"></a>Сценарии
 
@@ -119,4 +121,5 @@ Kubernetes — это оркестратор контейнеров с откр
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о развертывании [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] см. в разделе [Начало работы с [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](deploy-get-started.md).
+* Дополнительные сведения о развертывании [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] см. в разделе [Начало работы с [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](deploy-get-started.md).    
+* Также см. [Вопросы и ответы по кластерам больших данных](big-data-cluster-faq.yml).  

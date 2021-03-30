@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d97c5e9b8c508387298cf00a8fbbe96ded1a2eea
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9ca8eff773bff7900a1228665d65d911b52d5a8f
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047164"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551490"
 ---
 # <a name="how-to-deploy-big-data-clusters-2019-on-kubernetes"></a>Развертывание [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] в Kubernetes
 
@@ -436,4 +436,5 @@ Sql: ready                                                                      
 
 - [Настройка параметров развертывания для кластеров больших данных](deployment-custom-configuration.md)
 - [Выполнение автономного развертывания кластера больших данных SQL Server](deploy-offline.md)
-- [Семинар. Архитектура [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] Майкрософт](https://github.com/Microsoft/sqlworkshops/tree/master/sqlserver2019bigdataclusters)
+- [Семинар. Архитектура [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] Майкрософт](https://github.com/microsoft/sqlworkshops-bdc)
+- [Вопросы и ответы по кластерам больших данных](big-data-cluster-faq.yml)  

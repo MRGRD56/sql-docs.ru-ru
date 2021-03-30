@@ -21,12 +21,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/09/2017
-ms.openlocfilehash: b05279df08153efab4257a74a8389ea33b38b966
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: ff53b6711375e5f06368333392da33bb0f5108b9
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338739"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890748"
 ---
 # <a name="dta-utility"></a>dta
 
@@ -59,7 +59,7 @@ dta
       [ -ix input_XML_file_name ]  
       [ -A time_for_tuning_in_minutes ]  
       [ -n number_of_events ]
-      [ -I time_window_in_hours ]  
+      [ -l time_window_in_hours ]  
       [ -m minimum_improvement ]  
       [ -fa physical_design_structures_to_add ]  
       [ -fi filtered_indexes]  
@@ -182,9 +182,8 @@ dta -d AdventureWorks2012 ...
 **-fc**  
  Указывает, что индексы columnstore следует учитывать для новых рекомендаций. DTA поддерживает как кластеризованные, так и некластеризованные индексы columnstore. Дополнительные сведения см. в разделе    
 [Рекомендации по индексам сolumnstore в помощнике по настройке ядра СУБД (DTA)](../../relational-databases/performance/columnstore-index-recommendations-in-database-engine-tuning-advisor-dta.md).
- ||  
-|-|  
-|**Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.|  
+
+> **Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.  
 
   
  **-fk** _keep_existing_option_  
@@ -220,9 +219,8 @@ dta -d AdventureWorks2012 ...
 
 **-iq**  
  Указывает, что в качестве рабочей нагрузки нужно использовать хранилище запросов. Анализируется первая тысяча событий из хранилища запросов для явно выбранных баз данных. Это значение можно изменить с помощью параметра **–n**.  Дополнительные сведения см. в статье [Хранилище запросов](../../relational-databases/performance/how-query-store-collects-data.md)[Настройка базы данных с помощью рабочей нагрузки из хранилища запросов](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md).
- ||  
-|-|  
-|**Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.|  
+  
+> **Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.
      
  **-if** _workload_file_  
  Задает путь и имя файла рабочей нагрузки, используемого в качестве файла исходных данных для настройки. Файл должен быть в одном из следующих форматов: TRC (трассировочный файл приложения SQL Server Profiler), SQL (файл SQL) или LOG (файл трассировки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]). Требуется указание либо одного файла рабочей нагрузки, либо одной таблицы рабочей нагрузки.  
@@ -273,18 +271,18 @@ dta -n number_of_events -A 0
   
  В этом случае важно указать неограниченное время настройки (`-A 0`). В противном случае помощник по настройке ядра СУБД примет для времени настройки значение по умолчанию, равное 8 часам.
  
- **-I** _time_window_in_hours_   
-   Указывает интервал (в часах), запросы из которого помощник по настройке ядра СУБД будет рассматривать для настройки при использовании параметра **-iq** (рабочая нагрузка из хранилища запросов). 
+ **-l** _time_window_in_hours_   
+   Указывает интервал (в часах), запросы из которого помощник по настройке ядра СУБД будет рассматривать для настройки при использовании параметра **-iq** (рабочая нагрузка из хранилища запросов).
+   
 ```  
-dta -iq -I 48  
+dta -iq -l 48  
 ```  
+
 В этом примере помощник по настройке будет использовать хранилище запросов в качестве источника рабочей нагрузки и учитывать только те запросы, которые были выполнены за последние 48 часов.  
-  ||  
-|-|  
-|**Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.|  
 
+> **Область применения**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] и более поздних версий.  
 
-  
+ 
  **-of** _output_script_file_name_  
  Указывает, что программа **dta** производит запись рекомендаций в виде скрипта [!INCLUDE[tsql](../../includes/tsql-md.md)] в файл с указанным именем и расположением.  
   

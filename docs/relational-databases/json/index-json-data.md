@@ -14,12 +14,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a37f275f89a65a27e4b536a1ae01ed3b8088fbb9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 243c9043598879936eaf4037b2a2d1feef9ae8c0
+ms.sourcegitcommit: e2dbe5639b0d1e1dd7cb4cdf0b86f1b212b532b4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97473805"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105008415"
 ---
 # <a name="index-json-data"></a>Индексирование данных JSON
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
@@ -60,6 +60,16 @@ ADD vCustomerName AS JSON_VALUE(Info,'$.Customer.Name')
 CREATE INDEX idx_soh_json_CustomerName
 ON Sales.SalesOrderHeader(vCustomerName)  
 ```  
+
+Этот оператор возвращает следующее предупреждение:
+```
+Warning! The maximum key length for a nonclustered index is 1700 bytes. The index 'col1' has maximum length of 8000 bytes. For some combination of large values, the insert/update operation will fail.
+```
+
+Функция `JSON_VALUE` может возвращать текстовые значения до 8000 байт (например, тип NVARCHAR(4000)). При этом проиндексировать значения, превышающие 1700 байт, нельзя. При попытке ввести значение в индексированный вычисляемый столбец, длина которого превышает 1700 байт, операция DML завершится сбоем. Это будет ошибка времени выполнения.
+
+Для повышения производительности попробуйте привести значение, предоставленное с использованием вычисляемого столбца, к наименьшему применимому типу. Используйте типы int и datetime2 вместо строковых типов.
+
 ### <a name="more-info-about-the-computed-column"></a>Дополнительные сведения о вычисляемых столбцах 
 Вычисляемый столбец не сохраняется Он вычисляется только в том случае, если индекс необходимо перестроить. и не занимает дополнительное место в таблице.   
   

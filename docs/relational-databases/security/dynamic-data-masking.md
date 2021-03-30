@@ -1,22 +1,21 @@
 ---
-title: Динамическое маскирование данных | Документация Майкрософт
+title: Динамическое маскирование данных
 description: Сведения о динамическом маскировании данных, которое ограничивает возможность раскрытия конфиденциальных данных, маскируя их для обычных пользователей Это может значительно упростить обеспечение безопасности в SQL Server.
-ms.date: 05/02/2019
+ms.date: 03/24/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, synapse-analytics
 ms.reviewer: ''
 ms.technology: security
 ms.topic: conceptual
-ms.assetid: a62f4ff9-2953-42ca-b7d8-1f8f527c4d66
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 03ef32905fd9fcd79c296279095e089691625a86
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 128cc9ea3313a12bfe4fc6da7cdcf2139c2dfc9b
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104751264"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103801"
 ---
 # <a name="dynamic-data-masking"></a>Динамическое маскирование данных
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -25,7 +24,7 @@ ms.locfileid: "104751264"
 
 Динамическое маскирование данных (DDM) ограничивает возможность раскрытия конфиденциальных данных за счет маскирования этих данных для непривилегированных пользователей. Оно позволяет значительно упростить проектирование и написание кода для системы безопасности в приложении.  
 
-Динамическое маскирование данных помогает предотвратить несанкционированный доступ к конфиденциальным данным, позволяя клиентам задать объем раскрываемых конфиденциальных данных с минимальным влиянием на уровень приложения. DDM можно настроить для отдельных полей базы данных, чтобы скрыть конфиденциальные данные в результирующих наборах запросов. При использовании DDM данные в базе данных не изменяются. Динамическое маскирование данных легко использовать с существующими приложениями, поскольку правила маскирования применяются к результатам запроса. Многие приложения могут маскировать конфиденциальные данные без изменения существующих запросов.
+Динамическое маскирование данных помогает предотвратить несанкционированный доступ к конфиденциальным данным, позволяя клиентам задать объем раскрываемых конфиденциальных данных с минимальным влиянием на уровень приложения. DDM можно настроить для отдельных полей базы данных, чтобы скрыть конфиденциальные данные в результирующих наборах запросов. При использовании DDM данные в базе данных не изменяются. DDM легко использовать с существующими приложениями, так как правила маскирования применяются к результатам запроса. Многие приложения могут маскировать конфиденциальные данные без изменения существующих запросов.
 
 * Центральная политика маскирования данных применяется непосредственно к конфиденциальным полям в базе данных.
 * Вы можете назначать привилегированных пользователей или роли, которые имеют доступ к конфиденциальным данным.
@@ -86,6 +85,8 @@ WHERE is_masked = 1;
 -   Маскирование невозможно настроить для вычисляемого столбца, но если вычисляемый столбец зависит от столбца с маской (MASK), то вычисляемый столбец будет возвращать маскированные данные.  
   
 -   Столбец с маскированием данных не может использоваться в качестве ключа для полнотекстового (FULLTEXT) индекса.  
+
+-   Столбец во [внешней таблице](../../t-sql/statements/create-external-table-transact-sql.md) PolyBase.
   
  Для пользователей без разрешения **UNMASK** устаревшие инструкции **READTEXT**, **UPDATETEXT** и **WRITETEXT** будут работать неправильно для столбца, для которого настроено динамическое маскирование данных. 
  
@@ -122,18 +123,18 @@ WHERE Salary > 99999 and Salary < 100001;
 ```sql
 
 -- schema to contain user tables
-CREATE SCHEMA Data
+CREATE SCHEMA Data;
 GO
 
 -- table with masked columns
 CREATE TABLE Data.Membership(
     MemberID        int IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
-    FirstName       varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
+    FirstName        varchar(100) MASKED WITH (FUNCTION = 'partial(1, "xxxxx", 1)') NULL,
     LastName        varchar(100) NOT NULL,
-    Phone           varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
-    Email           varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
+    Phone            varchar(12) MASKED WITH (FUNCTION = 'default()') NULL,
+    Email            varchar(100) MASKED WITH (FUNCTION = 'email()') NOT NULL,
     DiscountCode    smallint MASKED WITH (FUNCTION = 'random(1, 100)') NULL
-    )
+    );
 
 -- inserting sample data
 INSERT INTO Data.Membership (FirstName, LastName, Phone, Email, DiscountCode)

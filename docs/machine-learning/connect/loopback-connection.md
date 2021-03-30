@@ -3,22 +3,22 @@ title: Соединение SQL с замыканием на себя в Python 
 description: Узнайте, как использовать подключение с замыканием на себя для обратного соединения с SQL Server через ODBC с целью чтения или записи данных из скрипта Python или R, выполняемого с помощью процедуры sp_execute_external_script.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 08/20/2020
+ms.date: 03/22/2021
 ms.topic: how-to
 author: Aniruddh25
 ms.author: anmunde
 ms.reviewer: dphansen
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: 062c62eedaeed16215a538fca8303acb7e88343b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5de6c3e8c3ba65858cfc04ddcbd2bd45c5b84cd2
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100082525"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103871"
 ---
 # <a name="loopback-connection-to-sql-server-from-a-python-or-r-script"></a>Подключение к SQL Server из скрипта Python или R с замыканием на себя
-[!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
+[!INCLUDE [SQL Server 2019 and later, and SQL MI](../../includes/applies-to-version/sqlserver2019-asdbmi.md)]
 
 Узнайте, как использовать подключение с замыканием на себя со [Службами машинного обучения](../sql-server-machine-learning-services.md) для обратного соединения с SQL Server через [ODBC](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md) с целью чтения или записи данных из скрипта Python или R, выполняемого с помощью процедуры [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md). Его можно применять, если нельзя использовать аргументы **InputDataSet** и **OutputDataSet** процедуры `sp_execute_external_script`.
 
@@ -49,6 +49,9 @@ ms.locfileid: "100082525"
 Адрес сервера, расположение файла с сертификатом клиента и расположение файла с ключом клиента уникальны для каждой процедуры `sp_execute_external_script`. Их можно получить с помощью API **rx_get_sql_loopback_connection_string()** для Python или **rxGetSqlLoopbackConnectionString()** для R.
 
 Дополнительные сведения об атрибутах строки подключения см. в статье [Ключевые слова и атрибуты строки подключения и имени DSN](../../connect/odbc/dsn-connection-string-attribute.md#new-connection-string-keywords-and-connection-attributes) для Microsoft ODBC Driver for SQL Server.
+
+### <a name="connection-string-on-azure-sql-managed-instance"></a>Строка подключения для Управляемого экземпляра SQL Azure
+Чтобы создать строку подключения для Управляемого экземпляра Azure SQL, см. примеры в следующих разделах. Используйте **драйвер ODBC 11 для SQL Server** в качестве драйвера ODBC для подключений с замыканием на себя.
 
 ## <a name="generate-connection-string-with-revoscalepy-for-python"></a>Создание строки подключения с помощью пакета revoscalepy для Python
 
@@ -98,6 +101,23 @@ WITH RESULT SETS ((col1 int, col2 int))
 GO
 ```
 
+Пример для Управляемого экземпляра SQL Azure:
+
+```sql
+EXECUTE sp_execute_external_script
+@language = N'Python',
+@script = N'
+from revoscalepy import rx_get_sql_loopback_connection_string, RxSqlServerData, rx_data_step
+loopback_connection_string = rx_get_sql_loopback_connection_string(odbc_driver="ODBC Driver 11 for SQL Server", name_of_database="DBName")
+print("Connection String:{0}".format(loopback_connection_string))
+data_set = RxSqlServerData(sql_query = "select col1, col2 from tableName",
+                           connection_string = loopback_connection_string)
+OutputDataSet = rx_data_step(data_set)
+'
+WITH RESULT SETS ((col1 int, col2 int))
+GO
+```
+
 ## <a name="generate-connection-string-with-revoscaler-for-r"></a>Создание строки подключения с помощью пакета RevoScaleR для R
 
 Вы можете использовать интерфейс API **rxGetSqlLoopbackConnectionString()** из пакета [RevoScaleR](../r/ref-r-revoscaler.md), чтобы создать правильную строку подключения с замыканием на себя в скрипте R.
@@ -137,6 +157,22 @@ EXECUTE sp_execute_external_script
                                                                   odbcDriver ="ODBC Driver 17 for SQL Server")
     print(paste("Connection String:", loopbackConnectionString))
     dataSet <- RxSqlServerData(sqlQuery = "select col1, col2 from tableName", 
+                               connectionString = loopbackConnectionString)
+    OutputDataSet <- rxDataStep(dataSet)
+'
+WITH RESULT SETS ((col1 int, col2 int))
+GO
+```
+
+Пример для Управляемого экземпляра SQL Azure:
+
+```sql
+EXECUTE sp_execute_external_script
+@language = N'R',
+@script = N'
+    loopbackConnectionString <- rxGetSqlLoopbackConnectionString(nameOfDatabase="DBName", odbcDriver ="ODBC Driver 11 for SQL Server")
+    print(paste("Connection String:", loopbackConnectionString))
+    dataSet <- RxSqlServerData(sqlQuery = "select col1, col2 from tableName",
                                connectionString = loopbackConnectionString)
     OutputDataSet <- rxDataStep(dataSet)
 '

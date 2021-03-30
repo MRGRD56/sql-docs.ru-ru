@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: e4fbb1222168200d2107198091db7109ef6247ec
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 485ae050a4456e846d8455fef71875198ddf4655
+ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100039424"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105551528"
 ---
 # <a name="security-concepts-for-big-data-clusters-2019"></a>Основные понятия безопасности для работы с [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "100039424"
 
 ## <a name="authorization"></a>Авторизация
 
-Интегрированная система безопасности между различными компонентами во всем кластере позволяет передавать удостоверение исходного пользователя при выдаче запросов из Spark и SQL Server вплоть до HDFS. Как упоминалось выше, различные конечные точки внешнего кластера поддерживают проверку подлинности Active Directory.
+Интегрированная система безопасности между различными компонентами всего кластера позволяет передавать исходное удостоверение пользователя при отправке запросов из Spark и SQL Server на всем пути вплоть до HDFS. Как упоминалось выше, различные конечные точки внешнего кластера поддерживают проверку подлинности Active Directory.
 
 Существует два уровня проверки авторизации в кластере для управления доступом к данным. Авторизация в контексте больших данных выполняется в SQL Server с использованием традиционных разрешений SQL Server для объектов и в HDFS с использованием списков управления доступом (ACL), которые связывают удостоверения пользователей с конкретными разрешениями.
 
@@ -105,6 +105,8 @@ ms.locfileid: "100039424"
 
 [Что такое [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]?](big-data-cluster-overview.md)
 
-[Семинар. Архитектура [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] Майкрософт](https://github.com/Microsoft/sqlworkshops/tree/master/sqlserver2019bigdataclusters)
+[Семинар. Архитектура [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] Майкрософт](https://github.com/microsoft/sqlworkshops-bdc)
 
-[Kubernetes RBAC](kubernetes-rbac.md)
+[Kubernetes RBAC](kubernetes-rbac.md)  
+
+[Вопросы и ответы по кластерам больших данных](big-data-cluster-faq.yml)  
