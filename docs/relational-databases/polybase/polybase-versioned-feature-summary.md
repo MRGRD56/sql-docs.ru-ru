@@ -1,63 +1,103 @@
 ---
 description: Возможности и ограничения PolyBase
-title: Возможности и ограничения PolyBase | Документация Майкрософт
+title: Возможности и ограничения PolyBase
 descriptions: This article summarizes PolyBase features available for SQL Server products and services. It lists T-SQL operators supported for pushdown and known limitations.
-ms.date: 11/13/2020
+ms.date: 03/23/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
-ms.assetid: 6591994d-6109-4285-9c5b-ecb355f8a111
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2afdc0e62fdd725584c464bda516fc6284d20f01
-ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
+ms.openlocfilehash: 0ce732ab5e7f920f19a47537419242b637cda91c
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97489994"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103761"
 ---
 # <a name="polybase-features-and-limitations"></a>Возможности и ограничения PolyBase
 
 [!INCLUDE[appliesto-ss2016-asdb-asdw-pdw-md](../../includes/tsql-appliesto-ss2016-all-md.md)]
 
-В этой статье приведена сводка функций PolyBase, доступных для продуктов и служб SQL Server.  
+В этой статье приведена сводка функций PolyBase, доступных для продуктов и служб [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].  
   
 ## <a name="feature-summary-for-product-releases"></a>Сводка функций по выпускам продукта
 
 В следующей таблице перечислены основные функции PolyBase и продукты, в которых они доступны.  
 
-|**Компонент** |**SQL Server** (начиная с версии 2016) |**База данных SQL Azure** |**Azure Synapse Analytics** |**Параллельное хранилище данных** |
+|**Компонент** |**[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]** (с версии 2016) |**База данных SQL Azure** |**[!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)]** |**Параллельное хранилище данных** |
 |---------|---------|---------|---------|---------|
-|Запрос данных Hadoop с помощью [!INCLUDE[tsql](../../includes/tsql-md.md)]|Да|нет|Нет|Да|
-|Импорт данных из Hadoop|Да|нет|Нет|Да|
-|Экспорт данных в Hadoop  |Да|нет|Нет| Да|
-|Запрос, импорт и экспорт данных в Azure HDInsight |нет|нет|нет|нет
-|Отправка результатов вычислений запросов в Hadoop|Да|нет|Нет|Да|  
+|Запрос данных Hadoop с помощью [!INCLUDE[tsql](../../includes/tsql-md.md)]|Да|Нет|Нет|Да|
+|Импорт данных из Hadoop|Да|Нет|Нет|Да|
+|Экспорт данных в Hadoop  |Да|Нет|Нет| Да|
+|Запрос, импорт и экспорт данных в Azure HDInsight |нет|Нет|Нет|нет
+|Отправка результатов вычислений запросов в Hadoop|Да|Нет|Нет|Да|  
 |Импорт данных из хранилища BLOB-объектов Azure|Да|Да<sup>*</sup>|Да|Да|
 |Экспорт данных в хранилище BLOB-объектов Azure|Да|Нет|Да|Да|  
 |Импорт данных из хранилища Azure Data Lake Store|нет|Нет|Да|нет|
 |Экспорт данных в хранилище Azure Data Lake Store|нет|Нет|Да|нет|
 |Выполнение запросов PolyBase из средств бизнес-аналитики Майкрософт|Да|Нет|Да|Да|
 
-<sup>*</sup> Появилось в SQL Server 2017; см. статью [Примеры массового доступа к данным в хранилище BLOB-объектов Azure](../import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md).
+<sup>*</sup> Появилось в версии [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)]. См. [Примеры массового доступа к данным в хранилище BLOB-объектов Azure](../import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md).
 
+
+## <a name="syntax-that-prevents-pushdown"></a>Синтаксис для блокировки pushdown
+
+Следующие функции и синтаксис T-SQL блокируют pushdown-вычисления:
+
+- `AT TIME ZONE`
+- `CONCAT_WS`
+- `TRANSLATE`
+- `RAND`
+- `CHECKSUM`
+- `BINARY_CHECKSUM`
+- `ISJSON`
+- `JSON_VALUE`
+- `JSON_QUERY`
+- `JSON_MODIFY`
+- `NEWID`
+- `STRING_ESCAPE`
+- `COMPRESS`
+- `DECOMPRESS`
+- `GREATEST`
+- `LEAST`
+- `PARSE`
+
+Поддержка pushdown для синтаксиса `FORMAT` и `TRIM` была впервые представлена в [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] с накопительным пакетом обновления 10 (CU10).
+
+Дополнительные сведения: [Вычисления pushdown в PolyBase](polybase-pushdown-computation.md).
 
 ## <a name="pushdown-computation-supported-by-t-sql-operators"></a>Поддержка передачи вычислений в операторах T-SQL
 
-В SQL Server и APS лишь некоторые операторы T-SQL поддерживают передачу в кластер Hadoop. В следующей таблице приведены все поддерживаемые операторы и ряд неподдерживаемых.
+В [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и APS лишь некоторые операторы T-SQL поддерживают pushdown-отправку в кластер Hadoop. В следующей таблице приведены все поддерживаемые операторы и ряд неподдерживаемых.
 
-|**Тип оператора** |**Отправка в Hadoop** |**Отправка в хранилище BLOB-объектов** |
+|**Тип оператора** |**Отправка в Hadoop** |**Отправка в хранилище BLOB-объектов** | 
 |---------|---------|---------|
 |Проекции столбцов|Да|нет|
 |Предикаты|Да|Нет|
-|Статистические выражения|Частично|нет|
+|Статистические выражения|Частично\*|нет|
 |Соединения между внешними таблицами|нет|нет|
 |Соединения между внешними и локальными таблицами|нет|нет|
-|Сортировки|нет|нет|
+|Сортировки|нет|Нет|
 
-Частичное статистическое вычисление означает, что итоговое вычисление должно выполняться после получения данных в SQL Server. Однако часть статистического вычисления происходит в Hadoop. Это стандартный метод вычисления статистических выражений в системах обработки данных с массовым параллелизмом.  
+\* Частичная агрегация означает, что итоговая агрегация должна происходить после прихода данных в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. Однако часть статистического вычисления происходит в Hadoop. Это стандартный метод вычисления статистических выражений в системах обработки данных с массовым параллелизмом.  
+
+#### <a name="hadoop-pushdown-support"></a>Поддержка pushdown в Hadoop
+
+Поставщики Hadoop поддерживают следующее:
+
+| **Агрегации**                  | **Фильтры (двоичное сравнение)** | 
+|-----------------------------------|---------------------------------| 
+| Count_Big                         | NotEqual                        | 
+| SUM                               | LessThan;                        | 
+| Сред.                               | LessOrEqual                     | 
+| Макс.                               | GreaterOrEqual                  | 
+| Min                               | GreaterThan                     | 
+| Approx_Count_Distinct             | Is                              | 
+|                                   | IsNot;                           | 
+|                                   |                                 | 
 
 ## <a name="known-limitations"></a>Известные ограничения
 
@@ -65,21 +105,21 @@ PolyBase имеет следующие ограничения.
 
 - Чтобы использовать PolyBase, необходимо иметь роль системного администратора или разрешения на управление сервером базы данных.
 
-- Максимальный размер строки, включая полную длину столбцов переменной длины, не может превышать 32 КБ в SQL Server или 1 МБ в Azure Synapse Analytics.
+- В версиях до [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] допустимый размер строк, в том числе полная длина столбцов переменной длины, не может превышать 32 КБ для [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] или 1 МБ для [!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)]. Начиная с версии [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)], это ограничение снято. Лимит в 1 МБ сохраняется для источников данных Hadoop, но для других источников действует только максимальный лимит [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
 
-- При экспорте данных в файл формата ORC из SQL Server или Azure Synapse Analytics число столбцов с большим количеством текста может быть ограничено. Их число может даже не превышать 50, что связано с сообщениями об ошибках нехватки памяти Java. Чтобы обойти эту проблему, экспортируйте подмножество столбцов.
+- При экспорте данных из [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] или [!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)] в файлы формата ORC возможно ограничение числа столбцов с большим количеством текста. Их число может даже не превышать 50, что связано с сообщениями об ошибках нехватки памяти Java. Чтобы обойти эту проблему, экспортируйте подмножество столбцов.
 
-- PolyBase не может подключиться к экземпляру Hortonworks, если включена поддержка Knox.
+- PolyBase не может подключаться к экземплярам Hadoop при включении Knox.
 
 - Если вы используете таблицы Hive с параметром transactional = true, то PolyBase не может обратиться к данным в каталоге таблицы Hive.
 
 <!--SQL Server 2016-->
 ::: moniker range="= sql-server-2016 "
 
-- [PolyBase не устанавливается при добавлении узла в отказоустойчивый кластер SQL Server 2016](https://support.microsoft.com/help/3173087/fix-polybase-feature-doesn-t-install-when-you-add-a-node-to-a-sql-server-2016-failover-cluster).
+- [PolyBase не устанавливается при добавлении узла в отказоустойчивый кластер [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]](https://support.microsoft.com/help/3173087/fix-polybase-feature-doesn-t-install-when-you-add-a-node-to-a-sql-server-2016-failover-cluster).
 
 ::: moniker-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о PolyBase см. в [этом руководстве](polybase-guide.md).
+См. дополнительные сведения о том, [что такое PolyBase.](polybase-guide.md)

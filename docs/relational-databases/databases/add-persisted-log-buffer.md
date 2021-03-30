@@ -19,12 +19,12 @@ ms.assetid: 8ead516a-1334-4f40-84b2-509d0a8ffa45
 author: briancarrig
 ms.author: brcarrig
 manager: amitban
-ms.openlocfilehash: ab2554561abb1590db33249a0ade4e8458b0fd54
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 59fdc25c91b1d471d3108988f93de03a5ecbdc7f
+ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100272375"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105103771"
 ---
 # <a name="add-persisted-log-buffer-to-a-database"></a>Добавление буфера сохраненного журнала в базу данных
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -56,6 +56,8 @@ ALTER DATABASE <MyDB>
     SIZE = 20MB
   );
 ```
+
+Обратите внимание, что файл журнала на томе DAX будет иметь размер 20 МБ независимо от того, какой размер указан в команде ADD FILE.
 
 Том или точка подключения нового файла журнала должны быть отформатированы с помощью DAX (NTFS) или подключены с параметром DAX (XFS и EXT4).
 

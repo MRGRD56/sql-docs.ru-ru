@@ -32,12 +32,12 @@ ms.assetid: c724d9cc-7b1f-4c71-bdf5-08bc52b33afc
 author: cawrites
 ms.author: chadam
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eafd796b87af4165427eff70bfd05fbc8214a221
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 594cf2cf8893891deeca89f1f56c76ee1b946caf
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104749994"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744530"
 ---
 # <a name="current_timestamp-transact-sql"></a>CURRENT_TIMESTAMP (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "104749994"
 Эта функция возвращает текущую системную метку времени базы данных в виде значения **datetime** без смещения часового пояса базы данных. `CURRENT_TIMESTAMP` наследует это значение от операционной системы компьютера, на котором работает экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].
   
 > [!NOTE]  
->  `SYSDATETIME` и `SYSUTCDATE` имеют большую точность в долях секунды, чем `GETDATE` и `GETUTCDATE`. Функция `SYSDATETIMEOFFSET` включает смещение часового пояса, заданное в системе. Функции `SYSDATETIME`, `SYSUTCDATE` и `SYSDATETIMEOFFSET` могут быть присвоены переменным любого типа даты и времени.  
+>  `SYSDATETIME` и `SYSUTCDATE` имеют большую точность в долях секунды, чем `GETDATE` и `GETUTCDATE`. Функция `SYSDATETIMEOFFSET` включает смещение часового пояса, заданное в системе. Функции `SYSDATETIME`, `SYSUTCDATETIME` и `SYSDATETIMEOFFSET` могут быть присвоены переменным любого типа даты и времени.  
   
 Эта функция ANSI SQL эквивалентна функции [GETDATE](../../t-sql/functions/getdate-transact-sql.md).
   
