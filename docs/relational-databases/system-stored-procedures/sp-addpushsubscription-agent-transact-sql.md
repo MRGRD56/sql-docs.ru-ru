@@ -2,7 +2,7 @@
 description: sp_addpushsubscription_agent (Transact-SQL)
 title: sp_addpushsubscription_agent (Transact-SQL) | Документация Майкрософт
 ms.custom: ''
-ms.date: 06/09/2020
+ms.date: 03/29/2021
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 1fdd2052-50d8-4318-8aa7-fc635d5cad18
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 396e90bb76296270bf25d236a7fd20cd34a063dc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 81bf487607d0cfea9f7ab623e12d732e4463aded
+ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99206666"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937841"
 ---
 # <a name="sp_addpushsubscription_agent-transact-sql"></a>sp_addpushsubscription_agent (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -74,8 +74,13 @@ sp_addpushsubscription_agent [ @publication= ] 'publication'
   
 `[ @subscriber = ] 'subscriber'` Имя экземпляра подписчика или имя прослушивателя AG, если база данных подписчика является группой доступности. Аргумент *Subscriber* имеет тип **sysname** и значение по умолчанию NULL. 
 
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
+
 > [!NOTE]
-> Имя сервера можно указать как `<Hostname>,<PortNumber>` . Может потребоваться указать номер порта для подключения, если SQL Server развертывается в Linux или Windows с помощью настраиваемого порта, а служба браузера отключена.
+> Имя сервера можно указать как `<Hostname>,<PortNumber>` . Может потребоваться указать номер порта для подключения, если SQL Server развертывается в Linux или Windows с помощью настраиваемого порта, а служба браузера отключена. Использование настраиваемых номеров портов для удаленного распространителя применимо только к SQL Server 2019.
+
+::: moniker-end
 
 `[ @subscriber_db = ] 'subscriber_db'` Имя базы данных подписки. Аргумент *subscriber_db* имеет тип **sysname** и значение по умолчанию NULL. Для подписчика, не являющегося SQL Server, укажите значение **(назначение по умолчанию)** для *subscriber_db*.  
   
@@ -177,7 +182,7 @@ sp_addpushsubscription_agent [ @publication= ] 'publication'
 ## <a name="return-code-values"></a>Значения кода возврата  
  **0** (успешное завершение) или **1** (сбой)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  **sp_addpushsubscription_agent** используется в репликации моментальных снимков и репликации транзакций.  
   
 ## <a name="example"></a>Пример  

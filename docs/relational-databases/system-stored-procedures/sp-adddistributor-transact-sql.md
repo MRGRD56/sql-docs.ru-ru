@@ -2,7 +2,7 @@
 description: sp_adddistributor (Transact-SQL)
 title: sp_adddistributor (Transact-SQL) | Документация Майкрософт
 ms.custom: ''
-ms.date: 06/09/2020
+ms.date: 03/29/2021
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 35415502-68d0-40f6-993c-180e50004f1e
 author: mashamsft
 ms.author: mathoma
-ms.openlocfilehash: 2e84824fec7a45fcfea24a2d97ced622b2147f34
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: a6a47480afbb16cd37bd260ac20c97d2b532165a
+ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99182808"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937812"
 ---
 # <a name="sp_adddistributor-transact-sql"></a>sp_adddistributor (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -45,8 +45,13 @@ sp_adddistributor [ @distributor= ] 'distributor'
 ## <a name="arguments"></a>Аргументы  
 `[ @distributor = ] 'distributor'` Имя сервера распространения. Аргумент *распространитель* имеет тип **sysname** и не имеет значения по умолчанию. Этот аргумент используется только при настройке удаленного распространителя. Он добавляет записи для свойств распространителя в **базе данных msdb. Таблица Мсдистрибутор** .  
 
+<!--SQL Server 2019 on Linux-->
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
+
 > [!NOTE]
-> Имя сервера можно указать как `<Hostname>,<PortNumber>` . Может потребоваться указать номер порта для подключения, если SQL Server развертывается в Linux или Windows с помощью настраиваемого порта, а служба браузера отключена.
+> Имя сервера можно указать как `<Hostname>,<PortNumber>` . Может потребоваться указать номер порта для подключения, если SQL Server развертывается в Linux или Windows с помощью настраиваемого порта, а служба браузера отключена. Использование настраиваемых номеров портов для удаленного распространителя применимо только к SQL Server 2019.
+
+::: moniker-end
 
 `[ @heartbeat_interval = ] heartbeat_interval` Максимальное количество минут, в течение которых агент может пройти без записи сообщения о ходе выполнения. *heartbeat_interval* имеет **тип int** и значение по умолчанию 10 минут. Для проверки состояния запущенных агентов репликации создается задание агента SQL Server, выполняемое с заданным интервалом.  
   
@@ -60,7 +65,7 @@ sp_adddistributor [ @distributor= ] 'distributor'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  **sp_adddistributor** используется в репликации моментальных снимков, репликации транзакций и репликации слиянием.  
   
 ## <a name="example"></a>Пример  
