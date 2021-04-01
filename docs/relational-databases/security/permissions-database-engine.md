@@ -20,12 +20,12 @@ ms.assetid: f28e3dea-24e6-4a81-877b-02ec4c7e36b9
 author: AndreasWolter
 ms.author: anwolter
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ea48dc9d5b0905ad10d98ccb349054421f296606
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 3f6253702d6ee8d7bc8b341921a6e8141dadd335
+ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104748114"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105937853"
 ---
 # <a name="permissions-database-engine"></a>Разрешения (ядро СУБД)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,10 +35,10 @@ ms.locfileid: "104748114"
 Общее количество разрешений для [!INCLUDE[ssSQLv15_md](../../includes/sssql19-md.md)] составляет 248. [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] предоставляет 254 разрешений. Большинство разрешений применяются ко всем платформам, но некоторые из них — только к определенным. Например, разрешения на уровне сервера нельзя предоставить в [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], а некоторые разрешения действуют только в [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)].
 Новые разрешения вводятся постепенно с новыми выпусками. [!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] предоставляет 238 разрешений. [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] предоставлены 230 разрешений. [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] предоставлены 219 разрешений. [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] предоставлены 214 разрешений. [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] предоставлены 195 разрешений. В разделе [sys.fn_builtin_permissions](../../relational-databases/system-functions/sys-fn-builtin-permissions-transact-sql.md) указаны новые разрешения последних версий.
 
-Если вы знаете, как применять разрешения, примените их на уровне сервера к именам для входа и пользователям разрешений на уровне базы данных, используя инструкции [GRANT](../../t-sql/statements/grant-transact-sql.md), [REVOKE](../../t-sql/statements/revoke-transact-sql.md)и [DENY](../../t-sql/statements/deny-transact-sql.md) . Пример:   
+Если вы знаете, как применять разрешения, примените их на уровне сервера к именам для входа или ролям сервера и пользователям разрешений на уровне базы данных или ролям базы данных, используя инструкции [GRANT](../../t-sql/statements/grant-transact-sql.md), [REVOKE](../../t-sql/statements/revoke-transact-sql.md) и [DENY](../../t-sql/statements/deny-transact-sql.md). Пример:   
 ```sql
-GRANT SELECT ON OBJECT::HumanResources.Employee TO Larry;
-REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
+GRANT SELECT ON SCHEMA::HumanResources TO role_HumanResourcesDept;
+REVOKE SELECT ON SCHEMA::HumanResources TO role_HumanResourcesDept;
 ```   
 Советы по проектированию системы разрешений см. в разделе [Приступая к работе с разрешениями Database Engine](../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md).
   
@@ -409,7 +409,8 @@ REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
 4.  Собрать для полученного **контекста безопасности** все разрешения, которые предоставлены или запрещены в **области разрешения**. Разрешение может задаваться в явном виде в составе инструкций GRANT, GRANT WITH GRANT или DENY (либо быть неявным или покрывающим разрешением GRANT или DENY). Например, из разрешения CONTROL на схему следует разрешение CONTROL на таблицу, а из разрешения CONTROL на таблицу следует разрешение SELECT. Таким образом, если предоставлено разрешение CONTROL на схему, то неявно предоставляется разрешение SELECT на таблицу. Если разрешение CONTROL на таблицу запрещается, то неявно запрещается разрешение SELECT на таблицу.  
   
     > [!NOTE]  
-    >  Инструкция GRANT для разрешения на уровне столбцов имеет приоритет над инструкцией DENY на уровне объектов.  
+    >  Инструкция GRANT для разрешения на уровне столбцов имеет приоритет над инструкцией DENY на уровне объектов.
+    >  Дополнительные сведения о ней см. в разделе [DENY, запрет разрешений на объект &#40;Transact-SQL&#41;](../../t-sql/statements/deny-object-permissions-transact-sql.md).
   
 5.  Определить **требуемое разрешение**.  
   

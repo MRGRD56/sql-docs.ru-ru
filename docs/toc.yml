@@ -91,7 +91,7 @@ items:
                 items:
                   - name: Главный экземпляр
                     href: big-data-cluster/deployment-high-availability.md
-                  - name: Имя узла HDFS и Spark
+                  - name: Узел имени HDFS и Spark
                     href: big-data-cluster/deployment-high-availability-hdfs-spark.md
               - name: Кластеры Kubernetes
                 items:
@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развернуть
+              - name: Развертывание
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md
