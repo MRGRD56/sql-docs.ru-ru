@@ -9,12 +9,12 @@ ms.technology: migration-guide
 ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 5d2a314c89fd162b675435e9d981869a4b1f0518
-ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
+ms.openlocfilehash: 94d4409feba6819e6c40cae496e1f05b72cb6c6c
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105103849"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744450"
 ---
 # <a name="migration-guide-db2-to-sql-server"></a>Руководство по миграции. Db2 — SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -155,7 +155,7 @@ ms.locfileid: "105103849"
 |[Скрипты и артефакты инвентаризации IBM Db2 LUW](https://github.com/Microsoft/DataMigrationTeam/tree/master/IBM%20Db2%20LUW%20Inventory%20Scripts%20and%20Artifacts)|Этот ресурс включает SQL-запрос, который обращается к системным таблицам IBM Db2 LUW версии 11.1 и предоставляет количество объектов по схеме и типу объектов, приблизительную оценку необработанных данных в каждой схеме и размер таблиц в каждой схеме с результатами, хранящимися в формате CSV.|
 |[Инструкции по установке Db2 LUW pureScale в Azure](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Db2%20PureScale%20on%20Azure.pdf)|Это руководство служит отправной точкой для плана реализации Db2. Ваши бизнес-требования будут другими, однако базовый шаблон остается без изменений. Этот шаблон архитектуры также может использоваться для приложений OLAP в Azure.|
 
-Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
+Эти ресурсы разработали специалисты по разработке данных SQL. Основная задача этой команды — включить и ускорить комплексную модернизацию проектов миграции платформы данных на платформу данных Microsoft Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

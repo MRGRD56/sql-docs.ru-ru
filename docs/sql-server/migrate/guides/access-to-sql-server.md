@@ -10,12 +10,12 @@ ms.topic: how-to
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 723fb62f82f61d92aa5dba07dc1af7dd245f20c0
-ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
+ms.openlocfilehash: 2dc96d9f6afe6ca221577ac04ebc5f82f6ea5ade
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105103791"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744517"
 ---
 # <a name="migration-guide-access-to-sql-server"></a>Руководство по миграции. Перенос баз данных Access в SQL Server
 [!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
@@ -172,7 +172,7 @@ ms.locfileid: "105103791"
 | -------------- | --------------- |
 | [Модель и средство оценки рабочей нагрузки данных](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool) | Это средство предоставляет предлагаемые "оптимальные" целевые платформы, готовность к переходу в облако и уровень исправления приложения/базы данных для конкретной рабочей нагрузки. Оно обеспечивает простое и быстрое вычисление и создание отчетов, которое помогает ускорить оценку больших объемов, предоставляя, автоматизируя и унифицируя процесс принятия решения относительно целевой платформы. |
 
-Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
+Эти ресурсы разработали специалисты по разработке данных SQL. Основная задача этой команды — включить и ускорить комплексную модернизацию проектов миграции платформы данных на платформу данных Microsoft Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
