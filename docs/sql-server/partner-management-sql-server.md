@@ -8,12 +8,12 @@ ms.prod: sql
 ms.technology: release-landing
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 0efc4dc49b04467f0caeb882e24900d7479a42cd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3cc1b9306227842fd28f80aa2aba42c81f53ea84
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338062"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054878"
 ---
 # <a name="sql-server-managing-partners"></a>Партнеры по управлению SQL Server
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -22,8 +22,8 @@ ms.locfileid: "100338062"
 ## <a name="our-management-partners"></a>Наши партнеры по управлению
 
 | Партнер | Описание | Ссылки |
-| --- | --- | --- | --- |
-|![idera][1] |**IDERA**<br>SQL Compliance Manager — это комплексное решение аудита, показывающее, кто и когда выполнял конкретные действия на серверах SQL Server, что позволяет обеспечить соответствие нормативным требованиям и требованиям к безопасности данных.<br><br>[Требования к системе][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Веб-сайт][idera_website]<br>[Twitter][idera_twitter]<br>[Видео][idera_youtube] | |
+| --- | --- | --- |
+|![idera][1] |**IDERA**<br>SQL Compliance Manager — это комплексное решение аудита, показывающее, кто и когда выполнял конкретные действия на серверах SQL Server, что позволяет обеспечить соответствие нормативным требованиям и требованиям к безопасности данных.<br><br>[Требования к системе][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Веб-сайт][idera_website]<br>[Twitter][idera_twitter]<br>[Видео][idera_youtube] |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о некоторых других наших партнерах см. в разделах, посвященных [партнерам по обеспечению высокой доступности и аварийного восстановления][hadr_partners], [партнерам по управлению][monitor_partners] и [партнерам по разработке][dev_partners].

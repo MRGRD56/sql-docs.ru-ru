@@ -20,12 +20,12 @@ ms.assetid: 44fadbee-b5fe-40c0-af8a-11a1eecf6cb7
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 23647aad9cbd2e4dbad4437d88a9e44d7a4810e0
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 43c2b37911de66c4002056e8e3e9ddd34843c41c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739634"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054733"
 ---
 # <a name="transaction-locking-and-row-versioning-guide"></a>Руководство по блокировке и управлению версиями строк транзакций
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -521,9 +521,9 @@ GO
   
 <a name="lock_compat_table"></a> Следующая таблица показывает совместимости для большинства из распространенных режимов блокировки.  
   
-||Полученный ранее режим||||||  
+|Полученный ранее режим|**IS**|**S**|**U**|**IX**|**SIX**|**X**|
 |------|---------------------------|------|------|------|------|------|  
-|**Запрашиваемый режим**|**IS**|**S**|**U**|**IX**|**SIX**|**X**|  
+|**Запрашиваемый режим**|
 |**Блокировка с намерением совмещаемого доступа (IS)**|Да|Да|Да|Да|Да|Нет|  
 |**Общий доступ (S)**|Да|Да|Да|Нет|Нет|Нет|  
 |**Обновление (U)**|Да|Да|Нет|Нет|Нет|Нет|  
@@ -564,9 +564,9 @@ GO
   
  Для режимов блокировки диапазона ключей существует матрица совместимости, показывающая, какие виды блокировок совместимы с другими блокировками, полученными для пересекающихся диапазонов и ключей.  
   
-||Полученный ранее режим|||||||  
+|Полученный ранее режим|**S**|**U**|**X**|**RangeS-S**|**RangeS-U**|**RangeI-N**|**RangeX-X**|
 |------|---------------------------|------|------|------|------|------|------|  
-|**Запрашиваемый режим**|**S**|**U**|**X**|**RangeS-S**|**RangeS-U**|**RangeI-N**|**RangeX-X**|  
+|**Запрашиваемый режим**  
 |**Общий доступ (S)**|Да|Да|Нет|Да|Да|Да|Нет|  
 |**Обновление (U)**|Да|Нет|Нет|Да|Нет|Да|Нет|  
 |**Монопольная (Х)**|Нет|Нет|Нет|Нет|Нет|Да|Нет|  

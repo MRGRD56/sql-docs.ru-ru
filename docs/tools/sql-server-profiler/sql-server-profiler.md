@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 05/01/2020
-ms.openlocfilehash: 6208c880dd234a0e6a62f61e6f6ae87567213c12
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 19d31aff6c79badb1f9728325fad4377dee246be
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100354456"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054593"
 ---
 # <a name="sql-server-profiler"></a>Приложение SQL Server Profiler
 
@@ -47,9 +47,8 @@ ms.locfileid: "100354456"
 
 В следующей таблице показаны компоненты, с помощью которых мы рекомендуем выполнять захват и воспроизведение данных трассировки в [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] .
 
-||||
-|-|-|-|
 |**Компонент\целевая рабочая нагрузка**|**Реляционный механизм**|**Службы Analysis Services**|  
+|-|-|-|
 |**Запись трассировки**|Графический пользовательский интерфейс [расширенных событий](../../relational-databases/extended-events/extended-events.md) в среде [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]|[!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]|  
 |**Воспроизведение трассировки**|[Распределенное воспроизведение](../distributed-replay/sql-server-distributed-replay.md)|[!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)]|
 

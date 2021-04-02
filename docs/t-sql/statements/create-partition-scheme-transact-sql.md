@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 5b21c53a-b4f4-4988-89a2-801f512126e4
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 079bd2ee428b706230e8d4283355603a09300d3d
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: aa3279f16685cf3df8979a26de130bd7ff9994bf
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99188561"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054842"
 ---
 # <a name="create-partition-scheme-transact-sql"></a>CREATE PARTITION SCHEME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -101,13 +101,14 @@ AS PARTITION myRangePF1
 TO (test1fg, test2fg, test3fg, test4fg);  
 ```  
   
- Секции таблицы, использующей функцию секционирования `myRangePF1` в столбце секционирования **col1**, будут назначены так, как показано в следующей таблице.  
-  
-||||||  
-|-|-|-|-|-|  
-|**Файловая группа**|`test1fg`|`test2fg`|`test3fg`|`test4fg`|  
-|**Секция**|1|2|3|4|  
-|**Значения**|**col1** <= `1`|**col1** > `1` AND **col1** <= `100`|**col1** > `100` AND **col1** <= `1000`|**col1** > `1000`|  
+Секции таблицы, использующей функцию секционирования `myRangePF1` в столбце секционирования **col1**, будут назначены так, как показано в следующей таблице.  
+
+|Файловая группа|Partition (Раздел)|Значения|
+|-|-|-|
+|`test1fg`|1|**col1** <= `1`|
+|`test2fg`|2|**col1** > `1` AND **col1** <= `100`|
+|`test3fg`|3|**col1** > `100` AND **col1** <= `1000`|
+|`test4fg`|4|**col1** > `1000`|
   
 ### <a name="b-creating-a-partition-scheme-that-maps-multiple-partitions-to-the-same-filegroup"></a>Б. Создание схемы секционирования, которая сопоставляет несколько секций с одной файловой группой  
  Если все секции сопоставляются с одной и той же файловой группой, используйте ключевое слово ALL. Но если сопоставление нескольких секций, но не всех, выполняется к одной файловой группе, то имя файловой группы должно быть повторено, как показано в следующем примере.  
@@ -123,12 +124,13 @@ TO ( test1fg, test1fg, test1fg, test2fg );
   
  Секции таблицы, использующей функцию секционирования `myRangePF2` в столбце секционирования **col1**, будут назначены так, как показано в следующей таблице.  
   
-||||||  
-|-|-|-|-|-|  
-|**Файловая группа**|`test1fg`|`test1fg`|`test1fg`|`test2fg`|  
-|**Секция**|1|2|3|4|  
-|**Значения**|**col1** <= `1`|**col1** > 1 AND **col1** <= `100`|**col1** > `100` AND **col1** <= `1000`|**col1** > `1000`|  
-  
+|Файловая группа|Partition (Раздел)|Значения|
+|-|-|-|
+|`test1fg`|1|**col1** <= `1`|
+|`test1fg`|2|**col1** > `1` AND **col1** <= `100`|
+|`test1fg`|3|**col1** > `100` AND **col1** <= `1000`|
+|`test2fg`|4|**col1** > `1000`|
+
 ### <a name="c-creating-a-partition-scheme-that-maps-all-partitions-to-the-same-filegroup"></a>В. Создание схемы секционирования, сопоставляющей все секции с одной файловой группой  
  В следующем примере создается такая же функция секционирования, что и в предыдущих примерах, и далее создается схема секционирования, которая сопоставляет все секции с одной и той же файловой группой.  
   

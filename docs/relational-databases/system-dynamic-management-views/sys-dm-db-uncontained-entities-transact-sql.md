@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: f417efd4-8c71-4f81-bc9c-af13bb4b88ad
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 4bf535b136c8de41a54a6de6c75d0e22794a3448
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 6d3fd46894bcfe446b4fcaa741ad08bb2a5fab7c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99204784"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054760"
 ---
 # <a name="sysdm_db_uncontained_entities-transact-sql"></a>sys.dm_db_uncontained_entities (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,11 +33,10 @@ ms.locfileid: "99204784"
   
  Если модуль пересекает границу базы данных несколько раз, то в отчете указывается только первое пересечение границы.  
   
-||||  
+|**Имя столбца**|**Тип**|**Описание**|  
 |-|-|-|  
-|**Имя столбца**|**Type**|**Описание**|  
 |*class*|**int**|1 = объект или столбец (включая модули, XP, представления, синонимы и таблицы).<br /><br /> 4 = Участник базы данных<br /><br /> 5 = Сборка<br /><br /> 6 = Тип<br /><br /> 7 = Индекс (полнотекстовый индекс)<br /><br /> 12 = Триггер DDL базы данных<br /><br /> 19 = Маршрут<br /><br /> 30 = Спецификация аудита|  
-|*class_desc*|**nvarchar(120)**|Описание класса сущности. Один из следующих элементов для сопоставления с классом:<br /><br /> **OBJECT_OR_COLUMN**<br /><br /> **DATABASE_PRINCIPAL**<br /><br /> **СБОРОК**<br /><br /> **TYPE**<br /><br /> **INDEX**<br /><br /> **DATABASE_DDL_TRIGGER**<br /><br /> **НАПРАВЛЕНЫ**<br /><br /> **AUDIT_SPECIFICATION**|  
+|*class_desc*|**nvarchar(120)**|Описание класса сущности. Один из следующих элементов для сопоставления с классом:<br /><br /> **OBJECT_OR_COLUMN**<br /><br /> **DATABASE_PRINCIPAL**<br /><br /> **СБОРОК**<br /><br /> **TYPE**<br /><br /> **INDEX**<br /><br /> **DATABASE_DDL_TRIGGER**<br /><br /> **ROUTE**<br /><br /> **AUDIT_SPECIFICATION**|  
 |*major_id*|**int**|Идентификатор сущности.<br /><br /> Если *класс* = 1, то object_id<br /><br /> Если *класс* = 4, то sys. database_principals. principal_id.<br /><br /> Если *класс* = 5, то sys.assemblies.assembly_id.<br /><br /> Если *класс* = 6, то sys.types.user_type_id.<br /><br /> Если *Class* = 7, то sys.indexes.index_id.<br /><br /> Если *Class* = 12, то sys.triggers.object_id.<br /><br /> Если *класс* = 19, то sys.routes.route_id.<br /><br /> Если *Class* = 30, то sys. database_audit_specifications.database_specification_id database_audit_specifications.|  
 |*statement_line_number*|**int**|Если класс является модулем, возвращает номер строки, в которой используется неавтономная инструкция.  В противном случае — значение NULL.|  
 |*statement_ offset_begin*|**int**|Если класс является модулем, он указывает (в байтах, начиная с 0) положение, откуда начинается неавтономная инструкция. В противном случае возвращается значение null.|  
@@ -46,7 +45,7 @@ ms.locfileid: "99204784"
 |*имя feature_*|**nvarchar(256)**|Возвращает внешнее имя объекта.|  
 |*feature_type_name*|**nvarchar(256)**|Возвращает тип функции.|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Комментарии  
  sys.dm_db_uncontained_entities показывает эти сущности, которые потенциально могут пересекать границу базы данных. Будут возвращены все сущности пользователей, которые могут использовать объекты за пределами базы данных.  
   
  В отчете указываются следующие типы функций.  

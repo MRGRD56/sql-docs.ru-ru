@@ -21,12 +21,12 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 020cfa1e2f1f60064f21063e0766213ab44aaa25
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: 6345892c246c0ffc693a28e67833068c65243672
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464847"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054724"
 ---
 # <a name="sysdm_db_column_store_row_group_physical_stats-transact-sql"></a>sys.dm_db_column_store_row_group_physical_stats (Transact-SQL)
 
@@ -55,8 +55,8 @@ ms.locfileid: "102464847"
 |**transition_to_compressed_state_desc**|nvarchar(60)| 1 — NOT_APPLICABLE — операция не применяется к deltastore. Или группы строк был сжат до обновления до, в этом [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] случае журнал не сохраняется.<br /><br /> 2 — INDEX_BUILD — при создании индекса или перестроении индекса сжат группы строк.<br /><br /> 3 — TUPLE_MOVER — компонент перемещения кортежей, работающий в фоновом режиме, сжимает группы строк. Перемещение кортежей происходит после того, как состояние группы строк изменится с OPEN на CLOSED.<br /><br /> 4 — REORG_NORMAL — операция реорганизации, ALTER INDEX... REORG, перемещен закрытый группы строк из deltastore в columnstore. Это произошло до того, как в процессе перемещения по кортежам пришло время на перемещение группы строк.<br /><br /> 5 — REORG_FORCED — этот группы строк был открыт в deltastore и был принудительно передан в columnstore до того, как он имел полное число строк.<br /><br /> 6. BULKLOAD. операция массовой загрузки сжимает группы строк напрямую без использования deltastore.<br /><br /> 7 — MERGE — операция слияния объединяет один или несколько групп строк в этот группы строк, а затем выполняет сжатие columnstore.|  
 |**has_vertipaq_optimization**|bit|Оптимизация VertiPaq улучшает сжатие columnstore путем изменения порядка строк в группы строк для достижения более высокого сжатия. В большинстве случаев такая оптимизация выполняется автоматически. В двух случаях оптимизация VertiPaq не используется:<br/>  а. Если Дельта-группы строк перемещается в columnstore и имеется один или несколько некластеризованных индексов в индексе columnstore, то оптимизация VertiPaq пропускается для сворачивания изменений в индексе сопоставления.<br/> b. для индексов columnstore в таблицах, оптимизированных для памяти. <br /><br /> 0 = нет<br /><br /> 1 = да|  
 |**поколения**|BIGINT|Создание группы строк, связанной с этой группой строк.|  
-|**created_time**|datetime2|Время создания группы строк.<br /><br /> NULL — для индекса columnstore в таблице в памяти.|  
-|**closed_time**|datetime2|Время, когда группы строк был закрыт.<br /><br /> NULL — для индекса columnstore в таблице в памяти.|  
+|**created_time**|datetime2|Время создания группы строк.<br /><br /> NULL — для индекса columnstore в таблице в памяти.| 
+|**closed_time**|datetime2|Время, когда группы строк был закрыт.<br /><br /> NULL — для индекса columnstore в таблице в памяти.| 
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="results"></a>Результаты  
@@ -87,7 +87,7 @@ JOIN sys.dm_db_column_store_row_group_physical_stats AS CSRowGroups
 ORDER BY object_name(i.object_id), i.name, row_group_id;  
 ```  
   
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также:  
  [Представления каталога объектов (Transact-SQL)](../../relational-databases/system-catalog-views/object-catalog-views-transact-sql.md)   
  [Представления каталога (Transact-SQL)](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)      
  [Архитектура индексов columnstore](../../relational-databases/sql-server-index-design-guide.md#columnstore_index)         

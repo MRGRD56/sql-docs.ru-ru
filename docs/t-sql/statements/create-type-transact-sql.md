@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: 2202236b-e09f-40a1-bbc7-b8cff7488905
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 2063543c497070bd8366cae9a8691b3701fc4330
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: be33b74a13fc1d579fd4ec8a352a39777f045134
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99177910"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054819"
 ---
 # <a name="create-type-transact-sql"></a>CREATE TYPE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -169,24 +169,38 @@ column_name <data_type>
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>Аргументы
- *schema_name*  
- Имя схемы, к которой относится псевдоним типа данных или определяемый пользователем тип данных.  
-  
- *type_name*  
- Имя псевдонима типа данных или определяемого пользователем типа данных. Имена типов должны соответствовать требованиям к именам [идентификаторов](../../relational-databases/databases/database-identifiers.md).  
-  
- *base_type*  
- Предоставленный [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] тип данных, на котором основан тип данных псевдонима. Аргумент *base_type* имеет тип **sysname**, не имеет значения по умолчанию и может принимать одно из следующих значений:  
-  
-|||||  
-|-|-|-|-|  
-|**bigint**|**binary(** *n* **)**|**bit**|**char(** *n* **)**|  
-|**date**|**datetime**|**datetime2**|**datetimeoffset**|  
-|**decimal**|**float**|**image**|**int**|  
-|**money**|**nchar(** *n* **)**|**ntext**|**numeric**|  
-|**nvarchar(** *n* &#124; **max)**|**real**|**smalldatetime**|**smallint**|  
-|**smallmoney**|**sql_variant**|**text**|**time**|  
-|**tinyint**|**uniqueidentifier**|**varbinary(** *n* &#124; **max)**|**varchar(** *n* &#124; **max)**|  
+*schema_name*  
+Имя схемы, к которой относится псевдоним типа данных или определяемый пользователем тип данных.  
+
+*type_name*  
+Имя псевдонима типа данных или определяемого пользователем типа данных. Имена типов должны соответствовать требованиям к именам [идентификаторов](../../relational-databases/databases/database-identifiers.md).  
+
+*base_type*  
+Предоставленный [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] тип данных, на котором основан тип данных псевдонима. Аргумент *base_type* имеет тип **sysname**, не имеет значения по умолчанию и может принимать одно из следующих значений:  
+
+:::row:::
+   :::column span="":::
+      **bigint**<br>            **binary(** *n* **)**<br>            **bit**<br>            **char(** *n* **)**
+   :::column-end:::
+   :::column span="":::
+      **date**<br>            **datetime**<br>            **datetime2**<br>            **datetimeoffset**
+   :::column-end:::
+   :::column span="":::
+      **decimal**<br>            **float**<br>            **image**<br>            **int**
+   :::column-end:::
+   :::column span="":::
+      **money**<br>            **nchar(** *n* **)**<br>            **ntext**<br>            **numeric**
+   :::column-end:::
+   :::column span="":::
+      **nvarchar(** *n* &#124; **max)**<br>            **real**<br>            **smalldatetime**<br>            **smallint**
+   :::column-end:::
+   :::column span="":::
+      **smallmoney**<br>            **sql_variant**<br>            **text**<br>            **time**
+   :::column-end:::
+   :::column span="":::
+      **tinyint**<br>            **uniqueidentifier**<br>            **varbinary(** *n* &#124; **max)**<br>            **varchar(** *n* &#124; **max)**
+   :::column-end:::
+:::row-end:::
   
  Аргумент *base_type* может быть также синонимом любого типа данных, сопоставляемого с одним из этих системных типов данных.  
   

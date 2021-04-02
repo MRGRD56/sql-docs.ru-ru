@@ -18,12 +18,12 @@ ms.assetid: 58911798-1d60-4f28-87ab-2def2bfc3de7
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: = azuresqldb-current
-ms.openlocfilehash: f10f318ebba5627957f1555b5979e8993f6f5e02
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: af2de4a8fdb5aadc2b11b2057239b27749384e9e
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98093908"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106177105"
 ---
 # <a name="sysgeo_replication_links-azure-sql-database"></a>sys.geo_replication_links (база данных SQL Azure)
 
@@ -45,7 +45,8 @@ ms.locfileid: "98093908"
 |role_desc|**nvarchar(256)**|PRIMARY<br /><br /> SECONDARY|  
 |secondary_allow_connections|**tinyint**|Вторичный тип, один из следующих:<br /><br /> 0 = Нет. База данных-получатель недоступна до отработки отказа.<br /><br /> 1 = только для чтения. База данных-получатель доступна только для клиентских подключений с ApplicationIntent = ReadOnly.<br /><br /> 2= все. База данных-получатель доступна любому клиентскому подключению.|  
 |secondary_allow_connections _desc|**nvarchar(256)**|Нет<br /><br /> Все<br /><br /> Только для чтения|  
-  
+|percent_copied|**int**|Ход заполнения в процентах|
+
 ## <a name="permissions"></a>Разрешения
 
 Это представление доступно в базе данных **master** только для входа субъекта уровня сервера.  

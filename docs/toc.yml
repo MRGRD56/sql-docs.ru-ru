@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развертывание
+              - name: Развернуть
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md
@@ -395,7 +395,7 @@ items:
                 href: big-data-cluster/notebooks-tutorial-spark.md
               - name: Список записных книжек для определенных операций
                 href: big-data-cluster/cluster-manage-notebooks.md
-          - name: Монитор
+          - name: Azure Monitor
             items:
               - name: Выполнение мониторинга с помощью Azure Data Studio
                 href: big-data-cluster/cluster-monitor-ads.md

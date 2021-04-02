@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 2be0cf8d-6dbe-443a-abbd-036249922205
 ms.author: alexiva
-ms.openlocfilehash: 4bae03f2283dae9256c89f2e89ae190e30bee0fb
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 4732f2ca968788cb59efd14d9410929f99d9423f
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186434"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980901"
 ---
 # <a name="whats-new-in-ssma-for-sap-ase-sybasetosql"></a>Новые возможности SSMA для SAP ASE (SybaseToSQL)
 
 В этой статье перечислены Помощник по миграции SQL Server (SSMA) для SAP ASE (ранее SSMA для Sybase) изменений в каждом выпуске.
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+8.18 версия SSMA для SAP ASE содержит следующие изменения:
+
+* Незначительные улучшения производительности и исправления ошибок
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

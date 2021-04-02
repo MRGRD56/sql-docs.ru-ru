@@ -21,12 +21,12 @@ ms.assetid: 012aab95-8888-4f35-9ea3-b5dff6e3f60f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 35439ff7ac5806225969378c88eaa6fde92df896
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 449c4d2ca5a101d17c84b414ffc119dbdb0fa476
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101839523"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054737"
 ---
 # <a name="sysdm_os_buffer_descriptors-transact-sql"></a>sys.dm_os_buffer_descriptors (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -49,9 +49,9 @@ ms.locfileid: "101839523"
 |free_space_in_bytes|**int**|Объем доступного свободного места, в байтах, на странице. Допускает значение NULL.|  
 |is_modified|**bit**|1 = страница была изменена после того, как она была считана с диска. Допускает значение NULL.|  
 |numa_node|**int**|Узел с неоднородным доступом к памяти для буфера. Допускает значение NULL.|  
-|read_microsec|**bigint**|Фактическое время (в миллисекундах), необходимое для считывания страницы в буфер. Счетчик сбрасывается, если буфер используется повторно. Допускает значение NULL.|  
-|is_in_bpool_extension|**bit**|1 = страница находится в расширении буферного пула. Допускает значение NULL.|  
-|pdw_node_id|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Идентификатор узла, на котором находится данное распределение.|  
+|read_microsec|**bigint**|Фактическое время (в миллисекундах), необходимое для считывания страницы в буфер. Счетчик сбрасывается, если буфер используется повторно. Допускает значение NULL.| 
+|is_in_bpool_extension|**bit**|1 = страница находится в расширении буферного пула. Допускает значение NULL.| 
+|pdw_node_id|**int**|**Применимо к**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] , [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> Идентификатор узла, на котором находится данное распределение.| 
   
 ## <a name="permissions"></a>Разрешения  
 
@@ -61,7 +61,7 @@ ms.locfileid: "101839523"
 ## <a name="remarks"></a>Комментарии  
  sys.dm_os_buffer_descriptors возвращает страницы, используемые базой данных ресурсов. sys.dm_os_buffer_descriptors не возвращает сведения о свободных или украденных страницах или о страницах, на которых произошли ошибки при их чтении.  
   
-|От|Кому|С|Relationship|  
+|Исходный тип|Кому|Включено|Связь|  
 |----------|--------|--------|------------------|  
 |sys.dm_os_buffer_descriptors|sys.databases|database_id|«многие к одному»|  
 |sys.dm_os_buffer_descriptors|\<userdb>.sys.allocation_units|allocation_unit_id|«многие к одному»|  

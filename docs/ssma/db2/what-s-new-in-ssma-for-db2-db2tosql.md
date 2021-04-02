@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 1cc38f85-3caa-42d0-8c76-a380c1d15c67
 ms.author: alexiva
-ms.openlocfilehash: a12bb61546ed042a98a3cae521572ef55723cfdf
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: b6dbdcc6bf9e951da5f4991faedd98791409262f
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186511"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980791"
 ---
 # <a name="whats-new-in-ssma-for-db2-db2tosql"></a>Новые возможности SSMA для DB2 (DB2ToSQL)
 
 В этой статье перечислены Помощник по миграции SQL Server (SSMA) для изменений DB2 в каждом выпуске.
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+Выпуск 8.18 версии SSMA для DB2 содержит следующие изменения:
+
+* Добавление поддержки столбцов идентификаторов
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

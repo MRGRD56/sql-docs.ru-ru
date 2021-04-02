@@ -65,7 +65,7 @@ sp_adddistributor [ @distributor= ] 'distributor'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  **sp_adddistributor** используется в репликации моментальных снимков, репликации транзакций и репликации слиянием.  
   
 ## <a name="example"></a>Пример  

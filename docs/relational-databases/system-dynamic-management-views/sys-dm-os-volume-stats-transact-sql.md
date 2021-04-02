@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: fa1c58ad-8487-42ad-956c-983f2229025f
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: a34af15094cdd70833c16b2e3b3bfa1ce0ca4fca
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: feec80838dbb911b4cc551ba2c260e9d8eea9fd3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99235963"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054607"
 ---
 # <a name="sysdm_os_volume_stats-transact-sql"></a>sys.dm_os_volume_stats (Transact-SQL)
 [!INCLUDE[tsql-appliesto-2008R2SP1-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-2008R2sp1-xxxx-xxxx-xxx-md.md)]
@@ -48,9 +48,8 @@ sys.dm_os_volume_stats (database_id, file_id)
   
 ## <a name="table-returned"></a>Возвращаемая таблица  
   
-||||  
-|-|-|-|  
 |**Столбец**|**Data type**|**Описание**|  
+|-|-|-|  
 |**database_id**|**int**|Идентификатор базы данных. Не может иметь значение NULL.|  
 |**file_id**|**int**|Идентификатор файла. Не может иметь значение NULL.|  
 |**volume_mount_point**|**nvarchar(512)**|Точка подключения, с которой ассоциирован корень тома. Может возвращать пустую строку. Возвращает значение NULL в операционной системе Linux.|  
@@ -64,7 +63,7 @@ sys.dm_os_volume_stats (database_id, file_id)
 |**supports_sparse_files**|**tinyint**|Указывает, поддерживает ли том разреженные файлы.  Не может иметь значение NULL в Windows и возвращает значение NULL в операционной системе Linux.|  
 |**is_read_only**|**tinyint**|Указывает, помечен ли том как доступный только для чтения. Не может иметь значение NULL.|  
 |**is_compressed**|**tinyint**|Указывает, сжат ли том в настоящее время. Не может иметь значение NULL в Windows и возвращает значение NULL в операционной системе Linux.|  
-|**incurs_seek_penalty**|**tinyint**|Указывает тип хранилища, поддерживающего этот том. Доступны следующие значения:<br /><br />0: не выполнять поиск на этом томе, как правило, если устройство хранения PMM или SSD<br /><br />1: Поиск штрафов на этом томе, обычно если устройство хранения является HDD<br /><br />2: тип хранилища не может быть определен, если том расположен по UNC-пути или подключенным общим папкам<br /><br />NULL: тип хранилища не может быть определен в операционной системе Linux<br /><br />**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] )|  
+|**incurs_seek_penalty**|**tinyint**|Указывает тип хранилища, поддерживающего этот том. Возможны следующие значения:<br /><br />0: не выполнять поиск на этом томе, как правило, если устройство хранения PMM или SSD<br /><br />1: Поиск штрафов на этом томе, обычно если устройство хранения является HDD<br /><br />2: тип хранилища не может быть определен, если том расположен по UNC-пути или подключенным общим папкам<br /><br />NULL: тип хранилища не может быть определен в операционной системе Linux<br /><br />**Применимо к:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] )|  
   
 ## <a name="security"></a>Безопасность  
   

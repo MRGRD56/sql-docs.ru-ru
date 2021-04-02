@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
 monikerRange: = azuresqldb-mi-current || >= sql-server-2016
-ms.openlocfilehash: a09db511bc9ececa5b5929f12123fda60162b36f
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 430c1cc1a5be2b264393b39d15ab05cf8a7b11b4
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99251300"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633210"
 ---
 # <a name="write-the-job-status-to-the-windows-application-log"></a>Write the Job Status to the Windows Application Log
 
@@ -63,7 +63,7 @@ ms.locfileid: "99251300"
   
     -   **При ошибке задания** для регистрации завершений задания с ошибками.  
   
-    -   **При завершении задания** для регистрации любых состояний завершения задания.  
+    -   **При завершении задания** для регистрации любого состояния завершения задания.  
   
 ## <a name="using-sql-server-management-objects"></a><a name="SMO"></a>Использование управляющих объектов SQL Server  
 **Запись данных о состоянии задания в журнал приложений Windows**  

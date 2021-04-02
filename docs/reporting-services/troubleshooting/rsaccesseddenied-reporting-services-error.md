@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 2f76b1bf-96a2-4755-b76b-84e933220efc
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: ab443e48037add1cc507b71fe87fe7be7bcb43f9
-ms.sourcegitcommit: b2cc3f213042813af803ced37901c5c9d8016c24
+ms.openlocfilehash: 20d213cac8f3d3413266dc410b0d66879e771619
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81487251"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054187"
 ---
 # <a name="rsaccesseddenied---reporting-services-error"></a>rsAccessedDenied — ошибка служб Reporting Services
   Ошибка службы [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]**rsAccessedDenied** происходит, когда у пользователя нет разрешения на выполнение действия. Например, у пользователя нет назначения роли, позволяющей открывать отчет, или браузер был открыт без необходимых разрешений.  
@@ -33,7 +33,7 @@ ms.locfileid: "81487251"
   
 ## <a name="details"></a>Сведения  
   
-|||  
+|Подробный сведения|Значение|  
 |-|-|  
 |**Название продукта**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |**Идентификатор события**|rsAccessedDenied|  

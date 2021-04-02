@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: 3db6a569-e942-4321-a0dd-c4ab002087c8
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 8e4d4441faac8600bcf8fd0d2d8aed333fbf8f6b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6acc37f3976ed9a728aae899eb6178dc29d4de54
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352610"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633379"
 ---
 # <a name="some-availability-replicas-are-not-synchronizing-data"></a>Некоторые реплики доступности не выполняют синхронизацию данных
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние синхронизации данных реплик доступности|  
-|**Проблема**|Некоторые реплики доступности не выполняют синхронизацию данных.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|группа доступности|  
+- **Имя политики** Состояние синхронизации данных реплик доступности
+- **Проблема** Некоторые реплики доступности не выполняют синхронизацию данных.
+- **Категория** **Предупреждение**
+- **Аспект** Группа доступности  
   
-## <a name="description"></a>Description  
+## <a name="description"></a>Описание  
  Эта политика сворачивает состояние синхронизации данных всех реплик доступности в группе доступности и проверяет рабочее состояние синхронизации у всех реплик доступности. Политика находится в нерабочем состоянии, если у какой-либо реплики доступности при синхронизации данных имеется состояние NOT SYNCRONIZING.  
   
  Политика находится в рабочем состоянии, если ни у одной из реплик доступности при синхронизации данных не имеется состояние NOT SYNCRONIZING.  

@@ -21,21 +21,20 @@ ms.assetid: 997c3278-3630-47f6-ada3-190b6c16ce0e
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6bf5af9a39fe646b23c51298378140d45a41526e
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: f1779f8b039fac4763623704f9e8ea1d1529a49d
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837745"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054376"
 ---
 # <a name="sysdm_db_fts_index_physical_stats-transact-sql"></a>sys.dm_db_fts_index_physical_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
 
   Возвращает по одной строке для каждого индекса полнотекстового или семантического поиска в каждой таблице, имеющей связанный полнотекстовый или семантический индекс.  
   
-||||  
-|-|-|-|  
 |**Имя столбца**|**Тип**|**Описание**|  
+|-|-|-|  
 |**object_id**|INT|Идентификатор объекта таблицы, содержащего индекс.|  
 |**fulltext_index_page_count**|**bigint**|Логический размер извлечения, определяемый количеством страниц индекса.|  
 |**keyphrase_index_page_count**|**bigint**|Логический размер извлечения, определяемый количеством страниц индекса.|  

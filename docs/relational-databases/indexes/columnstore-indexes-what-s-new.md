@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5db96c7a21d5aef96615823ee275486e6f921686
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: d79a2b7617d195e8140945c23c5bdb7284cb0077
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104744364"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054685"
 ---
 # <a name="columnstore-indexes---what39s-new"></a>Новые возможности индексов columnstore
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "104744364"
 |Определение некластеризованного индекса columnstore поддерживает использование отфильтрованных условий|||да|да|да|да|да|  
 |Параметр задержки сжатия для индексов columnstore в инструкциях `CREATE TABLE` и `ALTER TABLE`|||да|да|да|да|да|
 |Индекс columnstore может содержать нематериализованный вычисляемый столбец||||да|да|||   
-|Поддержка фонового слияния для переноса кортежей||||||да|да|да|
+|Поддержка фонового слияния для переноса кортежей|||||да|да|да|
   
  <sup>1</sup> Чтобы создать некластеризованный индекс columnstore, доступный только для чтения, сохраните индекс в файловой группе только для чтения.  
  

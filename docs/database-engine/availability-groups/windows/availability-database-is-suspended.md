@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: 6baee70f-848c-4e86-b20d-78875c0f82cb
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 36e9640011bb273fee05a1eefa899e10bb595eff
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 09b8b9094e8ed3d860f342b30ace41c25826894b
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340914"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633388"
 ---
 # <a name="availability-database-is-suspended-for-an-availability-group"></a>Приостановка базы данных доступности для группы доступности
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние приостановки базы данных доступности|  
-|**Проблема**|База данных доступности приостановлена.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|База данных доступности|  
+- **Имя политики** Состояние приостановки базы данных доступности
+- **Проблема** База данных доступности приостановлена.
+- **Категория** **Предупреждение**
+- **Аспект** База данных доступности  
   
-## <a name="description"></a>Description  
+## <a name="description"></a>Описание  
  Эта политика проверяет состояние перемещения данных базы данных-получателя (которая также называется «реплика базы данных-получателя»). Эта политика находится в нерабочем состоянии, если перемещение данных приостановлено. В остальном политика находится в рабочем состоянии.  
   
 ## <a name="possible-causes"></a>Возможные причины  

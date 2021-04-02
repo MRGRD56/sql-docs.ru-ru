@@ -2,7 +2,7 @@
 title: Встраивание скалярных пользовательских функций в Microsoft SQL Server | Документация Майкрософт
 description: Функция встраивания скалярных пользовательских функций для повышения производительности запросов, вызывающих скалярные пользовательские функции, в SQL Server (2019 и более поздних версиях).
 ms.custom: ''
-ms.date: 08/04/2020
+ms.date: 03/30/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -14,13 +14,13 @@ helpviewer_keywords: ''
 ms.assetid: ''
 author: s-r-k
 ms.author: karam
-monikerRange: = azuresqldb-current || >= sql-server-ver15
-ms.openlocfilehash: 5e2dd566b0c5842636619c8331bfc88378dc4f84
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 57c9c28cafeb7e55183a3d95194480c62f279e11
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100350863"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981220"
 ---
 # <a name="scalar-udf-inlining"></a>Встраивание скалярных пользовательских функций
 

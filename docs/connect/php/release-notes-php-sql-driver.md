@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 91cca3d2-ba99-4a6d-b0de-beb9699cb3f8
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: c6960778fcbd7eb707b50e18ce4a0c70e477ff28
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: a225c2fae4b20ad75666415e4315ec12c7f7aab9
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575241"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106176963"
 ---
 # <a name="release-notes-for-the-microsoft-drivers-for-php-for-sql-server"></a>Заметки о выпуске драйверов Майкрософт для PHP для SQL Server
 
@@ -70,6 +70,8 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 
 <sup>1</sup> В этом выпуске требуется драйвер ODBC Driver 17.4.2 или более поздней версии. В противном случае появится предупреждение о невозможности задать атрибут. При использовании более старой версии драйвера ODBC это предупреждение можно отключить. При использовании SQLSRV обратитесь к статье [Практическое руководство. Настройка обработки ошибок и предупреждений с помощью драйвера SQLSRV](./how-to-configure-error-and-warning-handling-using-the-sqlsrv-driver.md). При использовании PDO_SQLSRV предупреждения по умолчанию скрываются, но могут записываться в журнал. Дополнительные сведения см. в статье [Ведение журнала](./logging-activity.md).
 
+## <a name="previous-releases"></a>Предыдущие выпуски
+
 ## <a name="581"></a>5.8.1
 
 Этот выпуск применим только к Linux и macOS.
@@ -119,8 +121,6 @@ Thanks a lot.  2019-03-28  (DevO= 1467988)
 | &nbsp; | &nbsp; |
 
 <sup>1</sup> Поддержка Alpine Linux является экспериментальной для версии 5.8.
-
-## <a name="previous-releases"></a>Предыдущие выпуски
 
 ## <a name="561"></a>5.6.1
 

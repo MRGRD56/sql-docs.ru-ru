@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: matteot, drskwier
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 13b32a62791aaa932311223f4f648d8006eb33e7
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 46eb3f29ce21aada716458d554dd329b1bd10dff
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101838049"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981190"
 ---
 # <a name="encode-and-decode-sql-server-identifiers"></a>Шифрование и расшифровка идентификаторов SQL Server
 
@@ -32,9 +32,8 @@ ms.locfileid: "101838049"
 
 Командлеты **Encode-Sqlname** и **Decode-Sqlname** обеспечивают только кодирование или декодирование символов, допустимых в идентификаторах SQL Server с разделителями, но не поддерживаемых в путях PowerShell. Символы, кодируемые командлетом **Encode-SqlName** и декодируемые командлетом **Decode-SqlName**, перечислены ниже.
 
-|||||||||||||
-|-|-|-|-|-|-|-|-|-|-|-|-|
 |**Символ**|\ |/|:|%|\<|>|*|?|[|]|&#124;|  
+|-|-|-|-|-|-|-|-|-|-|-|-|
 |**Шестнадцатеричная кодировка**|%5C|%2F|%3A|%25|%3C|%3E|%2A|%3F|%5B|%5D|%7C|
 
 ## <a name="encoding-an-identifier"></a>кодирование идентификатора  

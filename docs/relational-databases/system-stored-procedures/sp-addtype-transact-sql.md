@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: ed72cd8e-5ff7-4084-8458-2d8ed279d817
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: ece3c9bb2d8952738f1f66c59b9cd49563ad00a6
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 60a19cb39d2d0d8380001755b30b3d5729a66421
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99198387"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054553"
 ---
 # <a name="sp_addtype-transact-sql"></a>sp_addtype (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -49,17 +49,18 @@ sp_addtype [ @typename = ] type,
   
 `[ @phystype = ] system_data_type` Физический (или [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ) тип данных, на котором основан псевдоним типа данных.*аргумент system_data_type* имеет тип **sysname**, не имеет значения по умолчанию и может принимать одно из следующих значений:  
   
-||||  
-|-|-|-|  
-|**bigint**|**binary(n)**|**bit**|  
-|**char(n)**|**datetime**|**decimal**|  
-|**float**|**image**|**int**|  
-|**money**|**nchar(n)**|**ntext**|  
-|**numeric**|**nvarchar(n)**|**real**|  
-|**smalldatetime**|**smallint**|**smallmoney**|  
-|**sql_variant**|**text**|**tinyint**|  
-|**uniqueidentifier**|**varbinary(n)**|**varchar(n)**|  
-  
+:::row:::
+   :::column span="":::
+      **bigint**<br>      **char(n)**<br>      **float**<br>      **money**<br>      **numeric**<br>      **smalldatetime**<br>      **sql_variant**<br>      **uniqueidentifier**
+   :::column-end:::
+   :::column span="":::
+      **binary(n)**<br>      **datetime**<br>      **image**<br>      **nchar(n)**<br>      **nvarchar(n)**<br>      **smallint**<br>      **text**<br>      **varbinary(n)**
+   :::column-end:::
+   :::column span="":::
+      **bit**<br>      **decimal**<br>      **int**<br>      **ntext**<br>      **real**<br>      **smallmoney**<br>      **tinyint**<br>      **varchar(n)**
+    :::column-end:::
+:::row-end:::
+ 
  Кавычки необходимы для всех параметров, в которых содержатся начальные пробелы или знаки пунктуации. Дополнительные сведения о доступных типах данных см. в разделе [типы данных &#40;&#41;Transact-SQL ](../../t-sql/data-types/data-types-transact-sql.md).  
   
  *n*  

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: cb98d571-d1eb-467b-91f7-a6e091009672
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 39a95fbdfa80cb76e4b73f912ea38de1bc567906
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: c6aea495c249317b582a9ec0be543a6209261ab3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99193096"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054557"
 ---
 # <a name="sp_removedbreplication-transact-sql"></a>sp_removedbreplication (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -46,7 +46,7 @@ sp_removedbreplication [ [ @dbname = ] 'dbname' ]
   
 `[ @type = ] type` Тип репликации, для которого удаляются объекты базы данных. *Type имеет тип* **nvarchar (5)** и может принимать одно из следующих значений.  
   
-|||  
+|Значение|Описание|  
 |-|-|  
 |**Tran**|Удаляет публикуемые объекты репликации транзакций.|  
 |**AutoMerge**|Удаляет публикуемые объекты репликации слиянием.|  
@@ -55,7 +55,7 @@ sp_removedbreplication [ [ @dbname = ] 'dbname' ]
 ## <a name="return-code-values"></a>Значения кода возврата  
  **0** (успешное завершение) или **1** (сбой)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Комментарии  
  **sp_removedbreplication** используется во всех типах репликации.  
   
  **sp_removedbreplication** удобно использовать при восстановлении реплицированной базы данных, не требующей восстановления объектов репликации.  

@@ -15,26 +15,24 @@ ms.assetid: 4fd003e7-808e-4b0e-b28a-47d9f2616f06
 author: cawrites
 ms.author: chadam
 manager: erikre
-ms.openlocfilehash: fc78c3fc25d7dcf0222494863ef8c7db20527f97
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 87129dd95205ef5ae70acc2a4afca9afc00f6929
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344630"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633370"
 ---
 # <a name="data-synchronization-state-of-availability-database-is-not-healthy-for-an-always-on-availability-group"></a>Состояние синхронизации данных базы данных доступности для группы доступности Always On не в рабочем состоянии
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние синхронизации базы данных доступности|  
-|**Проблема**|Состояние синхронизации данных некоторых баз данных доступности не является рабочим.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|База данных доступности|  
+- **Имя политики** Состояние синхронизации базы данных доступности
+- **Проблема** Состояние синхронизации данных базы данных доступности не находится в рабочем состоянии.
+- **Категория** **Предупреждение**
+- **Аспект** База данных доступности  
   
-## <a name="description"></a>Description  
+## <a name="description"></a>Описание  
  Эта политика выполняет сведение состояния синхронизации данных для всех баз данных доступности (которые также называются «реплики баз данных») в реплике доступности. Политика находится в нерабочем состоянии при нахождении какой-либо из реплик баз данных в непредвиденном состоянии синхронизации данных. В остальном политика находится в рабочем состоянии.  
   
 ## <a name="possible-causes"></a>Возможные причины  

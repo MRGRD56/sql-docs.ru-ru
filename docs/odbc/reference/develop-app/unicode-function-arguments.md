@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: eafe8c7e-f6d2-44d7-99ee-cf2148a30f4f
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: d2d59cad60855c670f7c7e2b189ad3c97a3027b9
-ms.sourcegitcommit: 19ae05bc69edce1e3b3d621d7fdd45ea5f74969d
+ms.openlocfilehash: b91a4880cb39fac38f1eec918e861c7aef25787b
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564042"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981120"
 ---
 # <a name="unicode-function-arguments"></a>Аргументы функции Юникода
-Диспетчер драйверов ODBC 3,5 (или более поздней версии) поддерживает версии ANSI и Юникод всех функций, которые принимают указатели на символьные строки или СКЛПОИНТЕР в своих аргументах. Функции Юникода реализуются как функции (с суффиксом *W*), а не как макросы. Функции ANSI (которые могут вызываться с суффиксом или без *него) идентичны*текущим ФУНКЦИЯМ API ODBC.  
+Диспетчер драйверов ODBC 3,5 (или более поздней версии) поддерживает версии ANSI и Юникод всех функций, которые принимают указатели на символьные строки или СКЛПОИНТЕР в своих аргументах. Функции Юникода реализуются как функции (с суффиксом *W*), а не как макросы. Функции ANSI (которые могут вызываться с суффиксом или без *него) идентичны* текущим ФУНКЦИЯМ API ODBC.  
   
 ## <a name="remarks"></a>Комментарии  
  Для функций Юникода, которые всегда возвращают или принимают строки или аргументы длины, аргументы передаются как количество символов. Для функций, возвращающих сведения о длине данных сервера, размер и точность отображения описаны в разделе число символов. Если длина (размер перемещения данных) может ссылаться на строковые или нестроковые данные, длина описана в октетах. Например, **склжетинфов** будет по-прежнему иметь длину в виде количества байт, но **склексекдиректв** будет использовать количество символов.  
@@ -31,40 +31,25 @@ ms.locfileid: "88564042"
   
  Ниже приведен список функций API ODBC, поддерживающих версии Юникода (W) и ANSI (A).  
   
-|||  
-|-|-|  
-|**SQLBrowseConnect**|**Функции SQLGetDiagRec**|  
-|**SQLColAttribute**|**SQLGetInfo**|  
-|**SQLColAttributes**|**SQLGetStmtAttr**|  
-|**SQLColumnPrivileges**|**SQLGetTypeInfo**|  
-|**SQLColumns**|**SQLNativeSql**|  
-|**SQLConnect**|**SQLPrepare**|  
-|**SQLDataSources**|**SQLPrimaryKeys**|  
-|**SQLDescribeCol**|**SQLProcedureColumns**|  
-|**SQLDriverConnect**|**SQLProcedures**|  
-|**SQLDrivers**|**SQLSetConnectAttr**|  
-|**SQLError**|**SQLSetConnectOption**|  
-|**SQLExecDirect**|**SQLSetCursorName**|  
-|**SQLForeignKeys**|**SQLSetDescField**|  
-|**SQLGetConnectAttr**|**SQLSetStmtAttr**|  
-|**SQLGetConnectOption**|**SQLSpecialColumns**|  
-|**SQLGetCursorName**|**SQLStatistics**|  
-|**SQLGetDescField**|**SQLTablePrivileges**|  
-|**SQLGetDescRec**|**SQLTables**|  
-|**SQLGetDiagField**||  
+:::row:::
+   :::column span="":::
+      **SQLBrowseConnect**<br>      **SQLColAttribute**<br>      **SQLColAttributes**<br>      **SQLColumnPrivileges**<br>      **SQLColumns** <br>      **SQLConnect** <br>      **SQLDataSources**<br>      **SQLDescribeCol**  <br>      **SQLDriverConnect** <br>      **SQLDrivers** <br>      **SQLError**  <br>      **SQLExecDirect**<br>      **SQLForeignKeys**<br>      **SQLGetConnectAttr** <br>      **SQLGetConnectOption** <br>      **SQLGetCursorName**<br>      **SQLGetDescField** <br>      **SQLGetDescRec** <br>      **SQLGetDiagField**
+   :::column-end:::
+   :::column span="":::
+      **Функции SQLGetDiagRec**        <br>      **SQLGetInfo**        <br>      **SQLGetStmtAttr**<br>      **SQLGetTypeInfo**<br>      **SQLNativeSql**<br>      **SQLPrepare**<br>      **SQLPrimaryKeys**<br>      **SQLProcedureColumns**<br>      **SQLProcedures**<br>      **SQLSetConnectAttr**<br>      **SQLSetConnectOption**<br>      **SQLSetCursorName**<br>      **SQLSetDescField**<br>      **SQLSetStmtAttr**<br>      **SQLSpecialColumns**<br>      **SQLStatistics**<br>      **SQLTablePrivileges**<br>      **SQLTables**
+   :::column-end:::
+:::row-end:::
   
  Ниже приведен список функций установщика ODBC и ODBC-переводчиков, поддерживающих версии Юникода (W) и ANSI (A).  
   
-|||  
-|-|-|  
-|**SQLConfigDataSource**|**склинсталлдриверманажер**|  
-|**склкреатедатасаурце**|**склинсталлереррор**|  
-|**склдатасаурцетодривер**|**склинсталлодбк**|  
-|**склдривертодатасаурце**|**склреадфиледсн**|  
-|**склжетаваилабледриверс**|**склремоведснфромини**|  
-|**склжетинсталледдриверс**|**склвалиддсн**|  
-|**склжеттранслатор**|**склвритедснтоини**|  
-|**склинсталлдривер**||  
+:::row:::
+   :::column span="":::
+      **SQLConfigDataSource**<br>      **склкреатедатасаурце**<br>      **склдатасаурцетодривер**<br>      **склдривертодатасаурце**<br>      **склжетаваилабледриверс**<br>      **склжетинсталледдриверс**<br>      **склжеттранслатор**<br>      **склинсталлдривер**
+   :::column-end:::
+   :::column span="":::
+      **склинсталлдриверманажер**  <br>      **склинсталлереррор**  <br>      **склинсталлодбк**  <br>      **склреадфиледсн**  <br>      **склремоведснфромини**  <br>      **склвалиддсн**  <br>      **склвритедснтоини**
+   :::column-end:::
+:::row-end:::
   
 > [!NOTE]
 >  Устаревшие функции имеют поддержку сопоставления Юникода и ANSI, так как диспетчер драйверов ODBC *3. x* поддерживает перекомпиляцию приложений ODBC *2. x* с помощью Юникода **#define**.  

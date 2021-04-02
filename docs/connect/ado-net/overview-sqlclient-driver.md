@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о драйвере SqlClient | Документация Майкрософт
-description: Обзор поставщика данных Microsoft SqlClient для SQL Server.
+title: Общие сведения о драйвере SqlClient
+description: Общие сведения о поставщике данных Microsoft SqlClient для SQL Server и его роли в качестве поставщика ADO.NET для приложений .NET.
 ms.custom: ''
 ms.date: 06/15/2019
 ms.prod: sql
@@ -11,24 +11,24 @@ ms.assetid: 5e467fce-7237-4678-bafa-a16f32323d0c
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-kaywon
-ms.openlocfilehash: 8f08b90ef1c379e9f8c671610a5d26cbcc7af8aa
-ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
+ms.openlocfilehash: acc9867a4a9be8b9927472b1abe913979b84e809
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442706"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633243"
 ---
 # <a name="overview-of-the-sqlclient-driver"></a>Общие сведения о драйвере SqlClient
 
 [!INCLUDE[Driver_ADONET_Download](../../includes/driver_adonet_download.md)]
 
- Поставщик данных Microsoft SqlClient для SQL Server предназначен для использования с .NET Framework и .NET Core, чтобы подключаться к базе данных, выполнять команды и получать результаты.
+Поставщик данных Microsoft SqlClient для SQL Server является поставщиком данных .NET Framework и .NET Core. Он используется для подключения к базе данных, выполнения команд и извлечения результатов.
 
- В этих статьях вы найдете общие сведения о драйвере SqlClient.
+В этих статьях вы найдете общие сведения о драйвере SqlClient.
 
 ## <a name="in-this-section"></a>В этом разделе
 
-|Раздел|Description|
+|Статья|Описание|
 |-----------|-----------------|
 |[Введение в пространство имен Microsoft.Data.SqlClient](introduction-microsoft-data-sqlclient-namespace.md)|Страница вводных данных о пространстве имен Microsoft.Data.SqlClient.|
 |[Скачивание поставщика данных Microsoft SqlClient для SQL Server](download-microsoft-sqlclient-data-provider.md)|Страница скачивания ADO.NET и поставщика данных Microsoft SqlClient для SQL Server.|
@@ -39,4 +39,6 @@ ms.locfileid: "96442706"
 |[Поиск дополнительных сведений о драйвере SqlClient](find-additional-sqlclient-driver-information.md)|Страница с полезными сведениями о драйвере.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
- [Репозиторий GitHub для драйвера SqlClient](https://github.com/dotnet/SqlClient) [Обозреватель API .NET](/dotnet/api/)
+
+- [Репозиторий GitHub для драйвера SqlClient](//github.com/dotnet/SqlClient)
+- [Браузер API .NET](/dotnet/api/)

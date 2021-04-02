@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 093c5208-bf7a-49f4-a546-72b48197cadf
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 8a1de6e359fbb74b3d53a4c86851e9c3fdc4570c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 583df3a1dda426355dde62935ccdddb00bbe76ca
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340887"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633107"
 ---
 # <a name="always-on-availability-group-is-offline"></a>Группа доступности Always On в режиме вне сети
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Режим «в сети» группы доступности|  
-|**Проблема**|Группа доступности находится в режиме «вне сети».|  
-|**Категория**|**Критическая**|  
-|**Аспект**|группа доступности|  
+- **Имя политики** Состояние "в сети" группы доступности
+- **Проблема** Группа доступности находится в режиме "вне сети".
+- **Категория** **Критически важное**
+- **Аспект** Группа доступности  
   
 ## <a name="description"></a>Description  
  Эта политика проверяет состояние группы доступности (режим «в сети» или режим «вне сети»). Политика находится в нерабочем состоянии и при переходе кластерного ресурса группы доступности в режим «вне сети» и отсутствии у группы доступности первичной реплики формируется предупреждение.  

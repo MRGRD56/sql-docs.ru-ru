@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: ac77b9ead15eb4171dbcaee38235a9f934aaa172
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6ce83864f327cbfb3c0e923a7122d04c5e662b0c
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837796"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054584"
 ---
 # <a name="sql-server-distributed-replay"></a>Распределенное воспроизведение SQL Server
 
@@ -67,10 +67,11 @@ ms.locfileid: "101837796"
 ## <a name="distributed-replay-tasks"></a>Задачи распределенного воспроизведения
 
 |Описание задачи|Раздел|  
-|----------------------|-----------|  
+|----------------------|-----------|
 | Настройка распределенного воспроизведения. | [Настройка распределенного воспроизведения](../../tools/distributed-replay/configure-distributed-replay.md) |
 | Описывает подготовку входных данных трассировки. | [Подготовка входных данных трассировки](../../tools/distributed-replay/prepare-the-input-trace-data.md) |
-| Описывает процесс воспроизведения данных трассировки. |[Воспроизведение данные трассировки](../../tools/distributed-replay/replay-trace-data.md) | | Описывает просмотр результатов данных трассировки распределенного воспроизведения. |[Просмотр результатов воспроизведения](../../tools/distributed-replay/review-the-replay-results.md)|
+| Описывает процесс воспроизведения данных трассировки. |[Воспроизведение данные трассировки](../../tools/distributed-replay/replay-trace-data.md) | 
+| Описывает просмотр результатов данных трассировки распределенного воспроизведения. |[Просмотр результатов воспроизведения](../../tools/distributed-replay/review-the-replay-results.md)|
 | Описывает, как при помощи средства администрирования можно инициировать операции на контроллере, наблюдать за ними и отменять их. | [Параметры командной строки средства администрирования (программа распределенного воспроизведения)](../../tools/distributed-replay/administration-tool-command-line-options-distributed-replay-utility.md) |
 
 ## <a name="see-also"></a>См. также:

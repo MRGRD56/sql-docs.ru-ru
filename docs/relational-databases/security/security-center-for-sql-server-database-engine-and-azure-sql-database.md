@@ -19,12 +19,12 @@ ms.assetid: dfb39d16-722a-4734-94bb-98e61e014ee7
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 799f00bfd7ddf0763212cefb00d8fea72a7dce27
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 150e6732855b0e7c1b1e98eb34b0ebb3662633ad
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739924"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981071"
 ---
 # <a name="security-center-for-sql-server-database-engine-and-azure-sql-database"></a>Центр обеспечения безопасности для базы данных Azure SQL и SQL Server Database Engine
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "104739924"
   
 ##  <a name="authentication-who-are-you"></a><a name="Who"></a> Проверка подлинности: кто вы?  
   
-|||  
+|Компонент|Ссылка|  
 |-|-|  
 |**Кто выполняет проверку подлинности?**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Проверка подлинности Windows<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Проверка подлинности [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Azure Active Directory|Кто выполняет проверку подлинности? (Windows или [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)])<br /><br /> [Выбор режима проверки подлинности](../../relational-databases/security/choose-an-authentication-mode.md)<br /><br /> [Подключение к базе данных SQL с использованием аутентификации Azure Active Directory](/azure/azure-sql/database/authentication-aad-overview)|  
 |**Где выполняется проверка подлинности?**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: В базе данных master: имена для входа и пользователи базы данных<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: В пользовательской базе данных: включенные пользователи базы данных|Аутентификация в базе данных master (имена для входа и пользователи базы данных)<br /><br /> [создать имя входа SQL Server](../../relational-databases/security/authentication-access/create-a-login.md)<br /><br /> [Управление базами данных и учетными записями в Базе данных SQL Azure](/previous-versions/azure/ee336235(v=azure.100))<br /><br /> [Создание пользователя базы данных](../../relational-databases/security/authentication-access/create-a-database-user.md)<br /><br /> <br /><br /> Проверка подлинности в пользовательской базе данных<br /><br /> [Пользователи автономной базы данных: создание переносимой базы данных](../../relational-databases/security/contained-database-users-making-your-database-portable.md)|  
@@ -45,7 +45,7 @@ ms.locfileid: "104739924"
   
 ##  <a name="authorization-what-can-you-do"></a><a name="What"></a> Авторизация: что можно делать?  
   
-|||  
+|Компонент|Ссылка|  
 |-|-|  
 |**Предоставление, отмена и запрет разрешений**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Защищаемые классы<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Детализированные разрешения SQL Server<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Детализированные разрешения базы данных|[Иерархия разрешений (компонент Database Engine)](../../relational-databases/security/permissions-hierarchy-database-engine.md)<br /><br /> [Разрешения](../../relational-databases/security/permissions-database-engine.md)<br /><br /> [Защищаемые объекты](../../relational-databases/security/securables.md)<br /><br /> [Приступая к работе с разрешениями Database Engine](../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md)|  
 |**Роли безопасности**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Роли уровня сервера<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Роли уровня базы данных|[Роли уровня сервера](../../relational-databases/security/authentication-access/server-level-roles.md)<br /><br /> [Роли уровня базы данных](../../relational-databases/security/authentication-access/database-level-roles.md)|  
@@ -53,7 +53,7 @@ ms.locfileid: "104739924"
   
 ##  <a name="encryption-storing-secret-data"></a><a name="Encrypt"></a> Шифрование: хранение секретных данных  
   
-|||  
+|Компонент|Ссылка|  
 |-|-|  
 |**Шифрование файлов**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Шифрование BitLocker (уровень диска)<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Шифрование NTFS (уровень папки)<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Прозрачное шифрование данных (уровень файла)<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Шифрование резервной копии (уровень файла)|[BitLocker (уровень диска)](https://support.microsoft.com/kb/2855131)<br /><br /> [Шифрование NTFS (уровень папки)](/previous-versions/tn-archive/dd163562(v=technet.10))<br /><br /> [Прозрачное шифрование данных (уровень файла)](../../relational-databases/security/encryption/transparent-data-encryption.md)<br /><br /> [Шифрование резервной копии (уровень файла)](../../relational-databases/backup-restore/backup-encryption.md)|  
 |**Шифрование источников**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Расширяемый модуль управления ключами<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Ключи, хранящиеся в Azure Key Vault<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Always Encrypted|[Расширяемый модуль управление ключами](../../relational-databases/security/encryption/extensible-key-management-ekm.md)<br /><br /> [Ключи, хранящиеся в хранилище ключей Azure](../../relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)<br /><br /> [Always Encrypted](../../relational-databases/security/encryption/always-encrypted-database-engine.md)|  
@@ -61,14 +61,14 @@ ms.locfileid: "104739924"
   
 ##  <a name="connection-security-restricting-and-securing"></a><a name="Connect"></a> Безопасность подключения: ограничения и обеспечение безопасности  
   
-|||  
+|Компонент|Ссылка|  
 |-|-|  
 |**Защита с помощью брандмауэра**<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Параметры брандмауэра Windows<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Параметры брандмауэра службы Azure<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Параметры брандмауэра базы данных|[Настройка брандмауэра Windows для доступа к компоненту Database Engine](../../database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access.md)<br /><br /> [Параметры брандмауэра базы данных Azure SQL](../../relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database.md)<br /><br /> [Параметры брандмауэра службы Azure](../../relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database.md)|  
 |**Шифрование данных при передаче**<br /><br /> :::image type="icon" source="../performance/media/security-center-both.png"::: Принудительные подключения SSL<br /><br /> :::image type="icon" source="../performance/media/security-center-sqlserver.png"::: Необязательные подключения SSL|[Включение зашифрованных соединений для ядра СУБД](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)<br /><br /> [Включение зашифрованных соединений для ядра СУБД](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md), [Сетевая безопасность](/azure/sql-database/sql-database-security-best-practice#network-security) <br /><br /> [Поддержка TLS 1.2 для Microsoft SQL Server](https://support.microsoft.com/kb/3135244)|  
   
 ##  <a name="auditing-recording-access"></a><a name="Audit"></a> Аудит: регистрация доступа  
   
-|||  
+|Компонент|Ссылка|  
 |-|-|  
 |**Автоматизированный аудит**<br /><br /> :::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: Аудит [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (уровень сервера и базы данных)<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Аудит [!INCLUDE[ssSDS](../../includes/sssds-md.md)] (уровень базы данных)<br /><br /> :::image type="icon" source="../../relational-databases/security/media/security-center-sqldb.png"::: Обнаружение угроз| <br /><br /> [Подсистема аудита SQL Server (компонент Database Engine)](../../relational-databases/security/auditing/sql-server-audit-database-engine.md)<br /><br /> [Аудит базы данных SQL](/azure/azure-sql/database/auditing-overview)<br /><br /> [Приступая к работе с Расширенной защитой от угроз для базы данных SQL](/azure/azure-sql/database/threat-detection-configure) <br /><br /> [Оценка уязвимостей базы данных SQL](/azure/sql-database/sql-vulnerability-assessment) |  
 |**Пользовательский аудит**<br /><br /> Триггеры :::image type="icon" source="../../relational-databases/performance/media/security-center-both.png":::|Реализация пользовательского аудита: Создание [DDL Triggers](../../relational-databases/triggers/ddl-triggers.md) и [DML Triggers](../../relational-databases/triggers/dml-triggers.md)|  

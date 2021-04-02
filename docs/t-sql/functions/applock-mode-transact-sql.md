@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: e43d4917-77f1-45cc-b231-68ba7fee3385
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 3ef63630d2acaabdda31f2cd162acfe1d6ddfd76
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 6103d0d5a80f147eb59f3983a178aaeae9591a1f
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99202295"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054897"
 ---
 # <a name="applock_mode-transact-sql"></a>APPLOCK_MODE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -58,12 +58,19 @@ APPLOCK_MODE( 'database_principal' , 'resource_name' , 'lock_owner' )
   
 ## <a name="return-value"></a>Возвращаемое значение
 Возвращает режим блокировки, полученный владельцем блокировки на конкретный ресурс приложения. Режим блокировки может принимать следующие значения:
-  
-||||  
-|-|-|-|  
-|**NoLock**|**Обновление**|**\*SharedIntentExclusive**|  
-|**IntentShared**|**IntentExclusive**|**\*UpdateIntentExclusive**|  
-|**Общий**|**Монопольный доступ**||  
+
+:::row:::
+   :::column span="":::
+      **NoLock**<br>      **Обновление**<br>      **\*SharedIntentExclusive**
+   :::column-end:::
+   :::column span="":::
+      **IntentShared**<br>      **IntentExclusive**<br>      **\*UpdateIntentExclusive**
+
+   :::column-end:::
+   :::column span="":::
+      **Общий**<br>      **Монопольный доступ**
+   :::column-end:::
+:::row-end:::
   
 * Этот режим блокировки представляет собой сочетание других режимов и не может быть явным образом получен процедурой sp_getapplock.
   

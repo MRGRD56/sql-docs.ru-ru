@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
 monikerRange: '>=sql-server-2016 <=sql-server-2016'
-ms.openlocfilehash: 36b68809377492e3643ebc7c60e0b2111d52f638
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bf701e1ccdff887f7861c934d59bff9c09be66b6
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97484246"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054648"
 ---
 # <a name="install-the-first-report-server-in-sharepoint-mode"></a>Установка первого сервера отчетов в режиме интеграции с SharePoint
 
@@ -41,7 +41,7 @@ ms.locfileid: "97484246"
  > [!NOTE]
  > В SharePoint 2016 службы Excel перемещены в Office Online Server и не могут использоваться при развертывании в конфигурации с одиночным сервером. Office Online Server должен быть развернут на другом сервере. Дополнительные сведения см. в статьях [Общие сведения об Office Online Server](https://technet.microsoft.com/library/jj219437\(v=office.16\).aspx) и [Настройка административных параметров Excel Online](https://technet.microsoft.com/library/jj219698\(v=office.16\).aspx).
   
-|||  
+|Компонент|Описание|  
 |-|-|  
 |**(1)**|Служба SharePoint, установленная из экземпляра SQL Server. Можно создать одно или несколько приложений служб Reporting Services.|  
 |**(2)**|Надстройка Reporting Services для продуктов SharePoint предоставляет компоненты пользовательского интерфейса на серверах SharePoint.|  

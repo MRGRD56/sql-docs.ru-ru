@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ed1ef012-fa14-4ba5-bafe-d1527ba065b3
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: f1a233cdd69f069ae425de644dfe8b6d1475dd86
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 1b68c2b2f86633db9cbc5c35746c8113530491f3
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85774404"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054654"
 ---
 # <a name="options-in-the-back-up-database-task-for-maintenance-plan"></a>Возможности для плана обслуживания в задаче "Создание резервной копии базы данных"
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -98,7 +98,7 @@ ms.locfileid: "85774404"
  **Установка сжатия резервной копии**  
  В выпуске [!INCLUDE[ssEnterpriseEd10](../../includes/ssenterpriseed10-md.md)] (или более поздней версии) выберите одно из следующих значений параметра [backup compression](../../relational-databases/backup-restore/backup-compression-sql-server.md) :  
   
-|||  
+|Значение|Описание|  
 |-|-|  
 |**Использовать параметр сервера по умолчанию**|Щелкните для использования настроек уровня сервера, установленных по умолчанию.<br /><br /> Значения по умолчанию устанавливаются в параметре конфигурации сервера **backup compression default** . Сведения о том, как просмотреть текущую настройку этого параметра, см. в разделе [Параметр конфигурации сервера "Просмотр или настройка параметра сжатия резервных копий по умолчанию"](../../database-engine/configure-windows/view-or-configure-the-backup-compression-default-server-configuration-option.md).|  
 |**Сжимать резервные копии**|Щелкните для сжатия резервной копии, независимо от уровня сервера по умолчанию.<br /><br /> **\*\* Важно! \*\*** По умолчанию сжатие существенно повышает загрузку ЦП. Дополнительная нагрузка на ЦП может помешать выполнению параллельных операций. Поэтому может потребоваться создать сжатые резервные копии с низким приоритетом в сеансе, для которого использование ЦП ограничивается [регулятором ресурсов](../../relational-databases/resource-governor/resource-governor.md). Дополнительные сведения см. ниже в подразделе [Использование регулятора ресурсов для ограничения загрузки ЦП при сжатии резервной копии (Transact-SQL)](../../relational-databases/backup-restore/use-resource-governor-to-limit-cpu-usage-by-backup-compression-transact-sql.md).|  

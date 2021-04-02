@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 1451a0b0-6713-4d0c-954f-ea3d8fce1d31
 ms.author: alexiva
-ms.openlocfilehash: 138cb90558bfb73d0b9e0cd3ba75a7a41fc84229
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: e84ab2f4fe9e19d08a8728bd8ca985561497252d
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186460"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981050"
 ---
 # <a name="whats-new-in-ssma-for-mysql-mysqltosql"></a>Новые возможности в SSMA для MySQL (MySQLToSql)
 
 В этой статье перечислены Помощник по миграции SQL Server (SSMA) для изменений MySQL в каждом выпуске.
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+Выпуск v 8.18 для SSMA для MySQL содержит следующие изменения:
+
+* Незначительные улучшения производительности и исправления ошибок
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

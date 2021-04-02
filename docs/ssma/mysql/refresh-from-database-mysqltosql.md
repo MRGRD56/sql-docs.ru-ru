@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 59a6db8f-2db6-4071-9005-928a7231de92
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 60a23edbcbad344ab3bf42286944f7c72acb8f92
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 657e0b85cfb89c9a8fadf889624b75e0b064952f
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100015183"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106053967"
 ---
 # <a name="refresh-from-database-mysqltosql"></a>Обновление из базы данных (MySQLToSQL)
 Диалоговое окно **обновление из базы данных** позволяет выбрать объекты для обновления из базы данных MySQL. Строки в диалоговом окне имеют цветовую кодировку в зависимости от состояния метаданных.  
@@ -34,9 +34,8 @@ ms.locfileid: "100015183"
   
 ## <a name="options"></a>Параметры  
   
-|||  
-|-|-|  
 |**Термин**|**Определение**|  
+|-|-|  
 |**Свернуть (-)**|Сверните все группы объектов, чтобы скрыть отдельные объекты.|  
 |**Развернуть (+)**|Разверните все группы объектов, чтобы отобразить отдельные объекты.|  
 |**Скрыть/Показать равные объекты**|Скрывает объекты из списка, если метаданные объекта одинаковы в базе данных MySQL и в SSMA.|  

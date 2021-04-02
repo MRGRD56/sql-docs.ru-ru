@@ -2654,11 +2654,11 @@
     - name: Защита приложений
       href: ../connect/jdbc/securing-jdbc-driver-applications.md
       items:
-        - name: Обеспечение безопасности строк подключений
+        - name: Защита строк подключений
           href: ../connect/jdbc/securing-connection-strings.md
-        - name: Проверка введенного пользователем
+        - name: Проверка вводимых пользователем данных
           href: ../connect/jdbc/validating-user-input.md
-        - name: Безопасность приложений
+        - name: Безопасность приложения
           href: ../connect/jdbc/application-security.md
         - name: Использование шифрования
           href: ../connect/jdbc/using-ssl-encryption.md

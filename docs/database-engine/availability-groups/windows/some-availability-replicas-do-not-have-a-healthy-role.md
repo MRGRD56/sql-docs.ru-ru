@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 7ec5b337-7201-4a66-a541-7560f8b18784
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 6d435503c6e2fa2eb39da46ef7d93ca163f9cbfc
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a0ae6fbe590ad7fd048d8be94f2af7ab1a16e368
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100352603"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633393"
 ---
 # <a name="some-availability-replicas-do-not-have-a-healthy-role"></a>Некоторые реплики доступности не имеют исправной роли
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние роли реплик доступности|  
-|**Проблема**|Некоторые реплики доступности не имеют исправной роли.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|группа доступности|  
+- **Имя политики** Состояние роли реплик доступности
+- **Проблема** Некоторые реплики доступности не находятся в рабочем состоянии.
+- **Категория** **Предупреждение**
+- **Аспект** Группа доступности  
   
 ## <a name="description"></a>Описание  
  Эта политика опрашивает состояние подключения всех реплик доступности и проверяет наличие реплик, не имеющих исправной роли. Политика имеет неисправное состояние, когда любая из реплик доступности не является первичной или вторичной. В остальном политика находится в рабочем состоянии.  

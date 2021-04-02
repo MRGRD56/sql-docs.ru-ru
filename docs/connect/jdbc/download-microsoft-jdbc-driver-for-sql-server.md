@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.assetid: 451181b8-11e6-4d01-b547-9ac5aada8238
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: bfb200c1b29f15489f8500ccb02d5bf066bf6937
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: f1f9b735e55d90cac60332adfe42756216915b88
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575226"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633195"
 ---
 # <a name="download-microsoft-jdbc-driver-for-sql-server"></a>Скачивание драйвера Microsoft JDBC Driver for SQL Server
 
-Microsoft JDBC Driver for SQL Server — это драйвер JDBC типа 4, который обеспечивает обмен данными с базами данных через стандартные API-интерфейсы JDBC, доступные на платформе Java. Загрузка драйверов доступна для всех пользователей без дополнительной платы. Они предоставляют доступ к SQL Server из любого приложения Java, сервера приложений Java или приложения с поддержкой Java.
+Microsoft JDBC Driver for SQL Server — это драйвер JDBC типа 4, который обеспечивает обмен данными с базами данных через стандартные API-интерфейсы JDBC, доступные на платформе Java. Все пользователи могут скачать драйвер без дополнительной оплаты. Они предоставляют доступ к SQL Server из любого приложения Java, сервера приложений Java или приложения с поддержкой Java.
 
 ## <a name="download"></a>Скачивание
 
-Версия 9.2 является последней общедоступной версией. Она поддерживает Java 8, 11 и 15. Если вам нужно запустить среду выполнения Java более ранней версии, ознакомьтесь со статьей [Таблица поддержки спецификаций Java и JDBC](microsoft-jdbc-driver-for-sql-server-support-matrix.md#java-and-jdbc-specification-support), чтобы узнать, можете ли вы использовать поддерживаемую версию. Мы постоянно работаем над улучшением поддержки возможностей подключения Java. Настоятельно рекомендуем использовать последнюю версию драйвера Microsoft JDBC.
+Версия 9.2 является последней общедоступной версией. Она поддерживает Java 8, 11 и 15. Если вам нужно использовать среду выполнения Java более ранней версии, ознакомьтесь с [таблицей поддержки спецификаций Java и JDBC](microsoft-jdbc-driver-for-sql-server-support-matrix.md#java-and-jdbc-specification-support), чтобы узнать, можете ли вы использовать поддерживаемую версию. Мы постоянно работаем над улучшением поддержки возможностей подключения Java. Настоятельно рекомендуем использовать последнюю версию драйвера Microsoft JDBC.
 
 **[![Скачать](../../ssms/media/download-icon.png) Скачать Microsoft ODBC Driver for SQL Server версии 9.2 (ZIP)](https://go.microsoft.com/fwlink/?linkid=2155948)**  
 **[![Скачать](../../ssms/media/download-icon.png) Скачать Microsoft ODBC Driver for SQL Server версии 9.2 (TAR.GZ)](https://go.microsoft.com/fwlink/?linkid=2155949)**  

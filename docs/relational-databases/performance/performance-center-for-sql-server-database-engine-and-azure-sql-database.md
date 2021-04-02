@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 301204b2-140d-4495-98ed-021a9b5025f5
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.openlocfilehash: 767eee967df1f5c505448f8539e6ca081b90176c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6dca7abfb1cccbea021a2ee7650b78079ca3f777
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341706"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054887"
 ---
 # <a name="performance-center-for-sql-server-database-engine-and-azure-sql-database"></a>Центр производительности для базы данных Azure SQL и SQL Server Database Engine
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "100341706"
 ## <a name="configuration-options-for-performance"></a>Параметры конфигурации для оптимизации производительности  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] предоставляет возможность оказывать влияние на производительность компонента Database Engine базы данных с помощью ряда параметров конфигурации на уровне [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] . [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]позволяет выполнять большую часть этих оптимизаций (но не все) автоматически.  
   
-|||  
+|Параметры|Описание|  
 |-|-|  
 |**Параметры конфигурации диска**|:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [Чередование дисков и RAID](https://technet.microsoft.com/library/ms190764\(v=sql.105\).aspx)|  
 |**Параметры конфигурации файлов данных и файлов журнала**|:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [Размещение файлов данных и файлов журнала на различных дисках](../../relational-databases/policy-based-management/place-data-and-log-files-on-separate-drives.md)<br />:::image type="icon" source="../../relational-databases/performance/media/security-center-sqlserver.png"::: [Просмотр или изменение расположения по умолчанию для файлов данных и журнала (среда SQL Server Management Studio)](../../database-engine/configure-windows/view-or-change-the-default-locations-for-data-and-log-files.md)|  
@@ -56,7 +56,7 @@ ms.locfileid: "100341706"
 
 ## <a name="query-performance-options"></a>Оптимизация производительности запросов  
   
-|||  
+|Параметр|Описание|  
 |-|-|  
 |:::image type="icon" source="../../relational-databases/performance/media/security-center-both.png"::: **[Индексы](../../relational-databases/indexes/indexes.md)**|[Реорганизация и перестроение индексов](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)<br />[Указание коэффициента заполнения для индекса](../../relational-databases/indexes/specify-fill-factor-for-an-index.md)<br />[Настройка параллельных операций с индексами](../../relational-databases/indexes/configure-parallel-index-operations.md)<br />[Параметр SORT_IN_TEMPDB для индексов](../../relational-databases/indexes/sort-in-tempdb-option-for-indexes.md)<br />[Повышение производительности полнотекстовых индексов](../../relational-databases/search/improve-the-performance-of-full-text-indexes.md)<br />[Настройка параметра конфигурации сервера «min memory per query»](../../database-engine/configure-windows/configure-the-min-memory-per-query-server-configuration-option.md)<br />[Настройка параметра конфигурации сервера index create memory](../../database-engine/configure-windows/configure-the-index-create-memory-server-configuration-option.md)|  
 |:::image type="icon" source="../../relational-databases/performance/media/security-center-both.png"::: **[Секционированные таблицы и индексы](../../relational-databases/partitions/partitioned-tables-and-indexes.md)**|[Преимущества секционирования](../partitions/partitioned-tables-and-indexes.md)|  

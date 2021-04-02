@@ -19,12 +19,12 @@ ms.assetid: f86dd29f-52dd-44a9-91ac-1eb305c1ca8d
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 875d634fd1fc867d59b58872db5ba5dd96dfd52a
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 1a22f499b5fb4aee361dec8f4a83172b6db61d5d
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104753194"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054374"
 ---
 # <a name="create-indexed-views"></a>Создание индексированных представлений
 
@@ -126,7 +126,7 @@ ms.locfileid: "104753194"
    |`MIN`, `MAX`|Операторы `UNION`, `EXCEPT` или `INTERSECT`|`TABLESAMPLE`|
    |Табличные переменные|`OUTER APPLY` либо `CROSS APPLY`|`PIVOT`, `UNPIVOT`|
    |Наборы разреженных столбцов|Встроенные функции (TVF) или функции с табличным значением с несколькими инструкциями (MSTVF)|`OFFSET`|
-   |`CHECKSUM_AGG`|`STRING_AGG`|||
+   |`CHECKSUM_AGG`|`STRING_AGG`||
 
    <sup>1</sup> Индексированное представление может содержать столбцы типа **float**, но они не могут включаться в ключ кластеризованного индекса.
 

@@ -16,12 +16,12 @@ ms.assetid: ea7ddb87-f50b-46b6-9f5a-acab222a2ede
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e8e5fd6a1e7d6a67295dcbce634bbff5761caff7
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 99d49f328c727c89ad235b01c36ec1c241faedf5
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104755804"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054393"
 ---
 # <a name="use-sparse-columns"></a>Использование разреженных столбцов
 
@@ -62,12 +62,14 @@ ms.locfileid: "104755804"
   
  Столбцы следующих типов данных не могут быть указаны как SPARSE.  
   
-|||  
-|-|-|  
-|**geography**|**text**|  
-|**geometry**|**timestamp**|  
-|**image**|**определяемые пользователем типы данных**|  
-|**ntext**||  
+:::row:::
+   :::column span="":::
+      **geography**<br>      **geometry**<br>      **image**<br>      **ntext**
+   :::column-end:::
+   :::column span="":::
+      **text**  <br>      **timestamp**  <br>      **определяемые пользователем типы данных**
+   :::column-end:::
+:::row-end:::
   
 ## <a name="estimated-space-savings-by-data-type"></a>Предполагаемая экономия места по типам данных  
  Для хранения значений, отличных от NULL, в разреженных столбцах требуется больше места, чем для хранения идентичных данных, но не отмеченных, как SPARSE. В следующих таблицах показано использование пространства для каждого типа данных. Столбец **Процент значений NULL** показывает, какой процент данных должен содержать значения NULL для достижения общей экономии пространства в 40 процентов.  

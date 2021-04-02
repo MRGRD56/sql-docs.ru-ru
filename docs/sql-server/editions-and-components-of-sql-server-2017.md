@@ -35,12 +35,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-2017'
-ms.openlocfilehash: 12e4018a5431284bbe7eb7f0faf5e930353c2880
-ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
+ms.openlocfilehash: 1d0918500cdb7e5bf7a21222ad77299092eb8ac1
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98102673"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054508"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017"></a>Выпуски и поддерживаемые функции SQL Server 2017
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
@@ -136,7 +136,7 @@ ms.locfileid: "98102673"
 |Максимальный объем памяти для буферного пула на экземпляр [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Максимум, поддерживаемый операционной системой|128 ГБ|64 ГБ|1410 МБ|1410 МБ|
 |Максимальный объем памяти для кэша сегмента Columnstore на экземпляр [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Неограниченная память| 32 ГБ| 16 ГБ| 352 МБ| 352 МБ|  
 |Максимальный размер данных, оптимизированных для памяти, на базу данных в [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Неограниченная память| 32 ГБ| 16 ГБ| 352 МБ| 352 МБ|  
-|Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]|Максимум, поддерживаемый операционной системой|Табличный: 16 ГБ<br /><br /> MOLAP: 64 ГБ|Н/Д|Н/Д|Н/Д|  
+|Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]|Максимум, поддерживаемый операционной системой|Табличный: 16 ГБ<br /><br /> MOLAP: 64 ГБ|Н/Д|Недоступно|Н/Д|  
 |Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]|Максимум, поддерживаемый операционной системой|64 ГБ|64 ГБ|4 ГБ|Н/Д|
 |Максимальный размер реляционной базы данных|524 ПБ|524 ПБ|524 ПБ|10 ГБ|10 ГБ|  
   
@@ -164,7 +164,7 @@ ms.locfileid: "98102673"
 |Помощник по восстановлению базы данных|Да|Да|Да|Да|Да|
 |Зашифрованная резервная копия|Да|Да|Нет|Нет|нет|
 |Гибридное резервное копирование в Azure (резервное копирование по URL-адресу)|Да|Да|Нет|Нет|Нет|
-|Группы доступности для чтения и масштабирования<sup>3,4</sup>|Да|Нет|Нет|Нет|Нет|Нет|
+|Группы доступности для чтения и масштабирования<sup>3,4</sup>|Да|Нет|Нет|Нет|Нет|
 
 <sup>1</sup> Дополнительные сведения об установке SQL Server на Server Core см. в разделе [установить SQL Server на Server Core](../database-engine/install-windows/install-sql-server-on-server-core.md). 
 

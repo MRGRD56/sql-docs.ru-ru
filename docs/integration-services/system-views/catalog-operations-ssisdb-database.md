@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9455c5b1-60ff-45fc-8599-cc3abbd6daf5
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 05f34ebf6652983dd1c8ea007e9ba68d47ef1d00
-ms.sourcegitcommit: 868c60aa3a76569faedd9b53187e6b3be4997cc9
+ms.openlocfilehash: ae2106f60c2ad7bb56b16879165e571a316852fe
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99835272"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981210"
 ---
 # <a name="catalogoperations-ssisdb-database"></a>catalog.operations (база данных SSISDB)
 
@@ -46,7 +46,7 @@ ms.locfileid: "99835272"
 |server_name|**nvarchar(128)**|Сведения об экземпляре и сервере Windows для указанного экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)].|  
 |machine_name|**nvarchar(128)**|Имя компьютера, на котором запущен экземпляр сервера.|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  В этом представлении отображается одна строка для каждой операции в каталоге служб [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)]. Это позволяет администратору перечислить все логические операции, выполняемые на сервере, например развертывание проекта или выполнение пакета.  
   
  Это представление содержит следующие типы операций, перечисленные в столбце **operation_type**:  
@@ -62,7 +62,7 @@ ms.locfileid: "99835272"
 |`202`|**stop_operation**<br /><br /> (Хранимая процедура)|Идентификатор проекта|**NULL**|  
 |`300`|**validate_project**<br /><br /> (Хранимая процедура)|Идентификатор проекта|Имя проекта|  
 |`301`|**validate_package**<br /><br /> (Хранимая процедура)|Идентификатор проекта|Имя пакета|  
-|`1000`|**configure_catalog**<br /><br /> (Хранимая процедура)|**NULL**|**NULL**||  
+|`1000`|**configure_catalog**<br /><br /> (Хранимая процедура)|**NULL**|**NULL**|
   
 ## <a name="permissions"></a>Разрешения  
  Это представление требует применения одного из следующих разрешений:  

@@ -17,12 +17,12 @@ ms.assetid: 54757c91-615b-468f-814b-87e5376a960f
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 523cd4e58ad340dfaa8751868eccb5e593c67a74
-ms.sourcegitcommit: 5dcbe4abbe2339292961370c1d8ca3affa625f72
+ms.openlocfilehash: cfda09e184933ae537cdf3b4c6430e6d6d4b20fc
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536385"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633163"
 ---
 # <a name="always-encrypted"></a>Always Encrypted
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]

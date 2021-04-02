@@ -297,7 +297,7 @@ sp_addsubscription [ @publication = ] 'publication'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  Процедура sp_addsubscription используется в репликации моментальных снимков и репликации транзакций.  
   
  При выполнении процедуры sp_addsubscription членом предопределенной роли сервера sysadmin для создания принудительной подписки задание агента распространителя явно создается и запускается под учетной записью службы агента SQL Server. Рекомендуется выполнить [sp_addpushsubscription_agent](../../relational-databases/system-stored-procedures/sp-addpushsubscription-agent-transact-sql.md) и указать учетные данные другой учетной записи Windows, зависящей от агента, для @job_login и @job_password . Дополнительные сведения см. в статье [Модель безопасности агента репликации](../../relational-databases/replication/security/replication-agent-security-model.md).  

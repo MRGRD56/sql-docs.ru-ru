@@ -15,12 +15,12 @@ ms.assetid: d502548d-ece6-4a42-9ded-2157d33e3d21
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: e382a0936293dedc55c1804251fbb95550936311
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: b09cb3e540dd66b524829f4e0374ef22b4532dc4
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611163"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633141"
 ---
 # <a name="wsfc-cluster-service-is-offline"></a>WSFC служба кластеров работает в режиме вне сети
 
@@ -28,12 +28,10 @@ ms.locfileid: "104611163"
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние кластера WSFC|  
-|**Проблема**|Служба кластеров WSFC находится вне сети.|  
-|**Категория**|**Критическая**|  
-|**Аспект**|Экземпляр SQL Server|  
+- **Имя политики** Состояние кластера WSFC
+- **Проблема** Служба кластеров WSFC находится в режиме "вне сети".
+- **Категория** **Критически важное**
+- **Аспект** Экземпляр SQL Server  
   
 ## <a name="description"></a>Описание  
  Эта политика проверяет состояние отказоустойчивого кластера Windows Server (WSFC). Политика находится в неисправном состоянии и выдает предупреждение, если кластер WSFC находится вне сети или в состоянии «принудительный кворум». Все группы доступности, размещенные на этом кластере, находятся в режиме «вне сети», либо требуется процедура аварийного восстановления.  

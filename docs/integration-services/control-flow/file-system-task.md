@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 7dd79a6a-e066-4028-a385-1d40f31056f8
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 51646edb5b2937d04d4915e2a7d4a66327343a6c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d75ea560e7e3d186013664ee89e66b956e0405fa
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345713"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980967"
 ---
 # <a name="file-system-task"></a>Задача "Файловая система"
 
@@ -136,7 +136,7 @@ ms.locfileid: "100345713"
  **IsSourcePathVariable**  
  Укажите, хранится ли целевой путь в переменной. Это свойство имеет параметры, указанные в следующей таблице.  
   
-|Значение||  
+|Значение|Описание|  
 |-----------|-|  
 |**True**|Целевой путь хранится в переменной. При выборе этого значения отображается динамический параметр **SourceVariable**.|  
 |**False**|Целевой путь задается в диспетчере подключения файлов. При выборе этого значения отображается динамический параметр **DestinationVariable**.|  

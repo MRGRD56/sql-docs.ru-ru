@@ -106,7 +106,7 @@ sp_adddistpublisher [ @publisher= ] 'publisher'
 ## <a name="return-code-values"></a>Значения кода возврата  
  0 (успешное завершение) или 1 (неуспешное завершение)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  **sp_adddistpublisher** используется репликацией моментальных снимков, репликацией транзакций и репликацией слиянием.  
   
 ## <a name="example"></a>Пример  

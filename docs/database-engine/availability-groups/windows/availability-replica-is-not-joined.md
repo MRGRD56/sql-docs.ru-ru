@@ -14,24 +14,22 @@ helpviewer_keywords:
 ms.assetid: 9c0d10b1-9e12-430c-83b9-ca2bd0a3afc4
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: d80170723101e1e78e70d06f91653e4592b3560d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2165e226e8b599aed5e1ecbf95c68eda3d86278a
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100343823"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633087"
 ---
 # <a name="availability-replica-is-not-joined-to-an-always-on-availability-group"></a>Реплика доступности не присоединена к группе доступности Always On
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние присоединения реплики доступности|  
-|**Проблема**|Реплика доступности не присоединена.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|Реплика доступности|  
+- **Имя политики** Состояние присоединения реплики доступности
+- **Проблема** Реплика доступности не присоединена.
+- **Категория** **Предупреждение**
+- **Аспект** Реплика доступности  
   
 ## <a name="description"></a>Description  
  Эта политика проверяет состояние присоединения реплики доступности. Политика находится в состоянии неисправности, когда реплика доступности добавлена в группу доступности, но она не присоединена с соблюдением всех требований. В остальном политика находится в рабочем состоянии.  

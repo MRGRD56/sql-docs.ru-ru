@@ -239,7 +239,7 @@ sp_addpullsubscription_agent [ @publisher = ] 'publisher'
 ## <a name="return-code-values"></a>Значения кода возврата  
  **0** (успешное завершение) или **1** (сбой)  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  **sp_addpullsubscription_agent** используется в репликации моментальных снимков и репликации транзакций.  
   
 ## <a name="example"></a>Пример  

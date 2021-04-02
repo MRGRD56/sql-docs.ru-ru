@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f78b81ed-5214-43ec-a600-9bfe51c5745a
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 7aee66b9b00763e441bd445688f6c7195e17a224
-ms.sourcegitcommit: ecf074e374426c708073c7da88313d4915279fb9
+ms.openlocfilehash: 5f86a24db2bde9bd7e898c3ceabf71616e1d1729
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575160"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105632793"
 ---
 # <a name="install-the-microsoft-odbc-driver-for-sql-server-linux"></a>Установка Microsoft ODBC Driver for SQL Server (Linux)
 
@@ -135,7 +135,7 @@ rpm --import microsoft.asc
 #Choose only ONE of the following, corresponding to your OS version
 
 #SUSE Linux Enterprise Server 11 SP4
-#Ensure SUSE Linux Enterprise 11 Security Module has been installed 
+#Ensure SUSE Linux Enterprise 11 Security Module has been installed
 zypper ar https://packages.microsoft.com/config/sles/11/prod.repo
 
 #SUSE Linux Enterprise Server 12
@@ -211,7 +211,7 @@ sudo apt-get install -y unixodbc-dev
 ### <a name="debian-8"></a>Debian 8
 
 ```bash
-sudo su 
+sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list
 exit
@@ -290,7 +290,7 @@ sudo zypper install unixODBC-devel
 ### <a name="ubuntu-1510"></a>Ubuntu 15.10
 
 ```bash
-sudo su 
+sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/ubuntu/15.10/prod.list > /etc/apt/sources.list.d/mssql-release.list
 exit
@@ -342,7 +342,7 @@ sudo apt-get install unixodbc-dev
 
 В следующих разделах объясняется, как установить драйвер Microsoft ODBC 13 из оболочки bash в различных дистрибутивах Linux.
 
-### <a name="red-hat-enterprise-server-6"></a>Red Hat Enterprise Server 6
+### <a name="red-hat-enterprise-server-6-odbc-13"></a>Red Hat Enterprise Server 6 (ODBC 13)
 
 ```bash
 sudo su
@@ -353,11 +353,11 @@ sudo yum remove unixODBC #to avoid conflicts
 sudo ACCEPT_EULA=Y yum install msodbcsql-13.0.1.0-1 mssql-tools-14.0.2.0-1
 sudo yum install unixODBC-utf16-devel #this step is optional but recommended*
 #Create symlinks for tools
-ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd
 ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 ```
 
-### <a name="red-hat-enterprise-server-7"></a>Red Hat Enterprise Server 7
+### <a name="red-hat-enterprise-server-7-odbc-13"></a>Red Hat Enterprise Server 7 (ODBC 13)
 
 ```bash
 sudo su
@@ -368,14 +368,14 @@ sudo yum remove unixODBC #to avoid conflicts
 sudo ACCEPT_EULA=Y yum install msodbcsql-13.0.1.0-1 mssql-tools-14.0.2.0-1
 sudo yum install unixODBC-utf16-devel #this step is optional but recommended*
 #Create symlinks for tools
-ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd
 ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 ```
 
-### <a name="ubuntu-1510"></a>Ubuntu 15.10
+### <a name="ubuntu-1510-odbc-13"></a>Ubuntu 15.10 (ODBC 13)
 
 ```bash
-sudo su 
+sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/ubuntu/15.10/prod.list > /etc/apt/sources.list.d/mssql-release.list
 exit
@@ -383,14 +383,14 @@ sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install msodbcsql=13.0.1.0-1 mssql-tools=14.0.2.0-1
 sudo apt-get install unixodbc-dev-utf16 #this step is optional but recommended*
 #Create symlinks for tools
-ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd
 ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 ```
 
-### <a name="ubuntu-1604"></a>Ubuntu 16.04
+### <a name="ubuntu-1604-odbc-13"></a>Ubuntu 16.04 (ODBC 13)
 
 ```bash
-sudo su 
+sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 exit
@@ -398,20 +398,20 @@ sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install msodbcsql=13.0.1.0-1 mssql-tools=14.0.2.0-1
 sudo apt-get install unixodbc-dev-utf16 #this step is optional but recommended*
 #Create symlinks for tools
-ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd
 ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 ```
 
-### <a name="suse-linux-enterprise-server-12"></a>SUSE Linux Enterprise Server 12
+### <a name="suse-linux-enterprise-server-12-odbc-13"></a>SUSE Linux Enterprise Server 12 (ODBC 13)
 
 ```bash
-sudo su 
-zypper ar https://packages.microsoft.com/config/sles/12/prod.repo 
-zypper update 
+sudo su
+zypper ar https://packages.microsoft.com/config/sles/12/prod.repo
+zypper update
 sudo ACCEPT_EULA=Y zypper install msodbcsql-13.0.1.0-1 mssql-tools-14.0.2.0-1
 zypper install unixODBC-utf16-devel
 #Create symlinks for tools
-ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd 
+ln -sfn /opt/mssql-tools/bin/sqlcmd-13.0.1.0 /usr/bin/sqlcmd
 ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 ```
 
@@ -431,13 +431,13 @@ ln -sfn /opt/mssql-tools/bin/bcp-13.0.1.0 /usr/bin/bcp
 
 - Скачайте последнюю версию `msodbcsql` `.rpm` с сайта [https://packages.microsoft.com/rhel/7/prod/](https://packages.microsoft.com/rhel/7/prod/).
 - Установите зависимости и драйвер.
-  
+
 ```bash
 yum install glibc e2fsprogs krb5-libs openssl unixODBC unixODBC-devel #install dependencies
 sudo rpm -i  msodbcsql-13.1.X.X-X.x86_64.rpm #install the Driver
 ```
 
-#### <a name="ubuntu-1604"></a>Ubuntu 16.04
+#### <a name="ubuntu-1604-odbc-13-offline"></a>Ubuntu 16.04 (ODBC 13 в автономном режиме)
 
 - Скачайте последнюю версию `msodbcsql` `.deb` с сайта [https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/msodbcsql/](https://packages.microsoft.com/ubuntu/16.04/prod/pool/main/m/msodbcsql/).
 - Установите зависимости и драйвер.
@@ -447,7 +447,7 @@ sudo apt-get install libc6 libstdc++6 libkrb5-3 libcurl3 openssl debconf unixodb
 sudo dpkg -i msodbcsql_13.1.X.X-X_amd64.deb #install the Driver
 ```
 
-#### <a name="suse-linux-enterprise-server-12"></a>SUSE Linux Enterprise Server 12
+#### <a name="suse-linux-enterprise-server-12-odbc-13-offline"></a>SUSE Linux Enterprise Server 12 (ODBC 13 в автономном режиме)
 
 - Скачайте последнюю версию `msodbcsql` `.rpm` с сайта [https://packages.microsoft.com/sles/12/prod/](https://packages.microsoft.com/sles/12/prod/).
 - Установите зависимости и драйвер.
@@ -465,62 +465,62 @@ ldd /opt/microsoft/msodbcsql/lib64/libmsodbcsql-*
 
 ## <a name="odbc-11"></a><a id="11"></a> ODBC 11
 
-В следующих разделах объясняется, как установить Microsoft ODBC Driver 11 в Linux. Для использования драйвера сначала установите диспетчер драйверов unixODBC. Дополнительные сведения: [Установка диспетчера драйверов](../../../connect/odbc/linux-mac/installing-the-driver-manager.md).
+В следующих разделах объясняется, как установить Microsoft ODBC Driver 11 в Linux. Для использования драйвера сначала установите диспетчер драйверов unixODBC. Дополнительные сведения: [Установка диспетчера драйверов](installing-the-driver-manager.md).
 
-### <a name="installation-steps"></a>Процесс установки  
+### <a name="installation-steps"></a>Процесс установки
 
-> [!IMPORTANT]  
-> Эти инструкции ссылаются на `msodbcsql-11.0.2270.0.tar.gz` (файл установки для Red Hat Linux). В случае установке предварительной версии для SUSE Linux файл называется `msodbcsql-11.0.2260.0.tar.gz`.  
-  
+> [!IMPORTANT]
+> Эти инструкции ссылаются на `msodbcsql-11.0.2270.0.tar.gz` (файл установки для Red Hat Linux). В случае установке предварительной версии для SUSE Linux файл называется `msodbcsql-11.0.2260.0.tar.gz`.
+
 Порядок установки драйвера
 
-1. Убедитесь, что у вас есть корневое разрешение.  
+1. Убедитесь, что у вас есть корневое разрешение.
 
-2. Перейдите в каталог, куда был скачан файл с именем `msodbcsql-11.0.2270.0.tar.gz`. Убедитесь в наличии файла \*.TAR.GZ, который соответствует вашей версии Linux. Чтобы извлечь файлы, выполните следующую команду: `tar xvzf msodbcsql-11.0.2270.0.tar.gz`.  
-  
-3. Перейдите в каталог `msodbcsql-11.0.2270.0`, где должен находиться файл **install.sh**.  
-  
-4. Чтобы просмотреть список доступных параметров установки, выполните следующую команду: **./install.sh**.  
-  
-5. Создайте резервную копию **odbcinst.ini**. Установка драйвера обновляет **odbcinst.ini**. Файл odbcinst.ini содержит список драйверов, которые зарегистрированы с помощью диспетчера драйверов unixODBC. Чтобы определить на компьютере расположение файла odbcinst.ini, выполните следующую команду: ```odbc_config --odbcinstini```.  
-  
-6. Перед установкой драйвера выполните следующую команду: `./install.sh verify`. Выходные данные команды `./install.sh verify` показывают, есть ли на компьютере ПО, необходимое для поддержки драйвера ODBC на Linux.  
-  
-7. Когда вы будете готовы установить драйвер ODBC на Linux, выполните команду: `./install.sh install`. Если вам нужно будет дополнительно указать команду установки (`bin-dir` или `lib-dir`), сделайте это после параметра **install**.  
-  
-8. После просмотра лицензионного соглашения введите **YES** для продолжения установки.  
-  
-При установке драйвер помещается в папку `/opt/microsoft/msodbcsql/11.0.2270.0`. Драйвер и его вспомогательные файлы должны находиться в папке `/opt/microsoft/msodbcsql/11.0.2270.0`.  
-  
-Для проверки, что драйвер ODBC в Linux зарегистрирован, выполните следующую команду: ```odbcinst -q -d -n "ODBC Driver 11 for SQL Server"```.  
-  
-### <a name="uninstall"></a>Удаление  
-  
-Вы можете удалить драйвер ODBC 11 на Linux, выполнив следующие команды:  
-  
+2. Перейдите в каталог, куда был скачан файл с именем `msodbcsql-11.0.2270.0.tar.gz`. Убедитесь в наличии файла \*.TAR.GZ, который соответствует вашей версии Linux. Чтобы извлечь файлы, выполните следующую команду: `tar xvzf msodbcsql-11.0.2270.0.tar.gz`.
+
+3. Перейдите в каталог `msodbcsql-11.0.2270.0`, где должен находиться файл **install.sh**.
+
+4. Чтобы просмотреть список доступных параметров установки, выполните следующую команду: **./install.sh**.
+
+5. Создайте резервную копию **odbcinst.ini**. Установка драйвера обновляет **odbcinst.ini**. Файл odbcinst.ini содержит список драйверов, которые зарегистрированы с помощью диспетчера драйверов unixODBC. Чтобы определить на компьютере расположение файла odbcinst.ini, выполните следующую команду: ```odbc_config --odbcinstini```.
+
+6. Перед установкой драйвера выполните следующую команду: `./install.sh verify`. Выходные данные команды `./install.sh verify` показывают, есть ли на компьютере ПО, необходимое для поддержки драйвера ODBC на Linux.
+
+7. Когда вы будете готовы установить драйвер ODBC на Linux, выполните команду: `./install.sh install`. Если вам нужно будет дополнительно указать команду установки (`bin-dir` или `lib-dir`), сделайте это после параметра **install**.
+
+8. После просмотра лицензионного соглашения введите **YES** для продолжения установки.
+
+При установке драйвер помещается в папку `/opt/microsoft/msodbcsql/11.0.2270.0`. Драйвер и его вспомогательные файлы должны находиться в папке `/opt/microsoft/msodbcsql/11.0.2270.0`.
+
+Для проверки, что драйвер ODBC в Linux зарегистрирован, выполните следующую команду: ```odbcinst -q -d -n "ODBC Driver 11 for SQL Server"```.
+
+### <a name="uninstall"></a>Удаление
+
+Вы можете удалить драйвер ODBC 11 на Linux, выполнив следующие команды:
+
 1. `rm -f /usr/bin/sqlcmd`
-  
-2. `rm -f /usr/bin/bcp`  
-  
-3. `rm -rf /opt/microsoft/msodbcsql`  
-  
+
+2. `rm -f /usr/bin/bcp`
+
+3. `rm -rf /opt/microsoft/msodbcsql`
+
 4. `odbcinst -u -d -n "ODBC Driver 11 for SQL Server"`
-  
+
 ## <a name="driver-files"></a>Файлы драйвера
 
 Драйвер ODBC в Linux состоит из следующих компонентов.
 
-|Компонент|Описание|  
-|---------------|-----------------|  
-|libmsodbcsql-17.X.so.X.X или libmsodbcsql-13.X.so.X.X|Общий объект (`so`) файла динамической библиотеки, содержащий все функциональные возможности драйвера. Этот файл устанавливается в папке `/opt/microsoft/msodbcsql17/lib64/` для версии 17 драйвера и в папке `/opt/microsoft/msodbcsql/lib64/` для версии 13.|  
+|Компонент|Описание|
+|---------------|-----------------|
+|libmsodbcsql-17.X.so.X.X или libmsodbcsql-13.X.so.X.X|Общий объект (`so`) файла динамической библиотеки, содержащий все функциональные возможности драйвера. Этот файл устанавливается в папке `/opt/microsoft/msodbcsql17/lib64/` для версии 17 драйвера и в папке `/opt/microsoft/msodbcsql/lib64/` для версии 13.|
 |`msodbcsqlr17.rll` либо `msodbcsqlr13.rll`|Сопутствующий файл ресурса для библиотеки драйвера. Этот файл устанавливается в папке `[driver .so directory]../share/resources/en_US/`.|
-|msodbcsql.h|Файл заголовка, содержащий все новые определения, необходимые для использования драйвера.<br /><br /> **Примечание.**  Нельзя сочетать в одной программе ссылки на msodbcsql.h и odbcss.h.<br /><br /> Файл msodbcsql.h устанавливается в папке `/opt/microsoft/msodbcsql17/include/` для версии 17 драйвера и в папке `/opt/microsoft/msodbcsql/include/` для версии 13. |
+|msodbcsql.h|Файл заголовка, содержащий все новые определения, необходимые для использования драйвера.<br /><br /> **Примечание**. В одной программе нельзя ссылаться на msodbcsql.h и odbcss.h одновременно.<br /><br /> Файл msodbcsql.h устанавливается в папке `/opt/microsoft/msodbcsql17/include/` для версии 17 драйвера и в папке `/opt/microsoft/msodbcsql/include/` для версии 13. |
 |LICENSE.txt|Текстовый файл с условиями лицензионного соглашения. Этот файл помещается в папку `/usr/share/doc/msodbcsql17/` для версии 17 драйвера и в папку `/usr/share/doc/msodbcsql/` для версии 13.|
 |RELEASE_NOTES|Текстовый файл с заметками о выпуске. Этот файл помещается в папку `/usr/share/doc/msodbcsql17/` для версии 17 драйвера и в папку `/usr/share/doc/msodbcsql/` для версии 13.|
 
 ## <a name="resource-file-loading"></a>Загрузка файла ресурсов
 
-Чтобы драйвер работал, он должен загрузить файл ресурсов. Этот файл имеет имя `msodbcsqlr17.rll` или `msodbcsqlr13.rll` в зависимости от версии драйвера. Файл `.rll` располагается по пути относительно расположения самого драйвера (`so` или `dylib`), указанного в таблице выше. Кроме того, начиная с версии 17.1 драйвер пытается загрузить файл `.rll` из каталога по умолчанию, если его не удалось загрузить по относительному пути. Путь к файлу ресурсов по умолчанию в Linux: `/opt/microsoft/msodbcsql17/share/resources/en_US/`.
+Для работы драйверу необходимо загрузить файл ресурсов. Этот файл имеет имя `msodbcsqlr17.rll` или `msodbcsqlr13.rll` в зависимости от версии драйвера. Файл `.rll` располагается по пути относительно расположения самого драйвера (`so` или `dylib`), указанного в таблице выше. Кроме того, начиная с версии 17.1 драйвер пытается загрузить файл `.rll` из каталога по умолчанию, если его не удалось загрузить по относительному пути. Путь к файлу ресурсов по умолчанию в Linux: `/opt/microsoft/msodbcsql17/share/resources/en_US/`.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
