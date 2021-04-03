@@ -9,12 +9,12 @@ ms.prod: sql
 ms.technology: tools-other
 monikerRange: =azure-sqldw-latest
 ms.custom: template-overview
-ms.openlocfilehash: e97425f682a3f6b9f2f4e955d8476d40d6cf4312
-ms.sourcegitcommit: f10f0d604be1dce6c600a92aec4c095e7b52e19c
+ms.openlocfilehash: a23ca1052e2a82afd6277a2fc308d72fa600aaf1
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102770526"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273489"
 ---
 # <a name="azure-synapse-pathway-preview-faq"></a>Часто задаваемые вопросы о предварительной версии Azure Synapse Pathway
 [!INCLUDE [Azure Synapse Analytics](../../includes/applies-to-version/asa.md)]
@@ -65,15 +65,8 @@ A. Так как вы можете запускать Synapse Pathway в лок
 
 A. Сейчас Azure Synapse Pathway предоставляется в **предварительной версии**.   Поддержка Synapse Pathway доступна через канал поддержки Майкрософт. Запрос можно создать либо на портале Azure, либо на стандартных порталах (обычно на портале локальной службы поддержки).
 
-
 > [!NOTE] 
 > Как и любые другие службы Azure, все предварительные версии служб дают право на поддержку, но без соглашения об уровне обслуживания.
-
-<!-- ### Troubleshooting and optimization
-
-#### Q. Why do I see slow performance while running the code conversion?
-
-#### Q. Translation of errors or unexpected results? -->
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
