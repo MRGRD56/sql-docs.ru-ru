@@ -11,12 +11,12 @@ f1_keywords: ''
 helpviewer_keywords: ''
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 1821ebdd7c52d306a34be98f6e506de24c31539e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a5bfbb367ef9df5af3a651da28ac6655870b324a
+ms.sourcegitcommit: f1a571b6ce02a39c385ad32508ceff23475ed9f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100341677"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106377443"
 ---
 # <a name="sql-server-privacy-supplement"></a>Приложение к конфиденциальности в SQL Server
 
@@ -31,7 +31,7 @@ ms.locfileid: "100341677"
 - SQL Server Data Tools (SSDT)
 - Azure Data Studio
 - Помощник по переносу баз данных
-- Помощник по миграции SQL Server
+- [Помощник по миграции SQL Server](../ssma/ssma-diagnostic-data-collection.md)
 - Расширение MS-SQL
 
 Определение *разрешенных сценариев использования*: В контексте этой статьи "разрешенные сценарии использования" определяются как действия, инициированные корпорацией Майкрософт.
