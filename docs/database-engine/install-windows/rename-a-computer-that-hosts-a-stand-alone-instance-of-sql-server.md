@@ -20,12 +20,12 @@ ms.assetid: bbaf1445-b8a2-4ebf-babe-17d8cf20b037
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: b84f700ab19b940d8aa742be94dc2c3ab3726507
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: debdeffa2409642c01f9abdc502a897d6ea3dac3
+ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353044"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105744463"
 ---
 # <a name="rename-a-computer-that-hosts-a-stand-alone-instance-of-sql-server"></a>Переименование компьютера, на который установлен изолированный экземпляр SQL Server
 
@@ -39,7 +39,7 @@ ms.locfileid: "100353044"
   
  Прежде чем приступить к процессу переименования, обратите внимание на следующее:  
   
--   Если экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] является частью отказоустойчивого кластера [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , переименование компьютера выполняется не так, как для изолированного экземпляра.  
+-   Если экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] является частью отказоустойчивого кластера [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , переименование компьютера выполняется не так, как для изолированного экземпляра. Дополнительные сведения см. в статье [Переименование экземпляра отказоустойчивого кластера SQL Server](../../sql-server/failover-clusters/install/rename-a-sql-server-failover-cluster-instance.md).
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] не поддерживает переименование компьютеров, участвующих в репликации, за исключением репликации с доставкой журналов. Компьютер-получатель в доставке журнала может быть переименован, если компьютер-источник окончательно потерян. Дополнительные сведения см. в статье [Репликация и доставка журналов (SQL Server)](../../database-engine/log-shipping/log-shipping-and-replication-sql-server.md).  
   
