@@ -1,5 +1,7 @@
 - name: Помощник по миграции SQL Server (SSMA)
   href: sql-server-migration-assistant.md
+- name: Данные об использовании компонентов и данные диагностики
+  href: ssma-diagnostic-data-collection.md
 - name: Доступ
   href: access/toc.yml
 - name: DB2

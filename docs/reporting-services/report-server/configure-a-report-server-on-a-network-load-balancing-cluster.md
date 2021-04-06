@@ -7,13 +7,13 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: report-server
 ms.topic: conceptual
-ms.date: 03/09/2021
-ms.openlocfilehash: 8d56f26c6661587cb13ff2962221a4a41c7da2ba
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.date: 03/23/2021
+ms.openlocfilehash: 3c1122a98c4f0abe38db739040d617ed5f27ecf0
+ms.sourcegitcommit: ab0c654d924eeb5647e47444abb59d934345b205
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622680"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106450175"
 ---
 # <a name="configure-a-report-server-on-a-network-load-balancing-cluster"></a>настроить сервер отчетов в кластере с балансированием сетевой нагрузки
 
@@ -62,7 +62,7 @@ ms.locfileid: "102622680"
     В следующем примере приведено значение, которое должно быть получено. Не нужно вставлять в файл конфигурации данные из этого примера; значения ключа недопустимы.  
   
     ```xml
-    <machineKey ValidationKey="123455555" DecryptionKey="678999999" Validation="SHA1" Decryption="AES"/>  
+    <machineKey validationKey="123455555" decryptionKey="678999999" validation="SHA1" decryption="AES"/>  
     ```  
   
 2. Откройте файл конфигурации Web.config для сервера отчетов и вставьте в раздел <`system.web`> полученный элемент <`machineKey`>. Файл Web.config по умолчанию находится в папке \Program Files\Microsoft SQL Server\MSRS13.MSSQLSERVER\Reporting Services\Reportserver\Web.config.  
