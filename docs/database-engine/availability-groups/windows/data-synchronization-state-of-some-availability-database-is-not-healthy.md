@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: 89f95d15-33c6-4768-bccd-9dbf8c4f49a9
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 61324c4a7afe1b1353d51ff1a32233203efa285e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 248ddc08e52362d6b0d0df90ccf407e95f580fd4
+ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344627"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105633385"
 ---
 # <a name="data-synchronization-state-of-some-availability-database-is-not-healthy"></a>Состояние синхронизации данных некоторых баз данных доступности не является исправным
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
     
 ## <a name="introduction"></a>Введение  
   
-|||  
-|-|-|  
-|**Имя политики**|Состояние синхронизации данных реплики доступности|  
-|**Проблема**|Состояние синхронизации данных некоторых баз данных доступности не является исправным.|  
-|**Категория**|**Предупреждение**|  
-|**Аспект**|Реплика доступности|  
+- **Имя политики** Состояние синхронизации данных реплики доступности
+- **Проблема** Состояние синхронизации данных некоторых баз данных доступности не является исправным.
+- **Категория** **Предупреждение**
+- **Аспект** Реплика доступности  
   
-## <a name="description"></a>Description  
+## <a name="description"></a>Описание  
  Эта политика проверяет состояние синхронизации базы данных доступности (также называемой «реплика базы данных»). Политика находится в неисправном состоянии, когда синхронизация данных приобретает состояние NOT SYNCRONIZING, либо не является SYNCHRONIZED при синхронной фиксации реплики баз данных.   
   
 ## <a name="possible-causes"></a>Возможные причины  

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
-ms.openlocfilehash: 1fcaa82829b35926e2707dda792ac2c376241650
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 15f526feb973387c0f1bcd5bc4e6de0019a5774e
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470935"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980939"
 ---
 # <a name="revoscalepy-python-package-in-sql-server-machine-learning-services"></a>revoscalepy (пакет Python в Службах машинного обучения SQL Server)
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
@@ -92,7 +92,7 @@ ms.locfileid: "97470935"
 
 | Компонент| Описание|
 | ------- | ---------- |
-| [rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) | Создание прогнозов на основе обученной модели|) | Создает прогнозы на основе обученной модели и может использоваться для оценки в реальном времени. |
+| [rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) | Создает прогнозы на основе обученной модели и может использоваться для оценки в реальном времени. |
 |[rx_predict_default](/machine-learning-server/python-reference/revoscalepy/rx-predict-default) | Вычисление прогнозируемых значений и остатков с помощью объектов rx_lin_mod и rx_logit. |
 |[rx_predict_rx_dforest](/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dforest) | Вычисление прогнозируемых или подогнанных значений для набора данных на основе объектов rx_dforest или rx_btrees. |
 |[rx_predict_rx_dtree](/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dtree) | Вычисление прогнозируемых или подогнанных значений для набора данных на основе объекта rx_dtree. |

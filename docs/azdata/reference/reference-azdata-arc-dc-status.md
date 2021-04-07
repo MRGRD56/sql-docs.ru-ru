@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 91bcda5ac4fc7cb39887698cdea19a55b47d8445
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 8379c10fadb93e5467ca870ddeef09cf70f9cf8a
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052675"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556947"
 ---
 # <a name="azdata-arc-dc-status"></a>azdata arc dc status
 
@@ -30,17 +30,13 @@ ms.locfileid: "100052675"
 ## <a name="azdata-arc-dc-status-show"></a>azdata arc dc status show
 Показывает состояние контроллера данных.
 ```bash
-azdata arc dc status show [--namespace -ns] 
-                          
+azdata arc dc status show 
 ```
 ### <a name="examples"></a>Примеры
 Показывает состояние контроллера данных в определенном пространстве имен.
 ```bash
 azdata arc dc status show --namespace <ns>
 ```
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--namespace -ns`
-Пространство имен Kubernetes, в котором существует контроллер данных.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

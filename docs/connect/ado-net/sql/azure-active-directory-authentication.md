@@ -1,7 +1,7 @@
 ---
 title: Использование проверки подлинности Azure Active Directory для SqlClient
 description: Узнайте, как использовать поддерживаемые режимы проверки подлинности Azure Active Directory для подключения к источникам данных Azure SQL с помощью SqlClient
-ms.date: 11/20/2020
+ms.date: 03/30/2021
 dev_langs:
 - csharp
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: karinazhou
 ms.author: v-jizho2
 ms.reviewer: v-daenge
-ms.openlocfilehash: c57c2d10854ed902a6230eafc3a912cd0508c989
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 8ad08c0799f53b2746c621bb1c16a41fe38b7e14
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836017"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054484"
 ---
 # <a name="using-azure-active-directory-authentication-with-sqlclient"></a>Использование проверки подлинности Azure Active Directory для SqlClient
 
@@ -254,7 +254,7 @@ using (SqlConnection conn = new SqlConnection(ConnectionString2)) {
 
 ## <a name="support-for-a-custom-sql-authentication-provider"></a>Поддержка пользовательского поставщика проверки подлинности SQL
 
-Благодаря гибким возможностям клиентское приложение может использовать собственный поставщик проверки подлинности Active Directory вместо стандартного класса `ActiveDirectoryAuthenticationProvider`. Пользовательский поставщик проверки подлинности нужно реализовать в виде подкласса `SqlAuthenticationProvider` с переопределенными методами. 
+Благодаря гибким возможностям клиентское приложение может использовать собственный поставщик проверки подлинности Active Directory вместо стандартного класса `ActiveDirectoryAuthenticationProvider`. Пользовательский поставщик проверки подлинности нужно реализовать в виде подкласса `SqlAuthenticationProvider` с переопределенными методами. Затем необходимо зарегистрировать настраиваемый поставщик, переопределив один или несколько существующих методов проверки подлинности `Active Directory*`.
 
 Следующий пример демонстрирует, как использовать новый поставщик проверки подлинности для проверки подлинности `Active Directory Device Code Flow`.
 

@@ -5,16 +5,16 @@ description: Управление экземплярами SQL Server с пом�
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 12/08/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 4acc04883d4e4fcc0933078b81dcb8be2a45be89
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 664cf371e9ceb1dc59814b80099d5e3b93e2cd68
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100023268"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557547"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>SQL Server с поддержкой Azure Arc (предварительная версия)
 

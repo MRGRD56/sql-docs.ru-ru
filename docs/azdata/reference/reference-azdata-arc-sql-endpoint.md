@@ -2,14 +2,19 @@
 title: Справка по командам azdata arc sql endpoint
 titleSuffix: SQL Server big data clusters
 description: Справочная статья по командам azdata arc sql endpoint.
+author: MikeRayMSFT
+ms.author: mikeray
+ms.reviewer: seanw
+ms.date: 04/06/2021
+ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 190bc4360d8f8cd35f0ceda04887a1fc912243e3
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 13ff758f200bd675bc21c020b9c957fb286ecfd6
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100342530"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556843"
 ---
 # <a name="azdata-arc-sql-endpoint"></a>azdata arc sql endpoint
 
@@ -18,6 +23,7 @@ ms.locfileid: "100342530"
 В следующей статье приводятся справочные сведения по командам **sql** в средстве **azdata**. Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md).
 
 ## <a name="commands"></a>Команды
+
 |Команда|Описание|
 | --- | --- |
 [azdata arc sql endpoint list](#azdata-arc-sql-endpoint-list) | Выводит список конечных точек SQL.
@@ -43,7 +49,7 @@ azdata arc sql endpoint list -n sqlmi1
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 
@@ -52,3 +58,4 @@ azdata arc sql endpoint list -n sqlmi1
 Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md). 
 
 Дополнительные сведения об установке средства **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).
+

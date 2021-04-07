@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 5b134a3ca21b74405fb6ee2cb115015788b59f62
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 868627a39bf6d525c1dab0a32fbf70ba95cf076e
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048964"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557391"
 ---
 # <a name="azdata-arc-resource"></a>azdata arc resource
 
@@ -52,21 +52,13 @@ azdata arc resource-kind list
 ## <a name="azdata-arc-resource-kind-get"></a>azdata arc resource-kind get
 Получает файл шаблона для вида ресурса Arc.
 ```bash
-azdata arc resource-kind get --kind -k 
-                             [--dest -d]
+azdata arc resource-kind get 
 ```
 ### <a name="examples"></a>Примеры
 Пример команды, позволяющей получить файл шаблона определения настраиваемого ресурса (CRD) для вида ресурса Arc.
 ```bash
 azdata arc resource-kind get --kind sqldb
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--kind -k`
-Вид ресурса Arc, для которого вам нужен файл шаблона.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--dest -d`
-Каталог, в котором вы хотите разместить файлы шаблона.
-`template`
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

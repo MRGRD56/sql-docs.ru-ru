@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata.
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d29ac23842c8aae84ed92d37022c5f67420f42d4
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 138fb6ae901102d5d2c27ae616dfaa2aec226ee0
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052265"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556475"
 ---
 # <a name="azdata"></a>azdata
 
@@ -26,16 +26,16 @@ ms.locfileid: "100052265"
 
 |Команда|Описание|
 | --- | --- |
-|[azdata notebook](reference-azdata-notebook.md) | Команды для просмотра, запуска записных книжек и управления ими из терминала. |
-|[Расширение azdata](reference-azdata-extension.md) | Управление расширениями CLI и их обновление. |
-|[azdata arc](reference-azdata-arc.md) | Команды для использования Azure Arc для служб данных Azure. |
-|[azdata app](reference-azdata-app.md) | Создание, удаление и запуск приложений, а также управление ими. |
-|[azdata bdc](reference-azdata-bdc.md) | Создание кластеров больших данных SQL, а также управление ими и обеспечение работы. |
-|[azdata sql](reference-azdata-sql.md) | Интерфейс командной строки (CLI) баз данных SQL позволяет пользователю взаимодействовать с SQL Server с помощью T-SQL. |
+|[azdata postgres](reference-azdata-postgres.md) | Средство выполнения запросов Postgres и интерактивная оболочка. |
 [azdata login](#azdata-login) | Войдите на конечную точку контроллера кластера и задайте его пространство имен в качестве активного контекста. Чтобы использовать пароль при входе, необходимо задать переменную среды AZDATA_PASSWORD.
 [azdata logout](#azdata-logout) | Выход из кластера.
 |[azdata context](reference-azdata-context.md) | Команды управления контекстом. |
-|[azdata postgres](reference-azdata-postgres.md) | Средство выполнения запросов Postgres и интерактивная оболочка. |
+|[azdata arc](reference-azdata-arc.md) | Команды для использования Azure Arc для служб данных Azure. |
+|[azdata bdc](reference-azdata-bdc.md) | Создание кластеров больших данных SQL, а также управление ими и обеспечение работы. |
+|[azdata notebook](reference-azdata-notebook.md) | Команды для просмотра, запуска записных книжек и управления ими из терминала. |
+|[azdata app](reference-azdata-app.md) | Создание, удаление и запуск приложений, а также управление ими. |
+|[azdata sql](reference-azdata-sql.md) | Интерфейс командной строки (CLI) баз данных SQL позволяет пользователю взаимодействовать с SQL Server с помощью T-SQL. |
+|[Расширение azdata](reference-azdata-extension.md) | Управление расширениями CLI и их обновление. |
 ## <a name="azdata-login"></a>azdata login
 Если кластер развернут, выводит список конечных точек контроллера в процессе развертывания, которые следует использовать для входа.  Если вам не известна конечная точка контроллера, вы можете выполнить вход с использованием конфигурации KUBE кластера в системе, которая по умолчанию располагается в каталоге <user home>/.kube/config, или переменной среды KUBECONFIG, то есть экспортировать KUBECONFIG=path/to/.kube/config.  При входе в систему пространство имен этого кластера будет установлено в ваш активный контекст.
 ```bash
@@ -53,7 +53,7 @@ azdata login [--auth]
 ### <a name="examples"></a>Примеры
 Вход с использованием обычной проверки подлинности.
 ```bash
-azdata login --auth basic --username johndoe --endpoint https://<ip or domain name>:30080            
+azdata login --auth basic --username johndoe --endpoint https://<ip or domain name>:30080
 ```
 Вход с использованием Active Directory.
 ```bash

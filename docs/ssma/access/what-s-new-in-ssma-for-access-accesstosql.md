@@ -10,16 +10,22 @@ ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: a24d3fc0-6911-4bfa-828a-197abf222e02
 ms.author: alexiva
-ms.openlocfilehash: b6d660d00b036c1bbc5008411a9f8e9a0bc77ea0
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 446d436a01a222c85e0e0e60083b973a7e16413c
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102185891"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981090"
 ---
 # <a name="whats-new-in-ssma-for-access-accesstosql"></a>Новые возможности SSMA для Access (Акцесстоскл)
 
 В этой статье перечислены Помощник по миграции SQL Server (SSMA) для изменения доступа в каждом выпуске.
+
+## <a name="ssma-v818"></a>SSMA v 8.18
+
+Версия SSMA 8.18 для Access содержит следующие изменения:
+
+* Незначительные улучшения производительности и исправления ошибок
 
 ## <a name="ssma-v817"></a>SSMA v 8.17
 

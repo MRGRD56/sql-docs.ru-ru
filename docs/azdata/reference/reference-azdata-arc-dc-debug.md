@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 3979dbd8561eeedf3e5c0ab03a51b04b2bd73674
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 722d458d75c6f366e65b2f8e9c36cd3f02ed6df7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052685"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556967"
 ---
 # <a name="azdata-arc-dc-debug"></a>azdata arc dc debug
 
@@ -31,43 +31,8 @@ ms.locfileid: "100052685"
 ## <a name="azdata-arc-dc-debug-copy-logs"></a>azdata arc dc debug copy-logs
 Копирование журналов отладки из контроллера данных. В системе должна быть конфигурация Kubernetes.
 ```bash
-azdata arc dc debug copy-logs --namespace -ns 
-                              [--container -c]  
-                              
-[--target-folder -d]  
-                              
-[--pod]  
-                              
-[--resource-kind -rk]  
-                              
-[--resource-name -rn]  
-                              
-[--timeout -t]  
-                              
-[--skip-compress -sc]  
-                              
-[--exclude-dumps -ed]
+azdata arc dc debug copy-logs 
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--namespace -ns`
-Пространство имен Kubernetes контроллера данных.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--container -c`
-Копирование журналов для контейнеров с одинаковыми именами. Необязательный параметр. По умолчанию копируются журналы для всех контейнеров. Нельзя указывать несколько раз. Если этот параметр указан несколько раз, используется последний параметр.
-#### `--target-folder -d`
-Путь к конечной папке, в которую должны копироваться журналы. Необязательный параметр. По умолчанию результаты помещаются в локальную папку.  Нельзя указывать несколько раз. Если этот параметр указан несколько раз, используется последний параметр.
-#### `--pod`
-Копирование журналов для объектов pod с одинаковыми именами. Необязательный параметр. По умолчанию копируются журналы для всех объектов pod. Нельзя указывать несколько раз. Если этот параметр указан несколько раз, используется последний параметр.
-#### `--resource-kind -rk`
-Копирование журналов для ресурса определенного типа. Нельзя указывать несколько раз. Если этот параметр указан несколько раз, используется последний параметр. Если указан этот параметр, то для определения ресурса также должен быть указан параметр --resource-name.
-#### `--resource-name -rn`
-Копирование журналов для ресурса указанного имени. Нельзя указывать несколько раз. Если этот параметр указан несколько раз, используется последний параметр. Если указан этот параметр, то для определения ресурса также должен быть указан параметр --resource-kind.
-#### `--timeout -t`
-Время ожидания завершения команды в секундах. Значение по умолчанию — 0, что означает неограниченный срок.
-#### `--skip-compress -sc`
-Следует ли пропустить сжатие папки результатов. Значение по умолчанию — false, которое сжимает папку результатов.
-#### `--exclude-dumps -ed`
-Следует ли исключать дампы из папки результатов. Значение по умолчанию — false, включающее дампы.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -82,20 +47,8 @@ azdata arc dc debug copy-logs --namespace -ns
 ## <a name="azdata-arc-dc-debug-dump"></a>azdata arc dc debug dump
 Создание дампа памяти и его копирование из контейнера. В системе должна быть конфигурация Kubernetes.
 ```bash
-azdata arc dc debug dump --namespace -ns 
-                         [--container -c]  
-                         
-[--target-folder -d]
+azdata arc dc debug dump 
 ```
-### <a name="required-parameters"></a>Необходимые параметры
-#### `--namespace -ns`
-Пространство имен Kubernetes контроллера данных.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--container -c`
-Целевой контейнер, запускаемый для создания дампа запущенных процессов.
-`controller`
-#### `--target-folder -d`
-Целевая папка для копирования дампа. `./output/dump`
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -112,5 +65,5 @@ azdata arc dc debug dump --namespace -ns
 
 Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md). 
 
-Дополнительные сведения об установке инструмента **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).
+Дополнительные сведения об установке средства **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).
 

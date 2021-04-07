@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 07eb00dd-621a-46f9-a5a5-8cab4d6058b5
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 3982d18398a77a28113292f3a8c8300a94a5de47
-ms.sourcegitcommit: bacd45c349d1b33abef66db47e5aa809218af4ea
+ms.openlocfilehash: 41e53b1e0feb18e3d3394a0c726f80df8743fd61
+ms.sourcegitcommit: c09ef164007879a904a376eb508004985ba06cf0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104793063"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104890629"
 ---
 # <a name="configuring-how-javasqltime-values-are-sent-to-the-server"></a>Настройка способа отправки значений java.sql.Time на сервер
 
@@ -32,6 +32,8 @@ ms.locfileid: "104793063"
 - [SQLServerPreparedStatement.setTime](reference/settime-method-sqlserverpreparedstatement.md)
 - [SQLServerCallableStatement.setObject](reference/setobject-method-sqlservercallablestatement.md)
 - [SQLServerPreparedStatement.setObject](reference/setobject-method-sqlserverpreparedstatement.md)
+
+## <a name="sendtimeasdatetime"></a>SendTimeAsDatetime
 
 Порядок отправки значения java.sql.Time можно настроить с помощью свойства соединения **sendTimeAsDatetime**. Дополнительные сведения: [Задание свойств соединения](setting-the-connection-properties.md).
 

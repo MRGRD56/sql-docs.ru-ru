@@ -15,12 +15,12 @@ ms.assetid: 64514aed-b846-407b-992e-cf813f9a1a91
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: dc4f26877483a1213b1c5ecd3363dd1ba0c75fee
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 6d2b28058cbc44c89d9434e43d500fc1ee601792
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104738104"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054618"
 ---
 # <a name="specify-default-values-for-columns"></a>Указание значений по умолчанию для столбца
 
@@ -45,6 +45,9 @@ ms.locfileid: "104738104"
 - Чтобы задать численное значение по умолчанию, введите число без одинарных кавычек.
 
 - Чтобы задать объект или функцию, введите имя объекта или функции без двойных кавычек.
+
+> [!NOTE]
+> В Azure Synapse Analytics для ограничения по умолчанию можно использовать только константы. Выражение нельзя использовать с ограничением по умолчанию.
 
 ### <a name="security-permissions"></a><a name="Security"></a> Разрешения безопасности
 

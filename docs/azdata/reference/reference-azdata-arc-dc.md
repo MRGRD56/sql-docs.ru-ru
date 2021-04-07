@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: b223b3b69ba3eda1be5f882b4cabd868c345b20c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1f1464d84655b942f294f71af53cf55b226372c5
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100049014"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557437"
 ---
 # <a name="azdata-arc-dc"></a>azdata arc dc
 
@@ -37,48 +37,13 @@ ms.locfileid: "100049014"
 ## <a name="azdata-arc-dc-create"></a>azdata arc dc create
 Создание контроллера данных. Необходимо иметь в системе файл kube config, а также переменные среды ['AZDATA_USERNAME', 'AZDATA_PASSWORD'].
 ```bash
-azdata arc dc create --namespace -ns 
-                     --name -n  
-                     
---connectivity-mode  
-                     
---resource-group -g  
-                     
---location -l  
-                     
---subscription -s  
-                     
-[--profile-name]  
-                     
-[--path -p]  
-                     
-[--storage-class -sc]
+azdata arc dc create 
 ```
 ### <a name="examples"></a>Примеры
 Развертывание контроллера данных.
 ```bash
 azdata arc dc create
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--namespace -ns`
-Пространство имен Kubernetes, в котором нужно развернуть контроллер данных. Если оно уже существует, то оно и будет использоваться. Если оно не существует, сначала будет предпринята попытка создать его.
-#### `--name -n`
-Имя контроллера данных.
-#### `--connectivity-mode`
-Подключения к Azure (прямые или непрямые), в которых должен работать контроллер данных.
-#### `--resource-group -g`
-Группа ресурсов Azure, в которой должен быть добавлен ресурс контроллера данных.
-#### `--location -l`
-Расположение Azure, в котором будут храниться метаданные контроллера данных (например, eastus — Восточная часть США).
-#### `--subscription -s`
-ИД подписки Azure, в которой должен быть добавлен ресурс контроллера данных.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--profile-name`
-Имя существующего профиля конфигурации. Для отображения доступных вариантов выполните команду `azdata arc dc config list`. Возможны следующие варианты: ['azure-arc-aks-premium-storage', 'azure-arc-ake', 'azure-arc-openshift', 'azure-arc-gke', 'azure-arc-aks-default-storage', 'azure-arc-kubeadm', 'azure-arc-eks', 'azure-arc-azure-openshift', 'azure-arc-aks-hci'].
-#### `--path -p`
-Путь к каталогу, где содержится используемый настраиваемый профиль конфигурации. Чтобы создать настраиваемый профиль конфигурации, выполните команду `azdata arc dc config init`.
-#### `--storage-class -sc`
-Класс хранения, который будет использоваться всеми томами постоянного хранения данных и журналов, требуемыми для объектов pod контроллеров данных.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -93,24 +58,13 @@ azdata arc dc create
 ## <a name="azdata-arc-dc-delete"></a>azdata arc dc delete
 Удаление контроллера данных. Необходимо иметь в системе файл kube config.
 ```bash
-azdata arc dc delete --name -n 
-                     --namespace -ns  
-                     
-[--force -f]
+azdata arc dc delete 
 ```
 ### <a name="examples"></a>Примеры
 Развертывание контроллера данных.
 ```bash
 azdata arc dc delete
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--name -n`
-Имя контроллера данных.
-#### `--namespace -ns`
-Пространство имен Kubernetes, в котором существует контроллер данных.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--force -f`
-Принудительное удаление контроллера данных.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -125,19 +79,8 @@ azdata arc dc delete
 ## <a name="azdata-arc-dc-export"></a>azdata arc dc export
 Экспорт метрик, журналов или сведений об использовании в файл.
 ```bash
-azdata arc dc export --type -t 
-                     --path -p  
-                     
-[--force -f]
+azdata arc dc export 
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--type -t`
-Тип экспортируемых данных. Это могут быть журналы, метрики и данные об использовании.
-#### `--path -p`
-Полный или относительный путь, включающий имя файла для экспорта.
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--force -f`
-Принудительное создание выходного файла. Перезаписывает существующий файл (при наличии) по тому же пути.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -152,12 +95,8 @@ azdata arc dc export --type -t
 ## <a name="azdata-arc-dc-upload"></a>azdata arc dc upload
 Отправка файла данных, экспортируемого из контроллера данных в Azure.
 ```bash
-azdata arc dc upload --path -p 
-                     
+azdata arc dc upload 
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--path -p`
-Полный или относительный путь, включающий имя файла для отправки.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

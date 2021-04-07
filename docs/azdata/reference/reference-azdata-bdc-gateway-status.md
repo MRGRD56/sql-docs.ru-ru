@@ -5,16 +5,16 @@ description: Справочная статья по командам состо�
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ef05cb490757b1b21b9f3faa7cdb0b881a0089ba
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e9b77984f215dc4c4360e79865aebc8d194320da
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052475"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557276"
 ---
 # <a name="azdata-bdc-gateway-status"></a>Состояние шлюза bdc azdata
 
@@ -67,5 +67,5 @@ azdata bdc gateway status show --resource gateway
 
 Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md). 
 
-Дополнительные сведения об установке средства **azdata** см. в статье [Установка azdata](..\install\deploy-install-azdata.md).
+Дополнительные сведения об установке средства **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).
 

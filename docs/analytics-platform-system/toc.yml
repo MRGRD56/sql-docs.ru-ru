@@ -123,6 +123,8 @@
       href: ./transparent-data-encryption.md
     - name: Подготовка сертификата
       href: ./provision-certificate.md
+    - name: Настройка доверия для доменов
+      href: ./configure-domain-trusts.md
 - name: Задачи управления устройствами
   href: ./appliance-management-tasks.md
   items:

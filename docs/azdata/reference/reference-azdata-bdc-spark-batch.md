@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 8e6dea113ff65125f24819b1f579f686e9452ee1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a233aae9ae8c7ecb144ddb3b85c8f0bd2f1c6897
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048804"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556617"
 ---
 # <a name="azdata-bdc-spark-batch"></a>azdata bdc spark batch
 
@@ -67,7 +67,7 @@ azdata bdc spark batch create --file -f
 ### <a name="examples"></a>Примеры
 Создание пакета Spark.
 ```bash
-azdata bdc spark batch create --code "2+2"
+azdata spark batch create --code "2+2"
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--file -f`
@@ -120,7 +120,7 @@ azdata bdc spark batch list
 ### <a name="examples"></a>Примеры
 Вывод списка всех активных пакетов.
 ```bash
-azdata bdc spark batch list
+azdata spark batch list
 ```
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
@@ -142,7 +142,7 @@ azdata bdc spark batch info --batch-id -i
 ### <a name="examples"></a>Примеры
 Получение сведений о пакете с идентификатором 0.
 ```bash
-azdata bdc spark batch info --batch-id 0
+azdata spark batch info --batch-id 0
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--batch-id -i`
@@ -167,7 +167,7 @@ azdata bdc spark batch log --batch-id -i
 ### <a name="examples"></a>Примеры
 Получение журнала для пакета с идентификатором 0.
 ```bash
-azdata bdc spark batch log --batch-id 0
+azdata spark batch log --batch-id 0
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--batch-id -i`
@@ -192,7 +192,7 @@ azdata bdc spark batch state --batch-id -i
 ### <a name="examples"></a>Примеры
 Получение состояния пакета с идентификатором 0.
 ```bash
-azdata bdc spark batch state --batch-id 0
+azdata spark batch state --batch-id 0
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--batch-id -i`
@@ -217,7 +217,7 @@ azdata bdc spark batch delete --batch-id -i
 ### <a name="examples"></a>Примеры
 Удаление пакета.
 ```bash
-azdata bdc spark batch delete --batch-id 0
+azdata spark batch delete --batch-id 0
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--batch-id -i`
