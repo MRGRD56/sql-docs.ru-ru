@@ -1,7 +1,7 @@
 ---
-title: Настройка параметра конфигурации сервера max degree of parallelism | Документы Майкрософт
+title: Настройка параметра конфигурации сервера max degree of parallelism
 description: Изучите параметр max degree of parallelism (MAXDOP). Узнайте, как его можно использовать для ограничения числа процессоров, применяемых SQL Server при параллельном выполнении планов.
-ms.date: 02/12/2020
+ms.date: 03/27/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -13,16 +13,15 @@ helpviewer_keywords:
 - number of processors for parallel queries
 - max degree of parallelism option
 - MaxDop
-ms.assetid: 86b65bf1-a6a1-4670-afc0-cdfad1558032
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 4006ad1707d30d0a9147056ddfff8b71ae7643e1
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 67e081682482bf4fbe3c85f0667f40a0d61b1e81
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236966"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179914"
 ---
 # <a name="configure-the-max-degree-of-parallelism-server-configuration-option"></a>Настройка параметра конфигурации сервера max degree of parallelism
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +29,8 @@ ms.locfileid: "99236966"
   В этом разделе описывается настройка параметра конфигурации сервера **max degree of parallelism (MAXDOP)** в SQL Server с помощью среды [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] или [!INCLUDE[tsql](../../includes/tsql-md.md)]. Если экземпляр [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] работает на компьютере с более чем одним микропроцессором или ЦП, [!INCLUDE[ssde_md](../../includes/ssde_md.md)] определяет, можно ли использовать параллелизм. Уровень параллелизма ограничивает максимальное число процессоров, которые задействуются для выполнения одной инструкции для каждого выполнения параллельных планов. Для ограничения количества процессоров в плане параллельного выполнения может быть использован параметр **max degree of parallelism** . Дополнительные сведения об ограничениях **максимальной степени параллелизма (MAXDOP)** см. в разделе [Рекомендации](#Considerations) на этой странице. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] учитывает планы параллельного выполнения для запросов, операций с индексами на языке DDL, параллельной вставки, изменения столбца в режиме "в сети", параллельного сбора статистики и заполнения статических курсоров и курсоров, управляемых набором ключей.
 
 > [!NOTE]
-> [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] содержит автоматические рекомендации по настройке параметра конфигурации сервера MAXDOP в процессе установки на основе количества доступных процессоров. Пользовательский интерфейс программы установки позволяет либо принять рекомендуемые параметры, либо задать свое значение. Дополнительные сведения см. в разделе [Конфигурация ядра СУБД — страница MaxDOP](../../sql-server/install/instance-configuration.md#maxdop).
+> [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] содержит автоматические рекомендации по настройке параметра конфигурации сервера MAXDOP в процессе установки на основе количества доступных процессоров. Пользовательский интерфейс программы установки позволяет либо принять рекомендуемые параметры, либо задать свое значение. Дополнительные сведения см. в разделе [Конфигурация ядра СУБД — страница MaxDOP](../../sql-server/install/instance-configuration.md#maxdop).<BR>
+При этом в Azure SQL параметр MAXDOP по умолчанию для каждой новой базы данных и базы данных эластичного пула имеет значение 8. Дополнительные сведения об MAXDOP в [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] см. в статье [Настройка максимальной степени параллелизма (MAXDOP) в Базе данных SQL Azure](/azure/azure-sql/database/configure-max-degree-of-parallelism).
 
 ##  <a name="before-you-begin"></a><a name="BeforeYouBegin"></a> Перед началом  
   

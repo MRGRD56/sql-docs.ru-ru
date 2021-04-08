@@ -14,12 +14,12 @@ ms.assetid: 051af34e-bb5b-403e-bd33-007dc02eef7b
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 51e1253eb44d49285a30e8a0ec77ddf6caae7cba
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 99c7cd242a1983c387a4bce41504fa88df45d6da
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750434"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273499"
 ---
 # <a name="getting-started-with-database-engine-permissions"></a>Приступая к работе с разрешениями Database Engine
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -100,7 +100,7 @@ AUTHORIZATION  PERMISSION  ON  SECURABLE::NAME  TO  PRINCIPAL;
   
 -   `AUTHORIZATION` должен быть равен `GRANT`, `REVOKE` или `DENY`.  
   
--   Предложение `PERMISSION` определяет, какое действие разрешено или запрещено. [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)] можно указать 230 разрешений. [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] предусмотрено меньше разрешений, так как некоторые действия не относятся к Azure. Разрешения перечисляются в разделе [Разрешения (компонент Database Engine)](../../../relational-databases/security/permissions-database-engine.md) и на схеме, упоминаемой ниже.  
+-   Предложение `PERMISSION` определяет, какое действие разрешено или запрещено. Точное количество разрешений будет разным для SQL Server и Базы данных SQL. Разрешения перечисляются в разделе [Разрешения (компонент Database Engine)](../../../relational-databases/security/permissions-database-engine.md) и на схеме, упоминаемой ниже.  
   
 -   `ON SECURABLE::NAME` представляет тип защищаемого объекта (сервер, объект сервера, база данных или объект базы данных) и его имя. Некоторые разрешения не требуют указания `ON SECURABLE::NAME` , так как оно может быть однозначным или недопустимым в контексте. Например, для разрешения `CREATE TABLE` не требуется предложение `ON SECURABLE::NAME`. (Инструкция `GRANT CREATE TABLE TO Mary;` позволяет пользователю Mary создавать таблицы.)  
   
@@ -110,6 +110,12 @@ AUTHORIZATION  PERMISSION  ON  SECURABLE::NAME  TO  PRINCIPAL;
   
 ```  
 GRANT UPDATE ON OBJECT::Production.Parts TO PartsTeam;  
+```  
+
+ Инструкция grant в следующем примере предоставляет роли `ProductionTeam` разрешение `UPDATE` для схемы `Production`, то есть доступ к любой таблице или представлению в этой схеме. Это более эффективный и масштабируемый подход к назначению разрешений, чем разрешения на уровне отдельных объектов.
+  
+```  
+GRANT UPDATE ON SCHEMA::Production TO ProductionTeam;  
 ```  
   
  Разрешения предоставляются субъектам безопасности (именам входа, пользователям и ролям) с помощью инструкции `GRANT` . Разрешения явно отклоняются с помощью команды  `DENY` . Для удаления ранее предоставленного или отклоненного разрешения используется инструкция `REVOKE` . Разрешения накапливаются, то есть пользователь получает все разрешения, предоставленные пользователю, имени входа и любой группе, членом которой он является. При этом отклонение разрешения отменяет все предоставленные ранее разрешения.  
@@ -154,10 +160,12 @@ GRANT CONTROL ON DATABASE::SalesDB TO Ted;
 ```  
   
 ## <a name="grant-the-least-permission"></a>Предоставление минимального разрешения  
- Первое указанное выше разрешение (`GRANT SELECT ON OBJECT::Region TO Ted;`) — наиболее гранулярное, то есть эта инструкция предоставляет минимально возможное разрешение `SELECT`. Вместе с ним не предоставляются разрешения для каких-либо вложенных объектов. Рекомендуется всегда предоставлять минимально возможное разрешение, однако (напротив) на более высоких уровнях для упрощения системы предоставления разрешений. Таким образом, если пользователю Ted нужны разрешения для всей схемы, предоставьте разрешение `SELECT` один раз на уровне схемы, вместо того чтобы предоставлять `SELECT` на уровне таблицы или представления несколько раз. Структура базы данных имеет большое влияние на успешность применения этой стратегии. Стратегия наиболее эффективна, когда объекты в базе данных, которым требуются одинаковые разрешения, включаются в одну схему.  
+ Первое указанное выше разрешение (`GRANT SELECT ON OBJECT::Region TO Ted;`) — наиболее гранулярное, то есть эта инструкция предоставляет минимально возможное разрешение `SELECT`. Вместе с ним не предоставляются разрешения для каких-либо вложенных объектов. Рекомендуется всегда предоставлять минимально возможные разрешения (дополнительные сведения см. в статье [Принцип минимальных привилегий](https://techcommunity.microsoft.com/t5/azure-sql/security-the-principle-of-least-privilege-polp/ba-p/2067390)), но при этом (напротив) на более высоких уровнях, чтобы упростить систему разрешений. Таким образом, если пользователю Ted нужны разрешения для всей схемы, предоставьте разрешение `SELECT` один раз на уровне схемы, вместо того чтобы предоставлять `SELECT` на уровне таблицы или представления несколько раз. Структура базы данных имеет большое влияние на успешность применения этой стратегии. Стратегия наиболее эффективна, когда объекты в базе данных, которым требуются одинаковые разрешения, включаются в одну схему.  
+ 
+ > [!TIP]  
+>  При разработке базы данных и объектов для нее следует с самого начала определить, какие пользователи или приложения будут обращаться к каким объектам. На основе этих данных сами объекты (таблицы, представления, функции и хранимые процедуры) распределяются по схемам и контейнерам с доступом разного типа. Подробные сведения об этом подходе см. в записи блога Андреаса Вольтера (Andreas Wolter) [Schema-design for SQL Server: recommendations for Schema design with security in mind](http://andreas-wolter.com/en/schema-design-for-sql-server-recommendations-for-schema-design-with-security-in-mind/) (Разработка схемы для SQL Server: рекомендации по разработке схемы с учетом безопасности). 
   
-## <a name="list-of-permissions"></a>Список разрешений  
- [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)] предусмотрено 230 разрешений. [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] предусмотрено 219 разрешений. [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] предусмотрено 214 разрешений. [!INCLUDE[ssKilimanjaro](../../../includes/sskilimanjaro-md.md)] предусмотрено 195 разрешений. [!INCLUDE[ssSDS](../../../includes/sssds-md.md)], [!INCLUDE[ssDW](../../../includes/ssdw-md.md)]и [!INCLUDE[ssAPS](../../../includes/ssaps-md.md)] разрешений меньше, так как они определяют только часть ядра СУБД, тогда как отдельные их разрешения не применяются к [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. 
+## <a name="diagramm-of-permissions"></a>Схема разрешений  
  
  [!INCLUDE[database-engine-permissions](../../../includes/paragraph-content/database-engine-permissions.md)]
  

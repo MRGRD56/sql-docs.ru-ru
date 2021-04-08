@@ -13,12 +13,12 @@ ms.prod_service: linux
 ms.assetid: 82737f18-f5d6-4dce-a255-688889fdde69
 monikerRange: '>= sql-server-linux-2017 || >= sql-server-2017'
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 9393064403fbd41255b6be0712813185e745d6c1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d72587194cae2d7f45ffd02610be614db359a087
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100344441"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232171"
 ---
 # <a name="quickstart-run-sql-server-container-images-with-docker"></a>Краткое руководство. Запуск образов контейнеров SQL Server в Docker
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -138,7 +138,7 @@ any changes to one section should be duplicated in the other-->
 
    | Параметр | Описание |
    |-----|-----|
-   | **-e "ACCEPT_EULA=Y"** |  Присвойте переменной **ACCEPT_EULA** любое значение, чтобы подтвердить свое согласие с [лицензионным соглашением](https://go.microsoft.com/fwlink/?linkid=857698). Обязательный параметр для образа SQL Server. |
+   | **-e "ACCEPT_EULA=Y"** |  Присвойте переменной **ACCEPT_EULA** любое значение, чтобы подтвердить свое согласие с лицензионным соглашением. Обязательный параметр для образа SQL Server. |
    | **-e "SA_PASSWORD=\<YourStrong@Passw0rd\>"** | Укажите свой надежный пароль длиной не меньше восьми символов, соответствующий [требованиям к паролям в SQL Server](../relational-databases/security/password-policy.md). Обязательный параметр для образа SQL Server. |
    | **-p 1433:1433** | Сопоставление TCP-порта среды узла (первое значение) с TCP-портом в контейнере (второе значение). В нашем примере SQL Server прослушивает TCP-порт 1433 в контейнере, который перенаправляется на порт 1433 на узле. |
    | **--name sql1** | Укажите свое имя для контейнера вместо сгенерированного случайным образом. При запуске нескольких контейнеров использовать одинаковые имена запрещено. |
@@ -264,7 +264,7 @@ SELECT @@SERVERNAME,
 
    | Параметр | Описание |
    |-----|-----|
-   | **-e "ACCEPT_EULA=Y"** |  Присвойте переменной **ACCEPT_EULA** любое значение, чтобы подтвердить свое согласие с [лицензионным соглашением](https://go.microsoft.com/fwlink/?LinkId=746388). Обязательный параметр для образа SQL Server. |
+   | **-e "ACCEPT_EULA=Y"** |  Присвойте переменной **ACCEPT_EULA** любое значение, чтобы подтвердить свое согласие с лицензионным соглашением. Обязательный параметр для образа SQL Server. |
    | **-e "SA_PASSWORD=\<YourStrong@Passw0rd\>"** | Укажите свой надежный пароль длиной не меньше восьми символов, соответствующий [требованиям к паролям в SQL Server](../relational-databases/security/password-policy.md). Обязательный параметр для образа SQL Server. |
    | **-p 1433:1433** | Сопоставление TCP-порта среды узла (первое значение) с TCP-портом в контейнере (второе значение). В нашем примере SQL Server прослушивает TCP-порт 1433 в контейнере, который перенаправляется на порт 1433 на узле. |
    | **--name sql1** | Укажите свое имя для контейнера вместо сгенерированного случайным образом. При запуске нескольких контейнеров использовать одинаковые имена запрещено. |

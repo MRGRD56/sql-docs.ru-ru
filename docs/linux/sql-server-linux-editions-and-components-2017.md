@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.openlocfilehash: 299155fad92a34b79c7a1a7c0a4d1ad0f86111ea
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: fe15c32e5536aee8135e0a32e9365ed01dc40c8e
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348160"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099968"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017-on-linux"></a>Выпуски и поддерживаемые функции SQL Server 2017 в Linux
 
@@ -233,8 +233,8 @@ SQL Server 2017 на Linux поддерживает ядро СУБД SQL Serv
 | &nbsp; | Управляемое резервное копирование |
 | **Обеспечение высокого уровня доступности** | Зеркальное отображение базы данных  |
 | **Безопасность** | расширенное управление ключами |
-| &nbsp; | Проверка подлинности AD для связанных серверов | 
-| &nbsp; | Проверка подлинности AD для групп доступности | 
+| &nbsp; | Проверка подлинности AD для связанных серверов |
+| &nbsp; | Аутентификация AD для конечных точек групп доступности |
 | **Службы** | Обозреватель SQL Server |
 | &nbsp; | Службы R SQL Server |
 | &nbsp; | StreamInsight |

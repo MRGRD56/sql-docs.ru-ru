@@ -1,25 +1,25 @@
 ---
-title: Распространенные ошибки скриптов R
-description: В этой статье описываются некоторые распространенные ошибки, возникающие при выполнении скриптов R в SQL Server.
+title: Распространенные ошибки при выполнении скриптов R
+description: В этой статье описываются некоторые распространенные ошибки, возникающие при выполнении скриптов R в Службах машинного обучения SQL Server.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 05/31/2018
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 0f9f086ec09830e65f85ca2df5232e8b401cb9eb
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: ac6f6ed7acd07ee4f2b399550948b124f217876b
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186421"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099983"
 ---
-# <a name="common-r-scripting-errors-in-sql-server"></a>Распространенные ошибки скриптов R в SQL Server
+# <a name="common-r-script-errors-in-sql-server-machine-learning-services"></a>Распространенные ошибки при выполнении скриптов R в Службах машинного обучения SQL Server
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-В этой статье описываются некоторые распространенные ошибки, возникающие при выполнении скриптов R в SQL Server. Этот список не является исчерпывающим. Существует множество пакетов, и ошибки в разных версиях одного пакета могут различаться.
+В этой статье описываются некоторые распространенные ошибки при выполнении скриптов R в [Службах машинного обучения SQL Server](../sql-server-machine-learning-services.md). Этот список не является исчерпывающим. Существует множество пакетов, и ошибки в разных версиях одного пакета могут различаться.
 
 ## <a name="valid-script-fails-in-t-sql-or-in-stored-procedures"></a>Сбой допустимого скрипта в T-SQL или хранимых процедурах
 
@@ -90,13 +90,9 @@ remove('name1', 'name2', ...)
 
 Если нужно удалить несколько переменных, мы рекомендуем сохранить имена временных переменных в списке, а затем периодически выполнять сборку мусора в нем.
 
-
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Устранение неполадок и известные проблемы Служб машинного обучения](machine-learning-troubleshooting-overview.md)
-
-[Сбор данных для устранения неполадок машинного обучения](data-collection-ml-troubleshooting-process.md)
+[Сбор данных для устранения неполадок со Службами машинного обучения SQL Server](data-collection-ml-troubleshooting-process.md)
 
 [Установка служб машинного обучения SQL Server](../install/sql-machine-learning-services-windows-install.md)
 

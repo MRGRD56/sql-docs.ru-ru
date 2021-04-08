@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cce49516f92db523dfd25f8ea651ab217ef13619
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 7006fbf0570aea7c942f7e904144cb72658b7903
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739944"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179924"
 ---
 # <a name="row-level-security"></a>Безопасность на уровне строк
 
@@ -533,6 +533,152 @@ DROP SECURITY POLICY Security.SalesFilter;
 DROP TABLE Sales;
 DROP FUNCTION Security.fn_securitypredicate;
 DROP SCHEMA Security;
+```
+
+### <a name="d-scenario-for-using-a-lookup-table-for-the-security-predicate"></a><a name="Lookup"></a> Г. Сценарий применения таблицы подстановки для предиката безопасности
+
+В этом примере таблица подстановки применяется для связи между идентификатором пользователя и фильтруемым значением, чтобы не пришлось указывать сам идентификатор пользователя в таблице фактов. Здесь создаются три пользователя, а также заполняется таблица фактов с шестью строками и таблица подстановки с двумя строками. Затем создается встроенная функция с табличным значением, которая объединяет таблицы фактов и подстановки для получения идентификатора пользователя и политики безопасности для таблицы. Пример затем показывает, как фильтруются отдельные инструкции для разных пользователей.  
+  
+Создайте три учетные записи пользователей, демонстрирующие разные возможности доступа.  
+
+```sql  
+CREATE USER Manager WITHOUT LOGIN;  
+CREATE USER Sales1 WITHOUT LOGIN;  
+CREATE USER Sales2 WITHOUT LOGIN;  
+```
+
+Создайте пример схемы и таблицу фактов для хранения данных.  
+
+```sql
+CREATE SCHEMA Sample;
+
+CREATE TABLE Sample.Sales  
+    (  
+    OrderID int,  
+    Product varchar(10),  
+    Qty int 
+    );    
+```
+
+ Заполните таблицу фактов шестью строками данных.  
+
+```sql
+INSERT INTO Sample.Sales VALUES (1, 'Valve', 5);
+INSERT INTO Sample.Sales VALUES (2, 'Wheel', 2);
+INSERT INTO Sample.Sales VALUES (3, 'Valve', 4);
+INSERT INTO Sample.Sales VALUES (4, 'Bracket', 2);
+INSERT INTO Sample.Sales VALUES (5, 'Wheel', 5);
+INSERT INTO Sample.Sales VALUES (6, 'Seat', 5);
+-- View the 6 rows in the table  
+SELECT * FROM Sample.Sales;
+```
+
+Создайте таблицу для хранения данных подстановки, в нашем примере — для связи между сущностями Salesrep и Product.  
+
+```sql
+CREATE TABLE Sample.Lk_Salesman_Product
+  ( Salesrep sysname, 
+    Product varchar(10)
+  ) ;
+```
+
+ Внесите в таблицу подстановки пример данных, в которых товары сопоставляются с каждым из торговых представителей.  
+
+```sql
+INSERT INTO Sample.Lk_Salesman_Product VALUES ('Sales1', 'Valve');
+INSERT INTO Sample.Lk_Salesman_Product VALUES ('Sales2', 'Wheel');
+-- View the 2 rows in the table
+SELECT * FROM Sample.Lk_Salesman_Product;
+```
+
+Предоставьте каждому из пользователей доступ на чтение к таблице фактов.  
+
+```sql
+GRANT SELECT ON Sample.Sales TO Manager;  
+GRANT SELECT ON Sample.Sales TO Sales1;  
+GRANT SELECT ON Sample.Sales TO Sales2;  
+```
+
+Создайте новую схему и встроенную функцию с табличным значением. Эта функция возвращает 1, если пользователь запрашивает таблицу фактов Sales, а значение в столбце SalesRep таблицы Lk_Salesman_Product совпадает с идентификатором пользователя, выполняющего запрос (`@SalesRep = USER_NAME()`) при объединении с таблицей фактов по столбцу Product, если выполняющий запрос пользователь является менеджером (`USER_NAME() = 'Manager'`).
+
+```sql
+CREATE SCHEMA Security ;
+
+CREATE FUNCTION Security.fn_securitypredicate
+         (@Product AS varchar(10))
+RETURNS TABLE
+WITH SCHEMABINDING
+AS 
+           RETURN ( SELECT 1 as Result
+                     FROM Sample.Sales f
+            INNER JOIN Sample.Lk_Salesman_Product s
+                     ON s.Product = f.Product
+            WHERE ( f.product = @Product
+                    AND s.SalesRep = USER_NAME() )
+                 OR USER_NAME() = 'Manager'
+                   ) ;
+ 
+```
+
+Создайте политику безопасности, добавляя функцию в качестве предиката фильтра. Состоянию должно быть присвоено значение ON для включения политики.
+
+```sql
+CREATE SECURITY POLICY SalesFilter 
+ADD FILTER PREDICATE Security.fn_securitypredicate(Product)
+ON Sample.Sales
+WITH (STATE = ON) ;
+```
+
+Дайте разрешение на SELECT функции fn_securitypredicate 
+```sql
+GRANT SELECT ON security.fn_securitypredicate TO Manager;  
+GRANT SELECT ON security.fn_securitypredicate TO Sales1;  
+GRANT SELECT ON security.fn_securitypredicate TO Sales2;  
+```
+
+Теперь протестируйте предикат фильтрации при выборе из таблицы Sales, как для каждого пользователя.
+
+```sql
+EXECUTE AS USER = 'Sales1'; 
+SELECT * FROM Sample.Sales;
+-- This will return just the rows for Product 'Valve' (as specified for ‘Sales1’ in the Lk_Salesman_Product table above)
+REVERT;
+
+EXECUTE AS USER = 'Sales2'; 
+SELECT * FROM Sample.Sales;
+-- This will return just the rows for Product 'Wheel' (as specified for ‘Sales2’ in the Lk_Salesman_Product table above)
+REVERT; 
+
+EXECUTE AS USER = 'Manager'; 
+SELECT * FROM Sample.Sales;
+-- This will return all rows with no restrictions
+REVERT;
+```
+
+Пользователь Manager должен видеть все шесть строк. Пользователи Sales1 и Sales2 должны видеть только свои продажи.
+
+Измените политику безопасности, чтобы отключить политику.
+
+```sql
+ALTER SECURITY POLICY SalesFilter  
+WITH (STATE = OFF);  
+```
+
+Теперь пользователи Sales1 и Sales2 могут видеть все шесть строк.
+
+Подключение к базе данных SQL для очистки ресурсов
+
+```sql
+DROP USER Sales1;
+DROP USER Sales2;
+DROP USER Manager;
+
+DROP SECURITY POLICY SalesFilter;
+DROP FUNCTION Security.fn_securitypredicate;
+DROP TABLE Sample.Sales;
+DROP TABLE Sample.Lk_Salesman_Product;
+DROP SCHEMA Security; 
+DROP SCHEMA Sample;
 ```
 
 ## <a name="see-also"></a>См. также:

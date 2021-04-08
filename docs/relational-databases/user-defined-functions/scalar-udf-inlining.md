@@ -1,8 +1,8 @@
 ---
-title: Встраивание скалярных пользовательских функций в Microsoft SQL Server | Документация Майкрософт
+title: Встраивание скалярных пользовательских функций в Microsoft SQL Server
 description: Функция встраивания скалярных пользовательских функций для повышения производительности запросов, вызывающих скалярные пользовательские функции, в SQL Server (2019 и более поздних версиях).
 ms.custom: ''
-ms.date: 03/30/2021
+ms.date: 03/31/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -14,17 +14,17 @@ helpviewer_keywords: ''
 ms.assetid: ''
 author: s-r-k
 ms.author: karam
-monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 57c9c28cafeb7e55183a3d95194480c62f279e11
-ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
+monikerRange: =azuresqldb-current||>=sql-server-ver15||>=sql-server-linux-ver15
+ms.openlocfilehash: 2ccdf4c7ca7aaec272a517aff0a7e336ae6791ad
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105981220"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106177124"
 ---
 # <a name="scalar-udf-inlining"></a>Встраивание скалярных пользовательских функций
 
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2019 SQL Database](../../includes/applies-to-version/sqlserver2019-asdb.md)]
 
 В этой статье приводятся общие сведения о функции встраивания скалярных пользовательских функций, которая входит в состав набора функций [интеллектуальной обработки запросов](../../relational-databases/performance/intelligent-query-processing.md). Эта функция повышает производительность запросов, вызывающих скалярные пользовательские функции, в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (начиная с [!INCLUDE[sssql19](../../includes/sssql19-md.md)]).
 

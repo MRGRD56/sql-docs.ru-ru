@@ -31,12 +31,12 @@ ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: ffc1d15b32bb24d01dfb9a6e0797959561d1b4dc
-ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
+ms.openlocfilehash: 76a3bc33b441db74961939be543f1fcf44639017
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105551501"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179904"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>Параметры ALTER DATABASE SET (Transact-SQL)
 
@@ -1224,7 +1224,7 @@ MINUTES
 Указывает, когда откатывать незавершенные транзакции при переходе базы данных из одного состояния в другое. Если предложение завершения опущено, инструкция ALTER DATABASE будет бесконечно ожидать блокировки базы данных. Может быть указано только одно предложение завершения, которое должно следовать за предложением SET.
 
 > [!NOTE]
-> Не все параметры базы данных могут использоваться с предложением WITH \<termination>. Дополнительные сведения см. в таблице [Настройка параметров](#SettingOptions) в разделе "Примечания" этой статьи.
+> Не все параметры базы данных могут использоваться с предложением WITH \<termination>. Дополнительные сведения см. в таблице [Настройка параметров](#SettingOptions) в разделе с примечаниями этой статьи.
 
 ROLLBACK AFTER *number* [SECONDS] | ROLLBACK IMMEDIATE     
 Указывает, нужно ли откатить транзакцию через указанное количество секунд или немедленно. *number* имеет тип **int**.

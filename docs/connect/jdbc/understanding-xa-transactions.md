@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 574e326f-0520-4003-bdf1-62d92c3db457
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: f64cbc7b054f6e60285b3a34921e3219ddd507ff
-ms.sourcegitcommit: d56a834269132a83e5fe0a05b033936776cda8bb
+ms.openlocfilehash: 7fa4598fc332a2f84a02b428e786ed381e388a1e
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91529335"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179884"
 ---
 # <a name="understanding-xa-transactions"></a>Основные сведения о транзакциях XA
 
@@ -63,7 +63,7 @@ ms.locfileid: "91529335"
 > Компоненты распределенных транзакций JDBC находятся в каталоге XA в каталоге установки драйвера JDBC. К этим компонентам относятся файлы xa_install.sql и sqljdbc_xa.dll. Если на разных клиентах установлены разные версии драйвера JDBC, рекомендуется использовать последнюю версию sqljdbc_xa.dll на сервере.  
 
 > [!NOTE]  
-> Начиная с накопительного пакета обновления 16 SQL Server 2017 и в SQL Server 2019, компоненты распределенных транзакций JDBC XA включены в ядро SQL Server, и их можно включить или отключить с помощью системной хранимой процедуры.
+> Начиная с накопительного пакета обновления 16 SQL Server 2017 и в SQL Server 2019, компоненты распределенных транзакций JDBC XA включены в ядро SQL Server, и их можно включить или отключить с помощью системной хранимой процедуры. Файл sqjdbc_xa.dll из драйвера не требуется. Рекомендуется включить серверные компоненты вместо этих версий сервера.
 > Чтобы необходимые компоненты могли выполнять распределенные транзакции XA с помощью драйвера JDBC, выполните следующую сохраненную процедуру.
 >
 > EXEC sp_sqljdbc_xa_install

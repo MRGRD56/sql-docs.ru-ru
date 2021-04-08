@@ -33,12 +33,12 @@ ms.assetid: 1054c76e-0fd5-4131-8c07-a6c5d024af50
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 42085faef5f7da55a65f32569e51298991e9bb62
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 4a3df8f14f096a163190dff014c563486d4fab33
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750564"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232231"
 ---
 # <a name="insert-transact-sql"></a>Инструкция INSERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -448,7 +448,10 @@ VALUES (N'FT', N'Feet', '20080414');
 ```  
   
 #### <a name="b-inserting-multiple-rows-of-data"></a>Б. Вставка нескольких строк данных  
- В следующем примере используется [конструктор значений таблицы](../../t-sql/queries/table-value-constructor-transact-sql.md) для вставки трех строк в таблицу `Production.UnitMeasure` базы данных [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] в единственной инструкции INSERT. Так как значения для всех столбцов предоставлены и перечислены в том же порядке, что и столбцы в таблице, то не нужно в параметре указывать имена столбцов.  
+ В следующем примере используется [конструктор значений таблицы](../../t-sql/queries/table-value-constructor-transact-sql.md) для вставки трех строк в таблицу `Production.UnitMeasure` базы данных [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] в единственной инструкции INSERT. Так как значения для всех столбцов предоставлены и перечислены в том же порядке, что и столбцы в таблице, то не нужно в параметре указывать имена столбцов.
+
+>[!NOTE]
+> Конструктор значений таблиц не поддерживается в Azure Synapse Analytics  
   
 ```sql
 INSERT INTO Production.UnitMeasure  

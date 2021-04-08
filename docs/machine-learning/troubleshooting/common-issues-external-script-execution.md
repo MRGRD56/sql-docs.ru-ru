@@ -1,25 +1,25 @@
 ---
-title: Устранение проблем со службой панели запуска
-description: В этой статье приведены рекомендации по устранению неполадок, препятствующих запуску службы доверенной панели запуска SQL Server, включая проблемы или изменения в конфигурации и отсутствие сетевых протоколов.
+title: Устранение неполадок с панелью запуска для скриптов Python и R
+description: Эта статья содержит рекомендации по устранению неполадок, препятствующих запуску службы Панели запуска SQL Server, включая проблемы с конфигурацией или ее изменения, а также отсутствие сетевых протоколов. Служба панели запуска поддерживает выполнение внешних скриптов для R и Python.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 07/30/2019
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: b57fdb3abd3482d6a395e1e6690f2e628a2a3e9e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b015e4181f8d8cfe9388c609f749dc5979463d3a
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470685"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099971"
 ---
-# <a name="troubleshoot-issues-with-launchpad-service-and-external-script-execution-in-sql-server"></a>Устранение проблем со службой панели запуска и выполнением внешних скриптов в SQL Server
+# <a name="troubleshoot-issues-with-launchpad-service-executing-python-and-r-scripts-in-sql-server-machine-learning-services"></a>Устранение неполадок со службой панели запуска, выполняющей скрипты Python и R в Службах машинного обучения SQL Server
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-Эта статья содержит рекомендации по устранению неполадок, связанных с доверенной службой панели запуска SQL Server. Служба панели запуска поддерживает выполнение внешних скриптов для R и Python. Запуску панели запуска SQL Server могут препятствовать различные неполадки, включая проблемы или изменения в конфигурации и отсутствие сетевых протоколов.  
+Эта статья содержит рекомендации по устранению неполадок, связанных со [службой Панели запуска SQL Server](../security/sql-server-launchpad-service-account.md) при использовании [Служб машинного обучения](../sql-server-machine-learning-services.md). Служба панели запуска поддерживает выполнение внешних скриптов для R и Python. Запуску панели запуска SQL Server могут препятствовать различные неполадки, включая проблемы или изменения в конфигурации и отсутствие сетевых протоколов.  
 
 ## <a name="determine-whether-launchpad-is-running"></a>Определение того, выполняется панель запуска
 
@@ -233,8 +233,6 @@ EXEC sp_execute_external_script @language = N'R',
 ::: moniker-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
-[Устранение неполадок и известные проблемы Служб машинного обучения](machine-learning-troubleshooting-overview.md)
 
 [Сбор данных для устранения неполадок машинного обучения](data-collection-ml-troubleshooting-process.md)
 

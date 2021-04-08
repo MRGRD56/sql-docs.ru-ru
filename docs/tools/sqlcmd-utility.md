@@ -28,12 +28,12 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 02/24/2021
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: ad1d3e98d45dc0395da92ee331e48b3fbfc161e6
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: 6008746b49b9efd590fbaf453fd6c5f77288e22d
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054792"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232181"
 ---
 # <a name="sqlcmd-utility"></a>Служебная программа sqlcmd
 
@@ -70,7 +70,7 @@ ms.locfileid: "106054792"
 
 **Требования к системе** Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Server 2008–2019.
 
-Этот компонент требует наличия [установщика Windows версии 4.5](https://windows-installer.soft32.com/) и [драйвера Microsoft ODBC 17 для SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md).
+Этот компонент требует наличия встроенных [установщика Windows версии 5](https://docs.microsoft.com/windows/win32/msi/what-s-new-in-windows-installer-5-0) и [драйвера Microsoft ODBC 17 для SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md).
  
 Чтобы проверить версию SQLCMD, выполните команду `sqlcmd -?` и убедитесь, что используется версия 15.0.2000.5 или более поздняя.
 

@@ -4,12 +4,12 @@ ms.prod: sql
 ms.topic: include
 ms.date: 01/07/2020
 ms.author: mikeray
-ms.openlocfilehash: 0c15fb58bb076724402ab72f81e58ce46c8b7b1e
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: 56271003fbbf4ac8a816413e441239a7a2f8229d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257424"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "107003813"
 ---
 ### <a name="pythonpip-installation"></a>Установка Python и PIP
 
