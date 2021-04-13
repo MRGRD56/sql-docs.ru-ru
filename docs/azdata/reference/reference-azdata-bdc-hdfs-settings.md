@@ -2,14 +2,19 @@
 title: Справка по командам azdata bdc hdfs settings
 titleSuffix: SQL Server big data clusters
 description: Справочная статья по командам azdata bdc hdfs settings.
+author: MikeRayMSFT
+ms.author: mikeray
+ms.reviewer: seanw
+ms.date: 04/06/2021
+ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: f88bd1dc16f7d91ce4611820c40ff0f033c193ab
-ms.sourcegitcommit: 129c084add904fd3f7e9ab35a800c3fd8b1a8927
+ms.openlocfilehash: 128035616f3cd7ea1cb53a4bc8042db59bc09e03
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100567312"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556697"
 ---
 # <a name="azdata-bdc-hdfs-settings"></a>azdata bdc hdfs settings
 
@@ -18,34 +23,31 @@ ms.locfileid: "100567312"
 В этой статье приводятся справочные сведения о командах **hdfs settings** в средстве **azdata**. Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md).
 
 ## <a name="commands"></a>Команды
+
 |Команда|Описание|
 | --- | --- |
-[azdata bdc hdfs settings set](#azdata-bdc-hdfs-settings-set) | Задает параметры в области службы HDFS.
+[azdata bdc hdfs settings set](#azdata-bdc-hdfs-settings-set) | Задает параметры в области службы Spark.
 [azdata bdc hdfs settings show](#azdata-bdc-hdfs-settings-show) | Отображает параметры в области службы HDFS и при необходимости параметры HDFS для указанных ресурсов.
-
 ## <a name="azdata-bdc-hdfs-settings-set"></a>azdata bdc hdfs settings set
-Позволяет задать параметр в области службы или области ресурса. Укажите полное имя параметра и его значение. Параметр не применяется к работающему кластеру больших данных. Чтобы применить его, выполните обновление.
+Позволяет задать параметр в области службы или области ресурса. Укажите полное имя параметра и его значение. Параметр не применяется к работающему кластеру больших данных. Для этого выполните команду apply.
 ```bash
-azdata bdc hdfs settings set --settings -s 
-                        
+azdata bdc hdfs settings set [--resources -r] 
+                             [--settings -s]
 ```
 ### <a name="examples"></a>Примеры
-Отключение сквозного чтения тома для службы HDFS 
-```bash 
-azdata bdc hdfs settings set --settings hdfs-site dfs.datanode.provided.volume.readthrough=false 
-``` 
-Задание коэффициента репликации для ресурса пула носителей
-```bash 
-azdata bdc hdfs settings set --settings hdfs-site.dfs.replication=3 –resources storage-0 
-``` 
-
-### <a name="required-parameters"></a>Обязательные параметры
+Отключение сквозного чтения тома.
+```bash
+azdata bdc hdfs settings set --settings hdfs-site dfs.datanode.provided.volume.readthrough=false
+```
+Задание коэффициента блочной репликации по умолчанию равным 3 для пула носителей.
+```bash
+azdata bdc hdfs settings set --settings hdfs-site.dfs.replication=3 –resources storage-0
+```
+### <a name="optional-parameters"></a>Необязательные параметры
+#### `--resources -r`
+Задает определенные параметры для указанных ресурсов. Можно указать несколько ресурсов через запятую.
 #### `--settings -s`
 Задает определенное значение для указанных параметров. Если параметров несколько, они разделяются запятыми.
-### <a name="optional-parameters"></a>Необязательные параметры 
-#### `--resources` 
-Задает определенные параметры для указанных ресурсов. Можно указать несколько ресурсов через запятую. 
-
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -54,48 +56,50 @@ azdata bdc hdfs settings set --settings hdfs-site.dfs.replication=3 –resources
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
-
 ## <a name="azdata-bdc-hdfs-settings-show"></a>azdata bdc hdfs settings show
-Отображает параметры кластера больших данных в области службы `hdfs` (либо при необходимости в области ресурса). По умолчанию эта команда отображает параметры, настроенные пользователем в области службы. Доступны фильтры для отображения всех параметров (управляемых системой и настраиваемых), настраиваемых параметров или ожидающих параметров. Чтобы просмотреть определенный параметр в области службы или ресурса, укажите его имя. Чтобы просмотреть параметры всех ресурсов, входящих в службу, используйте параметр recursive. 
+Отображает параметры кластера больших данных в области службы HDFS (либо при необходимости в области ресурса). По умолчанию эта команда отображает параметры, настроенные пользователем в области службы. Доступны фильтры для отображения всех параметров (управляемых системой и настраиваемых), настраиваемых параметров или ожидающих параметров. Чтобы просмотреть определенный параметр в области службы или ресурса, укажите его имя. Чтобы просмотреть параметры всех ресурсов, входящих в службу, используйте параметр recursive.
 ```bash
-
-azdata bdc hdfs settings show 
-[--settings -s]
+azdata bdc hdfs settings show [--resources -r] 
+                              [--settings -s]  
+                              
 [--filter-option -f]  
-[--recursive -rec]
+                              
+[--recursive -rec]  
+                              
 [--include-details -i]  
+                              
 [--description -d]
 ```
 ### <a name="examples"></a>Примеры
-Отображение настроенных пользователем параметров в области службы HDFS 
+Отображение настроенных пользователем параметров в области службы HDFS.
 ```bash
 azdata bdc hdfs settings show
 ```
 Отображение коэффициента репликации для HDFS в пуле носителей.
 ```bash
-azdata bdc hdfs settings show --settings hdfs-site.dfs.replication --resources storage-0 
+azdata bdc hdfs settings show --settings hdfs-site.dfs.replication --resources storage-0
 ```
-Отображение ожидающих изменений параметров в области службы HDFS и области ресурса 
+Отображение ожидающих изменения параметров в области службы HDFS и области ресурса.
 ```bash
-azdata bdc hdfs settings show --filter-options=pending --recursive --include-details
+azdata bdc hdfs settings show --filter-options=pending --recursive
 ```
-### <a name="optional-parameters"></a>Необязательные параметры 
-#### `--filter-options | -f` 
-Параметры для фильтрации отображаемых параметров уровня службы или ресурса вместо только настроенных пользователем параметров. Доступны фильтры для отображения всех параметров (управляемых системой и настраиваемых пользователями), всех настраиваемых параметров или ожидающих параметров. Доступные варианты: `userConfigured`, `all`, `pending`, `configurable`.
-#### `--settings | -s` 
-Отображает сведения о параметрах с указанными именами. 
-#### `--include-details | -i` 
-Включает дополнительные сведения о параметрах, выбранных для отображения. 
-#### `--description | -d` 
-Включает описание параметра. Должен использоваться с параметром --include-details. 
-#### `--resources | -r` 
-Отображает сведения о параметрах указанных ресурсов. Можно указать несколько ресурсов через запятую. 
-#### `--recursive | -rec` 
-Отображает сведения о параметрах в указанной области (службы или ресурса службы), а также параметрах всех компонентов более низкого уровня (ресурсов). 
-
+### <a name="optional-parameters"></a>Необязательные параметры
+#### `--resources -r`
+Отображает сведения о параметрах указанных ресурсов. Можно указать несколько ресурсов через запятую.
+#### `--settings -s`
+Отображает сведения о параметрах с указанными именами.
+#### `--filter-option -f`
+Отфильтруйте отображаемые параметры области кластера, а не только параметры, настроенные пользователем. Доступны фильтры для отображения всех параметров (управляемых системой и настраиваемых пользователями), всех настраиваемых параметров или ожидающих параметров.
+`userConfigured`
+#### `--recursive -rec`
+Отображает сведения о параметрах в указанной области (службы или ресурса службы), а также параметрах всех компонентов более низкого уровня (ресурсов).
+#### `--include-details -i`
+Включает дополнительные сведения о параметрах, выбранных для отображения.
+#### `--description -d`
+Включает описание параметра.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -104,7 +108,7 @@ azdata bdc hdfs settings show --filter-options=pending --recursive --include-det
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 
@@ -112,4 +116,4 @@ azdata bdc hdfs settings show --filter-options=pending --recursive --include-det
 
 Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md). 
 
-Дополнительные сведения об установке средства **azdata** см. в статье [Установка azdata для управления кластерами больших данных SQL Server 2019](../install/deploy-install-azdata.md).
+Дополнительные сведения об установке средства **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).

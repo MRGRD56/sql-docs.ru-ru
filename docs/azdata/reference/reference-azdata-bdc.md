@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc.
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: f10ba617642d42b4b1d091374305c5f97ba1b474
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 42a14ddd634ea31db608b6c68f9f3b8638984cc3
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052325"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556476"
 ---
 # <a name="azdata-bdc"></a>azdata bdc
 
@@ -26,8 +26,6 @@ ms.locfileid: "100052325"
 
 |Команда|Описание|
 | --- | --- |
-[azdata bdc spark](reference-azdata-bdc-spark.md) | Команды Spark позволяют пользователю взаимодействовать с системой Spark, создавая сеансы, инструкции и пакеты и управляя ими.
-[azdata bdc hdfs](reference-azdata-bdc-hdfs.md) | Модуль HDFS предоставляет команды для доступа к файловой системе HDFS.
 [azdata bdc create](#azdata-bdc-create) | Создание кластера больших данных.
 [azdata bdc delete](#azdata-bdc-delete) | Удаление кластера больших данных.
 [azdata bdc upgrade](#azdata-bdc-upgrade) | Обновление образов, развернутых в каждом контейнере в кластере больших данных SQL Server.
@@ -41,6 +39,9 @@ ms.locfileid: "100052325"
 [azdata bdc spark](reference-azdata-bdc-spark.md) | Команды службы Spark.
 [azdata bdc gateway](reference-azdata-bdc-gateway.md) | Команды службы шлюза.
 [azdata bdc app](reference-azdata-bdc-app.md) | Команды службы приложений.
+[azdata bdc settings](reference-azdata-bdc-settings.md) | Команды параметров BDC.
+[azdata bdc hdfs](reference-azdata-bdc-hdfs.md) | Модуль HDFS предоставляет команды для доступа к файловой системе HDFS.
+[azdata bdc spark](reference-azdata-bdc-spark.md) | Команды Spark позволяют пользователю взаимодействовать с системой Spark, создавая сеансы, инструкции и пакеты и управляя ими.
 ## <a name="azdata-bdc-create"></a>azdata bdc create
 Создание кластера больших данных SQL Server. В системе должна быть конфигурация Kubernetes, а также следующие переменные среды: ['AZDATA_USERNAME', 'AZDATA_PASSWORD'].
 ```bash
@@ -74,7 +75,7 @@ azdata bdc create --accept-eula yes --config-profile aks-dev-test --force
 #### `--name -n`
 Имя кластера больших данных, используемого для пространств имен Kubernetes.
 #### `--config-profile -c`
-Профиль конфигурации кластера больших данных, используемый для развертывания кластера: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+Профиль конфигурации кластера больших данных, используемый для развертывания кластера: ['aro-dev-test-ha', 'openshift-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test', 'kubeadm-prod', 'aks-dev-test-ha', 'aks-dev-test']
 #### `--accept-eula -a`
 Вы принимаете условия лицензии? [да/нет]. Если вы не хотите использовать этот аргумент, можно присвоить переменной среды ACCEPT_EULA значение "yes". Условия лицензии для azdata можно просмотреть по адресу https://aka.ms/eula-azdata-en.
 #### `--node-label -l`
@@ -132,7 +133,9 @@ azdata bdc upgrade --name -n
                    
 [--stability-threshold -s]  
                    
-[--component-timeout -p]
+[--component-timeout -p]  
+                   
+[--force -f]
 ```
 ### <a name="examples"></a>Примеры
 Обновление BDC до нового образа с помощью тега "cu2" из того же репозитория.
@@ -161,6 +164,8 @@ azdata bdc upgrade -t cu2 --controller-timeout=30 --component-timeout=40 --stabi
 Количество минут ожидания после обновления, прежде чем оно будет отмечено как стабильное.
 #### `--component-timeout -p`
 Время ожидания в минутах для каждого этапа обновления (после обновления контроллера) для завершения перед приостановкой обновления.
+#### `--force -f`
+Если этот параметр указан, проверка работоспособности кластера перед началом обновления не производится.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

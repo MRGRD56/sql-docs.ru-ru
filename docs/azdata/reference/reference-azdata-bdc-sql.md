@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: a7920bfdc5459805149021255f57c1281bd5369f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9244cd9298462347b37502a31e330c2fa9fdd46d
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048774"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556517"
 ---
 # <a name="azdata-bdc-sql"></a>azdata bdc sql
 
@@ -27,6 +27,7 @@ ms.locfileid: "100048774"
 |Команда|Описание|
 | --- | --- |
 [azdata bdc sql status](reference-azdata-bdc-sql-status.md) | Команды состояния службы SQL.
+[azdata bdc sql settings](reference-azdata-bdc-sql-settings.md) | Команды параметров BDC для службы SQL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

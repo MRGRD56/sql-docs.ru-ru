@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 68efee6c692b375c98a5dabf9dc69fa58aba21a5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 77a940c575b1bb952f1be00827f55b02858f46ce
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052485"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556741"
 ---
 # <a name="azdata-bdc-debug"></a>azdata bdc debug
 
@@ -42,7 +42,9 @@ azdata bdc debug copy-logs --namespace -ns
                            
 [--skip-compress -sc]  
                            
-[--exclude-dumps -ed]
+[--exclude-dumps -ed]  
+                           
+[--exclude-system-logs  -esl]
 ```
 ### <a name="required-parameters"></a>Необходимые параметры
 #### `--namespace -ns`
@@ -60,6 +62,8 @@ azdata bdc debug copy-logs --namespace -ns
 Следует ли пропустить сжатие папки результатов. Значение по умолчанию — false, которое сжимает папку результатов.
 #### `--exclude-dumps -ed`
 Следует ли исключать дампы из папки результатов. Значение по умолчанию — false, включающее дампы.
+#### `--exclude-system-logs  -esl`
+Следует ли исключить системные журналы из числа собираемых. Значение по умолчанию — False, то есть системные журналы собираются.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

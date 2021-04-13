@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 6a3d561f6b09ca6720a70a067e5985fbc96dceb1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2b6a8d15233198dbcdd3aad064e5f7668f39eaef
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048954"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556818"
 ---
 # <a name="azdata-arc-sql-mi"></a>azdata arc sql mi
 
@@ -37,6 +37,8 @@ ms.locfileid: "100048954"
 ```bash
 azdata arc sql mi create --name -n 
                          [--path]  
+                         
+[--replicas]  
                          
 [--cores-limit -cl]  
                          
@@ -64,8 +66,6 @@ azdata arc sql mi create --name -n
                          
 [--no-external-endpoint]  
                          
-[--dev]  
-                         
 [--no-wait]
 ```
 ### <a name="examples"></a>Примеры
@@ -73,12 +73,18 @@ azdata arc sql mi create --name -n
 ```bash
 azdata arc sql mi create -n sqlmi1
 ```
+Создание управляемого экземпляра SQL с тремя репликами в сценарии с высоким уровнем доступности.
+```bash
+azdata arc sql mi create -n sqlmi2 --replicas 3
+```
 ### <a name="required-parameters"></a>Обязательные параметры
 #### `--name -n`
 Имя управляемого экземпляра SQL.
 ### <a name="optional-parameters"></a>Необязательные параметры
 #### `--path`
 Путь к src-файлу для файла JSON управляемого экземпляра SQL.
+#### `--replicas`
+Число реплик, развертываемых для обеспечения высокого уровня доступности. Допустимые значения: 3 или 1. Значение по умолчанию — 1.
 #### `--cores-limit -cl`
 Лимит ядер для управляемого экземпляра (целое число).
 #### `--cores-request -cr`
@@ -104,9 +110,7 @@ azdata arc sql mi create -n sqlmi1
 #### `--volume-size-backups -vsb`
 Размер тома хранилища для резервных копий, выраженный как положительное число, за которым следует обозначение Ki (килобайт), Mi (мегабайт) или Gi (гигабайт).
 #### `--no-external-endpoint`
-Если задано, внешняя служба не создается. В противном случае будет создана внешняя служба того же типа, что у контроллера данных.
-#### `--dev`
-Если задано, экземпляр считается экземпляром разработчика и счета за него не выставляются.
+Если задано, внешняя служба не создается. В противном случае внешняя служба будет создана с использованием того же типа службы, что и контроллер данных.
 #### `--no-wait`
 Если указано, команда не будет ожидать готового состояния экземпляра перед возвратом результата.
 ### <a name="global-arguments"></a>Глобальные аргументы
@@ -134,8 +138,6 @@ azdata arc sql mi edit --name -n
                        
 [--memory-request -mr]  
                        
-[--dev]  
-                       
 [--no-wait]
 ```
 ### <a name="examples"></a>Примеры
@@ -157,8 +159,6 @@ azdata arc sql mi edit --path ./spec.json -n sqlmi1
 Лимит емкости для управляемого экземпляра (целое число).
 #### `--memory-request -mr`
 Запрашиваемая емкость управляемого экземпляра в виде объема памяти в ГБ (целое число).
-#### `--dev`
-Если задано, экземпляр считается экземпляром разработчика и счета за него не выставляются.
 #### `--no-wait`
 Если указано, команда не будет ожидать готового состояния экземпляра перед возвратом результата.
 ### <a name="global-arguments"></a>Глобальные аргументы

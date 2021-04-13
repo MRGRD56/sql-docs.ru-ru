@@ -4,20 +4,39 @@ description: Последние заметки о выпуске
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 12/08/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: f53731685f5ba1723ebdd8d20064342808205566
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 96239b337ed917b74effc58ac4e55b67b568a9e4
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100070309"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557537"
 ---
 # <a name="release-notes---azure-arc-enabled-sql-server-preview"></a>Заметки о выпуске — SQL Server с поддержкой Azure Arc (предварительная версия)
 
 > [!NOTE]
 > В отношении технологии (как предварительной версии функции), описанной в этой статье, действуют [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="april-2021"></a>Апрель 2021 г.
+
+### <a name="breaking-change"></a>Критическое изменение
+
+Критических изменений нет.
+
+### <a name="other-changes"></a>Другие изменения
+
+В тип ресурса **SQL Server - Azure Arc** добавлено новое свойство *LicenseType*. Оно указывает, требуется ли лицензия для экземпляра SQL Server. Это свойство может принимать одно из следующих значений:
+
+| **Значение** | **Описание** |
+|:--|:--|
+|Платный|Указывает, что экземпляр SQL использует выпуск Enterprise, Standard или Web сервера SQL Server.|
+|Бесплатный|Указывает, что экземпляр SQL использует выпуск Express или Developer сервера SQL Server.|
+|HADR|Указывает, что экземпляр SQL является репликой в группе доступности. Если действует программа Software Assurance, то, возможно, лицензия не потребуется. Дополнительные сведения см. в [Условиях коммерческого лицензирования SQL Server](https://www.microsoft.com/licensing/terms/productoffering/SQLServer/EAEAS).
+
+> [!NOTE]
+> Для существующих ресурсов **SQL Server - Azure Arc** это свойство будет иметь значение *NULL*. Значение автоматически поменяется на правильное после того, как служба SQL Server с поддержкой Azure Arc станет общедоступной.
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 

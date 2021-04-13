@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 3/16/2021
-ms.openlocfilehash: 671e531cbcd63ee9774cb02d5548c8e1075be84d
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.date: 4/9/2021
+ms.openlocfilehash: 5d8f10c86aa21bfc0ccbb36ddad11cfee027fc3a
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833864"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298874"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>Скачивание SQL Server Management Studio (SSMS)
 
@@ -38,9 +38,6 @@ ms.locfileid: "104833864"
 SQL Server Management Studio (SSMS) — это интегрированная среда для управления любой инфраструктурой SQL, от SQL Server до баз данных SQL Azure. SSMS предоставляет средства для настройки, наблюдения и администрирования экземпляров SQL Server и баз данных. С помощью SSMS можно развертывать, отслеживать и обновлять компоненты уровня данных, используемые вашими приложениями, а также создавать запросы и скрипты.
 
 Используйте SSMS для создания запросов к базам данных и хранилищам данных, их проектирования и управления ими, где бы они ни находились: на локальном компьютере или в облаке.
-
-> [!NOTE]
-> Определите будущее используемых вами продуктов Azure SQL, пройдя следующий опрос: https://aka.ms/AzureSQLSurvey
 
 ## <a name="download-ssms"></a>Скачать SSMS
 

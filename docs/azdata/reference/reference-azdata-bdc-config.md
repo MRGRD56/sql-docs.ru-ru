@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 28c9820cd147d5ce4b93fe7605a1f36187f4dfd7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9a4ebb83a1accb82359a2fc62cf1122de53656f2
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048934"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557327"
 ---
 # <a name="azdata-bdc-config"></a>azdata bdc config
 
@@ -56,7 +56,7 @@ azdata bdc config init --source aks-dev-test --target custom
 #### `--path -p`
 Путь к файлу, в который следует поместить профиль конфигурации; по умолчанию <cwd>/custom.
 #### `--source -s`
-Источник профиля конфигурации: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+Источник профиля конфигурации: ['aro-dev-test-ha', 'openshift-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test', 'kubeadm-prod', 'aks-dev-test-ha', 'aks-dev-test']
 #### `--force -f`
 Принудительная перезапись целевого файла.
 #### `--accept-eula -a`
@@ -91,7 +91,7 @@ azdata bdc config list --config-profile aks-dev-test
 ```
 ### <a name="optional-parameters"></a>Необязательные параметры
 #### `--config-profile -c`
-Профиль конфигурации по умолчанию: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+Профиль конфигурации по умолчанию: ['aro-dev-test-ha', 'openshift-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test', 'kubeadm-prod', 'aks-dev-test-ha', 'aks-dev-test']
 #### `--type -t`
 Тип конфигурации, который следует просмотреть.
 #### `--accept-eula -a`

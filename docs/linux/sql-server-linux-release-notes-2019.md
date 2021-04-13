@@ -3,16 +3,16 @@ title: Заметки о выпуске для SQL Server 2019 в Linux
 description: Эта статья содержит заметки о выпуске и поддерживаемые функции для SQL Server 2019 в Linux. Приведены заметки о выпуске для последнего и нескольких предыдущих выпусков.
 author: VanMSFT
 ms.author: vanto
-ms.date: 02/11/2021
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: c81ca4cb8d531626c7f5ae51f8b4e264d907d2ce
-ms.sourcegitcommit: 15c7cd187dcff9fc91f2daf0056b12ed3f0403f0
+ms.openlocfilehash: eaaef67cc2e0d57345fbac4b2920d56a42e0088b
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102464713"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556857"
 ---
 # <a name="release-notes-for-sql-server-2019-on-linux"></a>Заметки о выпуске для SQL Server 2019 в Linux
 
@@ -35,6 +35,7 @@ ms.locfileid: "102464713"
 
 | Release                   | Версия       | Дата выпуска |
 |---------------------------|---------------|--------------|
+| [CU10](#cu10)             | 15.0.4123.1   | 06.04.2021   |
 | [CU9](#cu9)               | 15.0.4102.2   | 10.02.2021   |
 | [CU8-GDR](#cu8-GDR)               | 15.0.4083.2  | 12.01.2021   |
 | [CU8](#cu8)               | 15.0.4073.23  | 07.10.2020   |
@@ -60,6 +61,25 @@ ms.locfileid: "102464713"
 - [Установка поддержки R и Python для служб машинного обучения SQL Server 2019 в Linux](sql-server-linux-setup-machine-learning.md)
 - [Установка пакета PolyBase](../relational-databases/polybase/polybase-linux-setup.md)
 - [Включение агента SQL Server](sql-server-linux-setup-sql-agent.md)
+
+## <a name="cu10-april-2021"></a><a id="cu10"></a> CU10 (апрель 2021 г.)
+
+Это выпуск накопительного пакета обновления 10 (CU10) для SQL Server 2019 (15.x). Версия ядра СУБД SQL Server в этом выпуске — 15.0.4123.1. Сведения об исправлениях и улучшениях в этом выпуске см. по адресу <https://support.microsoft.com/help/5001090>.
+
+### <a name="package-details"></a>Сведения о пакете
+
+Для ручной или автономной установки пакета можно скачать пакеты RPM и Debian, используя сведения из следующей таблицы.
+
+> [!NOTE]
+> Начиная с CU1, ссылки для установки автономного пакета в Red Hat указывают на пакеты RHEL 8. Если вы ищете пакеты RHEL 7, см. путь скачивания <https://packages.microsoft.com/rhel/7/mssql-server-2019/>.
+>
+> Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3), теперь поддерживается **Ubuntu 18.04**. Ссылки для установки автономного пакета для Ubuntu указывают на пакеты Ubuntu 18.04. Если вы ищете пакеты Ubuntu 16.04, см. путь скачивания <https://packages.microsoft.com/ubuntu/16.04/mssql-server-2019/pool/main/m/>
+
+| Пакет | Версия пакета | Файлы для загрузки |
+|-----|-----|-----|
+| Пакет Red Hat RPM | 15.0.4123.1-5 | [Пакет RPM подсистемы](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM высокой доступности](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-ha-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM полнотекстового поиска](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-fts-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM расширяемости](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-extensibility-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM расширяемости Java](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-extensibility-java-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM PolyBase](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-polybase-15.0.4123.1-5.x86_64.rpm)|
+| Пакет SLES RPM | 15.0.4123.1-5 | [Пакет RPM подсистемы mssql-server](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM высокой доступности](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-ha-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM полнотекстового поиска](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-fts-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM расширяемости](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-extensibility-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM расширяемости Java](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-extensibility-java-15.0.4123.1-5.x86_64.rpm)</br>[Пакет RPM PolyBase](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-polybase-15.0.4123.1-5.x86_64.rpm)|
+| Пакет Debian Ubuntu 18.04 | 15.0.4123.1-5 | [Пакет подсистемы Debian](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server/mssql-server_15.0.4123.1-5_amd64.deb)</br>[Пакет Debian высокой доступности](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-ha/mssql-server-ha_15.0.4123.1-5_amd64.deb)</br>[Пакет Debian полнотекстового поиска](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-fts/mssql-server-fts_15.0.4123.1-5_amd64.deb)</br>[Пакет Debian расширяемости](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-extensibility/mssql-server-extensibility_15.0.4123.1-5_amd64.deb)</br>[Пакет Debian расширяемости Java](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-extensibility-java/mssql-server-extensibility-java_15.0.4123.1-5_amd64.deb)</br>[Пакет RPM PolyBase](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-polybase/mssql-server-polybase_15.0.4123.1-5_amd64.deb)|
 
 ## <a name="cu9-february-2021"></a><a id="cu9"></a> CU9 (февраль 2021 г.)
 

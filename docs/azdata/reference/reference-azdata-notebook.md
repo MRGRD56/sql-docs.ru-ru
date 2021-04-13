@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata note
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ece761617495c2d4b5d002541ac2d3838ec58d6f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b01486a0892abfb50dc4a9d67126da66a6cea5b7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048714"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557027"
 ---
 # <a name="azdata-notebook"></a>azdata notebook
 
@@ -48,7 +48,7 @@ azdata notebook view --path "/home/me/notebooks/demo_notebook.ipynb" --stop-on-e
 Путь к записной книжке для просмотра.
 ### <a name="optional-parameters"></a>Необязательные параметры
 #### `--continue-on-error -c`
-Продолжение отображения дополнительных ячеек без учета ошибок ячеек, обнаруженных в выходных данных записной книжки.  Поведение по умолчанию: остановка при обнаружении ошибки.  Остановка упрощает просмотр первой ячейки, в которой обнаружена ошибка.
+Продолжение отображения дополнительных ячеек без учета ошибок ячеек, обнаруженных в выходных данных записной книжки. Поведение по умолчанию: остановка при обнаружении ошибки.  Остановка упрощает просмотр первой ячейки, в которой обнаружена ошибка.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -74,7 +74,9 @@ azdata notebook run --path -p
                     
 [--clear -c]  
                     
-[--timeout -t]
+[--timeout -t]  
+                    
+[--env -e]
 ```
 ### <a name="examples"></a>Примеры
 Запуск записной книжки.
@@ -98,6 +100,9 @@ azdata notebook run --path "/home/me/notebooks/demo_notebook.ipynb"
 #### `--timeout -t`
 Подождите несколько секунд, пока завершится выполнение. Значение -1 означает бесконечное ожидание.
 `600`
+#### `--env -e`
+Имя среды.
+`base`
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

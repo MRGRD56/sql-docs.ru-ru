@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 0e0fadcace976f55ea2e22fd1bd2c1c957f5c238
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: eb096643e1f40c0a5fd059dbb9a105723c2cc719
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100049029"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557457"
 ---
 # <a name="azdata-arc-dc-endpoint"></a>azdata arc dc endpoint
 
@@ -30,17 +30,13 @@ ms.locfileid: "100049029"
 ## <a name="azdata-arc-dc-endpoint-list"></a>azdata arc dc endpoint list
 Выводит список конечных точек контроллера данных.
 ```bash
-azdata arc dc endpoint list [--endpoint-name -e] 
-                            
+azdata arc dc endpoint list 
 ```
 ### <a name="examples"></a>Примеры
-Выводит список конечных точек контроллера данных в определенном пространстве имен.
+Возвращает список всех доступных конечных точек контроллера данных.
 ```bash
-azdata arc dc endpoint list --namespace <ns>
+azdata arc dc endpoint list
 ```
-### <a name="optional-parameters"></a>Необязательные параметры
-#### `--endpoint-name -e`
-Выводит список конечных точек контроллера данных Arc.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

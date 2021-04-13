@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
 ms.date: 12/16/2019
-ms.openlocfilehash: bbb3196349c648b955e5d27bf1d5fcfdadb9085f
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: a818db1a2bc8626f19bd3f98abdbb721ccbd74b1
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87246663"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072404"
 ---
 # <a name="sql-server-reporting-services-features-supported-by-editions"></a>Возможности служб SQL Server Reporting Services, поддерживаемые разными выпусками
 
@@ -73,7 +73,7 @@ ms.locfileid: "87246663"
 > SQL Server Express с инструментами и SQL Server Express не поддерживают службы SQL Server Reporting Services.
   
 ## <a name="edition-requirements-for-the-report-server-database"></a>Требования к выпуску для базы данных сервера отчетов
- При создании базы данных сервера отчетов не все выпуски SQL Server [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] можно использовать для ее размещения. В таблице ниже перечислены выпуски компонента [!INCLUDE[ssDE](../includes/ssde-md.md)], которые пригодны для конкретных выпусков служб SQL Server [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)].  
+ При создании базы данных сервера отчетов не все выпуски [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] можно использовать для ее размещения. В таблице ниже перечислены выпуски компонента [!INCLUDE[ssDE](../includes/ssde-md.md)], которые пригодны для конкретных выпусков служб SQL Server [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)].  
   
 |Для данного выпуска служб [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Reporting Services|Используйте данный выпуск экземпляра компонента Database Engine для размещения базы данных|  
 |----------------------------------------------------------------------|---------------------------------------------------------------------------|  

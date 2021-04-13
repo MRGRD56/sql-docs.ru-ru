@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: SrinivasSQLMS
 ms.author: skandi
 ms.reviewer: hristins
-ms.openlocfilehash: b8df5a92b5fb851e2a39c310c97d450d525542e4
-ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
+ms.openlocfilehash: 9e972268049d6605388df053436e9e129ea9adcd
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105937799"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557583"
 ---
 # <a name="latest-updates-for-microsoft-sql-server"></a>Последние обновления для Microsoft SQL Server
 
@@ -29,7 +29,7 @@ ms.locfileid: "105937799"
 
 |Версии продукта   | Последний пакет обновления |  Последний выпуск для общего распространения (GDR) | Последнее накопительное обновление | Дата выпуска накопительного обновления (CU) | Общие рекомендации  |
 |--|--|--|--|--|--|
-|SQL Server 2019|Недоступно|[Статья базы знаний 4583458](https://support.microsoft.com/help/4583458)|CU 9 [(статья базы знаний 5000642)](https://support.microsoft.com/help/5000642)|11.02.2021|[Установка SQL Server 2019](./install-sql-server.md)|
+|SQL Server 2019|Недоступно|[Статья базы знаний 4583458](https://support.microsoft.com/help/4583458)|CU 10 [(статья базы знаний 5001090)](https://support.microsoft.com/help/5001090)|06.04.2021|[Установка SQL Server 2019](./install-sql-server.md)|
 |SQL Server 2017|Недоступно|[Статья базы знаний 4583456](https://support.microsoft.com/help/4583456)|CU 23 [(статья базы знаний 5000685)](https://support.microsoft.com/help/5000685)|24.02.2021|[Установка SQL Server 2017](./install-sql-server.md)|
 |SQL Server 2016|Пакет обновления 2 [(статья базы знаний 4052908)](https://support.microsoft.com/help/4052908)|[Статья базы знаний 4583460](https://support.microsoft.com/help/4583460)|CU 17 [(статья базы знаний 5001092)](https://support.microsoft.com/kb/5001092)|29.03.2021|[Установка SQL Server 2016](./install-sql-server.md)|
 |SQL Server 2016|Пакет обновления 1 [(статья базы знаний 3182545)](https://support.microsoft.com/help/3182545/sql-server-2016-service-pack-1-release-information)|[Статья базы знаний 4505219](https://support.microsoft.com/help/4505219)|CU 15 + GDR [(статья базы знаний 4505221)](https://support.microsoft.com/help/4505221)|09.07.2019|[Установка SQL Server 2016](./install-sql-server.md)|

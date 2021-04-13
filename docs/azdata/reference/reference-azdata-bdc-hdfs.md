@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ed57027a0fa7a2f5003c67cafb5a7bb8eb3d876b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 27f27123d5b39efdc4c607a119858048dfc87859
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052425"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556707"
 ---
 # <a name="azdata-bdc-hdfs"></a>azdata bdc hdfs
 
@@ -26,6 +26,10 @@ ms.locfileid: "100052425"
 
 |Команда|Описание|
 | --- | --- |
+[azdata bdc hdfs status](reference-azdata-bdc-hdfs-status.md) | Команды состояния службы HDFS.
+[azdata bdc hdfs settings](reference-azdata-bdc-hdfs-settings.md) | Команды параметров BDC для службы HDFS.
+[azdata bdc hdfs encryption-zone](reference-azdata-bdc-hdfs-encryption-zone.md) | Управление зонами шифрования в HDFS.
+[azdata bdc hdfs key](reference-azdata-bdc-hdfs-key.md) | Управление ключами зоны шифрования Hadoop.
 [azdata bdc hdfs shell](#azdata-bdc-hdfs-shell) | Оболочка HDFS представляет собой простую интерактивную командную оболочку для файловой системы HDFS.
 [azdata bdc hdfs ls](#azdata-bdc-hdfs-ls) | Перечисление состояния заданного файла или каталога.
 [azdata bdc hdfs exists](#azdata-bdc-hdfs-exists) | Определение существования файла или каталога.  Возвращает значение true, если объект существует, и false в противном случае.
@@ -39,7 +43,6 @@ ms.locfileid: "100052425"
 [azdata bdc hdfs chown](#azdata-bdc-hdfs-chown) | Изменение владельца или группы для указанного файла.
 [azdata bdc hdfs cp](#azdata-bdc-hdfs-cp) | Копирование файла или каталога между локальным компьютером и HDFS.
 [azdata bdc hdfs mount](reference-azdata-bdc-hdfs-mount.md) | Управление подключением удаленных хранилищ в HDFS.
-[azdata bdc hdfs status](reference-azdata-bdc-hdfs-status.md) | Команды состояния службы HDFS.
 ## <a name="azdata-bdc-hdfs-shell"></a>azdata bdc hdfs shell
 Оболочка HDFS представляет собой простую интерактивную командную оболочку для файловой системы HDFS.
 ```bash

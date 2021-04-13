@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 199bff19ef24626f3ff55a1d10f123183674e571
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9381c331c3c092c3ecf6f3adee0ecc6343c415b5
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052565"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557397"
 ---
 # <a name="azdata-arc-sql"></a>azdata arc sql
 
@@ -27,6 +27,7 @@ ms.locfileid: "100052565"
 |Команда|Описание|
 | --- | --- |
 [azdata arc sql mi](reference-azdata-arc-sql-mi.md) | Создание, удаление и контроль управляемого экземпляра SQL.
+[azdata arc sql endpoint](reference-azdata-arc-sql-endpoint.md) | Просмотр конечных точек SQL и управление ими.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

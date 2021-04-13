@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развертывание
+              - name: Развернуть
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md
@@ -395,7 +395,7 @@ items:
                 href: big-data-cluster/notebooks-tutorial-spark.md
               - name: Список записных книжек для определенных операций
                 href: big-data-cluster/cluster-manage-notebooks.md
-          - name: Azure Monitor
+          - name: Монитор
             items:
               - name: Выполнение мониторинга с помощью Azure Data Studio
                 href: big-data-cluster/cluster-monitor-ads.md
@@ -435,10 +435,14 @@ items:
             items:
               - name: Отправка заданий Spark в Azure Data Studio
                 href: big-data-cluster/spark-submit-job.md
-              - name: Отправка заданий Spark в IntelliJ
-                href: big-data-cluster/spark-submit-job-intellij-tool-plugin.md
+              - name: Отправка заданий Spark с помощью командной строки
+                href: big-data-cluster/spark-submit-job-command-line.md
               - name: Отправка заданий Spark в Visual Studio Code
                 href: big-data-cluster/spark-hive-tools-vscode.md
+              - name: Отправка заданий Spark в IntelliJ
+                href: big-data-cluster/spark-submit-job-intellij-tool-plugin.md
+              - name: Руководство по потоковой передаче Spark
+                href: big-data-cluster/spark-streaming-guide.md
               - name: Использование расширенного сервера журнала Spark
                 href: big-data-cluster/spark-history-server.md
               - name: Управление библиотеками

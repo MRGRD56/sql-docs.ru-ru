@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: cb48072eaee6cdee6498655f05b88ae05c2062a8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: dc94dad852cf016ac9bcb47935544df2a97eebd7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100049004"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557427"
 ---
 # <a name="azdata-arc-postgres-endpoint"></a>azdata arc postgres endpoint
 
@@ -26,24 +26,23 @@ ms.locfileid: "100049004"
 
 |Команда|Описание|
 | --- | --- |
-[azdata arc postgres endpoint list](#azdata-arc-postgres-endpoint-list) | Выводит список конечных точек группы серверов PostgreSQL.
+[azdata arc postgres endpoint list](#azdata-arc-postgres-endpoint-list) | Получение списка конечных точек группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ## <a name="azdata-arc-postgres-endpoint-list"></a>azdata arc postgres endpoint list
-Выводит список конечных точек группы серверов PostgreSQL.
+Получение списка конечных точек группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
-azdata arc postgres endpoint list --name -n 
-                                  [--engine-version -ev]
+azdata arc postgres endpoint list [--name -n] 
+                                  []
 ```
 ### <a name="examples"></a>Примеры
-Вывод списка конечных точек группы серверов PostgreSQL.
+Получение списка конечных точек группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres endpoint list -n postgres01
 ```
-### <a name="required-parameters"></a>Обязательные параметры
-#### `--name -n`
-Имя группы серверов PostgreSQL.
 ### <a name="optional-parameters"></a>Необязательные параметры
-#### `--engine-version -ev`
---engine-version можно использовать вместе с параметром --name для идентификации группы серверов гипермасштабирования PostgreSQL, если две группы серверов с разными версиями подсистемы имеют одинаковое имя. --engine-version — необязательный параметр, который должен иметь значение 11 или 12, когда он используется для идентификации группы серверов.
+#### `--name -n`
+Имя группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
+#### <a name=""></a>``
+--engine-version можно использовать вместе с параметром --name для обнаружения гипермасштабированной группы серверов PostgreSQL, если две группы серверов с подсистемами разных версий имеют одинаковое имя. --engine-version — необязательный параметр, который должен иметь значение 11 или 12, когда он используется для обнаружения группы серверов.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c0bdd3de-3be0-455c-898a-98d4660e7ce3
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 09db4d47afee6795b403542c8442cc9d74724f4b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: bb6e7351bedf62dc358222adf8d27468d7e49c1e
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99200700"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298847"
 ---
 # <a name="sp_dropdistpublisher-transact-sql"></a>sp_dropdistpublisher (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -41,6 +41,9 @@ sp_dropdistpublisher [ @publisher = ] 'publisher'
   
 ## <a name="arguments"></a>Аргументы  
 `[ @publisher = ] 'publisher'` Удаляемый издатель. параметр *Publisher* имеет тип **sysname** и не имеет значения по умолчанию.  
+ 
+> [!NOTE]
+> Если для SQL Server издателя настроен настраиваемый порт, то при удалении такого издателя на распространителе укажите имя сервера издателя вместо `<Hostname>,<PortNumber>` . 
   
 `[ @no_checks = ] no_checks` Указывает, будет ли **sp_dropdistpublisher** проверять, что издатель удалил сервер в качестве распространителя. *no_checks* имеет **бит** и значение по умолчанию **0**.  
   
@@ -57,7 +60,7 @@ sp_dropdistpublisher [ @publisher = ] 'publisher'
 ## <a name="return-code-values"></a>Значения кода возврата  
  **0** (успешное завершение) или **1** (сбой)  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  **sp_dropdistpublisher** используется во всех типах репликации.  
   
  При удалении издателя Oracle, если не удается удалить издатель **sp_dropdistpublisher** возвращает ошибку, а объекты распространителя для издателя удаляются.  

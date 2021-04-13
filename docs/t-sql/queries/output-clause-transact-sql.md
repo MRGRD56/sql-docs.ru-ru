@@ -31,12 +31,12 @@ helpviewer_keywords:
 ms.assetid: 41b9962c-0c71-4227-80a0-08fdc19f5fe4
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: f248f7a26dee135cbb68d7d0660ea8e467f76d15
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 194ce3acd5db4643053cde4b42bf5c0115ff9a37
+ms.sourcegitcommit: 8f40e427c867b9d2e9e7dde43f9546fb4d907c4f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99207672"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106506649"
 ---
 # <a name="output-clause-transact-sql"></a>Предложение OUTPUT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -318,7 +318,8 @@ DROP TABLE dbo.table1;
 ## <a name="examples"></a>Примеры  
   
 ### <a name="a-using-output-into-with-a-simple-insert-statement"></a>A. Применение предложения OUTPUT INTO в простой инструкции INSERT  
- В приведенном ниже примере производится вставка строки в таблицу `ScrapReason`, а затем с помощью предложения `OUTPUT` результаты выполнения инструкции возвращаются в переменную `@MyTableVar``table`. Поскольку столбец `ScrapReasonID` определен со свойством IDENTITY, для него значение в инструкции `INSERT` не указывается. Обратите внимание, что значение, которое компонент [!INCLUDE[ssDE](../../includes/ssde-md.md)] сформировал для этого столбца, возвращается предложением `OUTPUT` в столбец `inserted.ScrapReasonID`.  
+ В следующем примере производится вставка строки в таблицу `ScrapReason`, а затем при помощи предложения `OUTPUT` результаты выполнения инструкции возвращаются в табличную переменную `@MyTableVar`. Поскольку столбец `ScrapReasonID` определен со свойством IDENTITY, для него значение в инструкции `INSERT` не указывается. Обратите внимание, что значение, которое компонент [!INCLUDE[ssDE](../../includes/ssde-md.md)] сформировал для этого столбца, возвращается предложением `OUTPUT` в столбец `inserted.ScrapReasonID`.  
+
   
 ```sql
 USE AdventureWorks2012;
@@ -393,7 +394,8 @@ GO
 ```
 
 ### <a name="d-using-output-into-to-return-an-expression"></a>Г. Применение предложения OUTPUT INTO для возврата выражения  
- Следующий пример, основанный на предыдущем примере, определяет выражение в предложении `OUTPUT` как разницу между обновленным значением `VacationHours` и значением `VacationHours` до применения операции обновления. Значение этого выражения возвращается в переменную `@MyTableVar``table` в столбце `VacationHoursDifference`.  
+ Следующий пример, основанный на предыдущем примере, определяет выражение в предложении `OUTPUT` как разницу между обновленным значением `VacationHours` и значением `VacationHours` до применения операции обновления. Значение этого выражения возвращается в табличную переменную `@MyTableVar` в столбце `VacationHoursDifference`.  
+
   
 ```sql
 USE AdventureWorks2012;  
@@ -492,7 +494,8 @@ GO
 ```
   
 ### <a name="g-using-output-into-with-a-large-object-data-type"></a>Ж. Применение предложения OUTPUT INTO с типом данных больших объектов  
- В следующем примере для обновления части значения в столбце `DocumentSummary`, имеющем тип `nvarchar(max)` в таблице `Production.Document`, используется предложение `.WRITE`. Слово `components` заменяется словом `features`, при этом указывается новое слово, начальное смещение слова, заменяемого в исходном тексте и число заменяемых символов (длина). В примере предложение `OUTPUT` возвращает образы столбца `DocumentSummary` до и после изменения в переменную `@MyTableVar``table`. Обратите внимание, что возвращаются полные образы столбца `DocumentSummary` до и после изменения.  
+ В следующем примере для обновления части значения в столбце `DocumentSummary`, имеющем тип `nvarchar(max)` в таблице `Production.Document`, используется предложение `.WRITE`. Слово `components` заменяется словом `features`, при этом указывается новое слово, начальное смещение слова, заменяемого в исходном тексте и число заменяемых символов (длина). В примере предложение `OUTPUT` возвращает образы столбца `DocumentSummary` до и после изменения в табличную переменную `@MyTableVar`. Обратите внимание, что возвращаются полные образы столбца `DocumentSummary` до и после изменения.  
+
   
 ```sql
 USE AdventureWorks2012;
@@ -604,7 +607,8 @@ GO
 ```
   
 ### <a name="j-using-output-and-output-into-in-a-single-statement"></a>К. Применение предложений OUTPUT и OUTPUT INTO в одной инструкции  
- В следующем примере производится удаление строк из таблицы `ProductProductPhoto` на основе критерия поиска, определенного в предложении `FROM` инструкции `DELETE`. Предложение `OUTPUT INTO` возвращает столбцы из удаляемой таблицы (`deleted.ProductID`, `deleted.ProductPhotoID`) и столбцы из таблицы `Product` в переменную `@MyTableVar``table`. Таблица `Product` в предложении `FROM` определяет, какие строки необходимо удалять. Предложение `OUTPUT` возвращает вызывающему приложению столбцы `deleted.ProductID`, `deleted.ProductPhotoID`, а также дату и время удаления строки из таблицы `ProductProductPhoto`.  
+ В следующем примере производится удаление строк из таблицы `ProductProductPhoto` на основе критерия поиска, определенного в предложении `FROM` инструкции `DELETE`. Предложение `OUTPUT INTO` возвращает столбцы из удаляемой таблицы (`deleted.ProductID`, `deleted.ProductPhotoID`) и столбцы из таблицы `Product` в табличную переменную `@MyTableVar`. Таблица `Product` в предложении `FROM` определяет, какие строки необходимо удалять. Предложение `OUTPUT` возвращает вызывающему приложению столбцы `deleted.ProductID`, `deleted.ProductPhotoID`, а также дату и время удаления строки из таблицы `ProductProductPhoto`.  
+
   
 ```sql
 USE AdventureWorks2012;

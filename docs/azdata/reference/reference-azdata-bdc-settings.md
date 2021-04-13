@@ -2,22 +2,28 @@
 title: Справка по командам azdata bdc settings
 titleSuffix: SQL Server big data clusters
 description: Справочная статья по командам azdata bdc settings.
+author: MikeRayMSFT
+ms.author: mikeray
+ms.reviewer: seanw
+ms.date: 04/06/2021
+ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 37688a962fc17679a1a642af1b83609d2b8f480a
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 22562417eceb524bdafc9485f725712b202771e9
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100342495"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557177"
 ---
 # <a name="azdata-bdc-settings"></a>azdata bdc settings
 
 Применяется к [!INCLUDE [azure-data-cli-azdata](../../includes/azure-data-cli-azdata.md)]
 
-В следующей статье приводятся справочные сведения по командам **sql** в средстве **azdata**. Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md).
+В этой статье приводятся справочные сведения о командах **settings** уровня кластера в средстве **azdata**. Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md).
 
 ## <a name="commands"></a>Команды
+
 |Команда|Описание|
 | --- | --- |
 [azdata bdc settings set](#azdata-bdc-settings-set) | Задает параметры в области кластера.
@@ -47,7 +53,7 @@ azdata bdc settings set --settings bdc.telemetry.customerFeedback=false
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-bdc-settings-apply"></a>azdata bdc settings apply
@@ -76,7 +82,7 @@ azdata bdc settings apply --force
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-bdc-settings-cancel-apply"></a>azdata bdc settings cancel-apply
@@ -105,7 +111,7 @@ azdata bdc settings cancel-apply --force
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-bdc-settings-show"></a>azdata bdc settings show
@@ -153,7 +159,7 @@ azdata bdc settings show –filter-option=pending --recursive
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-bdc-settings-revert"></a>azdata bdc settings revert
@@ -182,7 +188,7 @@ azdata bdc settings revert --force
 #### `--output -o`
 Формат вывода.  Допустимые значения: json, jsonc, table, tsv.  Значение по умолчанию: json.
 #### `--query -q`
-Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org/).
+Строка запроса JMESPath. Дополнительные сведения и примеры см. в разделе [http://jmespath.org/](http://jmespath.org).
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 

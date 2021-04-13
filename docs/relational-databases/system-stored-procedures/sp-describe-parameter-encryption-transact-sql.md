@@ -19,12 +19,12 @@ ms.assetid: 706ed441-2881-4934-8d5e-fb357ee067ce
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 41821edc34835f60cef201ae78b3448f3d3f4699
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 94f794d86f6cd2ee95029b73fe58a92876e153d0
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99200778"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298840"
 ---
 # <a name="sp_describe_parameter_encryption-transact-sql"></a>sp_describe_parameter_encryption (Transact-SQL)
 
@@ -67,7 +67,7 @@ sp_describe_parameter_encryption
 |**column_encryption_key_ordinal**|**int**|Идентификатор строки в результирующем наборе.|  
 |**database_id**|**int**|Идентификатор базы данных.|  
 |**column_encryption_key_id**|**int**|Идентификатор ключа шифрования столбца. Примечание. Этот идентификатор обозначает строку в [sys.column_encryption_keys &#40;представлении каталога&#41;Transact-SQL ](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md) .|  
-|**column_encryption_key_version**|**int**|Зарезервировано для будущего использования. В настоящее время всегда содержит 1.|  
+|**column_encryption_key_version**|**int**|Зарезервировано для последующего использования. В настоящее время всегда содержит 1.|  
 |**column_encryption_key_metadata_version**|**Binary (8)**|Отметка времени, представляющая время создания ключа шифрования столбца.|  
 |**column_encryption_key_encrypted_value**|**varbinary (4000)**|Зашифрованное значение ключа шифрования столбца.|  
 |**column_master_key_store_provider_name**|**sysname**|Имя поставщика для хранилища ключей, содержащего главный ключ столбца, который был использован для создания зашифрованного значения ключа шифрования столбца.|  
@@ -85,7 +85,7 @@ sp_describe_parameter_encryption
 |**column_encryption_key_ordinal**|**int**|Код строки в первом результирующем наборе. Строка, на которую указывает ссылка, описывает ключ шифрования столбца, настроенный для столбца, параметр соответствует.|  
 |**column_encryption_normalization_rule_version**|**tinyint**|Номер версии алгоритма нормализации типа.|  
   
-## <a name="remarks"></a>Замечания  
+## <a name="remarks"></a>Remarks  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Драйвер клиента, поддерживающий Always encrypted, автоматически вызывает **sp_describe_parameter_encryption** для получения метаданных шифрования для параметризованных запросов, выданных приложением. Впоследствии драйвер использует метаданные шифрования для шифрования значений параметров, которые соответствуют столбцам базы данных, защищенным с помощью Always Encrypted, и заменяет значения параметров в виде открытого текста, переданные приложением, на значения зашифрованных параметров перед отправкой запроса ядру СУБД.  
   
 ## <a name="permissions"></a>Разрешения  
@@ -133,7 +133,7 @@ GO
   
 CREATE TABLE t1 (  
 c1 INT ENCRYPTED WITH (  
-    COLUMN_ENCRYPTION_KEY = [CEK_Auto1],   
+    COLUMN_ENCRYPTION_KEY = [CEK1],   
     ENCRYPTION_TYPE = Randomized,   
     ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,  
 );  

@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata bdc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: f82fe4b7f4412f5cb609c26b1ba782d8c337759f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 53ce4d98c0cf849910c8245bc573f39c85c78165
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048784"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557117"
 ---
 # <a name="azdata-bdc-spark"></a>azdata bdc spark
 
@@ -26,10 +26,11 @@ ms.locfileid: "100048784"
 
 |Команда|Описание|
 | --- | --- |
+[azdata bdc spark status](reference-azdata-bdc-spark-status.md) | Команды состояния службы Spark.
+[azdata bdc spark settings](reference-azdata-bdc-spark-settings.md) | Команды параметров BDC для службы Spark.
 [Пакет azdata bdc spark](reference-azdata-bdc-spark-batch.md) | Управляет пакетными операциями в системе Spark.
 [Сеанс azdata bdc spark](reference-azdata-bdc-spark-session.md) | Управляет активными операциями сеанса в системе Spark.
 [Инструкция azdata bdc spark](reference-azdata-bdc-spark-statement.md) | Управляет инструкциями Spark.
-[azdata bdc spark status](reference-azdata-bdc-spark-status.md) | Команды состояния службы Spark.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

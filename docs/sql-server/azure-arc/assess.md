@@ -4,15 +4,15 @@ description: Настройка оценки SQL по запросу для эк
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 09/10/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2fb25ca30a3b55bfcedb470addad8680f4914e2f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f1fcf571b491a4efc5759c10c4243f3b6b5ed135
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063296"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556417"
 ---
 # <a name="configure-sql-assessment-on-an-azure-arc-enabled-sql-server-instance"></a>Настройка оценки SQL для экземпляра SQL Server с поддержкой Azure Arc
 
@@ -20,7 +20,10 @@ ms.locfileid: "100063296"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ваш экземпляр SQL Server должен быть подключен к службе Azure Arc. Инструкции см. в статье [Подключение SQL Server к Azure Arc](connect.md).
+* Ваш экземпляр SQL Server на базе Windows должен быть подключен к Azure Arc. Выполните инструкции по [подключению экземпляра SQL Server к SQL Server с поддержкой Arc](connect.md).
+   
+   > [!NOTE]
+   > В настоящее время Оценка SQL по запросу поддерживает только SQL Server на компьютерах Windows.
 
 * На компьютере должно быть установлено и настроено расширение Microsoft Monitoring Agent (MMA). Инструкции см. в статье [Установка MMA](configure-advanced-data-security.md#install-microsoft-monitoring-agent-mma). Кроме того, дополнительные сведения см. в статье [Log Analytics Agent](/azure/azure-monitor/platform/log-analytics-agent).
 

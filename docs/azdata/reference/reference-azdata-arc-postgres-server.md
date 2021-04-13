@@ -5,16 +5,16 @@ description: Справочная статья по командам azdata arc 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 79d2cad23c6aed747837635e4d19d42a5daf41dd
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 09c873049d81a62ae53f882396fb0230e11ce155
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052645"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556887"
 ---
 # <a name="azdata-arc-postgres-server"></a>azdata arc postgres server
 
@@ -26,13 +26,12 @@ ms.locfileid: "100052645"
 
 |Команда|Описание|
 | --- | --- |
-[azdata arc postgres server create](#azdata-arc-postgres-server-create) | Создание группы серверов PostgreSQL.
-[azdata arc postgres server edit](#azdata-arc-postgres-server-edit) | Изменение конфигурации группы серверов PostgreSQL.
-[azdata arc postgres server delete](#azdata-arc-postgres-server-delete) | Удаление группы серверов PostgreSQL.
-[azdata arc postgres server show](#azdata-arc-postgres-server-show) | Отображение сведений о группе серверов PostgreSQL.
-[azdata arc postgres server list](#azdata-arc-postgres-server-list) | Список групп серверов PostgreSQL.
+[azdata arc postgres server create](#azdata-arc-postgres-server-create) | Создание группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
+[azdata arc postgres server edit](#azdata-arc-postgres-server-edit) | Изменение конфигурации группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
+[azdata arc postgres server delete](#azdata-arc-postgres-server-delete) | Удаление группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
+[azdata arc postgres server show](#azdata-arc-postgres-server-show) | Отображение сведений о группе серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
+[azdata arc postgres server list](#azdata-arc-postgres-server-list) | Получение списка групп серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 [azdata arc postgres server config](reference-azdata-arc-postgres-server-config.md) | Команды настройки.
-[azdata arc postgres server backup](reference-azdata-arc-postgres-server-backup.md) | Управление резервными копиями группы серверов PostgreSQL.
 ## <a name="azdata-arc-postgres-server-create"></a>azdata arc postgres server create
 Чтобы задать пароль для группы серверов, укажите переменную среды AZDATA_PASSWORD
 ```bash
@@ -53,6 +52,8 @@ azdata arc postgres server create --name -n
                                   
 [--storage-class-backups -scb]  
                                   
+[--volume-claim-mounts -vcm]  
+                                  
 [--extensions]  
                                   
 [--volume-size-data -vsd]  
@@ -67,8 +68,6 @@ azdata arc postgres server create --name -n
                                   
 [--no-external-endpoint]  
                                   
-[--dev]  
-                                  
 [--port]  
                                   
 [--no-wait]  
@@ -76,35 +75,41 @@ azdata arc postgres server create --name -n
 [--engine-settings -e]
 ```
 ### <a name="examples"></a>Примеры
-Создание группы серверов PostgreSQL.
+Создание группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server create -n pg1
 ```
-Создание группы серверов PostgreSQL с параметрами подсистемы. Оба приведенных ниже примера допустимы.
+Создание группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc с параметрами ядра. Оба приведенных ниже примера допустимы.
 ```bash
 azdata arc postgres server create -n pg1 --engine-settings "key1=val1"
 azdata arc postgres server create -n pg1 --engine-settings "key2=val2"
 ```
+Создание группы серверов PostgreSQL с подключениями на основе утверждения тома.
+```bash
+azdata arc postgres server create -n pg1 --volume-claim-mounts backup-pvc:backup
+```
 ### <a name="required-parameters"></a>Обязательные параметры
 #### `--name -n`
-Имя экземпляра.
+Имя группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ### <a name="optional-parameters"></a>Необязательные параметры
 #### `--path`
-Путь к исходному файлу JSON для группы серверов PostgreSQL. Делать это не обязательно.
+Путь к исходному файлу JSON для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc. Это необязательно.
 #### `--cores-limit -cl`
-Максимальное количество ядер ЦП для экземпляра Postgres, которые могут использоваться на каждом узле. Поддерживаются дробные ядра.
+Максимальное число ядер ЦП для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc, которое можно использовать в каждом узле. Поддерживаются дробные ядра.
 #### `--cores-request -cr`
 Минимальное количество ядер ЦП, которые должны быть доступны на каждом узле для планирования службы. Поддерживаются дробные ядра.
 #### `--memory-limit -ml`
-Ограничение памяти для экземпляра Postgres в виде числа, за которым следует обозначение Ki (килобайты), Mi (мегабайты) или Gi (гигабайты).
+Предельный объем памяти для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc в виде числа, за которым следует Ki (килобайты), Mi (мегабайты) или Gi (гигабайты).
 #### `--memory-request -mr`
-Запрос памяти для экземпляра Postgres в виде числа, за которым следует обозначение Ki (килобайты), Mi (мегабайты) или Gi (гигабайты).
+Запрашиваемый объем памяти для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc в виде числа, за которым следует Ki (килобайты), Mi (мегабайты) или Gi (гигабайты).
 #### `--storage-class-data -scd`
 Класс хранения, используемый для томов постоянного хранения данных.
 #### `--storage-class-logs -scl`
 Класс хранения, используемый для томов постоянного хранения журналов.
 #### `--storage-class-backups -scb`
 Класс хранения, используемый для томов постоянного хранения резервных копий.
+#### `--volume-claim-mounts -vcm`
+Разделенный запятыми список подключений на основе утверждения тома. Подключение на основе утверждения тома — это пара, состоящая из существующего утверждения постоянного тома (в том же пространстве имен) и типа тома (а также необязательных метаданных в зависимости от типа тома), разделенных двоеточием. Постоянный том будет подключен в каждом модуле pod для группы серверов PostgreSQL. Путь подключения может зависеть от типа тома.
 #### `--extensions`
 Разделенный запятыми список расширений Postgres, которые должны загружаться при запуске. Поддерживаемые значения см. в документации по Postgres.
 #### `--volume-size-data -vsd`
@@ -114,13 +119,12 @@ azdata arc postgres server create -n pg1 --engine-settings "key2=val2"
 #### `--volume-size-backups -vsb`
 Размер тома хранилища, которое будет использоваться для резервных копий, в виде положительного числа, за которым следует обозначение Ki (килобайты), Mi (мегабайты) или Gi (гигабайты).
 #### `--workers -w`
-Количество рабочих узлов для формирования сегментированного кластера или нуль (по умолчанию) Postgres, состоящего из одного узла.
+Количество рабочих узлов, которые нужно подготовить в группе серверов. В предварительной версии уменьшение количества рабочих узлов не поддерживается. Дополнительные сведения см. в документации.
 #### `--engine-version -ev`
 Должно быть 11 или 12. Значение по умолчанию — 12.
+`12`
 #### `--no-external-endpoint`
 Если задано, внешняя служба не создается. В противном случае внешняя служба будет создана с использованием того же типа службы, что и контроллер данных.
-#### `--dev`
-Если указан данный параметр, то этот экземпляр считается экземпляром разработчика и не учитывается при оплате.
 #### `--port`
 Необязательный элемент.
 #### `--no-wait`
@@ -139,14 +143,14 @@ azdata arc postgres server create -n pg1 --engine-settings "key2=val2"
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-arc-postgres-server-edit"></a>azdata arc postgres server edit
-Изменение конфигурации группы серверов PostgreSQL.
+Изменение конфигурации группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server edit --name -n 
                                 [--path]  
                                 
 [--workers -w]  
                                 
-[--engine-version -ev]  
+[]  
                                 
 [--cores-limit -cl]  
                                 
@@ -157,8 +161,6 @@ azdata arc postgres server edit --name -n
 [--memory-request -mr]  
                                 
 [--extensions]  
-                                
-[--dev]  
                                 
 [--port]  
                                 
@@ -171,40 +173,38 @@ azdata arc postgres server edit --name -n
 [--admin-password]
 ```
 ### <a name="examples"></a>Примеры
-Изменение конфигурации группы серверов PostgreSQL.
+Изменение конфигурации группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server edit --src ./spec.json -n pg1
 ```
-Изменение группы серверов PostgreSQL с параметрами подсистемы.
+Изменение группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc с параметрами ядра.
 ```bash
 azdata arc postgres server edit -n pg1 --engine-settings "key2=val2"
 ```
-Изменение группы серверов PostgreSQL и замена существующих параметров подсистемы новым параметром key1=val1.
+Изменяет группу серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc и заменяет существующие параметры ядра новым параметром key1=val1.
 ```bash
 azdata arc postgres server edit -n pg1 --engine-settings "key1=val1" --replace-engine-settings
 ```
 ### <a name="required-parameters"></a>Обязательные параметры
 #### `--name -n`
-Имя изменяемой группы серверов PostgreSQL. Имя, под которым развернут ваш экземпляр, изменить нельзя.
+Имя изменяемой группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc. Имя, под которым развернут ваш экземпляр, изменить нельзя.
 ### <a name="optional-parameters"></a>Необязательные параметры
 #### `--path`
-Путь к исходному файлу JSON для группы серверов PostgreSQL. Делать это не обязательно.
+Путь к исходному файлу JSON для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc. Это необязательно.
 #### `--workers -w`
-Количество рабочих узлов для формирования сегментированного кластера или нуль (по умолчанию) Postgres, состоящего из одного узла.
-#### `--engine-version -ev`
+Количество рабочих узлов, которые нужно подготовить в группе серверов. В предварительной версии уменьшение количества рабочих узлов не поддерживается. Дополнительные сведения см. в документации.
+#### <a name=""></a>``
 Версию подсистемы изменить нельзя. --engine-version можно использовать вместе с параметром --name для обнаружения гипермасштабированной группы серверов PostgreSQL, если две группы серверов с подсистемами разных версий имеют одинаковое имя. --engine-version — необязательный параметр, который должен иметь значение 11 или 12, когда он используется для обнаружения группы серверов.
 #### `--cores-limit -cl`
-Максимальное количество ядер ЦП для экземпляра Postgres, которые могут использоваться на каждом узле, поддерживаются дробные ядра. Чтобы удалить параметр cores_limit, укажите его значение как пустую строку.
+Максимальное число ядер ЦП для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc, которое можно использовать в каждом узле. Поддерживаются дробные значения. Чтобы удалить параметр cores_limit, укажите его значение как пустую строку.
 #### `--cores-request -cr`
 Минимальное количество ядер ЦП, которые должны быть доступны на каждом узле для планирования службы; поддерживаются дробные ядра. Чтобы удалить параметр cores_request, укажите его значение как пустую строку.
 #### `--memory-limit -ml`
-Ограничение памяти для экземпляра Postgres в виде числа, за которым следует обозначение Ki (килобайты), Mi (мегабайты) или Gi (гигабайты). Чтобы удалить параметр memory_limit, укажите его значение как пустую строку.
+Предельный объем памяти для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc в виде числа, за которым следует Ki (килобайты), Mi (мегабайты) или Gi (гигабайты). Чтобы удалить параметр memory_limit, укажите его значение как пустую строку.
 #### `--memory-request -mr`
-Запрос памяти для экземпляра Postgres в виде числа, за которым следует обозначение Ki (килобайты), Mi (мегабайты) или Gi (гигабайты). Чтобы удалить параметр memory_request, укажите его значение как пустую строку.
+Запрашиваемый объем памяти для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc в виде числа, за которым следует Ki (килобайты), Mi (мегабайты) или Gi (гигабайты). Чтобы удалить параметр memory_request, укажите его значение как пустую строку.
 #### `--extensions`
 Разделенный запятыми список расширений Postgres, которые должны загружаться при запуске. Поддерживаемые значения см. в документации по Postgres.
-#### `--dev`
-Если указан данный параметр, то этот экземпляр считается экземпляром разработчика и не учитывается при оплате.
 #### `--port`
 Необязательный элемент.
 #### `--no-wait`
@@ -214,7 +214,7 @@ azdata arc postgres server edit -n pg1 --engine-settings "key1=val1" --replace-e
 #### `--replace-engine-settings -re`
 Если задан параметр --engine-settings, то все существующие пользовательские параметры подсистемы будут заменены новым набором параметров и значений.
 #### `--admin-password`
-Если указан этот параметр, то в качестве пароля администратора сервера Postgres будет использоваться значение переменной среды AZDATA_PASSWORD, если она есть, или значение, введенное по приглашению.
+Если указан этот параметр, то в качестве пароля администратора группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc будет использоваться значение переменной среды AZDATA_PASSWORD, если она есть, или значение, введенное по запросу.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -227,22 +227,26 @@ azdata arc postgres server edit -n pg1 --engine-settings "key1=val1" --replace-e
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-arc-postgres-server-delete"></a>azdata arc postgres server delete
-Удаление группы серверов PostgreSQL.
+Удаление группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server delete --name -n 
-                                  [--engine-version -ev]
+                                  []  
+                                  
+[--force -f]
 ```
 ### <a name="examples"></a>Примеры
-Удаление группы серверов PostgreSQL.
+Удаление группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server delete -n pg1
 ```
 ### <a name="required-parameters"></a>Обязательные параметры
 #### `--name -n`
-Имя группы серверов PostgreSQL.
+Имя группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ### <a name="optional-parameters"></a>Необязательные параметры
-#### `--engine-version -ev`
+#### <a name=""></a>``
 --engine-version можно использовать вместе с параметром --name для обнаружения гипермасштабированной группы серверов PostgreSQL, если две группы серверов с подсистемами разных версий имеют одинаковое имя. --engine-version — необязательный параметр, который должен иметь значение 11 или 12, когда он используется для обнаружения группы серверов.
+#### `--force -f`
+Принудительное удаление группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc без подтверждения.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -255,26 +259,26 @@ azdata arc postgres server delete -n pg1
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-arc-postgres-server-show"></a>azdata arc postgres server show
-Отображение сведений о группе серверов PostgreSQL.
+Отображение сведений о группе серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server show --name -n 
-                                [--engine-version -ev]  
+                                []  
                                 
 [--path -p]
 ```
 ### <a name="examples"></a>Примеры
-Отображение сведений о группе серверов PostgreSQL.
+Отображение сведений о группе серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server show -n pg1
 ```
 ### <a name="required-parameters"></a>Обязательные параметры
 #### `--name -n`
-Имя группы серверов PostgreSQL.
+Имя группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ### <a name="optional-parameters"></a>Необязательные параметры
-#### `--engine-version -ev`
+#### <a name=""></a>``
 --engine-version можно использовать вместе с параметром --name для обнаружения гипермасштабированной группы серверов PostgreSQL, если две группы серверов с подсистемами разных версий имеют одинаковое имя. --engine-version — необязательный параметр, который должен иметь значение 11 или 12, когда он используется для обнаружения группы серверов.
 #### `--path -p`
-Путь, куда должна быть записана полная спецификация для группы серверов PostgreSQL. Если этот параметр опущен, спецификация будет записана в стандартный вывод.
+Путь, куда должна быть записана полная спецификация для группы серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc. Если этот параметр опущен, спецификация будет записана в стандартный вывод.
 ### <a name="global-arguments"></a>Глобальные аргументы
 #### `--debug`
 Повышение уровня детализации журнала для включения всех журналов отладки.
@@ -287,12 +291,12 @@ azdata arc postgres server show -n pg1
 #### `--verbose`
 Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug.
 ## <a name="azdata-arc-postgres-server-list"></a>azdata arc postgres server list
-Список групп серверов PostgreSQL.
+Получение списка групп серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server list 
 ```
 ### <a name="examples"></a>Примеры
-Список групп серверов PostgreSQL.
+Получение списка групп серверов с Гипермасштабированием для PostgreSQL с поддержкой Azure Arc.
 ```bash
 azdata arc postgres server list
 ```
@@ -312,5 +316,5 @@ azdata arc postgres server list
 
 Дополнительные сведения о других командах **azdata** см. в [справочнике по azdata](reference-azdata.md). 
 
-Дополнительные сведения об установке средства **azdata** см. в статье [Установка azdata](..\install\deploy-install-azdata.md).
+Дополнительные сведения об установке средства **azdata** см. в разделе [Установка azdata](..\install\deploy-install-azdata.md).
 

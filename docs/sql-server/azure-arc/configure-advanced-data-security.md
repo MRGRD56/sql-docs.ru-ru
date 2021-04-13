@@ -5,15 +5,15 @@ description: Настройка расширенной защиты данных
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 09/10/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2d7cdc1a04cfa8f3a1697eed68913f92174f972b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e80c146c1f1fc1d40293e5ce12fb170bfd413f09
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063229"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556377"
 ---
 # <a name="configure-advanced-data-security-for-azure-arc-enabled-sql-server-instance"></a>Настройка расширенной защиты данных для экземпляра SQL Server с поддержкой Azure Arc
 
@@ -21,9 +21,13 @@ ms.locfileid: "100063229"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Экземпляр SQL Server должен быть подключен к SQL Server с поддержкой Arc. Выполните инструкции по [подключению экземпляра SQL Server к SQL Server с поддержкой Arc](connect.md).
+* Ваш экземпляр SQL Server на базе Windows должен быть подключен к Azure Arc. Выполните инструкции по [подключению экземпляра SQL Server к SQL Server с поддержкой Arc](connect.md).
+
+   > [!NOTE]
+   > В настоящее время Azure Defender поддерживает только SQL Server на компьютерах Windows.
 
 * Вашей учетной записи должна быть назначена одна из [ролей Центра безопасности (RBAC)](/azure/security-center/security-center-permissions)
+
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
