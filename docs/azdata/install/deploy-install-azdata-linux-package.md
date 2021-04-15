@@ -4,16 +4,16 @@ description: Узнайте, как установить средство Azure 
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 09/30/2020
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 4508db56c0246f181f9244fe0a3b853a3e91eb24
-ms.sourcegitcommit: 4b7ecc080795c5f90322d60df5c0550884f48140
+ms.openlocfilehash: d4d1456126a99ca69631c3e817e381c9252fb84c
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94334453"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003820"
 ---
 # <a name="install-azure-data-cli-azdata-with-apt"></a>Установка [!INCLUDE [azure-data-cli-azdata](../../includes/azure-data-cli-azdata.md)] с помощью apt
 
@@ -21,7 +21,7 @@ ms.locfileid: "94334453"
 
 Для дистрибутивов Linux с `apt` существует пакет для `azdata-cli`. Пакет CLI протестирован для версий Linux, которые используют `apt`, а именно:
 
-- Ubuntu 16.04, Ubuntu 18.04
+- Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04
 
 [!INCLUDE [azdata-package-installation-remove-pip-install](../../includes/azdata-package-installation-remove-pip-install.md)]
 

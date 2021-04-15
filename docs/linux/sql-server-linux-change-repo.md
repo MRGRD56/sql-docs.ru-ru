@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 zone_pivot_groups: ld2-linux-distribution
-ms.openlocfilehash: d284a049cb1266dc33c30657f3d86e8421825868
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d32bd886cdea6d64cee893ca76d83c4a5f74a7a2
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340390"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003890"
 ---
 # <a name="configure-repositories-for-installing-and-upgrading-sql-server-on-linux"></a>Настройка репозиториев для установки и обновления SQL Server на Linux
 
@@ -158,7 +158,10 @@ sudo rm -rf /etc/yum.repos.d/mssql-server.repo
 При необходимости удалите старый репозиторий. В зависимости от типа ранее настроенного репозитория выполните одну из приведенных ниже команд.
 
 > [!NOTE]
-> Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3) и SQL Server 2017 с накопительным пакетом обновления 20 (CU20), теперь поддерживается Ubuntu 18.04. Если вы используете Ubuntu 16,04, измените приведенный ниже путь на `/ubuntu/16.04` вместо `/ubuntu/18.04` и используйте правильное [имя кода распространения](https://releases.ubuntu.com/).
+>
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU10), поддерживается Ubuntu 20.04.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3) и SQL Server 2017 с накопительным пакетом обновления 20 (CU20), теперь поддерживается Ubuntu 18.04.
+> - Если вы используете Ubuntu 16,04, измените приведенный ниже путь на `/ubuntu/16.04` вместо `/ubuntu/18.04` и используйте правильное [имя кода распространения](https://releases.ubuntu.com/).
 
 | Хранилище | Команда для удаления |
 |---|---|
@@ -210,9 +213,10 @@ sudo rm -rf /etc/yum.repos.d/mssql-server.repo
 Настройте новый репозиторий, который будет использоваться для установки и обновления SQL Server.
 
 > [!NOTE]
-> Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3) и SQL Server 2017 с накопительным пакетом обновления 20 (CU20), теперь поддерживается Ubuntu 18.04. Следующие команды ссылаются на репозиторий Ubuntu 18.04.
 >
-> Если вы используете Ubuntu 16.04, в приведенном ниже пути замените `/ubuntu/18.04` на `/ubuntu/16.04`.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU10), теперь поддерживается Ubuntu 20.04.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3) и SQL Server 2017 с накопительным пакетом обновления 20 (CU20), теперь поддерживается Ubuntu 18.04.
+> - Следующие команды ссылаются на репозиторий Ubuntu 18.04. Если вы используете Ubuntu 16.04, в приведенном ниже пути замените `/ubuntu/18.04` на `/ubuntu/16.04`.
 
 1. Импортируйте открытые ключи GPG из репозитория.
 

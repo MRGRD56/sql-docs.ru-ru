@@ -4,18 +4,18 @@ titleSuffix: SQL Server
 description: Сведения о том, как установить средства командной строки SQL Server, драйверы Microsoft ODBC и их зависимости в Linux.
 author: VanMSFT
 ms.author: vanto
-ms.date: 06/30/2020
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: sqlfreshmay19
 ms.technology: linux
 ms.assetid: eff8e226-185f-46d4-a3e3-e18b7a439e63
-ms.openlocfilehash: 36508869b30688e7a87035b50a7a06ca1e2a083a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 436bf5fc0f069a9712d4eb45e51d994ec91cda22
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346341"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003907"
 ---
 # <a name="install-sqlcmd-and-bcp-the-sql-server-command-line-tools-on-linux"></a>Установка программ командной строки SQL Server sqlcmd и bcp в Linux
 
@@ -97,7 +97,10 @@ ms.locfileid: "100346341"
 Чтобы установить **mssql-tools** в Ubuntu, выполните указанные ниже действия.
 
 > [!NOTE]
-> Ubuntu 18.04 поддерживается, начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3). Если вы используете Ubuntu 18.04, измените путь к репозиторию с `/ubuntu/16.04` на `/ubuntu/18.04`.
+>
+> - Ubuntu 18.04 поддерживается, начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3).
+> - Ubuntu 20.04 поддерживается, начиная с SQL Server 2019 с накопительным пакетом обновления 20 (CU10).
+> - Если вы используете Ubuntu 20.04, измените путь к репозиторию с `/ubuntu/16.04` на `/ubuntu/20.04`.
 
 1. Импортируйте открытые ключи GPG из репозитория.
 

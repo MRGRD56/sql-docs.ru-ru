@@ -13,12 +13,12 @@ ms.prod_service: linux
 ms.assetid: 82737f18-f5d6-4dce-a255-688889fdde69
 monikerRange: '>= sql-server-linux-2017 || >= sql-server-2017'
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: d72587194cae2d7f45ffd02610be614db359a087
-ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
+ms.openlocfilehash: 4d2dccb2567d374f5ca5011f973adfcdc5b3067b
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106232171"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003853"
 ---
 # <a name="quickstart-run-sql-server-container-images-with-docker"></a>Краткое руководство. Запуск образов контейнеров SQL Server в Docker
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -39,7 +39,8 @@ ms.locfileid: "106232171"
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 > [!NOTE]
-> Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3), теперь поддерживается Ubuntu 18.04.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3), теперь поддерживается Ubuntu 18.04.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU10), поддерживается Ubuntu 20.04.
 
 Это краткое руководство описывает использование Docker для извлечения и запуска образа контейнера SQL Server 2019, [mssql-server](https://hub.docker.com/r/microsoft/mssql-server). Затем мы подключимся при помощи **sqlcmd** для создания первой базы данных и выполнения запросов.
 
@@ -48,7 +49,7 @@ ms.locfileid: "106232171"
 
 ::: moniker-end
 
-Этот образ содержит SQL Server, работающий в системе Linux, основанной на Ubuntu 18.04. Он может использоваться с Dосker Engine 1.8+ на Linux или Docker для Mac или Windows. В этом кратком руководстве особое внимание уделяется использованию SQL Server на базе образа **Linux**. Образ с Windows не рассматривается, но сведения о нем вы можете найти на странице [mssql-server-windows-developer](https://hub.docker.com/r/microsoft/mssql-server-windows-developer/) центра Docker.
+Этот образ содержит экземпляр SQL Server, выполняющийся в системе Linux на основе Ubuntu 20.04. Он может использоваться с Dосker Engine 1.8+ на Linux или Docker для Mac или Windows. В этом кратком руководстве особое внимание уделяется использованию SQL Server на базе образа **Linux**. Образ с Windows не рассматривается, но сведения о нем вы можете найти на странице [mssql-server-windows-developer](https://hub.docker.com/r/microsoft/mssql-server-windows-developer/) центра Docker.
 
 ## <a name="prerequisites"></a><a id="requirements"></a> Предварительные требования
 

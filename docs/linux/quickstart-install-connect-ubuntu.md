@@ -3,18 +3,18 @@ title: 'Ubuntu: Установка SQL Server в Linux'
 description: В этом кратком руководстве рассказывается, как установить SQL Server 2017 или SQL Server 2019 в Ubuntu, а затем создать и запросить базу данных с помощью средства sqlcmd.
 author: VanMSFT
 ms.author: vanto
-ms.date: 07/15/2020
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: seo-lt-2019
 ms.technology: linux
 ms.assetid: 31c8c92e-12fe-4728-9b95-4bc028250d85
-ms.openlocfilehash: 11adcb6d14675952e19fcc37994614348fdae70c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 4d96b75d35af95f646ba41864ee9df846642338f
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339170"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003920"
 ---
 # <a name="quickstart-install-sql-server-and-create-a-database-on-ubuntu"></a>Краткое руководство. Установка SQL Server и создание базы данных в Ubuntu
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -33,7 +33,10 @@ ms.locfileid: "100339170"
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-В этом кратком руководстве вы установите SQL Server 2019 в Ubuntu 16.04/18.04. Затем вы подключитесь с помощью **sqlcmd** для создания первой базы данных и выполнения запросов.
+В этом кратком руководстве показано, как установить SQL Server 2019 в Ubuntu 16.04, 18.04 или 20.04. Затем вы подключитесь с помощью **sqlcmd** для создания первой базы данных и выполнения запросов.
+
+> [!NOTE]
+> Ubuntu 20.04 поддерживается, начиная с SQL Server 2019 с накопительным пакетом обновления 20 (CU10).
 
 > [!TIP]
 > Для выполнения этого руководства требуется ввод данных пользователем и подключение к Интернету. Если вас интересуют процедуры автоматической или автономной установки, см. [руководство по установке SQL Server на Linux](sql-server-linux-setup.md). Список поддерживаемых платформ см. в [заметках о выпуске](sql-server-linux-release-notes-2019.md).
@@ -64,9 +67,9 @@ ms.locfileid: "100339170"
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-Требуется компьютер, на котором установлена ОС Ubuntu 16.04 или 18.04 и имеется **по крайней мере 2 ГБ** памяти.
+Требуется компьютер с установленной версией Ubuntu 16.04, 18.04 или 20.04 и **минимум 2 ГБ** памяти.
 
-Чтобы установить Ubuntu 18.04 на собственный компьютер, перейдите на страницу <http://releases.ubuntu.com/bionic/>. Можно также создать виртуальные машины Ubuntu в Azure. См. статью [Создание виртуальных машин Linux и управление ими с помощью Azure CLI](/azure/virtual-machines/linux/tutorial-manage-vm).
+Чтобы установить Ubuntu 20.04 на свой компьютер, перейдите на страницу <https://releases.ubuntu.com/20.04/>. Можно также создать виртуальные машины Ubuntu в Azure. См. статью [Создание виртуальных машин Linux и управление ими с помощью Azure CLI](/azure/virtual-machines/linux/tutorial-manage-vm).
 
 > [!NOTE]
 > В настоящее время [подсистема Windows для Linux](/windows/wsl/about) для Windows 10 не поддерживается в качестве цели установки.
@@ -157,7 +160,7 @@ ms.locfileid: "100339170"
 ## <a name="install-sql-server"></a><a id="install"></a>Установка SQL Server
 
 > [!NOTE]
-> Следующие команды для SQL Server 2019 ссылаются на репозиторий Ubuntu 18.04. Если вы используете Ubuntu 16.04, в приведенном ниже пути замените `/ubuntu/18.04/` на `/ubuntu/16.04/`.
+> Следующие команды для SQL Server 2019 ссылаются на репозиторий Ubuntu 20.04. Если вы используете Ubuntu 18.04 или 16.04, измените приведенный ниже путь на `/ubuntu/18.04/` или `/ubuntu/16.04/` вместо `/ubuntu/20.04/`.
 
 Чтобы настроить SQL Server в Ubuntu, выполните следующие команды в терминале для установки пакета **mssql-server**:
 
@@ -179,6 +182,12 @@ ms.locfileid: "100339170"
    
    ```bash
    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+   ```
+
+   Для Ubuntu 20.04:
+   
+   ```bash
+   sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
    ```
 
 3. Выполните следующие команды для установки SQL Server:
@@ -233,6 +242,12 @@ ms.locfileid: "100339170"
    
    ```bash
    curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+   ```
+
+   Для Ubuntu 20.04:
+   
+   ```bash
+   curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
    ```
 
 1. Обновите список источников и выполните команду установки с помощью пакета разработчика unixODBC. Дополнительные сведения см. в разделе [Установка драйвера Microsoft ODBC для SQL Server (Linux)](../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md).

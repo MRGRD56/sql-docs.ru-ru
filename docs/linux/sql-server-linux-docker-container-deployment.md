@@ -12,12 +12,12 @@ ms.technology: linux
 ms.assetid: 82737f18-f5d6-4dce-a255-688889fdde69
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: f789dd2b80515116e7bf0a12e26e6e8fe6c45b03
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5b8f63de1d93ae6179e26a70c4a8e310eb4caca1
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100273105"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003886"
 ---
 # <a name="deploy-and-connect-to-sql-server-docker-containers"></a>Развертывание контейнеров Docker в SQL Server и подключение к ним
 
@@ -210,7 +210,10 @@ Packages
 ## <a name="run-a-specific-sql-server-container-image"></a><a id="tags"></a> Запуск определенного образа контейнера с SQL Server
 
 > [!NOTE]
-> Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3), теперь поддерживается Ubuntu 18.04. Список всех доступных тегов для mssql/server можно найти на странице <https://mcr.microsoft.com/v2/mssql/server/tags/list>.
+>
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU3), теперь поддерживается Ubuntu 18.04.
+> - Начиная с SQL Server 2019 с накопительным пакетом обновления 3 (CU10), поддерживается Ubuntu 20.04.
+> - Список всех доступных тегов для mssql/server можно найти на странице <https://mcr.microsoft.com/v2/mssql/server/tags/list>.
 
 В некоторых сценариях не требуется использовать последнюю версию образа контейнера с SQL Server. Чтобы запустить определенный образ контейнера с SQL Server, выполните следующие действия:
 

@@ -1,7 +1,7 @@
 ---
 title: Параметры AppContext в SqlClient
-description: Сведения о том, как использовать параметры AppContext, доступные в SqlClient.
-ms.date: 06/15/2020
+description: Узнайте о переключателях AppContext, доступных в SqlClient, и об их использовании для изменения некоторого поведения по умолчанию.
+ms.date: 03/24/2021
 dev_langs:
 - csharp
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: johnnypham
 ms.author: v-jopha
 ms.reviewer: v-daenge
-ms.openlocfilehash: aa6de0ff33b0d6a70ef14a42f5def3f3c6a20482
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6ff171065f69ded313d96fd5156cc42daef37a35
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836021"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003770"
 ---
 # <a name="appcontext-switches-in-sqlclient"></a>Параметры AppContext в SqlClient
 
@@ -53,7 +53,8 @@ AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.UseManagedNetworkingOnWind
 
 [!INCLUDE [appliesto-netfx-xxxx-xxxx-md](../../includes/appliesto-netfx-xxxx-xxxx-md.md)]
 
-Разрешение IP-адресов прозрачной сети (TNIR) является исправленной версией существующей функции MultiSubnetFailover. TNIR влияет на последовательность подключений драйвера, когда первый разрешенный IP-адрес имени узла не отвечает и имеется несколько IP-адресов, связанных с именем этого узла. TNIR взаимодействует с MultiSubnetFailover и поддерживает следующие три варианта последовательности подключений.<br />
+Разрешение IP-адресов прозрачной сети (TNIR) является исправленной версией существующей функции MultiSubnetFailover. TNIR влияет на последовательность подключений драйвера, когда первый разрешенный IP-адрес имени узла не отвечает и имеется несколько IP-адресов, связанных с именем этого узла. TNIR взаимодействует с MultiSubnetFailover и поддерживает следующие три варианта последовательности подключений.
+
 * 0: Сначала один IP-адрес, а затем все IP-адреса в параллельном режиме.
 * 1: Все IP-адреса в параллельном режиме.
 * 2: Все IP-адреса последовательно.
@@ -71,7 +72,7 @@ AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.UseManagedNetworkingOnWind
 AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.DisableTNIRByDefaultInConnectionString", true);
 ```
 
-Дополнительные сведения об установке этих свойств см. в документации по свойству [SqlConnection.ConnectionString](/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring). 
+Дополнительные сведения об установке этих свойств см. в документации по свойству [SqlConnection.ConnectionString](/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring).
 
 ## <a name="enable-a-minimum-timeout-during-login"></a>Включение минимального времени ожидания при входе
 
@@ -92,6 +93,18 @@ AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.UseOneSecFloorInTimeoutCal
 ```csharp
 AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.MakeReadAsyncBlocking", false);
 ```
+
+## <a name="enable-configurable-retry-logic"></a>Включение настраиваемой логики повторных попыток
+
+[!INCLUDE [appliesto-netfx-netcore-netst-md](../../includes/appliesto-netfx-netcore-netst-md.md)]
+
+По умолчанию настраиваемая логика повторных попыток отключена. Чтобы включить эту возможность, задайте в AppContext для переключателя **Switch.Microsoft.Data.SqlClient.EnableRetryLogic** значение `true` при запуске приложения. Этот переключатель является обязательным, даже если для открытия подключения или выполнения команды назначен поставщик логики повторных попыток.
+
+```csharp
+AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.EnableRetryLogic", false);
+```
+
+* Дополнительные сведения о том, как включить переключатель с помощью файла конфигурации, см. в разделе [Включение переключателя безопасности](configurable-retry-logic-config-file-sqlclient.md#enable-safety-switch).
 
 ## <a name="see-also"></a>См. также раздел
 

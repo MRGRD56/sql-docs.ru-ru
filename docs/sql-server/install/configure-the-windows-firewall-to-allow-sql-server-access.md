@@ -2,7 +2,7 @@
 title: Настройка брандмауэра Windows
 description: Узнайте, как настроить брандмауэр Windows, чтобы разрешить доступ к экземпляру SQL Server через брандмауэр.
 ms.custom: contperf-fy21q3
-ms.date: 03/26/2021
+ms.date: 04/07/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: install
@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: f55c6a0e-b6bd-4803-b51a-f3a419803024
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 5f16ca40ec73ab02b539d19a4e271d3a08ccc2c7
-ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
+ms.openlocfilehash: ca3e3ae4255fc1815e690ef633350b33e4725ed9
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105744506"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072436"
 ---
 # <a name="configure-the-windows-firewall-to-allow-sql-server-access"></a>Configure the Windows Firewall to Allow SQL Server Access
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -98,6 +98,16 @@ ms.locfileid: "105744506"
     -   [Синтаксис команды Netsh, контексты и форматирование](/windows-server/networking/technologies/netsh/netsh-contexts)    
     -   [Использование контекста netsh advfirewall firewall вместо контекста netsh firewall для управления работой брандмауэра Windows в операционной системе Windows Server 2008 или Windows Vista](https://support.microsoft.com/kb/947709)    
 
+-   **PowerShell**
+
+    В следующем примере показано, как открыть TCP-порт 1433 и UDP-порт 1434 для экземпляра по умолчанию SQL Server и службы обозревателя SQL Server:
+    
+    ```powershell
+    New-NetFirewallRule -DisplayName "SQLServer default instance" -Direction Inbound -LocalPort 1433 -Protocol TCP -Action Allow
+    New-NetFirewallRule -DisplayName "SQLServer Browser service" -Direction Inbound -LocalPort 1434 -Protocol UDP -Action Allow
+    ```
+    
+    Дополнительные примеры см. в разделе [New-NetFirewallRule](/powershell/module/netsecurity/new-netfirewallrule).
     
 - **Для Linux**. В Linux необходимо также открыть порты, связанные со службами, к которым вам нужен доступ. Различные дистрибутивы Linux и брандмауэры имеют свои процедуры. Примеры см. в руководствах по использованию SQL Server в [Red Hat](../../linux/quickstart-install-connect-red-hat.md) и [SUSE](../../linux/quickstart-install-connect-suse.md). 
   
