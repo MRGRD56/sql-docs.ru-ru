@@ -8,15 +8,15 @@ ms.reviewer: ''
 ms.technology: xevents
 ms.topic: tutorial
 ms.assetid: 114ec05b-7eca-4c87-b276-25e37b84be39
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8ad23756f19dd2305215ed7e44f52e65f5e52f74
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: aa724fd7c88125b91121cd8b71477c33bdc468cd
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465605"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490132"
 ---
 # <a name="alter-an-extended-events-session"></a>Изменение сеанса расширенных событий
 
@@ -52,7 +52,7 @@ ms.locfileid: "97465605"
   
 -   В диалоговом окне **Свойства** внесите соответствующие изменения и нажмите кнопку **ОК**.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [ALTER EVENT SESSION (Transact-SQL)](../../t-sql/statements/alter-event-session-transact-sql.md)   
  [Создание сеанса расширенных событий с помощью редактора запросов](quick-start-extended-events-in-sql-server.md)  
   

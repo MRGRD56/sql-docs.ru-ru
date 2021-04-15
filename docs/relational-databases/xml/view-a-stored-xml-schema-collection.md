@@ -17,14 +17,14 @@ helpviewer_keywords:
 - displaying XML schema collections
 - viewing XML schema collections
 ms.assetid: e38031af-22df-4cd9-a14e-e316b822f91b
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 76671186663e4d4173389d9aec19b0c0da2fbf88
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 9deae5c5d72bc747a326d45313795444319eca30
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729804"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486912"
 ---
 # <a name="view-a-stored-xml-schema-collection"></a>Просмотр хранимой коллекции схем XML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -62,7 +62,7 @@ SELECT xml_schema_namespace(N'Production',N'ProductDescriptionSchemaCollection',
 GO  
 ```  
   
- Когда в базе данных создается коллекция XML-схем с помощью инструкции CREATE XML SCHEMA COLLECTION, она сохраняет компоненты схемы в метаданных. Обратите внимание, что сохраняются только те компоненты схемы, которые понимает [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Любые комментарии, заметки или несоответствующие XSD-схеме атрибуты не сохраняются. Следовательно, схема, повторно сконструированная посредством функции **xml_schema_namespace** , функционально эквивалентна первоначальной схеме, но не обязательно будет выглядеть так же. Например, не будет тех же префиксов, которые были в первоначальной схеме. Схема, возвращаемая функцией **xml_schema_namespace** , использует префикс **t** для целевого пространства имен и префиксы **ns1**, **ns2**и так далее для всех остальных.  
+ Когда в базе данных создается коллекция XML-схем с помощью инструкции CREATE XML SCHEMA COLLECTION, она сохраняет компоненты схемы в метаданных. Обратите внимание, что сохраняются только те компоненты схемы, которые понимает [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Любые комментарии, заметки или несоответствующие XSD-схеме атрибуты не сохраняются. Следовательно, схема, повторно сконструированная посредством функции **xml_schema_namespace** , функционально эквивалентна первоначальной схеме, но не обязательно будет выглядеть так же. Например, не будет тех же префиксов, которые были в первоначальной схеме. Схема, возвращаемая функцией **xml_schema_namespace** , использует префикс **t** для целевого пространства имен и префиксы **ns1**, **ns2** и так далее для всех остальных.  
   
  Если нужно сохранить точную копию XML-схем, следует сохранить схему в файл или в таблицу базы данных в столбец типа **xml** .  
   

@@ -11,16 +11,16 @@ helpviewer_keywords:
 - FOR XML clause, formatting
 - server-side XML formatting
 ms.assetid: ae9ea068-0857-4505-a3b2-f53d256b644c
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 629221cc127011e63e58c5044ef9375001b68df3
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 621a64696adf4c1cf2228e5c064055f69352fc06
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97430017"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490388"
 ---
 # <a name="server-side-xml-formatting-sqlxml-40"></a>Форматирование XML-кода на сервере (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -55,7 +55,7 @@ FROM   Person.Contact
   
  Дополнительные сведения о предложении FOR XML см. в разделе [Создание XML с помощью предложения FOR XML](../../../relational-databases/xml/for-xml-sql-server.md).  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Архитектура форматирования XML на стороне клиента и на стороне сервера &#40;SQLXML 4,0&#41;](../../../relational-databases/sqlxml/formatting/architecture-of-client-side-and-server-side-xml-formatting-sqlxml-4-0.md)   
  [Форматирование XML на стороне клиента &#40;SQLXML 4,0&#41;](../../../relational-databases/sqlxml/formatting/client-side-xml-formatting-sqlxml-4-0.md)   
  [FOR XML (SQL Server)](../../../relational-databases/xml/for-xml-sql-server.md)  

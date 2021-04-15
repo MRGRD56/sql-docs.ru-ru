@@ -6,6 +6,7 @@ metadata:
   title: "Руководства по переносу баз данных Azure\_| Документация Майкрософт"
   description: "Пошаговое руководство по модернизации ресурсов данных путем миграции на SQL\_Server, Базу данных\_SQL Azure, Управляемый экземпляр\_SQL Azure, Базу данных\_Azure, Azure Cosmos\_DB, SQL\_Server на виртуальных машинах\_Azure и Azure Synapse\_Analytics. "
   ms.topic: hub-page
+  ms.technology: migration-guide
 conceptualContent:
   items:
     - title: "SQL\_Server\_—"

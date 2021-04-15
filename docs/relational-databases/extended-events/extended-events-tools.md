@@ -11,15 +11,15 @@ helpviewer_keywords:
 - extended events [SQL Server], using
 - extended events [SQL Server], options for using
 ms.assetid: d312a9ff-50ba-4721-baef-50bfd3169d38
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b0695aed06d62e9dbe687983958ebc9b707ec37d
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 338290ac9544c2919502d85ea0c5e4162b1549ac
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465565"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490041"
 ---
 # <a name="extended-events-tools"></a>Средства расширенных событий
 
@@ -86,7 +86,7 @@ ms.locfileid: "97465565"
 |[trace_xe_event_map (Transact-SQL)](../../relational-databases/system-tables/extended-events-tables-trace-xe-event-map.md)|Содержит одну строку для каждого события из числа расширенных событий, сопоставленного с классом событий трассировки SQL.|  
 |[trace_xe_action_map (Transact-SQL)](../../relational-databases/system-tables/extended-events-tables-trace-xe-action-map.md)|Содержит одну строку для каждого действия из числа расширенных событий, сопоставленного с идентификатором столбца трассировки SQL.|  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Динамические административные представления и функции (Transact-SQL)](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [Представления каталога (Transact-SQL)](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [Таблицы расширенных событий SQL Server (Transact-SQL)](../system-tables/system-tables-transact-sql.md)   

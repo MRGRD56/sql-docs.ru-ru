@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - strings [SQL Server], XML
 ms.assetid: bf069da8-de1e-44d2-a1fb-ade383076ac1
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: cdaa7560b5dad561d981acee2d2d48ccca44146c
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 4893f185bc465a696d273534964a4fb80866c8d3
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729911"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488205"
 ---
 # <a name="for-xml-support-for-string-data-types"></a>Поддержка FOR XML для строковых типов данных
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

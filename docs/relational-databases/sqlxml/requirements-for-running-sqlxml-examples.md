@@ -14,15 +14,15 @@ helpviewer_keywords:
 - SQLXML, samples
 - examples [SQLXML], requirements
 ms.assetid: acfee2eb-cf35-4377-9fde-82ad1d938011
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e9babfb8a3d29e3b094c3fb1cd42257dcb9fa0a4
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9fd5148e8db5d39c9702440810341b4d9b8d81e8
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97429970"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490372"
 ---
 # <a name="requirements-for-running-sqlxml-examples"></a>Требования к запуску примеров SQLXML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

@@ -22,14 +22,14 @@ helpviewer_keywords:
 - XML [SQL Server], OPENXML statement
 - element-centric mapping [SQL Server]
 ms.assetid: 060126fc-ed0f-478f-830a-08e418d410dc
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 6acc03c2412ac33337236efba130344cc9f91c9e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: e7509d21d05ac25b0988e59b95677d2046b20eb2
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85753702"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487817"
 ---
 # <a name="openxml-sql-server"></a>Инструкция OPENXML (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "85753702"
  Чтобы писать запросы к XML-документу с использованием OPENXML, необходимо сначала вызвать хранимую процедуру **sp_xml_preparedocument**. Таким образом производится синтаксический анализ XML-документа и возвращается дескриптор для проанализированного документа, готового к использованию. Проанализированный документ является представлением дерева объектной модели документа (DOM) различных узлов в XML-документе. Дескриптор документа передается OPENXML. Затем инструкция OPENXML выдает представление документа в виде набора строк, основываясь на переданных ей аргументах.  
   
 > [!NOTE]  
->  Хранимая процедура**sp_xml_preparedocument** использует обновленную под SQL версию средства синтаксического анализа MSXML, Msxmlsql.dll. Эта версия средства синтаксического анализа MSXML разработана для поддержки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и остается обратно совместимой с версией MSXML 2.6.  
+>  Хранимая процедура **sp_xml_preparedocument** использует обновленную под SQL версию средства синтаксического анализа MSXML, Msxmlsql.dll. Эта версия средства синтаксического анализа MSXML разработана для поддержки [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и остается обратно совместимой с версией MSXML 2.6.  
   
  Внутреннее представление XML-документа должно быть удалено из памяти посредством вызова системной хранимой процедуры **sp_xml_removedocument** для освобождения памяти.  
   
