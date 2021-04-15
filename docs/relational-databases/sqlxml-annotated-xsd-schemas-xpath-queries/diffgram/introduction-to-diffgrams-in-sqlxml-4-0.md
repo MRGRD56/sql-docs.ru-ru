@@ -12,15 +12,15 @@ helpviewer_keywords:
 - annotations [SQLXML]
 - DiffGrams [SQLXML], about DiffGrams
 ms.assetid: 1902d67f-baf3-46e6-a36c-b24b5ba6f8ea
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 66a58dfb19cf8f53f775bac663d5ba3e6147711b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 187c3bab080050c518f34e4c184849ce1b2d6e95
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97414996"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490547"
 ---
 # <a name="introduction-to-diffgrams-in-sqlxml-40"></a>Введение в работу с дельтами в SQLXML 4.0
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "97414996"
  Формат дельты состоит из следующих блоков.  
   
  **\<DataInstance>**  
- Имя этого элемента, **instance**, используется для объяснения целей в этой документации. Например, если объект DiffGram был создан из набора данных в .NET Framework, то в качестве имени этого элемента будет использоваться значение свойства **Name** набора данных. Этот блок содержит все соответствующие данные после изменения, в том числе, возможно, данные, которые не были изменены. Логика обработки DiffGram игнорирует элементы в этом блоке, для которых не указан атрибут **diffgr: hasChanges** .  
+ Имя этого элемента, **instance**, используется для объяснения целей в этой документации. Например, если объект DiffGram был создан из набора данных в платформа .NET Framework, то в качестве имени этого элемента будет использоваться значение свойства **Name** набора данных. Этот блок содержит все соответствующие данные после изменения, в том числе, возможно, данные, которые не были изменены. Логика обработки DiffGram игнорирует элементы в этом блоке, для которых не указан атрибут **diffgr: hasChanges** .  
   
  **\<diffgr:before>**  
  Этот необязательный блок содержит исходные экземпляры (элементы) записи, которые необходимо обновить или удалить. Все таблицы базы данных, изменяемые (обновленные или удаленные) с помощью DiffGram, должны отображаться в виде элементов верхнего уровня в **\<before>** блоке.  

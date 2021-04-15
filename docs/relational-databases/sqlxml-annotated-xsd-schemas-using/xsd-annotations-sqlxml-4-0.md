@@ -10,17 +10,17 @@ helpviewer_keywords:
 - annotated XSD schemas, annotations listed
 - XSD schemas [SQLXML], annotations
 ms.assetid: c62a6785-8d66-40a2-9c5d-80c73d600a3b
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3bbf7245ec16a9946789eb28b444981822426e7b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0b2b46baac2bf4c68b8b4692fa5e1e3b592f2040
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462955"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490682"
 ---
 # <a name="xsd-annotations-sqlxml-40"></a>Заметки XSD (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "97462955"
 > [!NOTE]  
 >  Собственный атрибут **targetNamespace** в XSD заменяет заметку **target-namespace** , представленную в [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] схеме сопоставления XDR.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Указание целевого пространства имен с помощью атрибута targetNamespace &#40;SQLXML 4,0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-using/specifying-a-target-namespace-using-the-targetnamespace-attribute-sqlxml-4-0.md)  
   
   

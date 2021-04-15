@@ -28,16 +28,16 @@ helpviewer_keywords:
 - ClientSideXML property
 - CommandStream property
 ms.assetid: c1f9e0bb-a89d-4d6a-a96e-289ef516a3a6
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c5736ffab10bc0be104f06dbd6627d48aa45cd98
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 220eb6809e86042f0ed5731831acdbf12f8457a3
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97439665"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491705"
 ---
 # <a name="sqlxml-managed-classes---sqlxmlcommand-object"></a>Управляемые классы SQLXML — объект SqlXmlCommand
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -118,7 +118,7 @@ public SqlXmlCommand(string cnString)
 |Склксмлкоммандтипе. Диаграмма обновления|Выполняет диаграмму обновления.|  
 |Склксмлкоммандтипе. DiffGram|Выполняет дельту.|  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Объект SqlXmlParameter &#40;управляемые классы SQLXML&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/sqlxml-managed-classes-sqlxmlparameter-object.md)   
  [Объект Склксмладаптер &#40;управляемые классы SQLXML&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/sqlxml-managed-classes-sqlxmladapter-object.md)  
   

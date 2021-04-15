@@ -12,16 +12,16 @@ helpviewer_keywords:
 - SQLXMLOLEDB Provider, samples
 - ClientSideXML property
 ms.assetid: fbcefac5-29c9-478b-b0e0-d510b593f446
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bbecbe6507754412ffd4a95fc60b077a92fc669e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: bc1f4382bc105aee93c22e17fe9e97772717ac84
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97415094"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490577"
 ---
 # <a name="using-the-sqlxmloledb-provider-sqlxml-40"></a>Использование поставщика SQLXMLOLEDB (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "97415094"
 
      Дополнительные сведения см. в статье [Основные понятия программирования SQLXML 4,0](../../../relational-databases/sqlxml/sqlxml-4-0-programming-concepts.md) и [Установка SQL Server Native Client](../../../relational-databases/native-client/applications/installing-sql-server-native-client.md).  
   
-## <a name="in-this-section"></a>В этом разделе  
+## <a name="in-this-section"></a>в этом разделе  
  [Запуск запросов SQL &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-sql-queries-sqlxmloledb-provider.md)  
  Демонстрирует использование свойств Клиентсидексмл и корня XML для выполнения SQL-запросов.  
   
@@ -61,7 +61,7 @@ ms.locfileid: "97415094"
  [Применение преобразования XSL &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/applying-an-xsl-transformation-sqlxmloledb-provider.md)  
  Демонстрирует использование свойств Клиентсидексмл и XSL в применении преобразования XSL.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Системные требования для собственного клиента SQL Server](../../../relational-databases/native-client/system-requirements-for-sql-server-native-client.md)  
   
   

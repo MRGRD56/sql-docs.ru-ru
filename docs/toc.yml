@@ -113,7 +113,7 @@ items:
                     href: big-data-cluster/notebooks-deploy.md
       - name: Основные понятия
         items:
-          - name: Развертывание приложения
+          - name: Пул приложений
             href: big-data-cluster/concept-application-deployment.md
           - name: Контроллер
             href: big-data-cluster/concept-controller.md
@@ -153,7 +153,7 @@ items:
                 href: big-data-cluster/manage-user-access.md
           - name: Частный кластер
             items:
-              - name: Развернуть
+              - name: Развертывание
                 href: big-data-cluster/private-deploy.md
               - name: Управление
                 href: big-data-cluster/private-manage.md

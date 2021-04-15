@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 5bcb4df7-6df3-4f2b-9207-b97b5addf2a6
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 8352706512e71a5cba3a0b22befe2b7416d276bc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 6938d04f853f61fbb07a9cde443e286ba6bc5e98
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99209352"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491236"
 ---
 # <a name="sp_change_log_shipping_secondary_primary-transact-sql"></a>sp_change_log_shipping_secondary_primary (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -56,7 +56,7 @@ sp_change_log_shipping_secondary_primary
   
 `[ @backup_destination_directory = ] 'backup_destination_directory'` Каталог на сервере-получателе, куда копируются файлы резервных копий. *backup_destination_directory* имеет тип **nvarchar (500)** и не может иметь значение null.  
   
-`[ @file_retention_period = ] 'file_retention_period'` Продолжительность времени в минутах, в течение которого будет храниться журнал. *history_retention_period* имеет **тип int** и значение по умолчанию NULL. Если ничего не указано, подразумевается значение 14420.  
+`[ @file_retention_period = ] 'file_retention_period'` Продолжительность времени в минутах, в течение которого будут храниться файлы резервных копий. *file_retention_period* имеет **тип int** и значение по умолчанию NULL. Если ничего не указано, подразумевается значение 14420.  
   
 `[ @monitor_server_security_mode = ] 'monitor_server_security_mode'` Режим безопасности, используемый для подключения к серверу мониторинга.  
   

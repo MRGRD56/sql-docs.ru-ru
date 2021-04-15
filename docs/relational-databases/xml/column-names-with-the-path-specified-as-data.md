@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - names [SQL Server], columns with
 ms.assetid: 0b738e44-6108-4417-a9a4-abeb7680d899
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 71cddb62a7277d32d9f43f499c83f3df9e9f69d6
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: f72dd5183e75daec81f3ee4ff9bd5af76d0a0366
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775590"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491183"
 ---
 # <a name="column-names-with-the-path-specified-as-data"></a>Имена столбцов с путем, указанным как data()
 

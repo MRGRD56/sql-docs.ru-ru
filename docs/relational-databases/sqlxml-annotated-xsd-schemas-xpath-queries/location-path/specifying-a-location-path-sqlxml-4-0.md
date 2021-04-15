@@ -14,16 +14,16 @@ helpviewer_keywords:
 - relative location path [SQLXML]
 - location path for XPath query
 ms.assetid: a23a2b75-bc69-49f0-99db-05e14dc15bc0
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9dedf4df4aa43f79ca4146da6f1183b0ee06286b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9f00c875d47a7bf7fd6faeea2a94a5465a31fc83
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97431381"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490523"
 ---
 # <a name="specifying-a-location-path-sqlxml-40"></a>Указание пути доступа (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "97431381"
   
      Синтаксис шага доступа: имя оси и проверки узла, разделенные двумя двоеточиями, за которыми следует ноль или более выражений — каждое в квадратных скобках. Например, выражение XPath (путь расположения) **дочерний:: Customer [ @CustomerID = ' ALFKI ']** выбирает все **\<Customer>** дочерние элементы узла контекста. Затем тест в предикате применяется к набору узлов, который возвращает только **\<Customer>** узлы элементов со значением "ALFKI" атрибута **CustomerID** .  
   
-## <a name="in-this-section"></a>В этом разделе  
+## <a name="in-this-section"></a>в этом разделе  
  [Указание оси &#40;SQLXML 4,0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/location-path/specifying-an-axis-sqlxml-4-0.md)  
  Содержит примеры указания оси.  
   

@@ -7,15 +7,15 @@ ms.prod_service: database-engine, sql-database
 ms.reviewer: jukoesma
 ms.technology: xevents
 ms.topic: reference
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ef31edf367eacd41135bb4db9a58cd8ba4950de8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 901f06bd930064810d8c186ba8e5c92a1c21d1c7
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346721"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492363"
 ---
 # <a name="system-objects-that-support-extended-events"></a>Системные объекты, которые поддерживают расширенные события
 

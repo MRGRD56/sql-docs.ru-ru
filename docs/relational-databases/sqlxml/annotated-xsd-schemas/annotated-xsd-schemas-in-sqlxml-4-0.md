@@ -16,21 +16,21 @@ helpviewer_keywords:
 - XSD schemas [SQLXML], annotations
 - schemas [SQLXML]
 ms.assetid: eecd0d5f-d3dd-4d20-9586-19820410ad47
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 95c6cbb6b0bc1d629da20b23bbd9c4a61e311085
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 816a98dd1c8be8cde154102ff1e41420a347db5e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97459930"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491385"
 ---
 # <a name="annotated-xsd-schemas-in-sqlxml-40"></a>Схемы XSD с заметками в SQLXML 4.0
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
   В этом разделе приводятся сведения об использовании аннотированных схем XSD в SQLXML 4.0. В предшествующих версиях SQLXML аналогичные функциональные возможности обеспечивались с помощью схем с сокращенными XML-данными (XDR). Кроме того, в этом разделе приводятся сведения по XDR для прежних версий приложений.  
   
-## <a name="in-this-section"></a>В этом разделе  
+## <a name="in-this-section"></a>в этом разделе  
  [Общие сведения о схемах XSD с заметками &#40;SQLXML 4,0&#41;](../../../relational-databases/sqlxml/annotated-xsd-schemas/introduction-to-annotated-xsd-schemas-sqlxml-4-0.md)  
  Содержит общие сведения об аннотированных схемах XSD в SQLXML 4.0.  
   

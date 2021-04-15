@@ -11,15 +11,15 @@ ms.topic: reference
 helpviewer_keywords:
 - security [SQLXML], about security
 ms.assetid: 330cd2ff-d5d5-4c8e-8f93-0869c977be94
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 477124bc7dac925e48fc1a31382197daefefa4f7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9446926fd766c761dd4c473fb4eb0d935c04984b
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97439610"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491616"
 ---
 # <a name="core-sqlxml-security-considerations"></a>Основные проблемы безопасности SQLXML
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -51,6 +51,6 @@ ms.locfileid: "97439610"
   
 -   При выполнении дельты SQLXML переводит дельту в команды DELETE, UPDATE и INSERT, выполняемые на экземпляре [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]. Только эти команды всегда затрагивают существующие данные. Команды, сформированные SQLXML, никогда не изменяют базу данных. Пользователь должен явным образом дать команду на изменение структуры базы данных. Например, включив их в блок **SQL: Query** шаблона.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Проблемы безопасности SQLXML 4.0](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/sqlxml-4-0-security-considerations.md)  
   

@@ -14,15 +14,15 @@ helpviewer_keywords:
 - queries [SQLXML], XPath
 - XML views [SQLXML]
 ms.assetid: 7814d099-81ec-4fb8-894a-729cdbb5015a
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2eeb70e8f4c884be5ac2e132c30c2b40c5aed3d9
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 2629e32efb9ae3a883d33c994fc0a84902c700c3
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460014"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491455"
 ---
 # <a name="using-xpath-queries-in-sqlxml-40"></a>Использование запросов XPath в SQLXML 4.0
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "97460014"
 > [!NOTE]  
 >  Чтобы получить представление о запросах XPath в SQLXML 4.0, необходим опыт работы с XML-представлениями и другими связанными основными понятиями — шаблонами и схемами сопоставления. Дополнительные сведения см. [в разделе Введение в схемы XSD с Заметками &#40;SQLXML 4,0&#41;](../../relational-databases/sqlxml/annotated-xsd-schemas/introduction-to-annotated-xsd-schemas-sqlxml-4-0.md). Дополнительные сведения о XPath см. в стандарте XPath, определенном консорциум W3C (W3C) по адресу http://www.w3.org/TR/xpath .  
   
-## <a name="in-this-section"></a>В этом разделе  
+## <a name="in-this-section"></a>в этом разделе  
  [Общие сведения об использовании запросов XPath &#40;SQLXML 4,0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/introduction-to-using-xpath-queries-sqlxml-4-0.md)  
  Содержит вводные сведения о запросах XPath в SQLXML 4.0 (в том числе поддерживаемые и неподдерживаемые возможности из спецификации XPath консорциума W3C).  
   
@@ -44,7 +44,7 @@ ms.locfileid: "97460014"
  [Типы данных XPath &#40;SQLXML 4,0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/xpath-data-types-sqlxml-4-0.md)  
  Содержит описание типов данных XPath, которые значительно отличаются от типов данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и XSD.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Форматирование XML на стороне клиента &#40;SQLXML 4,0&#41;](../../relational-databases/sqlxml/formatting/client-side-xml-formatting-sqlxml-4-0.md)  
   
   

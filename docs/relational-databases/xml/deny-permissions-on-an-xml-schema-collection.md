@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - denying permissions [SQL Server], XML server collections
 ms.assetid: e2b300b0-e734-4c43-a4da-c78e6e5d4fba
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 17174d9fc10ad522e006c6a90936341856be52df
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 0e428e81f45376bd81dd957812da35e313829c39
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85633154"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490983"
 ---
 # <a name="deny-permissions-on-an-xml-schema-collection"></a>Запрещает разрешения на коллекцию схем XML.
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

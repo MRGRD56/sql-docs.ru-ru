@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - timestamp data type
 ms.assetid: 4e1920e1-e7a4-4069-965e-3f6039a6099e
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 374cc13dbb95f548db632ab89f41e6b57302e436
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: c62d048b03d066a528933a67321c984282c9ec08
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729942"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490873"
 ---
 # <a name="for-xml-support-for-the-timestamp-data-type"></a>Поддержка режима FOR XML для типа данных timestamp
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

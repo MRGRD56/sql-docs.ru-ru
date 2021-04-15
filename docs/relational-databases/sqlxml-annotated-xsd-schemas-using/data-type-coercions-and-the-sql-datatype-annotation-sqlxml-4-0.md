@@ -18,17 +18,17 @@ helpviewer_keywords:
 - data types [SQLXML], mapping data types
 - XSD schemas [SQLXML], mapping data types
 ms.assetid: db192105-e8aa-4392-b812-9d727918c005
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0e457aa6c1d1e16e96682f19898e22813254e9ef
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6027201a9af3064d1cf34b91c79885b46d9bbcdb
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97461805"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492134"
 ---
 # <a name="data-type-conversions-and-the-sqldatatype-annotation-sqlxml-40"></a>Преобразования типов данных и аннотации SQL: DataType (SQLXML 4,0)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -62,29 +62,29 @@ ms.locfileid: "97461805"
 |**bigint**|**long**|  
 |**binary**|**base64Binary**|  
 |**bit**|**boolean**|  
-|**char**|**строка**|  
+|**char**|**string**|  
 |**datetime**|**dateTime**|  
 |**decimal**|**decimal**|  
 |**float**|**double**|  
 |**image**|**base64Binary**|  
 |**int**|**int**|  
 |**money**|**decimal**|  
-|**nchar**|**строка**|  
-|**ntext**|**строка**|  
-|**nvarchar**|**строка**|  
+|**nchar**|**string**|  
+|**ntext**|**string**|  
+|**nvarchar**|**string**|  
 |**numeric**|**decimal**|  
 |**real**|**float**|  
 |**smalldatetime**|**dateTime**|  
 |**smallint**|**short**|  
 |**smallmoney**|**decimal**|  
-|**sql_variant**|**строка**|  
-|**sysname**|**строка**|  
-|**text**|**строка**|  
+|**sql_variant**|**string**|  
+|**sysname**|**string**|  
+|**text**|**string**|  
 |**timestamp**|**dateTime**|  
 |**tinyint**|**unsignedByte**|  
 |**varbinary**|**base64Binary**|  
-|**varchar**|**строка**|  
-|**uniqueidentifier**|**строка**|  
+|**varchar**|**string**|  
+|**uniqueidentifier**|**string**|  
   
 ## <a name="sqldatatype-annotation"></a>Заметка sql:datatype  
  Для указания типа данных используется аннотация **SQL: DataType** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] . Эта заметка должна быть указана в следующих случаях:  
