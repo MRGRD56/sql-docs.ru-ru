@@ -12,14 +12,14 @@ helpviewer_keywords:
 - pattern restrictions
 - canonical forms
 ms.assetid: 088314ec-7d0b-4a05-8a33-f35da5bfe59c
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 1e6042ae1a63b61cd47fa42470c0707877625c5a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 1d6ed73c10ba71db4afb438a858075735104d098
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775621"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491186"
 ---
 # <a name="canonical-forms-and-pattern-restrictions"></a>Канонические формы и ограничения шаблона
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -29,9 +29,9 @@ ms.locfileid: "85775621"
   
  Чтобы это предотвратить, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] отклоняет любой документ XML, содержащий значения, которые не могут быть повторно вставлены из-за нарушения ограничений шаблона их каноническими формами. Например, значение "33.000" не пройдет проверку относительно типа, производного от **xs:decimal** с ограничением шаблона "33.\\.0+". Хотя «33.000» соответствует этому шаблону, его каноническая форма «33» шаблону не соответствует.  
   
- Поэтому следует быть внимательными при применении аспектов шаблона к типам, производным от следующих типов-примитивов: **boolean**, **decimal**, **float**, **double**, **dateTime**, **time**, **date**, **hexBinary**и **base64Binary**. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] выдаст предупреждение при добавлении любых таких компонентов к коллекции схемы.  
+ Поэтому следует быть внимательными при применении аспектов шаблона к типам, производным от следующих типов-примитивов: **boolean**, **decimal**, **float**, **double**, **dateTime**, **time**, **date**, **hexBinary** и **base64Binary**. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] выдаст предупреждение при добавлении любых таких компонентов к коллекции схемы.  
   
- Неточная сериализация значений с плавающей запятой вызывает подобную проблему. Из-за алгоритма сериализации с плавающей запятой, используемого [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], для подобных значений можно совместно использовать одну каноническую форму. Когда значение с плавающей запятой сериализовано и затем повторно вставлено, его значение может немного измениться. В редких случаях это может привести к значению, нарушающему любой из следующих аспектов для его типа при повторной вставке: **enumeration**, **minInclusive**, **minExclusive**, **maxInclusive**или **maxExclusive**. Чтобы это предотвратить, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] отклоняет любые значения типов, полученных из `xs:float` или `xs:double` , которые не могут быть сериализованы и повторно вставлены.  
+ Неточная сериализация значений с плавающей запятой вызывает подобную проблему. Из-за алгоритма сериализации с плавающей запятой, используемого [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], для подобных значений можно совместно использовать одну каноническую форму. Когда значение с плавающей запятой сериализовано и затем повторно вставлено, его значение может немного измениться. В редких случаях это может привести к значению, нарушающему любой из следующих аспектов для его типа при повторной вставке: **enumeration**, **minInclusive**, **minExclusive**, **maxInclusive** или **maxExclusive**. Чтобы это предотвратить, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] отклоняет любые значения типов, полученных из `xs:float` или `xs:double` , которые не могут быть сериализованы и повторно вставлены.  
   
 ## <a name="see-also"></a>См. также:  
  [Требования и ограничения для коллекций схем XML на сервере](../../relational-databases/xml/requirements-and-limitations-for-xml-schema-collections-on-the-server.md)  

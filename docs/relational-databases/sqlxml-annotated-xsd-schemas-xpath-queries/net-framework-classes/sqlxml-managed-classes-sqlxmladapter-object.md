@@ -1,6 +1,6 @@
 ---
 title: Объект Склксмладаптер (SQLXML)
-description: Сведения об объекте Склксмладаптер, который предоставляет методы, которые упрощают взаимодействие с набором данных в .NET Framework.
+description: Сведения об объекте Склксмладаптер, который предоставляет методы, которые упрощают взаимодействие с набором данных в платформа .NET Framework.
 ms.date: 03/16/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - SQLXML Managed Classes, SqlXmlAdapter object
 - Managed Classes [SQLXML], SqlXmlAdapter object
 ms.assetid: 0a16eddf-fc26-4d92-82d4-359b5fb905d5
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b58e0416907b32821c2d6dd99decf61ec0054917
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3c11abafdaa6d9ec2786be013550d9d0f8133d1e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97414203"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491725"
 ---
 # <a name="sqlxml-managed-classes---sqlxmladapter-object"></a>Управляемые классы SQLXML — объект SqlXmlAdapter
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -55,7 +55,7 @@ public SqlXmlAdapter(
                      )   
 ```  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Объект SqlXmlCommand &#40;управляемые классы SQLXML&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/sqlxml-managed-classes-sqlxmlcommand-object.md)   
  [Объект SqlXmlParameter &#40;управляемые классы SQLXML&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/sqlxml-managed-classes-sqlxmlparameter-object.md)  
   

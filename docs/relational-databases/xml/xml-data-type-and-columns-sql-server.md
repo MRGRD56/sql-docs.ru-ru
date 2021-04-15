@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: xml
 ms.topic: conceptual
 ms.assetid: 00db8f21-7d4b-4347-ae43-3a7c314d2fa1
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 0a23431727b25135751693d1dbec68b6377dcd4e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: e05a14e95020606b6474cc582ebc61235a6009c4
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729789"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486907"
 ---
 # <a name="xml-data-type-and-columns-sql-server"></a>Столбцы и типы XML-данных (SQL Server)
 
@@ -169,7 +169,7 @@ ms.locfileid: "85729789"
   
 -   Данный тип не может быть использован в качестве подтипа экземпляра **sql_variant** .  
   
--   Приведение или преобразование к типам **text** или **ntext**не поддерживается. Используйте вместо них **varchar(max)** или **nvarchar(max)** .  
+-   Приведение или преобразование к типам **text** или **ntext** не поддерживается. Используйте вместо них **varchar(max)** или **nvarchar(max)** .  
   
 -   Сравнение и сортировка не допускаются. Это значит, что данные типа **xml** не могут использоваться в предложении GROUP BY.  
   

@@ -18,14 +18,14 @@ helpviewer_keywords:
 - XML [SQL Server], generating instances
 - white space [XML in SQL Server]
 ms.assetid: dbd6c06f-db6e-44a7-855a-6a55bf374907
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 4dc776e09639a67ef93e1778dd152761ed5a0bfc
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: a0078fe1981b30db78e60ba56ba6fb760c8b7f82
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891584"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488962"
 ---
 # <a name="create-instances-of-xml-data"></a>Создание экземпляров XML-данных
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "91891584"
 -   использование массовой загрузки.  
   
 ## <a name="type-casting-string-and-binary-instances"></a>Строка приведения типа и двоичные экземпляры  
- Любые строковые типы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , такие как [**n**][**var**]**char**, **[n]text**, **varbinary**и **image**, можно проанализировать в тип данных **xml** посредством приведения (CAST) или преобразования (CONVERT) строки к типу данных **xml** . Проверка нетипизированного XML подтверждает, что он сформирован правильно. Если есть схема, связанная с типом **xml** , также выполняется проверка. Дополнительные сведения см. в статье [Сравнение типизированного и нетипизированного XML](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md).  
+ Любые строковые типы данных [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] , такие как [**n**][**var**]**char**, **[n]text**, **varbinary** и **image**, можно проанализировать в тип данных **xml** посредством приведения (CAST) или преобразования (CONVERT) строки к типу данных **xml** . Проверка нетипизированного XML подтверждает, что он сформирован правильно. Если есть схема, связанная с типом **xml** , также выполняется проверка. Дополнительные сведения см. в статье [Сравнение типизированного и нетипизированного XML](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md).  
   
  XML-документы могут быть кодированы различными кодировками (например, UTF-8, UTF-16, windows-1252). Следующие правила дают сведения о том, как строка и двоичный источник взаимодействуют с кодировкой XML-документа, и как ведет себя синтаксический анализатор.  
   

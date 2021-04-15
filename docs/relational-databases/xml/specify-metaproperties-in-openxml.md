@@ -15,14 +15,14 @@ helpviewer_keywords:
 - extracting information of XML nodes [SQL Server]
 - OPENXML statement, metaproperties
 ms.assetid: 29bfd1c6-3f9a-43c4-924a-53d438e442f4
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: fd34411b00bfa89c5c69b0d71073ee1c0d4d2280
-ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: b2404d376c506c0d2168c0fd5e68b2cb575bd7c8
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96130827"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487475"
 ---
 # <a name="specify-metaproperties-in-openxml"></a>Определение метасвойств в инструкции OPENXML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

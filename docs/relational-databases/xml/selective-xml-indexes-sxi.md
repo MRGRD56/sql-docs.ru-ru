@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: xml
 ms.topic: conceptual
 ms.assetid: 598ecdcd-084b-4032-81b2-eed6ae9f5d44
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: ec99528c375126e06bc48ac7b241df98f62952a4
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: c8b0fd1e26def618b9645f9de65dfe8a255892f5
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87331971"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487547"
 ---
 # <a name="selective-xml-indexes-sxi"></a>Выборочный XML-индекс (SXI)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

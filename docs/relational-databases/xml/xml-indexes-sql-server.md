@@ -32,14 +32,14 @@ helpviewer_keywords:
 - PROPERTY index
 - XML indexes [SQL Server], creating
 ms.assetid: f5c9209d-b3f3-4543-b30b-01365a5e7333
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 8f5ab347d15e0363411640431f4d833f38e13234
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: d9e7d5a233b3f93d3588c70dd233db44c275719c
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729780"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486671"
 ---
 # <a name="xml-indexes-sql-server"></a>XML-индексы (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -200,7 +200,7 @@ FROM Production.ProductModel
 WHERE ProductModelID = 19  
 ```  
   
- За исключением отличий, описанных ниже в этом подразделе, создание XML-индекса для столбца типа**xml** аналогично созданию индекса для столбца типа данных, отличного от**xml** . Для создания XML-индексов и управления ими могут использоваться следующие DDL-инструкции [!INCLUDE[tsql](../../includes/tsql-md.md)] :  
+ За исключением отличий, описанных ниже в этом подразделе, создание XML-индекса для столбца типа **xml** аналогично созданию индекса для столбца типа данных, отличного от **xml** . Для создания XML-индексов и управления ими могут использоваться следующие DDL-инструкции [!INCLUDE[tsql](../../includes/tsql-md.md)] :  
   
 -   [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)  
   

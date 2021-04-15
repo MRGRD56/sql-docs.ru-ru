@@ -19,14 +19,14 @@ helpviewer_keywords:
 - XQuery, XML DML
 - xml data type [SQL Server], XML DML
 ms.assetid: 20ce50d2-c07b-4e41-93a7-1380d2cd49cb
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: b9296671957cfb5d8ee0bcd41ae94362a85f42c2
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 641c2b6cc4fb72670a1d90716f59b91f1ee2af01
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99181691"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488069"
 ---
 # <a name="xml-data-modification-language-xml-dml"></a>Язык модификации XML-данных (XML DML)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -15,14 +15,14 @@ helpviewer_keywords:
 - XML schema collections [SQL Server], predefined
 - built-in XML schema collections [SQL Server]
 ms.assetid: 1e118303-5df0-4ee4-bd8d-14ced7544144
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 152e26ed07bc9da524d74695e13c58962719d317
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: c061e18e4fb7224afe9a44813c4a8279e487f2d4
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85757500"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487795"
 ---
 # <a name="reference-the-built-in-xml-schema-collection-sys"></a>Создание ссылки на встроенную коллекцию XML-схем (sys)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -43,7 +43,7 @@ xdt = http://www.w3.org/2004/07/xpath-datatypes
   
 -   типы XSD;  
   
--   XML-атрибуты **lang**, **base**и **space**;  
+-   XML-атрибуты **lang**, **base** и **space**;  
   
 -   компоненты пространства имен **sqltypes** .  
   

@@ -12,16 +12,16 @@ helpviewer_keywords:
 - adExecuteStream flag
 - SQLXMLOLEDB Provider, about SQLXMLOLEDB Provider
 ms.assetid: 2e3f3817-4209-4bf4-9f46-248c95bc6f1b
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6b3d36e6aae398c8b480a800cdd2dc6064eb220e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 585874edde793c1da0f6849089fdef558b2920ca
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462895"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490607"
 ---
 # <a name="introduction-to-the-sqlxmloledb-provider-sqlxml-40"></a>Введение в поставщик SQLXMLOLEDB (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -46,10 +46,10 @@ oTestCommand.Execute , , adExecuteStream
   
  Поставщик SQLXMLOLEDB имеет следующие характерные для него свойства команды.  
   
-|Команда<br /><br /> свойство;|Значение по умолчанию<br /><br /> (если есть)|Описание|  
+|Get-Help<br /><br /> свойство;|Значение по умолчанию<br /><br /> (если есть)|Описание|  
 |--------------------------|----------------------------|-----------------|  
 |Базовый путь|""|Указывает базовый путь к файлу. Базовый путь к файлу используется для указания местоположения файлов языка XSL или схемы сопоставления. Базовый путь к файлу также используется для разрешения относительных путей к файлам схемы XSL или сопоставления, указанным в свойствах схемы XSL или сопоставления.<br /><br /> Пример использования этого свойства см. в разделе [исполнение запросов XPath &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-sqlxmloledb-provider.md).|  
-|клиентсидексмл|Неверно|Если требуется, чтобы процесс преобразования набора строк в XML был выполнен на клиенте, а не на сервере, установите этому свойству значение TRUE. Это полезно, когда необходимо переместить нагрузку производительности на средний уровень.<br /><br /> Пример использования этого свойства см. в статьях [исполнение SQL-запросов &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-sql-queries-sqlxmloledb-provider.md) или запуск [шаблонов, содержащих SQL-запросы &#40;&#41;поставщика SQLXMLOLEDB ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-templates-that-contain-sql-queries-sqlxmloledb-provider.md).|  
+|клиентсидексмл|False|Если требуется, чтобы процесс преобразования набора строк в XML был выполнен на клиенте, а не на сервере, установите этому свойству значение TRUE. Это полезно, когда необходимо переместить нагрузку производительности на средний уровень.<br /><br /> Пример использования этого свойства см. в статьях [исполнение SQL-запросов &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-sql-queries-sqlxmloledb-provider.md) или запуск [шаблонов, содержащих SQL-запросы &#40;&#41;поставщика SQLXMLOLEDB ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-templates-that-contain-sql-queries-sqlxmloledb-provider.md).|  
 |Тип содержимого||Возвращает тип выходящего содержимого. Это свойство доступно только для чтения.<br /><br /> Это свойство предоставляет браузеру сведения о типе содержимого (например, ТЕКСТ/XML, ТЕКСТ/HTML, изображение/jpeg и так далее). Значение этого свойства становится полем **Content-Type** , которое отправляется браузеру как часть заголовка HTTP, который содержит MIME-тип документа, отправляемого в качестве текста.|  
 |Схема сопоставления|NULL|Когда клиентское приложение выполняет запрос XPath к схеме сопоставления (XDR или XSD), это свойство используется для указания имени схемы сопоставления.<br /><br /> Указываемый путь может быть относительным (xyz/abc/МояСхема.xml) или абсолютным (C:\МояПапка\abc\МояСхема.xml).<br /><br /> Если указан относительный путь, то для разрешения относительного пути используется базовый путь, заданный свойством базового пути. Если в свойстве базового пути не указан путь, то относительный путь указывается относительно текущего каталога.<br /><br /> При указании значения для свойства схема сопоставления можно указать путь к локальному каталогу или URL-адрес (https://...). При указании URL-адреса необходимо настроить WinHTTP для доступа к серверам HTTP и HTTPS через прокси-сервер. Сделать это можно при помощи программы Proxycfg.exe. Дополнительные сведения см. в статье «Использование программы настройки доступа модуля WinHTTP через прокси-сервер» в библиотеке MSDN.<br /><br /> Пример использования этого свойства см. в разделе [исполнение запросов XPath &#40;поставщика SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-sqlxmloledb-provider.md).|  
 |пространства имен||Это свойство включает использование запросов XPath, которые используют пространства имен. Пример использования этого свойства см. в разделе [исполнение запросов XPath с пространствами имен &#40;поставщик SQLXMLOLEDB&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-with-namespaces-sqlxmloledb-provider.md).|  

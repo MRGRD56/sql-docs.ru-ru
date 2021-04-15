@@ -12,14 +12,14 @@ helpviewer_keywords:
 - IDREFS directive
 - ID directive
 ms.assetid: 99b9f0d8-ecbb-4225-859f-881066c09785
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: d38a541f1c323199e02a86f0c0e23cd5b5620659
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 6da50deb87e9fa4b06119b06ca1f701c1075ddc7
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85632328"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488572"
 ---
 # <a name="example-specifying-the-id-and-idrefs-directives"></a>Пример Указание директив ID и IDREFS
 

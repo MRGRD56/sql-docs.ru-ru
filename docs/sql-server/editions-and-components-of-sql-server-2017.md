@@ -3,7 +3,7 @@ title: Выпуски и поддерживаемые функции
 titleSuffix: SQL Server 2017
 description: В этой статье описаны функции, которые поддерживаются различными выпусками SQL Server 2017 и удовлетворяют разным требованиям к производительности, времени выполнения и ценам.
 ms.custom: seo-lt-2019
-ms.date: 12/13/2019
+ms.date: 03/26/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -35,12 +35,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-2017'
-ms.openlocfilehash: 1d0918500cdb7e5bf7a21222ad77299092eb8ac1
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: 424ace2224083de04cf99791f51cfb29b1e61530
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054508"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491303"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017"></a>Выпуски и поддерживаемые функции SQL Server 2017
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
@@ -136,7 +136,7 @@ ms.locfileid: "106054508"
 |Максимальный объем памяти для буферного пула на экземпляр [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Максимум, поддерживаемый операционной системой|128 ГБ|64 ГБ|1410 МБ|1410 МБ|
 |Максимальный объем памяти для кэша сегмента Columnstore на экземпляр [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Неограниченная память| 32 ГБ| 16 ГБ| 352 МБ| 352 МБ|  
 |Максимальный размер данных, оптимизированных для памяти, на базу данных в [!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)]|Неограниченная память| 32 ГБ| 16 ГБ| 352 МБ| 352 МБ|  
-|Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]|Максимум, поддерживаемый операционной системой|Табличный: 16 ГБ<br /><br /> MOLAP: 64 ГБ|Н/Д|Недоступно|Н/Д|  
+|Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]|Максимум, поддерживаемый операционной системой|Табличный: 16 ГБ<br /><br /> MOLAP: 64 ГБ|Н/Д|Н/Д|Н/Д|  
 |Максимальный объем используемой памяти на экземпляр [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]|Максимум, поддерживаемый операционной системой|64 ГБ|64 ГБ|4 ГБ|Н/Д|
 |Максимальный размер реляционной базы данных|524 ПБ|524 ПБ|524 ПБ|10 ГБ|10 ГБ|  
   
@@ -189,7 +189,7 @@ ms.locfileid: "106054508"
 |Секционирование таблиц и индексов|Да|Да|Да|Да|Да|  
 |Сжатие данных|Да|Да|Да|Да|Да|
 |Resource Governor|Да|Нет|Нет|Нет|нет|  
-|Параллелизм секционированных таблиц|Да|Нет|Нет|Нет|Нет|
+|Параллелизм секционированных таблиц|Да|Да|Да|Да|Да|  
 |Несколько контейнеров файлового потока|Да|Да|Да|Да|Да|
 |Память больших страниц с поддержкой NUMA и выделение массивов буферов|Да|Нет|Нет|Нет|Нет|
 |Buffer Pool Extension|Да|Да|Нет|Нет|Нет|

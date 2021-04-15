@@ -8,15 +8,15 @@ ms.reviewer: ''
 ms.technology: xevents
 ms.topic: conceptual
 ms.assetid: 47c64144-4432-4778-93b5-00496749665b
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
-ms.openlocfilehash: ee107ed1d1e9fe7ec7aa8b40c87c71750b5cdf99
-ms.sourcegitcommit: 3e2421ae45a8e9fa57fb590a5d1a5566721ea74a
+ms.openlocfilehash: bb2ea11d395ab996adcd892a366cbf41575a78d4
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98921395"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107489848"
 ---
 # <a name="targets-for-extended-events-in-sql-server"></a>Целевые объекты для расширенных событий в SQL Server
 

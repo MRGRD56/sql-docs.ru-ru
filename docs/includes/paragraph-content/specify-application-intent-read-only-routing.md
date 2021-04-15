@@ -2,18 +2,18 @@
 title: включить файл
 description: включить файл
 services: sql-database
-author: MightyPen
+author: rothja
 ms.service: sql-database
 ms.topic: include
 ms.date: 04/05/2018
-ms.author: genemi
+ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 7086a69625b6ba365e5efb8ce3422799442cb05d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 020ff186be02b9ac99c4c0e3c92281d0bb676ead
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100058407"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490080"
 ---
 ## <a name="specifying-application-intent"></a>Задание намерения приложения
 

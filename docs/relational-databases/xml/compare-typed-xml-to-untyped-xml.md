@@ -24,14 +24,14 @@ helpviewer_keywords:
 - XML [SQL Server], untyped
 - xml data type [SQL Server], parameters
 ms.assetid: 4bc50af9-2f7d-49df-bb01-854d080c72c7
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: a31b8e27147f0c9b06c79bf56c1b8ae34f4e8e14
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: d5be6303cb92befc15d5f5cfcc3062deb31238ab
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775555"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491025"
 ---
 # <a name="compare-typed-xml-to-untyped-xml"></a>Сравнение типизированного и нетипизированного XML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -143,7 +143,7 @@ declare @x xml (DOCUMENT Production.ProductDescriptionSchemaCollection);
  Можно преобразовывать определения DTD в документы схемы XML при помощи инструментов других компаний и загружать эти схемы XML в базу данных.  
   
 ## <a name="upgrading-typed-xml-from-sql-server-2005"></a>Обновление типизированного XML с SQL Server 2005  
- [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] содержит несколько расширений для поддержки схем XML, включая поддержку нестрогой проверки, улучшенную обработку данных экземпляров **xs:date**, **xs:time** и **xs:dateTime** . Кроме того, добавлена поддержка типов списков и объединений. В большинстве случаев эти изменения не влияют на вопросы обновления. Однако если в [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] используется коллекция схем XML, допускающая значения типов **xs:date**, **xs:time**или **xs:dateTime** (или любых их подтипов), то при присоединении базы данных [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] к более поздней версии [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]потребуется выполнить указанные ниже шаги обновления.  
+ [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] содержит несколько расширений для поддержки схем XML, включая поддержку нестрогой проверки, улучшенную обработку данных экземпляров **xs:date**, **xs:time** и **xs:dateTime** . Кроме того, добавлена поддержка типов списков и объединений. В большинстве случаев эти изменения не влияют на вопросы обновления. Однако если в [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] используется коллекция схем XML, допускающая значения типов **xs:date**, **xs:time** или **xs:dateTime** (или любых их подтипов), то при присоединении базы данных [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] к более поздней версии [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]потребуется выполнить указанные ниже шаги обновления.  
   
 1.  Со всеми столбцами XML, введенными с коллекцией схем XML, в которой содержатся элементы или атрибуты, относящиеся к типам **xs:anyType**, **xs:anySimpleType**, **xs:date** или любым их подтипам, **xs:time** или любым его подтипам, **xs:dateTime** или любым его подтипам либо являющиеся объединениями или списками с элементами любых из перечисленных типов, происходит следующее:  
   

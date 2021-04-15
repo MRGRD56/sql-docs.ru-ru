@@ -12,14 +12,14 @@ helpviewer_keywords:
 - FOR XML clause, TYPE directive
 - TYPE directive
 ms.assetid: a3df6c30-1f25-45dc-b5a9-bd0e41921293
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 0117b075a821a7e18732675ed432aafab5fafc60
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: bc1c3897b4c82e32bd70bbd3f28948357ecc19a9
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104734721"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487422"
 ---
 # <a name="type-directive-in-for-xml-queries"></a>Директива TYPE в запросах FOR XML
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
