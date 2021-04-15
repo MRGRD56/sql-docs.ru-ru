@@ -12,16 +12,16 @@ helpviewer_keywords:
 - annotated XSD schemas, samples
 - annotated XSD schemas, queries
 ms.assetid: fefa2cc8-2d3c-4336-aeae-ce063a3a8df2
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8a0e5bd72af4fa0465de72c24640992992ddb78b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 0042d27ab2e370b044daadd744148be98baa4151
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97414043"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491700"
 ---
 # <a name="sample-annotated-xsd-schema-for-xpath-examples-sqlxml-40"></a>Образец схемы XSD с заметками для примеров XPath (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]

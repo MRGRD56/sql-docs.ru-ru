@@ -14,15 +14,15 @@ helpviewer_keywords:
 - extended events [SQL Server], locks
 - extended events [SQL Server], holding locks
 ms.assetid: bdfce092-3cf1-4b5e-99d5-fd8c6f9ad560
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e1e24e408df936fc2a651263218896e4c96826e7
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 6302d696f008a88b9bd9b572cee5b96047f274e3
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465615"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490116"
 ---
 # <a name="determine-which-queries-are-holding-locks"></a>определить запросы, удерживающие блокировки
 

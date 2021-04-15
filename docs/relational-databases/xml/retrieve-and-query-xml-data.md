@@ -12,14 +12,14 @@ helpviewer_keywords:
 - XML data [SQL Server], retrieving
 - XML instance retrieval
 ms.assetid: 24a28760-1225-42b3-9c89-c9c0332d9c51
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 86f908d6aa221b2c69be3d8960efac929cbf5306
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: b5258fc958e4aab815637e5e3f884e64ae73344e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85738397"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487550"
 ---
 # <a name="retrieve-and-query-xml-data"></a>Получение и запрос XML-данных
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

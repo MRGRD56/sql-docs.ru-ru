@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: ''
 ms.topic: reference
 ms.assetid: 3dbb4f65-41de-48b8-ad62-47c9d7932de3
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e3c588a22c8a55419fac480ed3e38186c37ee148
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 34fc938af63d15c75b66a728c32cea899a64f6dc
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97429662"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490349"
 ---
 # <a name="sqlxml-is-not-installed-in-sql-server"></a>SQLXML не установлен в SQL Server
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97429662"
   
  При использовании SQLXML 4,0 с пакетом обновления 1 (SP1) с поддержкой SQLOLEDB или [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB из [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] эти типы отображаются как строки для разработчика. SQLXML 4,0 с пакетом обновления 1 (SP1) включит эти четыре новых типа данных в качестве встроенных скалярных типов при использовании [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] собственного клиента OLE DB поставщика 11,0 или более поздней версии. Без загрузки SQLXML 4.0 с пакетом обновления 1 (SP1) при сопоставлении этих типов с нестроковыми типами может происходить усечение и потеря части данных. Например, сопоставление **datetime2** с **xsd: Date** приведет к усечению данных до значения [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] **точности DateTime** , равного 3,33 миллисекундам.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Основные понятия о программировании для SQLXML 4.0](../../relational-databases/sqlxml/sqlxml-4-0-programming-concepts.md)  
   
   

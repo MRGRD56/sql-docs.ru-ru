@@ -12,15 +12,15 @@ helpviewer_keywords:
 - sessions
 - extend events [SQL Server]
 ms.assetid: c3c92544-351a-4bce-a06a-1f2a47e494e9
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bf399ec51bf77e7d2da86a4135453e1535b84974
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: cd073c205b5382cfa9e37a214ab11ffd4387688d
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481365"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492393"
 ---
 # <a name="sql-server-extended-events-sessions"></a>SQL Server Extended Events Sessions
 
@@ -41,7 +41,7 @@ ms.locfileid: "97481365"
   
 |Метка рисунка|Инструкция DDL|Описание|  
 |------------------------|-------------------|-----------------|  
-|Создание|CREATE EVENT SESSION|Процесс создает объект сеанса, содержащий метаданные, предоставленные инструкцией CREATE EVENT SESSION. Процесс проверяет определение сеанса, уровень разрешений пользователя и сохраняет метаданные в базе данных master. В этот момент сеанс неактивен.|  
+|Создать|CREATE EVENT SESSION|Процесс создает объект сеанса, содержащий метаданные, предоставленные инструкцией CREATE EVENT SESSION. Процесс проверяет определение сеанса, уровень разрешений пользователя и сохраняет метаданные в базе данных master. В этот момент сеанс неактивен.|  
 |Alter|ALTER EVENT SESSION, STATE=START|Процесс запускает сеанс. Процесс считывает сохраненные метаданные, проверяет определение сеанса, уровень разрешений пользователя и создает сеанс. Загружаются такие объекты сеанса, как события и цели, и сеанс становится активным.|  
 |Alter|ALTER EVENT SESSION, STATE=STOP|Процесс останавливает активный сеанс, но сохраняет метаданные.|  
 |Drop|DROP EVENT SESSION|Если сеанс активен, инструкция удаляет метаданные и закрывает активный сеанс, в противном случае удаляет метаданные сеанса.|  
@@ -78,7 +78,7 @@ ms.locfileid: "97481365"
   
  Архитектура расширенных событий представляет собой гибкую систему, позволяющую совместно использовать разнообразные объекты для решения конкретных проблем.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Расширенные события](../../relational-databases/extended-events/extended-events.md)  
   
   
