@@ -10,15 +10,15 @@ ms.topic: conceptual
 helpviewer_keywords:
 - extended events [SQL Server], engine
 ms.assetid: d74642a5-42b9-4a15-aa3d-f98bfe695050
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 339e6ada7ae707d4bb48f5b1d3c1eb3b52e94e72
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 3f53cf30f5e95acddbde9f2eb7595cd6654671b2
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481375"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492395"
 ---
 # <a name="sql-server-extended-events-engine"></a>Подсистема расширенных событий SQL Server
 
@@ -60,7 +60,7 @@ ms.locfileid: "97481375"
   
     -   Когда буферы заполняются, они отправляются целям.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Расширенные события](../../relational-databases/extended-events/extended-events.md)  
   
   

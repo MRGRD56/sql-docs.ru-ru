@@ -13,16 +13,16 @@ helpviewer_keywords:
 - extended events [SQL Server], locks
 - objects [SQL Server], locks
 ms.assetid: fcbadbda-c91c-43f0-a1b5-601e40110e07
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 522017d6ced6039cd7e5b9a30cf60404eee9249a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ec4ecbd7df48a0f182559cbd6e7a0538c302d865
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465505"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490073"
 ---
 # <a name="find-the-objects-that-have-the-most-locks-taken-on-them"></a>найти объекты, на которые наложено наибольшее число блокировок
 
@@ -115,7 +115,7 @@ ms.locfileid: "97465505"
 - object_id
 - lock_count
   
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 [CREATE EVENT SESSION (Transact-SQL)](../../t-sql/statements/create-event-session-transact-sql.md)  
 [ALTER EVENT SESSION (Transact-SQL)](../../t-sql/statements/alter-event-session-transact-sql.md)  

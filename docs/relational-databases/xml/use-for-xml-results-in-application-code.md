@@ -17,14 +17,14 @@ helpviewer_keywords:
 - XML data islands [SQL Server]
 - data islands [SQL Server]
 ms.assetid: 41ae67bd-ece9-49ea-8062-c8d658ab4154
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 430c7118d4185f123973c0ca7b00b02fb8ba39a9
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: fa42eca0883961376dbab3707b61c7d31135459e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775544"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487161"
 ---
 # <a name="use-for-xml-results-in-application-code"></a>Использование результатов FOR XML в коде приложений
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -203,9 +203,9 @@ ms.locfileid: "85775544"
   
  В этом примере применяются следующие управляемые интерфейсы прикладных программ (API) Microsoft .NET Framework для возврата и подготовки просмотра результатов запроса FOR XML:  
   
-1.  Соединение с SQL Server производится через**SqlConnection** по строке соединения, содержащейся в символьной переменной, strConn.  
+1.  Соединение с SQL Server производится через **SqlConnection** по строке соединения, содержащейся в символьной переменной, strConn.  
   
-2.  После этого**SqlDataAdapter** , используя соединение SQL и указанную строку SQL-запроса, выполняет запрос FOR XML.  
+2.  После этого **SqlDataAdapter** , используя соединение SQL и указанную строку SQL-запроса, выполняет запрос FOR XML.  
   
 3.  После выполнения запроса вызывается метод **SqlDataAdapter.Fill** , который передает экземпляр **DataSet,** MyDataSet, чтобы заполнить набор данных результатами выполнения запроса FOR XML.  
   

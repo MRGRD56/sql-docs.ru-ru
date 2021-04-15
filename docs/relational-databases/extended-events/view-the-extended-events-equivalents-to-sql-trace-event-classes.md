@@ -12,16 +12,16 @@ helpviewer_keywords:
 - extended events [SQL Server], SQL Trace equivalents
 - extended events [SQL Server], user configurable events
 ms.assetid: 7f24104c-201d-4361-9759-f78a27936011
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0db57b62a6b6e8c2e9be53ce97fd445d7deee6ea
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 4a139d6b8720d77b766ba317b08c08e9b16e830d
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481315"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107489963"
 ---
 # <a name="view-the-extended-events-equivalents-to-sql-trace-event-classes"></a>Просмотр эквивалентов расширенных событий для классов событий трассировки SQL
 
@@ -70,7 +70,7 @@ ms.locfileid: "97481315"
   
 -   Что касается настраиваемых пользователем классов событий трассировки SQL (с UserConfigurable:1 по UserConfigurable:9), в расширенных событиях вместо них используется одно событие. Имя события — user_event. Это событие вызывается с помощью хранимой процедуры sp_trace_generateevent, которая используется и в трассировке SQL. Событие user_event возвращается независимо от того, какой идентификатор события передается хранимой процедуре. Однако поле event_id возвращается вместе с другими данными о событии. Это позволяет составлять предикат на основе идентификатора события. Например, если в коде используется UserConfigurable:0 (идентификатор события = 82), то можно добавить событие user_event в сеанс и указать предикат "event_id = 82". Таким образом, нет необходимости менять код, поскольку хранимая процедура sp_trace_generateevent формирует событие расширенных событий user_event и эквивалентный класс событий трассировки SQL.  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Хранимая процедура sp_trace_generateevent (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-trace-generateevent-transact-sql.md)  
   
   

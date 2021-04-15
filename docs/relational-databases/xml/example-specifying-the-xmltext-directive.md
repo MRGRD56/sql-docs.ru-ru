@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - XMLTEXT directive
 ms.assetid: e78008ec-51e8-4fd1-b86f-1058a781de17
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 93e6735f9b4e30a97d86366b512c27489a921f2a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 9479680633ae2c46799b703f250333cbab844351
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85632314"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490852"
 ---
 # <a name="example-specifying-the-xmltext-directive"></a>Пример Определение директивы XMLTEXT
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

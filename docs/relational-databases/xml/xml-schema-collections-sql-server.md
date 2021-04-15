@@ -20,18 +20,18 @@ helpviewer_keywords:
 - XML schema collections [SQL Server]
 - schema collections [SQL Server], about XML schema collections
 ms.assetid: 659d41aa-ccec-4554-804a-722a96ef25c2
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 2db7f06f0e68b1a03bf4b2a205666fcf90a58d32
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 15173fe3de1f3f82c5e70d0e5d8b302e380016d9
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729774"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486723"
 ---
 # <a name="xml-schema-collections-sql-server"></a>Коллекции XML-схем (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  Как указано в разделе [xml (Transact-SQL)](../../t-sql/xml/xml-transact-sql.md), SQL Server естественным образом поддерживает**xml**. При помощи коллекции XML-схем можно связать с переменной или столбцом типа **xml** XSD-схемы. Коллекция XML-схем хранит импортированные XML-схемы и используется для решения следующих задач:  
+  Как указано в разделе [xml (Transact-SQL)](../../t-sql/xml/xml-transact-sql.md), SQL Server естественным образом поддерживает **xml**. При помощи коллекции XML-схем можно связать с переменной или столбцом типа **xml** XSD-схемы. Коллекция XML-схем хранит импортированные XML-схемы и используется для решения следующих задач:  
   
 -   проверка экземпляров XML;  
   
@@ -43,7 +43,7 @@ ms.locfileid: "85729774"
   
  Механизм обработки запросов применяет схемы для проверки типов, а также оптимизации запросов и изменения данных.  
   
- Кроме того, в случае типизированного **xml**SQL Server использует соответствующую коллекцию XML-схем для проверки экземпляра XML. Если экземпляр XML соответствует схеме, база данных позволяет сохранить его в системе с информацией о его типах. В противном случае она отклоняет экземпляр.  
+ Кроме того, в случае типизированного **xml** SQL Server использует соответствующую коллекцию XML-схем для проверки экземпляра XML. Если экземпляр XML соответствует схеме, база данных позволяет сохранить его в системе с информацией о его типах. В противном случае она отклоняет экземпляр.  
   
  Встроенная функция XML_SCHEMA_NAMESPACE позволяет получить коллекцию схем, хранимую в базе данных. Дополнительные сведения см. в разделе [Просмотр хранимой коллекции схем XML](../../relational-databases/xml/view-a-stored-xml-schema-collection.md).  
   
@@ -117,7 +117,7 @@ ms.locfileid: "85729774"
   
 -   **SomeAttribute** является компонентом ATTRIBUTE.  
   
--   **SomeType**, **OrderType**и **CustomerType** — это компоненты TYPE.  
+-   **SomeType**, **OrderType** и **CustomerType** — это компоненты TYPE.  
   
 -   **Customer** является компонентом ELEMENT.  
   
