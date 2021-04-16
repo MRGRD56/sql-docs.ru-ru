@@ -2,7 +2,7 @@
 description: Логические функции — GREATEST (Transact-SQL)
 title: GREATEST (Transact-SQL)
 ms.custom: ''
-ms.date: 04/09/2021
+ms.date: 04/14/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: t-sql
@@ -17,15 +17,16 @@ helpviewer_keywords:
 author: jmsteen
 ms.author: josteen
 ms.reviewer: wiassaf
-ms.openlocfilehash: 6f6fa1a411c25452351a19257181a364d63c08a7
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.openlocfilehash: 8913fc9447049fb02b0ee6c04cee3f3715a37fb6
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107300508"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560828"
 ---
 # <a name="logical-functions---greatest-transact-sql"></a>Логические функции — GREATEST (Transact-SQL)
-[!INCLUDE [asdb-asdbmi](../../includes/applies-to-version/asdb-asdbmi.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-svrless-poolonly](../../includes/applies-to-version/sql-asdb-asdbmi-asa-svrless-poolonly.md)]
+
 
  Эта функция возвращает максимальное значение из списка, содержащего одно или несколько выражений. 
   
@@ -52,7 +53,7 @@ GREATEST ( expression1 [ ,...expressionN ] )
 
  Для числовых типов масштаб типа возвращаемого значения будет соответствовать масштабу аргумента, имеющего тип данных с наивысшим приоритетом, либо наибольшему масштабу, если таких аргументов несколько.
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>Комментарии  
  Все выражения в списке аргументов должны иметь сопоставимый тип данных, который может быть неявно преобразован в тип аргумента с наивысшим приоритетом. 
 
  Перед сравнением выполняется неявное приведение всех аргументов к типу данных с наивысшим приоритетом. 
@@ -80,14 +81,14 @@ GREATEST ( expression1 [ ,...expressionN ] )
  Масштаб типа возвращаемого значения определяется масштабом аргумента с типом данных, имеющим наивысший приоритет. 
  
 ```sql 
-SELECT GREATEST ( '6.62', 3.1415, N'7' ) AS Greatest; 
+SELECT GREATEST ( '6.62', 3.1415, N'7' ) AS GreatestVal; 
 GO 
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Greatest 
+GreatestVal 
 -------- 
   7.0000 
 
@@ -99,14 +100,14 @@ Greatest
  В следующем примере возвращается максимальное значение из указанного списка символьных констант.  
   
 ```sql  
-SELECT GREATEST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS Greatest;  
+SELECT GREATEST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS GreatestString;  
 GO  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Greatest 
+GreatestString 
 ------------- 
 Mount Rainier 
 
@@ -122,8 +123,8 @@ USE AdventureWorks2019;
 GO 
 
 SELECT sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear 
-      , GREATEST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Greatest 
-FROM sales.SalesPerson AS sp 
+      , GREATEST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Sales 
+FROM Sales.SalesPerson AS sp 
 WHERE sp.SalesYTD < 3000000; 
 GO  
   
@@ -132,7 +133,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-SalesQuota            SalesYTD              SalesLastYear         Greatest 
+SalesQuota            SalesYTD              SalesLastYear         Sales 
 
 --------------------- --------------------- --------------------- --------------------- 
                  NULL           559697.5639                 .0000           559697.5639 
@@ -156,19 +157,19 @@ SalesQuota            SalesYTD              SalesLastYear         Greatest
  В этом примере с помощью `GREATEST` определяется максимальное значение из списка локальных переменных в предикате предложения `WHERE`. 
   
 ```sql  
-CREATE TABLE studies (    
-    Variable varchar(10) NOT NULL,    
+CREATE TABLE dbo.studies (    
+    VarX varchar(10) NOT NULL,    
     Correlation decimal(4, 3) NULL 
 ); 
 
-INSERT INTO studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
+INSERT INTO dbo.studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
 GO 
 
 DECLARE @PredictionA DECIMAL(2,1) = 0.7;  
 DECLARE @PredictionB DECIMAL(3,1) = 0.65;  
 
-SELECT Variable, Correlation  
-FROM studies 
+SELECT VarX, Correlation  
+FROM dbo.studies 
 WHERE Correlation > GREATEST(@PredictionA, @PredictionB); 
 GO 
 ```  
@@ -176,7 +177,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Variable   Correlation 
+VarX   Correlation 
 ---------- ----------- 
 Var2              .825 
 
@@ -188,18 +189,18 @@ Var2              .825
  В этом примере с помощью `GREATEST` определяется максимальное значение из списка, содержащего столбцы, константы и переменные. 
   
 ```sql  
-CREATE TABLE products (    
+CREATE TABLE dbo.products (    
     prod_id int IDENTITY(1,1),    
     listprice smallmoney NULL 
 ); 
 
-INSERT INTO products VALUES (14.99), (49.99), (24.99); 
+INSERT INTO dbo.products VALUES (14.99), (49.99), (24.99); 
 GO 
 
 DECLARE @PriceX smallmoney = 19.99;  
 
 SELECT GREATEST(listprice, 0, @PriceX) as GreatestPrice  
-FROM products;
+FROM dbo.products;
 GO 
 ```  
   
@@ -216,7 +217,7 @@ GreatestPrice
 ```  
 
   
-## <a name="see-also"></a>См. также  
+## <a name="see-also"></a>См. также раздел  
  [LEAST &#40;Transact-SQL&#41;](../../t-sql/functions/logical-functions-least-transact-sql.md)  
  [MAX (Transact-SQL)](../../t-sql/functions/max-transact-sql.md)  
  [MIN &#40;Transact-SQL&#41;](../../t-sql/functions/min-transact-sql.md)  

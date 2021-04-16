@@ -9,12 +9,12 @@ ms.technology: security
 ms.topic: how-to
 author: rupp29
 ms.author: arupp
-ms.openlocfilehash: 3a674994d7028a8f4455c26d6f705b9da7b5ee08
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 53e0a4957fdb3f60f63d82c2ba89b3a98af16887
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100018687"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492105"
 ---
 # <a name="sql-server-connector-error-and-information-logging"></a>Журнал ошибок и сведений соединителя SQL Server
 
@@ -71,7 +71,7 @@ ms.locfileid: "100018687"
 
 **Требования к системе** — поддерживаемые версии SQL Server:
 
-- SQL Server 2019 RTM Enterprise, 64-разрядная версия
+- SQL Server 2019 RTM Enterprise или Standard, 64-разрядная версия;
 - SQL Server 2017 RTM Enterprise, 64-разрядная версия
 - SQL Server 2016 RTM Enterprise, 64-разрядная версия
 - SQL Server 2014 RTM Enterprise, 64-разрядная версия

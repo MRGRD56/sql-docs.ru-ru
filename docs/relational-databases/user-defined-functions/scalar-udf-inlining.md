@@ -15,12 +15,12 @@ ms.assetid: ''
 author: s-r-k
 ms.author: karam
 monikerRange: =azuresqldb-current||>=sql-server-ver15||>=sql-server-linux-ver15
-ms.openlocfilehash: 2ccdf4c7ca7aaec272a517aff0a7e336ae6791ad
-ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
+ms.openlocfilehash: d2e984e4e170ffd48643f532c03e89599e39a663
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106177124"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210937"
 ---
 # <a name="scalar-udf-inlining"></a>Встраивание скалярных пользовательских функций
 
@@ -140,7 +140,7 @@ SELECT C_NAME, dbo.customer_category(C_CUSTKEY) FROM CUSTOMER;
     - `DECLARE`, `SET`: объявление переменных и присвоение им значений;
     - `SELECT`: SQL-запрос с присвоением значений одной переменной или нескольким <sup>1</sup>;
     - `IF`/`ELSE`: ветвление с произвольными уровнями вложенности;
-    - `RETURN`: одна инструкция return или несколько;
+    - `RETURN`: одна инструкция return или несколько; Начиная с [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] CU5, пользовательская функция может содержать только один оператор RETURN, который можно использовать для встраивания <sup>6</sup>.
     - `UDF`: вызовы вложенных или рекурсивных функций <sup>2</sup>;
     - прочее: реляционные операции, такие как `EXISTS` и `ISNULL`.
 - Пользовательская функция не вызывает встроенные функции, которые зависят от времени (например, `GETDATE()`) или имеют побочные эффекты <sup>3</sup> (например, `NEWSEQUENTIALID()`).

@@ -11,12 +11,12 @@ ms.prod: sql
 ms.technology: linux
 moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: 9d3fa1989b44bcdf53b8f80dedc1aa3bba5bfedb
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.openlocfilehash: 161b839354d345601ff7091e8e1c9caa3e3822ad
+ms.sourcegitcommit: ac712a9cade3074f4edb2fd9e3eb8c04aa6f04a4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833931"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107496172"
 ---
 # <a name="configure-and-customize-sql-server-docker-containers"></a>Настройка контейнеров Docker на SQL Server
 
@@ -386,3 +386,4 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyStrongPassword" -e "MSSQL_DATA_D
 - [Устранение неполадок контейнеров Docker на SQL Server](sql-server-linux-docker-container-troubleshooting.md)
 
 - [Защита контейнеров Docker в SQL Server](sql-server-linux-docker-container-security.md)
+- [Пример Dockerfile с полнотекстовым поиском](https://github.com/microsoft/mssql-docker/blob/master/linux/preview/examples/mssql-agent-fts-ha-tools/Dockerfile)

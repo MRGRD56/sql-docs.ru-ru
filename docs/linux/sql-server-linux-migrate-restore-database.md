@@ -4,17 +4,17 @@ description: В этом руководстве рассказывается о 
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.date: 08/16/2017
+ms.date: 04/08/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 9ac64d1a-9fe5-446e-93c3-d17b8f55a28f
-ms.openlocfilehash: 2ae765c8bc1f274ab9b9f62978a85b5f09f6ca58
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 23a575bfabdd16f30007a8b70d84a568f45b8d3e
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349083"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210858"
 ---
 # <a name="migrate-a-sql-server-database-from-windows-to-linux-using-backup-and-restore"></a>Перенос базы данных SQL Server из Windows в Linux с помощью резервного копирования и восстановления
 
@@ -53,7 +53,7 @@ ms.locfileid: "100349083"
 
 1. В обозревателе объектов разверните узел **Базы данных**.
 
-1. Щелкните целевую базу данных правой кнопкой мыши, выберите пункт **Задачи**, а затем **Резервное копирование...** .
+1. Щелкните целевую базу данных правой кнопкой мыши, выберите пункт **Задачи**, а затем **Резервное копирование...**.
 
    ![Создание файла резервной копии с помощью SSMS](./media/sql-server-linux-migrate-restore-database/ssms-create-backup.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "100349083"
 
 ## <a name="copy-the-backup-file-to-linux"></a><a id="scp"></a> Копирование файла резервной копии в Linux
 
-1. В сеансе Bash перейдите к каталогу, в котором содержится файл резервной копии. Пример:
+1. В сеансе Bash перейдите к каталогу, в котором содержится файл резервной копии. Пример.
 
    ```bash
    cd 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Backup\'
@@ -103,7 +103,7 @@ ms.locfileid: "100349083"
 
 ## <a name="move-the-backup-file-before-restoring"></a>Перенос файла резервной копии перед восстановлением
 
-Сейчас файл резервной копии находится на сервере Linux в домашнем каталоге пользователя. Перед восстановлением базы данных в SQL Server необходимо поместить резервную копию в подкаталог **/var/opt/mssql**.
+Сейчас файл резервной копии находится на сервере Linux в домашнем каталоге пользователя. Перед восстановлением базы данных в SQL Server необходимо поместить резервную копию в подкаталог **/var/opt/mssql**, так как ей владеет пользователь `mssql` и группа `mssql`. Если вы хотите изменить расположение резервной копии по умолчанию, см. сведения в статье [Настройка с помощью mssql-conf](sql-server-linux-configure-mssql-conf.md#backupdir).
 
 1. В том же сеансе Bash в Windows подключитесь удаленно к целевому компьютеру Linux с помощью команды **ssh**. В следующем примере устанавливается подключение к компьютеру Linux с IP-адресом **192.0.2.9** от имени пользователя **user1**:
 
@@ -219,7 +219,7 @@ ms.locfileid: "100349083"
 
 1. Когда вы завершите работу в удаленном сеансе **ssh**, введите `exit` еще раз.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве вы узнали, как создать резервную копию базы данных в Windows и переместить ее на сервер Linux с SQL Server. Вы ознакомились с выполнением следующих задач:
 > [!div class="checklist"]

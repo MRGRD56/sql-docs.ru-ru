@@ -9,18 +9,21 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: a2836a6966727c0c2d27b363048f2e1dcd6afa49
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f122f52553ae6cabc153560be3a341cc6482a73a
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052142"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298787"
 ---
 # <a name="data-persistence-with-sql-server-big-data-cluster-in-kubernetes"></a>Сохраняемость данных при использовании кластера больших данных SQL Server в Kubernetes
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
 [Постоянные тома](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) предоставляют модель подключения для хранилища в Kubernetes. В этой модели способ предоставления хранилища абстрагируется от его использования. Поэтому вы можете подключить собственное хранилище высокого уровня доступности к кластеру больших данных SQL Server. Это позволяет получить полный контроль над типом хранилища, доступностью и производительностью. Kubernetes поддерживает [различные типы решений для хранения данных](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner), включая диски и файлы Azure, NFS и локальное хранилище.
+
+> [!IMPORTANT]
+> Если вы развертываете в Azure кластер больших данных с использованием одной из управляемых служб Kubernetes (AKS или АRО), помните, что в зависимости от требований к рабочим нагрузкам ваших приложений может потребоваться учесть ряд ограничений. Например, тома, использующие управляемые диски Azure, сейчас не являются ресурсами, избыточными между зонами. Подключение томов между различными зонами невозможно. Они должны размещаться в той же зоне, что и узел, на котором размещен целевой объект pod. В этом конкретном случае стоит рассмотреть возможность использования дополнительных решений с высоким уровнем доступности, предлагаемых с Кластерами больших данных SQL Server. См. [дополнительные сведения](/azure/aks/availability-zones) о службе Azure Kubernetes и зонах доступности.
 
 ## <a name="configure-persistent-volumes"></a>Настройка постоянных томов
 
