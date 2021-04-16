@@ -23,12 +23,12 @@ ms.assetid: 9d862a90-e6b7-4692-8605-92358dccccdf
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a0ff8f34468e4186700d6942cbbfcbf5d6f2b09b
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: d500ae0f43a39dfc4ced79a0389bc9ca15accd60
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104747724"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561110"
 ---
 # <a name="decimal-and-numeric-transact-sql"></a>decimal и numeric (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,9 +41,6 @@ ms.locfileid: "104747724"
   
 p (точность)  
 Максимальное общее число хранимых десятичных разрядов. Это число включает символы слева и справа от десятичной запятой. Точность должна быть значением в диапазоне от 1 до максимум 38. Точность по умолчанию составляет 18.
-  
-> [!NOTE]  
->  В Informatica поддерживаются только 16 значащих разрядов независимо от указанных точности и масштаба.  
   
 *s* (масштаб)  
 Максимальное число хранимых десятичных разрядов справа от десятичной запятой. Это число отнимается от *p* для определения максимального количества цифр слева от десятичной запятой. Масштаб должен иметь значение от 0 до *p* и может быть указан только при заданной точности. По умолчанию масштаб принимает значение 0, поэтому 0 <= *s* \<= *p*. Максимальный размер хранилища зависит от точности.

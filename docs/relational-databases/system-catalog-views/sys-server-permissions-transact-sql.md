@@ -21,12 +21,12 @@ ms.assetid: 7d78bf17-6c64-4166-bd0b-9e9e20992136
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b30e7adeb6ad09417b9ab02cb01610774d09a148
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: e9ef1a38eded0512041b3e7e1da81047518fd052
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99159051"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561089"
 ---
 # <a name="sysserver_permissions-transact-sql"></a>sys.server_permissions (Transact-SQL)
 [!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
@@ -35,8 +35,8 @@ ms.locfileid: "99159051"
   
 |Имя столбца|Тип данных|Описание|  
 |-----------------|---------------|-----------------|  
-|**class**|**tinyint**|Определяет класс субъекта, в котором существует разрешение.<br /><br /> 100 = Сервер<br /><br /> 101 = Сервер-участник<br /><br /> 105 = Конечная точка|  
-|**class_desc**|**nvarchar(60)**|Описание класса, на который существует разрешение. Одно из следующих значений:<br /><br /> **СЕРВЕРОМ**<br /><br /> **SERVER_PRINCIPAL**<br /><br /> **КОНЕЧНОЙ**|  
+|**class**|**tinyint**|Определяет класс субъекта, в котором существует разрешение.<br /><br /> 100 = Сервер<br /><br /> 101 = Сервер-участник<br /><br /> 105 = Конечная точка<br /><br /> 108 = группа доступности|  
+|**class_desc**|**nvarchar(60)**|Описание класса, на который существует разрешение. Одно из следующих значений:<br /><br /> **СЕРВЕРОМ**<br /><br /> **SERVER_PRINCIPAL**<br /><br /> **ENDPOINT**<br /><br /> **AVAILABILITY GROUP**|  
 |**major_id**|**int**|Идентификатор защищаемого объекта, на который существует разрешение, интерпретируемое согласно классу объекта. Как правило, это просто идентификатор, который применяется к тому, что представляет собой этот класс. Интерпретация нестандартных значений следующая:<br /><br /> 100 = всегда 0|  
 |**minor_id**|**int**|Вторичный идентификатор субъекта, в котором существует разрешение, интерпретируемое согласно классу объекта.|  
 |**grantee_principal_id**|**int**|Идентификатор сервера-участника, на который предоставляются разрешения.|  
@@ -108,7 +108,7 @@ JOIN sys.server_permissions AS pe
     ON pe.grantee_principal_id = pr.principal_id;  
 ```  
   
-## <a name="see-also"></a>См. также:  
+## <a name="see-also"></a>См. также  
  [Представления каталога безопасности (Transact-SQL)](../../relational-databases/system-catalog-views/security-catalog-views-transact-sql.md)   
  [Securables](../../relational-databases/security/securables.md)   
  [Представления каталога (Transact-SQL)](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
