@@ -9,12 +9,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: ''
 ms.date: 12/15/2020
-ms.openlocfilehash: b49359ea35a5fbd0f8ffd51606c0ae17f14c9eac
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 58375b6512c259d07dd25fb10d539421162997c0
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048408"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298727"
 ---
 # <a name="sql-database-projects-extension-preview"></a>Расширение "Проекты Баз данных SQL" (предварительная версия)
 
@@ -23,21 +23,20 @@ ms.locfileid: "100048408"
 
 ## <a name="features"></a>Компоненты
 
-1. Создание проекта из подключенной базы данных.
-2. Создание пустого проекта.
-3. Открытие проекта, созданного ранее в [Azure Data Studio](sql-database-project-extension-getting-started.md) или в [SQL Server Data Tools](../../ssdt/sql-server-data-tools.md).
-4. Редактирование проекта путем добавления или удаления таблицы, представления, хранимой процедуры или пользовательских сценариев в проекте.
-5. Упорядочение файлов и сценариев в папках.
-6. Добавление ссылок на системные базы данных или пользовательский пакет DACPAC.
-7. Создание одного проекта.
-8. Развертывание одного проекта.
-9. Загрузка сведений о подключении (проверка подлинности SQL Windows) и переменных SQLCMD из профиля развертывания.
+- Создание нового пустого проекта или проекта на основе подключенной базы данных.
+- Открытие проекта, созданного ранее в [Azure Data Studio](sql-database-project-extension-getting-started.md) или в [SQL Server Data Tools](../../ssdt/sql-server-data-tools.md).
+- Редактирование проекта путем добавления или удаления его объектов (таблиц, представлений, хранимых процедур) и пользовательских сценариев.
+- Упорядочение файлов и сценариев в папках.
+- Добавление ссылок на системные базы данных или пользовательский пакет DACPAC.
+- Создание одного проекта.
+- Развертывание одного проекта.
+- Загрузка сведений о подключении (проверка подлинности SQL Windows) и переменных SQLCMD из профиля развертывания.
 
 Просмотрите это короткое десятиминутное видео, чтобы ознакомиться с расширением "Проекты Баз данных SQL" в Azure Data Studio:
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Build-SQL-Database-Projects-Easily-in-Azure-Data-Studio/player?WT.mc_id=dataexposed-c9-niner]
 
-## <a name="install-the-sql-database-projects-extension"></a>Установка расширения "Проекты Баз данных SQL"
+## <a name="installation"></a>Установка
 
 1. Откройте диспетчер расширений, чтобы получить доступ к расширениям.  Для этого щелкните значок расширений или выберите пункт **Расширения** в меню **Представление**.
 2. Найдите расширение *Проекты Баз данных SQL*, целиком или частично введя имя расширения в поле поиска. Выберите доступное расширение и просмотрите сведения о нем.
@@ -53,6 +52,19 @@ ms.locfileid: "100048408"
 
    > [!NOTE]
    > Рекомендуется установить расширение [Сравнение схем](schema-compare-extension.md) наряду с расширением "Проекты Баз данных SQL", чтобы получить полноценный набор функций.
+
+## <a name="net-core-sdk"></a>Пакет SDK для .NET Core
+Пакет SDK для .NET Core необходим для функциональности сборки проекта. Если его не удастся обнаружить с помощью расширения, вам будет предложено установить пакет SDK для .NET Core.  Пакет SDK для .NET Core (версии 3.1 и выше) можно загрузить и установить по ссылке [https://dotnet.microsoft.com/download/dotnet-core/3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1).
+
+Предыдущие установки пакета SDK для .NET Core могут иметь версию, которая ниже минимально необходимой и не поддерживает использование расширения "Проекты Баз данных SQL".  Если вы хотите [просмотреть установленные сейчас версии](https://docs.microsoft.com/dotnet/core/install/how-to-detect-installed-versions) пакета SDK для .NET, откройте терминал и выполните следующую команду.
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+При наличии неподдерживаемых версий пакета SDK для .NET Core могут выдаваться сообщения об ошибках следующего вида:
+- `error MSB4018: The "SqlBuildTask" task failed unexpectedly.`
+- ` error MSB4018: System.TypeInitializationException: The type initializer for 'SqlSchemaModelStaticState' threw an exception. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. The system cannot find the file specified. [c:\Users\ .sqlproj]_` (Приведенный по ссылке несуществующий файл имеет закрывающую квадратную скобку без парной открывающей.)
 
 ## <a name="known-limitations"></a>Известные ограничения
 

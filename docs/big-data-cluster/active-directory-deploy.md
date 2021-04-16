@@ -9,12 +9,12 @@ ms.date: 02/19/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 9417444a1c9d28181529ace79b6dcff6162b7f2d
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 2b24a1ddf61d297759e23e0b0d27e8d8c6ead171
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837039"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298737"
 ---
 # <a name="deploy-sql-server-big-data-cluster-in-active-directory-mode"></a>Развертывание кластера больших данных SQL Server в режиме Active Directory
 
@@ -242,7 +242,7 @@ azdata bdc config replace -c custom-prod-kubeadm/control.json -j "$.security.act
 
 ## <a name="verify-reverse-dns-entry-for-domain-controller"></a>Проверка обратной DNS-записи для контроллера домена
 
-Убедитесь в наличии обратной DNS-записи (записи PTR) для самого доменного контроллера, зарегистрированного на сервере DNS. Это можно проверить, выполнив команду `nslookup` для доменного имени на контроллере домена, чтобы убедиться, что она разрешается в IP-адрес контроллера домена.
+Убедитесь в наличии обратной DNS-записи (записи PTR) для самого доменного контроллера, зарегистрированного на сервере DNS. Это можно проверить, выполнив команду `nslookup` для IP-адреса контроллера домена и убедившись, что адрес разрешается в полное доменное имя контроллера.
 
 ## <a name="known-issues-and-limitations"></a>Известные проблемы и ограничения
 

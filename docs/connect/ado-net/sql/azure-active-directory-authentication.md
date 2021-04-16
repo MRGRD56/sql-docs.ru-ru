@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: karinazhou
 ms.author: v-jizho2
 ms.reviewer: v-daenge
-ms.openlocfilehash: 8ad08c0799f53b2746c621bb1c16a41fe38b7e14
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: fa1d074cde0585b89e7f339c7c6cbd7114b603dd
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054484"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298777"
 ---
 # <a name="using-azure-active-directory-authentication-with-sqlclient"></a>Использование проверки подлинности Azure Active Directory для SqlClient
 
@@ -170,7 +170,7 @@ using (SqlConnection conn = new SqlConnection(ConnectionString)) {
 
 Начиная с версии **Microsoft.Data.SqlClient** 2.1.0, драйвер поддерживает проверку подлинности в Базе данных SQL Azure, Azure Synapse Analytics и Управляемом экземпляре Azure SQL путем получения маркеров доступа по управляемому удостоверению. Чтобы использовать такую проверку подлинности, укажите `Active Directory Managed Identity` или `Active Directory MSI` в строке подключения. Пароль при этом не требуется. 
 
-В этом режиме также нельзя задать свойство `Credential` для `SqlConnection`. Для управляемого удостоверения, назначаемого пользователем, необходимо указать имя пользователя. 
+В этом режиме также нельзя задать свойство `Credential` для `SqlConnection`. Для управляемого удостоверения, назначаемого пользователем, необходимо указать соответствующий идентификатор объекта. 
 
 Следующий пример демонстрирует, как использовать проверку подлинности `Active Directory Managed Identity` с управляемым удостоверением, назначаемым системой.
 
@@ -194,7 +194,7 @@ using (SqlConnection conn = new SqlConnection(ConnectionString2)) {
 
 ```c#
 // For user-assigned managed identity
-// Use your own server, database, and user ID.
+// Use your own values for Server, Database, and User Id.
 string ConnectionString1 = @"Server=demo.database.windows.net; Authentication=Active Directory Managed Identity; User Id=ObjectIdOfManagedIdentity; Database=testdb";
 
 using (SqlConnection conn = new SqlConnection(ConnectionString1)) {

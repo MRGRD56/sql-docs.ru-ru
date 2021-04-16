@@ -6,20 +6,20 @@ helpviewer_keywords:
 - troublshooting, tde akv
 - tde akv configuration, troubleshooting
 - tde troubleshooting
-author: jaszymas
+author: shohamMSFT
+ms.author: shohamd
 ms.prod: sql
 ms.technology: security
 ms.reviewer: vanto
 ms.topic: conceptual
 ms.date: 11/06/2019
-ms.author: jaszymas
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: 033346cf1d00d1f2acbd6b8de0796027c80814a7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: fc9ebc3ba93e6f9bd8bf045ab87d2ab3e8e08bdf
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345370"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298807"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Распространенные ошибки с прозрачным шифрованием данных (TDE) с использованием управляемых клиентом ключей в Azure Key Vault
 
@@ -165,7 +165,7 @@ _401 AzureKeyVaultMissingPermissions. У сервера отсутствуют �
 
 ## <a name="getting-tde-status-from-the-activity-log"></a>Получение состояния TDE из журнала действий
 
-Чтобы обеспечить мониторинг состояния базы данных в связи с проблемами с доступом к ключам в Azure Key Vault, в [журнал действий](/azure/service-health/alerts-activity-log-service-notifications) будут заноситься следующие события по идентификатору ресурса, основанного на URL-адресе Azure Resource Manager, а также подписке, группе ресурсов, имени сервера и имени базы данных: 
+Чтобы контролировать состояние базы данных при проблемах доступа к ключам в Azure Key Vault, в [журнал действий](/azure/service-health/alerts-activity-log-service-notifications) будут заноситься следующие события для ИД ресурса, который определяется по URL-адресу Azure Resource Manager, а также по подписке, группе ресурсов, имени сервера и имени базы данных: 
 
 **Событие, когда служба теряет доступ к ключу в Azure Key Vault**
 
