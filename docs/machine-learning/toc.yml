@@ -258,8 +258,6 @@ items:
             href: ../machine-learning/r/r-libraries-and-data-types.md
       - name: Развертывание
         items:
-          - name: Внедрение с помощью хранимых процедур
-            href: ../machine-learning/deploy/operationalizing-your-r-code.md
           - name: Изменение кода R/Python для SQL Server
             href: ../machine-learning/deploy/modify-r-python-code-to-run-in-sql-server.md
       - name: Прогнозы
