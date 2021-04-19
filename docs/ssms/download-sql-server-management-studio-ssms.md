@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 4/15/2021
-ms.openlocfilehash: 2f51332f7aed45a6e53b7b765525457bb315713b
-ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
+ms.date: 4/16/2021
+ms.openlocfilehash: 64cb42f2999c11c68b10418d05316861cda5f4fe
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107561017"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107584106"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>Скачивание SQL Server Management Studio (SSMS)
 
@@ -41,11 +41,13 @@ SQL Server Management Studio (SSMS) — это интегрированная с
 
 ## <a name="download-ssms"></a>Скачать SSMS
 
-:::image type="icon" source="media/download-icon.png" border="false"::: **[Скачать SQL Server Management Studio (SSMS)](https://aka.ms/ssmsfullsetup)**
+:::image type="icon" source="media/download-icon.png" border="false"::: **[Скачать SQL Server Management Studio (SSMS) 18.8](https://aka.ms/ssmsfullsetup)**
+
+
+> [!IMPORTANT]
+> В SSMS 18.9 имеется известная ошибка, связанная с IntelliSense, в которой имена столбцов опущены из предложений, а индикаторы ошибок отображаются в именах столбцов неверно. Выпуск исправления скоро будет доступен, а версия установки по умолчанию SSMS останется в SSMS 18.8 (15.0.18369.0). Если вам требуется загрузить набор SSMS 18.9, он доступен ниже.
 
 SSMS 18.9 — это последняя общедоступная (GA) версия SSMS. Если у вас установлена предыдущая общедоступная версия SSMS 18, при установке SSMS 18.9 она будет обновлена.
-
-[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
 - Номер выпуска: 18.9
 - Номер сборки: 15.0.18382.0
@@ -57,6 +59,7 @@ SSMS 18.9 — это последняя общедоступная (GA) ве�
 
 Если на компьютере есть несколько параллельных установок SSMS, всегда проверяйте, правильную ли версию вы запускаете. Последняя версия называется **Microsoft SQL Server Management Studio 18**.
 
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
 ## <a name="available-languages"></a>Доступные языки
 
