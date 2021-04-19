@@ -47,18 +47,18 @@ ms.assetid: afe3d86d-c9ab-44e4-b74d-4e3dbd9cc58c
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 913da2a77589a47989dbfe1bf182a580e03c1a1b
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 81fb51abdf711d04117a1a210025e30be914784f
+ms.sourcegitcommit: 52dd1719d7b63581b1d34b755bf9d077c0fc6c44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104755204"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107373063"
 ---
 # <a name="create-procedure-transact-sql"></a>CREATE PROCEDURE (Transact-SQL)
 
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-Создает хранимую процедуру [!INCLUDE[tsql](../../includes/tsql-md.md)] или хранимую процедуру общеязыковой среды выполнения (CLR) в [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)], [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] и [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]. Хранимые процедуры похожи на процедуры из других языков программирования в том, что они могут:
+Создает хранимую процедуру [!INCLUDE[tsql](../../includes/tsql-md.md)] или общеязыковой среды выполнения (CLR) в следующих компонентах: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] и [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]. Хранимые процедуры похожи на процедуры из других языков программирования в том, что они могут:
 
 - принимать входные параметры и возвращать вызывающей процедуре или пакету ряд значений в виде выходных параметров;
 - содержать программные инструкции, которые выполняют операции в базе данных, в том числе вызывающие другие процедуры;

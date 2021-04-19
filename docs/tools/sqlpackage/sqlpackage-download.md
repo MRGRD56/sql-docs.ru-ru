@@ -10,12 +10,12 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan; sstein
 ms.date: 03/10/2021
-ms.openlocfilehash: 2077800356a065ae4650cf6ab97ea45c3c537b8c
-ms.sourcegitcommit: 81ee3cd57526d255de93afb84186074a3fb9885f
+ms.openlocfilehash: 577900831b14a96f6514305ca5a562b907d47b35
+ms.sourcegitcommit: 52dd1719d7b63581b1d34b755bf9d077c0fc6c44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102622770"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107373043"
 ---
 # <a name="download-and-install-sqlpackage"></a>Скачивание и установка sqlpackage
 
@@ -36,7 +36,7 @@ ms.locfileid: "102622770"
 Доступна обновляемая ссылка ([https://aka.ms/sqlpackage-linux](https://aka.ms/sqlpackage-linux)), указывающая на текущую версию sqlpackage для [Linux .NET Core](#get-sqlpackage-net-core-for-linux). Ее можно использовать для автоматизации сред с последней версией sqlpackage.
 
 ## <a name="dacfx"></a>DacFx
-SqlPackage — это интерфейс командной строки для платформы DacFx, который предоставляет некоторые общедоступные API DacFx. DacServices ([Microsoft.SqlServer.Dac](/dotnet/api/microsoft.sqlserver.dac.dacservices)) — это связанный механизм для интеграции развертывания базы данных в конвейер приложений.  API-интерфейс DacServices доступен в пакете NuGet [Microsoft.SqlServer.DACFx](https://www.NuGet.org/packages/Microsoft.SqlServer.DACFx).  Текущая версия DacFx — 150.4897.1.
+SqlPackage — это интерфейс командной строки для платформы DacFx, который предоставляет некоторые общедоступные API DacFx. DacServices ([Microsoft.SqlServer.Dac](/dotnet/api/microsoft.sqlserver.dac.dacservices)) — это связанный механизм для интеграции развертывания базы данных в конвейер приложений.  API-интерфейс DacServices доступен в пакете NuGet [Microsoft.SqlServer.DACFx](https://www.NuGet.org/packages/Microsoft.SqlServer.DACFx).  Текущая версия DacFx — 150.5084.2.
 
 Установка пакета NuGet в интерфейсе командной строки .NET выполняется с помощью следующей команды:
 
