@@ -11,12 +11,12 @@ ms.assetid: bc98ba2b-aae9-4d01-aa85-d4c36428cb0b
 author: cawrites
 ms.author: chadam
 monikerRange: '>=sql-server-2016'
-ms.openlocfilehash: ff4d078c165b91f147e39cecb3976939929cac7e
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1d22ba98c0dc62e50b0eaf909ecd7dc5533833bf
+ms.sourcegitcommit: 241b503472b01ed0119f13c578b0c32c39f5e07c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100353059"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107754988"
 ---
 # <a name="installing-updates-from-the-command-prompt"></a>Установка обновлений из командной строки
 
@@ -34,37 +34,37 @@ ms.locfileid: "100353059"
     ```
     или диспетчер конфигурации служб 
     ```
-    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /InstanceID=\<Instance ID>. 
+    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /InstanceID=\<Instance ID>
     ```
 
 - Программа установки может интегрировать последние обновления продукта в основную установку продукта, чтобы он и применимые обновления устанавливались одновременно. Можно подготовить установку экземпляра компонента Database Engine, включающую обновление продукта: 
 
     ```
-    setup.exe /q /IAcceptSQLServerLicenseTerms /ACTION=PrepareImage /UpdateEnabled=True /UpdateSource=\<path where the update is downloaded> /INSTANCEID=\<Instance ID> /FEATURES=SQLEngine. 
+    setup.exe /q /IAcceptSQLServerLicenseTerms /ACTION=PrepareImage /UpdateEnabled=True /UpdateSource=\<path where the update is downloaded> /INSTANCEID=\<Instance ID> /FEATURES=SQLEngine
     ```
 
 - Обновление только общих компонентов [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], таких как службы [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] и средства управления: 
 
     ```
-    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch 
+    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch
     ```
 
 - Обновление всех экземпляров [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] на компьютере и всех общих компонентов, таких как службы [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] и средства управления: 
 
     ```
-    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /AllInstances. 
+    <package_name>.exe /qs /IAcceptSQLServerLicenseTerms /Action=Patch /AllInstances
     ```
 
 - Удаление обновления из отдельного экземпляра [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] и всех общих компонентов, таких как службы [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] и средства управления: 
 
     ```
-    <package_name>.exe /qs /Action=RemovePatch /InstanceName=MyInstance. 
+    <package_name>.exe /qs /Action=RemovePatch /InstanceName=MyInstance
     ```
 
 - Удаление обновления только из общих компонентов [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], таких как службы [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] и средства управления: 
 
     ```
-    <package_name>.exe /qs /Action=RemovePatch 
+    <package_name>.exe /qs /Action=RemovePatch
     ```
 
   > [!NOTE] 
