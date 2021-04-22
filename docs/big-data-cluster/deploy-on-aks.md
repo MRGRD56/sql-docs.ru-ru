@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2021cf90230bd22de775cef164336f9e31631991
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d98eb31e4502ed319e00069cc979154bdc391839
+ms.sourcegitcommit: b3788a0e1fff06a6c3954d1060855398ad41b81f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100038804"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107879234"
 ---
 # <a name="configure-azure-kubernetes-service-for-sql-server-big-data-cluster-deployments"></a>Настройка Службы Kubernetes Azure для развертываний кластера больших данных SQL Server
 
@@ -149,7 +149,7 @@ AKS упрощает создание, настройку и кластера в
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
-1. Чтобы настроить kubectl для подключения к кластеру Kubernetes, выполните команду [az aks get-credentials](/cli/azure/aks#az-aks-get-credentials). На этом шаге выполняется скачивание учетных данных и настройка интерфейса командной строки kubectl для их использования.
+1. Чтобы настроить kubectl для подключения к кластеру Kubernetes, выполните команду [az aks get-credentials](/cli/azure/aks#az_aks_get_credentials). На этом шаге выполняется скачивание учетных данных и настройка интерфейса командной строки kubectl для их использования.
 
    ```azurecli
    az aks get-credentials --resource-group=sqlbdcgroup --name kubcluster

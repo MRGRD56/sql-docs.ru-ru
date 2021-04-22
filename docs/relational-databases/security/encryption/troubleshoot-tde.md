@@ -14,12 +14,12 @@ ms.reviewer: vanto
 ms.topic: conceptual
 ms.date: 11/06/2019
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: fc9ebc3ba93e6f9bd8bf045ab87d2ab3e8e08bdf
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.openlocfilehash: 449dd02281e294b7959924249298607b7bf25588
+ms.sourcegitcommit: b3788a0e1fff06a6c3954d1060855398ad41b81f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107298807"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107879244"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Распространенные ошибки с прозрачным шифрованием данных (TDE) с использованием управляемых клиентом ключей в Azure Key Vault
 
@@ -70,7 +70,7 @@ _401 AzureKeyVaultNoServerIdentity. Удостоверение сервера н
 
 - Azure PowerShell: [Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer) 
 
-- Azure CLI: [az-sql-server-show](/cli/azure/sql/server#az-sql-server-show)
+- Azure CLI: [az-sql-server-show](/cli/azure/sql/server#az_sql_server_show)
 
 **Исправление**
 
@@ -78,7 +78,7 @@ _401 AzureKeyVaultNoServerIdentity. Удостоверение сервера н
 
 - Azure PowerShell: [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver) с параметром `-AssignIdentity`.
 
-- Azure CLI: [az sql server update](/cli/azure/sql/server#az-sql-server-update) с параметром `--assign_identity`.
+- Azure CLI: [az sql server update](/cli/azure/sql/server#az_sql_server_update) с параметром `--assign_identity`.
 
 На портале Azure перейдите в хранилище ключей и выберите **Политики доступа**. Выполните следующие действия: 
 
@@ -105,7 +105,7 @@ _503 AzureKeyVaultConnectionFailed. Операцию не удалось зав�
 
     - Azure PowerShell: [Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey)
 
-    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az-sql-server-tde-key-show) 
+    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az_sql_server_tdekey_show) 
 
 1. Используйте URI ключа для идентификации хранилища ключей:
 
