@@ -3,24 +3,24 @@ title: Установка в Windows
 description: Здесь вы узнаете, как установить Службы машинного обучения SQL Server в Windows. Службы машинного обучения можно использовать для запуска сценариев R или Python в базе данных.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/17/2021
+ms.date: 04/15/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017'
-ms.openlocfilehash: d209daa0932068b41974c7e3597980b15657b1b2
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: d1a8a96131a9b5287837efb33bbca1c95eedc5a9
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611214"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571366"
 ---
 # <a name="install-sql-server-machine-learning-services-python-and-r-on-windows"></a>Установка служб машинного обучения SQL Server (Python и R) в Windows
 
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
 
-Здесь вы узнаете, как установить Службы машинного обучения SQL Server в Windows. Службы машинного обучения можно использовать для запуска сценариев R или Python в базе данных.
+Здесь вы узнаете, как установить [Службы машинного обучения SQL Server](../sql-server-machine-learning-services.md) для Windows. Службы машинного обучения можно использовать для запуска сценариев R или Python в базе данных.
 
 ## <a name="pre-install-checklist"></a><a name="bkmk_prereqs"> </a>Контрольный список перед установкой
 

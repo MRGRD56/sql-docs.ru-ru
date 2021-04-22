@@ -17,12 +17,12 @@ ms.assetid: 54757c91-615b-468f-814b-87e5376a960f
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cfda09e184933ae537cdf3b4c6430e6d6d4b20fc
-ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
+ms.openlocfilehash: dd6d698d27922e90ce95dbdc406c0ced8f3a58e1
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105633163"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107584049"
 ---
 # <a name="always-encrypted"></a>Always Encrypted
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -118,7 +118,7 @@ Operand type clash: char(11) encrypted with (encryption_type = 'DETERMINISTIC', 
 |Шифрование существующих данных в выбранных столбцах базы данных|Да|Да|нет|
 
 > [!NOTE]
-> [Always Encrypted с безопасными анклавами](always-encrypted-enclaves.md), представленными в [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)], поддерживает шифрование существующих данных с помощью Transact-SQL. Это также избавляет от необходимости перемещать данные за пределы хранилища для криптографических операций.
+> [Always Encrypted с безопасными анклавами](always-encrypted-enclaves.md), представленными в [!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)], поддерживает шифрование существующих данных с помощью Transact-SQL. Это также избавляет от необходимости перемещать данные за пределы базы данных для выполнения криптографических операций.
 
 > [!NOTE]
 > Убедитесь, что запуск инструментов подготовки ключей или шифрования данных осуществляется в безопасной среде, на компьютере, отличном от компьютера, на котором размещена ваша база данных. В противном случае возможна утечка конфиденциальных данных или ключей в серверную среду, что сведет преимущества использования постоянного шифрования к минимуму.  

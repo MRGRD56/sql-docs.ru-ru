@@ -3,18 +3,18 @@ title: Устранение неполадок с панелью запуска 
 description: Эта статья содержит рекомендации по устранению неполадок, препятствующих запуску службы Панели запуска SQL Server, включая проблемы с конфигурацией или ее изменения, а также отсутствие сетевых протоколов. Служба панели запуска поддерживает выполнение внешних скриптов для R и Python.
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 03/31/2021
+ms.date: 04/08/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: b015e4181f8d8cfe9388c609f749dc5979463d3a
-ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
+ms.openlocfilehash: a40d27751406214fade453e6fb91b937adb72775
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106099971"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298868"
 ---
 # <a name="troubleshoot-issues-with-launchpad-service-executing-python-and-r-scripts-in-sql-server-machine-learning-services"></a>Устранение неполадок со службой панели запуска, выполняющей скрипты Python и R в Службах машинного обучения SQL Server
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "106099971"
 
 ## <a name="determine-whether-launchpad-is-running"></a>Определение того, выполняется панель запуска
 
-1. Откройте панель **Службы**  (Services.msc). Или введите **SQLServerManager13.msc** или **SQLServerManager14.msc** в командной строке, чтобы открыть [Диспетчер конфигурации SQL Server](../../relational-databases/sql-server-configuration-manager.md).
+1. Откройте [Диспетчер конфигурации SQL Server](../../relational-databases/sql-server-configuration-manager.md). В командной строке введите **SQLServerManager13.msc**, **SQLServerManager14.msc** или **SQLServerManager15.msc**.
 
 2. Запишите учетную запись службы, под которой выполняется панель запуска. Каждый экземпляр, где включен R или Python, должен иметь собственный экземпляр службы панели запуска. Например, служба для именованного экземпляра может иметь вид _MSSQLLaunchpad$имя_экземпляра_.
 
@@ -35,7 +35,7 @@ ms.locfileid: "106099971"
 
 ## <a name="check-the-launchpad-service-account"></a>Проверка учетной записи службы панели запуска
 
-По умолчанию может использоваться учетная запись службы "NT Service\$SQL2016" или "NT Service\$SQL2017". Конечная часть может отличаться в зависимости от имени экземпляра SQL.
+По умолчанию может использоваться учетная запись службы "NT Service\$SQL2016", "NT Service\$SQL2017" или "NT Service\$SQL2019". Конечная часть может отличаться в зависимости от имени экземпляра SQL.
 
 Служба панели запуска (Launchpad.exe) выполняется с использованием учетной записи службы с минимальными правами доступа. Однако, чтобы запустить R и Python и взаимодействовать с экземпляром базы данных, учетной записи службы панели запуска требуются следующие права пользователя:
 

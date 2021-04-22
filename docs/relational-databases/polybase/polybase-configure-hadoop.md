@@ -10,12 +10,12 @@ ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016'
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 1124d05dc57697d9e27757dad2b4fee842a22a5a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3b56ae68b582916debfdaf4696823422940887f3
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351806"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571379"
 ---
 # <a name="configure-polybase-to-access-external-data-in-hadoop"></a>Настройка PolyBase для доступа к внешним данным в Hadoop
 
@@ -37,8 +37,10 @@ ms.locfileid: "100351806"
 - PolyBase поддерживает два поставщика Hadoop — Hortonworks Data Platform (HDP) и Cloudera Distributed Hadoop (CDH). В новых выпусках Hadoop соблюдается шаблон "Основной номер версии.дополнительный номер версии.версия". Также поддерживаются все версии в рамках поддерживаемых основного и дополнительного выпусков. Поддерживаются следующие поставщики Hadoop:
 
   - Hortonworks HDP 1.3, 2.1–2.6, 3.0 в Linux
-  - Hortonworks HDP 1.3, 2.1–2.3 в Window Server
+  - Hortonworks HDP 1.3, 2.1–2.3, 3.1<sup>*</sup> в Window Server
   - Cloudera CDH 4.3, 5.1–5.5, 5.9–5.13 в Linux
+
+   <sup>*</sup> Для Hortonworks HDB 3.1 требуется SQL Server 2019 с накопительным пакетом обновления 9 (CU9, версия 15.0.4102) или более поздняя версия.
 
 > [!NOTE]
 > PolyBase поддерживает зоны шифрования Hadoop начиная с SQL Server 2016 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7, а также с SQL Server 2017 с накопительным пакетом обновления 3. Если вы используете [масштабируемые группы PolyBase](polybase-scale-out-groups.md), все вычислительные узлы также должны находиться в сборке, которая включает в себя поддержку зон шифрования Hadoop.

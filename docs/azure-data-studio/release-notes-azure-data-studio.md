@@ -8,17 +8,29 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 3/17/2021
-ms.openlocfilehash: 4cc6431ec73a002c015b8aac0dfe19b726cb354f
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.date: 4/16/2021
+ms.openlocfilehash: 71ef9a0947e1a1d8a9d239d93d5902f37e748091
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610703"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571336"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Заметки о выпуске для Azure Data Studio
 
 **[Скачайте и установите последний выпуск.](./download-azure-data-studio.md)**
+
+## <a name="april-2021"></a>Апрель 2021 г.
+
+16 апреля 2021 г.&nbsp; / &nbsp;Версия 1.28.0
+
+&nbsp;
+
+| Изменение | Сведения |
+| ------ | ------- |
+| Обновление расширений | [SQLDatabaseProjects](extensions/sql-database-project-extension.md) </br> [SchemaCompare](extensions/schema-compare-extension.md) <br/> [Kusto (KQL)](extensions/kusto-extension.md) </br> [Машинное обучение](extensions/machine-learning-extension.md)|
+| Новые функции Notebook | Добавлены команды "Добавить записную книжку" и "Удалить записную книжку". |
+| Исправления ошибок | Полный список исправлений см. на странице [ошибок и проблем в GitHub](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%22April+2021+Release%22). |
 
 ## <a name="march-2021"></a>Март 2021 г.
 
@@ -165,7 +177,7 @@ ms.locfileid: "104610703"
 
 &nbsp;
 
-| Change | Сведения |
+| Изменение | Сведения |
 | :----- | :------ |
 | Добавлен новый обзор возможностей | Страница приветствия и палитра команд теперь позволяют пользователям запустить обзор самых популярных возможностей, включая мини-представления "Подключения" и "Записные книжки", а также магазин расширений. |
 | Новые функции записной книжки | &bull; &nbsp; Поддержка заголовков на панели инструментов Markdown<br/> &bull; &nbsp; Параллельный предпросмотр Markdown в текстовых ячейках
